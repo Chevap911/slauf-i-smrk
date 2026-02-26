@@ -1,0 +1,120 @@
+.contact {
+    padding: var(--section-padding);
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+.title {
+    font-size: 3rem;
+    color: var(--secondary);
+    margin-bottom: 1.5rem;
+}
+
+.yellow {
+    color: var(--primary);
+}
+
+.text {
+    font-size: 1.125rem;
+    color: #666;
+    margin-bottom: 3rem;
+}
+
+.contactDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.detailItem {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    transition: var(--transition-base);
+}
+
+.detailItem:hover {
+    background: var(--surface);
+    transform: translateX(10px);
+}
+
+.iconCircle {
+    width: 56px;
+    height: 56px;
+    background: var(--secondary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.label {
+    display: block;
+    font-size: 0.875rem;
+    color: #888;
+    font-weight: 500;
+}
+
+.value {
+    display: block;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--secondary);
+}
+
+.form {
+    background: white;
+    padding: 3rem;
+    border-radius: 2rem;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border);
+}
+
+.formGroup {
+    margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--secondary);
+}
+
+.input {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition-fast);
+}
+
+.input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(0, 128, 128, 0.1);
+}
+
+@media (max-width: 992px) {
+    .wrapper {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .form {
+        padding: 2rem 1.5rem;
+    }
+}
