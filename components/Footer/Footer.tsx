@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Instagram, Facebook, Mail, Phone, MapPin } from 'lucide-react';
 import styles from './Footer.module.css';
 
@@ -18,11 +19,20 @@ export default function Footer() {
                     <div className={styles.section}>
                         <h4 className={styles.sectionTitle}>Usluge</h4>
                         <ul className={styles.list}>
-                            <li>Pranje fasada</li>
-                            <li>Pranje okućnica i prilaza</li>
-                            <li>Detailing automobila</li>
-                            <li>Čišćenje drvenih površina</li>
-                            <li>Održavanje grobnih mjesta</li>
+                            <li><Link href="/usluge/pranje-fasade">Pranje fasada</Link></li>
+                            <li><Link href="/usluge/pranje-okucnice">Pranje okućnica</Link></li>
+                            <li><Link href="/usluge/kemijsko-ciscenje-namjestaja">Kemijsko čišćenje</Link></li>
+                            <li><Link href="/usluge/detailing-automobila">Detailing automobila</Link></li>
+                            <li><Link href="/usluge/ciscenje-drvenih-povrsina">Drvene površine</Link></li>
+                            <li><Link href="/usluge/odrzavanje-grobnih-mjesta">Grobna mjesta</Link></li>
+                        </ul>
+                    </div>
+
+                    <div className={styles.section}>
+                        <h4 className={styles.sectionTitle}>Područja</h4>
+                        <ul className={styles.list}>
+                            <li><Link href="/podrucje/zagreb">Zagreb</Link></li>
+                            <li><Link href="/blog">Blog</Link></li>
                         </ul>
                     </div>
 
@@ -52,3 +62,4 @@ export default function Footer() {
         </footer>
     );
 }
+

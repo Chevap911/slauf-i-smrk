@@ -12,10 +12,22 @@ export default function Navigation() {
                     </Link>
 
                     <div className={styles.links}>
-                        <Link href="#usluge" className={styles.link}>Usluge</Link>
-                        <Link href="#zasto-mi" className={styles.link}>O nama</Link>
-                        <Link href="#recenzije" className={styles.link}>Recenzije</Link>
-                        <Link href="#kontakt" className={styles.link}>Kontakt</Link>
+                        <div className={styles.dropdown}>
+                            <Link href="/#usluge" className={styles.link}>Usluge</Link>
+                            <div className={styles.dropdownMenu}>
+                                <Link href="/usluge/pranje-fasade">Pranje fasade</Link>
+                                <Link href="/usluge/pranje-okucnice">Pranje okućnice</Link>
+                                <Link href="/usluge/kemijsko-ciscenje-namjestaja">Kemijsko čišćenje</Link>
+                                <Link href="/usluge/ciscenje-kamenih-povrsina">Kamene površine</Link>
+                                <Link href="/usluge/ciscenje-drvenih-povrsina">Drvene površine</Link>
+                                <Link href="/usluge/detailing-automobila">Detailing auta</Link>
+                                <Link href="/usluge/pranje-bazena">Pranje bazena</Link>
+                                <Link href="/usluge/odrzavanje-grobnih-mjesta">Grobna mjesta</Link>
+                            </div>
+                        </div>
+                        <Link href="/#zasto-mi" className={styles.link}>O nama</Link>
+                        <Link href="/blog" className={styles.link}>Blog</Link>
+                        <Link href="/#kontakt" className={styles.link}>Kontakt</Link>
                     </div>
 
                     <div className={styles.cta}>
@@ -29,3 +41,4 @@ export default function Navigation() {
         </nav>
     );
 }
+

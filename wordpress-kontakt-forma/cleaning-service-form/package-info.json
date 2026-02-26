@@ -1,0 +1,36 @@
+{
+  "name": "cleaning-service-form",
+  "version": "1.0.0",
+  "description": "Interaktivna forma za usluge čišćenja s kalkulatorom cijene",
+  "main": "cleaning-service-form.php",
+  "type": "wordpress-plugin",
+  "keywords": ["wordpress", "plugin", "cleaning", "form", "calculator", "email"],
+  "author": "Cleaning Service",
+  "license": "GPL-2.0-or-later",
+  "homepage": "https://yourwebsite.com",
+  "support": {
+    "email": "support@yourwebsite.com"
+  },
+  "requirements": {
+    "wordpress": ">=5.0",
+    "php": ">=7.4"
+  },
+  "features": [
+    "React-based interactive form",
+    "Price calculator",
+    "Email notifications",
+    "Responsive design",
+    "3D animations",
+    "Database storage"
+  ],
+  "files": [
+    "cleaning-service-form.php",
+    "readme.txt",
+    "README.md",
+    "index.php",
+    "package-info.json",
+    "assets/",
+    "includes/",
+    "templates/"
+  ]
+}
