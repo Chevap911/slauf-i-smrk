@@ -159,7 +159,7 @@ export default function PranjeOkucnicePage() {
                 },
                 {
                     question: 'Trebam li osigurati vodu za čišćenje?',
-                    answer: 'Ne, dolazimo s vlastitim spremnikom vode. Jedino trebamo pristup električnoj utičnici za napajanje opreme.',
+                    answer: 'Da, klijent treba osigurati priključak za vodu jer ne dolazimo s vlastitim spremnikom.',
                 },
                 {
                     question: 'Čistite li i stepenice i rubnjake?',
