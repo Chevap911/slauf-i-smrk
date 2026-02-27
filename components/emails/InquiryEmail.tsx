@@ -93,7 +93,7 @@ export const ClientInquiryEmail = ({
                     <Section style={footer}>
                         <Text style={footerText}>
                             <strong>Šlauf i Šmrk</strong> - Profesionalno visokotlačno čišćenje i detailing<br />
-                            Zagreb i okolica | info@slaufismrk.com
+                            Zagreb i okolica | <a href="mailto:slauf.i.smrk@gmail.com" style={{ color: '#0C2B4B', textDecoration: 'none' }}>slauf.i.smrk@gmail.com</a>
                         </Text>
                     </Section>
                 </Container>

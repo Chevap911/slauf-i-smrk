@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { supabase } from '@/utils/supabase/client';
 import { Resend } from 'resend';
-import { ClientInquiryEmail, AdminNotificationEmail } from '@/components/emails/InquiryEmail';
+import { AdminNotificationEmail } from '@/components/emails/InquiryEmail';
 
 const resend = new Resend(process.env.RESEND_API_KEY!);
 
@@ -50,8 +50,8 @@ export async function POST(req: Request) {
         try {
             // First, send notification to admin
             await resend.emails.send({
-                from: 'Šlauf i Šmrk <info@slaufismrk.com>', // MUST BE verified domain in Resend
-                to: 'info@slaufismrk.com', // Where you want to receive new lead notifications
+                from: 'Šlauf i Šmrk <onboarding@resend.dev>', // MUST BE verified domain in Resend
+                to: 'slauf.i.smrk@gmail.com', // Where you want to receive new lead notifications
                 subject: `NOVI UPIT: ${formData.name} - ${serviceNameReadable}`,
                 react: AdminNotificationEmail({
                     name: formData.name,
@@ -67,8 +67,12 @@ export async function POST(req: Request) {
             });
 
             // Second, send confirmation to client
+            // NOTE: Resend test keys (onboarding@resend.dev) CANNOT send to arbitrary emails (like the client's email)
+            // unless you have a verified custom domain. If you do verify a domain later, change the `from` below 
+            // to something like info@slaufismrk.com, and uncomment this block.
+            /*
             await resend.emails.send({
-                from: 'Šlauf i Šmrk <info@slaufismrk.com>',
+                from: 'Šlauf i Šmrk <onboarding@resend.dev>',
                 to: formData.email,
                 subject: `Vaš upit je zaprimljen - Šlauf i Šmrk`,
                 react: ClientInquiryEmail({
@@ -81,6 +85,7 @@ export async function POST(req: Request) {
                     message: formData.message
                 }) as React.ReactElement,
             });
+            */
             console.log("Emails sent successfully via Resend");
         } catch (emailError) {
             // We catch email errors so we don't return 500 to the client if only emails fail
