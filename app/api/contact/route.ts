@@ -13,7 +13,7 @@ export async function POST(req: Request) {
         const { formData, estimatedPrice } = body;
 
         // 1. Save to Supabase CRM
-        const { data: dbData, error: dbError } = await supabase
+        const { error: dbError } = await supabase
             .from('inquiries')
             .insert([
                 {
@@ -27,9 +27,7 @@ export async function POST(req: Request) {
                     estimated_price_min: estimatedPrice.min,
                     estimated_price_max: estimatedPrice.max,
                 }
-            ])
-            .select()
-            .single();
+            ]);
 
         if (dbError) {
             console.error('Database Error:', dbError);
@@ -93,7 +91,7 @@ export async function POST(req: Request) {
             console.error('Failed to send emails via Resend:', emailError);
         }
 
-        return NextResponse.json({ success: true, inquiryId: dbData.id });
+        return NextResponse.json({ success: true });
     } catch (error) {
         console.error('Server error handling contact submission:', error);
         return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
