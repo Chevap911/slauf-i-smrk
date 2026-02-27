@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
+import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-body", display: 'swap' });
+const outfit = Outfit({ subsets: ["latin"], variable: "--font-heading", display: 'swap' });
 import Navigation from "@/components/Navigation/Navigation";
 import Footer from "@/components/Footer/Footer";
 import StickyCtaBanner from "@/components/StickyCtaBanner/StickyCtaBanner";
@@ -36,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="hr">
+    <html lang="hr" className={`${inter.variable} ${outfit.variable}`}>
       <head>
         <script
           type="application/ld+json"

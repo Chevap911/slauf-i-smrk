@@ -47,6 +47,8 @@ export default function Hero() {
                                 height={800}
                                 className={styles.mascotImg}
                                 priority
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                fetchPriority="high"
                             />
                             <div className={styles.floatingTag}>
                                 <span>15% POPUSTA NA PRVO ČIŠĆENJE</span>
