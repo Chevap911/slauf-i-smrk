@@ -1,15 +1,12 @@
 import {
     Body,
     Container,
-    Column,
     Head,
     Heading,
     Hr,
     Html,
-    Img,
     Link,
     Preview,
-    Row,
     Section,
     Text,
 } from '@react-email/components';
@@ -22,7 +19,8 @@ const brandColors = {
     blueLight: '#1A3644',
     white: '#FFFFFF',
     grayText: '#666666',
-    grayBg: '#F8F9FA'
+    grayBg: '#F8F9FA',
+    border: '#EAEAEA'
 };
 
 interface InquiryEmailProps {
@@ -78,7 +76,7 @@ export const ClientInquiryEmail = ({
                         {message && (
                             <Section style={messageBox}>
                                 <Text style={messageBoxTitle}>Vaša dodatna napomena:</Text>
-                                <Text style={messageText}>"{message}"</Text>
+                                <Text style={messageText}>&quot;{message}&quot;</Text>
                             </Section>
                         )}
 
@@ -105,7 +103,7 @@ export const ClientInquiryEmail = ({
 // Internal notification email template
 export const AdminNotificationEmail = ({
     name, email, phone, city, serviceName, estimatedPriceMin, estimatedPriceMax, message, details
-}: InquiryEmailProps & { city?: string, details?: any }) => {
+}: InquiryEmailProps & { city?: string, details?: Record<string, unknown> }) => {
     return (
         <Html>
             <Head />
