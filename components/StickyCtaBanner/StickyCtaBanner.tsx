@@ -1,36 +1,33 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
 import { Phone, X } from 'lucide-react';
 import styles from './StickyCtaBanner.module.css';
 
 export default function StickyCtaBanner() {
     const [visible, setVisible] = useState(false);
     const [dismissed, setDismissed] = useState(false);
+    const { scrollY } = useScroll();
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const scrollY = window.scrollY;
-            const contactSection = document.getElementById('kontakt');
+    useMotionValueEvent(scrollY, "change", (latest) => {
+        if (dismissed) return;
 
-            // Show after scrolling 600px
-            if (scrollY > 600 && !dismissed) {
-                // But hide when contact section is visible
-                if (contactSection) {
-                    const rect = contactSection.getBoundingClientRect();
-                    setVisible(rect.top > window.innerHeight);
-                } else {
-                    setVisible(true);
-                }
+        const contactSection = document.getElementById('kontakt');
+
+        // Show after scrolling 600px
+        if (latest > 600) {
+            // But hide when contact section is visible
+            if (contactSection) {
+                const rect = contactSection.getBoundingClientRect();
+                setVisible(rect.top > window.innerHeight);
             } else {
-                setVisible(false);
+                setVisible(true);
             }
-        };
-
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, [dismissed]);
+        } else {
+            setVisible(false);
+        }
+    });
 
     const handleDismiss = () => {
         setDismissed(true);

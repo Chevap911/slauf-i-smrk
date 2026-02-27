@@ -19,7 +19,7 @@
 }
 
 .title {
-    font-size: clamp(3rem, 7vw, 5rem);
+    font-size: clamp(2.2rem, 6vw, 5rem);
     margin-bottom: 2rem;
     color: var(--secondary);
     line-height: 1.1;
@@ -108,6 +108,7 @@
     .actions {
         flex-direction: column;
         width: 100%;
+        gap: 1rem;
     }
 
     .floatingTag {
