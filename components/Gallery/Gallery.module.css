@@ -22,67 +22,16 @@
     opacity: 0.8;
 }
 
-.grid {
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
-}
-
-.comparisonWrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+.sliderGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
 }
 
 .label {
     font-family: var(--font-heading);
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--secondary);
-}
-
-.comparisonGrid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-}
-
-.imageBox {
-    position: relative;
-    border-radius: 1rem;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    background: #000;
-}
-
-.img {
-    display: block;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    aspect-ratio: 3/2;
-}
-
-.badge,
-.badgeSolid {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    padding: 0.25rem 0.75rem;
-    border-radius: 0.5rem;
-    font-size: 0.75rem;
-    font-weight: 800;
-    z-index: 10;
-}
-
-.badge {
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
-    backdrop-filter: blur(4px);
-}
-
-.badgeSolid {
-    background: var(--primary);
     color: var(--secondary);
 }
 
@@ -117,7 +66,7 @@
 }
 
 @media (max-width: 768px) {
-    .comparisonGrid {
+    .sliderGrid {
         grid-template-columns: 1fr;
     }
 

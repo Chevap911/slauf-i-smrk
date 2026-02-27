@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import BeforeAfterSlider from '@/components/BeforeAfterSlider/BeforeAfterSlider';
 import styles from './Gallery.module.css';
 
 const comparisons = [
@@ -33,36 +34,24 @@ export default function Gallery() {
     return (
         <section id="galerija" className={styles.section}>
             <div className="container">
-                <div className={styles.header}>
+                <motion.div
+                    className={styles.header}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                >
                     <h2 className={styles.title}>Rezultati koji govore sami za sebe</h2>
-                    <p className={styles.subtitle}>Pogledajte transformacije koje smo ostvarili za naše klijente.</p>
-                </div>
+                    <p className={styles.subtitle}>Povucite klizač lijevo-desno i pogledajte transformacije!</p>
+                </motion.div>
 
-                <div className={styles.grid}>
+                <div className={styles.sliderGrid}>
                     {comparisons.map((item, index) => (
-                        <div key={index} className={styles.comparisonWrapper}>
-                            <h3 className={styles.label}>{item.label}</h3>
-                            <div className={styles.comparisonGrid}>
-                                <motion.div
-                                    className={styles.imageBox}
-                                    initial={{ opacity: 0, x: -20 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                >
-                                    <span className={styles.badge}>PRIJE</span>
-                                    <Image src={item.before} alt="Prije čišćenja" width={600} height={400} className={styles.img} />
-                                </motion.div>
-                                <motion.div
-                                    className={styles.imageBox}
-                                    initial={{ opacity: 0, x: 20 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                >
-                                    <span className={styles.badgeSolid}>POSLIJE</span>
-                                    <Image src={item.after} alt="Poslije čišćenja" width={600} height={400} className={styles.img} />
-                                </motion.div>
-                            </div>
-                        </div>
+                        <BeforeAfterSlider
+                            key={index}
+                            beforeSrc={item.before}
+                            afterSrc={item.after}
+                            label={item.label}
+                        />
                     ))}
                 </div>
 
@@ -75,7 +64,7 @@ export default function Gallery() {
                                 className={styles.projectImageWrapper}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ delay: index * 0.1 }}
+                                transition={{ delay: index * 0.08 }}
                                 viewport={{ once: true }}
                             >
                                 <Image

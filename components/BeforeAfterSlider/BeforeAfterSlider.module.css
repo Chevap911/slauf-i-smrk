@@ -1,0 +1,101 @@
+.wrapper {
+    margin-bottom: 2rem;
+}
+
+.label {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--secondary);
+    margin-bottom: 0.75rem;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    border-radius: 1rem;
+    overflow: hidden;
+    cursor: ew-resize;
+    user-select: none;
+    touch-action: pan-y;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.imageWrapper {
+    position: absolute;
+    inset: 0;
+}
+
+.beforeWrapper {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    transition: clip-path 0.05s ease-out;
+}
+
+.image {
+    object-fit: cover;
+}
+
+.badge {
+    position: absolute;
+    top: 1rem;
+    z-index: 5;
+    background: var(--secondary);
+    color: var(--primary);
+    padding: 0.35rem 0.75rem;
+    border-radius: 0.5rem;
+    font-weight: 800;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+}
+
+.beforeWrapper .badge {
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+}
+
+.sliderLine {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: white;
+    z-index: 10;
+    transform: translateX(-50%);
+    cursor: ew-resize;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.handle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 44px;
+    height: 44px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+    color: var(--secondary);
+    border: 2px solid var(--secondary);
+    transition: transform 0.2s;
+}
+
+.handle:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .container {
+        aspect-ratio: 4 / 3;
+    }
+
+    .handle {
+        width: 36px;
+        height: 36px;
+    }
+}

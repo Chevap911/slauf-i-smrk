@@ -1,0 +1,189 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+.container {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.sparkleHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+}
+
+.scratchArea {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 2 / 1;
+    border-radius: 1rem;
+    overflow: hidden;
+    cursor: grab;
+    touch-action: none;
+    border: 2px dashed rgba(255, 215, 0, 0.3);
+}
+
+.scratchArea:active {
+    cursor: grabbing;
+}
+
+.revealLayer {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    color: var(--secondary);
+}
+
+.code {
+    font-size: 2.5rem;
+    font-weight: 900;
+    font-family: var(--font-heading);
+    letter-spacing: 0.15em;
+    color: var(--secondary);
+}
+
+.discount {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #16a34a;
+}
+
+.canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.progress {
+    margin-top: 1rem;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progressBar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), #f59e0b);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.instructions {
+    margin-top: 1rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Popup overlay */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 1rem;
+}
+
+.popup {
+    background: white;
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+}
+
+.popup h3 {
+    font-size: 1.75rem;
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
+}
+
+.popup p {
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    padding: 0.25rem;
+}
+
+.closeBtn:hover {
+    color: #333;
+}
+
+.popupEmoji {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.popupCode {
+    display: inline-block;
+    background: var(--secondary);
+    color: var(--primary);
+    padding: 0.75rem 2rem;
+    border-radius: 0.75rem;
+    font-size: 2rem;
+    font-weight: 900;
+    font-family: var(--font-heading);
+    letter-spacing: 0.1em;
+    margin: 1rem 0;
+}
+
+.popupInfo {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1.5rem !important;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1.5rem;
+    }
+
+    .code {
+        font-size: 2rem;
+    }
+
+    .popupCode {
+        font-size: 1.5rem;
+        padding: 0.5rem 1.5rem;
+    }
+}

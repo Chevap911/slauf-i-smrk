@@ -1,0 +1,93 @@
+.banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 900;
+    background: rgba(10, 25, 47, 0.95);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(255, 215, 0, 0.3);
+    padding: 0.75rem 1rem;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.text {
+    color: white;
+    font-weight: 600;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+.phoneBtn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary);
+    font-weight: 800;
+    font-size: 1.1rem;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.phoneBtn:hover {
+    color: #f59e0b;
+}
+
+.ctaBtn {
+    background: var(--primary);
+    color: var(--secondary);
+    padding: 0.5rem 1.25rem;
+    border-radius: 0.5rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.ctaBtn:hover {
+    transform: scale(1.05);
+    background: #f59e0b;
+}
+
+.closeBtn {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    padding: 0.25rem;
+    flex-shrink: 0;
+}
+
+.closeBtn:hover {
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .inner {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .text {
+        display: none;
+    }
+
+    .phoneBtn {
+        font-size: 1rem;
+    }
+
+    .ctaBtn {
+        flex: 1;
+        text-align: center;
+    }
+}

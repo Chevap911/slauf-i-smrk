@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navigation from "@/components/Navigation/Navigation";
 import Footer from "@/components/Footer/Footer";
+import StickyCtaBanner from "@/components/StickyCtaBanner/StickyCtaBanner";
 
 export const metadata: Metadata = {
   title: "Šlauf i Šmrk | Profesionalno Visokotlačno Čišćenje Zagreb",
@@ -46,6 +47,7 @@ export default function RootLayout({
         <Navigation />
         <main>{children}</main>
         <Footer />
+        <StickyCtaBanner />
       </body>
     </html>
   );
