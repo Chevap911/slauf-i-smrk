@@ -44,19 +44,20 @@ export default function Navigation() {
                     </div>
 
                     <div className={styles.cta}>
-                        <a href="tel:+385916400247" className="btn btn-primary">
+                        <a href="tel:+385958442806" className="btn btn-primary">
                             <Phone size={18} style={{ marginRight: '8px' }} />
                             Nazovite nas
                         </a>
                     </div>
 
-                    <button
-                        className={styles.mobileToggle}
-                        onClick={toggleMenu}
-                        aria-label="Toggle menu"
-                    >
-                        {isMobileOpen ? <X size={28} /> : <Menu size={28} />}
-                    </button>
+                    <div className={styles.mobileActions}>
+                        <a href="tel:+385958442806" className={styles.mobilePhoneBtn} aria-label="Nazovite nas">
+                            <Phone size={20} />
+                        </a>
+                        <button className={styles.mobileMenuBtn} onClick={toggleMenu} aria-label="Toggle menu">
+                            {isMobileOpen ? <X size={28} /> : <Menu size={28} />}
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -81,7 +82,7 @@ export default function Navigation() {
                         <Link href="/blog" className={styles.mobileLink} onClick={closeMenu}>Blog</Link>
                         <Link href="/#kontakt" className={styles.mobileLink} onClick={closeMenu}>Kontakt</Link>
 
-                        <a href="tel:+385916400247" className={`btn btn-primary ${styles.mobileCtaBtn}`}>
+                        <a href="tel:+385958442806" className={`btn btn-primary ${styles.mobileCtaBtn}`}>
                             <Phone size={18} style={{ marginRight: '8px' }} />
                             Nazovite nas
                         </a>

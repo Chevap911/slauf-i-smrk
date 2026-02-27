@@ -141,11 +141,11 @@ export default function Contact() {
                         </p>
 
                         <div className={styles.contactDetails}>
-                            <a href="tel:+385916400247" className={styles.detailItem}>
+                            <a href="tel:+385958442806" className={styles.detailItem}>
                                 <div className={styles.iconCircle}><Phone size={24} /></div>
                                 <div>
                                     <span className={styles.label}>Nazovite nas za hitne slučajeve</span>
-                                    <span className={styles.value}>+385 91 6400 247</span>
+                                    <span className={styles.value}>+385 95 844 2806</span>
                                 </div>
                             </a>
 

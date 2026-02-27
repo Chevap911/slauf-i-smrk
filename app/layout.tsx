@@ -16,7 +16,7 @@ const localBusinessSchema = {
   name: "Šlauf i Šmrk",
   description: "Profesionalno visokotlačno čišćenje fasada, okućnica, kamenih i drvenih površina, detailing automobila te kemijsko čišćenje tepiha i garnitura u Zagrebu i okolici.",
   url: "https://slaufismrk.com",
-  telephone: "+385916400247",
+  telephone: "+385958442806",
   email: "info@slaufismrk.com",
   areaServed: {
     "@type": "City",

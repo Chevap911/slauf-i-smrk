@@ -136,6 +136,14 @@ img {
 }
 
 @media (max-width: 768px) {
+  :root {
+    --section-padding: 3rem 0;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
   .btn {
     padding: 0.8rem 1.5rem;
     font-size: 0.8rem;

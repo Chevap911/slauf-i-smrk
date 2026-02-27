@@ -81,8 +81,8 @@ export default function ZagrebPage() {
                         <h2>Trebate čišćenje u Zagrebu?</h2>
                         <p>Nazovite nas ili ispunite kontakt formu za besplatnu procjenu. Odgovaramo u roku od sat vremena.</p>
                         <div className={styles.ctaButtons}>
-                            <a href="tel:+385916400247" className={styles.ctaBtn}>
-                                <Phone size={18} /> +385 91 6400 247
+                            <a href="tel:+385958442806" className={styles.ctaBtn}>
+                                <Phone size={18} /> +385 95 844 2806
                             </a>
                             <Link href="/#kontakt" className={styles.ctaBtnSecondary}>
                                 Ispunite formu <ArrowRight size={16} />

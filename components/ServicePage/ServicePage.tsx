@@ -126,8 +126,8 @@ export default function ServicePage({
                                     <Phone size={18} />
                                     Zatražite besplatnu procjenu
                                 </Link>
-                                <a href="tel:+385916400247" className={styles.heroCtaSecondary}>
-                                    +385 91 6400 247
+                                <a href="tel:+385958442806" className={styles.heroCtaSecondary}>
+                                    +385 95 844 2806
                                 </a>
                             </div>
                         </div>
@@ -268,9 +268,9 @@ export default function ServicePage({
                     <div className={styles.boldCtaInner}>
                         <h2>Trebate pomoć?</h2>
                         <p>Nazovite nas za besplatnu procjenu — odgovaramo u roku od sat vremena</p>
-                        <a href="tel:+385916400247" className={styles.boldCtaPhone}>
-                            <Phone size={22} />
-                            (091) 6400-247
+                        <a href="tel:+385958442806" className={styles.boldCtaPhone}>
+                            <Phone size={24} />
+                            (095) 844-2806
                         </a>
                     </div>
                 </div>

@@ -40,8 +40,8 @@ export default function Footer() {
                         <h4 className={styles.sectionTitle}>Kontakt</h4>
                         <ul className={styles.list}>
                             <li className={styles.contactItem}>
-                                <Phone size={16} />
-                                <a href="tel:+385916400247">+385 91 6400 247</a>
+                                <Phone size={18} className={styles.icon} />
+                                <a href="tel:+385958442806">+385 95 844 2806</a>
                             </li>
                             <li className={styles.contactItem}>
                                 <Mail size={16} />

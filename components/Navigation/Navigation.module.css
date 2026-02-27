@@ -111,6 +111,10 @@
     display: none;
 }
 
+.mobileActions {
+    display: none;
+}
+
 @media (max-width: 768px) {
 
     .links,
@@ -120,6 +124,41 @@
 
     .mobileToggle {
         display: block;
+    }
+
+    .mobileActions {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .mobileMenuBtn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--secondary);
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.25rem;
+    }
+
+    .mobilePhoneBtn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background-color: var(--primary);
+        color: var(--secondary);
+        box-shadow: 0 4px 10px var(--primary-glow);
+        animation: ring 2.5s infinite;
+        transition: transform 0.2s;
+    }
+
+    .mobilePhoneBtn:active {
+        transform: scale(0.9);
     }
 
     .mobileOverlay {

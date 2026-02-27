@@ -48,9 +48,9 @@ export default function StickyCtaBanner() {
                         <span className={styles.text}>
                             Trebate čišćenje? Nazovite nas!
                         </span>
-                        <a href="tel:+385916400247" className={styles.phoneBtn}>
+                        <a href="tel:+385958442806" className={styles.phoneBtn}>
                             <Phone size={18} />
-                            <span>(091) 6400-247</span>
+                            <span>(095) 844-2806</span>
                         </a>
                         <a href="#kontakt" className={styles.ctaBtn}>
                             Besplatna procjena

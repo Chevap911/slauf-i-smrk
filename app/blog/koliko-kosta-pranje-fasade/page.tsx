@@ -106,8 +106,8 @@ export default function BlogArticle() {
                             <h3>Zatražite besplatnu procjenu</h3>
                             <p>Javite nam se i dobit ćete točnu cijenu za vašu fasadu — bez obaveze.</p>
                             <div className={styles.ctaButtons}>
-                                <a href="tel:+385916400247" className={styles.ctaBtn}>
-                                    <Phone size={18} /> +385 91 6400 247
+                                <a href="tel:+385958442806" className={styles.ctaBtn}>
+                                    <Phone size={18} /> +385 95 844 2806
                                 </a>
                                 <Link href="/#kontakt" className={styles.ctaBtnSecondary}>
                                     Ispunite formu <ArrowRight size={16} />
