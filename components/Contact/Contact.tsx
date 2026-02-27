@@ -26,6 +26,7 @@ export default function Contact() {
     const [step, setStep] = useState(1);
     const [progress, setProgress] = useState(25);
     const [showConfetti, setShowConfetti] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     // Form data state
     const [formData, setFormData] = useState({
@@ -109,15 +110,33 @@ export default function Contact() {
         setProgress(Math.max(25, (newStep / 4) * 100));
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        // Here you would connect to standard external API or Sendgrid
-        console.log('Sending data:', formData, 'Estimated Price:', estimatedPrice);
+        setIsSubmitting(true);
 
-        setStep(4);
-        setProgress(100);
-        setShowConfetti(true);
-        setTimeout(() => setShowConfetti(false), 8000);
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ formData, estimatedPrice }),
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to submit form');
+            }
+
+            setStep(4);
+            setProgress(100);
+            setShowConfetti(true);
+            setTimeout(() => setShowConfetti(false), 8000);
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            alert('Došlo je do greške prilikom slanja upita. Molimo pokušajte ponovno ili nas nazovite.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -448,8 +467,8 @@ export default function Contact() {
                                             <button className={`${styles.btn} ${styles.btnSecondary}`} onClick={handleBack}>
                                                 <ArrowLeft size={20} /> Promijeni uslugu
                                             </button>
-                                            <button className={`${styles.btn} ${styles.btnPrimary}`} onClick={handleSubmit}>
-                                                <Sparkles size={20} /> Zatraži pravu ponudu
+                                            <button className={`${styles.btn} ${styles.btnPrimary}`} onClick={handleSubmit} disabled={isSubmitting}>
+                                                {isSubmitting ? 'Slanje...' : <><Sparkles size={20} /> Zatraži pravu ponudu</>}
                                             </button>
                                         </div>
                                     </motion.div>
