@@ -56,6 +56,7 @@ export async function POST(req: Request) {
                     email: formData.email,
                     phone: formData.phone,
                     city: formData.city,
+                    address: formData.address,
                     serviceName: serviceNameReadable,
                     estimatedPriceMin: estimatedPrice.min,
                     estimatedPriceMax: estimatedPrice.max,
@@ -73,10 +74,13 @@ export async function POST(req: Request) {
                     name: formData.name,
                     email: formData.email,
                     phone: formData.phone,
+                    city: formData.city,
+                    address: formData.address,
                     serviceName: serviceNameReadable,
                     estimatedPriceMin: estimatedPrice.min,
                     estimatedPriceMax: estimatedPrice.max,
-                    message: formData.message
+                    message: formData.message,
+                    details: formData
                 }) as React.ReactElement,
             });
             console.log("Emails sent successfully via Resend");

@@ -33,6 +33,7 @@ export default function Contact() {
         name: '',
         email: '',
         phone: '',
+        address: '',
         city: '',
         service: 'yard',
 
@@ -94,8 +95,8 @@ export default function Contact() {
 
     const handleNext = () => {
         // Simple validation
-        if (step === 1 && (!formData.name || !formData.email || !formData.phone)) {
-            alert('Molimo ispunite sva obavezna polja (Ime, Email, Telefon).');
+        if (step === 1 && (!formData.name || !formData.email || !formData.phone || !formData.city)) {
+            alert('Molimo ispunite sva obavezna polja (Ime, Email, Telefon, Mjesto/Grad).');
             return;
         }
 
@@ -237,13 +238,23 @@ export default function Contact() {
                                                 />
                                             </div>
                                             <div className={styles.inputGroup}>
-                                                <label>Mesto / Grad</label>
+                                                <label>Mesto / Grad *</label>
                                                 <input
                                                     type="text"
                                                     className={styles.inputField}
                                                     placeholder="Npr. Zagreb, Karlovac..."
                                                     value={formData.city}
                                                     onChange={e => updateForm('city', e.target.value)}
+                                                />
+                                            </div>
+                                            <div className={styles.inputGroup}>
+                                                <label>Adresa (Ulica i kućni broj)</label>
+                                                <input
+                                                    type="text"
+                                                    className={styles.inputField}
+                                                    placeholder="Npr. Ilica 10"
+                                                    value={formData.address}
+                                                    onChange={e => updateForm('address', e.target.value)}
                                                 />
                                             </div>
                                         </div>

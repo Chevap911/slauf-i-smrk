@@ -27,20 +27,79 @@ interface InquiryEmailProps {
     name: string;
     email: string;
     phone: string;
+    city?: string;
+    address?: string;
     serviceName: string;
     estimatedPriceMin: number;
     estimatedPriceMax: number;
     message?: string;
+    details?: Record<string, string | number>;
 }
+
+const formatDetails = (details?: Record<string, string | number>) => {
+    if (!details) return null;
+
+    const lines = [];
+
+    // YARD
+    if (details.service === 'yard') {
+        lines.push({ label: 'Površina okućnice', value: `${details.yardSize} m²` });
+        let condition = 'Prosječno (srednje)';
+        if (details.yardCondition === 'maintained') condition = 'Redovno održavano';
+        if (details.yardCondition === 'neglected') condition = 'Zapušteno';
+        lines.push({ label: 'Stanje', value: condition });
+    }
+
+    // CARPET
+    if (details.service === 'carpet') {
+        const type = details.carpetType === 'rug' ? 'Klasični tepih' : 'Kutna garnitura / kauč';
+        lines.push({ label: 'Tip', value: type });
+        lines.push({ label: details.carpetType === 'sofa' ? 'Broj sjedećih mjesta' : 'Površina (m²)', value: details.carpetSize });
+    }
+
+    // FACADE
+    if (details.service === 'facade') {
+        lines.push({ label: 'Površina fasade', value: `${details.facadeSize} m²` });
+        const floors = details.facadeFloors === '1' ? 'Prizemlje (do 3m)' : 'Prizemlje + kat (do 5m)';
+        lines.push({ label: 'Visina', value: floors });
+    }
+
+    // POOL
+    if (details.service === 'pool') {
+        const sizeMap: Record<string, string> = { small: 'Mali (do 15m²)', medium: 'Srednji (15 - 30m²)', large: 'Veliki (iznad 30m²)' };
+        lines.push({ label: 'Veličina bazena', value: sizeMap[details.poolSize] || details.poolSize });
+    }
+
+    // CAR
+    if (details.service === 'car') {
+        const pkgMap: Record<string, string> = { exterior: 'Samo vanjsko pranje', interior: 'Unutarnje kemijsko', complete: 'Kompletno izvana i unutra' };
+        lines.push({ label: 'Paket pranja', value: pkgMap[details.carPackage] || details.carPackage });
+    }
+
+    if (lines.length === 0) return null;
+
+    return (
+        <ul style={{ paddingLeft: '20px', margin: '14px 0', color: '#444' }}>
+            {lines.map((line, i) => (
+                <li key={i} style={{ marginBottom: '6px', fontSize: '14px' }}>
+                    <strong>{line.label}:</strong> {line.value}
+                </li>
+            ))}
+        </ul>
+    );
+};
 
 export const ClientInquiryEmail = ({
     name = "Klijent",
     email = "test@example.com",
     phone = "09x xxx xxxx",
+    city = "",
+    address = "",
     serviceName = "Čišćenje",
     estimatedPriceMin = 50,
     estimatedPriceMax = 100,
-    message = ""
+    message = "",
+    details = {}
 }: InquiryEmailProps) => {
     return (
         <Html>
@@ -71,6 +130,13 @@ export const ClientInquiryEmail = ({
                             <Text style={priceDisclaimer}>
                                 *Ovo je okvirna informativna cijena izračunata na temelju unesenih parametara. Konačna cijena može varirati nakon uvida u stanje uživo.
                             </Text>
+
+                            <Hr style={{ borderColor: '#eaeaea', margin: '20px 0' }} />
+                            <Text style={{ ...priceBoxTitle, textAlign: 'left', marginBottom: '8px' }}>Vaše odabrane specifikacije:</Text>
+                            <div style={{ textAlign: 'left' }}>
+                                {formatDetails(details)}
+                                {city && <Text style={{ fontSize: '14px', margin: '4px 0', color: '#444' }}><strong>Lokacija:</strong> {city}{address ? `, ${address}` : ''}</Text>}
+                            </div>
                         </Section>
 
                         {message && (
@@ -102,8 +168,8 @@ export const ClientInquiryEmail = ({
 
 // Internal notification email template
 export const AdminNotificationEmail = ({
-    name, email, phone, city, serviceName, estimatedPriceMin, estimatedPriceMax, message, details
-}: InquiryEmailProps & { city?: string, details?: Record<string, unknown> }) => {
+    name, email, phone, city, address, serviceName, estimatedPriceMin, estimatedPriceMax, message, details
+}: InquiryEmailProps) => {
     return (
         <Html>
             <Head />
@@ -118,14 +184,17 @@ export const AdminNotificationEmail = ({
                         <Text style={paragraph}><strong>Ime:</strong> {name}</Text>
                         <Text style={paragraph}><strong>Telefon:</strong> <Link href={`tel:${phone}`}>{phone}</Link></Text>
                         <Text style={paragraph}><strong>Email:</strong> <Link href={`mailto:${email}`}>{email}</Link></Text>
-                        <Text style={paragraph}><strong>Lokacija:</strong> {city || 'Nije navedeno'}</Text>
+                        <Text style={paragraph}><strong>Lokacija:</strong> {city || 'Nije navedeno'} {address && `(${address})`}</Text>
 
                         <Section style={priceBox}>
                             <Text style={paragraph}><strong>Tražena usluga:</strong> {serviceName}</Text>
                             <Text style={paragraph}><strong>Procjena sustava:</strong> {estimatedPriceMin} - {estimatedPriceMax} €</Text>
-                            <Text style={{ ...paragraph, fontSize: '12px', color: brandColors.grayText }}>
-                                Tehnički detalji: {JSON.stringify(details)}
-                            </Text>
+
+                            <Hr style={{ borderColor: '#eaeaea', margin: '20px 0' }} />
+                            <Text style={{ fontSize: '12px', fontWeight: 'bold', textTransform: 'uppercase', color: brandColors.grayText, textAlign: 'left', marginBottom: '8px' }}>Tehnički detalji i narudžba:</Text>
+                            <div style={{ textAlign: 'left' }}>
+                                {formatDetails(details)}
+                            </div>
                         </Section>
 
                         {message && (
