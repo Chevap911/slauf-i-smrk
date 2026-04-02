@@ -169,11 +169,11 @@ export default function Contact() {
                                 </div>
                             </a>
 
-                            <a href="mailto:info@slaufismrk.com" className={styles.detailItem}>
+                            <a href="mailto:slauf.i.smrk@gmail.com" className={styles.detailItem}>
                                 <div className={styles.iconCircle}><Mail size={24} /></div>
                                 <div>
                                     <span className={styles.label}>Trebate specifičnu uslugu?</span>
-                                    <span className={styles.value}>info@slaufismrk.com</span>
+                                    <span className={styles.value}>slauf.i.smrk@gmail.com</span>
                                 </div>
                             </a>
                         </div>

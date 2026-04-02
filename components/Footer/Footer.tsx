@@ -45,7 +45,7 @@ export default function Footer() {
                             </li>
                             <li className={styles.contactItem}>
                                 <Mail size={16} />
-                                <a href="mailto:info@slaufismrk.com">info@slaufismrk.com</a>
+                                <a href="mailto:slauf.i.smrk@gmail.com">slauf.i.smrk@gmail.com</a>
                             </li>
                             <li className={styles.contactItem}>
                                 <MapPin size={16} />

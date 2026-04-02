@@ -9,9 +9,13 @@ import Footer from "@/components/Footer/Footer";
 import StickyCtaBanner from "@/components/StickyCtaBanner/StickyCtaBanner";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://slaufismrk.com"),
   title: "Šlauf i Šmrk | Profesionalno Visokotlačno Čišćenje Zagreb",
   description: "Vrhunsko visokotlačno čišćenje fasada, okućnica, prilaza i detailing automobila u Zagrebu i okolici. Brzo, sigurno i efikasno.",
   keywords: ["visokotlačno čišćenje", "pranje fasada", "pranje okućnica", "kemijsko čišćenje tepiha", "detailing automobila", "čišćenje fasade Zagreb", "pranje dvorišta Zagreb"],
+  alternates: {
+    canonical: "/",
+  },
 };
 
 const localBusinessSchema = {
@@ -21,7 +25,7 @@ const localBusinessSchema = {
   description: "Profesionalno visokotlačno čišćenje fasada, okućnica, kamenih i drvenih površina, detailing automobila te kemijsko čišćenje tepiha i garnitura u Zagrebu i okolici.",
   url: "https://slaufismrk.com",
   telephone: "+385958442806",
-  email: "info@slaufismrk.com",
+  email: "slauf.i.smrk@gmail.com",
   areaServed: {
     "@type": "City",
     name: "Zagreb",
