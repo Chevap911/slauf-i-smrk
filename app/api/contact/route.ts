@@ -31,7 +31,8 @@ export async function POST(req: Request) {
 
         if (dbError) {
             console.error('Database Error:', dbError);
-            return NextResponse.json({ error: 'Failed to save inquiry to database' }, { status: 500 });
+            // We log the error but don't return 500 here so we can still try to send emails.
+            // Failing to save to CRM shouldn't block the email notification to the owner.
         }
 
         const serviceNames: Record<string, string> = {
