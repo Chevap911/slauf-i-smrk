@@ -2,38 +2,45 @@
 
 import { motion } from 'framer-motion';
 import { ShieldCheck, Home, Car, TreeDeciduous, HeartHandshake } from 'lucide-react';
+import Link from 'next/link';
 import styles from './Services.module.css';
 
 const services = [
     {
         title: "Pranje Fasada",
         description: "Uklanjamo alge, gljivice i mahovinu koji narušavaju izgled i oštećuju vašu fasadu. Vraćamo originalnu boju i sjaj te produljujemo životni vijek vašeg doma.",
-        icon: <ShieldCheck size={32} />
+        icon: <ShieldCheck size={32} />,
+        href: "/usluge/pranje-fasade"
     },
     {
         title: "Pranje Okućnica i Prilaza",
         description: "Visokotlačno čišćenje betonskih kocki, kamenih ploča i asfalta. Vraćamo prvobitnu ljepotu vašem vanjskom prostoru i uklanjamo nakupljenu prljavštinu i korov.",
-        icon: <Home size={32} />
+        icon: <Home size={32} />,
+        href: "/usluge/pranje-okucnice"
     },
     {
         title: "Čišćenje Kamenih Površina",
         description: "Profesionalno čišćenje kamenih klupica, kipova, stolova i drugih kamenih površina. Vraćamo im prvobitni sjaj i činimo ih ponosom vašeg vrta.",
-        icon: <TreeDeciduous size={32} />
+        icon: <TreeDeciduous size={32} />,
+        href: "/usluge/ciscenje-kamenih-povrsina"
     },
     {
         title: "Detailing Auta",
         description: "Kompletna njega vozila: od dubinskog pranja interijera i kemijskog čišćenja do poliranja i zaštite laka. Vaš automobil će izgledati kao nov.",
-        icon: <Car size={32} />
+        icon: <Car size={32} />,
+        href: "/usluge/detailing-automobila"
     },
     {
         title: "Održavanje Grobnih Mjesta",
         description: "Specijalizirana usluga čišćenja nadgrobnih ploča, uklanjanje mahovine i algi te impregnacija koja štiti površinu od budućih onečišćenja.",
-        icon: <HeartHandshake size={32} />
+        icon: <HeartHandshake size={32} />,
+        href: "/usluge/odrzavanje-grobnih-mjesta"
     },
     {
         title: "Čišćenje Drvenih Površina",
         description: "Oživljavamo vaše drvene terase, ograde i namještaj uklanjajući sivilo i pripremajući ih za novu zaštitu od vremenskih uvjeta.",
-        icon: <ShieldCheck size={32} />
+        icon: <ShieldCheck size={32} />,
+        href: "/usluge/ciscenje-drvenih-povrsina"
     }
 ];
 
@@ -50,19 +57,20 @@ export default function Services() {
 
                 <div className={styles.grid}>
                     {services.map((service, index) => (
-                        <motion.div
-                            key={index}
-                            className={styles.card}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            whileHover={{ y: -10 }}
-                        >
-                            <div className={styles.iconWrapper}>{service.icon}</div>
-                            <h3 className={styles.cardTitle}>{service.title}</h3>
-                            <p className={styles.cardText}>{service.description}</p>
-                        </motion.div>
+                        <Link href={service.href} key={index} className={styles.cardLink}>
+                            <motion.div
+                                className={styles.card}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                                whileHover={{ y: -10 }}
+                            >
+                                <div className={styles.iconWrapper}>{service.icon}</div>
+                                <h3 className={styles.cardTitle}>{service.title}</h3>
+                                <p className={styles.cardText}>{service.description}</p>
+                            </motion.div>
+                        </Link>
                     ))}
                 </div>
             </div>
