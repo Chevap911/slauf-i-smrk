@@ -7,6 +7,12 @@ import { Home, TreeDeciduous, Waves } from 'lucide-react';
 export const metadata: Metadata = {
     title: 'Pranje Okućnice i Prilaza Zagreb — Visokotlačno Čišćenje | Šlauf i Šmrk',
     description: 'Profesionalno čišćenje dvorišta, prilaza, terasa i parkirnih površina u Zagrebu. Betonske kocke, kamene ploče, beton. Besplatna procjena.',
+    alternates: { canonical: '/usluge/pranje-okucnice' },
+    openGraph: {
+        title: 'Pranje Okućnice i Prilaza Zagreb | Šlauf i Šmrk',
+        description: 'Profesionalno čišćenje dvorišta, prilaza, terasa i parkirnih površina u Zagrebu.',
+        url: 'https://slaufismrk.com/usluge/pranje-okucnice',
+    },
 };
 
 export default function PranjeOkucnicePage() {

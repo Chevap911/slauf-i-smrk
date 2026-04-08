@@ -6,6 +6,12 @@ import styles from './blog.module.css';
 export const metadata: Metadata = {
     title: 'Blog — Savjeti za Čišćenje | Šlauf i Šmrk',
     description: 'Korisni savjeti i informacije o visokotlačnom čišćenju, kemijskom čišćenju i održavanju doma. Blog Šlauf i Šmrk.',
+    alternates: { canonical: '/blog' },
+    openGraph: {
+        title: 'Blog — Savjeti za Čišćenje | Šlauf i Šmrk',
+        description: 'Korisni savjeti i informacije o visokotlačnom čišćenju, kemijskom čišćenju i održavanju doma.',
+        url: 'https://slaufismrk.com/blog',
+    },
 };
 
 const articles = [

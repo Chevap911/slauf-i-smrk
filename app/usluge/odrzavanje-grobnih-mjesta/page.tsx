@@ -7,6 +7,12 @@ import { Home, TreeDeciduous, Waves } from 'lucide-react';
 export const metadata: Metadata = {
     title: 'Održavanje Grobnih Mjesta Zagreb — Čišćenje Kamenih Spomenika | Šlauf i Šmrk',
     description: 'Profesionalno čišćenje i održavanje grobnih mjesta u Zagrebu. Uklanjamo mahovinu i naslage s kamenih spomenika. Mirogoj, Miroševac, Markovo Polje.',
+    alternates: { canonical: '/usluge/odrzavanje-grobnih-mjesta' },
+    openGraph: {
+        title: 'Održavanje Grobnih Mjesta Zagreb | Šlauf i Šmrk',
+        description: 'Profesionalno čišćenje i održavanje grobnih mjesta u Zagrebu. Mirogoj, Miroševac, Markovo Polje.',
+        url: 'https://slaufismrk.com/usluge/odrzavanje-grobnih-mjesta',
+    },
 };
 
 export default function GrobnaMjestaPage() {

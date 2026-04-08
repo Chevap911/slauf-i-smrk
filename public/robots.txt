@@ -1,6 +1,8 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Allow: /
 Disallow: /api/
+Disallow: /gallery/
+Disallow: /shop/
+Disallow: /category/
 
 Sitemap: https://slaufismrk.com/sitemap.xml

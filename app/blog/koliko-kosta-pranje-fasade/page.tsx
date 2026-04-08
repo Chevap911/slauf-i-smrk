@@ -6,6 +6,13 @@ import styles from './article.module.css';
 export const metadata: Metadata = {
     title: 'Koliko Košta Visokotlačno Pranje Fasade? Cijena 2026 — Šlauf i Šmrk',
     description: 'Sve o cijenama visokotlačnog pranja fasade u Zagrebu. Faktori koji utječu na cijenu, što uključuje usluga, i savjeti kako uštedjeti. Aktualne cijene 2026.',
+    alternates: { canonical: '/blog/koliko-kosta-pranje-fasade' },
+    openGraph: {
+        title: 'Koliko Košta Visokotlačno Pranje Fasade? Cijena 2026',
+        description: 'Sve o cijenama visokotlačnog pranja fasade u Zagrebu. Faktori, usluga i savjeti.',
+        url: 'https://slaufismrk.com/blog/koliko-kosta-pranje-fasade',
+        type: 'article',
+    },
 };
 
 export default function BlogArticle() {

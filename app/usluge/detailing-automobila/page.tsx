@@ -7,6 +7,12 @@ import { Sofa, Home, TreeDeciduous } from 'lucide-react';
 export const metadata: Metadata = {
     title: 'Detailing Automobila Zagreb — Dubinsko Čišćenje Vozila | Šlauf i Šmrk',
     description: 'Profesionalni detailing automobila u Zagrebu. Dubinsko čišćenje interijera, pranje motora, poliranje. Dolazimo na vašu adresu. Besplatna procjena.',
+    alternates: { canonical: '/usluge/detailing-automobila' },
+    openGraph: {
+        title: 'Detailing Automobila Zagreb | Šlauf i Šmrk',
+        description: 'Profesionalni detailing automobila u Zagrebu. Dubinsko čišćenje interijera, poliranje, zaštita.',
+        url: 'https://slaufismrk.com/usluge/detailing-automobila',
+    },
 };
 
 export default function DetailingAutoPage() {

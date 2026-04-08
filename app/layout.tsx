@@ -16,6 +16,14 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  openGraph: {
+    title: "Šlauf i Šmrk | Profesionalno Visokotlačno Čišćenje Zagreb",
+    description: "Vrhunsko visokotlačno čišćenje fasada, okućnica, prilaza i detailing automobila u Zagrebu i okolici.",
+    url: "https://slaufismrk.com",
+    siteName: "Šlauf i Šmrk",
+    locale: "hr_HR",
+    type: "website",
+  },
 };
 
 const localBusinessSchema = {

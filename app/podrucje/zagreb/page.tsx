@@ -9,6 +9,12 @@ import styles from './zagreb.module.css';
 export const metadata: Metadata = {
     title: 'Visokotlačno Čišćenje Zagreb — Sve Usluge | Šlauf i Šmrk',
     description: 'Profesionalno visokotlačno čišćenje u Zagrebu — fasade, okućnice, kamene i drvene površine, detailing auta, kemijsko čišćenje tepiha. Pokrivamo sve kvartove.',
+    alternates: { canonical: '/podrucje/zagreb' },
+    openGraph: {
+        title: 'Visokotlačno Čišćenje Zagreb | Šlauf i Šmrk',
+        description: 'Profesionalno visokotlačno čišćenje u Zagrebu — fasade, okućnice, kamene površine, detailing auta.',
+        url: 'https://slaufismrk.com/podrucje/zagreb',
+    },
 };
 
 const services = [

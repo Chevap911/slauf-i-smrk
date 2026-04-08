@@ -7,6 +7,12 @@ import { Home, TreeDeciduous, Waves } from 'lucide-react';
 export const metadata: Metadata = {
     title: 'Čišćenje Drvenih Površina Zagreb — Terase, Ograde, Namještaj | Šlauf i Šmrk',
     description: 'Profesionalno čišćenje drvenih terasa, ograda, pergola i vrtnog namještaja u Zagrebu. Uklanjamo sivilo, alge i mahovinu. Besplatna procjena.',
+    alternates: { canonical: '/usluge/ciscenje-drvenih-povrsina' },
+    openGraph: {
+        title: 'Čišćenje Drvenih Površina Zagreb | Šlauf i Šmrk',
+        description: 'Profesionalno čišćenje drvenih terasa, ograda, pergola i vrtnog namještaja u Zagrebu.',
+        url: 'https://slaufismrk.com/usluge/ciscenje-drvenih-povrsina',
+    },
 };
 
 export default function DrvenePovrsinePage() {

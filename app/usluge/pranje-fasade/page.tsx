@@ -7,6 +7,12 @@ import { Home, TreeDeciduous, Sofa } from 'lucide-react';
 export const metadata: Metadata = {
     title: 'Pranje Fasade Zagreb — Visokotlačno Čišćenje | Šlauf i Šmrk',
     description: 'Profesionalno pranje fasade u Zagrebu i okolici. Uklanjamo alge, mahovinu i prljavštinu visokotlačnim perače. Besplatna procjena. Nazovite +385 95 844 2806.',
+    alternates: { canonical: '/usluge/pranje-fasade' },
+    openGraph: {
+        title: 'Pranje Fasade Zagreb — Visokotlačno Čišćenje | Šlauf i Šmrk',
+        description: 'Profesionalno pranje fasade u Zagrebu i okolici. Uklanjamo alge, mahovinu i prljavštinu visokotlačnim perače.',
+        url: 'https://slaufismrk.com/usluge/pranje-fasade',
+    },
 };
 
 export default function PranjeFasadePage() {

@@ -7,6 +7,12 @@ import { Home, HeartHandshake, TreeDeciduous } from 'lucide-react';
 export const metadata: Metadata = {
     title: 'Čišćenje Kamenih Površina Zagreb — Kamen, Granit, Mramor | Šlauf i Šmrk',
     description: 'Profesionalno čišćenje kamenih površina: klupice, stolovi, staze, zidovi, kipovi. Uklanjamo mahovinu, lišaje i mrlje s kamena. Zagreb i okolica.',
+    alternates: { canonical: '/usluge/ciscenje-kamenih-povrsina' },
+    openGraph: {
+        title: 'Čišćenje Kamenih Površina Zagreb | Šlauf i Šmrk',
+        description: 'Profesionalno čišćenje kamenih površina: klupice, stolovi, staze, zidovi, kipovi.',
+        url: 'https://slaufismrk.com/usluge/ciscenje-kamenih-povrsina',
+    },
 };
 
 export default function KamenePovsinePage() {

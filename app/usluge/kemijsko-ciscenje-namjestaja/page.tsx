@@ -7,6 +7,12 @@ import { Car, Home, TreeDeciduous } from 'lucide-react';
 export const metadata: Metadata = {
     title: 'Kemijsko Čišćenje Tepiha i Garnitura Zagreb | Šlauf i Šmrk',
     description: 'Profesionalno kemijsko čišćenje tepiha, garnitura, madraca i autosjedala u Zagrebu. Dubinsko čišćenje na vašoj adresi. Besplatna procjena.',
+    alternates: { canonical: '/usluge/kemijsko-ciscenje-namjestaja' },
+    openGraph: {
+        title: 'Kemijsko Čišćenje Tepiha i Garnitura Zagreb | Šlauf i Šmrk',
+        description: 'Profesionalno kemijsko čišćenje tepiha, garnitura, madraca i autosjedala u Zagrebu.',
+        url: 'https://slaufismrk.com/usluge/kemijsko-ciscenje-namjestaja',
+    },
 };
 
 export default function KemijskoCiscenjePage() {

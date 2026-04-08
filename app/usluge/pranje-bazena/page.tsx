@@ -7,6 +7,12 @@ import { Home, TreeDeciduous, HeartHandshake } from 'lucide-react';
 export const metadata: Metadata = {
     title: 'Pranje Bazena Zagreb — Čišćenje i Priprema Bazena | Šlauf i Šmrk',
     description: 'Profesionalno čišćenje bazena, okolnog kamena i terasa u Zagrebu. Priprema bazena za sezonu. Uklanjamo alge i naslage. Besplatna procjena.',
+    alternates: { canonical: '/usluge/pranje-bazena' },
+    openGraph: {
+        title: 'Pranje Bazena Zagreb | Šlauf i Šmrk',
+        description: 'Profesionalno čišćenje bazena, okolnog kamena i terasa u Zagrebu. Priprema za sezonu.',
+        url: 'https://slaufismrk.com/usluge/pranje-bazena',
+    },
 };
 
 export default function PranjeBasenapPage() {
