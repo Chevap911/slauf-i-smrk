@@ -241,7 +241,20 @@ Samobor, Zaprešić, Velika Gorica, Zabok, Dugo Selo, Sveta Nedjelja, Ivanić-Gr
 ❌ Postovi kraći od 600 riječi za transakcijske teme, kraći od 800 za edukativne
 ❌ Slike bez alt tagova
 ❌ Zaboraviti FAQ Schema markup
-❌ Pisati samo o sebi i usluzi — uvijek pisati o PROBLEMU KLIJENTA, pa tek onda o rješenju
+❌ Pisati samo o sebi i usluzi, uvijek pisati o PROBLEMU KLIJENTA, pa tek onda o rješenju
+❌ **Koristiti em dash (—) bilo gdje u tekstu** - ovo je klasičan AI marker. Umjesto toga koristiti zarez, točku, kratku crticu (-) ili preformulirati rečenicu
+❌ Koristiti riječ "bukvalno" - to nije standardni hrvatski. Koristiti "doslovno", "potpuno", "postupno" ili preformulirati
+❌ Pretjerano koristiti "I da —", "I tu —" i slične AI filler fraze
+
+### 6.1 HRVATSKI PRAVOPIS — Obavezna pravila
+
+- Pisati pravilnim hrvatskim jezikom, bez srbizama i anglicizama gdje postoji hrvatska riječ
+- **Nikad ne koristiti em dash (—)**. To je najočitiji AI marker. Koristiti zarez, točku, crticu (-) ili preformulirati rečenicu
+- "bukvalno" → "doslovno", "potpuno", "postupno" ili izbaciti
+- "efikasno" → "učinkovito" (ali "efikasno" je prihvatljivo u razgovornom tonu)
+- Paziti na č/ć, dž/đ, ije/je razlike
+- Izbjegavati pasivne konstrukcije gdje je moguće - pisati aktivno i direktno
+- Tekst mora zvučati kao da ga je napisao čovjek iz Zagreba, ne AI
 
 ✅ Uvod koji odmah adresira problem
 ✅ Konkretne cifre (€, m², godine, sati)
@@ -250,6 +263,7 @@ Samobor, Zaprešić, Velika Gorica, Zabok, Dugo Selo, Sveta Nedjelja, Ivanić-Gr
 ✅ FAQ na kraju svakog posta
 ✅ Minimalno 2 interna linka po postu
 ✅ CTA koji odgovara tipu posta (procjena vs. popust)
+✅ Prirodan, ljudski ton bez AI markera (em dasheva, fillera, robotskog jezika)
 
 ---
 
@@ -270,6 +284,9 @@ Samobor, Zaprešić, Velika Gorica, Zabok, Dugo Selo, Sveta Nedjelja, Ivanić-Gr
 [ ] CTA na kraju posta (odgovarajući tipu posta)
 [ ] Post je minimalno 600 (transakcijski) / 900 (edukativni) riječi
 [ ] Lokalna ključna riječ ("Zagreb" ili naziv kvarta) spominje se kroz tekst
+[ ] NEMA em dasheva (—) nigdje u tekstu
+[ ] NEMA "bukvalno", "I da —" i sličnih AI filler fraza
+[ ] Pravopis provjeren (č/ć, ije/je, bez srbizama)
 ```
 
 ---

@@ -136,29 +136,6 @@ export default function BlogArticle() {
                             izolacije.
                         </p>
 
-                        <div className={styles.beforeAfter}>
-                            <div className={styles.beforeAfterItem}>
-                                <span className={styles.beforeAfterBadge} data-type="before">PRIJE</span>
-                                <Image
-                                    src="/blog/fasada-prije-pranja.jpeg"
-                                    alt="Prljava fasada s algama i mrljama prije pranja Zagreb"
-                                    width={600}
-                                    height={800}
-                                    className={styles.beforeAfterImg}
-                                />
-                            </div>
-                            <div className={styles.beforeAfterItem}>
-                                <span className={styles.beforeAfterBadge} data-type="after">POSLIJE</span>
-                                <Image
-                                    src="/blog/fasada-poslije-pranja.png"
-                                    alt="Čista bijela fasada nakon profesionalnog pranja Zagreb"
-                                    width={600}
-                                    height={800}
-                                    className={styles.beforeAfterImg}
-                                />
-                            </div>
-                        </div>
-
                         {/* Znak #2 */}
                         <h2>Znak #2: Bijeli praškasti sloj na fasadi (efloreszencija)</h2>
                         <p>
@@ -239,25 +216,30 @@ export default function BlogArticle() {
                             potpuno vraćanje boje.
                         </p>
 
+                        <h3 className={styles.beforeAfterTitle}>Rezultat: Prije i nakon našeg pranja fasade</h3>
                         <div className={styles.beforeAfter}>
                             <div className={styles.beforeAfterItem}>
-                                <span className={styles.beforeAfterBadge} data-type="before">PRIJE</span>
+                                <span className={styles.beforeAfterBadge} data-type="before">PRIJE PRANJA</span>
                                 <Image
                                     src="/blog/fasada-prije-pranja.jpeg"
-                                    alt="Siva prljava fasada kuće prije visokotlačnog pranja"
+                                    alt="Prljava siva fasada kuće s tamnim mrljama od vlage i algama prije pranja u Zagrebu"
+                                    title="Izgled fasade s algama i prljavštinom prije pranja"
                                     width={600}
                                     height={800}
                                     className={styles.beforeAfterImg}
+                                    loading="lazy"
                                 />
                             </div>
                             <div className={styles.beforeAfterItem}>
-                                <span className={styles.beforeAfterBadge} data-type="after">POSLIJE</span>
+                                <span className={styles.beforeAfterBadge} data-type="after">POSLIJE PRANJA</span>
                                 <Image
                                     src="/blog/fasada-poslije-pranja.png"
-                                    alt="Fasada kuće nakon visokotlačnog pranja bijela i čista"
+                                    alt="Potpuno čista bijela fasada kuće nakon profesionalnog visokotlačnog pranja"
+                                    title="Rezultat pranja: fasada čista, bijela i zaštićena - kao nova"
                                     width={600}
                                     height={800}
                                     className={styles.beforeAfterImg}
+                                    loading="lazy"
                                 />
                             </div>
                         </div>
