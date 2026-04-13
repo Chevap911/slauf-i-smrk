@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowLeft, Phone, ArrowRight } from 'lucide-react';
-import BeforeAfterSlider from '@/components/BeforeAfterSlider/BeforeAfterSlider';
 import styles from './article.module.css';
 
 export const metadata: Metadata = {
@@ -136,13 +136,28 @@ export default function BlogArticle() {
                             izolacije.
                         </p>
 
-                        <BeforeAfterSlider
-                            beforeSrc="/blog/fasada-prije-pranja.jpeg"
-                            afterSrc="/blog/fasada-poslije-pranja.png"
-                            beforeAlt="Prljava fasada s algama i mrljama prije pranja Zagreb"
-                            afterAlt="Čista bijela fasada nakon profesionalnog pranja Zagreb"
-                            label="Rezultat našeg rada: prije i poslije"
-                        />
+                        <div className={styles.beforeAfter}>
+                            <div className={styles.beforeAfterItem}>
+                                <span className={styles.beforeAfterBadge} data-type="before">PRIJE</span>
+                                <Image
+                                    src="/blog/fasada-prije-pranja.jpeg"
+                                    alt="Prljava fasada s algama i mrljama prije pranja Zagreb"
+                                    width={600}
+                                    height={800}
+                                    className={styles.beforeAfterImg}
+                                />
+                            </div>
+                            <div className={styles.beforeAfterItem}>
+                                <span className={styles.beforeAfterBadge} data-type="after">POSLIJE</span>
+                                <Image
+                                    src="/blog/fasada-poslije-pranja.png"
+                                    alt="Čista bijela fasada nakon profesionalnog pranja Zagreb"
+                                    width={600}
+                                    height={800}
+                                    className={styles.beforeAfterImg}
+                                />
+                            </div>
+                        </div>
 
                         {/* Znak #2 */}
                         <h2>Znak #2: Bijeli praškasti sloj na fasadi (efloreszencija)</h2>
@@ -224,13 +239,28 @@ export default function BlogArticle() {
                             potpuno vraćanje boje.
                         </p>
 
-                        <BeforeAfterSlider
-                            beforeSrc="/blog/fasada-prije-pranja.jpeg"
-                            afterSrc="/blog/fasada-poslije-pranja.png"
-                            beforeAlt="Siva prljava fasada kuće prije visokotlačnog pranja"
-                            afterAlt="Fasada kuće nakon visokotlačnog pranja bijela i čista"
-                            label="Povučite i usporedite razliku"
-                        />
+                        <div className={styles.beforeAfter}>
+                            <div className={styles.beforeAfterItem}>
+                                <span className={styles.beforeAfterBadge} data-type="before">PRIJE</span>
+                                <Image
+                                    src="/blog/fasada-prije-pranja.jpeg"
+                                    alt="Siva prljava fasada kuće prije visokotlačnog pranja"
+                                    width={600}
+                                    height={800}
+                                    className={styles.beforeAfterImg}
+                                />
+                            </div>
+                            <div className={styles.beforeAfterItem}>
+                                <span className={styles.beforeAfterBadge} data-type="after">POSLIJE</span>
+                                <Image
+                                    src="/blog/fasada-poslije-pranja.png"
+                                    alt="Fasada kuće nakon visokotlačnog pranja bijela i čista"
+                                    width={600}
+                                    height={800}
+                                    className={styles.beforeAfterImg}
+                                />
+                            </div>
+                        </div>
 
                         <p>
                             <strong>Bonus:</strong> Čista fasada povećava tržišnu vrijednost
