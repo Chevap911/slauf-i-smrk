@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft, Phone, ArrowRight } from 'lucide-react';
+import BeforeAfterSlider from '@/components/BeforeAfterSlider/BeforeAfterSlider';
 import styles from './article.module.css';
 
 export const metadata: Metadata = {
@@ -135,6 +136,14 @@ export default function BlogArticle() {
                             izolacije.
                         </p>
 
+                        <BeforeAfterSlider
+                            beforeSrc="/blog/fasada-prije-pranja.jpeg"
+                            afterSrc="/blog/fasada-poslije-pranja.png"
+                            beforeAlt="Prljava fasada s algama i mrljama prije pranja Zagreb"
+                            afterAlt="Čista bijela fasada nakon profesionalnog pranja Zagreb"
+                            label="Rezultat našeg rada: prije i poslije"
+                        />
+
                         {/* Znak #2 */}
                         <h2>Znak #2: Bijeli praškasti sloj na fasadi (efloreszencija)</h2>
                         <p>
@@ -214,6 +223,15 @@ export default function BlogArticle() {
                             vlasnici su redovito u šoku od kontrasta. To nije samo čišćenje, to je
                             potpuno vraćanje boje.
                         </p>
+
+                        <BeforeAfterSlider
+                            beforeSrc="/blog/fasada-prije-pranja.jpeg"
+                            afterSrc="/blog/fasada-poslije-pranja.png"
+                            beforeAlt="Siva prljava fasada kuće prije visokotlačnog pranja"
+                            afterAlt="Fasada kuće nakon visokotlačnog pranja bijela i čista"
+                            label="Povučite i usporedite razliku"
+                        />
+
                         <p>
                             <strong>Bonus:</strong> Čista fasada povećava tržišnu vrijednost
                             nekretnine. Ako razmišljate o prodaji ili najmu, pranje fasade jedna je
