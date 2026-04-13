@@ -16,6 +16,13 @@ export const metadata: Metadata = {
 
 const articles = [
     {
+        title: '5 znakova da vašoj fasadi hitno treba dubinsko pranje',
+        excerpt: 'Zelene mrlje, tamne pruge, bijeli praškasti sloj — fasada vam govori nešto. Otkrijte 5 jasnih znakova da je vrijeme za profesionalno pranje.',
+        slug: '/blog/znakovi-da-fasadi-treba-pranje',
+        date: '2026-04-13',
+        category: 'Savjeti',
+    },
+    {
         title: 'Koliko košta visokotlačno pranje fasade?',
         excerpt: 'Sve o cijenama pranja fasade u Zagrebu — od čega ovisi cijena, što uključuje usluga i kako uštedjeti.',
         slug: '/blog/koliko-kosta-pranje-fasade',
