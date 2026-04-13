@@ -6,12 +6,12 @@ import styles from './article.module.css';
 export const metadata: Metadata = {
     title: '5 znakova da fasadi treba pranje | Šlauf i Šmrk Zagreb',
     description:
-        'Zelene mrlje, tamne pruge, loš miris — fasada vam govori nešto. Otkrijte 5 jasnih znakova da je vrijeme za dubinsko pranje fasade u Zagrebu. Besplatna procjena!',
+        'Zelene mrlje, tamne pruge, loš miris. Fasada vam govori nešto. Otkrijte 5 jasnih znakova da je vrijeme za dubinsko pranje fasade u Zagrebu. Besplatna procjena!',
     alternates: { canonical: '/blog/znakovi-da-fasadi-treba-pranje' },
     openGraph: {
         title: '5 znakova da fasadi treba pranje | Šlauf i Šmrk Zagreb',
         description:
-            'Zelene mrlje, tamne pruge, loš miris — fasada vam govori nešto. Otkrijte 5 jasnih znakova da je vrijeme za dubinsko pranje fasade u Zagrebu.',
+            'Zelene mrlje, tamne pruge, loš miris. Fasada vam govori nešto. Otkrijte 5 jasnih znakova da je vrijeme za dubinsko pranje fasade u Zagrebu.',
         url: 'https://slaufismrk.com/blog/znakovi-da-fasadi-treba-pranje',
         type: 'article',
     },
@@ -24,7 +24,7 @@ export default function BlogArticle() {
         headline:
             '5 znakova da vašoj fasadi hitno treba dubinsko pranje (i što se dogodi ako to odgodite)',
         description:
-            'Zelene mrlje, tamne pruge, loš miris — fasada vam govori nešto. Otkrijte 5 jasnih znakova da je vrijeme za dubinsko pranje fasade u Zagrebu.',
+            'Zelene mrlje, tamne pruge, loš miris. Fasada vam govori nešto. Otkrijte 5 jasnih znakova da je vrijeme za dubinsko pranje fasade u Zagrebu.',
         author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         datePublished: '2026-04-13',
@@ -52,7 +52,7 @@ export default function BlogArticle() {
                 name: 'Može li pranje fasade oštetiti boju ili stiropor?',
                 acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'Može — ali samo ako se radi s previsokim pritiskom ili krivom kemijom. Naša ekipa uvijek prilagođava pritisak i vrstu kemije tipu fasade. Za osjetljive stiropor fasade koristimo softwash metodu (niski pritisak, specijalizirana sredstva) koja je potpuno sigurna za izolaciju i boju.',
+                    text: 'Može, ali samo ako se radi s previsokim pritiskom ili krivom kemijom. Naša ekipa uvijek prilagođava pritisak i vrstu kemije tipu fasade. Za osjetljive stiropor fasade koristimo softwash metodu (niski pritisak, specijalizirana sredstva) koja je potpuno sigurna za izolaciju i boju.',
                 },
             },
             {
@@ -68,7 +68,7 @@ export default function BlogArticle() {
                 name: 'Trebam li biti prisutan dok ekipa pere fasadu?',
                 acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'Nije nužno da budete kod kuće cijelo vrijeme. Dovoljno je da nam osigurate pristup priključku za vodu i slobodan pristup oko kuće. Sve ostalo prepustite nama — javit ćemo se kad završimo.',
+                    text: 'Nije nužno da budete kod kuće cijelo vrijeme. Dovoljno je da nam osigurate pristup priključku za vodu i slobodan pristup oko kuće. Sve ostalo prepustite nama, javit ćemo se kad završimo.',
                 },
             },
         ],
@@ -106,26 +106,26 @@ export default function BlogArticle() {
                             Fasada je prva stvar koju susjedi, prolaznici i potencijalni kupci vaše
                             nekretnine vide. Ali za razliku od unutrašnjosti kuće, fasadu rijetko
                             čistimo dok problem ne postane toliko očit da ga se više ne može
-                            ignorirati. I tu počinju problemi — jer alge, lišajevi i mahovina nisu
+                            ignorirati. I tu počinju problemi, jer alge, lišajevi i mahovina nisu
                             samo ružni, oni aktivno uništavaju materijal.
                         </p>
                         <p>
-                            Evo pet konkretnih znakova da je vaša fasada počela vikati za pomoć. I
-                            da — svaki tjedan odgađanja košta vas više.
+                            Evo pet konkretnih znakova da je vaša fasada počela vikati za pomoć.
+                            Svaki tjedan odgađanja košta vas više.
                         </p>
 
                         {/* Znak #1 */}
                         <h2>Znak #1: Zelene ili crne mrlje koje se šire</h2>
                         <p>
                             Gledate u zid i vidite zelenkaste ili tamno sivkaste naslage? To nisu
-                            mrlje od kiše. To su živi organizmi — alge i cijanobakterije — koji su
+                            mrlje od kiše. To su živi organizmi, alge i cijanobakterije, koji su
                             se uselili u vašu fasadu i svaki tjedan zauzimaju više teritorija.
                         </p>
                         <p>
                             Zašto je ovo problem koji ne smijete ignorirati: alge zadržavaju vlagu
                             uz fasadu. Vlaga prodire dublje u materijal, posebno kod stiropor fasada
                             (ETICS sustav). S vremenom to uzrokuje mrvljenje žbuke, a onda ulazite u
-                            teritorij skupih obnova koje se mjere tisućama eura — ne stotinama.
+                            teritorij skupih obnova koje se mjere tisućama eura, ne stotinama.
                         </p>
                         <p>
                             <strong>Dobra vijest:</strong> Profesionalno{' '}
@@ -139,18 +139,18 @@ export default function BlogArticle() {
                         <h2>Znak #2: Bijeli praškasti sloj na fasadi (efloreszencija)</h2>
                         <p>
                             Primjećujete bijeli, praškasti premaz koji &quot;izlazi&quot; iz zida?
-                            Ovaj fenomen zove se efloreszencija — soli iz zida izlaze na površinu
+                            Ovaj fenomen zove se efloreszencija. Soli iz zida izlaze na površinu
                             zajedno s vlagom i kristaliziraju se vani.
                         </p>
                         <p>
                             To vam govori jednu važnu stvar:{' '}
                             <strong>u vašem zidu ima previše vlage.</strong> Uzroci mogu biti
-                            različiti — loša hidro-izolacija, oštećeni žljebovi, prljava fasada koja
-                            zadržava vlagu — ali čišćenje je uvijek prvi korak dijagnoze i
+                            različiti - loša hidro-izolacija, oštećeni žljebovi, prljava fasada koja
+                            zadržava vlagu - ali čišćenje je uvijek prvi korak dijagnoze i
                             rješavanja.
                         </p>
                         <p>
-                            Ako se efloreszencija ignorira godinama, soli bukvalno razaraju
+                            Ako se efloreszencija ignorira godinama, soli postupno razaraju
                             strukturu žbuke iznutra. Ono što danas izgleda kao kozmetički problem, za
                             2-3 sezone postaje strukturalno oštećenje.
                         </p>
@@ -159,7 +159,7 @@ export default function BlogArticle() {
                         <h2>Znak #3: Tamne vertikalne pruge ispod prozora i klima-uređaja</h2>
                         <p>
                             Vidite li tamne pruge koje teku od prozorskih klupica ili vanjske
-                            jedinice klima-uređaja prema dolje? To nije samo prljavština — to je
+                            jedinice klima-uređaja prema dolje? To nije samo prljavština, to je
                             kombinirano djelovanje rđe (od metalnih klupica), masnoće (od kondenzata
                             klime) i prašine iz zraka.
                         </p>
@@ -172,7 +172,7 @@ export default function BlogArticle() {
                             Visokotlačno <Link href="/usluge/pranje-fasade">pranje fasade</Link> s
                             pravom kemijom uklanja ove naslage efikasno. Naša ekipa za Zagreb i
                             okolicu dolazi na besplatnu procjenu i odmah procjenjuje koji pristup je
-                            prikladniji za vaš tip fasade — ponekad je dovoljan niži pritisak s
+                            prikladniji za vaš tip fasade. Ponekad je dovoljan niži pritisak s
                             kemijom (softwash metoda), a ponekad treba kombinirani pristup.
                         </p>
 
@@ -182,8 +182,8 @@ export default function BlogArticle() {
                         </h2>
                         <p>
                             Sjeverna strana kuće i dijelovi u sjeni drveća praktički nikada ne
-                            dobivaju dovoljno sunca da se osuše — a vlaga je idealno stanište za
-                            mahovinu i lišajeve. Lišajevi su posebno podmukli: oni bukvalno
+                            dobivaju dovoljno sunca da se osuše, a vlaga je idealno stanište za
+                            mahovinu i lišajeve. Lišajevi su posebno podmukli jer
                             probijaju korijenje u materijal fasade tražeći minerale.
                         </p>
                         <div className={styles.highlight}>
@@ -196,7 +196,7 @@ export default function BlogArticle() {
                             </p>
                         </div>
                         <p>
-                            Imamo iskustva sa svim vrstama fasada u Zagrebu — od starih obiteljskih
+                            Imamo iskustva sa svim vrstama fasada u Zagrebu, od starih obiteljskih
                             kuća u Dubravi i Španskom do novijih zgrada u Sesvetama i Zaprešiću.
                             Sjever Hrvatske = puno vlage = puno mahovine. Znamo s čime imamo posla.
                         </p>
@@ -204,20 +204,20 @@ export default function BlogArticle() {
                         {/* Znak #5 */}
                         <h2>Znak #5: Fasada je jednostavno... siva i dosadna</h2>
                         <p>
-                            Ovo je podcjenjen znak. Vaša fasada nije bila izvorno siva — bila je
+                            Ovo je podcjenjen znak. Vaša fasada nije bila izvorno siva. Bila je
                             bijela, krem, žuta ili terakota. S godinama se prljavština, prašina,
                             ispušni plinovi i sitne čestice iz zraka talože u poroznu površinu i
                             fasada polagano mijenja boju.
                         </p>
                         <p>
                             Kad dođemo i operemo fasadu koja je &quot;samo malo prljava&quot;,
-                            vlasnici su redovito u šoku od kontrasta. To nije samo čišćenje — to je
-                            bukvalno vraćanje boje.
+                            vlasnici su redovito u šoku od kontrasta. To nije samo čišćenje, to je
+                            potpuno vraćanje boje.
                         </p>
                         <p>
                             <strong>Bonus:</strong> Čista fasada povećava tržišnu vrijednost
                             nekretnine. Ako razmišljate o prodaji ili najmu, pranje fasade jedna je
-                            od investicija s najboljim povratom — cijeli posao košta od 400 do 1.000
+                            od investicija s najboljim povratom. Cijeli posao košta od 400 do 1.000
                             € ovisno o veličini, a vizualni efekt je dramatičan.
                         </p>
 
@@ -230,7 +230,7 @@ export default function BlogArticle() {
                             Alge i mahovina koje se danas uklanjaju visokotlačnim pranjem, za 2-3
                             godine mogu zahtijevati potpunu sanaciju fasade s impregnacijom ili čak
                             djelomičnim žbukanjem. Razlika između pranja (stotine eura) i sanacije
-                            (tisuće eura) je samo — vrijeme.
+                            (tisuće eura) je samo - vrijeme.
                         </p>
                         <p>
                             Mi to vidimo svako proljeće. Dolazimo kod klijenta koji je &quot;čekao
@@ -255,7 +255,7 @@ export default function BlogArticle() {
                             <div className={styles.faqItem}>
                                 <h3>Može li pranje fasade oštetiti boju ili stiropor?</h3>
                                 <p>
-                                    Može — ali samo ako se radi s previsokim pritiskom ili krivom
+                                    Može, ali samo ako se radi s previsokim pritiskom ili krivom
                                     kemijom. Naša ekipa uvijek prilagođava pritisak i vrstu kemije
                                     tipu fasade. Za osjetljive stiropor fasade koristimo softwash
                                     metodu (niski pritisak, specijalizirana sredstva) koja je potpuno
@@ -273,7 +273,7 @@ export default function BlogArticle() {
                                     <Link href="/blog/koliko-kosta-pranje-fasade">
                                         koliko košta pranje fasade
                                     </Link>
-                                    , a za točnu cijenu za vaš dom — dolazimo besplatno na procjenu.
+                                    , a za točnu cijenu za vaš dom dolazimo besplatno na procjenu.
                                 </p>
                             </div>
 
@@ -282,7 +282,7 @@ export default function BlogArticle() {
                                 <p>
                                     Nije nužno da budete kod kuće cijelo vrijeme. Dovoljno je da nam
                                     osigurate pristup priključku za vodu i slobodan pristup oko
-                                    kuće. Sve ostalo prepustite nama — javit ćemo se kad završimo.
+                                    kuće. Sve ostalo prepustite nama, javit ćemo se kad završimo.
                                 </p>
                             </div>
                         </div>
@@ -292,8 +292,8 @@ export default function BlogArticle() {
                             <h3>Prepoznajete koji od ovih znakova na svojoj kući?</h3>
                             <p>
                                 Ne čekajte do proljeća kad su termini puni. Ekipa Šlauf i Šmrk
-                                dolazi na besplatnu procjenu bez ikakve obaveze — vidimo stanje,
-                                dajemo točnu cijenu, i ako se dogovorimo, dogovorimo se. Ako ne —
+                                dolazi na besplatnu procjenu bez ikakve obaveze. Vidimo stanje,
+                                dajemo točnu cijenu, i ako se dogovorimo, dogovorimo se. Ako ne,
                                 nema frke.
                             </p>
                             <div className={styles.ctaButtons}>
