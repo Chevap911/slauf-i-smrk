@@ -19,15 +19,15 @@ const comparisons = [
 ];
 
 const projectImages = [
-    "/assets/gallery-1.jpg",
-    "/assets/gallery-2.png",
-    "/assets/gallery-3.jpg",
-    "/assets/gallery-4.jpg",
-    "/assets/gallery-5.jpg",
-    "/assets/gallery-6.jpg",
-    "/assets/gallery-7.jpg",
-    "/assets/gallery-8.png",
-    "/assets/gallery-9.jpg"
+    { src: "/projekti/projekt-1.jpeg", alt: "Čišćenje terase kafića Leggiero — poslije pranja betonskih kocki Zagreb" },
+    { src: "/projekti/projekt-2.jpeg", alt: "Pranje terase kavane Ravnice — čiste pločice poslije visokotlačnog čišćenja" },
+    { src: "/projekti/projekt-3.jpeg", alt: "Kemijsko čišćenje garniture — sofa poslije dubokog čišćenja Zagreb" },
+    { src: "/projekti/projekt-4.jpeg", alt: "Kemijsko čišćenje garniture — sofa prije dubokog čišćenja Zagreb" },
+    { src: "/projekti/projekt-5.jpeg", alt: "Profesionalno čišćenje vanjskih površina — projekt Šlauf i Šmrk Zagreb" },
+    { src: "/projekti/projekt-6.jpeg", alt: "Visokotlačno pranje okućnice i dvorišta — projekt Šlauf i Šmrk" },
+    { src: "/projekti/projekt-7.jpeg", alt: "Pranje and čišćenje vanjskih površina — referentni projekt Zagreb" },
+    { src: "/projekti/projekt-8.jpeg", alt: "Profesionalno čišćenje terase i okućnice — rezultat Šlauf i Šmrk" },
+    { src: "/projekti/projekt-9.jpeg", alt: "Visokotlačno pranje betona i tlakavaca — projekt Šlauf i Šmrk Zagreb" },
 ];
 
 export default function Gallery() {
@@ -58,7 +58,7 @@ export default function Gallery() {
                 <div className={styles.projectsSection}>
                     <h3 className={styles.label}>Naši ostali projekti</h3>
                     <div className={styles.projectGrid}>
-                        {projectImages.map((src, index) => (
+                        {projectImages.map((item, index) => (
                             <motion.div
                                 key={index}
                                 className={styles.projectImageWrapper}
@@ -68,8 +68,8 @@ export default function Gallery() {
                                 viewport={{ once: true }}
                             >
                                 <Image
-                                    src={src}
-                                    alt={`Projekt ${index + 1}`}
+                                    src={item.src}
+                                    alt={item.alt}
                                     width={400}
                                     height={300}
                                     className={styles.projectImg}
