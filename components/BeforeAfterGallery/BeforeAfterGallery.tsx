@@ -48,6 +48,7 @@ export default function BeforeAfterGallery() {
                     {pairs.map((pair, i) => (
                         <motion.div
                             key={i}
+                            className={i === 2 ? styles.fullWidth : undefined}
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}

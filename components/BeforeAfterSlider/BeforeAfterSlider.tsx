@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useCallback } from 'react';
+import { useState, useRef, useCallback, useEffect } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import styles from './BeforeAfterSlider.module.css';
@@ -22,9 +22,9 @@ export default function BeforeAfterSlider({
 }: BeforeAfterSliderProps) {
     const [sliderPosition, setSliderPosition] = useState(50);
     const containerRef = useRef<HTMLDivElement>(null);
-    const isDraggingRef = useRef(false);
+    const isDragging = useRef(false);
 
-    const updatePosition = useCallback((clientX: number) => {
+    const getPercent = useCallback((clientX: number) => {
         const container = containerRef.current;
         if (!container) return;
         const rect = container.getBoundingClientRect();
@@ -33,13 +33,29 @@ export default function BeforeAfterSlider({
         setSliderPosition(percent);
     }, []);
 
-    const handleMouseDown = () => { isDraggingRef.current = true; };
-    const handleMouseUp = () => { isDraggingRef.current = false; };
-    const handleMouseMove = (e: React.MouseEvent) => {
-        if (isDraggingRef.current) updatePosition(e.clientX);
-    };
-    const handleTouchMove = (e: React.TouchEvent) => {
-        updatePosition(e.touches[0].clientX);
+    // Pointer events on the document so drag works even if mouse leaves container
+    useEffect(() => {
+        const onPointerMove = (e: PointerEvent) => {
+            if (!isDragging.current) return;
+            e.preventDefault();
+            getPercent(e.clientX);
+        };
+        const onPointerUp = () => {
+            isDragging.current = false;
+        };
+        document.addEventListener('pointermove', onPointerMove, { passive: false });
+        document.addEventListener('pointerup', onPointerUp);
+        return () => {
+            document.removeEventListener('pointermove', onPointerMove);
+            document.removeEventListener('pointerup', onPointerUp);
+        };
+    }, [getPercent]);
+
+    const handlePointerDown = (e: React.PointerEvent) => {
+        e.preventDefault();
+        isDragging.current = true;
+        // Also update position immediately on click anywhere in container
+        getPercent(e.clientX);
     };
 
     return (
@@ -54,14 +70,11 @@ export default function BeforeAfterSlider({
             <div
                 ref={containerRef}
                 className={styles.container}
-                onMouseMove={handleMouseMove}
-                onMouseUp={handleMouseUp}
-                onMouseLeave={handleMouseUp}
-                onTouchMove={handleTouchMove}
+                onPointerDown={handlePointerDown}
             >
                 {/* After image (full width background) */}
                 <div className={styles.imageWrapper}>
-                    <Image src={afterSrc} alt={afterAlt} fill className={styles.image} sizes="(max-width: 768px) 100vw, 600px" />
+                    <Image src={afterSrc} alt={afterAlt} fill className={styles.image} sizes="(max-width: 768px) 100vw, 50vw" priority />
                     <span className={styles.badge} style={{ right: '1rem', left: 'auto' }}>POSLIJE</span>
                 </div>
 
@@ -70,7 +83,7 @@ export default function BeforeAfterSlider({
                     className={styles.beforeWrapper}
                     style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
                 >
-                    <Image src={beforeSrc} alt={beforeAlt} fill className={styles.image} sizes="(max-width: 768px) 100vw, 600px" />
+                    <Image src={beforeSrc} alt={beforeAlt} fill className={styles.image} sizes="(max-width: 768px) 100vw, 50vw" />
                     <span className={styles.badge} style={{ left: '1rem', right: 'auto' }}>PRIJE</span>
                 </div>
 
@@ -78,8 +91,6 @@ export default function BeforeAfterSlider({
                 <div
                     className={styles.sliderLine}
                     style={{ left: `${sliderPosition}%` }}
-                    onMouseDown={handleMouseDown}
-                    onTouchStart={handleMouseDown}
                 >
                     <div className={styles.handle}>
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round">
