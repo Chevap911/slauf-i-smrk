@@ -16,6 +16,13 @@ export const metadata: Metadata = {
 
 const articles = [
     {
+        title: 'Koliko košta pranje okućnice i tlakavaca u Zagrebu? Vodič kroz cijene 2026.',
+        excerpt: 'Transparentan vodič kroz cijene pranja dvorišta, tlakavaca i betonskih kocki u Zagrebu. Od čega ovisi cijena i što dobivate — bez skrivenih troškova.',
+        slug: '/blog/koliko-kosta-pranje-okucnice-tlakavaca-zagreb',
+        date: '2026-04-17',
+        category: 'Cijene',
+    },
+    {
         title: '5 znakova da vašoj fasadi hitno treba dubinsko pranje',
         excerpt: 'Zelene mrlje, tamne pruge, bijeli praškasti sloj — fasada vam govori nešto. Otkrijte 5 jasnih znakova da je vrijeme za profesionalno pranje.',
         slug: '/blog/znakovi-da-fasadi-treba-pranje',
