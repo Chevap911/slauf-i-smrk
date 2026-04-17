@@ -54,7 +54,7 @@ export default function BlogArticle() {
                 name: 'Uključuje li pranje tlakavaca i ponovno fugiranje pijeskom?',
                 acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'Osnovna cijena pranja ne uključuje kvarcni pijesak i fugiranje jer to ne žele svi klijenti. Međutim, toplo ga preporučujemo — bez novog pijeska, korov se vraća brže. Usluga fugiranja naplaćuje se dodatno, okvirno 0,50 do 1,00 € po m².',
+                    text: 'Osnovna cijena pranja ne uključuje kvarcni pijesak i fugiranje jer to ne žele svi klijenti. Međutim, toplo ga preporučujemo — bez novog pijeska, korov se vraća brže. Usluga fugiranja naplaćuje se dodatno, okvirno 1,50 do 2,50 € po m².',
                 },
             },
             {
@@ -255,7 +255,7 @@ export default function BlogArticle() {
                                 <p>
                                     Osnovna cijena pranja ne uključuje kvarcni pijesak i fugiranje jer to ne žele svi klijenti.
                                     Međutim, toplo ga preporučujemo — bez novog pijeska, korov se vraća brže. Usluga fugiranja
-                                    naplaćuje se dodatno, okvirno 0,50 do 1,00 € po m².
+                                    naplaćuje se dodatno, okvirno 1,50 do 2,50 € po m².
                                 </p>
                             </div>
                             <div className={styles.faqItem}>
