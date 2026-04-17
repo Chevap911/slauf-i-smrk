@@ -17,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const blog = [
         'znakovi-da-fasadi-treba-pranje',
         'koliko-kosta-pranje-fasade',
+        'koliko-kosta-pranje-okucnice-tlakavaca-zagreb',
     ];
 
     return [
