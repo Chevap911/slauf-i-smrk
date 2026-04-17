@@ -1,4 +1,5 @@
 import Hero from '@/components/Hero/Hero';
+import BeforeAfterGallery from '@/components/BeforeAfterGallery/BeforeAfterGallery';
 import Services from '@/components/Services/Services';
 import StatsCounter from '@/components/StatsCounter/StatsCounter';
 import WhyChooseUs from '@/components/WhyChooseUs/WhyChooseUs';
@@ -11,6 +12,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <BeforeAfterGallery />
       <Services />
       <StatsCounter />
       <WhyChooseUs />
