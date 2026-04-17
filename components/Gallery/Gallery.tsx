@@ -19,13 +19,22 @@ const comparisons = [
 ];
 
 const projectImages = [
+    { src: "/assets/gallery-1.jpg", alt: "Profesionalno čišćenje vanjskih površina — projekt Šlauf i Šmrk Zagreb" },
+    { src: "/assets/gallery-2.png", alt: "Visokotlačno pranje okućnice — projekt Šlauf i Šmrk Zagreb" },
+    { src: "/assets/gallery-3.jpg", alt: "Čišćenje betona i tlakavaca — referentni projekt Zagreb" },
+    { src: "/assets/gallery-4.jpg", alt: "Pranje fasade i vanjskih površina — projekt Šlauf i Šmrk" },
+    { src: "/assets/gallery-5.jpg", alt: "Dubinsko čišćenje i pranje — rezultat Šlauf i Šmrk Zagreb" },
+    { src: "/assets/gallery-6.jpg", alt: "Kemijsko čišćenje namještaja — projekt Šlauf i Šmrk" },
+    { src: "/assets/gallery-7.jpg", alt: "Pranje terasa i okućnica — projekt Šlauf i Šmrk Zagreb" },
+    { src: "/assets/gallery-8.png", alt: "Visokotlačno pranje betona — Šlauf i Šmrk Zagreb" },
+    { src: "/assets/gallery-9.jpg", alt: "Profesionalno čišćenje vanjskih površina Zagreb" },
     { src: "/projekti/projekt-1.jpeg", alt: "Čišćenje terase kafića Leggiero — poslije pranja betonskih kocki Zagreb" },
     { src: "/projekti/projekt-2.jpeg", alt: "Pranje terase kavane Ravnice — čiste pločice poslije visokotlačnog čišćenja" },
     { src: "/projekti/projekt-3.jpeg", alt: "Kemijsko čišćenje garniture — sofa poslije dubokog čišćenja Zagreb" },
     { src: "/projekti/projekt-4.jpeg", alt: "Kemijsko čišćenje garniture — sofa prije dubokog čišćenja Zagreb" },
     { src: "/projekti/projekt-5.jpeg", alt: "Profesionalno čišćenje vanjskih površina — projekt Šlauf i Šmrk Zagreb" },
     { src: "/projekti/projekt-6.jpeg", alt: "Visokotlačno pranje okućnice i dvorišta — projekt Šlauf i Šmrk" },
-    { src: "/projekti/projekt-7.jpeg", alt: "Pranje and čišćenje vanjskih površina — referentni projekt Zagreb" },
+    { src: "/projekti/projekt-7.jpeg", alt: "Pranje vanjskih površina — referentni projekt Zagreb" },
     { src: "/projekti/projekt-8.jpeg", alt: "Profesionalno čišćenje terase i okućnice — rezultat Šlauf i Šmrk" },
     { src: "/projekti/projekt-9.jpeg", alt: "Visokotlačno pranje betona i tlakavaca — projekt Šlauf i Šmrk Zagreb" },
 ];
