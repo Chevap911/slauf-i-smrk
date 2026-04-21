@@ -134,6 +134,22 @@ export default function Hero() {
                             </a>
                         </div>
                     </motion.div>
+
+                    <div className={styles.mobileMascotRow} aria-hidden="true">
+                        <HomepageMascot
+                            src={homepageMascots.heroGuide.src}
+                            alt={homepageMascots.heroGuide.alt}
+                            className={styles.mobileMascotItem}
+                            inline
+                        />
+
+                        <HomepageMascot
+                            src={homepageMascots.heroBuddy.src}
+                            alt={homepageMascots.heroBuddy.alt}
+                            className={`${styles.mobileMascotItem} ${styles.mobileMascotBuddyAlt}`}
+                            inline
+                        />
+                    </div>
                 </div>
             </div>
         </section>

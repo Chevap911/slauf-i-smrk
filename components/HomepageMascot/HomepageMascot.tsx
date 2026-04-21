@@ -7,6 +7,7 @@ type HomepageMascotProps = {
   alt?: string;
   className?: string;
   priority?: boolean;
+  inline?: boolean;
 };
 
 export default function HomepageMascot({
@@ -14,10 +15,15 @@ export default function HomepageMascot({
   alt = "",
   className,
   priority = false,
+  inline = false,
 }: HomepageMascotProps) {
-  const wrapperClassName = className
-    ? `${styles.mascot} ${className}`
-    : styles.mascot;
+  const wrapperClassName = [
+    styles.mascot,
+    inline ? styles.inlineMascot : "",
+    className ?? "",
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   return (
     <div className={wrapperClassName} aria-hidden={alt === ""}>

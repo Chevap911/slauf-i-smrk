@@ -6,6 +6,11 @@
     z-index: 2;
 }
 
+.inlineMascot {
+    position: relative;
+    inset: auto;
+}
+
 .image {
     width: 100%;
     height: auto;
