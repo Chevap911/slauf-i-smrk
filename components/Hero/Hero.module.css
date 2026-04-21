@@ -1,28 +1,44 @@
 .hero {
-    padding: 6rem 0 0;
-    background: radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+    padding: 6rem 0;
+    background:
+        radial-gradient(circle at top left, rgba(255, 215, 0, 0.18) 0%, transparent 42%),
+        linear-gradient(180deg, #ffffff 0%, #f6f9fc 100%);
     overflow: hidden;
     position: relative;
 }
 
 .wrapper {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
     align-items: center;
-    text-align: center;
     gap: 3rem;
 }
 
 .content {
-    max-width: 900px;
     z-index: 2;
 }
 
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 1rem;
+    border-radius: 999px;
+    background: rgba(0, 51, 102, 0.08);
+    color: var(--secondary);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+}
+
 .title {
-    font-size: clamp(2.2rem, 6vw, 5rem);
-    margin-bottom: 2rem;
+    font-size: clamp(2.5rem, 5.2vw, 5rem);
+    margin-bottom: 1.5rem;
     color: var(--secondary);
     line-height: 1.1;
+    max-width: 12ch;
 }
 
 .highlight {
@@ -30,92 +46,320 @@
 }
 
 .description {
-    font-size: 1.5rem;
-    color: #333;
-    margin: 0 auto 3rem;
-    max-width: 750px;
+    font-size: 1.15rem;
+    color: #27415c;
+    margin-bottom: 1.75rem;
+    max-width: 62ch;
     line-height: 1.6;
+}
+
+.trustList {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem 1rem;
+    margin-bottom: 2rem;
+}
+
+.trustItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    padding: 0.9rem 1rem;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(0, 51, 102, 0.08);
+    box-shadow: var(--shadow-sm);
+    color: var(--secondary);
+    font-weight: 600;
+}
+
+.trustItem svg {
+    color: var(--accent);
+    flex-shrink: 0;
+    margin-top: 0.1rem;
 }
 
 .actions {
     display: flex;
     gap: 1.5rem;
-    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
 }
 
-.imageContainer {
-    width: 100%;
+.phoneBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 1rem 1.4rem;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 51, 102, 0.14);
+    color: var(--secondary);
+    background: rgba(255, 255, 255, 0.82);
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.phoneBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+.metaRow {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.metaCard {
     display: flex;
-    justify-content: center;
-    margin-top: -2rem;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 1rem 1.1rem;
+    border-radius: 1.1rem;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(0, 51, 102, 0.08);
+    box-shadow: var(--shadow-sm);
 }
 
-.mascotWrapper {
+.metaCard svg {
+    flex-shrink: 0;
+    color: var(--secondary);
+    margin-top: 0.15rem;
+}
+
+.metaCard strong {
+    display: block;
+    color: var(--secondary);
+    margin-bottom: 0.2rem;
+}
+
+.metaCard span {
+    display: block;
+    color: #57718a;
+    font-size: 0.92rem;
+}
+
+.visual {
     position: relative;
     width: 100%;
-    max-width: 1000px;
+    min-height: 560px;
 }
 
-.mascotImg {
-    width: 100%;
-    height: auto;
-    display: block;
-    filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.15));
+.mainImageCard {
+    position: relative;
+    min-height: 500px;
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: 0 28px 60px rgba(0, 51, 102, 0.16);
+    background: #d9e4ee;
 }
 
-.floatingTag {
+.mainImage {
+    object-fit: cover;
+}
+
+.resultBadge {
     position: absolute;
-    top: 10%;
-    right: 5%;
-    background: var(--secondary);
-    color: var(--primary);
-    padding: 1.5rem 2rem;
-    border-radius: 1.5rem;
-    font-family: var(--font-heading);
-    font-weight: 800;
-    font-size: 1.125rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    animation: float 4s ease-in-out infinite;
-    z-index: 5;
-    transform: rotate(5deg);
+    left: 1.25rem;
+    bottom: 1.25rem;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    padding: 1rem 1.1rem;
+    border-radius: 1.1rem;
+    background: rgba(255, 255, 255, 0.92);
+    color: var(--secondary);
+    box-shadow: var(--shadow-md);
 }
 
-@keyframes float {
+.resultBadge span {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #52708a;
+}
 
-    0%,
-    100% {
-        transform: translateY(0) rotate(5deg);
+.resultBadge strong {
+    font-size: 1rem;
+}
+
+.heroMascotGuide {
+    left: -1.5rem;
+    bottom: 0.75rem;
+    width: clamp(120px, 18vw, 210px);
+    z-index: 1;
+}
+
+.heroMascotBuddy {
+    right: -0.5rem;
+    top: 1rem;
+    width: clamp(116px, 16vw, 190px);
+    z-index: 3;
+}
+
+.beforeCard {
+    position: absolute;
+    right: -0.75rem;
+    bottom: 3rem;
+    width: min(255px, 45%);
+    border-radius: 1.35rem;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 20px 40px rgba(0, 51, 102, 0.16);
+    border: 1px solid rgba(0, 51, 102, 0.08);
+}
+
+.beforeCardImage {
+    position: relative;
+    aspect-ratio: 1.08;
+}
+
+.beforeImage {
+    object-fit: cover;
+}
+
+.beforeCardCopy {
+    padding: 0.9rem 1rem 1rem;
+}
+
+.beforeCardCopy span {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #7d8ea0;
+    margin-bottom: 0.35rem;
+}
+
+.beforeCardCopy strong {
+    display: block;
+    color: var(--secondary);
+    line-height: 1.3;
+}
+
+.calloutCard {
+    position: absolute;
+    left: -1rem;
+    top: 2.5rem;
+    width: min(260px, 52%);
+    padding: 1.2rem 1.25rem;
+    border-radius: 1.35rem;
+    background: rgba(0, 51, 102, 0.96);
+    color: #fff;
+    box-shadow: 0 20px 42px rgba(0, 51, 102, 0.22);
+}
+
+.calloutLabel {
+    display: inline-block;
+    margin-bottom: 0.9rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.74);
+}
+
+.calloutCard ul {
+    list-style: none;
+    display: grid;
+    gap: 0.55rem;
+    margin-bottom: 1rem;
+}
+
+.calloutCard li {
+    font-weight: 600;
+}
+
+.calloutLink {
+    display: inline-flex;
+    align-items: center;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+@media (max-width: 992px) {
+    .hero {
+        padding: 4.5rem 0;
     }
 
-    50% {
-        transform: translateY(-15px) rotate(2deg);
+    .wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .title {
+        max-width: none;
+    }
+
+    .visual {
+        min-height: 520px;
+    }
+
+    .heroMascotGuide {
+        left: 0;
+        bottom: 0.5rem;
+        width: 148px;
+    }
+
+    .heroMascotBuddy {
+        right: 0;
+        top: 0.75rem;
+        width: 132px;
     }
 }
 
 @media (max-width: 768px) {
-    .hero {
-        padding: 4rem 0 0;
-    }
-
-    .title {
-        font-size: 2.5rem;
-    }
-
-    .description {
-        font-size: 1.125rem;
-    }
-
     .actions {
         flex-direction: column;
         width: 100%;
         gap: 1rem;
     }
 
-    .floatingTag {
-        padding: 1rem;
-        font-size: 0.75rem;
-        right: 0;
-        top: 0;
+    .phoneBtn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .trustList,
+    .metaRow {
+        grid-template-columns: 1fr;
+    }
+
+    .visual {
+        min-height: 460px;
+    }
+
+    .mainImageCard {
+        min-height: 360px;
+    }
+
+    .heroMascotGuide {
+        left: 0.25rem;
+        bottom: 0.5rem;
+        width: 120px;
+    }
+
+    .heroMascotBuddy {
+        right: 0.5rem;
+        top: 0.5rem;
+        width: 108px;
+    }
+
+    .calloutCard {
+        position: static;
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .beforeCard {
+        right: 1rem;
+        bottom: 1rem;
+        width: 48%;
     }
 }
 
@@ -124,12 +368,31 @@
         padding: 4rem 0;
     }
 
-    .actions {
-        flex-direction: column;
+    .title {
+        font-size: 2.15rem;
     }
 
-    .floatingTag {
-        right: 0;
-        top: -10px;
+    .description {
+        font-size: 1rem;
+    }
+
+    .visual {
+        min-height: 420px;
+    }
+
+    .heroMascotGuide {
+        width: 110px;
+        left: 0.25rem;
+        bottom: 0.25rem;
+    }
+
+    .heroMascotBuddy {
+        display: none;
+    }
+
+    .beforeCard {
+        position: static;
+        width: 100%;
+        margin-top: 1rem;
     }
 }
