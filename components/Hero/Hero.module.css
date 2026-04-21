@@ -153,18 +153,14 @@
 .brandLogoCard {
     width: min(100%, 360px);
     margin: 0 auto;
-    padding: 0.5rem;
-    border-radius: 1.35rem;
-    background: rgba(255, 255, 255, 0.94);
-    border: 1px solid rgba(0, 51, 102, 0.08);
-    box-shadow: 0 20px 44px rgba(0, 51, 102, 0.12);
+    padding: 0;
 }
 
 .brandLogoImage {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 1rem;
+    filter: drop-shadow(0 18px 34px rgba(0, 51, 102, 0.14));
 }
 
 .visualStage {
@@ -334,7 +330,6 @@
 
     .brandLogoCard {
         width: min(84%, 320px);
-        padding: 0.4rem;
     }
 
     .visualStage {
