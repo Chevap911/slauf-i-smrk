@@ -28,6 +28,7 @@ export default function HomepageMascot({
         height={HOMEPAGE_MASCOT_DIMENSIONS.height}
         className={styles.image}
         priority={priority}
+        unoptimized
         sizes="(max-width: 576px) 96px, (max-width: 992px) 160px, 220px"
       />
     </div>
