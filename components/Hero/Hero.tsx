@@ -3,8 +3,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { ArrowRight, CheckCircle2, MapPin, PhoneCall } from 'lucide-react';
-import HomepageMascot from '@/components/HomepageMascot/HomepageMascot';
-import { homepageMascots } from '@/components/HomepageMascot/homepageMascots';
+import brandLogo from '@/Media/Logo.png';
 import styles from './Hero.module.css';
 
 const trustPoints = [
@@ -78,78 +77,61 @@ export default function Hero() {
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
                     >
-                        <div className={styles.mainImageCard}>
+                        <div className={styles.brandLogoCard}>
                             <Image
-                                src="/prije-poslje/fasada-poslje.png"
-                                alt="Očišćena fasada obiteljske kuće u Zagrebu nakon profesionalnog pranja"
-                                fill
-                                className={styles.mainImage}
-                                priority
-                                sizes="(max-width: 992px) 100vw, 50vw"
-                                fetchPriority="high"
+                                src={brandLogo}
+                                alt="Logo Šlauf i Šmrk"
+                                className={styles.brandLogoImage}
+                                sizes="(max-width: 576px) 240px, (max-width: 992px) 320px, 360px"
                             />
-                            <div className={styles.resultBadge}>
-                                <span>Stvarni rezultat</span>
-                                <strong>Pranje fasade u Zagrebu</strong>
-                            </div>
                         </div>
 
-                        <HomepageMascot
-                            src={homepageMascots.heroGuide.src}
-                            alt={homepageMascots.heroGuide.alt}
-                            className={styles.heroMascotGuide}
-                        />
-
-                        <HomepageMascot
-                            src={homepageMascots.heroBuddy.src}
-                            alt={homepageMascots.heroBuddy.alt}
-                            className={styles.heroMascotBuddy}
-                        />
-
-                        <div className={styles.beforeCard}>
-                            <div className={styles.beforeCardImage}>
+                        <div className={styles.visualStage}>
+                            <div className={styles.mainImageCard}>
                                 <Image
-                                    src="/prije-poslje/fasada-prije.jpeg"
-                                    alt="Fasada prije čišćenja s algama i tamnim naslagama"
+                                    src="/prije-poslje/fasada-poslje.png"
+                                    alt="Očišćena fasada obiteljske kuće u Zagrebu nakon profesionalnog pranja"
                                     fill
-                                    className={styles.beforeImage}
-                                    sizes="(max-width: 992px) 50vw, 18vw"
+                                    className={styles.mainImage}
+                                    priority
+                                    sizes="(max-width: 992px) 100vw, 50vw"
+                                    fetchPriority="high"
                                 />
+                                <div className={styles.resultBadge}>
+                                    <span>Stvarni rezultat</span>
+                                    <strong>Pranje fasade u Zagrebu</strong>
+                                </div>
                             </div>
-                            <div className={styles.beforeCardCopy}>
-                                <span>Prije zahvata</span>
-                                <strong>Alge, pruge i sivi sloj prljavštine</strong>
-                            </div>
-                        </div>
 
-                        <div className={styles.calloutCard}>
-                            <span className={styles.calloutLabel}>Najtraženije usluge</span>
-                            <ul>
-                                <li>Pranje fasade</li>
-                                <li>Čišćenje okućnice i tlakavaca</li>
-                                <li>Pranje terasa i prilaza</li>
-                            </ul>
-                            <a href="#usluge" className={styles.calloutLink}>
-                                Pogledajte sve usluge
-                            </a>
+                            <div className={styles.beforeCard}>
+                                <div className={styles.beforeCardImage}>
+                                    <Image
+                                        src="/prije-poslje/fasada-prije.jpeg"
+                                        alt="Fasada prije čišćenja s algama i tamnim naslagama"
+                                        fill
+                                        className={styles.beforeImage}
+                                        sizes="(max-width: 992px) 50vw, 18vw"
+                                    />
+                                </div>
+                                <div className={styles.beforeCardCopy}>
+                                    <span>Prije zahvata</span>
+                                    <strong>Alge, pruge i sivi sloj prljavštine</strong>
+                                </div>
+                            </div>
+
+                            <div className={styles.calloutCard}>
+                                <span className={styles.calloutLabel}>Najtraženije usluge</span>
+                                <ul>
+                                    <li>Pranje fasade</li>
+                                    <li>Čišćenje okućnice i tlakavaca</li>
+                                    <li>Pranje terasa i prilaza</li>
+                                </ul>
+                                <a href="#usluge" className={styles.calloutLink}>
+                                    Pogledajte sve usluge
+                                </a>
+                            </div>
                         </div>
                     </motion.div>
-
-                    <div className={styles.mobileMascotRow} aria-hidden="true">
-                        <HomepageMascot
-                            src={homepageMascots.heroGuide.src}
-                            alt={homepageMascots.heroGuide.alt}
-                            className={styles.mobileMascotItem}
-                            inline
-                        />
-
-                        <HomepageMascot
-                            src={homepageMascots.heroBuddy.src}
-                            alt={homepageMascots.heroBuddy.alt}
-                            className={`${styles.mobileMascotItem} ${styles.mobileMascotBuddyAlt}`}
-                            inline
-                        />
-                    </div>
                 </div>
             </div>
         </section>
