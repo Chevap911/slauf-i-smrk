@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Phone, Mail, ArrowRight, ArrowLeft, Check, Sparkles, Trees, Sofa, Building, Car, PocketIcon as Pool } from 'lucide-react';
 import Confetti from 'react-confetti';
+import HomepageMascot from '@/components/HomepageMascot/HomepageMascot';
+import { homepageMascots } from '@/components/HomepageMascot/homepageMascots';
 import styles from './Contact.module.css';
 
 const SERVICE_TYPES = [
@@ -177,6 +179,12 @@ export default function Contact() {
                                 </div>
                             </a>
                         </div>
+
+                        <HomepageMascot
+                            src={homepageMascots.contact.src}
+                            alt={homepageMascots.contact.alt}
+                            className={styles.contactMascot}
+                        />
                     </motion.div>
 
                     {/* Right Form Wizard Column */}
@@ -238,7 +246,7 @@ export default function Contact() {
                                                 />
                                             </div>
                                             <div className={styles.inputGroup}>
-                                                <label>Mesto / Grad *</label>
+                                                <label>Mjesto / Grad *</label>
                                                 <input
                                                     type="text"
                                                     className={styles.inputField}
@@ -322,7 +330,7 @@ export default function Contact() {
                                         transition={{ duration: 0.3 }}
                                     >
                                         <h3 className={styles.stepTitle}>Konfigurirajte uslugu</h3>
-                                        <p className={styles.stepDesc}>Unesite par detalja kako izračunali informativnu ponudu.</p>
+                                        <p className={styles.stepDesc}>Unesite par detalja kako bismo izračunali informativnu ponudu.</p>
 
                                         {/* YARD DETAILS */}
                                         {formData.service === 'yard' && (
@@ -516,4 +524,3 @@ export default function Contact() {
         </section>
     );
 }
-

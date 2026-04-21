@@ -43,6 +43,13 @@
 .info {
     position: sticky;
     top: 100px;
+    padding-bottom: clamp(5rem, 10vw, 8rem);
+}
+
+.contactMascot {
+    right: -1rem;
+    bottom: -1.5rem;
+    width: clamp(110px, 14vw, 170px);
 }
 
 .title {
@@ -520,12 +527,19 @@
         position: relative;
         top: 0;
         text-align: center;
+        padding-bottom: 6rem;
     }
 
     .contactDetails {
         flex-direction: row;
         justify-content: center;
         flex-wrap: wrap;
+    }
+
+    .contactMascot {
+        right: 0;
+        bottom: 0;
+        width: 130px;
     }
 }
 
@@ -566,5 +580,9 @@
 
     .priceAmount {
         font-size: 2.5rem;
+    }
+
+    .contactMascot {
+        display: none;
     }
 }

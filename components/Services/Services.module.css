@@ -4,6 +4,10 @@
 }
 
 .header {
+    position: relative;
+}
+
+.headerCopy {
     text-align: center;
     max-width: 800px;
     margin: 0 auto 4rem;
@@ -18,6 +22,12 @@
 .sectionDesc {
     font-size: 1.125rem;
     color: #666;
+}
+
+.sectionMascot {
+    left: 3rem;
+    top: 0.5rem;
+    width: clamp(96px, 12vw, 150px);
 }
 
 .grid {
@@ -69,4 +79,10 @@
     color: inherit;
     display: block;
     outline: none;
+}
+
+@media (max-width: 768px) {
+    .sectionMascot {
+        display: none;
+    }
 }

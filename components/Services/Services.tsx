@@ -3,6 +3,8 @@
 import { motion } from 'framer-motion';
 import { ShieldCheck, Home, Car, TreeDeciduous, HeartHandshake } from 'lucide-react';
 import Link from 'next/link';
+import HomepageMascot from '@/components/HomepageMascot/HomepageMascot';
+import { homepageMascots } from '@/components/HomepageMascot/homepageMascots';
 import styles from './Services.module.css';
 
 const services = [
@@ -49,10 +51,18 @@ export default function Services() {
         <section id="usluge" className={styles.services}>
             <div className="container">
                 <div className={styles.header}>
-                    <h2 className={styles.subtitle}>Naše Usluge</h2>
-                    <p className={styles.sectionDesc}>
-                        Specijalizirani smo za visokotlačno pranje svih vanjskih površina. Naša stručnost i ekološki prihvatljiva sredstva jamče vrhunske rezultate.
-                    </p>
+                    <div className={styles.headerCopy}>
+                        <h2 className={styles.subtitle}>Naše Usluge</h2>
+                        <p className={styles.sectionDesc}>
+                            Specijalizirani smo za visokotlačno pranje svih vanjskih površina. Naša stručnost i ekološki prihvatljiva sredstva jamče vrhunske rezultate.
+                        </p>
+                    </div>
+
+                    <HomepageMascot
+                        src={homepageMascots.services.src}
+                        alt={homepageMascots.services.alt}
+                        className={styles.sectionMascot}
+                    />
                 </div>
 
                 <div className={styles.grid}>
