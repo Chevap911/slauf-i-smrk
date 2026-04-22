@@ -3,8 +3,8 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: var(--color-surface);
-    border-top: 1px solid var(--color-border);
+    background-color: var(--background);
+    border-top: 1px solid var(--border);
     box-shadow: 0 -4px 20px rgba(0, 51, 102, 0.08);
     padding: 1.5rem;
     z-index: 9999;
@@ -29,18 +29,18 @@
 .title {
     font-size: 1.125rem;
     font-weight: 700;
-    color: var(--color-primary);
+    color: var(--secondary);
     margin-bottom: 0.5rem;
 }
 
 .description {
     font-size: 0.875rem;
-    color: var(--color-text-light);
+    color: #4B5563;
     line-height: 1.5;
 }
 
 .description a {
-    color: var(--color-secondary);
+    color: var(--accent);
     text-decoration: underline;
 }
 
@@ -67,8 +67,8 @@
 }
 
 .btnAccept {
-    background-color: var(--color-secondary);
-    color: var(--color-primary);
+    background-color: var(--primary);
+    color: var(--secondary);
 }
 
 .btnAccept:hover {
@@ -78,13 +78,13 @@
 
 .btnReject {
     background-color: transparent;
-    color: var(--color-text-light);
-    border: 1px solid var(--color-border);
+    color: #4B5563;
+    border: 1px solid var(--border);
 }
 
 .btnReject:hover {
-    background-color: var(--color-background);
-    color: var(--color-text);
+    background-color: var(--surface);
+    color: var(--foreground);
 }
 
 @media (min-width: 768px) {
