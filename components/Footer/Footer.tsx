@@ -88,7 +88,7 @@ export default function Footer() {
                 </div>
 
                 <div className={styles.bottom}>
-                    <p>© {new Date().getFullYear()} Šlauf i Šmrk. Sva prava pridržana.</p>
+                    <p>© {new Date().getFullYear()} Šlauf i Šmrk. Sva prava pridržana. | <Link href="/politika-privatnosti">Politika privatnosti</Link></p>
                 </div>
             </div>
         </footer>

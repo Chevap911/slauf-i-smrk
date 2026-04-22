@@ -679,6 +679,9 @@ export default function Contact() {
                                         </div>
 
                                         <div className={`${styles.btnGroup} ${styles.right}`}>
+                                            <p style={{ fontSize: '0.8rem', color: '#6B7280', margin: '0 1rem 0 0', textAlign: 'right' }}>
+                                                Slanjem upita potvrđujete da ste upoznati s našom <a href="/politika-privatnosti" target="_blank" style={{ color: 'var(--accent)', textDecoration: 'underline' }}>Politikom privatnosti</a>.
+                                            </p>
                                             <button className={`${styles.btn} ${styles.btnPrimary}`} onClick={handleNext}>
                                                 Odabir usluge <ArrowRight size={20} />
                                             </button>
