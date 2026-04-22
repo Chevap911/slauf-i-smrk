@@ -2,103 +2,469 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Phone, Mail, ArrowRight, ArrowLeft, Check, Sparkles, Trees, Sofa, Building, Car, PocketIcon as Pool } from 'lucide-react';
+import {
+    Phone,
+    Mail,
+    ArrowRight,
+    ArrowLeft,
+    Check,
+    Sparkles,
+    Trees,
+    Sofa,
+    Building,
+    Car,
+    Droplets,
+    Waves,
+    CarFront,
+    TreeDeciduous,
+    HeartHandshake,
+    Home
+} from 'lucide-react';
 import Confetti from 'react-confetti';
 import HomepageMascot from '@/components/HomepageMascot/HomepageMascot';
 import { homepageMascots } from '@/components/HomepageMascot/homepageMascots';
 import styles from './Contact.module.css';
 
-const SERVICE_TYPES = [
-    { id: 'yard', name: 'Čišćenje okućnice', description: 'Uređenje i pranje vanjskog prostora', icon: Trees },
-    { id: 'carpet', name: 'Tepisi i garniture', description: 'Kemijsko čišćenje namještaja i tepiha', icon: Sofa },
-    { id: 'facade', name: 'Čišćenje fasade', description: 'Visokotlačno pranje (prizemnice i kuće do 5m)', icon: Building },
-    { id: 'pool', name: 'Pranje bazena', description: 'Temeljito čišćenje bazena pred sezonu', icon: Pool },
-    { id: 'car', name: 'Pranje automobila', description: 'Vanjsko i dubinsko kemijsko čišćenje vozila', icon: Car },
+type ServiceId =
+    | 'facade'
+    | 'yard'
+    | 'terrace'
+    | 'pavers'
+    | 'driveway'
+    | 'stone'
+    | 'wood'
+    | 'chemical'
+    | 'car'
+    | 'pool'
+    | 'grave';
+
+interface FormState {
+    name: string;
+    email: string;
+    phone: string;
+    address: string;
+    city: string;
+    service: ServiceId | '';
+    surfaceSize: string;
+    facadeHeight: string;
+    chemicalType: string;
+    chemicalQuantity: string;
+    poolSize: string;
+    carPackage: string;
+    graveScope: string;
+    additionalServices: ServiceId[];
+    additionalServiceConfigs: Partial<Record<ServiceId, {
+        size?: string;
+        option?: string;
+        quantity?: string;
+        note?: string;
+    }>>;
+    marketingConsent: boolean;
+    message: string;
+}
+
+const SERVICE_TYPES: { id: ServiceId; name: string; icon: React.ComponentType<{ size?: number }> }[] = [
+    { id: 'facade', name: 'Pranje fasade', icon: Building },
+    { id: 'yard', name: 'Pranje okućnice', icon: Trees },
+    { id: 'terrace', name: 'Pranje terasa', icon: Waves },
+    { id: 'pavers', name: 'Pranje tlakavaca', icon: Home },
+    { id: 'driveway', name: 'Pranje prilaza', icon: CarFront },
+    { id: 'stone', name: 'Kamene površine', icon: TreeDeciduous },
+    { id: 'wood', name: 'Drvene površine', icon: TreeDeciduous },
+    { id: 'chemical', name: 'Kemijsko čišćenje', icon: Sofa },
+    { id: 'car', name: 'Detailing automobila', icon: Car },
+    { id: 'pool', name: 'Pranje bazena', icon: Droplets },
+    { id: 'grave', name: 'Grobna mjesta', icon: HeartHandshake },
 ];
 
-const PRICE_FACTORS = {
-    yard: { maintained: 2, average: 2.5, neglected: 3 },
-    carpet: { rug: 5, sofa: 12 },
-    facade: 5,
-    pool: { small: 400, medium: 600, large: 800 },
-    car: { exterior: 25, interior: 50, complete: 70 }
+const SURFACE_SERVICE_RATES: Record<
+    Exclude<ServiceId, 'chemical' | 'car' | 'pool' | 'grave'>,
+    { min: number; max: number }
+> = {
+    facade: { min: 4, max: 6 },
+    yard: { min: 2, max: 4 },
+    terrace: { min: 3, max: 5 },
+    pavers: { min: 2, max: 4 },
+    driveway: { min: 2, max: 4 },
+    stone: { min: 4, max: 6 },
+    wood: { min: 5, max: 8 },
 };
+
+const CHEMICAL_TYPE_OPTIONS = [
+    { value: 'rug', label: 'Tepih', min: 5, max: 6, unit: 'm²' },
+    { value: 'trosjed', label: 'Trosjed', min: 40, max: 55, unit: 'kom' },
+    { value: 'dvosjed', label: 'Dvosjed', min: 30, max: 40, unit: 'kom' },
+    { value: 'fotelja', label: 'Fotelja', min: 20, max: 30, unit: 'kom' },
+    { value: 'set', label: 'Kompletna garnitura (3+2+1)', min: 80, max: 110, unit: 'kom' },
+    { value: 'mattress-single', label: 'Madrac jednostruki', min: 30, max: 40, unit: 'kom' },
+    { value: 'mattress-double', label: 'Madrac bračni', min: 40, max: 55, unit: 'kom' },
+    { value: 'car-seats', label: 'Autosjedala', min: 60, max: 90, unit: 'kom' },
+];
+
+const CAR_PACKAGE_OPTIONS = [
+    { value: 'interior-basic', label: 'Interijer basic', min: 80, max: 100 },
+    { value: 'interior-full', label: 'Interijer full', min: 120, max: 150 },
+    { value: 'exterior', label: 'Eksterijer', min: 60, max: 80 },
+    { value: 'complete', label: 'Kompletni detailing', min: 150, max: 220 },
+];
+
+const POOL_OPTIONS = [
+    { value: 'standard', label: 'Standardni bazen', min: 600, max: 700 },
+    { value: 'large', label: 'Veći bazen ili veći obod', min: 800, max: 1000 },
+    { value: 'complex', label: 'Zahtjevniji bazen i kompletan okoliš', min: 1000, max: 1400 },
+];
+
+const GRAVE_OPTIONS = [
+    { value: 'basic', label: 'Osnovno čišćenje i uređenje', min: 100, max: 130 },
+    { value: 'extended', label: 'Detaljnije čišćenje i više posla', min: 140, max: 180 },
+    { value: 'regular', label: 'Opsežnije ili redovno održavanje', min: 180, max: 250 },
+];
+
+const createInitialFormData = (): FormState => ({
+    name: '',
+    email: '',
+    phone: '',
+    address: '',
+    city: '',
+    service: '',
+    surfaceSize: '',
+    facadeHeight: '5',
+    chemicalType: 'rug',
+    chemicalQuantity: '1',
+    poolSize: 'standard',
+    carPackage: 'complete',
+    graveScope: 'basic',
+    additionalServices: [],
+    additionalServiceConfigs: {},
+    marketingConsent: false,
+    message: '',
+});
+
+const parseNumber = (value: string) => {
+    const normalized = value.replace(',', '.').trim();
+    const parsed = Number(normalized);
+    return Number.isFinite(parsed) ? parsed : 0;
+};
+
+const roundPrice = (value: number) => Math.round(value);
+const ADD_ON_DISCOUNT = 0.9;
+
+const formatPriceRange = (min: number, max: number) => {
+    if (min <= 0 && max <= 0) {
+        return 'Unesite podatke za procjenu';
+    }
+
+    if (min === max) {
+        return `${min} €`;
+    }
+
+    return `${min} - ${max} €`;
+};
+
+const serviceNeedsSurfaceSize = (service: ServiceId | '') =>
+    service === 'facade' ||
+    service === 'yard' ||
+    service === 'terrace' ||
+    service === 'pavers' ||
+    service === 'driveway' ||
+    service === 'stone' ||
+    service === 'wood';
+
+const getEstimatedPrice = (formData: FormState) => {
+    if (!formData.service) {
+        return { min: 0, max: 0 };
+    }
+
+    if (serviceNeedsSurfaceSize(formData.service)) {
+        const area = parseNumber(formData.surfaceSize);
+        if (area <= 0) {
+            return { min: 0, max: 0 };
+        }
+
+        const rate = SURFACE_SERVICE_RATES[formData.service];
+
+        return {
+            min: roundPrice(area * rate.min),
+            max: roundPrice(area * rate.max),
+        };
+    }
+
+    if (formData.service === 'chemical') {
+        const selectedType = CHEMICAL_TYPE_OPTIONS.find((option) => option.value === formData.chemicalType);
+        const quantity = Math.max(1, parseNumber(formData.chemicalQuantity) || 1);
+
+        if (!selectedType) {
+            return { min: 0, max: 0 };
+        }
+
+        return {
+            min: roundPrice(selectedType.min * quantity),
+            max: roundPrice(selectedType.max * quantity),
+        };
+    }
+
+    if (formData.service === 'car') {
+        const selectedPackage = CAR_PACKAGE_OPTIONS.find((option) => option.value === formData.carPackage);
+        return selectedPackage
+            ? { min: selectedPackage.min, max: selectedPackage.max }
+            : { min: 0, max: 0 };
+    }
+
+    if (formData.service === 'pool') {
+        const selectedPool = POOL_OPTIONS.find((option) => option.value === formData.poolSize);
+        return selectedPool ? { min: selectedPool.min, max: selectedPool.max } : { min: 0, max: 0 };
+    }
+
+    if (formData.service === 'grave') {
+        const selectedScope = GRAVE_OPTIONS.find((option) => option.value === formData.graveScope);
+        return selectedScope ? { min: selectedScope.min, max: selectedScope.max } : { min: 0, max: 0 };
+    }
+
+    return { min: 0, max: 0 };
+};
+
+const getAddOnEstimate = (
+    serviceId: ServiceId,
+    config?: { size?: string; option?: string; quantity?: string; note?: string }
+) => {
+    if (!config) {
+        return { min: 0, max: 0 };
+    }
+
+    if (serviceNeedsSurfaceSize(serviceId)) {
+        const area = parseNumber(config.size || '');
+        if (area <= 0) {
+            return { min: 0, max: 0 };
+        }
+
+        const rate = SURFACE_SERVICE_RATES[serviceId];
+        return {
+            min: roundPrice(area * rate.min * ADD_ON_DISCOUNT),
+            max: roundPrice(area * rate.max * ADD_ON_DISCOUNT),
+        };
+    }
+
+    if (serviceId === 'chemical') {
+        const selectedType = CHEMICAL_TYPE_OPTIONS.find((option) => option.value === config.option);
+        const quantity = Math.max(1, parseNumber(config.quantity || '') || 1);
+
+        if (!selectedType) {
+            return { min: 0, max: 0 };
+        }
+
+        return {
+            min: roundPrice(selectedType.min * quantity * ADD_ON_DISCOUNT),
+            max: roundPrice(selectedType.max * quantity * ADD_ON_DISCOUNT),
+        };
+    }
+
+    if (serviceId === 'car') {
+        const selectedPackage = CAR_PACKAGE_OPTIONS.find((option) => option.value === config.option);
+        return selectedPackage
+            ? {
+                min: roundPrice(selectedPackage.min * ADD_ON_DISCOUNT),
+                max: roundPrice(selectedPackage.max * ADD_ON_DISCOUNT),
+            }
+            : { min: 0, max: 0 };
+    }
+
+    if (serviceId === 'pool') {
+        const selectedPool = POOL_OPTIONS.find((option) => option.value === config.option);
+        return selectedPool
+            ? {
+                min: roundPrice(selectedPool.min * ADD_ON_DISCOUNT),
+                max: roundPrice(selectedPool.max * ADD_ON_DISCOUNT),
+            }
+            : { min: 0, max: 0 };
+    }
+
+    return { min: 0, max: 0 };
+};
+
+const getTotalEstimate = (formData: FormState) =>
+    formData.additionalServices.reduce(
+        (acc, serviceId) => {
+            const addOnEstimate = getAddOnEstimate(serviceId, formData.additionalServiceConfigs[serviceId]);
+            return {
+                min: acc.min + addOnEstimate.min,
+                max: acc.max + addOnEstimate.max,
+            };
+        },
+        getEstimatedPrice(formData)
+    );
+
+const getServiceValidationError = (formData: FormState) => {
+    if (!formData.service) {
+        return 'Odaberite uslugu kako bismo mogli izračunati procjenu.';
+    }
+
+    if (serviceNeedsSurfaceSize(formData.service) && parseNumber(formData.surfaceSize) <= 0) {
+        return 'Upišite okvirnu kvadraturu kako bismo mogli izračunati procjenu.';
+    }
+
+    if (formData.service === 'facade') {
+        const height = parseNumber(formData.facadeHeight);
+        if (height <= 0 || height > 20) {
+            return 'Upišite visinu fasade između 1 i 20 m.';
+        }
+    }
+
+    if (formData.service === 'chemical' && parseNumber(formData.chemicalQuantity) <= 0) {
+        return 'Upišite količinu ili kvadraturu za kemijsko čišćenje.';
+    }
+
+    const missingAdditionalDetails = formData.additionalServices.find((serviceId) => {
+        const config = formData.additionalServiceConfigs[serviceId];
+
+        if (!config) {
+            return true;
+        }
+
+        if (serviceNeedsSurfaceSize(serviceId)) {
+            return parseNumber(config.size || '') <= 0;
+        }
+
+        if (serviceId === 'chemical') {
+            return !config.option || parseNumber(config.quantity || '') <= 0;
+        }
+
+        if (serviceId === 'car' || serviceId === 'pool') {
+            return !config.option;
+        }
+
+        return false;
+    });
+
+    if (missingAdditionalDetails) {
+        return 'Za svaku dodatnu uslugu upišite potrebne podatke kako bismo mogli izračunati ukupnu procjenu.';
+    }
+
+    return null;
+};
+
+const getAdditionalServiceOptions = (primaryService: ServiceId | '') =>
+    SERVICE_TYPES.filter((service) => service.id !== 'grave' && service.id !== primaryService);
 
 export default function Contact() {
     const [step, setStep] = useState(1);
     const [progress, setProgress] = useState(25);
     const [showConfetti, setShowConfetti] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [leadId, setLeadId] = useState<string | null>(null);
+    const [formData, setFormData] = useState<FormState>(createInitialFormData);
 
-    // Form data state
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        phone: '',
-        address: '',
-        city: '',
-        service: 'yard',
-
-        // Yard
-        yardSize: 50,
-        yardCondition: 'average',
-
-        // Carpet
-        carpetType: 'sofa',
-        carpetSize: 1, // Number of seats or m2
-
-        // Facade
-        facadeSize: 100,
-        facadeFloors: '1',
-
-        // Pool
-        poolSize: 'medium',
-
-        // Car
-        carPackage: 'complete',
-
-        message: ''
-    });
-
-    const updateForm = (field: string, value: string | number) => {
-        setFormData(prev => ({ ...prev, [field]: value }));
+    const updateForm = <K extends keyof FormState>(field: K, value: FormState[K]) => {
+        setFormData((prev) => ({ ...prev, [field]: value }));
     };
 
-    // Calculate price as derived state
-    let minPrice = 0;
-    let maxPrice = 0;
+    const toggleAdditionalService = (serviceId: ServiceId) => {
+        setFormData((prev) => {
+            const isSelected = prev.additionalServices.includes(serviceId);
 
-    if (formData.service === 'yard') {
-        const factor = PRICE_FACTORS.yard[formData.yardCondition as keyof typeof PRICE_FACTORS.yard] || 2.5;
-        minPrice = formData.yardSize * factor;
-        maxPrice = minPrice * 1.2;
-    } else if (formData.service === 'carpet') {
-        if (formData.carpetType === 'rug') {
-            minPrice = formData.carpetSize * PRICE_FACTORS.carpet.rug;
-        } else {
-            minPrice = formData.carpetSize * PRICE_FACTORS.carpet.sofa;
+            if (isSelected) {
+                const nextDetails = { ...prev.additionalServiceConfigs };
+                delete nextDetails[serviceId];
+
+                return {
+                    ...prev,
+                    additionalServices: prev.additionalServices.filter((id) => id !== serviceId),
+                    additionalServiceConfigs: nextDetails,
+                };
+            }
+
+            return {
+                ...prev,
+                additionalServices: [...prev.additionalServices, serviceId],
+                additionalServiceConfigs: {
+                    ...prev.additionalServiceConfigs,
+                    [serviceId]: serviceNeedsSurfaceSize(serviceId)
+                        ? { size: '' }
+                        : serviceId === 'chemical'
+                            ? { option: 'rug', quantity: '1', note: '' }
+                            : serviceId === 'car'
+                                ? { option: 'complete', note: '' }
+                                : serviceId === 'pool'
+                                    ? { option: 'standard', note: '' }
+                                    : { note: '' },
+                },
+            };
+        });
+    };
+
+    const updateAdditionalServiceConfig = (
+        serviceId: ServiceId,
+        field: 'size' | 'option' | 'quantity' | 'note',
+        value: string
+    ) => {
+        setFormData((prev) => ({
+            ...prev,
+            additionalServiceConfigs: {
+                ...prev.additionalServiceConfigs,
+                [serviceId]: {
+                    ...prev.additionalServiceConfigs[serviceId],
+                    [field]: value,
+                },
+            },
+        }));
+    };
+
+    const setPrimaryService = (serviceId: ServiceId) => {
+        setFormData((prev) => {
+            const nextAdditionalServices = prev.additionalServices.filter((id) => id !== serviceId);
+            const nextDetails = { ...prev.additionalServiceConfigs };
+            delete nextDetails[serviceId];
+
+            return {
+                ...prev,
+                service: serviceId,
+                additionalServices: nextAdditionalServices,
+                additionalServiceConfigs: nextDetails,
+            };
+        });
+    };
+
+    const estimatedPrice = getTotalEstimate(formData);
+
+    const savePartialLead = async () => {
+        const response = await fetch('/api/contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                mode: 'partial',
+                leadId,
+                formData,
+                estimatedPrice,
+            }),
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to save partial lead');
         }
-        maxPrice = minPrice * 1.2;
-    } else if (formData.service === 'facade') {
-        minPrice = formData.facadeSize * PRICE_FACTORS.facade;
-        maxPrice = minPrice * 1.3;
-    } else if (formData.service === 'pool') {
-        minPrice = PRICE_FACTORS.pool[formData.poolSize as keyof typeof PRICE_FACTORS.pool];
-        maxPrice = minPrice; // Fixed prices for pools generally
-    } else if (formData.service === 'car') {
-        minPrice = PRICE_FACTORS.car[formData.carPackage as keyof typeof PRICE_FACTORS.car];
-        maxPrice = minPrice;
-    }
 
-    // Apply a safety floor
-    if (minPrice < 15) { minPrice = 15; maxPrice = 20; }
+        const data = await response.json();
+        if (data?.leadId) {
+            setLeadId(data.leadId);
+        }
+    };
 
-    const estimatedPrice = { min: Math.round(minPrice), max: Math.round(maxPrice) };
-
-    const handleNext = () => {
-        // Simple validation
+    const handleNext = async () => {
         if (step === 1 && (!formData.name || !formData.email || !formData.phone || !formData.city)) {
-            alert('Molimo ispunite sva obavezna polja (Ime, Email, Telefon, Mjesto/Grad).');
+            alert('Molimo ispunite sva obavezna polja: ime, email, telefon i grad.');
+            return;
+        }
+
+        if (step === 1) {
+            try {
+                await savePartialLead();
+            } catch (error) {
+                console.error('Partial lead save failed:', error);
+            }
+        }
+
+        if (step === 2 && !formData.service) {
+            alert('Odaberite uslugu prije nastavka.');
             return;
         }
 
@@ -113,8 +479,22 @@ export default function Contact() {
         setProgress(Math.max(25, (newStep / 4) * 100));
     };
 
+    const resetForm = () => {
+        setStep(1);
+        setProgress(25);
+        setLeadId(null);
+        setFormData(createInitialFormData());
+    };
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        const validationError = getServiceValidationError(formData);
+        if (validationError) {
+            alert(validationError);
+            return;
+        }
+
         setIsSubmitting(true);
 
         try {
@@ -123,7 +503,12 @@ export default function Contact() {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ formData, estimatedPrice }),
+                body: JSON.stringify({
+                    mode: 'final',
+                    leadId,
+                    formData,
+                    estimatedPrice,
+                }),
             });
 
             if (!response.ok) {
@@ -142,6 +527,9 @@ export default function Contact() {
         }
     };
 
+    const chemicalType = CHEMICAL_TYPE_OPTIONS.find((option) => option.value === formData.chemicalType);
+    const additionalServiceOptions = getAdditionalServiceOptions(formData.service);
+
     return (
         <section id="kontakt" className={styles.contact}>
             {showConfetti && <Confetti recycle={false} numberOfPieces={300} />}
@@ -149,7 +537,6 @@ export default function Contact() {
             <div className="container">
                 <div className={styles.wrapper}>
 
-                    {/* Left Info Column */}
                     <motion.div
                         className={styles.info}
                         initial={{ opacity: 0, x: -30 }}
@@ -159,7 +546,8 @@ export default function Contact() {
                     >
                         <h2 className={styles.title}>Spremni za <span className={styles.yellow}>čišćenje</span>?</h2>
                         <p className={styles.text}>
-                            Stvorili smo brz i jednostavan način da dobijete neobvezujuću informativnu procjenu cijene. Ispunite naš brzi obrazac i naš tim će vam se javiti s točnim detaljima i slobodnim terminima.
+                            Ispunite brzi obrazac i dobit ćete informativnu procjenu cijene. Čim prijeđete prvi korak,
+                            spremamo osnovne podatke vašeg upita kako bismo vas mogli lakše kontaktirati i nastaviti ponudu.
                         </p>
 
                         <div className={styles.contactDetails}>
@@ -187,7 +575,6 @@ export default function Contact() {
                         />
                     </motion.div>
 
-                    {/* Right Form Wizard Column */}
                     <div className={styles.formWrapper}>
                         <div className={styles.progressContainer}>
                             <div className={styles.progressHeader}>
@@ -201,8 +588,6 @@ export default function Contact() {
 
                         <div className={styles.formBox}>
                             <AnimatePresence mode="wait">
-
-                                {/* STEP 1: CONTACT INFO */}
                                 {step === 1 && (
                                     <motion.div
                                         key="step1"
@@ -212,7 +597,7 @@ export default function Contact() {
                                         transition={{ duration: 0.3 }}
                                     >
                                         <h3 className={styles.stepTitle}>Osobni podaci</h3>
-                                        <p className={styles.stepDesc}>Recite nam tko ste kako bismo vas mogli kontaktirati s ponudom.</p>
+                                        <p className={styles.stepDesc}>Upišite kontakt kako bismo vam mogli poslati ponudu i slobodne termine.</p>
 
                                         <div className={styles.formGrid}>
                                             <div className={styles.inputGroup}>
@@ -220,9 +605,9 @@ export default function Contact() {
                                                 <input
                                                     type="text"
                                                     className={styles.inputField}
-                                                    placeholder="Vaše ime"
+                                                    placeholder="Vaše ime i prezime"
                                                     value={formData.name}
-                                                    onChange={e => updateForm('name', e.target.value)}
+                                                    onChange={(e) => updateForm('name', e.target.value)}
                                                 />
                                             </div>
                                             <div className={styles.inputGroup}>
@@ -232,7 +617,7 @@ export default function Contact() {
                                                     className={styles.inputField}
                                                     placeholder="vas@email.com"
                                                     value={formData.email}
-                                                    onChange={e => updateForm('email', e.target.value)}
+                                                    onChange={(e) => updateForm('email', e.target.value)}
                                                 />
                                             </div>
                                             <div className={styles.inputGroup}>
@@ -242,7 +627,7 @@ export default function Contact() {
                                                     className={styles.inputField}
                                                     placeholder="09X XXX XXXX"
                                                     value={formData.phone}
-                                                    onChange={e => updateForm('phone', e.target.value)}
+                                                    onChange={(e) => updateForm('phone', e.target.value)}
                                                 />
                                             </div>
                                             <div className={styles.inputGroup}>
@@ -250,21 +635,35 @@ export default function Contact() {
                                                 <input
                                                     type="text"
                                                     className={styles.inputField}
-                                                    placeholder="Npr. Zagreb, Karlovac..."
+                                                    placeholder="Npr. Zagreb"
                                                     value={formData.city}
-                                                    onChange={e => updateForm('city', e.target.value)}
+                                                    onChange={(e) => updateForm('city', e.target.value)}
                                                 />
                                             </div>
                                             <div className={styles.inputGroup}>
-                                                <label>Adresa (Ulica i kućni broj)</label>
+                                                <label>Adresa</label>
                                                 <input
                                                     type="text"
                                                     className={styles.inputField}
-                                                    placeholder="Npr. Ilica 10"
+                                                    placeholder="Ulica i kućni broj"
                                                     value={formData.address}
-                                                    onChange={e => updateForm('address', e.target.value)}
+                                                    onChange={(e) => updateForm('address', e.target.value)}
                                                 />
                                             </div>
+                                        </div>
+
+                                        <div className={styles.consentBox}>
+                                            <label className={styles.consentRow}>
+                                                <input
+                                                    type="checkbox"
+                                                    checked={formData.marketingConsent}
+                                                    onChange={(e) => updateForm('marketingConsent', e.target.checked)}
+                                                />
+                                                <span>Želim povremeno primati korisne ponude i obavijesti emailom.</span>
+                                            </label>
+                                            <p className={styles.helperText}>
+                                                Ova privola je odvojena od samog upita. Osnovne podatke spremamo kad prijeđete na sljedeći korak kako vaš upit ne bi propao ako prekinete ispunjavanje.
+                                            </p>
                                         </div>
 
                                         <div className={`${styles.btnGroup} ${styles.right}`}>
@@ -275,7 +674,6 @@ export default function Contact() {
                                     </motion.div>
                                 )}
 
-                                {/* STEP 2: SERVICE SELECTION */}
                                 {step === 2 && (
                                     <motion.div
                                         key="step2"
@@ -284,27 +682,26 @@ export default function Contact() {
                                         exit={{ opacity: 0, x: -20 }}
                                         transition={{ duration: 0.3 }}
                                     >
-                                        <h3 className={styles.stepTitle}>Koja usluga vam je potrebna?</h3>
-                                        <p className={styles.stepDesc}>Odaberite primarnu uslugu za danas.</p>
+                                        <h3 className={styles.stepTitle}>Odabir usluge</h3>
+                                        <p className={styles.stepDesc}>Odaberite uslugu za koju želite procjenu.</p>
 
                                         <div className={styles.servicesGrid}>
-                                            {SERVICE_TYPES.map(service => {
+                                            {SERVICE_TYPES.map((service) => {
                                                 const Icon = service.icon;
                                                 const isActive = formData.service === service.id;
+
                                                 return (
-                                                    <div
+                                                    <button
                                                         key={service.id}
+                                                        type="button"
                                                         className={`${styles.serviceCard} ${isActive ? styles.serviceCardActive : ''}`}
-                                                        onClick={() => updateForm('service', service.id)}
+                                                        onClick={() => setPrimaryService(service.id)}
                                                     >
                                                         <div className={styles.serviceIcon}>
                                                             <Icon size={24} />
                                                         </div>
-                                                        <div>
-                                                            <h4 className={styles.serviceName}>{service.name}</h4>
-                                                            <p className={styles.serviceCardDesc}>{service.description}</p>
-                                                        </div>
-                                                    </div>
+                                                        <span className={styles.serviceName}>{service.name}</span>
+                                                    </button>
                                                 );
                                             })}
                                         </div>
@@ -320,7 +717,6 @@ export default function Contact() {
                                     </motion.div>
                                 )}
 
-                                {/* STEP 3: SERVICE DETAILS & ESTIMATE */}
                                 {step === 3 && (
                                     <motion.div
                                         key="step3"
@@ -329,156 +725,275 @@ export default function Contact() {
                                         exit={{ opacity: 0, x: -20 }}
                                         transition={{ duration: 0.3 }}
                                     >
-                                        <h3 className={styles.stepTitle}>Konfigurirajte uslugu</h3>
-                                        <p className={styles.stepDesc}>Unesite par detalja kako bismo izračunali informativnu ponudu.</p>
+                                        <h3 className={styles.stepTitle}>Detalji usluge</h3>
+                                        <p className={styles.stepDesc}>Unesite osnovne podatke kako bismo složili informativnu procjenu.</p>
 
-                                        {/* YARD DETAILS */}
-                                        {formData.service === 'yard' && (
-                                            <div className={`${styles.formGrid} ${styles.full}`}>
+                                        {serviceNeedsSurfaceSize(formData.service) && (
+                                            <div className={styles.formGrid}>
                                                 <div className={styles.inputGroup}>
-                                                    <div className={styles.sliderLabel}>
-                                                        <span>Okvirna površina okućnice</span>
-                                                        <span className={styles.sliderValue}>{formData.yardSize} m²</span>
-                                                    </div>
+                                                    <label>Okvirna kvadratura (m²) *</label>
                                                     <input
-                                                        type="range" min="10" max="500" step="10"
-                                                        className={styles.rangeInput}
-                                                        value={formData.yardSize}
-                                                        onChange={e => updateForm('yardSize', Number(e.target.value))}
+                                                        type="number"
+                                                        min="1"
+                                                        inputMode="decimal"
+                                                        className={styles.inputField}
+                                                        placeholder="Npr. 120"
+                                                        value={formData.surfaceSize}
+                                                        onChange={(e) => updateForm('surfaceSize', e.target.value)}
                                                     />
+                                                    <p className={styles.helperText}>Upišite procijenjenu površinu koju treba oprati.</p>
                                                 </div>
-                                                <div className={styles.inputGroup} style={{ marginTop: '1rem' }}>
-                                                    <label>Trenutno stanje terena</label>
-                                                    <select
-                                                        className={styles.selectField}
-                                                        value={formData.yardCondition}
-                                                        onChange={e => updateForm('yardCondition', e.target.value)}
-                                                    >
-                                                        <option value="maintained">Redovno održavano (samo lagano ispiranje)</option>
-                                                        <option value="average">Srednje (nataložena zemlja/prašina)</option>
-                                                        <option value="neglected">Zapušteno (tvrdokorna prljavština s algama)</option>
-                                                    </select>
-                                                </div>
+
+                                                {formData.service === 'facade' && (
+                                                    <div className={styles.inputGroup}>
+                                                        <label>Visina fasade (m) *</label>
+                                                        <input
+                                                            type="number"
+                                                            min="1"
+                                                            max="20"
+                                                            inputMode="decimal"
+                                                            className={styles.inputField}
+                                                            placeholder="Npr. 8"
+                                                            value={formData.facadeHeight}
+                                                            onChange={(e) => updateForm('facadeHeight', e.target.value)}
+                                                        />
+                                                        <p className={styles.helperText}>Radimo fasade do 20 m visine.</p>
+                                                    </div>
+                                                )}
                                             </div>
                                         )}
 
-                                        {/* CARPET DETAILS */}
-                                        {formData.service === 'carpet' && (
-                                            <div className={`${styles.formGrid} ${styles.full}`}>
+                                        {formData.service === 'chemical' && (
+                                            <div className={styles.formGrid}>
                                                 <div className={styles.inputGroup}>
                                                     <label>Što čistimo?</label>
                                                     <select
                                                         className={styles.selectField}
-                                                        value={formData.carpetType}
-                                                        onChange={e => updateForm('carpetType', e.target.value)}
+                                                        value={formData.chemicalType}
+                                                        onChange={(e) => updateForm('chemicalType', e.target.value)}
                                                     >
-                                                        <option value="sofa">Kutna garnitura, trosjed, fotelje...</option>
-                                                        <option value="rug">Klasični tepisi</option>
+                                                        {CHEMICAL_TYPE_OPTIONS.map((option) => (
+                                                            <option key={option.value} value={option.value}>
+                                                                {option.label}
+                                                            </option>
+                                                        ))}
                                                     </select>
                                                 </div>
-                                                <div className={styles.inputGroup} style={{ marginTop: '1rem' }}>
-                                                    <div className={styles.sliderLabel}>
-                                                        <span>{formData.carpetType === 'sofa' ? 'Broj sjedećih mjesta' : 'Površina tepiha (m²)'}</span>
-                                                        <span className={styles.sliderValue}>{formData.carpetSize} {formData.carpetType === 'sofa' ? 'mjesta' : 'm²'}</span>
-                                                    </div>
-                                                    <input
-                                                        type="range" min="1" max={formData.carpetType === 'sofa' ? '12' : '30'} step="1"
-                                                        className={styles.rangeInput}
-                                                        value={formData.carpetSize}
-                                                        onChange={e => updateForm('carpetSize', Number(e.target.value))}
-                                                    />
-                                                </div>
-                                            </div>
-                                        )}
-
-                                        {/* FACADE DETAILS */}
-                                        {formData.service === 'facade' && (
-                                            <div className={`${styles.formGrid} ${styles.full}`}>
                                                 <div className={styles.inputGroup}>
-                                                    <div className={styles.sliderLabel}>
-                                                        <span>Površina fasade koja se čisti</span>
-                                                        <span className={styles.sliderValue}>{formData.facadeSize} m²</span>
-                                                    </div>
+                                                    <label>
+                                                        {chemicalType?.unit === 'm²' ? 'Kvadratura (m²) *' : 'Količina *'}
+                                                    </label>
                                                     <input
-                                                        type="range" min="20" max="400" step="10"
-                                                        className={styles.rangeInput}
-                                                        value={formData.facadeSize}
-                                                        onChange={e => updateForm('facadeSize', Number(e.target.value))}
+                                                        type="number"
+                                                        min="1"
+                                                        inputMode="decimal"
+                                                        className={styles.inputField}
+                                                        placeholder={chemicalType?.unit === 'm²' ? 'Npr. 12' : 'Npr. 1'}
+                                                        value={formData.chemicalQuantity}
+                                                        onChange={(e) => updateForm('chemicalQuantity', e.target.value)}
                                                     />
-                                                </div>
-                                                <div className={styles.inputGroup} style={{ marginTop: '1rem' }}>
-                                                    <label>Visina objekta</label>
-                                                    <select
-                                                        className={styles.selectField}
-                                                        value={formData.facadeFloors}
-                                                        onChange={e => updateForm('facadeFloors', e.target.value)}
-                                                    >
-                                                        <option value="1">Samo prizemlje i niski dijelovi (do 3m)</option>
-                                                        <option value="2">Prizemlje + jedan kat (do 5m visine)</option>
-                                                        <option value="3" disabled>Veće od 5m (trenutno ne pokrivamo)</option>
-                                                    </select>
+                                                    <p className={styles.helperText}>
+                                                        {chemicalType?.unit === 'm²'
+                                                            ? 'Za tepihe upišite približnu kvadraturu.'
+                                                            : 'Za komadne stavke upišite broj komada.'}
+                                                    </p>
                                                 </div>
                                             </div>
                                         )}
 
-                                        {/* POOL DETAILS */}
-                                        {formData.service === 'pool' && (
-                                            <div className={`${styles.formGrid} ${styles.full}`}>
-                                                <div className={styles.inputGroup}>
-                                                    <label>Veličina bazena</label>
-                                                    <select
-                                                        className={styles.selectField}
-                                                        value={formData.poolSize}
-                                                        onChange={e => updateForm('poolSize', e.target.value)}
-                                                    >
-                                                        <option value="small">Mali bazen (do 15m² vodene površine)</option>
-                                                        <option value="medium">Srednji bazen (15 - 30m²)</option>
-                                                        <option value="large">Veliki kompleksni bazeni (iznad 30m²)</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        )}
-
-                                        {/* CAR DETAILS */}
                                         {formData.service === 'car' && (
-                                            <div className={`${styles.formGrid} ${styles.full}`}>
+                                            <div className={styles.formGrid}>
                                                 <div className={styles.inputGroup}>
-                                                    <label>Paket čišćenja automobila</label>
+                                                    <label>Paket detailinga</label>
                                                     <select
                                                         className={styles.selectField}
                                                         value={formData.carPackage}
-                                                        onChange={e => updateForm('carPackage', e.target.value)}
+                                                        onChange={(e) => updateForm('carPackage', e.target.value)}
                                                     >
-                                                        <option value="exterior">Samo vanjsko temeljito pranje (od 25€)</option>
-                                                        <option value="interior">Kemijsko čišćenje unutrašnjosti (od 50€)</option>
-                                                        <option value="complete">Komplet: izvana + dubinsko unutra (od 70€)</option>
+                                                        {CAR_PACKAGE_OPTIONS.map((option) => (
+                                                            <option key={option.value} value={option.value}>
+                                                                {option.label}
+                                                            </option>
+                                                        ))}
+                                                    </select>
+                                                    <p className={styles.helperText}>
+                                                        Cijena je informativna. Vozila veće vrijednosti i zahtjevniji zahvati procjenjuju se individualno zbog rizika i osiguranja.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        )}
+
+                                        {formData.service === 'pool' && (
+                                            <div className={styles.formGrid}>
+                                                <div className={styles.inputGroup}>
+                                                    <label>Vrsta zahvata</label>
+                                                    <select
+                                                        className={styles.selectField}
+                                                        value={formData.poolSize}
+                                                        onChange={(e) => updateForm('poolSize', e.target.value)}
+                                                    >
+                                                        {POOL_OPTIONS.map((option) => (
+                                                            <option key={option.value} value={option.value}>
+                                                                {option.label}
+                                                            </option>
+                                                        ))}
                                                     </select>
                                                 </div>
                                             </div>
                                         )}
 
-                                        {/* MESSAGE */}
-                                        <div className={`${styles.inputGroup} ${styles.full}`} style={{ marginTop: '1rem' }}>
-                                            <label>Dodatna poruka (neobavezno)</label>
+                                        {formData.service === 'grave' && (
+                                            <div className={styles.formGrid}>
+                                                <div className={styles.inputGroup}>
+                                                    <label>Opseg održavanja</label>
+                                                    <select
+                                                        className={styles.selectField}
+                                                        value={formData.graveScope}
+                                                        onChange={(e) => updateForm('graveScope', e.target.value)}
+                                                    >
+                                                        {GRAVE_OPTIONS.map((option) => (
+                                                            <option key={option.value} value={option.value}>
+                                                                {option.label}
+                                                            </option>
+                                                        ))}
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        )}
+
+                                        <div className={`${styles.inputGroup} ${styles.full}`}>
+                                            <label>Dodatna poruka</label>
                                             <textarea
                                                 className={styles.inputField}
-                                                rows={2}
-                                                placeholder="Npr. Ima puno mrlja od ulja..."
+                                                rows={3}
+                                                placeholder="Npr. pristup je otežan, postoje masne mrlje, treba hitan termin..."
                                                 value={formData.message}
-                                                onChange={e => updateForm('message', e.target.value)}
+                                                onChange={(e) => updateForm('message', e.target.value)}
                                             ></textarea>
                                         </div>
 
-                                        {/* PRICE ESTIMATE BOX */}
+                                        {formData.service !== 'grave' && additionalServiceOptions.length > 0 && (
+                                            <div className={styles.addOnSection}>
+                                                <div className={styles.addOnHeader}>
+                                                    <h4>Dodajte još uz isti dolazak</h4>
+                                                    <p>Odaberite dodatne usluge koje želite spojiti s ovim dolaskom. Za svaku označenu stavku upišite kratki detalj ili okvirnu kvadraturu.</p>
+                                                </div>
+
+                                                <div className={styles.addOnGrid}>
+                                                    {additionalServiceOptions.map((service) => {
+                                                        const Icon = service.icon;
+                                                        const isSelected = formData.additionalServices.includes(service.id);
+                                                        const addOnConfig = formData.additionalServiceConfigs[service.id];
+
+                                                        return (
+                                                            <div key={service.id} className={styles.addOnCardWrap}>
+                                                                <button
+                                                                    type="button"
+                                                                    className={`${styles.serviceCard} ${isSelected ? styles.serviceCardActive : ''}`}
+                                                                    onClick={() => toggleAdditionalService(service.id)}
+                                                                >
+                                                                    <div className={styles.serviceIcon}>
+                                                                        <Icon size={24} />
+                                                                    </div>
+                                                                    <span className={styles.serviceName}>{service.name}</span>
+                                                                </button>
+
+                                                                {isSelected && (
+                                                                    <div className={styles.addOnDetailBox}>
+                                                                        {serviceNeedsSurfaceSize(service.id) && (
+                                                                            <>
+                                                                                <label className={styles.addOnLabel}>Okvirna kvadratura (m²)</label>
+                                                                                <input
+                                                                                    type="number"
+                                                                                    min="1"
+                                                                                    inputMode="decimal"
+                                                                                    className={styles.inputField}
+                                                                                    placeholder="Npr. 40"
+                                                                                    value={addOnConfig?.size || ''}
+                                                                                    onChange={(e) => updateAdditionalServiceConfig(service.id, 'size', e.target.value)}
+                                                                                />
+                                                                            </>
+                                                                        )}
+
+                                                                        {service.id === 'chemical' && (
+                                                                            <div className={styles.addOnFieldGroup}>
+                                                                                <label className={styles.addOnLabel}>Vrsta čišćenja</label>
+                                                                                <select
+                                                                                    className={styles.selectField}
+                                                                                    value={addOnConfig?.option || 'rug'}
+                                                                                    onChange={(e) => updateAdditionalServiceConfig(service.id, 'option', e.target.value)}
+                                                                                >
+                                                                                    {CHEMICAL_TYPE_OPTIONS.map((option) => (
+                                                                                        <option key={option.value} value={option.value}>
+                                                                                            {option.label}
+                                                                                        </option>
+                                                                                    ))}
+                                                                                </select>
+
+                                                                                <label className={styles.addOnLabel}>Količina / kvadratura</label>
+                                                                                <input
+                                                                                    type="number"
+                                                                                    min="1"
+                                                                                    inputMode="decimal"
+                                                                                    className={styles.inputField}
+                                                                                    placeholder="Npr. 12"
+                                                                                    value={addOnConfig?.quantity || ''}
+                                                                                    onChange={(e) => updateAdditionalServiceConfig(service.id, 'quantity', e.target.value)}
+                                                                                />
+                                                                            </div>
+                                                                        )}
+
+                                                                        {service.id === 'car' && (
+                                                                            <div className={styles.addOnFieldGroup}>
+                                                                                <label className={styles.addOnLabel}>Paket detailinga</label>
+                                                                                <select
+                                                                                    className={styles.selectField}
+                                                                                    value={addOnConfig?.option || 'complete'}
+                                                                                    onChange={(e) => updateAdditionalServiceConfig(service.id, 'option', e.target.value)}
+                                                                                >
+                                                                                    {CAR_PACKAGE_OPTIONS.map((option) => (
+                                                                                        <option key={option.value} value={option.value}>
+                                                                                            {option.label}
+                                                                                        </option>
+                                                                                    ))}
+                                                                                </select>
+                                                                            </div>
+                                                                        )}
+
+                                                                        {service.id === 'pool' && (
+                                                                            <div className={styles.addOnFieldGroup}>
+                                                                                <label className={styles.addOnLabel}>Vrsta bazena</label>
+                                                                                <select
+                                                                                    className={styles.selectField}
+                                                                                    value={addOnConfig?.option || 'standard'}
+                                                                                    onChange={(e) => updateAdditionalServiceConfig(service.id, 'option', e.target.value)}
+                                                                                >
+                                                                                    {POOL_OPTIONS.map((option) => (
+                                                                                        <option key={option.value} value={option.value}>
+                                                                                            {option.label}
+                                                                                        </option>
+                                                                                    ))}
+                                                                                </select>
+                                                                            </div>
+                                                                        )}
+                                                                    </div>
+                                                                )}
+                                                            </div>
+                                                        );
+                                                    })}
+                                                </div>
+                                            </div>
+                                        )}
+
                                         <div className={styles.priceBox}>
                                             <h4 className={styles.priceTitle}>Informativna procijenjena cijena</h4>
                                             <div className={styles.priceAmount}>
-                                                {estimatedPrice?.min === estimatedPrice?.max
-                                                    ? `${estimatedPrice?.min} €`
-                                                    : `${estimatedPrice?.min} - ${estimatedPrice?.max} €`}
+                                                {formatPriceRange(estimatedPrice.min, estimatedPrice.max)}
                                             </div>
                                             <p className={styles.priceDisclaimer}>
-                                                Prikazana cijena je okvirnog karaktera temeljena na prosječnim procjenama i može varirati naknadnim uvidom stanja uživo.
+                                                {formData.additionalServices.length > 0
+                                                    ? 'Procjena uključuje glavnu uslugu i dodatne usluge, uz 10% popusta na svaku dodatnu uslugu jer se radovi izvode u istom dolasku.'
+                                                    : 'Procjena je okvirna i može se promijeniti nakon uvida u stvarno stanje, pristup i opseg radova.'}
                                             </p>
                                         </div>
 
@@ -493,7 +1008,6 @@ export default function Contact() {
                                     </motion.div>
                                 )}
 
-                                {/* STEP 4: SUCCESS */}
                                 {step === 4 && (
                                     <motion.div
                                         key="success"
@@ -504,14 +1018,17 @@ export default function Contact() {
                                         <div className={styles.successIcon}>
                                             <Check size={40} />
                                         </div>
-                                        <h3 className={styles.successTitle}>Upit uspješno poslan!</h3>
+                                        <h3 className={styles.successTitle}>Upit uspješno poslan</h3>
                                         <p className={styles.successText}>
-                                            Hvala vam {formData.name}, primili smo vaš upit sa postavkama. Kontaktirat ćemo vas na {formData.phone} ili {formData.email} u najkraćem roku sa idućim koracima.
+                                            Hvala vam {formData.name}. Zaprimili smo vaš upit i javit ćemo vam se na {formData.phone}
+                                            {formData.email ? ` ili ${formData.email}` : ''} u najkraćem roku.
                                         </p>
 
-                                        <button className={`${styles.btn} ${styles.btnSecondary}`} style={{ margin: '0 auto' }} onClick={() => {
-                                            setStep(1); setProgress(25);
-                                        }}>
+                                        <button
+                                            className={`${styles.btn} ${styles.btnSecondary}`}
+                                            style={{ margin: '0 auto' }}
+                                            onClick={resetForm}
+                                        >
                                             Pošalji novi upit
                                         </button>
                                     </motion.div>
