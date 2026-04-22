@@ -1,3 +1,4 @@
+import path from "node:path";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
@@ -5,6 +6,9 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: false,
   },
   excludeDefaultMomentLocales: true,
+  turbopack: {
+    root: path.resolve(__dirname),
+  },
   async redirects() {
     return [
       {
@@ -52,4 +56,3 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
-

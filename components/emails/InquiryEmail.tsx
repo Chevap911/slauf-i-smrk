@@ -33,47 +33,124 @@ interface InquiryEmailProps {
     estimatedPriceMin: number;
     estimatedPriceMax: number;
     message?: string;
-    details?: Record<string, string | number>;
+    details?: Record<string, unknown>;
 }
 
-const formatDetails = (details?: Record<string, string | number>) => {
+const formatDetails = (details?: Record<string, unknown>) => {
     if (!details) return null;
 
-    const lines = [];
+    const lines: Array<{ label: string; value: string | number }> = [];
+    const surfaceServiceLabels: Record<string, string> = {
+        yard: 'Površina okućnice',
+        terrace: 'Površina terase',
+        pavers: 'Površina tlakavaca',
+        driveway: 'Površina prilaza',
+        stone: 'Površina kamenih površina',
+        wood: 'Površina drvenih površina',
+        facade: 'Površina fasade',
+    };
 
-    // YARD
-    if (details.service === 'yard') {
-        lines.push({ label: 'Površina okućnice', value: `${details.yardSize} m²` });
-        let condition = 'Prosječno (srednje)';
-        if (details.yardCondition === 'maintained') condition = 'Redovno održavano';
-        if (details.yardCondition === 'neglected') condition = 'Zapušteno';
-        lines.push({ label: 'Stanje', value: condition });
+    if (details.service && surfaceServiceLabels[String(details.service)] && details.surfaceSize) {
+        lines.push({
+            label: surfaceServiceLabels[String(details.service)],
+            value: `${details.surfaceSize} m²`,
+        });
     }
 
-    // CARPET
-    if (details.service === 'carpet') {
-        const type = details.carpetType === 'rug' ? 'Klasični tepih' : 'Kutna garnitura / kauč';
-        lines.push({ label: 'Tip', value: type });
-        lines.push({ label: details.carpetType === 'sofa' ? 'Broj sjedećih mjesta' : 'Površina (m²)', value: details.carpetSize });
+    if (details.service === 'facade' && details.facadeHeight) {
+        lines.push({ label: 'Visina fasade', value: `${details.facadeHeight} m` });
     }
 
-    // FACADE
-    if (details.service === 'facade') {
-        lines.push({ label: 'Površina fasade', value: `${details.facadeSize} m²` });
-        const floors = details.facadeFloors === '1' ? 'Prizemlje (do 3m)' : 'Prizemlje + kat (do 5m)';
-        lines.push({ label: 'Visina', value: floors });
+    if (details.service === 'chemical') {
+        const typeMap: Record<string, string> = {
+            rug: 'Tepih',
+            trosjed: 'Trosjed',
+            dvosjed: 'Dvosjed',
+            fotelja: 'Fotelja',
+            set: 'Kompletna garnitura (3+2+1)',
+            'mattress-single': 'Madrac jednostruki',
+            'mattress-double': 'Madrac bračni',
+            'car-seats': 'Autosjedala',
+        };
+        lines.push({ label: 'Vrsta čišćenja', value: typeMap[String(details.chemicalType)] || String(details.chemicalType) });
+        if (details.chemicalQuantity) {
+            lines.push({ label: 'Količina / kvadratura', value: String(details.chemicalQuantity) });
+        }
     }
 
-    // POOL
     if (details.service === 'pool') {
-        const sizeMap: Record<string, string> = { small: 'Mali (do 15m²)', medium: 'Srednji (15 - 30m²)', large: 'Veliki (iznad 30m²)' };
-        lines.push({ label: 'Veličina bazena', value: sizeMap[details.poolSize] || details.poolSize });
+        const sizeMap: Record<string, string> = {
+            standard: 'Standardni bazen',
+            large: 'Veći bazen ili veći obod',
+            complex: 'Zahtjevniji bazen i kompletan okoliš',
+        };
+        lines.push({ label: 'Vrsta bazena', value: sizeMap[String(details.poolSize)] || String(details.poolSize) });
     }
 
-    // CAR
     if (details.service === 'car') {
-        const pkgMap: Record<string, string> = { exterior: 'Samo vanjsko pranje', interior: 'Unutarnje kemijsko', complete: 'Kompletno izvana i unutra' };
-        lines.push({ label: 'Paket pranja', value: pkgMap[details.carPackage] || details.carPackage });
+        const pkgMap: Record<string, string> = {
+            'interior-basic': 'Interijer basic',
+            'interior-full': 'Interijer full',
+            exterior: 'Eksterijer',
+            complete: 'Kompletni detailing',
+        };
+        lines.push({ label: 'Paket detailinga', value: pkgMap[String(details.carPackage)] || String(details.carPackage) });
+    }
+
+    if (details.service === 'grave') {
+        const scopeMap: Record<string, string> = {
+            basic: 'Osnovno čišćenje i uređenje',
+            extended: 'Detaljnije čišćenje i više posla',
+            regular: 'Opsežnije ili redovno održavanje',
+        };
+        lines.push({ label: 'Opseg održavanja', value: scopeMap[String(details.graveScope)] || String(details.graveScope) });
+    }
+
+    const additionalServices = Array.isArray(details.additionalServices)
+        ? details.additionalServices.filter((value): value is string => typeof value === 'string')
+        : [];
+    const additionalServiceConfigs =
+        details.additionalServiceConfigs && typeof details.additionalServiceConfigs === 'object'
+            ? details.additionalServiceConfigs as Record<string, unknown>
+            : {};
+
+    if (additionalServices.length > 0) {
+        const serviceMap: Record<string, string> = {
+            facade: 'Pranje fasade',
+            yard: 'Pranje okućnice',
+            terrace: 'Pranje terasa',
+            pavers: 'Pranje tlakavaca',
+            driveway: 'Pranje prilaza',
+            stone: 'Čišćenje kamenih površina',
+            wood: 'Čišćenje drvenih površina',
+            chemical: 'Kemijsko čišćenje',
+            car: 'Detailing automobila',
+            pool: 'Pranje bazena',
+        };
+
+        lines.push({
+            label: 'Dodatne usluge',
+            value: additionalServices
+                .map((serviceId) => {
+                    const detail = additionalServiceConfigs[serviceId];
+                    const config = detail && typeof detail === 'object' ? detail as Record<string, unknown> : {};
+                    const parts = [
+                        typeof config.size === 'string' && config.size.trim() ? `${config.size.trim()} m²` : '',
+                        typeof config.quantity === 'string' && config.quantity.trim() ? `količina ${config.quantity.trim()}` : '',
+                        typeof config.note === 'string' && config.note.trim() ? config.note.trim() : '',
+                    ].filter(Boolean);
+                    const detailSuffix = parts.length > 0 ? ` (${parts.join(', ')})` : '';
+                    return `${serviceMap[serviceId] || serviceId}${detailSuffix}`;
+                })
+                .join(', '),
+        });
+    }
+
+    if ('marketingConsent' in details) {
+        lines.push({
+            label: 'Marketing privola',
+            value: Boolean(details.marketingConsent) ? 'Da' : 'Ne',
+        });
     }
 
     if (lines.length === 0) return null;

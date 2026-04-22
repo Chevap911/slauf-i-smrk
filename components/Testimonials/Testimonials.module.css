@@ -15,6 +15,13 @@
     color: var(--secondary);
 }
 
+.subtitle {
+    max-width: 48ch;
+    margin: 0.9rem auto 0;
+    color: #5c7288;
+    line-height: 1.7;
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -69,6 +76,11 @@
     font-weight: 700;
     color: var(--secondary);
     font-size: 1rem;
+}
+
+.context {
+    color: #6d8093;
+    font-size: 0.9rem;
 }
 
 @media (max-width: 768px) {

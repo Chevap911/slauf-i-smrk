@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Droplets, ShieldCheck, Clock, Leaf, AlertTriangle, Bug, Landmark, Heart } from 'lucide-react';
+import { Droplets, ShieldCheck, Clock, AlertTriangle, Bug, Landmark, Heart } from 'lucide-react';
 import ServicePage from '@/components/ServicePage/ServicePage';
 import { Home, TreeDeciduous, Waves } from 'lucide-react';
 
@@ -20,8 +20,9 @@ export default function GrobnaMjestaPage() {
         <ServicePage
             title="Održavanje Grobnih Mjesta"
             titleHighlight="Grobnih Mjesta"
+            canonicalPath="/usluge/odrzavanje-grobnih-mjesta"
             description="Grobna mjesta vaših najmilijih zaslužuju dostojanstven izgled. Profesionalno čistimo i održavamo kamene nadgrobne spomenike, ploče, obrube i okolne površine. Uklanjamo mahovinu, lišajeve i nakupljenu prljavštinu s poštovanjem i pažnjom."
-            priceHint="od 50 €"
+            priceHint="od 100 €"
             processSteps={[
                 {
                     title: 'Dogovor i lokacija',
@@ -82,9 +83,8 @@ export default function GrobnaMjestaPage() {
 
                     <h2>Cijene održavanja</h2>
                     <ul>
-                        <li><strong>Jednostruko grobno mjesto</strong>: od 50 €</li>
-                        <li><strong>Dvostruko grobno mjesto</strong>: od 70 €</li>
-                        <li><strong>Obiteljska grobnica</strong>: od 100 €</li>
+                        <li><strong>Početna cijena usluge</strong>: od 100 €</li>
+                        <li><strong>Konačna cijena</strong>: ovisi o veličini grobnog mjesta, vrsti kamena, zaprljanosti i opsegu održavanja.</li>
                         <li><strong>Redovito održavanje</strong> (4x godišnje): posebna cijena po dogovoru</li>
                     </ul>
 
@@ -147,7 +147,7 @@ export default function GrobnaMjestaPage() {
             faq={[
                 {
                     question: 'Koliko košta čišćenje grobnog mjesta?',
-                    answer: 'Cijena za jednostruko grobno mjesto kreće od 50 €. Dvostruko od 70 €. Obiteljska grobnica od 100 €.',
+                    answer: 'Početna cijena čišćenja i održavanja grobnog mjesta kreće od 100 €, a konačna cijena ovisi o veličini, vrsti kamena i opsegu radova.',
                 },
                 {
                     question: 'Trebam li biti prisutan na groblju?',

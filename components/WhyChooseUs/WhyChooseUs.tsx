@@ -2,6 +2,8 @@
 
 import { motion } from 'framer-motion';
 import { CheckCircle, Zap, Shield, Clock, BadgeEuro, Search } from 'lucide-react';
+import HomepageMascot from '@/components/HomepageMascot/HomepageMascot';
+import { homepageMascots } from '@/components/HomepageMascot/homepageMascots';
 import styles from './WhyChooseUs.module.css';
 
 const reasons = [
@@ -42,10 +44,18 @@ export default function WhyChooseUs() {
         <section id="zasto-mi" className={styles.section}>
             <div className="container">
                 <div className={styles.header}>
-                    <h2 className={styles.title}>Zašto odabrati nas?</h2>
-                    <p className={styles.subtitle}>
-                        Povjerenje klijenata gradimo na kvaliteti, transparentnosti i vrhunskim rezultatima.
-                    </p>
+                    <div className={styles.headerCopy}>
+                        <h2 className={styles.title}>Zašto odabrati nas?</h2>
+                        <p className={styles.subtitle}>
+                            Povjerenje klijenata gradimo na kvaliteti, transparentnosti i vrhunskim rezultatima.
+                        </p>
+                    </div>
+
+                    <HomepageMascot
+                        src={homepageMascots.whyChooseUs.src}
+                        alt={homepageMascots.whyChooseUs.alt}
+                        className={styles.sectionMascot}
+                    />
                 </div>
 
                 <div className={styles.grid}>

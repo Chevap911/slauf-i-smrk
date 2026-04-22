@@ -74,7 +74,7 @@ export default function BeforeAfterSlider({
             >
                 {/* After image (full width background) */}
                 <div className={styles.imageWrapper}>
-                    <Image src={afterSrc} alt={afterAlt} fill className={styles.image} sizes="(max-width: 768px) 100vw, 50vw" priority />
+                    <Image src={afterSrc} alt={afterAlt} fill className={styles.image} sizes="(max-width: 768px) 100vw, 50vw" />
                     <span className={styles.badge} style={{ right: '1rem', left: 'auto' }}>POSLIJE</span>
                 </div>
 

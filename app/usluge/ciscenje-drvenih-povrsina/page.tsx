@@ -20,8 +20,17 @@ export default function DrvenePovrsinePage() {
         <ServicePage
             title="Čišćenje Drvenih Površina"
             titleHighlight="Drvenih Površina"
+            canonicalPath="/usluge/ciscenje-drvenih-povrsina"
             description="Drvo s vremenom gubi boju i sivi pod utjecajem sunca, kiše i vlage. Profesionalnim čišćenjem uklanjamo sivilo, alge i nakupljenu prljavštinu s terasa, ograda, pergola i vrtnog namještaja. Vraćamo drvu izvornu toplinu i ljepotu."
-            priceHint="od 8 €/m²"
+            priceHint="5 - 8 €/m²"
+            heroImage="/seo-results/ciscenje-drvenih-povrsina/prije-poslije.jpeg"
+            heroImageAlt="Prije i poslije rezultat čišćenja drvenih površina"
+            resultsShowcase={{
+                combinedSrc: '/seo-results/ciscenje-drvenih-povrsina/prije-poslije.jpeg',
+                combinedAlt: 'Prije i poslije rezultat čišćenja drvenih terasa ili drvenih površina',
+                title: 'Drvene površine prije i poslije',
+                description: 'Drvo jako dobro pokazuje razliku u tonu i svježini nakon čišćenja, pa ovdje koristimo gotovu prije i poslije kompoziciju.',
+            }}
             processSteps={[
                 {
                     title: 'Procjena drva',
@@ -141,7 +150,7 @@ export default function DrvenePovrsinePage() {
                 },
                 {
                     question: 'Koliko košta čišćenje drvene terase?',
-                    answer: 'Cijena kreće od 8 €/m². Za terasu od 20 m² to je otprilike 160–200 €. Besplatna procjena na licu mjesta.',
+                    answer: 'Cijena za čišćenje drvenih površina najčešće se kreće od 5 do 8 €/m², ovisno o vrsti drva, stanju i zaprljanosti. Besplatna procjena na licu mjesta.',
                 },
                 {
                     question: 'Trebam li nauljivati drvo nakon čišćenja?',

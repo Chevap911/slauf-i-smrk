@@ -15,7 +15,7 @@ const pairs = [
     {
         before: '/prije-poslje/terasa-leggiero-prije-2.jpeg',
         after: '/prije-poslje/terasa-leggiero-poslje-2.jpeg',
-        beforeAlt: 'Vanjska terasa před čišćenjem — zarasle fuge i korov',
+        beforeAlt: 'Vanjska terasa prije čišćenja — zarasle fuge i korov',
         afterAlt: 'Vanjska terasa poslije profesionalnog pranja tlakavaca Zagreb',
         label: 'Pranje okućnice — tlakavci',
     },

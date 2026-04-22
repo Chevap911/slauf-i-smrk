@@ -7,17 +7,20 @@ import styles from './Testimonials.module.css';
 const testimonials = [
     {
         name: "Mateja Ž.",
-        text: "“Njihov pristup poslu je izvanredan - fasada mi nikada nije izgledala bolje! Momci su nasmijani, profesionalni i brzi. Je....na ekipa :)!\"",
+        context: "Pranje fasade",
+        text: "Fasada je nakon pranja izgledala osjetno svjetlije i urednije. Ekipa je došla na vrijeme, zaštitila okolinu i sve ostavila čisto.",
         rating: 5
     },
     {
         name: "Iva K.",
-        text: "\"Super su očistili fasadu i okućnicu, kad su došli sam i žicala da mi i auto usput operu pa su mi i to uskočili odradit.\"",
+        context: "Čišćenje okućnice",
+        text: "Tlakavci i terasa bili su puni mahovine, a razlika nakon čišćenja bila je ogromna. Posebno mi je značilo što je procjena bila jasna odmah na početku.",
         rating: 5
     },
     {
         name: "Denijal J.",
-        text: "\"Šlauf i Šmrk hahah. Super ekipa, super delaju. \"",
+        context: "Fasada + prilaz",
+        text: "Dogovor je bio brz, komunikacija uredna, a rezultat točno onakav kakav smo očekivali. Preporučujem za fasade i vanjske površine.",
         rating: 5
     }
 ];
@@ -27,7 +30,8 @@ export default function Testimonials() {
         <section id="recenzije" className={styles.section}>
             <div className="container">
                 <div className={styles.header}>
-                    <h2 className={styles.title}>Što klijenti misle?</h2>
+                    <h2 className={styles.title}>Dojmovi nakon čišćenja</h2>
+                    <p className={styles.subtitle}>Najviše nam znače preporuke nakon završenog posla i vidljive razlike na terenu.</p>
                 </div>
 
                 <div className={styles.grid}>
@@ -51,6 +55,7 @@ export default function Testimonials() {
                                     ))}
                                 </div>
                                 <span className={styles.name}>{item.name}</span>
+                                <span className={styles.context}>{item.context}</span>
                             </div>
                         </motion.div>
                     ))}

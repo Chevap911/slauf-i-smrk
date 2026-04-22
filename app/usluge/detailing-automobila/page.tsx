@@ -20,8 +20,9 @@ export default function DetailingAutoPage() {
         <ServicePage
             title="Detailing Automobila"
             titleHighlight="Automobila"
+            canonicalPath="/usluge/detailing-automobila"
             description="Profesionalni detailing vašeg vozila na vašoj adresi. Dubinski čistimo interijer — sjedala, pod, strop, instrument ploču — i eksterijer uključujući pranje, poliranje i zaštitu. Koristimo iste profesionalne injektirno-ekstrakcijske strojeve kao za čišćenje namještaja."
-            priceHint="od 80 € (interijer) · od 150 € (komplet)"
+            priceHint="od 80 € (interijer) · ponuda prema vozilu"
             processSteps={[
                 {
                     title: 'Pregled vozila',
@@ -76,7 +77,17 @@ export default function DetailingAutoPage() {
                         <li><strong>SUV / kombi</strong>: +20–30% na sve cijene</li>
                     </ul>
                     <p>
-                        Za preciznu cijenu javite nam se s modelom vozila i željenim opsegom usluge.
+                        Navedene cijene su <strong>početne i informativne</strong>, ne fiksne. Konačna cijena ovisi o
+                        stanju vozila, veličini, razini zaprljanosti, opsegu usluge i <strong>vrijednosti automobila</strong>.
+                    </p>
+                    <p>
+                        Kod vozila veće tržišne vrijednosti, sportskih i premium modela, kolekcionarskih auta ili
+                        specifičnih lakova i interijera, cijena je viša zbog većeg rizika rada, osiguranja i potrebne
+                        dodatne pažnje. Nije isti rizik raditi na vozilu vrijednom 20.000 € i na vozilu vrijednom 200.000 €.
+                    </p>
+                    <p>
+                        Za preciznu ponudu javite nam se s modelom vozila, procijenjenom vrijednošću auta i željenim
+                        opsegom usluge. Nakon pregleda dajemo individualnu cijenu prije početka rada.
                     </p>
 
                     <h2>Kada trebate detailing?</h2>
@@ -137,6 +148,10 @@ export default function DetailingAutoPage() {
                 {
                     question: 'Koliko traje detailing automobila?',
                     answer: 'Kompletni detailing (interijer + eksterijer) traje 3–5 sati, ovisno o veličini i stanju vozila.',
+                },
+                {
+                    question: 'Jesu li cijene detailinga fiksne za svako vozilo?',
+                    answer: 'Ne. Objavljene cijene su početne i informativne. Konačna cijena ovisi o stanju vozila, veličini, opsegu usluge, tržišnoj vrijednosti automobila te riziku i osiguranju povezanom s radom na vozilu.',
                 },
                 {
                     question: 'Dolazite li na moju adresu?',

@@ -1,0 +1,19 @@
+.mascot {
+    position: absolute;
+    display: block;
+    pointer-events: none;
+    user-select: none;
+    z-index: 2;
+}
+
+.inlineMascot {
+    position: relative;
+    inset: auto;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 16px 26px rgba(0, 51, 102, 0.18));
+}

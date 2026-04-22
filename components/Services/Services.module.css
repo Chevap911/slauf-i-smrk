@@ -4,6 +4,10 @@
 }
 
 .header {
+    position: relative;
+}
+
+.headerCopy {
     text-align: center;
     max-width: 800px;
     margin: 0 auto 4rem;
@@ -18,6 +22,12 @@
 .sectionDesc {
     font-size: 1.125rem;
     color: #666;
+}
+
+.sectionMascot {
+    left: 3rem;
+    top: 0.5rem;
+    width: clamp(96px, 12vw, 150px);
 }
 
 .grid {
@@ -69,4 +79,51 @@
     color: inherit;
     display: block;
     outline: none;
+}
+
+.popularSearches {
+    margin-top: 2.25rem;
+    padding: 1.25rem 1.5rem;
+    border-radius: 1.25rem;
+    background: rgba(255, 255, 255, 0.82);
+    border: 1px solid rgba(0, 51, 102, 0.08);
+    box-shadow: var(--shadow-sm);
+}
+
+.popularLabel {
+    display: block;
+    margin-bottom: 0.9rem;
+    color: var(--secondary);
+    font-weight: 700;
+}
+
+.popularLinks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.popularLink {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.65rem 0.9rem;
+    border-radius: 999px;
+    background: rgba(0, 51, 102, 0.06);
+    color: var(--secondary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.popularLink:hover {
+    background: rgba(0, 51, 102, 0.12);
+}
+
+@media (max-width: 768px) {
+    .sectionMascot {
+        display: none;
+    }
+
+    .popularSearches {
+        padding: 1rem;
+    }
 }

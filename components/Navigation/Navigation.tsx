@@ -30,6 +30,9 @@ export default function Navigation() {
                             <div className={styles.dropdownMenu}>
                                 <Link href="/usluge/pranje-fasade">Pranje fasade</Link>
                                 <Link href="/usluge/pranje-okucnice">Pranje okućnice</Link>
+                                <Link href="/usluge/pranje-terasa">Pranje terasa</Link>
+                                <Link href="/usluge/pranje-tlakavaca">Pranje tlakavaca</Link>
+                                <Link href="/usluge/pranje-prilaza">Pranje prilaza</Link>
                                 <Link href="/usluge/kemijsko-ciscenje-namjestaja">Kemijsko čišćenje</Link>
                                 <Link href="/usluge/ciscenje-kamenih-povrsina">Kamene površine</Link>
                                 <Link href="/usluge/ciscenje-drvenih-povrsina">Drvene površine</Link>
@@ -70,6 +73,9 @@ export default function Navigation() {
                             <div className={styles.mobileDropdownItems}>
                                 <Link href="/usluge/pranje-fasade" onClick={closeMenu}>Pranje fasade</Link>
                                 <Link href="/usluge/pranje-okucnice" onClick={closeMenu}>Pranje okućnice</Link>
+                                <Link href="/usluge/pranje-terasa" onClick={closeMenu}>Pranje terasa</Link>
+                                <Link href="/usluge/pranje-tlakavaca" onClick={closeMenu}>Pranje tlakavaca</Link>
+                                <Link href="/usluge/pranje-prilaza" onClick={closeMenu}>Pranje prilaza</Link>
                                 <Link href="/usluge/kemijsko-ciscenje-namjestaja" onClick={closeMenu}>Kemijsko čišćenje</Link>
                                 <Link href="/usluge/ciscenje-kamenih-povrsina" onClick={closeMenu}>Kamene površine</Link>
                                 <Link href="/usluge/ciscenje-drvenih-povrsina" onClick={closeMenu}>Drvene površine</Link>
@@ -92,4 +98,3 @@ export default function Navigation() {
         </nav>
     );
 }
-

@@ -4,6 +4,10 @@
 }
 
 .header {
+    position: relative;
+}
+
+.headerCopy {
     text-align: center;
     max-width: 800px;
     margin: 0 auto 4rem;
@@ -21,6 +25,12 @@
     font-size: 1.125rem;
     color: var(--foreground);
     opacity: 0.8;
+}
+
+.sectionMascot {
+    right: 3rem;
+    top: -0.5rem;
+    width: clamp(96px, 12vw, 140px);
 }
 
 .grid {
@@ -82,5 +92,9 @@
 
     .card {
         padding: 1.5rem;
+    }
+
+    .sectionMascot {
+        display: none;
     }
 }
