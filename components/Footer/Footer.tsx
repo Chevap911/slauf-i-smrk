@@ -1,6 +1,17 @@
 import Link from 'next/link';
-import { Instagram, Facebook, Mail, Phone, MapPin } from 'lucide-react';
+import { Camera, CheckCircle2, Mail, MapPin, Phone } from 'lucide-react';
 import styles from './Footer.module.css';
+
+const highlights = [
+    {
+        icon: CheckCircle2,
+        text: 'Besplatna procjena na lokaciji prije početka radova',
+    },
+    {
+        icon: Camera,
+        text: 'Fotografije prije i poslije za veće zahvate',
+    },
+];
 
 export default function Footer() {
     return (
@@ -9,30 +20,51 @@ export default function Footer() {
                 <div className={styles.grid}>
                     <div className={styles.brand}>
                         <h3 className={styles.brandTitle}>Šlauf i Šmrk</h3>
-                        <p className={styles.brandTagline}>Vaš dom zaslužuje blistav prvi dojam. Brzo, sigurno i efikasno čišćenje.</p>
-                        <div className={styles.socials}>
-                            <a href="#" className={styles.socialLink} aria-label="Instagram"><Instagram size={20} /></a>
-                            <a href="#" className={styles.socialLink} aria-label="Facebook"><Facebook size={20} /></a>
+                        <p className={styles.brandTagline}>
+                            Pranje fasada, okućnica, terasa i prilaza u Zagrebu i okolici.
+                            Fokus nam je siguran pristup, čista procjena i rezultat koji se stvarno vidi.
+                        </p>
+
+                        <div className={styles.highlights}>
+                            {highlights.map((item) => {
+                                const Icon = item.icon;
+                                return (
+                                    <div key={item.text} className={styles.highlightItem}>
+                                        <Icon size={18} />
+                                        <span>{item.text}</span>
+                                    </div>
+                                );
+                            })}
                         </div>
+
+                        <Link href="/#kontakt" className={styles.brandCta}>
+                            Zatražite procjenu
+                        </Link>
                     </div>
 
                     <div className={styles.section}>
                         <h4 className={styles.sectionTitle}>Usluge</h4>
                         <ul className={styles.list}>
                             <li><Link href="/usluge/pranje-fasade">Pranje fasada</Link></li>
-                            <li><Link href="/usluge/pranje-okucnice">Pranje okućnica</Link></li>
-                            <li><Link href="/usluge/kemijsko-ciscenje-namjestaja">Kemijsko čišćenje</Link></li>
-                            <li><Link href="/usluge/detailing-automobila">Detailing automobila</Link></li>
+                            <li><Link href="/usluge/pranje-okucnice">Pranje okućnice</Link></li>
+                            <li><Link href="/usluge/pranje-terasa">Pranje terasa</Link></li>
+                            <li><Link href="/usluge/pranje-tlakavaca">Pranje tlakavaca</Link></li>
+                            <li><Link href="/usluge/pranje-prilaza">Pranje prilaza</Link></li>
+                            <li><Link href="/usluge/ciscenje-kamenih-povrsina">Kamene površine</Link></li>
                             <li><Link href="/usluge/ciscenje-drvenih-povrsina">Drvene površine</Link></li>
-                            <li><Link href="/usluge/odrzavanje-grobnih-mjesta">Grobna mjesta</Link></li>
+                            <li><Link href="/usluge/kemijsko-ciscenje-namjestaja">Kemijsko čišćenje</Link></li>
                         </ul>
                     </div>
 
                     <div className={styles.section}>
-                        <h4 className={styles.sectionTitle}>Područja</h4>
+                        <h4 className={styles.sectionTitle}>Sadržaj</h4>
                         <ul className={styles.list}>
-                            <li><Link href="/podrucje/zagreb">Zagreb</Link></li>
-                            <li><Link href="/blog">Blog</Link></li>
+                            <li><Link href="/podrucje/zagreb">Zagreb i okolica</Link></li>
+                            <li><Link href="/blog">Blog i vodiči o cijenama</Link></li>
+                            <li><Link href="/blog/koliko-kosta-pranje-fasade">Pranje fasade cijena</Link></li>
+                            <li><Link href="/blog/koliko-kosta-pranje-okucnice-tlakavaca-zagreb">Pranje okućnice i tlakavaca cijena</Link></li>
+                            <li><Link href="/#usluge">Sve usluge</Link></li>
+                            <li><Link href="/#recenzije">Dojmovi klijenata</Link></li>
                         </ul>
                     </div>
 
@@ -40,7 +72,7 @@ export default function Footer() {
                         <h4 className={styles.sectionTitle}>Kontakt</h4>
                         <ul className={styles.list}>
                             <li className={styles.contactItem}>
-                                <Phone size={18} className={styles.icon} />
+                                <Phone size={18} />
                                 <a href="tel:+385958442806">+385 95 844 2806</a>
                             </li>
                             <li className={styles.contactItem}>
@@ -62,4 +94,3 @@ export default function Footer() {
         </footer>
     );
 }
-

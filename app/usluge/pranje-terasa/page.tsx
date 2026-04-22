@@ -1,0 +1,184 @@
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { Droplets, ShieldCheck, Clock, Leaf, AlertTriangle, Footprints, Sun, Waves } from 'lucide-react';
+import ServicePage from '@/components/ServicePage/ServicePage';
+import { Home, BrushCleaning, TreeDeciduous } from 'lucide-react';
+
+export const metadata: Metadata = {
+    title: 'Pranje terasa Zagreb | Čišćenje terasa, pločica i kamena',
+    description: 'Profesionalno pranje terasa u Zagrebu. Čistimo vanjske terase, balkone, keramičke pločice, kamen i betonske površine. Uklanjamo alge, mahovinu i crne naslage uz besplatnu procjenu.',
+    alternates: { canonical: '/usluge/pranje-terasa' },
+    openGraph: {
+        title: 'Pranje terasa Zagreb | Čišćenje terasa, pločica i kamena',
+        description: 'Profesionalno čišćenje vanjskih terasa, balkona, keramike i kamena u Zagrebu.',
+        url: 'https://slaufismrk.com/usluge/pranje-terasa',
+        images: [
+            {
+                url: '/prije-poslje/terasa-leggiero-poslje-2.jpeg',
+                width: 1200,
+                height: 900,
+                alt: 'Čista terasa nakon profesionalnog pranja u Zagrebu',
+            },
+        ],
+    },
+};
+
+export default function PranjeTerasaPage() {
+    return (
+        <ServicePage
+            title="Pranje terasa u Zagrebu"
+            titleHighlight="terasa"
+            canonicalPath="/usluge/pranje-terasa"
+            description="Profesionalno pranje terasa vraća čistoću i sigurnost vanjskom prostoru. Uklanjamo alge, mahovinu, crne naslage, klizavi biofilm i tvrdokornu prljavštinu s keramičkih, kamenih i betonskih terasa u Zagrebu i okolici."
+            priceHint="od 5 €/m²"
+            heroImage="/prije-poslje/terasa-leggiero-poslje-2.jpeg"
+            heroImageAlt="Vanjska terasa nakon profesionalnog pranja i uklanjanja algi u Zagrebu"
+            heroHighlights={[
+                'Čišćenje kamenih, keramičkih i betonskih terasa',
+                'Uklanjanje klizavih algi i tamnih naslaga',
+                'Besplatna procjena za Zagreb i okolicu',
+            ]}
+            processSteps={[
+                {
+                    title: 'Pregled terase',
+                    description: 'Pregledamo materijal, fuge, rubove i stupanj zaprljanosti. Odmah vidimo treba li samo pranje ili i dodatni tretman protiv algi.',
+                },
+                {
+                    title: 'Predtretman naslaga',
+                    description: 'Na tvrdokornim dijelovima nanosimo sredstvo koje omekšava mahovinu, crne tragove i biofilm prije visokotlačnog čišćenja.',
+                },
+                {
+                    title: 'Ravnomjerno pranje',
+                    description: 'Profesionalnom opremom čistimo cijelu površinu tako da terasa izgleda ujednačeno, bez slučajnih tragova i prejakih prijelaza.',
+                },
+                {
+                    title: 'Završna kontrola',
+                    description: 'Na kraju provjeravamo rubove, odvode i spojeve uz zid ili ogradu kako bi cijela terasa izgledala uredno i bila sigurna za korištenje.',
+                },
+            ]}
+            detailedContent={
+                <>
+                    <h2>Zašto je pranje terasa važno?</h2>
+                    <p>
+                        Vanjske terase prvi su prostor na kojem se vidi utjecaj kiše, vlage, sjenovitih dijelova i
+                        svakodnevnog korištenja. Na njima se nakupljaju <strong>alge, mahovina, crne naslage i
+                            klizavi biofilm</strong> koji ne kvare samo izgled, nego stvaraju i ozbiljan rizik od
+                        proklizavanja.
+                    </p>
+                    <p>
+                        Profesionalno čišćenje terasa posebno je važno prije sezone korištenja u proljeće i ljeto,
+                        ali i nakon jeseni kada vlaga i lišće ubrzaju propadanje fuga i površinskih premaza.
+                    </p>
+
+                    <h2>Koje terase čistimo?</h2>
+                    <ul>
+                        <li><strong>Keramičke terase</strong> — pločice na balkonima, lođama i dvorišnim terasama.</li>
+                        <li><strong>Kamene terase</strong> — prirodni kamen, granitne ploče, travertin i slični materijali.</li>
+                        <li><strong>Betonske i opločene terase</strong> — betonske ploče, grublje vanjske podloge i površine oko kuće.</li>
+                        <li><strong>Terase s tlakavcima</strong> — za detaljniji fokus pogledajte i <Link href="/usluge/pranje-tlakavaca">pranje tlakavaca</Link>.</li>
+                        <li><strong>Drvene terase</strong> — za osjetljivije drvene i WPC podloge imamo posebnu uslugu <Link href="/usluge/ciscenje-drvenih-povrsina">čišćenja drvenih površina</Link>.</li>
+                    </ul>
+
+                    <h2>Koliko košta pranje terasa?</h2>
+                    <p>
+                        Cijena ovisi o kvadraturi, materijalu i tome koliko su duboko ušle alge i crne naslage.
+                        Okvirno za Zagreb:
+                    </p>
+                    <ul>
+                        <li><strong>Manja terasa</strong> (do 20 m²): 100 – 160 €</li>
+                        <li><strong>Srednja terasa</strong> (20–50 m²): 160 – 320 €</li>
+                        <li><strong>Veća terasa</strong> (50+ m²): od 320 €</li>
+                        <li><strong>Cijena po m²</strong>: od 5 €/m²</li>
+                    </ul>
+                    <p>
+                        Ako je terasa dio šireg dvorišta, klijenti je često kombiniraju s <Link href="/usluge/pranje-okucnice">pranjem okućnice</Link> ili
+                        <Link href="/usluge/pranje-prilaza"> pranjem prilaza</Link>, što je često isplativije nego naručivati odvojene dolaske.
+                    </p>
+
+                    <h2>Kada je najbolje prati terasu?</h2>
+                    <p>
+                        Najčešće preporučujemo pranje terasa u <strong>proljeće</strong>, prije intenzivnog korištenja,
+                        ili u <strong>jesen</strong>, nakon sezone. Terase koje su u sjeni ili ispod drveća trebaju
+                        češće čišćenje jer na njima brže rastu mahovina i alge.
+                    </p>
+                </>
+            }
+            features={[
+                {
+                    title: 'Uklanjanje algi i biofilma',
+                    description: 'Skidamo klizavi sloj zbog kojeg terasa izgleda tamno i postaje opasna nakon kiše.',
+                    icon: <Droplets size={24} />,
+                },
+                {
+                    title: 'Prilagođen pristup materijalu',
+                    description: 'Tlak i nastavke biramo prema vrsti pločice, kamena ili betona kako ne bismo oštetili površinu.',
+                    icon: <ShieldCheck size={24} />,
+                },
+                {
+                    title: 'Brzo vraćanje u funkciju',
+                    description: 'Većinu terasa očistimo u istom danu, tako da prostor vrlo brzo opet izgleda uredno i spreman je za korištenje.',
+                    icon: <Clock size={24} />,
+                },
+                {
+                    title: 'Sigurna sredstva za vanjske prostore',
+                    description: 'Koristimo biorazgradiva sredstva sigurna za kućanstvo, vrt i okolne biljke.',
+                    icon: <Leaf size={24} />,
+                },
+            ]}
+            commonProblems={[
+                {
+                    title: 'Klizava terasa poslije kiše',
+                    description: 'Alge i biofilm stvaraju opasan sloj zbog kojeg se terasa sjaji i postaje skliska.',
+                    icon: <Footprints size={24} />,
+                },
+                {
+                    title: 'Crne naslage u fugama',
+                    description: 'Vlaga, prašina i organski ostaci u fugama daju dojam trajno prljave terase.',
+                    icon: <AlertTriangle size={24} />,
+                },
+                {
+                    title: 'Izblijedjela i zamrljana površina',
+                    description: 'Sunce i nečistoće neravnomjerno mijenjaju boju pločica, kamena ili betonskih elemenata.',
+                    icon: <Sun size={24} />,
+                },
+                {
+                    title: 'Zadržavanje vode i prljavštine',
+                    description: 'Prljavština uz rubove, odvode i spojeve zadržava vlagu i potiče novi rast algi.',
+                    icon: <Waves size={24} />,
+                },
+            ]}
+            faq={[
+                {
+                    question: 'Koliko košta pranje terase u Zagrebu?',
+                    answer: 'Za manje terase cijena najčešće kreće od 100 €, a okvirna cijena po m² počinje od 5 €. Točna cijena ovisi o materijalu i zaprljanosti.',
+                },
+                {
+                    question: 'Možete li oprati terasu bez oštećenja fuga i pločica?',
+                    answer: 'Da. Koristimo profesionalnu opremu i prilagođen tlak kako bismo očistili površinu bez nepotrebnog oštećenja fuga ili završnog sloja.',
+                },
+                {
+                    question: 'Čistite li i balkone i manje gradske terase?',
+                    answer: 'Da, čistimo i manje gradske terase, balkone i lođe ako postoji siguran pristup i mogućnost izvođenja radova.',
+                },
+                {
+                    question: 'Što ako je terasa od drva ili WPC-a?',
+                    answer: 'Takve površine čistimo posebnim pristupom. Za njih pogledajte našu zasebnu uslugu čišćenja drvenih površina.',
+                },
+                {
+                    question: 'Koliko često treba prati vanjsku terasu?',
+                    answer: 'Najčešće jednom godišnje, a na sjenovitim i vlažnijim lokacijama i češće, ovisno o rastu algi i količini prljavštine.',
+                },
+            ]}
+            serviceAreas={[
+                'Špansko', 'Jarun', 'Trešnjevka', 'Maksimir', 'Dubrava', 'Sesvete',
+                'Stenjevec', 'Črnomerec', 'Trnje', 'Novi Zagreb', 'Podsused',
+                'Velika Gorica', 'Samobor', 'Zaprešić',
+            ]}
+            relatedServices={[
+                { title: 'Pranje okućnice', href: '/usluge/pranje-okucnice', icon: <Home size={18} /> },
+                { title: 'Pranje tlakavaca', href: '/usluge/pranje-tlakavaca', icon: <BrushCleaning size={18} /> },
+                { title: 'Kamene površine', href: '/usluge/ciscenje-kamenih-povrsina', icon: <TreeDeciduous size={18} /> },
+            ]}
+        />
+    );
+}

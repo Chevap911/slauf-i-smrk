@@ -46,6 +46,14 @@ const services = [
     }
 ];
 
+const popularSearches = [
+    { label: 'Pranje terasa Zagreb', href: '/usluge/pranje-terasa' },
+    { label: 'Pranje tlakavaca Zagreb', href: '/usluge/pranje-tlakavaca' },
+    { label: 'Pranje prilaza Zagreb', href: '/usluge/pranje-prilaza' },
+    { label: 'Pranje fasade cijena', href: '/blog/koliko-kosta-pranje-fasade' },
+    { label: 'Čišćenje okućnice cijena', href: '/blog/koliko-kosta-pranje-okucnice-tlakavaca-zagreb' },
+];
+
 export default function Services() {
     return (
         <section id="usluge" className={styles.services}>
@@ -82,6 +90,17 @@ export default function Services() {
                             </motion.div>
                         </Link>
                     ))}
+                </div>
+
+                <div className={styles.popularSearches}>
+                    <span className={styles.popularLabel}>Najtraženije usluge i cijene:</span>
+                    <div className={styles.popularLinks}>
+                        {popularSearches.map((item) => (
+                            <Link key={item.href} href={item.href} className={styles.popularLink}>
+                                {item.label}
+                            </Link>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>

@@ -5,19 +5,19 @@ import styles from './blog.module.css';
 
 export const metadata: Metadata = {
     title: 'Blog — Savjeti za Čišćenje | Šlauf i Šmrk',
-    description: 'Korisni savjeti i informacije o visokotlačnom čišćenju, kemijskom čišćenju i održavanju doma. Blog Šlauf i Šmrk.',
+    description: 'Savjeti, vodiči kroz cijene i korisne informacije o pranju fasade, čišćenju okućnice, terasa, tlakavaca i održavanju doma. Blog Šlauf i Šmrk.',
     alternates: { canonical: '/blog' },
     openGraph: {
         title: 'Blog — Savjeti za Čišćenje | Šlauf i Šmrk',
-        description: 'Korisni savjeti i informacije o visokotlačnom čišćenju, kemijskom čišćenju i održavanju doma.',
+        description: 'Savjeti, vodiči kroz cijene i korisne informacije o pranju fasade, čišćenju okućnice, terasa i tlakavaca.',
         url: 'https://slaufismrk.com/blog',
     },
 };
 
 const articles = [
     {
-        title: 'Koliko košta pranje okućnice i tlakavaca u Zagrebu? Vodič kroz cijene 2026.',
-        excerpt: 'Transparentan vodič kroz cijene pranja dvorišta, tlakavaca i betonskih kocki u Zagrebu. Od čega ovisi cijena i što dobivate — bez skrivenih troškova.',
+        title: 'Koliko košta pranje okućnice i tlakavaca? Čišćenje okućnice cijena 2026.',
+        excerpt: 'Transparentan vodič kroz cijene pranja dvorišta, tlakavaca i betonskih kocki u Zagrebu. Pokriva i upite poput čišćenje okućnice cijena i pranje tlakavaca cijena.',
         slug: '/blog/koliko-kosta-pranje-okucnice-tlakavaca-zagreb',
         date: '2026-04-17',
         category: 'Cijene',
@@ -30,8 +30,8 @@ const articles = [
         category: 'Savjeti',
     },
     {
-        title: 'Koliko košta visokotlačno pranje fasade?',
-        excerpt: 'Sve o cijenama pranja fasade u Zagrebu — od čega ovisi cijena, što uključuje usluga i kako uštedjeti.',
+        title: 'Koliko košta pranje fasade? Čišćenje fasade cijena 2026.',
+        excerpt: 'Sve o cijenama pranja fasade u Zagrebu — uključujući upite pranje fasade cijena i čišćenje fasade cijena, faktore ponude i što usluga uključuje.',
         slug: '/blog/koliko-kosta-pranje-fasade',
         date: '2026-02-26',
         category: 'Cijene',

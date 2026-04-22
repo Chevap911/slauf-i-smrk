@@ -20,6 +20,7 @@ export default function DetailingAutoPage() {
         <ServicePage
             title="Detailing Automobila"
             titleHighlight="Automobila"
+            canonicalPath="/usluge/detailing-automobila"
             description="Profesionalni detailing vašeg vozila na vašoj adresi. Dubinski čistimo interijer — sjedala, pod, strop, instrument ploču — i eksterijer uključujući pranje, poliranje i zaštitu. Koristimo iste profesionalne injektirno-ekstrakcijske strojeve kao za čišćenje namještaja."
             priceHint="od 80 € (interijer) · od 150 € (komplet)"
             processSteps={[

@@ -5,12 +5,12 @@ import { ArrowLeft, Phone, ArrowRight } from 'lucide-react';
 import styles from './article.module.css';
 
 export const metadata: Metadata = {
-    title: 'Koliko Košta Pranje Okućnice i Tlakavaca u Zagrebu? Vodič kroz Cijene 2026. | Šlauf i Šmrk',
-    description: 'Transparentan vodič kroz cijene pranja dvorišta, tlakavaca i betonskih kocki u Zagrebu. Od čega ovisi cijena i što dobivate. Besplatna procjena na terenu!',
+    title: 'Koliko košta pranje okućnice i tlakavaca? Čišćenje okućnice cijena 2026 | Šlauf i Šmrk',
+    description: 'Tražite čišćenje okućnice cijena ili pranje tlakavaca cijena? Donosimo realne cijene za Zagreb, faktore koji utječu na ponudu i što dobivate u usluzi 2026.',
     alternates: { canonical: '/blog/koliko-kosta-pranje-okucnice-tlakavaca-zagreb' },
     openGraph: {
-        title: 'Koliko Košta Pranje Okućnice i Tlakavaca u Zagrebu? Cijene 2026.',
-        description: 'Transparentan vodič kroz cijene pranja dvorišta, tlakavaca i betonskih kocki u Zagrebu.',
+        title: 'Koliko košta pranje okućnice i tlakavaca? Cijene 2026.',
+        description: 'Realne cijene za pranje okućnice, tlakavaca i betonskih kocki u Zagrebu, bez nejasnih raspona i skrivenih troškova.',
         url: 'https://slaufismrk.com/blog/koliko-kosta-pranje-okucnice-tlakavaca-zagreb',
         type: 'article',
         images: [
@@ -28,12 +28,12 @@ export default function BlogArticle() {
     const articleSchema = {
         '@context': 'https://schema.org',
         '@type': 'Article',
-        headline: 'Koliko košta pranje okućnice i tlakavaca u Zagrebu? Vodič kroz cijene 2026.',
-        description: 'Transparentan vodič kroz cijene pranja dvorišta, tlakavaca i betonskih kocki u Zagrebu.',
+        headline: 'Koliko košta pranje okućnice i tlakavaca? Vodič kroz cijene čišćenja okućnice 2026.',
+        description: 'Transparentan vodič kroz cijene pranja i čišćenja okućnice, tlakavaca i betonskih kocki u Zagrebu.',
         author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         datePublished: '2026-04-17',
-        dateModified: '2026-04-17',
+        dateModified: '2026-04-21',
         image: 'https://slaufismrk.com/blog/pranje-okucnice/terasa-leggiero-poslije.jpeg',
     };
 
@@ -95,11 +95,15 @@ export default function BlogArticle() {
 
                     <header className={styles.header}>
                         <span className={styles.category}>Cijene</span>
-                        <h1>Koliko Košta Pranje Okućnice i Tlakavaca u Zagrebu?</h1>
+                        <h1>Koliko košta pranje okućnice i tlakavaca?</h1>
                         <p className={styles.meta}>Objavljeno 17. travnja 2026. • Šlauf i Šmrk</p>
                     </header>
 
                     <div className={styles.content}>
+                        <p>
+                            Ako tražite <strong>&quot;čišćenje okućnice cijena&quot;</strong>, <strong>&quot;pranje tlakavaca cijena&quot;</strong> ili želite znati
+                            koliko košta profesionalno čišćenje dvorišta u Zagrebu, ovdje imate pregled stvarnih raspona cijena i usluga.
+                        </p>
                         <p>
                             Dvorište koje je godinama skupljalo mahovinu, korov između betonskih kocki i mrlje od auta — poznata slika.
                             U jednom trenutku to više ne možete ignorirati, i počnete tražiti: koliko to zapravo košta profesionalno oprati?
@@ -127,6 +131,21 @@ export default function BlogArticle() {
                         <p>
                             Veće površine imaju nižu cijenu po kvadratu jer se oprema jednom doveze i postavi, a rad se amortizira na više
                             kvadrata. Za manja dvorišta ima smisla paušalna cijena.
+                        </p>
+                        <p>
+                            Ako želite pregled po specifičnoj podlozi, otvorite i zasebne stranice za{' '}
+                            <Link href="/usluge/pranje-tlakavaca" className={styles.inlineLink}>
+                                pranje tlakavaca
+                            </Link>
+                            ,{' '}
+                            <Link href="/usluge/pranje-terasa" className={styles.inlineLink}>
+                                pranje terasa
+                            </Link>{' '}
+                            i{' '}
+                            <Link href="/usluge/pranje-prilaza" className={styles.inlineLink}>
+                                pranje prilaza
+                            </Link>
+                            .
                         </p>
 
                         {/* Slika PRIJE / POSLIJE */}
@@ -205,7 +224,7 @@ export default function BlogArticle() {
                         </ul>
                         <p>Fugiranje kvarcnim pijeskom nije uključeno u osnovnu cijenu, ali preporučujemo ga uz svako pranje tlakavaca.</p>
 
-                        <h2>Zašto ne koristiti kućni miniwash?</h2>
+                        <h2>Zašto ne koristiti kućni visokotlačni perač?</h2>
                         <p>
                             Razumijemo logiku — kupite aparat za 400 € i oprete sami. Ali postoji razlika između <strong>pritiska</strong>{' '}
                             i <strong>protoka vode</strong>. Kućni aparati imaju visok pritisak, ali mali protok (litara u minuti). Naša
@@ -227,8 +246,15 @@ export default function BlogArticle() {
                         <h2>Radimo i na komercijalnim objektima</h2>
                         <p>
                             Osim privatnih dvorišta, redovito čistimo terase restorana, kafića i tržnih centara. Na fotografijama iznad
-                            prikazujemo primjer terase Leggiero kafića u Family Mallu — godish nakupili se masne mrlje i mahovina,
+                            prikazujemo primjer terase Leggiero kafića u Family Mallu — godinama su se nakupljale masne mrlje i mahovina,
                             a nakon jedne intervencije terasa je blistala kao nova.
+                        </p>
+                        <p>
+                            Za zasebne objekte ili kombinirane radove često radimo zajedno{' '}
+                            <Link href="/usluge/pranje-fasade" className={styles.inlineLink}>
+                                pranje fasade
+                            </Link>{' '}
+                            i čišćenje dvorišta kako bi cijeli eksterijer bio usklađen.
                         </p>
                         <p>
                             Uz pranje tlakavaca, nudimo i{' '}
@@ -306,7 +332,7 @@ export default function BlogArticle() {
                                 </li>
                                 <li>
                                     <Link href="/blog/koliko-kosta-pranje-fasade">
-                                        Koliko košta visokotlačno pranje fasade? Cijene 2026. <ArrowRight size={14} />
+                                        Koliko košta pranje fasade? Čišćenje fasade cijena 2026. <ArrowRight size={14} />
                                     </Link>
                                 </li>
                             </ul>

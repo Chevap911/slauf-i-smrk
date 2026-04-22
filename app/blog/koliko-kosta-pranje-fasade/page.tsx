@@ -4,12 +4,12 @@ import { ArrowLeft, Phone, ArrowRight } from 'lucide-react';
 import styles from './article.module.css';
 
 export const metadata: Metadata = {
-    title: 'Koliko Košta Visokotlačno Pranje Fasade? Cijena 2026 — Šlauf i Šmrk',
-    description: 'Sve o cijenama visokotlačnog pranja fasade u Zagrebu. Faktori koji utječu na cijenu, što uključuje usluga, i savjeti kako uštedjeti. Aktualne cijene 2026.',
+    title: 'Koliko košta pranje fasade? Čišćenje fasade cijena 2026 | Šlauf i Šmrk',
+    description: 'Tražite pranje fasade cijena ili čišćenje fasade cijena? Donosimo aktualne cijene za Zagreb, faktore koji utječu na ponudu i što je uključeno u uslugu 2026.',
     alternates: { canonical: '/blog/koliko-kosta-pranje-fasade' },
     openGraph: {
-        title: 'Koliko Košta Visokotlačno Pranje Fasade? Cijena 2026',
-        description: 'Sve o cijenama visokotlačnog pranja fasade u Zagrebu. Faktori, usluga i savjeti.',
+        title: 'Koliko košta pranje fasade? Čišćenje fasade cijena 2026',
+        description: 'Aktualne cijene za pranje i čišćenje fasade u Zagrebu, uz pregled faktora koji najviše utječu na ponudu.',
         url: 'https://slaufismrk.com/blog/koliko-kosta-pranje-fasade',
         type: 'article',
     },
@@ -19,12 +19,12 @@ export default function BlogArticle() {
     const articleSchema = {
         '@context': 'https://schema.org',
         '@type': 'Article',
-        headline: 'Koliko košta visokotlačno pranje fasade?',
-        description: 'Detaljan vodič o cijenama pranja fasade u Zagrebu — faktori, usluga, savjeti.',
+        headline: 'Koliko košta pranje fasade? Vodič kroz cijene čišćenja fasade',
+        description: 'Detaljan vodič o cijenama pranja i čišćenja fasade u Zagrebu: raspon cijena, faktori, usluga i savjeti.',
         author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         datePublished: '2026-02-26',
-        dateModified: '2026-02-26',
+        dateModified: '2026-04-21',
     };
 
     return (
@@ -42,11 +42,15 @@ export default function BlogArticle() {
 
                     <header className={styles.header}>
                         <span className={styles.category}>Cijene</span>
-                        <h1>Koliko Košta Visokotlačno Pranje Fasade?</h1>
+                        <h1>Koliko košta pranje fasade?</h1>
                         <p className={styles.meta}>Objavljeno 26. veljače 2026. • Šlauf i Šmrk</p>
                     </header>
 
                     <div className={styles.content}>
+                        <p>
+                            Ako tražite pojmove poput <strong>&quot;pranje fasade cijena&quot;</strong> ili <strong>&quot;čišćenje fasade cijena&quot;</strong>,
+                            ovdje ćete dobiti jasan pregled raspona cijena, što utječe na ponudu i kada se profesionalno pranje fasade isplati.
+                        </p>
                         <p>
                             Fasada je osobna iskaznica vašeg doma. S vremenom se na njoj nakupljaju alge, mahovine, prljavština i zagađenje
                             iz zraka koji narušavaju izgled, ali i oštećuju materijal. Visokotlačno pranje fasade najučinkovitiji je način
@@ -91,6 +95,10 @@ export default function BlogArticle() {
                             <li>Ispiranje čistom vodom</li>
                             <li>Odvoz otpadnih voda (po potrebi)</li>
                         </ul>
+                        <p>
+                            Ako želite odmah vidjeti kako izgleda sama usluga i što sve radimo na terenu, otvorite i našu glavnu stranicu za{' '}
+                            <Link href="/usluge/pranje-fasade">pranje fasade u Zagrebu</Link>.
+                        </p>
 
                         <h2>Trebam li profesionalno čišćenje fasade?</h2>
                         <p>
@@ -107,6 +115,10 @@ export default function BlogArticle() {
                         <p>
                             Preporučujemo pranje svake <strong>2–3 godine</strong>. Fasade okrenute prema sjeveru ili u sjeni drveća
                             trebaju češće čišćenje jer su podložnije rastu algi i mahovine.
+                        </p>
+                        <p>
+                            Ako uz fasadu želite urediti i kompletan vanjski dio kuće, često se isplati kombinirati{' '}
+                            <Link href="/usluge/pranje-okucnice">pranje okućnice</Link> i prilaza u istom dolasku.
                         </p>
 
                         <div className={styles.ctaBox}>

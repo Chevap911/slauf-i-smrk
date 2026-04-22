@@ -20,6 +20,7 @@ export default function KemijskoCiscenjePage() {
         <ServicePage
             title="Kemijsko Čišćenje Namještaja"
             titleHighlight="Namještaja"
+            canonicalPath="/usluge/kemijsko-ciscenje-namjestaja"
             description="Profesionalno dubinsko čišćenje tepiha, garnitura, madraca, stolica i autosjedala na vašoj adresi. Koristimo profesionalne injektirno-ekstrakcijske strojeve koji dubinski uklanjaju prljavštinu, grinje, alergene i mrlje. Vaš namještaj bit će čist, svjež i bez neugodnih mirisa."
             priceHint="tepih od 5 €/m² · garnitura od 60 €"
             processSteps={[

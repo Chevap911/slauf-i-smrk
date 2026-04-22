@@ -20,6 +20,7 @@ export default function PranjeBasenapPage() {
         <ServicePage
             title="Pranje Bazena"
             titleHighlight="Bazena"
+            canonicalPath="/usluge/pranje-bazena"
             description="Pripremite bazen za sezonu kupanja ili ga očistite nakon ljeta. Profesionalno čistimo stijenke bazena, obodni kamen, terasu oko bazena i sve prateće površine. Uklanjamo alge, naslage i nakupljenu prljavštinu za kristalno čistu vodu i siguran prostor za kupanje."
             priceHint="od 100 €"
             processSteps={[

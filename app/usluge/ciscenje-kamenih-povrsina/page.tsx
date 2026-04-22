@@ -20,6 +20,7 @@ export default function KamenePovsinePage() {
         <ServicePage
             title="Čišćenje Kamenih Površina"
             titleHighlight="Kamenih Površina"
+            canonicalPath="/usluge/ciscenje-kamenih-povrsina"
             description="Kamen je izdržljiv, ali s vremenom gubi ljepotu pod nanosima mahovine, lišajeva i prljavštine. Profesionalnim čišćenjem vraćamo izvorni sjaj kamenim stazama, klupicama, zidovima, kipovima i fasadnim oblogama. Prilagođavamo pristup svakom tipu kamena."
             priceHint="od 6 €/m²"
             processSteps={[

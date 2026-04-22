@@ -2,26 +2,42 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Droplets, ShieldCheck, Clock, Leaf, AlertTriangle, Bug, Ruler, Footprints } from 'lucide-react';
 import ServicePage from '@/components/ServicePage/ServicePage';
-import { Home, TreeDeciduous, Waves } from 'lucide-react';
+import { TreeDeciduous } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Pranje Okućnice i Prilaza Zagreb — Visokotlačno Čišćenje | Šlauf i Šmrk',
-    description: 'Profesionalno čišćenje dvorišta, prilaza, terasa i parkirnih površina u Zagrebu. Betonske kocke, kamene ploče, beton. Besplatna procjena.',
+    title: 'Pranje okućnice i prilaza Zagreb | Čišćenje terasa i tlakavaca',
+    description: 'Profesionalno čišćenje okućnice, prilaza, terasa i tlakavaca u Zagrebu. Uklanjamo mahovinu, ulje, hrđu i korov iz fuga uz besplatnu procjenu cijene.',
     alternates: { canonical: '/usluge/pranje-okucnice' },
     openGraph: {
-        title: 'Pranje Okućnice i Prilaza Zagreb | Šlauf i Šmrk',
-        description: 'Profesionalno čišćenje dvorišta, prilaza, terasa i parkirnih površina u Zagrebu.',
+        title: 'Pranje okućnice i prilaza Zagreb | Čišćenje terasa i tlakavaca',
+        description: 'Profesionalno čišćenje okućnice, prilaza, terasa i tlakavaca u Zagrebu.',
         url: 'https://slaufismrk.com/usluge/pranje-okucnice',
+        images: [
+            {
+                url: '/prije-poslje/terasa-leggiero-poslje-1.jpeg',
+                width: 1200,
+                height: 900,
+                alt: 'Očišćena terasa i tlakavci nakon profesionalnog pranja u Zagrebu',
+            },
+        ],
     },
 };
 
 export default function PranjeOkucnicePage() {
     return (
         <ServicePage
-            title="Pranje Okućnice i Prilaza"
-            titleHighlight="Okućnice"
+            title="Pranje okućnice i prilaza u Zagrebu"
+            titleHighlight="okućnice"
+            canonicalPath="/usluge/pranje-okucnice"
             description="Vaše dvorište, prilaz i terasa zaslužuju blistav izgled. Profesionalnim visokotlačnim čišćenjem uklanjamo mahovinu, ulje, hrđu i nakupljenu prljavštinu s betonskih kocki, kamenih ploča, betona i asfalta. Dolazimo s kompletnom opremom — vi samo uživajte u rezultatu."
             priceHint="od 4 €/m²"
+            heroImage="/prije-poslje/terasa-leggiero-poslje-1.jpeg"
+            heroImageAlt="Tlakavci i terasa nakon profesionalnog čišćenja okućnice u Zagrebu"
+            heroHighlights={[
+                'Čišćenje tlakavaca, terasa i betonskih prilaza',
+                'Uklanjanje mahovine, ulja i korova iz fuga',
+                'Besplatna procjena na lokaciji',
+            ]}
             processSteps={[
                 {
                     title: 'Dolazak i procjena',
@@ -33,7 +49,7 @@ export default function PranjeOkucnicePage() {
                 },
                 {
                     title: 'Visokotlačno pranje',
-                    description: 'Sa profesionalnim peračem i rotirajućom četkom ravnomjerno čistimo cijelu površinu bez oštećenja.',
+                    description: 'S profesionalnim peračem i rotirajućom četkom ravnomjerno čistimo cijelu površinu bez oštećenja.',
                 },
                 {
                     title: 'Ispiranje i završetak',
@@ -59,10 +75,10 @@ export default function PranjeOkucnicePage() {
                         Naš tim ima iskustvo s <strong>svim tipovima eksternih podloga</strong>:
                     </p>
                     <ul>
-                        <li><strong>Betonske kocke (behaton)</strong> — najčešći tip prilaza u Zagrebu. Uklanjamo mahovinu iz fuga i vraćamo izvornu boju.</li>
+                        <li><strong><Link href="/usluge/pranje-tlakavaca">Betonske kocke (behaton)</Link></strong> — najčešći tip prilaza u Zagrebu. Uklanjamo mahovinu iz fuga i vraćamo izvornu boju.</li>
                         <li><strong>Kamene ploče</strong> — prirodni kamen, granitne ploče, travertin. Za detaljnije čišćenje kamena pogledajte <Link href="/usluge/ciscenje-kamenih-povrsina">čišćenje kamenih površina</Link>.</li>
-                        <li><strong>Beton</strong> — garažni prilazi, parkirna mjesta, stepenice. Uklanjamo mrlje od ulja, guma i hrđe.</li>
-                        <li><strong>Terase i balkoni</strong> — pločice, drvo, beton. Drvene terase tretiramo posebnim tlakom — pogledajte <Link href="/usluge/ciscenje-drvenih-povrsina">čišćenje drvenih površina</Link>.</li>
+                        <li><strong><Link href="/usluge/pranje-prilaza">Beton</Link></strong> — garažni prilazi, parkirna mjesta i stepenice. Uklanjamo mrlje od ulja, guma i hrđe bez oštećenja podloge.</li>
+                        <li><strong><Link href="/usluge/pranje-terasa">Terase i balkoni</Link></strong> — pločice, drvo i beton. Drvene terase tretiramo posebnim tlakom — pogledajte i <Link href="/usluge/ciscenje-drvenih-povrsina">čišćenje drvenih površina</Link>.</li>
                         <li><strong>Asfalt</strong> — prilazi, parkirališta, staze.</li>
                     </ul>
 
@@ -80,6 +96,16 @@ export default function PranjeOkucnicePage() {
                     <p>
                         Većina naših klijenata kombinira čišćenje okućnice s <Link href="/usluge/pranje-fasade">pranjem
                             fasade</Link> za kompletnu obnovu eksterijera — nudimo paketne popuste od 10–15%.
+                    </p>
+                    <p>
+                        Ako vas zanima detaljniji pregled cijena za tlakavce, dvorišta i terase,
+                        pogledajte i vodič <Link href="/blog/koliko-kosta-pranje-okucnice-tlakavaca-zagreb">koliko košta pranje okućnice i tlakavaca</Link>.
+                    </p>
+                    <p>
+                        Za preciznije informacije po tipu podloge možete otvoriti i zasebne stranice za{' '}
+                        <Link href="/usluge/pranje-tlakavaca">pranje tlakavaca</Link>,{' '}
+                        <Link href="/usluge/pranje-terasa">pranje terasa</Link> i{' '}
+                        <Link href="/usluge/pranje-prilaza">pranje prilaza</Link>.
                     </p>
 
                     <h2>Posebne mrlje i situacije</h2>
@@ -115,7 +141,7 @@ export default function PranjeOkucnicePage() {
                 },
                 {
                     title: 'Čišćenje u jednom danu',
-                    description: 'Većinu okućnica očistimo u jednom radnom danu. Dolazimo s vlastitom vodom i opremom.',
+                    description: 'Većinu okućnica očistimo u jednom radnom danu. Dolazimo s kompletnom opremom, a na lokaciji trebamo pristup vodi i struji.',
                     icon: <Clock size={24} />,
                 },
                 {
@@ -132,7 +158,7 @@ export default function PranjeOkucnicePage() {
                 },
                 {
                     title: 'Korov u fugama',
-                    description: 'Trava i korov rastu između kocki i postupno razmičü fuge, uzrokujući trajno oštećenje podloge.',
+                    description: 'Trava i korov rastu između kocki i postupno razmiču fuge, uzrokujući trajno oštećenje podloge.',
                     icon: <Bug size={24} />,
                 },
                 {
@@ -165,7 +191,7 @@ export default function PranjeOkucnicePage() {
                 },
                 {
                     question: 'Trebam li osigurati vodu za čišćenje?',
-                    answer: 'Da, klijent treba osigurati priključak za vodu jer ne dolazimo s vlastitim spremnikom.',
+                    answer: 'Da, najčešće se spajamo na vaš priključak za vodu i trebamo pristup struji. Profesionalnu opremu i sredstva za čišćenje donosimo mi.',
                 },
                 {
                     question: 'Čistite li i stepenice i rubnjake?',
@@ -178,9 +204,9 @@ export default function PranjeOkucnicePage() {
                 'Velika Gorica', 'Samobor', 'Zaprešić',
             ]}
             relatedServices={[
-                { title: 'Pranje fasade', href: '/usluge/pranje-fasade', icon: <Home size={18} /> },
-                { title: 'Kamene površine', href: '/usluge/ciscenje-kamenih-povrsina', icon: <TreeDeciduous size={18} /> },
-                { title: 'Pranje bazena', href: '/usluge/pranje-bazena', icon: <Waves size={18} /> },
+                { title: 'Pranje tlakavaca', href: '/usluge/pranje-tlakavaca', icon: <Ruler size={18} /> },
+                { title: 'Pranje terasa', href: '/usluge/pranje-terasa', icon: <TreeDeciduous size={18} /> },
+                { title: 'Pranje prilaza', href: '/usluge/pranje-prilaza', icon: <Footprints size={18} /> },
             ]}
         />
     );

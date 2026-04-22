@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { Phone, ArrowRight, ChevronRight } from 'lucide-react';
 import styles from './ServicePage.module.css';
@@ -39,20 +40,18 @@ export interface ServicePageProps {
     title: string;
     titleHighlight?: string;
     description: string;
+    canonicalPath?: string;
     priceHint?: string;
     features: ServiceFeature[];
     faq: ServiceFaq[];
     relatedServices: RelatedService[];
     heroImage?: string;
-    /** Numbered process steps (Kako Radimo) */
+    heroImageAlt?: string;
+    heroHighlights?: string[];
     processSteps?: ProcessStep[];
-    /** Long-form content sections with H2 headings */
     contentSections?: ContentSection[];
-    /** Common problems/scenarios the client might recognize */
     commonProblems?: CommonProblem[];
-    /** List of neighborhoods/areas covered for this service */
     serviceAreas?: string[];
-    /** Additional inline HTML/JSX content with internal links */
     detailedContent?: React.ReactNode;
 }
 
@@ -60,22 +59,32 @@ export default function ServicePage({
     title,
     titleHighlight,
     description,
+    canonicalPath,
     priceHint,
     features,
     faq,
     relatedServices,
     heroImage,
+    heroImageAlt,
+    heroHighlights,
     processSteps,
     contentSections,
     commonProblems,
     serviceAreas,
     detailedContent,
 }: ServicePageProps) {
-    // FAQ JSON-LD Schema
+    const baseUrl = 'https://slaufismrk.com';
+    const serviceUrl = canonicalPath ? `${baseUrl}${canonicalPath}` : undefined;
+    const fallbackHeroHighlights = features.slice(0, 3).map((feature) => feature.title);
+    const heroPills = heroHighlights?.length ? heroHighlights : fallbackHeroHighlights;
+    const titleParts = titleHighlight ? title.split(titleHighlight) : [title];
+    const beforeHighlight = titleParts[0] ?? title;
+    const afterHighlight = titleHighlight ? titleParts.slice(1).join(titleHighlight) : '';
+
     const faqSchema = {
         '@context': 'https://schema.org',
         '@type': 'FAQPage',
-        mainEntity: faq.map(item => ({
+        mainEntity: faq.map((item) => ({
             '@type': 'Question',
             name: item.question,
             acceptedAnswer: {
@@ -85,14 +94,72 @@ export default function ServicePage({
         })),
     };
 
+    const breadcrumbSchema = canonicalPath ? {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+            {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Početna',
+                item: baseUrl,
+            },
+            {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Usluge',
+                item: `${baseUrl}/#usluge`,
+            },
+            {
+                '@type': 'ListItem',
+                position: 3,
+                name: title,
+                item: serviceUrl,
+            },
+        ],
+    } : null;
+
+    const serviceSchema = serviceUrl ? {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        '@id': `${serviceUrl}#service`,
+        name: title,
+        description,
+        serviceType: title,
+        url: serviceUrl,
+        image: heroImage ? [`${baseUrl}${heroImage}`] : undefined,
+        areaServed: (serviceAreas?.length ? serviceAreas : ['Zagreb', 'Zagrebačka županija']).map((area) => ({
+            '@type': 'Place',
+            name: area,
+        })),
+        provider: {
+            '@type': 'LocalBusiness',
+            name: 'Šlauf i Šmrk',
+            url: baseUrl,
+            telephone: '+385958442806',
+            areaServed: ['Zagreb', 'Zagrebačka županija'],
+        },
+    } : null;
+
     return (
         <div className={styles.servicePage}>
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
             />
+            {breadcrumbSchema && (
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+                />
+            )}
+            {serviceSchema && (
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+                />
+            )}
 
-            {/* Hero */}
             <section className={styles.hero}>
                 <div className="container">
                     <div className={styles.breadcrumb}>
@@ -108,8 +175,9 @@ export default function ServicePage({
                             <h1>
                                 {titleHighlight ? (
                                     <>
-                                        {title.replace(titleHighlight, '')}{' '}
+                                        {beforeHighlight}
                                         <span>{titleHighlight}</span>
+                                        {afterHighlight}
                                     </>
                                 ) : (
                                     title
@@ -120,6 +188,14 @@ export default function ServicePage({
                             {priceHint && (
                                 <div className={styles.heroPrice}>💰 {priceHint}</div>
                             )}
+
+                            <div className={styles.heroHighlights}>
+                                {heroPills.map((highlight) => (
+                                    <span key={highlight} className={styles.heroHighlightTag}>
+                                        {highlight}
+                                    </span>
+                                ))}
+                            </div>
 
                             <div className={styles.heroBtns}>
                                 <Link href="/#kontakt" className={styles.heroCta}>
@@ -132,20 +208,45 @@ export default function ServicePage({
                             </div>
                         </div>
 
-                        <div className={styles.heroImage}>
-                            {heroImage ? (
-                                <img src={heroImage} alt={title} />
-                            ) : (
-                                <div className={styles.heroImagePlaceholder}>
-                                    <span style={{ fontSize: '4rem' }}>🧹</span>
-                                </div>
-                            )}
+                        <div className={styles.heroVisual}>
+                            <div className={styles.heroImage}>
+                                {heroImage ? (
+                                    <>
+                                        <Image
+                                            src={heroImage}
+                                            alt={heroImageAlt ?? title}
+                                            fill
+                                            className={styles.heroImg}
+                                            sizes="(max-width: 992px) 100vw, 42vw"
+                                        />
+                                        <div className={styles.heroImageBadge}>
+                                            <span>Stvarni projekt</span>
+                                            <strong>Rezultat nakon čišćenja</strong>
+                                        </div>
+                                    </>
+                                ) : (
+                                    <div className={styles.heroImagePlaceholder}>
+                                        <strong>Profesionalni pristup</strong>
+                                        <p>
+                                            Na svakoj lokaciji prvo provjeravamo materijal, stupanj
+                                            zaprljanosti i pristup vodi prije nego krenemo s pranjem.
+                                        </p>
+                                    </div>
+                                )}
+                            </div>
+                            <div className={styles.heroAsideCard}>
+                                <span className={styles.heroAsideLabel}>Što dobivate</span>
+                                <ul>
+                                    <li>Jasnu procjenu prije početka radova</li>
+                                    <li>Prilagođen tlak za tip površine</li>
+                                    <li>Brz dolazak po Zagrebu i okolici</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Process Steps — Kako Radimo */}
             {processSteps && processSteps.length > 0 && (
                 <section className={styles.process}>
                     <div className="container">
@@ -164,7 +265,6 @@ export default function ServicePage({
                 </section>
             )}
 
-            {/* Long-form Content Sections */}
             {contentSections && contentSections.length > 0 && (
                 <section className={styles.longContent}>
                     <div className="container">
@@ -180,7 +280,6 @@ export default function ServicePage({
                 </section>
             )}
 
-            {/* Detailed Content (JSX with internal links) */}
             {detailedContent && (
                 <section className={styles.longContent}>
                     <div className="container">
@@ -191,7 +290,6 @@ export default function ServicePage({
                 </section>
             )}
 
-            {/* Features */}
             <section className={styles.features}>
                 <div className="container">
                     <h2 className={styles.sectionTitle}>Što uključuje ova usluga?</h2>
@@ -209,7 +307,6 @@ export default function ServicePage({
                 </div>
             </section>
 
-            {/* Common Problems */}
             {commonProblems && commonProblems.length > 0 && (
                 <section className={styles.problems}>
                     <div className="container">
@@ -228,7 +325,6 @@ export default function ServicePage({
                 </section>
             )}
 
-            {/* FAQ */}
             {faq.length > 0 && (
                 <section className={styles.faq}>
                     <div className="container">
@@ -247,7 +343,6 @@ export default function ServicePage({
                 </section>
             )}
 
-            {/* Service Areas */}
             {serviceAreas && serviceAreas.length > 0 && (
                 <section className={styles.areas}>
                     <div className="container">
@@ -262,7 +357,6 @@ export default function ServicePage({
                 </section>
             )}
 
-            {/* Bold CTA Banner */}
             <section className={styles.boldCta}>
                 <div className="container">
                     <div className={styles.boldCtaInner}>
@@ -276,7 +370,6 @@ export default function ServicePage({
                 </div>
             </section>
 
-            {/* CTA */}
             <section className={styles.ctaSection}>
                 <div className="container">
                     <div className={styles.ctaBox}>
@@ -289,7 +382,6 @@ export default function ServicePage({
                 </div>
             </section>
 
-            {/* Related Services */}
             {relatedServices.length > 0 && (
                 <section className={styles.related}>
                     <div className="container">

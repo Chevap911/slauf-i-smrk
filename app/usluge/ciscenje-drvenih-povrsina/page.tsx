@@ -20,6 +20,7 @@ export default function DrvenePovrsinePage() {
         <ServicePage
             title="Čišćenje Drvenih Površina"
             titleHighlight="Drvenih Površina"
+            canonicalPath="/usluge/ciscenje-drvenih-povrsina"
             description="Drvo s vremenom gubi boju i sivi pod utjecajem sunca, kiše i vlage. Profesionalnim čišćenjem uklanjamo sivilo, alge i nakupljenu prljavštinu s terasa, ograda, pergola i vrtnog namještaja. Vraćamo drvu izvornu toplinu i ljepotu."
             priceHint="od 8 €/m²"
             processSteps={[

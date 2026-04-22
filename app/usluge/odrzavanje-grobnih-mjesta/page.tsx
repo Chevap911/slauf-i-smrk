@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Droplets, ShieldCheck, Clock, Leaf, AlertTriangle, Bug, Landmark, Heart } from 'lucide-react';
+import { Droplets, ShieldCheck, Clock, AlertTriangle, Bug, Landmark, Heart } from 'lucide-react';
 import ServicePage from '@/components/ServicePage/ServicePage';
 import { Home, TreeDeciduous, Waves } from 'lucide-react';
 
@@ -20,6 +20,7 @@ export default function GrobnaMjestaPage() {
         <ServicePage
             title="Održavanje Grobnih Mjesta"
             titleHighlight="Grobnih Mjesta"
+            canonicalPath="/usluge/odrzavanje-grobnih-mjesta"
             description="Grobna mjesta vaših najmilijih zaslužuju dostojanstven izgled. Profesionalno čistimo i održavamo kamene nadgrobne spomenike, ploče, obrube i okolne površine. Uklanjamo mahovinu, lišajeve i nakupljenu prljavštinu s poštovanjem i pažnjom."
             priceHint="od 50 €"
             processSteps={[
