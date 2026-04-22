@@ -128,6 +128,18 @@ export default function Contact() {
                 throw new Error('Failed to submit form');
             }
 
+            // GTM Konverzija - Data Layer Push
+            if (typeof window !== 'undefined') {
+                (window as any).dataLayer = (window as any).dataLayer || [];
+                (window as any).dataLayer.push({
+                    event: 'form_submit',
+                    form_name: 'Glavna kontakt forma',
+                    service_type: formData.service,
+                    estimated_value: estimatedPrice?.min || 0,
+                    currency: 'EUR'
+                });
+            }
+
             setStep(4);
             setProgress(100);
             setShowConfetti(true);
