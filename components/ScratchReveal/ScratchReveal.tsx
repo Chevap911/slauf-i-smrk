@@ -144,15 +144,23 @@ export default function ScratchReveal({
 
     // Check if already revealed — use a ref to avoid re-render
     useEffect(() => {
+        let frameId: number | undefined;
         try {
             const revealed = localStorage.getItem('slauf-scratch-revealed') === 'true';
             if (revealed) {
-                setIsRevealed(true);
+                frameId = window.requestAnimationFrame(() => {
+                    setIsRevealed(true);
+                });
             }
         } catch {
             // SSR safe
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+
+        return () => {
+            if (frameId) {
+                window.cancelAnimationFrame(frameId);
+            }
+        };
     }, []);
 
     return (

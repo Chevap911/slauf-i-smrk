@@ -30,14 +30,22 @@ export default function PranjeFasadePage() {
             titleHighlight="fasade"
             canonicalPath="/usluge/pranje-fasade"
             description="Profesionalno visokotlačno pranje fasade vraća vašem domu izvorni sjaj. Uklanjamo alge, gljivice, mahovinu i nakupljenu prljavštinu koja narušava izgled i oštećuje površinu. Pokrivamo prizemnice i kuće do 5 metara visine u Zagrebu, Španskom, Jarunu, Maksimiru i okolici."
-            priceHint="od 5 €/m²"
-            heroImage="/prije-poslje/fasada-poslje.png"
-            heroImageAlt="Bijela fasada kuće u Zagrebu nakon profesionalnog pranja i uklanjanja algi"
+            priceHint="4 - 6 €/m²"
+            heroImage="/seo-results/pranje-fasade/poslije.png"
+            heroImageAlt="Fasada kuće nakon profesionalnog čišćenja i uklanjanja algi"
             heroHighlights={[
                 'Čišćenje algi, mahovine i tamnih tragova',
                 'Siguran tlak za žbukane i ETICS fasade',
                 'Besplatna procjena na lokaciji',
             ]}
+            resultsShowcase={{
+                beforeSrc: '/seo-results/pranje-fasade/prije.jpeg',
+                afterSrc: '/seo-results/pranje-fasade/poslije.png',
+                beforeAlt: 'Fasada kuće prije čišćenja s vidljivim algama i tamnim naslagama',
+                afterAlt: 'Fasada kuće poslije čišćenja s vidljivo svježim i čistim zidom',
+                title: 'Fasada prije i poslije pranja',
+                description: 'Na stvarnom projektu vidi se koliko se čista fasada vizualno istakne već nakon jednog profesionalnog tretmana.',
+            }}
             processSteps={[
                 {
                     title: 'Besplatna procjena',
@@ -88,10 +96,8 @@ export default function PranjeFasadePage() {
                         Okvirne cijene za Zagreb i okolicu:
                     </p>
                     <ul>
-                        <li><strong>Manja fasada</strong> (do 80 m²): 400 – 600 €</li>
-                        <li><strong>Srednja fasada</strong> (80–150 m²): 600 – 1.000 €</li>
-                        <li><strong>Veća fasada</strong> (150+ m²): od 1.000 €</li>
-                        <li><strong>Cijena po m²</strong>: od 5 €/m²</li>
+                        <li><strong>Cijena po m²</strong>: 4 – 6 €/m²</li>
+                        <li><strong>Konačna cijena</strong>: ovisi o kvadraturi, pristupačnosti i stupnju zaprljanosti.</li>
                     </ul>
                     <p>
                         Za točnu cijenu nudimo <strong>besplatnu procjenu na licu mjesta</strong> bez obaveza.
@@ -171,7 +177,7 @@ export default function PranjeFasadePage() {
             faq={[
                 {
                     question: 'Koliko košta visokotlačno pranje fasade?',
-                    answer: 'Cijena ovisi o površini i stupnju zaprljanosti. Okvirno se kreće od 5 €/m². Za točnu cijenu nudimo besplatnu procjenu na licu mjesta.',
+                    answer: 'Cijena ovisi o površini i stupnju zaprljanosti. Okvirni raspon je 4 – 6 €/m². Za točnu cijenu nudimo besplatnu procjenu na licu mjesta.',
                 },
                 {
                     question: 'Hoće li visokotlačno pranje oštetiti moju fasadu?',

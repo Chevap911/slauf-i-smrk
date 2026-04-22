@@ -30,14 +30,22 @@ export default function PranjePrilazaPage() {
             titleHighlight="prilaza"
             canonicalPath="/usluge/pranje-prilaza"
             description="Pranje prilaza vraća uredan i siguran izgled ulazu u dvorište, kuću ili garažu. Uklanjamo uljne mrlje, tragove guma, hrđu, mahovinu i duboku prljavštinu s betonskih, kamenih i opločenih prilaza u Zagrebu i okolici."
-            priceHint="od 4,5 €/m²"
-            heroImage="/assets/after2.png"
-            heroImageAlt="Betonski prilaz i zid nakon profesionalnog čišćenja u Zagrebu"
+            priceHint="2 - 4 €/m²"
+            heroImage="/seo-results/pranje-prilaza/poslije.png"
+            heroImageAlt="Betonski prilaz nakon profesionalnog čišćenja u Zagrebu"
             heroHighlights={[
                 'Čišćenje garažnih, kućnih i parkirnih prilaza',
                 'Uklanjanje ulja, guma, hrđe i algi',
                 'Idealno u kombinaciji s okućnicom i tlakavcima',
             ]}
+            resultsShowcase={{
+                beforeSrc: '/seo-results/pranje-prilaza/prije.png',
+                afterSrc: '/seo-results/pranje-prilaza/poslije.png',
+                beforeAlt: 'Prilaz prije čišćenja s tamnim naslagama i vidljivom zaprljanošću',
+                afterAlt: 'Prilaz poslije čišćenja s ujednačenom i čistom površinom',
+                title: 'Prilaz prije i poslije čišćenja',
+                description: 'Kod prilaza se odmah vidi koliko profesionalno pranje poboljša prvi dojam ulaza u kuću ili garažu.',
+            }}
             processSteps={[
                 {
                     title: 'Pregled vrste prilaza',
@@ -84,10 +92,8 @@ export default function PranjePrilazaPage() {
                         Okvirno:
                     </p>
                     <ul>
-                        <li><strong>Manji prilaz</strong> (do 40 m²): 180 – 260 €</li>
-                        <li><strong>Srednji prilaz</strong> (40–100 m²): 260 – 520 €</li>
-                        <li><strong>Veći prilazi i parkirne zone</strong> (100+ m²): od 520 €</li>
-                        <li><strong>Cijena po m²</strong>: od 4,5 €/m²</li>
+                        <li><strong>Cijena po m²</strong>: 2 – 4 €/m²</li>
+                        <li><strong>Konačna cijena</strong>: ovisi o materijalu, veličini prilaza te prisutnosti ulja, hrđe i tragova guma.</li>
                     </ul>
                     <p>
                         Prilaz se vrlo često isplati čistiti zajedno s <Link href="/usluge/pranje-okucnice">okućnicom</Link> ili
@@ -149,7 +155,7 @@ export default function PranjePrilazaPage() {
             faq={[
                 {
                     question: 'Koliko košta pranje prilaza u Zagrebu?',
-                    answer: 'Cijena obično kreće od 4,5 €/m², a točna ponuda ovisi o materijalu, veličini i tome koliko su prisutne uljne ili hrđave mrlje.',
+                    answer: 'Okvirna cijena za pranje prilaza kreće se od 2 do 4 €/m², a točna ponuda ovisi o materijalu, veličini i stupnju zaprljanosti.',
                 },
                 {
                     question: 'Možete li ukloniti tragove motornog ulja s betonskog prilaza?',

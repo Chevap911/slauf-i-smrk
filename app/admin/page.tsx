@@ -1,12 +1,29 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { supabase } from '@/utils/supabase/client';
-import { Mail, Phone, Clock, CheckCircle, Search, RefreshCcw } from 'lucide-react';
+import { Mail, Phone, RefreshCcw } from 'lucide-react';
 import styles from './admin.module.css';
 
+type InquiryStatus = 'new' | 'contacted' | 'completed';
+
+interface InquiryRecord {
+    id: string;
+    created_at: string;
+    name: string;
+    email: string;
+    phone: string;
+    city: string | null;
+    service: string;
+    estimated_price_min: number | null;
+    estimated_price_max: number | null;
+    message: string | null;
+    details: unknown;
+    status: InquiryStatus;
+}
+
 export default function AdminCRM() {
-    const [inquiries, setInquiries] = useState<any[]>([]);
+    const [inquiries, setInquiries] = useState<InquiryRecord[]>([]);
     const [loading, setLoading] = useState(true);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [password, setPassword] = useState('');
@@ -46,7 +63,13 @@ export default function AdminCRM() {
             .eq('id', id);
 
         if (!error) {
-            setInquiries(inquiries.map(i => i.id === id ? { ...i, status: newStatus } : i));
+            setInquiries((current) =>
+                current.map((inquiry) =>
+                    inquiry.id === id
+                        ? { ...inquiry, status: newStatus as InquiryStatus }
+                        : inquiry
+                )
+            );
         }
     };
 

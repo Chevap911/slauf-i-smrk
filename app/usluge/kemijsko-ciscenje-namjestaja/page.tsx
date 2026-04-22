@@ -23,6 +23,16 @@ export default function KemijskoCiscenjePage() {
             canonicalPath="/usluge/kemijsko-ciscenje-namjestaja"
             description="Profesionalno dubinsko čišćenje tepiha, garnitura, madraca, stolica i autosjedala na vašoj adresi. Koristimo profesionalne injektirno-ekstrakcijske strojeve koji dubinski uklanjaju prljavštinu, grinje, alergene i mrlje. Vaš namještaj bit će čist, svjež i bez neugodnih mirisa."
             priceHint="tepih od 5 €/m² · garnitura od 60 €"
+            heroImage="/seo-results/kemijsko-ciscenje-namjestaja/poslije.jpeg"
+            heroImageAlt="Garnitura nakon dubinskog kemijskog čišćenja"
+            resultsShowcase={{
+                beforeSrc: '/seo-results/kemijsko-ciscenje-namjestaja/prije.jpeg',
+                afterSrc: '/seo-results/kemijsko-ciscenje-namjestaja/poslije.jpeg',
+                beforeAlt: 'Garnitura prije kemijskog čišćenja s vidljivom zaprljanošću',
+                afterAlt: 'Garnitura poslije kemijskog čišćenja s osvježenom i čistom tkaninom',
+                title: 'Garnitura prije i poslije dubinskog čišćenja',
+                description: 'Kod namještaja prije i poslije fotografije brzo grade povjerenje jer ljudi odmah vide koliko se tkanina osvježi nakon tretmana.',
+            }}
             processSteps={[
                 {
                     title: 'Pregled i ponuda',

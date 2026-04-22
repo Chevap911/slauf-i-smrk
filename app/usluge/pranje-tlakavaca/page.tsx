@@ -30,14 +30,20 @@ export default function PranjeTlakavacaPage() {
             titleHighlight="tlakavaca"
             canonicalPath="/usluge/pranje-tlakavaca"
             description="Profesionalno pranje tlakavaca uklanja mahovinu, korov iz fuga, crne naslage i mrlje od ulja s betonskih kocki i behatona. Vraćamo ujednačenu boju i čist izgled dvorištu, terasi i prilazu u Zagrebu i okolici."
-            priceHint="od 4 €/m²"
-            heroImage="/blog/pranje-okucnice/terasa-leggiero-poslije.jpeg"
-            heroImageAlt="Tlakavci i betonske kocke nakon profesionalnog pranja u Zagrebu"
+            priceHint="2 - 4 €/m²"
+            heroImage="/seo-results/pranje-tlakavaca/prije-poslije.jpg"
+            heroImageAlt="Prikaz prije i poslije čišćenja tlakavaca"
             heroHighlights={[
                 'Čišćenje behatona i betonskih kocki',
                 'Uklanjanje korova, mahovine i crnih fuga',
                 'Opcionalno ponovno fugiranje pijeskom',
             ]}
+            resultsShowcase={{
+                combinedSrc: '/seo-results/pranje-tlakavaca/prije-poslije.jpg',
+                combinedAlt: 'Prije i poslije rezultat čišćenja tlakavaca i betonskih kocki',
+                title: 'Tlakavci prije i poslije čišćenja',
+                description: 'Na ovoj usluzi imaš gotovu prije i poslije kompoziciju koja jasno pokazuje koliko se behaton i fuge vizualno osvježe nakon zahvata.',
+            }}
             processSteps={[
                 {
                     title: 'Procjena tlakavaca',
@@ -84,10 +90,8 @@ export default function PranjeTlakavacaPage() {
                         Okvirna cijena za Zagreb najčešće se kreće ovako:
                     </p>
                     <ul>
-                        <li><strong>Manja površina</strong> (do 40 m²): 160 – 240 €</li>
-                        <li><strong>Srednja površina</strong> (40–100 m²): 240 – 500 €</li>
-                        <li><strong>Veći tlakavci / dvorišta</strong> (100+ m²): od 500 €</li>
-                        <li><strong>Cijena po m²</strong>: od 4 €/m²</li>
+                        <li><strong>Cijena po m²</strong>: 2 – 4 €/m²</li>
+                        <li><strong>Konačna cijena</strong>: ovisi o kvadraturi, stanju fuga, korovu i eventualnim mrljama od ulja.</li>
                     </ul>
                     <p>
                         Ako je površina dio veće cjeline, često preporučujemo kombinaciju s <Link href="/usluge/pranje-prilaza">pranjem prilaza</Link> ili
@@ -149,7 +153,7 @@ export default function PranjeTlakavacaPage() {
             faq={[
                 {
                     question: 'Koliko košta pranje tlakavaca u Zagrebu?',
-                    answer: 'Okvirna cijena po m² kreće se od 4 €, a konačna ponuda ovisi o kvadraturi, stanju fuga i prisutnosti mrlja od ulja ili korova.',
+                    answer: 'Okvirna cijena za pranje tlakavaca kreće se od 2 do 4 €/m², a konačna ponuda ovisi o kvadraturi, stanju fuga i prisutnosti korova ili mrlja.',
                 },
                 {
                     question: 'Uključuje li pranje tlakavaca i ponovno fugiranje pijeskom?',

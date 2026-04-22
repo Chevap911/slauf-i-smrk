@@ -61,7 +61,7 @@ export default function BlogArticle() {
                 name: 'Koliko košta pranje fasade u Zagrebu?',
                 acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'Okvirno, pranje fasade kreće od 5 €/m². Za manju obiteljsku kuću do 80 m² to je 400 do 600 €. Cijena ovisi o veličini, stupnju zaprljanosti i tipu fasade. Za točnu cijenu za vaš dom dolazimo besplatno na procjenu.',
+                    text: 'Okvirno, pranje fasade kreće se od 4 do 6 €/m². Točna cijena ovisi o veličini, pristupu, stupnju zaprljanosti i tipu fasade, zato za vaš dom dolazimo besplatno na procjenu.',
                 },
             },
             {
@@ -247,8 +247,8 @@ export default function BlogArticle() {
                         <p>
                             <strong>Bonus:</strong> Čista fasada povećava tržišnu vrijednost
                             nekretnine. Ako razmišljate o prodaji ili najmu, pranje fasade jedna je
-                            od investicija s najboljim povratom. Cijeli posao košta od 400 do 1.000
-                            € ovisno o veličini, a vizualni efekt je dramatičan.
+                            od investicija s najboljim povratom. Cijeli posao najčešće se obračunava
+                            po rasponu od 4 do 6 €/m², a vizualni efekt je dramatičan.
                         </p>
 
                         {/* Što se dogodi ako odgodite */}
@@ -296,9 +296,8 @@ export default function BlogArticle() {
                             <div className={styles.faqItem}>
                                 <h3>Koliko košta pranje fasade u Zagrebu?</h3>
                                 <p>
-                                    Okvirno, pranje fasade kreće od 5 €/m². Za manju obiteljsku kuću
-                                    do 80 m² to je 400 do 600 €. Cijena ovisi o veličini, stupnju
-                                    zaprljanosti i tipu fasade. Više detalja pročitajte u našem
+                                    Okvirno, pranje fasade kreće se od 4 do 6 €/m². Cijena ovisi o
+                                    veličini, pristupu, stupnju zaprljanosti i tipu fasade. Više detalja pročitajte u našem
                                     vodiču{' '}
                                     <Link href="/blog/koliko-kosta-pranje-fasade">
                                         koliko košta pranje fasade

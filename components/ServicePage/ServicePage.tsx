@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Phone, ArrowRight, ChevronRight } from 'lucide-react';
+import BeforeAfterSlider from '@/components/BeforeAfterSlider/BeforeAfterSlider';
 import styles from './ServicePage.module.css';
 
 export interface ServiceFaq {
@@ -36,6 +37,18 @@ export interface ContentSection {
     text: string;
 }
 
+export interface ServiceResultsShowcase {
+    beforeSrc?: string;
+    afterSrc?: string;
+    combinedSrc?: string;
+    beforeAlt?: string;
+    afterAlt?: string;
+    combinedAlt?: string;
+    eyebrow?: string;
+    title?: string;
+    description?: string;
+}
+
 export interface ServicePageProps {
     title: string;
     titleHighlight?: string;
@@ -53,6 +66,7 @@ export interface ServicePageProps {
     commonProblems?: CommonProblem[];
     serviceAreas?: string[];
     detailedContent?: React.ReactNode;
+    resultsShowcase?: ServiceResultsShowcase;
 }
 
 export default function ServicePage({
@@ -72,6 +86,7 @@ export default function ServicePage({
     commonProblems,
     serviceAreas,
     detailedContent,
+    resultsShowcase,
 }: ServicePageProps) {
     const baseUrl = 'https://slaufismrk.com';
     const serviceUrl = canonicalPath ? `${baseUrl}${canonicalPath}` : undefined;
@@ -80,6 +95,10 @@ export default function ServicePage({
     const titleParts = titleHighlight ? title.split(titleHighlight) : [title];
     const beforeHighlight = titleParts[0] ?? title;
     const afterHighlight = titleHighlight ? titleParts.slice(1).join(titleHighlight) : '';
+    const serviceImages = Array.from(new Set(
+        [heroImage, resultsShowcase?.afterSrc, resultsShowcase?.combinedSrc].filter(Boolean),
+    )) as string[];
+    const hasResultsPair = Boolean(resultsShowcase?.beforeSrc && resultsShowcase?.afterSrc);
 
     const faqSchema = {
         '@context': 'https://schema.org',
@@ -127,7 +146,7 @@ export default function ServicePage({
         description,
         serviceType: title,
         url: serviceUrl,
-        image: heroImage ? [`${baseUrl}${heroImage}`] : undefined,
+        image: serviceImages.length ? serviceImages.map((imagePath) => `${baseUrl}${imagePath}`) : undefined,
         areaServed: (serviceAreas?.length ? serviceAreas : ['Zagreb', 'Zagrebačka županija']).map((area) => ({
             '@type': 'Place',
             name: area,
@@ -246,6 +265,55 @@ export default function ServicePage({
                     </div>
                 </div>
             </section>
+
+            {resultsShowcase && (
+                <section className={styles.results}>
+                    <div className="container">
+                        <div className={styles.resultsIntro}>
+                            <span className={styles.resultsEyebrow}>
+                                {resultsShowcase.eyebrow ?? 'Stvarni rezultat'}
+                            </span>
+                            <h2 className={styles.sectionTitle}>
+                                {resultsShowcase.title ?? 'Prije i poslije čišćenja'}
+                            </h2>
+                            <p className={styles.sectionSubtitle}>
+                                {resultsShowcase.description ?? `Na ovoj usluzi pokazujemo stvarni prije i poslije rezultat za ${title.toLowerCase()}.`}
+                            </p>
+                        </div>
+
+                        <div className={styles.resultsCard}>
+                            {hasResultsPair ? (
+                                <>
+                                    <BeforeAfterSlider
+                                        beforeSrc={resultsShowcase.beforeSrc!}
+                                        afterSrc={resultsShowcase.afterSrc!}
+                                        beforeAlt={resultsShowcase.beforeAlt}
+                                        afterAlt={resultsShowcase.afterAlt}
+                                        label="Povucite klizač lijevo-desno"
+                                    />
+                                    <p className={styles.resultsNote}>
+                                        Ovo je stvarni projekt iz naše izvedbe, prikazan u formatu prije i poslije.
+                                    </p>
+                                </>
+                            ) : resultsShowcase.combinedSrc ? (
+                                <div className={styles.resultsCombined}>
+                                    <Image
+                                        src={resultsShowcase.combinedSrc}
+                                        alt={resultsShowcase.combinedAlt ?? `Prije i poslije rezultat za ${title.toLowerCase()}`}
+                                        width={1600}
+                                        height={1200}
+                                        className={styles.resultsCombinedImage}
+                                        sizes="(max-width: 992px) 100vw, 900px"
+                                    />
+                                    <p className={styles.resultsNote}>
+                                        Prikaz stvarnog prije i poslije rezultata na jednom kadru.
+                                    </p>
+                                </div>
+                            ) : null}
+                        </div>
+                    </div>
+                </section>
+            )}
 
             {processSteps && processSteps.length > 0 && (
                 <section className={styles.process}>

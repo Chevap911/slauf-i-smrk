@@ -14,10 +14,10 @@ export const metadata: Metadata = {
         url: 'https://slaufismrk.com/usluge/pranje-okucnice',
         images: [
             {
-                url: '/prije-poslje/terasa-leggiero-poslje-1.jpeg',
+                url: '/seo-results/pranje-terasa/poslije.jpeg',
                 width: 1200,
                 height: 900,
-                alt: 'Očišćena terasa i tlakavci nakon profesionalnog pranja u Zagrebu',
+                alt: 'Očišćena terasa kao dio uređenja okućnice nakon profesionalnog pranja u Zagrebu',
             },
         ],
     },
@@ -30,14 +30,22 @@ export default function PranjeOkucnicePage() {
             titleHighlight="okućnice"
             canonicalPath="/usluge/pranje-okucnice"
             description="Vaše dvorište, prilaz i terasa zaslužuju blistav izgled. Profesionalnim visokotlačnim čišćenjem uklanjamo mahovinu, ulje, hrđu i nakupljenu prljavštinu s betonskih kocki, kamenih ploča, betona i asfalta. Dolazimo s kompletnom opremom — vi samo uživajte u rezultatu."
-            priceHint="od 4 €/m²"
-            heroImage="/prije-poslje/terasa-leggiero-poslje-1.jpeg"
-            heroImageAlt="Tlakavci i terasa nakon profesionalnog čišćenja okućnice u Zagrebu"
+            priceHint="2 - 4 €/m²"
+            heroImage="/seo-results/pranje-terasa/poslije.jpeg"
+            heroImageAlt="Terasa nakon profesionalnog čišćenja kao dio uređenja okućnice"
             heroHighlights={[
                 'Čišćenje tlakavaca, terasa i betonskih prilaza',
                 'Uklanjanje mahovine, ulja i korova iz fuga',
                 'Besplatna procjena na lokaciji',
             ]}
+            resultsShowcase={{
+                beforeSrc: '/seo-results/pranje-terasa/prije.jpeg',
+                afterSrc: '/seo-results/pranje-terasa/poslije.jpeg',
+                beforeAlt: 'Terasa prije čišćenja s vidljivim tamnim naslagama i prljavštinom',
+                afterAlt: 'Terasa poslije čišćenja kao uredan i čist dio okućnice',
+                title: 'Okućnica prije i poslije čišćenja',
+                description: 'Kako je terasa važan dio svake okućnice, ovdje prikazujemo stvarni prije i poslije rezultat na terasi kao dijelu vanjskog prostora.',
+            }}
             processSteps={[
                 {
                     title: 'Dolazak i procjena',
@@ -88,10 +96,8 @@ export default function PranjeOkucnicePage() {
                         Okvirne cijene za Zagreb:
                     </p>
                     <ul>
-                        <li><strong>Manji prilaz</strong> (do 50 m²): 200 – 350 €</li>
-                        <li><strong>Srednje dvorište</strong> (50–120 m²): 350 – 600 €</li>
-                        <li><strong>Veća okućnica</strong> (120+ m²): od 600 €</li>
-                        <li><strong>Cijena po m²</strong>: od 4 €/m²</li>
+                        <li><strong>Cijena po m²</strong>: 2 – 4 €/m²</li>
+                        <li><strong>Konačna cijena</strong>: ovisi o kvadraturi, materijalu, pristupu i količini mahovine, ulja ili korova.</li>
                     </ul>
                     <p>
                         Većina naših klijenata kombinira čišćenje okućnice s <Link href="/usluge/pranje-fasade">pranjem
@@ -175,7 +181,7 @@ export default function PranjeOkucnicePage() {
             faq={[
                 {
                     question: 'Koliko košta čišćenje okućnice u Zagrebu?',
-                    answer: 'Cijena ovisi o kvadraturi i materijalu. Okvirno se kreće od 4 €/m². Za dvorište od 100 m² to je otprilike 400–500 €. Besplatna procjena na licu mjesta.',
+                    answer: 'Cijena ovisi o kvadraturi i materijalu. Okvirni raspon je 2 – 4 €/m², a točna cijena ovisi o stanju površine. Besplatna procjena na licu mjesta.',
                 },
                 {
                     question: 'Hoće li visokotlačno pranje oštetiti betonske kocke?',

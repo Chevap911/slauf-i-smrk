@@ -30,14 +30,22 @@ export default function PranjeTerasaPage() {
             titleHighlight="terasa"
             canonicalPath="/usluge/pranje-terasa"
             description="Profesionalno pranje terasa vraća čistoću i sigurnost vanjskom prostoru. Uklanjamo alge, mahovinu, crne naslage, klizavi biofilm i tvrdokornu prljavštinu s keramičkih, kamenih i betonskih terasa u Zagrebu i okolici."
-            priceHint="od 5 €/m²"
-            heroImage="/prije-poslje/terasa-leggiero-poslje-2.jpeg"
-            heroImageAlt="Vanjska terasa nakon profesionalnog pranja i uklanjanja algi u Zagrebu"
+            priceHint="3 - 5 €/m²"
+            heroImage="/seo-results/pranje-terasa/poslije-2.jpeg"
+            heroImageAlt="Vanjska terasa nakon profesionalnog pranja i uklanjanja naslaga"
             heroHighlights={[
                 'Čišćenje kamenih, keramičkih i betonskih terasa',
                 'Uklanjanje klizavih algi i tamnih naslaga',
                 'Besplatna procjena za Zagreb i okolicu',
             ]}
+            resultsShowcase={{
+                beforeSrc: '/seo-results/pranje-terasa/prije-2.jpeg',
+                afterSrc: '/seo-results/pranje-terasa/poslije-2.jpeg',
+                beforeAlt: 'Terasa prije čišćenja s tamnim naslagama i prljavim fugama',
+                afterAlt: 'Terasa poslije čišćenja s vidljivo svježom i čistom površinom',
+                title: 'Terasa prije i poslije čišćenja',
+                description: 'Na terasama se razlika najbrže vidi na fugama, rubovima i cijeloj boji podloge nakon uklanjanja algi i biofilma.',
+            }}
             processSteps={[
                 {
                     title: 'Pregled terase',
@@ -85,10 +93,8 @@ export default function PranjeTerasaPage() {
                         Okvirno za Zagreb:
                     </p>
                     <ul>
-                        <li><strong>Manja terasa</strong> (do 20 m²): 100 – 160 €</li>
-                        <li><strong>Srednja terasa</strong> (20–50 m²): 160 – 320 €</li>
-                        <li><strong>Veća terasa</strong> (50+ m²): od 320 €</li>
-                        <li><strong>Cijena po m²</strong>: od 5 €/m²</li>
+                        <li><strong>Cijena po m²</strong>: 3 – 5 €/m²</li>
+                        <li><strong>Konačna cijena</strong>: ovisi o kvadraturi, vrsti podloge i stupnju zaprljanosti.</li>
                     </ul>
                     <p>
                         Ako je terasa dio šireg dvorišta, klijenti je često kombiniraju s <Link href="/usluge/pranje-okucnice">pranjem okućnice</Link> ili
@@ -150,7 +156,7 @@ export default function PranjeTerasaPage() {
             faq={[
                 {
                     question: 'Koliko košta pranje terase u Zagrebu?',
-                    answer: 'Za manje terase cijena najčešće kreće od 100 €, a okvirna cijena po m² počinje od 5 €. Točna cijena ovisi o materijalu i zaprljanosti.',
+                    answer: 'Okvirna cijena za pranje terasa kreće se od 3 do 5 €/m². Točna ponuda ovisi o materijalu, kvadraturi i zaprljanosti.',
                 },
                 {
                     question: 'Možete li oprati terasu bez oštećenja fuga i pločica?',
