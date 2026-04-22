@@ -3,6 +3,7 @@ import { Inter, Outfit } from "next/font/google";
 import Navigation from "@/components/Navigation/Navigation";
 import Footer from "@/components/Footer/Footer";
 import StickyCtaBanner from "@/components/StickyCtaBanner/StickyCtaBanner";
+import CookieBanner from "@/components/CookieBanner/CookieBanner";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-body", display: "swap" });
@@ -116,6 +117,25 @@ export default function RootLayout({
     <html lang="hr" className={`${inter.variable} ${outfit.variable}`}>
       <head>
         <link rel="preconnect" href="https://www.googletagmanager.com" />
+        
+        {/* Google Consent Mode v2 Default */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('consent', 'default', {
+                'ad_storage': 'denied',
+                'ad_user_data': 'denied',
+                'ad_personalization': 'denied',
+                'analytics_storage': 'denied',
+                'wait_for_update': 500
+              });
+              gtag('set', 'url_passthrough', true);
+            `
+          }}
+        />
+        
         {/* Google Tag Manager */}
         <script
           dangerouslySetInnerHTML={{
@@ -147,6 +167,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <main>{children}</main>
         <Footer />
         <StickyCtaBanner />
+        <CookieBanner />
       </body>
     </html>
   );
