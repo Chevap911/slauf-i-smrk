@@ -5,6 +5,7 @@ import Services from '@/components/Services/Services';
 import WhyChooseUs from '@/components/WhyChooseUs/WhyChooseUs';
 import Gallery from '@/components/Gallery/Gallery';
 import Testimonials from '@/components/Testimonials/Testimonials';
+import ReferralBanner from '@/components/ReferralBanner/ReferralBanner';
 import Contact from '@/components/Contact/Contact';
 
 export const metadata: Metadata = {
@@ -39,6 +40,7 @@ export default function Home() {
       <Services />
       <Gallery />
       <Testimonials />
+      <ReferralBanner />
       <Contact />
     </>
   );

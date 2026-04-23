@@ -88,6 +88,21 @@ export default function GrobnaMjestaPage() {
                         <li><strong>Redovito održavanje</strong> (4x godišnje): posebna cijena po dogovoru</li>
                     </ul>
 
+                    <h2>Kako funkcionira rezervacija?</h2>
+                    <p>
+                        Čišćenje grobnih mjesta organiziramo po <strong>grupnim terminima po groblju</strong>. Odlazimo kada
+                        se na pojedinom groblju skupi minimalno 10 prijavljenih grobnih mjesta. Razlog je jednostavan:
+                        dolazak na groblje s opremom ima smisla samo kada imamo dovoljno posla na jednom mjestu.
+                    </p>
+                    <p>
+                        To znači da <strong>vi ne birate točan datum</strong>, ali znate da ćete biti obaviješteni čim
+                        termin za vaše groblje bude zakazan. Većina klijenata čeka 2 do 4 tjedna ovisno o groblju.
+                    </p>
+                    <p>
+                        Za rezervaciju mjesta na listi potrebno je platiti <strong>50% predujma</strong>.
+                        Ostatak se plaća po završetku radova, uz dostavu fotografija prije i poslije.
+                    </p>
+
                     <h2>Usluga bez vaše prisutnosti</h2>
                     <p>
                         Ne trebate biti na groblju dok radimo. Jednostavno nam dostavite <strong>lokaciju grobnog
@@ -147,27 +162,27 @@ export default function GrobnaMjestaPage() {
             faq={[
                 {
                     question: 'Koliko košta čišćenje grobnog mjesta?',
-                    answer: 'Početna cijena čišćenja i održavanja grobnog mjesta kreće od 100 €, a konačna cijena ovisi o veličini, vrsti kamena i opsegu radova.',
+                    answer: 'Početna cijena kreće od 100 €. Konačna cijena ovisi o veličini grobnog mjesta, vrsti kamena i opsegu radova. Za rezervaciju mjesta na listi plaća se 50% predujma, ostatak po završetku.',
+                },
+                {
+                    question: 'Kako se rezervira termin?',
+                    answer: 'Javite nam se s lokacijom grobnog mjesta (groblje, polje, red, broj). Ubacujemo vas na listu za to groblje i kontaktiramo vas čim termin bude zakazan. Termin se zakazuje kada se skupi minimalno 10 grobnih mjesta na istom groblju.',
+                },
+                {
+                    question: 'Mogu li sam odabrati datum čišćenja?',
+                    answer: 'Datume ne možete slobodno birati jer čišćenje organiziramo grupno. Odlazimo na groblje kada imamo dovoljno prijavljenih. Većina klijenata čeka 2 do 4 tjedna.',
                 },
                 {
                     question: 'Trebam li biti prisutan na groblju?',
-                    answer: 'Ne, ne trebate. Samo nam dostavite lokaciju grobnog mjesta. Nakon čišćenja šaljemo vam fotografije rezultata.',
+                    answer: 'Ne, ne trebate. Samo nam dostavite lokaciju grobnog mjesta. Nakon čišćenja šaljemo vam fotografije kao potvrdu obavljenog posla.',
                 },
                 {
-                    question: 'Na kojim grobljima radite?',
-                    answer: 'Pokrivamo sva veća groblja u Zagrebu: Mirogoj, Miroslavčan, Markovo Polje, Brestje, Krematorij i ostala po dogovoru.',
-                },
-                {
-                    question: 'Koliko često trebam čistiti grobno mjesto?',
-                    answer: 'Preporučujemo 2 do 4 puta godišnje, posebno prije Svih svetih, u proljeće i jesen. Nudimo godišnje pakete.',
+                    question: 'Zašto plaćam 50% unaprijed?',
+                    answer: 'Predujam osigurava vaše mjesto na listi i potvrđuje rezervaciju. Ostatak plaćate po završetku radova, uz fotografije kao dokaz.',
                 },
                 {
                     question: 'Hoće li čišćenje oštetiti natpise ili fotografije na spomeniku?',
-                    answer: 'Ne, koristimo niski tlak i pažljiv pristup. Natpise i fotografije tretiramo izuzetno nježno.',
-                },
-                {
-                    question: 'Nudite li sadnju cvijeća i uređenje?',
-                    answer: 'Naša primarna usluga je čišćenje kamenih površina. Za sadnju i uređenje možemo vam preporučiti partnere.',
+                    answer: 'Ne, koristimo niski tlak i pažljiv pristup prilagođen vrsti kamena. Natpise i fotografije tretiramo izuzetno nježno.',
                 },
             ]}
             serviceAreas={[

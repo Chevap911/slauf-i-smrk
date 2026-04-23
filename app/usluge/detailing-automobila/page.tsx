@@ -5,12 +5,12 @@ import ServicePage from '@/components/ServicePage/ServicePage';
 import { Sofa, Home, TreeDeciduous } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Čišćenje Automobila Zagreb | Dubinsko Pranje Interijera | Šlauf i Šmrk',
-    description: 'Profesionalno dubinsko čišćenje automobila u Zagrebu. Čišćenje interijera, sjedala, instrument ploče i eksterijera. Dolazimo na vašu adresu. Besplatna procjena.',
+    title: 'Pranje Auta Uz Dolazak | Čišćenje Automobila Zagreb | Šlauf i Šmrk',
+    description: 'Peremo auto iznutra i izvana dok smo već na vašoj lokaciji. Vanjsko pranje, kemijsko čišćenje sjedala i interijer. Bez dodatnog putnog troška. Samo dogovorite uz ostalu uslugu.',
     alternates: { canonical: '/usluge/detailing-automobila' },
     openGraph: {
-        title: 'Detailing Automobila Zagreb | Šlauf i Šmrk',
-        description: 'Profesionalni detailing automobila u Zagrebu. Dubinsko čišćenje interijera, poliranje, zaštita.',
+        title: 'Pranje Auta Uz Dolazak | Šlauf i Šmrk',
+        description: 'Peremo auto iznutra i izvana dok smo već na vašoj lokaciji. Bez dodatnog putnog troška.',
         url: 'https://slaufismrk.com/usluge/detailing-automobila',
     },
 };
@@ -18,106 +18,89 @@ export const metadata: Metadata = {
 export default function DetailingAutoPage() {
     return (
         <ServicePage
-            title="Čišćenje Automobila"
-            titleHighlight="Automobila"
+            title="Pranje Auta Uz Dolazak"
+            titleHighlight="Uz Dolazak"
             canonicalPath="/usluge/detailing-automobila"
-            description="Profesionalno dubinsko čišćenje vašeg vozila na vašoj adresi. Čistimo interijer (sjedala, pod, instrument ploču) i eksterijer uključujući ručno pranje karoserije, čišćenje felgi i guma. Koristimo iste profesionalne injektirno-ekstrakcijske strojeve kao za kemijsko čišćenje namještaja."
-            priceHint="od 80 € (interijer) · ponuda prema vozilu"
+            description="Dok smo već kod vas zbog fasade, okućnice ili neke druge usluge — peremo i auto. Iznutra i izvana, uključujući kemijsko čišćenje sjedala. Bez dodatnog putnog troška jer smo već tu."
+            priceHint="od 60 € (vanjsko) · od 80 € (interijer) · od 130 € (komplet)"
             processSteps={[
                 {
-                    title: 'Pregled vozila',
-                    description: 'Pregledamo interijer i eksterijer, identificiramo mrlje, oštećenja i dogovaramo opseg usluge.',
+                    title: 'Dogovor uz ostalu uslugu',
+                    description: 'Kad naručujete pranje fasade, okućnice ili drugu uslugu, samo najavite da želite i auto. Nema posebnog dolaska ni putnog troška.',
                 },
                 {
                     title: 'Usisavanje i predtretman',
-                    description: 'Temeljito usisavamo sve površine i tretiramo mrlje specijalnim sredstvima.',
+                    description: 'Dok naš tim radi na fasadi ili okućnici, temeljito usisavamo interijer i tretiramo mrlje na sjedalima.',
                 },
                 {
-                    title: 'Dubinsko čišćenje',
-                    description: 'Injektirno-ekstrakcijskim strojem dubinski čistimo sjedala, podove i tapecirung. Plastiku i kožu čistimo ručno.',
+                    title: 'Kemijsko čišćenje sjedala',
+                    description: 'Injektirno-ekstrakcijskim strojem dubinski čistimo sjedala i podove. Ista oprema kao za čišćenje namještaja.',
                 },
                 {
-                    title: 'Eksterijer i završetak',
-                    description: 'Ručno peremo i sušimo karoseriju te čistimo felge i gume od kočione prašine i cestovne prljavštine.',
+                    title: 'Vanjsko pranje',
+                    description: 'Ručno peremo karoseriju i čistimo felge i gume. Auto je čist iznutra i izvana do kraja radnog dana.',
                 },
             ]}
             detailedContent={
                 <>
-                    <h2>Što uključuje čišćenje automobila?</h2>
+                    <h2>Zašto pratiti auto uz dolazak?</h2>
                     <p>
-                        Naše čišćenje automobila je <strong>temeljit, višesatni
-                            proces</strong> koji obuhvaća sve ključne unutarnje i vanjske površine vozila. Usluga uključuje:
-                    </p>
-                    <ul>
-                        <li><strong>Dubinsko čišćenje sjedala</strong> injektirno-ekstrakcijskim strojem koji izvlači prljavštinu, znoj, mrlje i alergene iz dubine sjedala. Ista tehnologija kao kod <Link href="/usluge/kemijsko-ciscenje-namjestaja">kemijskog čišćenja namještaja</Link>.</li>
-                        <li><strong>Čišćenje instrument ploče i plastike</strong> uključuje svaki otvor ventilacije, gumbe i površine između sjedala.</li>
-                        <li><strong>Prtljažnik</strong> usisavamo i dubinski čistimo tapecirani prtljažnik.</li>
-                        <li><strong>Ručno pranje karoserije</strong> two-bucket metodom za siguran kontakt s lakom.</li>
-                        <li><strong>Čišćenje felgi i guma</strong> od kočione prašine i cestovne prljavštine.</li>
-                    </ul>
-
-                    <h2>Zašto mobilni detailing?</h2>
-                    <p>
-                        Dolazimo na <strong>vašu adresu</strong> ispred kuće, u garažu ili na parking tvrtke.
-                        Ne trebate voziti do autopraonice i čekati. Mi donosimo svu opremu, vodu i sredstva.
-                        Vi samo predajte ključeve i uživajte u kavi dok mi radimo.
+                        Već smo na vašoj adresi, već smo raspakirali opremu, već smo tu. To je idealan trenutak da riješite i auto
+                        koji čeka čišćenje. <strong>Nema posebnog dolaska, nema dodatnog putnog troška</strong> — samo dogovorite
+                        unaprijed kada naručujete glavnu uslugu.
                     </p>
                     <p>
-                        Posebno je praktičan za <strong>tvrtke s flotom vozila</strong>
-                        jer možemo čistiti više automobila u jednom dolasku po povoljnijoj cijeni.
+                        Ovu opciju posebno vole klijenti koji nas naručuju za <Link href="/usluge/pranje-okucnice">pranje okućnice</Link> ili{' '}
+                        <Link href="/usluge/pranje-fasade">pranje fasade</Link> — dok mi radimo vani, auto se čisti u garaži ili na dvorištu.
                     </p>
 
-                    <h2>Cijene čišćenja automobila</h2>
+                    <h2>Što uključuje pranje auta?</h2>
+                    <p>Nudimo tri paketa, a možete ih kombinirati kako god želite:</p>
                     <ul>
-                        <li><strong>Interijer (basic)</strong>: od 80 € (usisavanje i dubinsko čišćenje sjedala)</li>
-                        <li><strong>Interijer (full)</strong>: od 120 € (kompletno dubinsko čišćenje svih površina)</li>
-                        <li><strong>Eksterijer</strong>: od 60 € (ručno pranje, felge i gume)</li>
-                        <li><strong>Kompletno čišćenje</strong>: od 150 € (interijer i eksterijer)</li>
-                        <li><strong>SUV / kombi</strong>: +20 do 30% na sve cijene</li>
+                        <li><strong>Vanjsko pranje</strong>: ručno pranje karoserije, čišćenje felgi i guma od kočione prašine i cestovne prljavštine.</li>
+                        <li><strong>Interijer (basic)</strong>: usisavanje, brisanje instrument ploče, plastike i vrata. Brzo i uredno.</li>
+                        <li><strong>Kemijsko čišćenje sjedala</strong>: injektirno-ekstrakcijskim strojem izvlačimo mrlje, znoj i alergene iz dubine sjedala i podnih tepiha. Ista oprema kao za <Link href="/usluge/kemijsko-ciscenje-namjestaja">kemijsko čišćenje garniture</Link>.</li>
+                    </ul>
+
+                    <h2>Cijene (uz dolazak za drugu uslugu)</h2>
+                    <ul>
+                        <li><strong>Vanjsko pranje</strong>: od 60 €</li>
+                        <li><strong>Interijer (basic)</strong>: od 80 € (usisavanje i brisanje unutrašnjosti)</li>
+                        <li><strong>Kemijsko čišćenje sjedala</strong>: od 60 € (uz ostale unutarnje površine)</li>
+                        <li><strong>Komplet (unutra i vani)</strong>: od 130 €</li>
+                        <li><strong>SUV / kombi</strong>: +20 do 30% na sve pakete</li>
                     </ul>
                     <p>
-                        Navedene cijene su <strong>početne i informativne</strong>, ne fiksne. Konačna cijena ovisi o
-                        stanju vozila, veličini, razini zaprljanosti, opsegu usluge i <strong>vrijednosti automobila</strong>.
-                    </p>
-                    <p>
-                        Kod vozila veće tržišne vrijednosti, sportskih i premium modela, kolekcionarskih auta ili
-                        specifičnih lakova i interijera, cijena je viša zbog većeg rizika rada, osiguranja i potrebne
-                        dodatne pažnje. Nije isti rizik raditi na vozilu vrijednom 20.000 € i na vozilu vrijednom 200.000 €.
-                    </p>
-                    <p>
-                        Za preciznu ponudu javite nam se s modelom vozila, procijenjenom vrijednošću auta i željenim
-                        opsegom usluge. Nakon pregleda dajemo individualnu cijenu prije početka rada.
+                        Cijene vrijede <strong>isključivo uz drugu naručenu uslugu</strong> (pranje fasade, okućnice, terase i sl.)
+                        jer nema posebnog putnog troška. Za samostalan dolazak samo zbog auta javite nam se za ponudu.
                     </p>
 
-                    <h2>Kada trebate temeljito čišćenje?</h2>
+                    <h2>Što ako nemam drugu uslugu?</h2>
                     <p>
-                        Preporučujemo dubinsko čišćenje <strong>2 do 4 puta godišnje</strong>, ali posebno u ova dva slučaja:
+                        Ako trebate samo auto, i to je u redu. Javite nam se pa dogovorimo poseban termin. Cijena može biti
+                        nešto viša jer uključuje poseban dolazak, ali u svakom slučaju radimo bez skrivenih troškova i dajemo jasnu ponudu unaprijed.
                     </p>
-                    <ul>
-                        <li><strong>Prije prodaje</strong> čist auto lakše i brže prodajete, a ostvaruje veću cijenu.</li>
-                        <li><strong>Nakon zime</strong> sol, blato i vlaga koji se nakupe tijekom zime zahtijevaju temeljito čišćenje.</li>
-                    </ul>
                 </>
             }
             features={[
                 {
-                    title: 'Dubinsko čišćenje sjedala',
-                    description: 'Injektirno-ekstrakcijskim strojem izvlačimo prljavštinu, znoj i alergene iz dubine sjedala.',
-                    icon: <Droplets size={24} />,
-                },
-                {
-                    title: 'Zaštita interijera',
-                    description: 'Nanosimo zaštitne premaze na plastiku, kožu i tkaninu koji štite od mrlja i UV zračenja.',
-                    icon: <ShieldCheck size={24} />,
-                },
-                {
-                    title: 'Dolazak na adresu',
-                    description: 'Dolazimo ispred vaše kuće ili ureda s kompletnom opremom. Vi ne trebate nikuda.',
+                    title: 'Bez putnog troška',
+                    description: 'Dolazimo već zbog fasade ili okućnice. Auto čistite uz dolazak bez ikakve doplate za put.',
                     icon: <Clock size={24} />,
                 },
                 {
+                    title: 'Kemijsko čišćenje sjedala',
+                    description: 'Injektirno-ekstrakcijskim strojem dubinski čistimo sjedala, podne tepihe i prtljažnik.',
+                    icon: <Droplets size={24} />,
+                },
+                {
+                    title: 'Vanjsko pranje',
+                    description: 'Ručno peremo karoseriju i čistimo felge od kočione prašine. Bez ogrebotina na laku.',
+                    icon: <ShieldCheck size={24} />,
+                },
+                {
                     title: 'Neutralizacija mirisa',
-                    description: 'Uklanjamo mirise cigareta, hrane i vlage pomoću ozonskog tretmana ili enzimskih sredstava.',
+                    description: 'Uklanjamo mirise cigareta, hrane i vlage enzimskim sredstvima.',
                     icon: <Wind size={24} />,
                 },
             ]}
@@ -134,43 +117,35 @@ export default function DetailingAutoPage() {
                 },
                 {
                     title: 'Dlake kućnih ljubimaca',
-                    description: 'Dlake pasa i mačaka zabijaju se duboko u tkaninu i tepih automobila. Uklanjamo ih specijlnim četkama i ekstrakcijom.',
+                    description: 'Dlake pasa i mačaka zabijaju se duboko u tkaninu i tepih automobila. Uklanjamo ih posebnim četkama i ekstrakcijom.',
                     icon: <Sparkles size={24} />,
                 },
                 {
-                    title: 'Kočniona prašina na felgama',
+                    title: 'Kočiona prašina na felgama',
                     description: 'Tamna prašina od kočnica koja se taloži na felgama i postaje sve teže za ukloniti s vremenom.',
                     icon: <Leaf size={24} />,
                 },
             ]}
             faq={[
                 {
+                    question: 'Mogu li naručiti samo pranje auta bez druge usluge?',
+                    answer: 'Možete, ali cijena uključuje poseban dolazak. Puno isplativije je dogovoriti auto uz dolazak za pranje fasade, okućnice ili neku drugu uslugu.',
+                },
+                {
                     question: 'Koliko traje čišćenje automobila?',
-                    answer: 'Kompletno čišćenje (interijer i eksterijer) traje 3 do 5 sati, ovisno o veličini i stanju vozila.',
-                },
-                {
-                    question: 'Jesu li cijene fiksne za svako vozilo?',
-                    answer: 'Ne. Objavljene cijene su početne i informativne. Konačna cijena ovisi o stanju vozila, veličini, opsegu usluge i tržišnoj vrijednosti automobila.',
-                },
-                {
-                    question: 'Dolazite li na moju adresu?',
-                    answer: 'Da! Mobilni detailing je naša specijalnost. Dolazimo s kompletnom opremom na vašu adresu u Zagreb i okolicu.',
-                },
-                {
-                    question: 'Mogu li čekati u autu dok radite?',
-                    answer: 'Za interijer trebamo pristup cijelom vozilu, pa preporučujemo da nam date ključeve. Eksterijer čistimo dok je auto parkiran.',
+                    answer: 'Vanjsko pranje traje sat do sat i pol. Kemijsko čišćenje sjedala + interijer 2 do 3 sata, ovisno o stanju vozila.',
                 },
                 {
                     question: 'Čistite li i kožne interijere?',
-                    answer: 'Da, koristimo specijalizirana sredstva za čišćenje i hidratizaciju kože koja čiste bez oštećivanja materijala.',
+                    answer: 'Da, koristimo specijalizirana sredstva za kožu koja čiste bez oštećivanja materijala.',
                 },
                 {
-                    question: 'Koliko često trebam čistiti auto?',
-                    answer: 'Preporučujemo 2–4 puta godišnje. Minimalno jednom u proljeće nakon zime i jednom u jesen.',
+                    question: 'Je li kemijsko čišćenje sjedala sigurno za tkaninu?',
+                    answer: 'Da. Koristimo istu opremu i sredstva kao za kemijsko čišćenje namještaja u kući. Prilagođavamo tlak i sredstvo prema vrsti materijala.',
                 },
                 {
-                    question: 'Nudite li popuste za više vozila?',
-                    answer: 'Da! Za tvrtke i obitelji s više vozila nudimo paketne cijene. Javite nam se za ponudu.',
+                    question: 'Dolazite li i van Zagreba?',
+                    answer: 'Da, pokrivamo cijelo područje Grada Zagreba i bližu okolicu. Pranje auta dogovaramo uz dolazak za drugu uslugu.',
                 },
             ]}
             serviceAreas={[
