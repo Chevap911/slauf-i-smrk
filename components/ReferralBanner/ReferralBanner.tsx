@@ -42,7 +42,7 @@ export default function ReferralBanner() {
                         <div className={styles.stepNumber}>3</div>
                         <div className={styles.stepText}>
                             <strong>Dobivate 10% popusta</strong>
-                            <span>Kada preporučeni klijent dogovori i <em>obavi</em> uslugu kod nas, vi dobivate 10% na sljedeći termin. Možete skupiti do 50% ukupno.</span>
+                            <span>Kada s preporučenim klijentom dogovorimo posao, vi dobivate 10% na sljedeći termin. Možete skupiti do 50% ukupno.</span>
                         </div>
                     </div>
                 </div>
