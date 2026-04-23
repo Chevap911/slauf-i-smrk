@@ -94,7 +94,7 @@ export default function DrvenePovrsinePage() {
                         vrstu drva.
                     </p>
                     <p>
-                        Za kompletnu obnovu dvorišta, kombinirte čišćenje drva s <Link href="/usluge/pranje-okucnice">pranjem
+                        Za kompletnu obnovu dvorišta, kombinirajte čišćenje drva s <Link href="/usluge/pranje-okucnice">pranjem
                             okućnice</Link> i <Link href="/usluge/ciscenje-kamenih-povrsina">čišćenjem kamenih površina</Link>.
                     </p>
                 </>

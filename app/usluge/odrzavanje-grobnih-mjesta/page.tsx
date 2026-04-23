@@ -46,22 +46,22 @@ export default function GrobnaMjestaPage() {
                     <h2>Zašto profesionalno čišćenje grobnog mjesta?</h2>
                     <p>
                         Mnogi ljudi žele održavati grobna mjesta svojih najmilijih, ali <strong>nemaju vremena,
-                            fizičke mogućnosti ili žive daleko</strong>. Starije osobe teško kleče i čiste, a izlaseljenici
+                            fizičke mogućnosti ili žive daleko</strong>. Starije osobe teško kleče i čiste, a iseljenici
                         ne mogu redovito posjećivati groblja.
                     </p>
                     <p>
                         Profesionalnim čišćenjem osiguravate da grobno mjesto izgleda dostojanstveno
-                        cijelo vrijeme. Mi čistimo s posebnom <strong>pažnjom i poštovanjem</strong> — koristen im nježan
+                        cijelo vrijeme. Čistimo s posebnom <strong>pažnjom i poštovanjem</strong>, koristeći njiežan
                         pristup prilagođen osjetljivom okruženju.
                     </p>
 
                     <h2>Što čistimo?</h2>
                     <ul>
-                        <li><strong>Nadgrobni spomenik</strong> — mramor, granit, vapnenac. Uklanjamo zelenilo, mahovinu i kalcifikacije.</li>
-                        <li><strong>Nadgrobna ploča</strong> — čistimo ploču bez oštećivanja natpisa i fotografija.</li>
-                        <li><strong>Obrubi i rubne ploče</strong> — kameni ili betonski obrubi koji zelene i tamne.</li>
-                        <li><strong>Posude za cvijeće</strong> — kamene i betonske žardinjere.</li>
-                        <li><strong>Okolna površina</strong> — čistimo oko groba od korova, lišća i prljavštine.</li>
+                        <li><strong>Nadgrobni spomenik</strong> od mramora, granita ili vapnenca. Uklanjamo zelenilo, mahovinu i kalcifikacije.</li>
+                        <li><strong>Nadgrobna ploča</strong> bez oštećivanja natpisa i fotografija.</li>
+                        <li><strong>Obrubi i rubne ploče</strong> kameni ili betonski obrubi koji zelene i tamne.</li>
+                        <li><strong>Posude za cvijeće</strong> kamene i betonske žardinjere.</li>
+                        <li><strong>Okolna površina</strong> oko groba od korova, lišća i prljavštine.</li>
                     </ul>
                     <p>
                         Za opće informacije o čišćenju kamena pogledajte našu stranicu <Link href="/usluge/ciscenje-kamenih-povrsina">čišćenje
@@ -73,11 +73,11 @@ export default function GrobnaMjestaPage() {
                         Pokrivamo <strong>sva veća groblja u Zagrebu i okolici</strong>:
                     </p>
                     <ul>
-                        <li><strong>Mirogoj</strong> — najveće i najpoznatije zagrebačko groblje</li>
-                        <li><strong>Miroševac</strong> — jedno od najstarijih groblja</li>
-                        <li><strong>Markovo Polje</strong> — veliko moderno groblje</li>
-                        <li><strong>Krematorij</strong> — urnini zidovi i okolni prostori</li>
-                        <li><strong>Brestje</strong> — groblje u Sesvetama</li>
+                        <li><strong>Mirogoj</strong></li>
+                        <li><strong>Miroševac</strong></li>
+                        <li><strong>Markovo Polje</strong></li>
+                        <li><strong>Krematorij</strong> (Spomenici za urne-kazete i okolni prostori)</li>
+                        <li><strong>Brestje</strong></li>
                         <li>Ostala groblja u <Link href="/podrucje/zagreb">Zagrebu</Link> i okolici po dogovoru</li>
                     </ul>
 
@@ -96,14 +96,14 @@ export default function GrobnaMjestaPage() {
                     </p>
                     <p>
                         Ova usluga posebno je dragocjena za <strong>iseljenike i osobe koje žive izvan Zagreba</strong>,
-                        a žele da grobno mjesto njihovih najmilijih uvijek izgleda dostojavsteno.
+                        a žele da grobno mjesto njihovih najmilijih uvijek izgleda dostojanstveno.
                     </p>
                 </>
             }
             features={[
                 {
                     title: 'Pažljivo čišćenje',
-                    description: 'S posebnim poštovanjem čistimo svaki element grobnog mjesta — spomenik, ploču, obrube i posude.',
+                    description: 'S posebnim poštovanjem čistimo svaki element grobnog mjesta: spomenik, ploču, obrube i posude.',
                     icon: <Droplets size={24} />,
                 },
                 {
@@ -113,7 +113,7 @@ export default function GrobnaMjestaPage() {
                 },
                 {
                     title: 'Fotografije rezultata',
-                    description: 'Šaljemo vam fotografije prije i poslije čišćenja — ne trebate biti prisutni.',
+                    description: 'Šaljemo vam fotografije prije i poslije čišćenja. Ne trebate biti prisutni.',
                     icon: <Clock size={24} />,
                 },
                 {
@@ -155,11 +155,11 @@ export default function GrobnaMjestaPage() {
                 },
                 {
                     question: 'Na kojim grobljima radite?',
-                    answer: 'Pokrivamo sva veća groblja u Zagrebu — Mirogoj, Miroševac, Markovo Polje, Brestje, Krematorij i ostala po dogovoru.',
+                    answer: 'Pokrivamo sva veća groblja u Zagrebu: Mirogoj, Miroslavčan, Markovo Polje, Brestje, Krematorij i ostala po dogovoru.',
                 },
                 {
                     question: 'Koliko često trebam čistiti grobno mjesto?',
-                    answer: 'Preporučujemo 2–4 puta godišnje — prije Svih svetih, u proljeće, ljeto i jesen. Nudimo godišnje pakete.',
+                    answer: 'Preporučujemo 2 do 4 puta godišnje, posebno prije Svih svetih, u proljeće i jesen. Nudimo godišnje pakete.',
                 },
                 {
                     question: 'Hoće li čišćenje oštetiti natpise ili fotografije na spomeniku?',
