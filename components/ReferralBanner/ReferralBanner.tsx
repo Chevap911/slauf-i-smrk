@@ -14,8 +14,8 @@ export default function ReferralBanner() {
                     </h2>
                     <p className={styles.description}>
                         Za svakog novog klijenta kojeg nam uputite dobivate <strong>10% popusta na svoju sljedeću uslugu</strong>.
-                        Bez ograničenja i bez roka trajanja. Preporučite susjedu, rodbini ili kolegi iz posla i popust se automatski
-                        zbraja za vaš sljedeći termin.
+                        Popust vrijedi tek kada preporučeni klijent <strong>dogovori i obavi uslugu</strong> kod nas.
+                        Možete skupiti do <strong>50% popusta ukupno</strong> kombiniranjem više preporuka.
                     </p>
                     <Link href="/#kontakt" className={styles.cta}>
                         <Gift size={20} />
@@ -42,7 +42,7 @@ export default function ReferralBanner() {
                         <div className={styles.stepNumber}>3</div>
                         <div className={styles.stepText}>
                             <strong>Dobivate 10% popusta</strong>
-                            <span>Čim vaš preporučeni klijent obavi uslugu kod nas, vi automatski dobivate 10% na sljedeći termin.</span>
+                            <span>Kada preporučeni klijent dogovori i <em>obavi</em> uslugu kod nas, vi dobivate 10% na sljedeći termin. Možete skupiti do 50% ukupno.</span>
                         </div>
                     </div>
                 </div>
