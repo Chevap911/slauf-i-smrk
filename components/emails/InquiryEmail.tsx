@@ -284,6 +284,58 @@ export const AdminNotificationEmail = ({
     );
 }
 
+// Hot lead email — interni, šalje se za svaki nedovršeni korak
+interface HotLeadEmailProps {
+    step: 1 | 2;
+    name: string;
+    email: string;
+    phone: string;
+    city: string;
+    serviceName?: string;
+}
+
+export const HotLeadEmail = ({ step, name, email, phone, city, serviceName }: HotLeadEmailProps) => {
+    const stepLabel = step === 1
+        ? 'Korak 1 — Kontakt podaci'
+        : 'Korak 2 — Odabrana usluga';
+    const stepColor = step === 1 ? '#f59e0b' : '#3b82f6';
+    const stepDesc = step === 1
+        ? 'Korisnik je ispunio kontakt podatke ali nije odabrao uslugu ni poslao upit.'
+        : `Korisnik je ispunio kontakt podatke i odabrao uslugu (${serviceName}), ali nije poslao konačni upit.`;
+
+    return (
+        <Html>
+            <Head />
+            <Preview>🔥 HOT LEAD ({stepLabel}): {name} — {city}</Preview>
+            <Body style={main}>
+                <Container style={container}>
+                    <Section style={{ ...header, backgroundColor: stepColor }}>
+                        <Text style={logoText}>🔥 HOT LEAD — {stepLabel}</Text>
+                    </Section>
+                    <Section style={content}>
+                        <Heading style={heading}>Nedovršeni upit — {stepLabel}</Heading>
+                        <Text style={{ ...paragraph, color: '#555', fontStyle: 'italic' }}>{stepDesc}</Text>
+
+                        <Section style={{ ...priceBox, borderColor: stepColor }}>
+                            <Text style={paragraph}><strong>Ime:</strong> {name}</Text>
+                            <Text style={paragraph}><strong>Telefon:</strong> <Link href={`tel:${phone}`}>{phone}</Link></Text>
+                            <Text style={paragraph}><strong>Email:</strong> <Link href={`mailto:${email}`}>{email}</Link></Text>
+                            <Text style={paragraph}><strong>Grad:</strong> {city || 'Nije navedeno'}</Text>
+                            {step === 2 && serviceName && (
+                                <Text style={paragraph}><strong>Tražena usluga:</strong> {serviceName}</Text>
+                            )}
+                        </Section>
+
+                        <Text style={{ ...paragraph, fontSize: '13px', color: '#888' }}>
+                            Ovaj lead je automatski spremljen u Supabase bazu. Možete ga kontaktirati i ponuditi pomoć u dovršavanju upita.
+                        </Text>
+                    </Section>
+                </Container>
+            </Body>
+        </Html>
+    );
+};
+
 export default ClientInquiryEmail;
 
 const main = {

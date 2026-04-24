@@ -428,25 +428,27 @@ export default function Contact() {
     const savePartialLead = async () => {
         const response = await fetch('/api/contact', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                mode: 'partial',
-                leadId,
-                formData,
-                estimatedPrice,
-            }),
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ mode: 'partial', leadId, formData, estimatedPrice }),
         });
 
-        if (!response.ok) {
-            throw new Error('Failed to save partial lead');
-        }
+        if (!response.ok) throw new Error('Failed to save partial lead');
 
         const data = await response.json();
-        if (data?.leadId) {
-            setLeadId(data.leadId);
-        }
+        if (data?.leadId) setLeadId(data.leadId);
+    };
+
+    const saveStep2Lead = async () => {
+        const response = await fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ mode: 'step2', leadId, formData, estimatedPrice }),
+        });
+
+        if (!response.ok) throw new Error('Failed to save step2 lead');
+
+        const data = await response.json();
+        if (data?.leadId) setLeadId(data.leadId);
     };
 
     const handleNext = async () => {
@@ -479,14 +481,23 @@ export default function Contact() {
             return;
         }
 
-        // GTM: korak 2 (odabir usluge)
-        if (step === 2 && formData.service && typeof window !== 'undefined') {
-            (window as any).dataLayer = (window as any).dataLayer || [];
-            (window as any).dataLayer.push({
-                event: 'form_step2_completed',
-                form_name: 'Kontakt forma',
-                service_type: formData.service,
-            });
+        // Korak 2 — spremi uslugu i pošalji hot lead email
+        if (step === 2 && formData.service) {
+            try {
+                await saveStep2Lead();
+            } catch (error) {
+                console.error('Step 2 lead save failed:', error);
+            }
+
+            // GTM: korak 2
+            if (typeof window !== 'undefined') {
+                (window as any).dataLayer = (window as any).dataLayer || [];
+                (window as any).dataLayer.push({
+                    event: 'form_step2_completed',
+                    form_name: 'Kontakt forma',
+                    service_type: formData.service,
+                });
+            }
         }
 
         const newStep = step + 1;
