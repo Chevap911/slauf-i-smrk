@@ -64,6 +64,18 @@ export default function BeforeAfterGallery() {
                         </motion.div>
                     ))}
                 </div>
+
+                <motion.div
+                    style={{ textAlign: 'center', marginTop: '2.5rem' }}
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                >
+                    <a href="#kontakt" className="btn btn-primary">
+                        Zatražite besplatnu procjenu
+                    </a>
+                </motion.div>
             </div>
         </section>
     );

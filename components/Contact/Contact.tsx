@@ -458,6 +458,17 @@ export default function Contact() {
         if (step === 1) {
             try {
                 await savePartialLead();
+                // GTM: Lead u prvom koraku
+                if (typeof window !== 'undefined') {
+                    (window as any).dataLayer = (window as any).dataLayer || [];
+                    (window as any).dataLayer.push({
+                        event: 'form_step1_completed',
+                        form_name: 'Kontakt forma',
+                        has_email: Boolean(formData.email),
+                        has_phone: Boolean(formData.phone),
+                        city: formData.city,
+                    });
+                }
             } catch (error) {
                 console.error('Partial lead save failed:', error);
             }
@@ -468,9 +479,30 @@ export default function Contact() {
             return;
         }
 
+        // GTM: korak 2 (odabir usluge)
+        if (step === 2 && formData.service && typeof window !== 'undefined') {
+            (window as any).dataLayer = (window as any).dataLayer || [];
+            (window as any).dataLayer.push({
+                event: 'form_step2_completed',
+                form_name: 'Kontakt forma',
+                service_type: formData.service,
+            });
+        }
+
         const newStep = step + 1;
         setStep(newStep);
         setProgress(Math.min(100, (newStep / 4) * 100));
+
+        // GTM: korak 3 (detalji usluge, ulaz u zadnji korak)
+        if (step === 3 && typeof window !== 'undefined') {
+            (window as any).dataLayer = (window as any).dataLayer || [];
+            (window as any).dataLayer.push({
+                event: 'form_step3_completed',
+                form_name: 'Kontakt forma',
+                service_type: formData.service,
+                estimated_value: estimatedPrice?.min || 0,
+            });
+        }
     };
 
     const handleBack = () => {

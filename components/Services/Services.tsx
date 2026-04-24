@@ -27,8 +27,8 @@ const services = [
         href: "/usluge/ciscenje-kamenih-povrsina"
     },
     {
-        title: "Detailing Auta",
-        description: "Kompletna njega vozila: od dubinskog pranja interijera i kemijskog čišćenja do poliranja i zaštite laka. Vaš automobil će izgledati kao nov.",
+        title: "Pranje Auta Uz Dolazak",
+        description: "Peremo auto iznutra i izvana dok smo već na vašoj lokaciji. Vanjsko pranje, kemijsko čišćenje sjedala i interijer. Bez dodatnog putnog troška.",
         icon: <Car size={32} />,
         href: "/usluge/detailing-automobila"
     },
@@ -90,6 +90,12 @@ export default function Services() {
                             </motion.div>
                         </Link>
                     ))}
+                </div>
+
+                <div style={{ textAlign: 'center', margin: '2rem 0' }}>
+                    <a href="#kontakt" className="btn btn-primary">
+                        Zatražite ponudu za vašu uslugu
+                    </a>
                 </div>
 
                 <div className={styles.popularSearches}>
