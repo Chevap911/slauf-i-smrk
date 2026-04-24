@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
     Phone,
@@ -353,6 +353,11 @@ export default function Contact() {
     const [leadId, setLeadId] = useState<string | null>(null);
     const [formData, setFormData] = useState<FormState>(createInitialFormData);
 
+    // Debounce timer za hot lead emailove — 4 minute
+    const HOT_LEAD_DELAY_MS = 4 * 60 * 1000;
+    const hotLeadTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+    const hotLeadStepRef = useRef<{ step: 1 | 2; formData: FormState; estimatedPrice: { min: number; max: number } } | null>(null);
+
     const updateForm = <K extends keyof FormState>(field: K, value: FormState[K]) => {
         setFormData((prev) => ({ ...prev, [field]: value }));
     };
@@ -451,16 +456,55 @@ export default function Contact() {
         if (data?.leadId) setLeadId(data.leadId);
     };
 
+    // Šalje hot lead email — poziva se tek nakon isteka timera
+    const sendHotLeadEmail = async (hotStep: 1 | 2, snapFormData: FormState, snapPrice: { min: number; max: number }) => {
+        try {
+            await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    mode: 'hotlead_email',
+                    step: hotStep,
+                    formData: snapFormData,
+                    estimatedPrice: snapPrice,
+                }),
+            });
+        } catch (err) {
+            console.error('Hot lead email send failed:', err);
+        }
+    };
+
+    // Pokreće ili resetira debounce timer
+    const scheduleHotLeadEmail = (hotStep: 1 | 2, snapFormData: FormState, snapPrice: { min: number; max: number }) => {
+        if (hotLeadTimerRef.current) clearTimeout(hotLeadTimerRef.current);
+        hotLeadStepRef.current = { step: hotStep, formData: snapFormData, estimatedPrice: snapPrice };
+        hotLeadTimerRef.current = setTimeout(() => {
+            const pending = hotLeadStepRef.current;
+            if (pending) sendHotLeadEmail(pending.step, pending.formData, pending.estimatedPrice);
+        }, HOT_LEAD_DELAY_MS);
+    };
+
+    // Poništava timer (korisnik je završio upit)
+    const cancelHotLeadTimer = () => {
+        if (hotLeadTimerRef.current) {
+            clearTimeout(hotLeadTimerRef.current);
+            hotLeadTimerRef.current = null;
+        }
+        hotLeadStepRef.current = null;
+    };
+
     const handleNext = async () => {
         if (step === 1 && (!formData.name || !formData.email || !formData.phone || !formData.city)) {
             alert('Molimo ispunite sva obavezna polja: ime, email, telefon i grad.');
             return;
         }
 
+        // Korak 1 — spremi u DB, pokreći timer za hot lead email
         if (step === 1) {
             try {
                 await savePartialLead();
-                // GTM: Lead u prvom koraku
+                scheduleHotLeadEmail(1, formData, estimatedPrice);
+
                 if (typeof window !== 'undefined') {
                     (window as any).dataLayer = (window as any).dataLayer || [];
                     (window as any).dataLayer.push({
@@ -481,15 +525,15 @@ export default function Contact() {
             return;
         }
 
-        // Korak 2 — spremi uslugu i pošalji hot lead email
+        // Korak 2 — spremi u DB, resetiraj timer na korak 2
         if (step === 2 && formData.service) {
             try {
                 await saveStep2Lead();
+                scheduleHotLeadEmail(2, formData, estimatedPrice);
             } catch (error) {
                 console.error('Step 2 lead save failed:', error);
             }
 
-            // GTM: korak 2
             if (typeof window !== 'undefined') {
                 (window as any).dataLayer = (window as any).dataLayer || [];
                 (window as any).dataLayer.push({
@@ -504,7 +548,6 @@ export default function Contact() {
         setStep(newStep);
         setProgress(Math.min(100, (newStep / 4) * 100));
 
-        // GTM: korak 3 (detalji usluge, ulaz u zadnji korak)
         if (step === 3 && typeof window !== 'undefined') {
             (window as any).dataLayer = (window as any).dataLayer || [];
             (window as any).dataLayer.push({
@@ -537,6 +580,9 @@ export default function Contact() {
             alert(validationError);
             return;
         }
+
+        // Korisnik je poslao finalni upit — poništi hot lead timer
+        cancelHotLeadTimer();
 
         setIsSubmitting(true);
 

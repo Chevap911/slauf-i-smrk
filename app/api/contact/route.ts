@@ -24,11 +24,39 @@ export async function POST(req: Request) {
         const body = await req.json();
         const { formData, estimatedPrice, mode = 'final', leadId } = body;
 
-        const isPartial = mode === 'partial';
-        const isStep2 = mode === 'step2'; // novi mode za korak 2
         const serviceNameReadable = serviceNames[formData.service] || 'Lead u tijeku';
         const minPrice = estimatedPrice?.min && estimatedPrice.min > 0 ? estimatedPrice.min : null;
         const maxPrice = estimatedPrice?.max && estimatedPrice.max > 0 ? estimatedPrice.max : null;
+
+        // ─── Mode: hotlead_email ──────────────────────────────────────────────
+        // Šalje samo email, bez DB operacija.
+        // Poziva se s frontenda nakon isteka timera.
+        if (mode === 'hotlead_email') {
+            const step = body.step as 1 | 2;
+            try {
+                await resend.emails.send({
+                    from: 'Šlauf i Šmrk <info@slaufismrk.com>',
+                    to: 'slauf.i.smrk@gmail.com',
+                    subject: `🔥 HOT LEAD (Korak ${step}): ${formData.name} — ${step === 1 ? (formData.city || 'Nepoznat grad') : serviceNameReadable}`,
+                    react: HotLeadEmail({
+                        step,
+                        name: formData.name,
+                        email: formData.email,
+                        phone: formData.phone,
+                        city: formData.city,
+                        serviceName: step === 2 ? serviceNameReadable : undefined,
+                    }) as React.ReactElement,
+                });
+            } catch (emailError) {
+                console.error(`Hot lead email (step ${step}) failed:`, emailError);
+            }
+            return NextResponse.json({ success: true });
+        }
+
+        // ─── Mode: partial | step2 | final — DB save ─────────────────────────
+        const isPartial = mode === 'partial';
+        const isStep2 = mode === 'step2';
+        const isFinal = mode === 'final';
 
         const inquiryPayload = {
             name: formData.name,
@@ -44,7 +72,9 @@ export async function POST(req: Request) {
                     savedAt: new Date().toISOString(),
                 },
             },
-            message: (isPartial || isStep2) ? `Nedovršeni lead — ${isPartial ? 'Korak 1' : 'Korak 2'}.` : formData.message,
+            message: (isPartial || isStep2)
+                ? `Nedovršeni lead — ${isPartial ? 'Korak 1' : 'Korak 2'}.`
+                : formData.message,
             estimated_price_min: minPrice,
             estimated_price_max: maxPrice,
         };
@@ -80,91 +110,54 @@ export async function POST(req: Request) {
             inquiryId = data?.id ?? null;
         }
 
-        // --- HOT LEAD EMAIL: Korak 1 (samo kontakt podaci) ---
-        if (isPartial) {
-            try {
-                await resend.emails.send({
-                    from: 'Šlauf i Šmrk <info@slaufismrk.com>',
-                    to: 'slauf.i.smrk@gmail.com',
-                    subject: `🔥 HOT LEAD (Korak 1): ${formData.name} — ${formData.city || 'Nepoznat grad'}`,
-                    react: HotLeadEmail({
-                        step: 1,
-                        name: formData.name,
-                        email: formData.email,
-                        phone: formData.phone,
-                        city: formData.city,
-                    }) as React.ReactElement,
-                });
-            } catch (emailError) {
-                console.error('Hot lead email (step 1) failed:', emailError);
-            }
-
+        // Partial i step2 završavaju ovdje — email šalje frontend nakon timera
+        if (isPartial || isStep2) {
             return NextResponse.json({ success: true, leadId: inquiryId });
         }
 
-        // --- HOT LEAD EMAIL: Korak 2 (odabrana usluga, bez konačnog upita) ---
-        if (isStep2) {
+        // ─── Final submit: šalji email administratoru i klijentu ─────────────
+        if (isFinal) {
             try {
                 await resend.emails.send({
                     from: 'Šlauf i Šmrk <info@slaufismrk.com>',
                     to: 'slauf.i.smrk@gmail.com',
-                    subject: `🔥 HOT LEAD (Korak 2): ${formData.name} — ${serviceNameReadable}`,
-                    react: HotLeadEmail({
-                        step: 2,
+                    subject: `NOVI UPIT: ${formData.name} - ${serviceNameReadable}`,
+                    react: AdminNotificationEmail({
                         name: formData.name,
                         email: formData.email,
                         phone: formData.phone,
                         city: formData.city,
+                        address: formData.address,
                         serviceName: serviceNameReadable,
+                        estimatedPriceMin: estimatedPrice.min,
+                        estimatedPriceMax: estimatedPrice.max,
+                        message: formData.message,
+                        details: formData,
                     }) as React.ReactElement,
                 });
+
+                await resend.emails.send({
+                    from: 'Šlauf i Šmrk <info@slaufismrk.com>',
+                    to: formData.email,
+                    subject: 'Vaš upit je zaprimljen - Šlauf i Šmrk',
+                    react: ClientInquiryEmail({
+                        name: formData.name,
+                        email: formData.email,
+                        phone: formData.phone,
+                        city: formData.city,
+                        address: formData.address,
+                        serviceName: serviceNameReadable,
+                        estimatedPriceMin: estimatedPrice.min,
+                        estimatedPriceMax: estimatedPrice.max,
+                        message: formData.message,
+                        details: formData,
+                    }) as React.ReactElement,
+                });
+
+                console.log('Emails sent successfully via Resend');
             } catch (emailError) {
-                console.error('Hot lead email (step 2) failed:', emailError);
+                console.error('Failed to send emails via Resend:', emailError);
             }
-
-            return NextResponse.json({ success: true, leadId: inquiryId });
-        }
-
-        // --- FINALNI UPIT: šalji email administratoru i klijentu ---
-        try {
-            await resend.emails.send({
-                from: 'Šlauf i Šmrk <info@slaufismrk.com>',
-                to: 'slauf.i.smrk@gmail.com',
-                subject: `NOVI UPIT: ${formData.name} - ${serviceNameReadable}`,
-                react: AdminNotificationEmail({
-                    name: formData.name,
-                    email: formData.email,
-                    phone: formData.phone,
-                    city: formData.city,
-                    address: formData.address,
-                    serviceName: serviceNameReadable,
-                    estimatedPriceMin: estimatedPrice.min,
-                    estimatedPriceMax: estimatedPrice.max,
-                    message: formData.message,
-                    details: formData
-                }) as React.ReactElement,
-            });
-
-            await resend.emails.send({
-                from: 'Šlauf i Šmrk <info@slaufismrk.com>',
-                to: formData.email,
-                subject: 'Vaš upit je zaprimljen - Šlauf i Šmrk',
-                react: ClientInquiryEmail({
-                    name: formData.name,
-                    email: formData.email,
-                    phone: formData.phone,
-                    city: formData.city,
-                    address: formData.address,
-                    serviceName: serviceNameReadable,
-                    estimatedPriceMin: estimatedPrice.min,
-                    estimatedPriceMax: estimatedPrice.max,
-                    message: formData.message,
-                    details: formData
-                }) as React.ReactElement,
-            });
-            console.log('Emails sent successfully via Resend');
-        } catch (emailError) {
-            console.error('Failed to send emails via Resend:', emailError);
         }
 
         return NextResponse.json({ success: true, leadId: inquiryId });
