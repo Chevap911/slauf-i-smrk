@@ -11,22 +11,7 @@ import BeforeAfterSlider from '@/components/BeforeAfterSlider/BeforeAfterSlider'
 export default function LandingPageClient() {
     return (
         <div className={styles.page}>
-            {/* Header */}
-            <header className={styles.header}>
-                <div 
-                    className={styles.logo} 
-                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                >
-                    <span>ŠLAUF <span style={{color: 'var(--primary)'}}>i</span> ŠMRK</span>
-                </div>
-                <a 
-                    href="tel:+385958442806" 
-                    className={styles.phoneIcon}
-                    aria-label="Nazovi odmah"
-                >
-                    <Phone size={24} />
-                </a>
-            </header>
+
 
             {/* Hero Section */}
             <section className={styles.hero}>
