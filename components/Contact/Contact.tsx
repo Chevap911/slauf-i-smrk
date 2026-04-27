@@ -807,25 +807,26 @@ export default function Contact() {
                                         <h3 className={styles.stepTitle}>Odabir usluge</h3>
                                         <p className={styles.stepDesc}>Odaberite uslugu za koju želite procjenu.</p>
 
-                                        <div className={styles.servicesGrid}>
-                                            {SERVICE_TYPES.map((service) => {
-                                                const Icon = service.icon;
-                                                const isActive = formData.service === service.id;
-
-                                                return (
-                                                    <button
-                                                        key={service.id}
-                                                        type="button"
-                                                        className={`${styles.serviceCard} ${isActive ? styles.serviceCardActive : ''}`}
-                                                        onClick={() => setPrimaryService(service.id)}
-                                                    >
-                                                        <div className={styles.serviceIcon}>
-                                                            <Icon size={24} />
-                                                        </div>
-                                                        <span className={styles.serviceName}>{service.name}</span>
-                                                    </button>
-                                                );
-                                            })}
+                                        <div className={styles.serviceSelectWrapper}>
+                                            <select
+                                                className={styles.serviceSelect}
+                                                value={formData.service}
+                                                onChange={(e) => setPrimaryService(e.target.value as ServiceId)}
+                                            >
+                                                <option value="" disabled>Odaberite uslugu...</option>
+                                                {SERVICE_TYPES.map((service) => (
+                                                    <option key={service.id} value={service.id}>
+                                                        {service.name}
+                                                    </option>
+                                                ))}
+                                            </select>
+                                            <div className={styles.serviceSelectIcon}>
+                                                {(() => {
+                                                    const service = SERVICE_TYPES.find(s => s.id === formData.service);
+                                                    const Icon = service?.icon || Sparkles;
+                                                    return <Icon size={24} />;
+                                                })()}
+                                            </div>
                                         </div>
 
                                         <div className={styles.btnGroup}>
