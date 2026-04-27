@@ -33,28 +33,28 @@ function FaqItem({ question, answer, isOpen, onClick }: FaqItemProps) {
 
 const faqData = [
     {
-        question: 'Koliko košta pranje fasade?',
-        answer: 'Cijena ovisi o kvadraturi i tipu fasade. Okvirni raspon je od 4 do 6 €/m². Za točniju procjenu pošaljite nam 2-3 slike fasade na WhatsApp.'
+        question: 'Koliko košta pranje terasa?',
+        answer: 'Cijena ovisi o površini i materijalu (drvo, WPC, kamen, keramika). Okvirni raspon je od 3 do 5 €/m². Za najbržu i najtočniju procjenu pošaljite nam slike terase na WhatsApp.'
     },
     {
-        question: 'Trebam li znati točnu kvadraturu fasade?',
-        answer: 'Ne morate. Dovoljno je da nam pošaljete nekoliko slika objekta na WhatsApp i mi ćemo napraviti okvirnu procjenu površine i cijene.'
+        question: 'Trebam li znati točnu kvadraturu terase?',
+        answer: 'Ne morate. Dovoljno je da nam pošaljete nekoliko slika na WhatsApp i mi ćemo napraviti okvirnu procjenu.'
     },
     {
-        question: 'Hoće li pranje oštetiti moju fasadu?',
-        answer: 'Ne. Koristimo profesionalnu opremu i prilagođavamo tlak vode ovisno o tipu fasade i stupnju oštećenja kako bismo osigurali sigurno pranje.'
+        question: 'Može li pranje oštetiti drvo ili fuge?',
+        answer: 'Ne. Za drvo i osjetljivu keramiku koristimo rotirajuće četke i prilagođeni tlak kako bismo dubinski očistili površinu bez oštećenja strukture materijala ili fuga.'
     },
     {
-        question: 'Perete li ETICS fasade (stiropor)?',
-        answer: 'Da. Imamo iskustva s ETICS fasadama. Tretiramo ih s pažnjom i prilagođenim tlakom kako ne bi došlo do oštećenja završnog sloja.'
+        question: 'Uklanjate li mrlje od kave, vina i masnoće?',
+        answer: 'Da! Kombinacijom prilagođenog tlaka, tople vode (po potrebi) i specijaliziranih sredstava, uklanjamo tvrdokorne mrlje tipične za terase kafića i restorana.'
     },
     {
-        question: 'Koliko brzo možete doći?',
-        answer: 'Trudimo se odgovoriti na upite isti dan. Sam dolazak na lokaciju i pranje ovisi o trenutnom rasporedu, najčešće unutar 3-7 dana od dogovora.'
+        question: 'Radite li čišćenje izvan radnog vremena?',
+        answer: 'Za ugostiteljske i poslovne objekte možemo dogovoriti pranje rano ujutro prije otvaranja ili nakon završetka smjene kako ne bismo ometali vaš rad.'
     },
     {
-        question: 'Radite li Zagreb i okolicu?',
-        answer: 'Da, pokrivamo cijeli grad Zagreb i cijelu Zagrebačku županiju bez dodatnih troškova za dolazak.'
+        question: 'Radite li izvan Zagreba?',
+        answer: 'Da, pokrivamo cijeli Zagreb i Zagrebačku županiju bez dodatnih putnih troškova.'
     }
 ];
 

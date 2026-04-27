@@ -21,11 +21,11 @@ export default function LandingPageClient() {
                     </div>
                     
                     <h1 className={styles.title}>
-                        Pranje <span className={styles.highlight}>fasade</span> u Zagrebu
+                        Pranje <span className={styles.highlight}>okućnice</span> i prilaza
                     </h1>
                     
                     <p className={styles.subtitle}>
-                        Uklanjamo alge, mahovinu, gljivice i crne tragove s fasada kuća, zgrada i poslovnih objekata. Pošaljite slike fasade — javimo vam okvirnu cijenu.
+                        Uklanjamo alge, mahovinu, mrlje od ulja i crne tragove s tlakavaca, prilaza i dvorišta. Pošaljite slike — javimo vam okvirnu cijenu.
                     </p>
 
                     <ul className={styles.bullets}>
@@ -35,21 +35,22 @@ export default function LandingPageClient() {
                         </li>
                         <li>
                             <CheckCircle2 className={styles.checkIcon} size={22} />
-                            <span>Prilagođen tlak za sve vrste fasada</span>
+                            <span>Profesionalna oprema za beton, asfalt i tlakavce</span>
                         </li>
                         <li>
                             <CheckCircle2 className={styles.checkIcon} size={22} />
-                            <span>Mogućnost paketa: fasada + okućnica + prilaz</span>
+                            <span>Uklanjanje korova iz fuga i tvrdokornih mrlja</span>
                         </li>
                     </ul>
 
                     <div style={{ marginTop: '2rem' }}>
                         <a 
-                            href="https://wa.me/385958442806?text=Bok,%20zanima%20me%20pranje%20fasade.%20Mogu%20poslati%20slike%20za%20okvirnu%20procjenu.%20Lokacija:%20" 
+                            href="https://wa.me/385958442806?text=Bok,%20zanima%20me%20pranje%20okucnice.%20Mogu%20poslati%20slike%20za%20okvirnu%20procjenu.%20Lokacija:%20" 
                             className={styles.btnPrimary}
                             onClick={() => {
-                                // @ts-ignore
-                                window.dataLayer?.push({ event: "whatsapp_click", cta_location: "hero" });
+                     
+                                 // @ts-ignore
+                                window.dataLayer?.push({ event: "lead_form_submit", event_category: "google_ads_landing_page", service: "Pranje okućnice", landing_page: "/lp/pranje-okucnice" });
                             }}
                         >
                             <MessageCircle size={22} />
@@ -59,7 +60,9 @@ export default function LandingPageClient() {
                             href="tel:+385958442806" 
                             className={styles.btnSecondary}
                             onClick={() => {
-                                // @ts-ignore
+                                
+                                 
+                                 // @ts-ignore
                                 window.dataLayer?.push({ event: "call_click", cta_location: "hero" });
                             }}
                         >
@@ -77,14 +80,14 @@ export default function LandingPageClient() {
             <section className={styles.section} style={{ background: 'var(--surface)' }}>
                 <div className={styles.container}>
                     <h2 className={styles.title} style={{ textAlign: 'center', marginBottom: '2rem' }}>
-                        Fasada prije i poslije pranja
+                        Okućnica prije i poslije pranja
                     </h2>
                     
                     <BeforeAfterSlider 
-                        beforeSrc="/seo-results/pranje-fasade/prije.jpeg"
-                        afterSrc="/seo-results/pranje-fasade/poslije.png"
-                        beforeAlt="Fasada prije pranja s tamnim mrljama"
-                        afterAlt="Fasada poslije visokotlačnog pranja"
+                        beforeSrc="/seo-results/pranje-terasa/prije.jpeg"
+                        afterSrc="/seo-results/pranje-terasa/poslije.jpeg"
+                        beforeAlt="Okućnica prije pranja s tamnim mrljama"
+                        afterAlt="Okućnica poslije visokotlačnog pranja"
                     />
 
                     <div style={{ marginTop: '2rem', textAlign: 'center' }}>
@@ -93,7 +96,9 @@ export default function LandingPageClient() {
                             className={styles.btnPrimary}
                             style={{ display: 'inline-flex', width: 'auto', minWidth: '250px' }}
                             onClick={() => {
-                                // @ts-ignore
+                                
+                                 
+                                 // @ts-ignore
                                 window.dataLayer?.push({ event: "quote_cta_click", cta_location: "before_after" });
                             }}
                         >
@@ -115,7 +120,7 @@ export default function LandingPageClient() {
                             <div className={styles.stepNumber}>1</div>
                             <div className={styles.stepContent}>
                                 <h3>Pošaljite slike</h3>
-                                <p>Pošaljite 2–3 slike fasade i lokaciju na WhatsApp ili ispunite kratki upit.</p>
+                                <p>Pošaljite 2–3 slike dvorišta/prilaza i lokaciju na WhatsApp ili ispunite kratki upit.</p>
                             </div>
                         </div>
                         <div className={styles.step}>
@@ -154,11 +159,11 @@ export default function LandingPageClient() {
                         </div>
                         <div className={styles.featureCard}>
                             <Target className={styles.featureIcon} size={28} />
-                            <span>Prilagođen tlak za svaki tip fasade</span>
+                            <span>Sigurno za tlakavce i kamen</span>
                         </div>
                         <div className={styles.featureCard}>
                             <MessageCircle className={styles.featureIcon} size={28} />
-                            <span>Jasna procjena bez skrivenih troškova</span>
+                            <span>Uklanjanje ulja i korova</span>
                         </div>
                         <div className={styles.featureCard}>
                             <MapPin className={styles.featureIcon} size={28} />
@@ -166,7 +171,7 @@ export default function LandingPageClient() {
                         </div>
                         <div className={styles.featureCard}>
                             <Package className={styles.featureIcon} size={28} />
-                            <span>Paket fasada + okućnica + prilaz</span>
+                            <span>Paket okućnica + fasada</span>
                         </div>
                     </div>
                 </div>
@@ -176,28 +181,28 @@ export default function LandingPageClient() {
             <section className={styles.section}>
                 <div className={styles.container}>
                     <h2 className={styles.title} style={{ textAlign: 'center', marginBottom: '1rem' }}>
-                        Koliko košta pranje fasade?
+                        Koliko košta pranje okućnice?
                     </h2>
                     <p className={styles.subtitle} style={{ textAlign: 'center' }}>
-                        Cijena ovisi o površini, vrsti fasade, visini objekta i stupnju zaprljanosti.
+                        Cijena ovisi o površini, vrsti podloge i stupnju zaprljanosti.
                     </p>
                     
                     <table className={styles.table}>
                         <tbody>
                             <tr>
-                                <td>100 m²</td>
-                                <td>400 – 600 €</td>
+                                <td>Do 50 m²</td>
+                                <td>150 – 200 €</td>
                             </tr>
                             <tr>
-                                <td>200 m²</td>
-                                <td>800 – 1.200 €</td>
+                                <td>50 – 100 m²</td>
+                                <td>200 – 350 €</td>
                             </tr>
                             <tr>
-                                <td>300 m²</td>
-                                <td>1.200 – 1.800 €</td>
+                                <td>100 – 200 m²</td>
+                                <td>350 – 600 €</td>
                             </tr>
                             <tr>
-                                <td>500 m²+</td>
+                                <td>200 m²+</td>
                                 <td>po procjeni</td>
                             </tr>
                         </tbody>
@@ -209,7 +214,9 @@ export default function LandingPageClient() {
                             className={styles.btnPrimary}
                             style={{ display: 'inline-flex', width: '100%' }}
                             onClick={() => {
-                                // @ts-ignore
+                                
+                                 
+                                 // @ts-ignore
                                 window.dataLayer?.push({ event: "quote_cta_click", cta_location: "price" });
                             }}
                         >
@@ -239,10 +246,12 @@ export default function LandingPageClient() {
                         </h2>
                         
                         <a 
-                            href="https://wa.me/385958442806?text=Bok,%20zanima%20me%20pranje%20fasade.%20Mogu%20poslati%20slike%20za%20okvirnu%20procjenu.%20Lokacija:%20" 
+                            href="https://wa.me/385958442806?text=Bok,%20zanima%20me%20pranje%20okucnice.%20Mogu%20poslati%20slike%20za%20okvirnu%20procjenu.%20Lokacija:%20" 
                             className={styles.btnPrimary}
                             onClick={() => {
-                                // @ts-ignore
+                                
+                                 
+                                 // @ts-ignore
                                 window.dataLayer?.push({ event: "whatsapp_click", cta_location: "footer" });
                             }}
                         >
@@ -254,7 +263,9 @@ export default function LandingPageClient() {
                             className={styles.btnSecondary}
                             style={{ marginBottom: '1rem' }}
                             onClick={() => {
-                                // @ts-ignore
+                                
+                                 
+                                 // @ts-ignore
                                 window.dataLayer?.push({ event: "call_click", cta_location: "footer" });
                             }}
                         >
@@ -265,7 +276,9 @@ export default function LandingPageClient() {
                             href="#procjena" 
                             style={{ color: '#6b7280', textDecoration: 'underline', fontWeight: 500 }}
                             onClick={() => {
-                                // @ts-ignore
+                                
+                                 
+                                 // @ts-ignore
                                 window.dataLayer?.push({ event: "quote_cta_click", cta_location: "footer" });
                             }}
                         >
@@ -281,19 +294,23 @@ export default function LandingPageClient() {
                     href="tel:+385958442806" 
                     className={styles.stickyBtn}
                     onClick={() => {
-                        // @ts-ignore
-                        window.dataLayer?.push({ event: "call_click", cta_location: "sticky_bar" });
+                        
+                         
+                                 // @ts-ignore
+                                window.dataLayer?.push({ event: "call_click", cta_location: "sticky_bar" });
                     }}
                 >
                     <Phone />
                     Nazovi
                 </a>
                 <a 
-                    href="https://wa.me/385958442806?text=Bok,%20zanima%20me%20pranje%20fasade.%20Mogu%20poslati%20slike%20za%20okvirnu%20procjenu.%20Lokacija:%20" 
+                    href="https://wa.me/385958442806?text=Bok,%20zanima%20me%20pranje%20okucnice.%20Mogu%20poslati%20slike%20za%20okvirnu%20procjenu.%20Lokacija:%20" 
                     className={styles.stickyBtn}
                     onClick={() => {
-                        // @ts-ignore
-                        window.dataLayer?.push({ event: "whatsapp_click", cta_location: "sticky_bar" });
+                        
+                         
+                                 // @ts-ignore
+                                window.dataLayer?.push({ event: "whatsapp_click", cta_location: "sticky_bar" });
                     }}
                 >
                     <MessageCircle />
@@ -303,8 +320,10 @@ export default function LandingPageClient() {
                     href="#procjena" 
                     className={`${styles.stickyBtn} ${styles.stickyBtnPrimary}`}
                     onClick={() => {
-                        // @ts-ignore
-                        window.dataLayer?.push({ event: "quote_cta_click", cta_location: "sticky_bar" });
+                        
+                         
+                                 // @ts-ignore
+                                window.dataLayer?.push({ event: "quote_cta_click", cta_location: "sticky_bar" });
                     }}
                 >
                     <ArrowRight />

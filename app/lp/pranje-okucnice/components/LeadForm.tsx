@@ -52,20 +52,20 @@ export default function LeadForm() {
         }
 
         const area = Number(form.area);
-        let minRate = 4;
-        let maxRate = 6;
+        let minRate = 2;
+        let maxRate = 4;
 
         switch (form.facadeType) {
-            case 'Žbukana':
-                minRate = 4; maxRate = 6; break;
-            case 'ETICS / stiropor':
-                minRate = 4; maxRate = 5; break;
-            case 'Kamena':
-                minRate = 5; maxRate = 7; break;
-            case 'Drvena':
-                minRate = 5; maxRate = 6; break;
+            case 'Tlakavci':
+                minRate = 2; maxRate = 4; break;
+            case 'Beton / Asfalt':
+                minRate = 2; maxRate = 3; break;
+            case 'Kamene ploče':
+                minRate = 3; maxRate = 5; break;
+            case 'Cijela okućnica':
+                minRate = 2; maxRate = 4; break;
             default:
-                minRate = 4; maxRate = 6; break;
+                minRate = 2; maxRate = 4; break;
         }
 
         setPriceRange({
@@ -108,7 +108,7 @@ export default function LeadForm() {
         };
 
         const messageParts = [
-            `Tip fasade: ${form.facadeType}`,
+            `Vrsta podloge: ${form.facadeType}`,
             `Površina: ${form.unknownArea ? 'Nepoznato' : `${form.area} m²`}`,
             `Ima slike: ${form.hasPhotos ? 'Da' : 'Ne'}`
         ];
@@ -120,11 +120,11 @@ export default function LeadForm() {
                 email: 'lp-upit@slaufismrk.com', // Dummy for backend requirement if needed
                 phone: form.phone,
                 city: form.city || 'N/A',
-                service: 'facade',
+                service: 'yard',
                 message: messageParts.join(' | '),
                 ...utmData,
                 lead_type: "Google Ads landing page",
-                landing_page: "/lp/pranje-fasade",
+                landing_page: "/lp/pranje-okucnice",
                 timestamp: new Date().toISOString()
             },
             estimatedPrice: priceRange,
@@ -173,7 +173,7 @@ export default function LeadForm() {
                     </div>
                     
                     <a 
-                        href={`https://wa.me/385958442806?text=Bok%2C%20poslao%2Fsla%20sam%20upit%20za%20pranje%20fasade.%20Šaljem%20slike.`}
+                        href={`https://wa.me/385958442806?text=Bok%2C%20poslao%2Fsla%20sam%20upit%20za%20pranje%20okucnice.%20Šaljem%20slike.`}
                         className={styles.btnPrimary}
                         onClick={() => {
                             // @ts-ignore
@@ -204,23 +204,23 @@ export default function LeadForm() {
             
             <form onSubmit={handleSubmit}>
                 <div className={styles.inputGroup}>
-                    <label className={styles.label}>Tip fasade</label>
+                    <label className={styles.label}>Vrsta podloge</label>
                     <select 
                         className={styles.select}
                         value={form.facadeType}
                         onChange={(e) => setForm({...form, facadeType: e.target.value})}
                     >
                         <option>Ne znam / nisam siguran</option>
-                        <option>Žbukana</option>
-                        <option>ETICS / stiropor</option>
-                        <option>Kamena</option>
-                        <option>Drvena</option>
+                        <option>Tlakavci</option>
+                        <option>Beton / Asfalt</option>
+                        <option>Kamene ploče</option>
+                        <option>Cijela okućnica</option>
                     </select>
                 </div>
 
                 {!form.unknownArea && (
                     <div className={styles.inputGroup}>
-                        <label className={styles.label}>Okvirna površina fasade (m²)</label>
+                        <label className={styles.label}>Okvirna površina podloge (m²)</label>
                         <input 
                             type="number"
                             className={styles.input}
@@ -251,7 +251,7 @@ export default function LeadForm() {
                 {priceRange && (
                     <div className={styles.priceEstimate}>
                         <div className={styles.priceValue}>Okvirni raspon: {priceRange.min} – {priceRange.max} €</div>
-                        <div className={styles.priceNote}>Konačna cijena ovisi o stanju fasade, visini objekta i pristupu.</div>
+                        <div className={styles.priceNote}>Konačna cijena ovisi o stanju podloge, stupnju zaprljanosti i pristupu.</div>
                     </div>
                 )}
 
@@ -303,10 +303,10 @@ export default function LeadForm() {
                             checked={form.hasPhotos}
                             onChange={(e) => setForm({...form, hasPhotos: e.target.checked})}
                         />
-                        <span className={styles.checkboxLabel}>Imam slike fasade i mogu ih poslati na WhatsApp</span>
+                        <span className={styles.checkboxLabel}>Imam slike okućnice i mogu ih poslati na WhatsApp</span>
                     </label>
                     <p style={{ fontSize: '0.8rem', color: '#6b7280', marginTop: '0.25rem', marginLeft: '2rem' }}>
-                        Najbržu procjenu dobivate ako nam pošaljete 2–3 slike fasade na WhatsApp.
+                        Najbržu procjenu dobivate ako nam pošaljete 2–3 slike dvorišta na WhatsApp.
                     </p>
                 </div>
 

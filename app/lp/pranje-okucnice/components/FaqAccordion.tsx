@@ -33,20 +33,20 @@ function FaqItem({ question, answer, isOpen, onClick }: FaqItemProps) {
 
 const faqData = [
     {
-        question: 'Koliko košta pranje fasade?',
-        answer: 'Cijena ovisi o kvadraturi i tipu fasade. Okvirni raspon je od 4 do 6 €/m². Za točniju procjenu pošaljite nam 2-3 slike fasade na WhatsApp.'
+        question: 'Koliko košta pranje okućnice?',
+        answer: 'Cijena ovisi o kvadraturi i tipu podloge. Okvirni raspon je od 2 do 4 €/m². Za točniju procjenu pošaljite nam 2-3 slike dvorišta na WhatsApp.'
     },
     {
-        question: 'Trebam li znati točnu kvadraturu fasade?',
-        answer: 'Ne morate. Dovoljno je da nam pošaljete nekoliko slika objekta na WhatsApp i mi ćemo napraviti okvirnu procjenu površine i cijene.'
+        question: 'Trebam li znati točnu kvadraturu dvorišta?',
+        answer: 'Ne morate. Dovoljno je da nam pošaljete nekoliko slika okućnice na WhatsApp i mi ćemo napraviti okvirnu procjenu površine i cijene.'
     },
     {
-        question: 'Hoće li pranje oštetiti moju fasadu?',
-        answer: 'Ne. Koristimo profesionalnu opremu i prilagođavamo tlak vode ovisno o tipu fasade i stupnju oštećenja kako bismo osigurali sigurno pranje.'
+        question: 'Uklanjate li korov i travu iz fuga na tlakavcima?',
+        answer: 'Da! Snažnim visokotlačnim pranjem izbijamo korov, travu i nakupljenu zemlju iz fuga te ostavljamo tlakavce čistima.'
     },
     {
-        question: 'Perete li ETICS fasade (stiropor)?',
-        answer: 'Da. Imamo iskustva s ETICS fasadama. Tretiramo ih s pažnjom i prilagođenim tlakom kako ne bi došlo do oštećenja završnog sloja.'
+        question: 'Možete li ukloniti mrlje od motornog ulja s prilaza?',
+        answer: 'U većini slučajeva da. Koristimo specijalna sredstva za odmašćivanje koja razgrađuju uljne mrlje, no uspješnost ovisi o tome koliko dugo je ulje upijano u podlogu.'
     },
     {
         question: 'Koliko brzo možete doći?',

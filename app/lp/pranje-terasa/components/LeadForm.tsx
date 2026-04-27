@@ -52,20 +52,22 @@ export default function LeadForm() {
         }
 
         const area = Number(form.area);
-        let minRate = 4;
-        let maxRate = 6;
+        let minRate = 3;
+        let maxRate = 5;
 
         switch (form.facadeType) {
-            case 'Žbukana':
-                minRate = 4; maxRate = 6; break;
-            case 'ETICS / stiropor':
-                minRate = 4; maxRate = 5; break;
-            case 'Kamena':
-                minRate = 5; maxRate = 7; break;
-            case 'Drvena':
-                minRate = 5; maxRate = 6; break;
+            case 'Keramika':
+                minRate = 3; maxRate = 5; break;
+            case 'Drvo':
+                minRate = 4; maxRate = 7; break;
+            case 'WPC':
+                minRate = 3; maxRate = 5; break;
+            case 'Kamen':
+                minRate = 4; maxRate = 7; break;
+            case 'Beton':
+                minRate = 3; maxRate = 5; break;
             default:
-                minRate = 4; maxRate = 6; break;
+                minRate = 3; maxRate = 5; break;
         }
 
         setPriceRange({
@@ -108,7 +110,7 @@ export default function LeadForm() {
         };
 
         const messageParts = [
-            `Tip fasade: ${form.facadeType}`,
+            `Vrsta podloge: ${form.facadeType}`,
             `Površina: ${form.unknownArea ? 'Nepoznato' : `${form.area} m²`}`,
             `Ima slike: ${form.hasPhotos ? 'Da' : 'Ne'}`
         ];
@@ -117,14 +119,14 @@ export default function LeadForm() {
             mode: 'final',
             formData: {
                 name: form.name || 'N/A',
-                email: 'lp-upit@slaufismrk.com', // Dummy for backend requirement if needed
+                email: 'lp-upit@slaufismrk.com',
                 phone: form.phone,
                 city: form.city || 'N/A',
-                service: 'facade',
+                service: 'terrace',
                 message: messageParts.join(' | '),
                 ...utmData,
                 lead_type: "Google Ads landing page",
-                landing_page: "/lp/pranje-fasade",
+                landing_page: "/lp/pranje-terasa",
                 timestamp: new Date().toISOString()
             },
             estimatedPrice: priceRange,
@@ -143,8 +145,8 @@ export default function LeadForm() {
                 window.dataLayer?.push({
                     event: "lead_form_submit",
                     event_category: "google_ads_landing_page",
-                    service: "Pranje fasade",
-                    landing_page: "/lp/pranje-fasade",
+                    service: "Pranje terasa",
+                    landing_page: "/lp/pranje-terasa",
                     cta_location: "form"
                 });
             } else {
@@ -173,7 +175,7 @@ export default function LeadForm() {
                     </div>
                     
                     <a 
-                        href={`https://wa.me/385958442806?text=Bok%2C%20poslao%2Fsla%20sam%20upit%20za%20pranje%20fasade.%20Šaljem%20slike.`}
+                        href={`https://wa.me/385958442806?text=Bok%2C%20poslao%2Fsla%20sam%20upit%20za%20pranje%20terasa.%20Šaljem%20slike.`}
                         className={styles.btnPrimary}
                         onClick={() => {
                             // @ts-ignore
@@ -204,23 +206,24 @@ export default function LeadForm() {
             
             <form onSubmit={handleSubmit}>
                 <div className={styles.inputGroup}>
-                    <label className={styles.label}>Tip fasade</label>
+                    <label className={styles.label}>Vrsta podloge</label>
                     <select 
                         className={styles.select}
                         value={form.facadeType}
                         onChange={(e) => setForm({...form, facadeType: e.target.value})}
                     >
                         <option>Ne znam / nisam siguran</option>
-                        <option>Žbukana</option>
-                        <option>ETICS / stiropor</option>
-                        <option>Kamena</option>
-                        <option>Drvena</option>
+                        <option>Keramika</option>
+                        <option>Drvo</option>
+                        <option>WPC</option>
+                        <option>Kamen</option>
+                        <option>Beton</option>
                     </select>
                 </div>
 
                 {!form.unknownArea && (
                     <div className={styles.inputGroup}>
-                        <label className={styles.label}>Okvirna površina fasade (m²)</label>
+                        <label className={styles.label}>Okvirna površina terase (m²)</label>
                         <input 
                             type="number"
                             className={styles.input}
@@ -251,7 +254,7 @@ export default function LeadForm() {
                 {priceRange && (
                     <div className={styles.priceEstimate}>
                         <div className={styles.priceValue}>Okvirni raspon: {priceRange.min} – {priceRange.max} €</div>
-                        <div className={styles.priceNote}>Konačna cijena ovisi o stanju fasade, visini objekta i pristupu.</div>
+                        <div className={styles.priceNote}>Konačna cijena ovisi o stanju podloge, stupnju zaprljanosti i pristupu.</div>
                     </div>
                 )}
 
@@ -303,10 +306,10 @@ export default function LeadForm() {
                             checked={form.hasPhotos}
                             onChange={(e) => setForm({...form, hasPhotos: e.target.checked})}
                         />
-                        <span className={styles.checkboxLabel}>Imam slike fasade i mogu ih poslati na WhatsApp</span>
+                        <span className={styles.checkboxLabel}>Imam slike terase i mogu ih poslati na WhatsApp</span>
                     </label>
                     <p style={{ fontSize: '0.8rem', color: '#6b7280', marginTop: '0.25rem', marginLeft: '2rem' }}>
-                        Najbržu procjenu dobivate ako nam pošaljete 2–3 slike fasade na WhatsApp.
+                        Najbržu procjenu dobivate ako nam pošaljete 2–3 slike terase na WhatsApp.
                     </p>
                 </div>
 
