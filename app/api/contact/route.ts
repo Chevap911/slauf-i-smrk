@@ -117,46 +117,54 @@ export async function POST(req: Request) {
 
         // ─── Final submit: šalji email administratoru i klijentu ─────────────
         if (isFinal) {
+            // 1. Email administratoru
             try {
                 await resend.emails.send({
                     from: 'Šlauf i Šmrk <info@slaufismrk.com>',
                     to: 'slauf.i.smrk@gmail.com',
                     subject: `NOVI UPIT: ${formData.name} - ${serviceNameReadable}`,
                     react: AdminNotificationEmail({
-                        name: formData.name,
-                        email: formData.email,
-                        phone: formData.phone,
-                        city: formData.city,
-                        address: formData.address,
+                        name: formData.name || 'N/A',
+                        email: formData.email || 'N/A',
+                        phone: formData.phone || 'N/A',
+                        city: formData.city || '',
+                        address: formData.address || '',
                         serviceName: serviceNameReadable,
-                        estimatedPriceMin: estimatedPrice.min,
-                        estimatedPriceMax: estimatedPrice.max,
-                        message: formData.message,
+                        estimatedPriceMin: estimatedPrice?.min ?? 0,
+                        estimatedPriceMax: estimatedPrice?.max ?? 0,
+                        message: formData.message || '',
                         details: formData,
                     }) as React.ReactElement,
                 });
+                console.log('Admin notification email sent');
+            } catch (adminEmailError) {
+                console.error('Failed to send admin notification email:', adminEmailError);
+            }
 
-                await resend.emails.send({
-                    from: 'Šlauf i Šmrk <info@slaufismrk.com>',
-                    to: formData.email,
-                    subject: 'Vaš upit je zaprimljen - Šlauf i Šmrk',
-                    react: ClientInquiryEmail({
-                        name: formData.name,
-                        email: formData.email,
-                        phone: formData.phone,
-                        city: formData.city,
-                        address: formData.address,
-                        serviceName: serviceNameReadable,
-                        estimatedPriceMin: estimatedPrice.min,
-                        estimatedPriceMax: estimatedPrice.max,
-                        message: formData.message,
-                        details: formData,
-                    }) as React.ReactElement,
-                });
-
-                console.log('Emails sent successfully via Resend');
-            } catch (emailError) {
-                console.error('Failed to send emails via Resend:', emailError);
+            // 2. Email klijentu (potvrda)
+            if (formData.email && formData.email.includes('@')) {
+                try {
+                    await resend.emails.send({
+                        from: 'Šlauf i Šmrk <info@slaufismrk.com>',
+                        to: formData.email,
+                        subject: 'Vaš upit je zaprimljen - Šlauf i Šmrk',
+                        react: ClientInquiryEmail({
+                            name: formData.name || 'Klijent',
+                            email: formData.email,
+                            phone: formData.phone || '',
+                            city: formData.city || '',
+                            address: formData.address || '',
+                            serviceName: serviceNameReadable,
+                            estimatedPriceMin: estimatedPrice?.min ?? 0,
+                            estimatedPriceMax: estimatedPrice?.max ?? 0,
+                            message: formData.message || '',
+                            details: formData,
+                        }) as React.ReactElement,
+                    });
+                    console.log('Client confirmation email sent');
+                } catch (clientEmailError) {
+                    console.error('Failed to send client confirmation email:', clientEmailError);
+                }
             }
         }
 

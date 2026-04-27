@@ -47,14 +47,29 @@ export default function Navigation() {
                     </div>
 
                     <div className={styles.cta}>
-                        <a href="tel:+385958442806" className="btn btn-primary">
+                        <a 
+                            href="tel:+385958442806" 
+                            className="btn btn-primary"
+                            onClick={() => {
+                                // @ts-ignore
+                                window.dataLayer?.push({ event: 'call_click', cta_location: 'navigacija_desktop' });
+                            }}
+                        >
                             <Phone size={18} style={{ marginRight: '8px' }} />
                             Nazovite nas
                         </a>
                     </div>
 
                     <div className={styles.mobileActions}>
-                        <a href="tel:+385958442806" className={styles.mobilePhoneBtn} aria-label="Nazovite nas">
+                        <a 
+                            href="tel:+385958442806" 
+                            className={styles.mobilePhoneBtn} 
+                            aria-label="Nazovite nas"
+                            onClick={() => {
+                                // @ts-ignore
+                                window.dataLayer?.push({ event: 'call_click', cta_location: 'navigacija_mobile_icon' });
+                            }}
+                        >
                             <Phone size={20} />
                         </a>
                         <button className={styles.mobileMenuBtn} onClick={toggleMenu} aria-label="Toggle menu">
@@ -88,7 +103,14 @@ export default function Navigation() {
                         <Link href="/blog" className={styles.mobileLink} onClick={closeMenu}>Blog</Link>
                         <Link href="/#kontakt" className={styles.mobileLink} onClick={closeMenu}>Kontakt</Link>
 
-                        <a href="tel:+385958442806" className={`btn btn-primary ${styles.mobileCtaBtn}`}>
+                        <a 
+                            href="tel:+385958442806" 
+                            className={`btn btn-primary ${styles.mobileCtaBtn}`}
+                            onClick={() => {
+                                // @ts-ignore
+                                window.dataLayer?.push({ event: 'call_click', cta_location: 'navigacija_mobile_menu' });
+                            }}
+                        >
                             <Phone size={18} style={{ marginRight: '8px' }} />
                             Nazovite nas
                         </a>

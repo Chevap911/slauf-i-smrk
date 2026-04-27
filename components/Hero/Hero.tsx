@@ -47,7 +47,14 @@ export default function Hero() {
                                 Zatražite Besplatnu Procjenu
                                 <ArrowRight size={18} style={{ marginLeft: '8px' }} />
                             </a>
-                            <a href="tel:+385958442806" className={styles.phoneBtn}>
+                            <a 
+                                href="tel:+385958442806" 
+                                className={styles.phoneBtn}
+                                onClick={() => {
+                                    // @ts-ignore
+                                    window.dataLayer?.push({ event: 'call_click', cta_location: 'pocetna_hero' });
+                                }}
+                            >
                                 <PhoneCall size={18} />
                                 +385 95 844 2806
                             </a>

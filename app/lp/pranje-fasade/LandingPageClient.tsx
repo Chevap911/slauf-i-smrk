@@ -219,6 +219,39 @@ export default function LandingPageClient() {
                 </div>
             </section>
 
+            {/* Galerija */}
+            <section className={styles.section}>
+                <div className={styles.container}>
+                    <h2 className={styles.title} style={{ textAlign: 'center', marginBottom: '0.5rem' }}>
+                        Naši nedavni projekti
+                    </h2>
+                    <p className={styles.subtitle} style={{ textAlign: 'center', marginBottom: '2rem' }}>
+                        Pogledajte rezultate čišćenja na različitim objektima u Zagrebu.
+                    </p>
+                    
+                    <div className={styles.galleryGrid}>
+                        <div className={styles.galleryImage}>
+                            <Image 
+                                src="/lp-gallery/fasada-1.png" 
+                                alt="Pranje fasade - rezultat" 
+                                fill 
+                                className={styles.galleryImg} 
+                                sizes="(max-width: 600px) 50vw, 300px"
+                            />
+                        </div>
+                        <div className={styles.galleryImage}>
+                            <Image 
+                                src="/lp-gallery/fasada-2.png" 
+                                alt="Pranje fasade i kamena - rezultat" 
+                                fill 
+                                className={styles.galleryImg} 
+                                sizes="(max-width: 600px) 50vw, 300px"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* FAQ */}
             <section className={styles.section} style={{ background: 'var(--surface)' }}>
                 <div className={styles.container}>

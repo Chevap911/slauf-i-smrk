@@ -227,6 +227,39 @@ export default function LandingPageClient() {
                 </div>
             </section>
 
+            {/* Galerija */}
+            <section className={styles.section}>
+                <div className={styles.container}>
+                    <h2 className={styles.title} style={{ textAlign: 'center', marginBottom: '0.5rem' }}>
+                        Naši nedavni projekti
+                    </h2>
+                    <p className={styles.subtitle} style={{ textAlign: 'center', marginBottom: '2rem' }}>
+                        Rezultati pranja terasa u Avenue Mall-u i Family Mall-u.
+                    </p>
+                    
+                    <div className={styles.galleryGrid}>
+                        <div className={styles.galleryImage}>
+                            <Image 
+                                src="/lp-gallery/terasa-1.jpg" 
+                                alt="Pranje terase Avenue Mall - rezultat" 
+                                fill 
+                                className={styles.galleryImg} 
+                                sizes="(max-width: 600px) 50vw, 300px"
+                            />
+                        </div>
+                        <div className={styles.galleryImage}>
+                            <Image 
+                                src="/lp-gallery/terasa-2.jpg" 
+                                alt="Pranje terase Family Mall - rezultat" 
+                                fill 
+                                className={styles.galleryImg} 
+                                sizes="(max-width: 600px) 50vw, 300px"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* FAQ */}
             <section className={styles.section} style={{ background: 'var(--surface)' }}>
                 <div className={styles.container}>

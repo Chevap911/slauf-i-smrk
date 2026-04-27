@@ -48,7 +48,14 @@ export default function StickyCtaBanner() {
                         <span className={styles.text}>
                             Trebate čišćenje? Nazovite nas!
                         </span>
-                        <a href="tel:+385958442806" className={styles.phoneBtn}>
+                        <a 
+                            href="tel:+385958442806" 
+                            className={styles.phoneBtn}
+                            onClick={() => {
+                                // @ts-ignore
+                                window.dataLayer?.push({ event: 'call_click', cta_location: 'sticky_banner' });
+                            }}
+                        >
                             <Phone size={18} />
                             <span>(095) 844-2806</span>
                         </a>

@@ -353,13 +353,60 @@ export default function Contact() {
     const [leadId, setLeadId] = useState<string | null>(null);
     const [formData, setFormData] = useState<FormState>(createInitialFormData);
 
-    // Debounce timer za hot lead emailove — 4 minute
-    const HOT_LEAD_DELAY_MS = 4 * 60 * 1000;
+    // Debounce timer za hot lead emailove — 10 minuta
+    const HOT_LEAD_DELAY_MS = 10 * 60 * 1000;
     const hotLeadTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
     const hotLeadStepRef = useRef<{ step: 1 | 2; formData: FormState; estimatedPrice: { min: number; max: number } } | null>(null);
 
+    // Šalje hot lead email — poziva se tek nakon isteka timera
+    const sendHotLeadEmail = async (hotStep: 1 | 2, snapFormData: FormState, snapPrice: { min: number; max: number }) => {
+        try {
+            await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    mode: 'hotlead_email',
+                    step: hotStep,
+                    formData: snapFormData,
+                    estimatedPrice: snapPrice,
+                }),
+            });
+        } catch (err) {
+            console.error('Hot lead email send failed:', err);
+        }
+    };
+
+    // Pokreće ili resetira debounce timer
+    const scheduleHotLeadEmail = (hotStep: 1 | 2, snapFormData: FormState, snapPrice: { min: number; max: number }) => {
+        if (hotLeadTimerRef.current) clearTimeout(hotLeadTimerRef.current);
+        hotLeadStepRef.current = { step: hotStep, formData: snapFormData, estimatedPrice: snapPrice };
+        hotLeadTimerRef.current = setTimeout(() => {
+            const pending = hotLeadStepRef.current;
+            if (pending) sendHotLeadEmail(pending.step, pending.formData, pending.estimatedPrice);
+        }, HOT_LEAD_DELAY_MS);
+    };
+
+    // Poništava timer (korisnik je završio upit)
+    const cancelHotLeadTimer = () => {
+        if (hotLeadTimerRef.current) {
+            clearTimeout(hotLeadTimerRef.current);
+            hotLeadTimerRef.current = null;
+        }
+        hotLeadStepRef.current = null;
+    };
+
     const updateForm = <K extends keyof FormState>(field: K, value: FormState[K]) => {
-        setFormData((prev) => ({ ...prev, [field]: value }));
+        setFormData((prev) => {
+            const next = { ...prev, [field]: value };
+            
+            // Ako je korisnik u Koraku 2 ili 3, resetiramo timer za hot lead pri svakoj promjeni
+            // tako da email ode tek 10 min nakon zadnje aktivnosti.
+            if (step >= 2 && next.service) {
+                scheduleHotLeadEmail(2, next, getTotalEstimate(next));
+            }
+            
+            return next;
+        });
     };
 
     const toggleAdditionalService = (serviceId: ServiceId) => {
@@ -456,42 +503,6 @@ export default function Contact() {
         if (data?.leadId) setLeadId(data.leadId);
     };
 
-    // Šalje hot lead email — poziva se tek nakon isteka timera
-    const sendHotLeadEmail = async (hotStep: 1 | 2, snapFormData: FormState, snapPrice: { min: number; max: number }) => {
-        try {
-            await fetch('/api/contact', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    mode: 'hotlead_email',
-                    step: hotStep,
-                    formData: snapFormData,
-                    estimatedPrice: snapPrice,
-                }),
-            });
-        } catch (err) {
-            console.error('Hot lead email send failed:', err);
-        }
-    };
-
-    // Pokreće ili resetira debounce timer
-    const scheduleHotLeadEmail = (hotStep: 1 | 2, snapFormData: FormState, snapPrice: { min: number; max: number }) => {
-        if (hotLeadTimerRef.current) clearTimeout(hotLeadTimerRef.current);
-        hotLeadStepRef.current = { step: hotStep, formData: snapFormData, estimatedPrice: snapPrice };
-        hotLeadTimerRef.current = setTimeout(() => {
-            const pending = hotLeadStepRef.current;
-            if (pending) sendHotLeadEmail(pending.step, pending.formData, pending.estimatedPrice);
-        }, HOT_LEAD_DELAY_MS);
-    };
-
-    // Poništava timer (korisnik je završio upit)
-    const cancelHotLeadTimer = () => {
-        if (hotLeadTimerRef.current) {
-            clearTimeout(hotLeadTimerRef.current);
-            hotLeadTimerRef.current = null;
-        }
-        hotLeadStepRef.current = null;
-    };
 
     const handleNext = async () => {
         if (step === 1 && (!formData.name || !formData.email || !formData.phone || !formData.city)) {
@@ -652,7 +663,14 @@ export default function Contact() {
                         </p>
 
                         <div className={styles.contactDetails}>
-                            <a href="tel:+385958442806" className={styles.detailItem}>
+                            <a 
+                                href="tel:+385958442806" 
+                                className={styles.detailItem}
+                                onClick={() => {
+                                    // @ts-ignore
+                                    window.dataLayer?.push({ event: 'call_click', cta_location: 'kontakt_sekcija' });
+                                }}
+                            >
                                 <div className={styles.iconCircle}><Phone size={24} /></div>
                                 <div>
                                     <span className={styles.label}>Nazovite nas za hitne slučajeve</span>

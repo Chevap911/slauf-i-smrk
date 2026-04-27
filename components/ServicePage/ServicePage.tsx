@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Phone, ArrowRight, ChevronRight } from 'lucide-react';
@@ -221,7 +223,14 @@ export default function ServicePage({
                                     <Phone size={18} />
                                     Zatražite besplatnu procjenu
                                 </Link>
-                                <a href="tel:+385958442806" className={styles.heroCtaSecondary}>
+                                <a 
+                                    href="tel:+385958442806" 
+                                    className={styles.heroCtaSecondary}
+                                    onClick={() => {
+                                        // @ts-ignore
+                                        window.dataLayer?.push({ event: 'call_click', cta_location: 'service_page_hero' });
+                                    }}
+                                >
                                     +385 95 844 2806
                                 </a>
                             </div>
@@ -430,7 +439,14 @@ export default function ServicePage({
                     <div className={styles.boldCtaInner}>
                         <h2>Trebate pomoć?</h2>
                         <p>Nazovite nas za besplatnu procjenu — odgovaramo u roku od sat vremena</p>
-                        <a href="tel:+385958442806" className={styles.boldCtaPhone}>
+                        <a 
+                            href="tel:+385958442806" 
+                            className={styles.boldCtaPhone}
+                            onClick={() => {
+                                // @ts-ignore
+                                window.dataLayer?.push({ event: 'call_click', cta_location: 'service_page_footer_cta' });
+                            }}
+                        >
                             <Phone size={24} />
                             (095) 844-2806
                         </a>

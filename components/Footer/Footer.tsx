@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { Camera, CheckCircle2, Mail, MapPin, Phone } from 'lucide-react';
 import styles from './Footer.module.css';
@@ -73,7 +75,15 @@ export default function Footer() {
                         <ul className={styles.list}>
                             <li className={styles.contactItem}>
                                 <Phone size={18} />
-                                <a href="tel:+385958442806">+385 95 844 2806</a>
+                                <a 
+                                    href="tel:+385958442806"
+                                    onClick={() => {
+                                        // @ts-ignore
+                                        window.dataLayer?.push({ event: 'call_click', cta_location: 'footer' });
+                                    }}
+                                >
+                                    +385 95 844 2806
+                                </a>
                             </li>
                             <li className={styles.contactItem}>
                                 <Mail size={16} />
