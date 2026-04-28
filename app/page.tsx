@@ -1,12 +1,14 @@
 import type { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import Hero from '@/components/Hero/Hero';
-import BeforeAfterGallery from '@/components/BeforeAfterGallery/BeforeAfterGallery';
-import Services from '@/components/Services/Services';
-import WhyChooseUs from '@/components/WhyChooseUs/WhyChooseUs';
-import Gallery from '@/components/Gallery/Gallery';
-import Testimonials from '@/components/Testimonials/Testimonials';
-import ReferralBanner from '@/components/ReferralBanner/ReferralBanner';
-import Contact from '@/components/Contact/Contact';
+
+const BeforeAfterGallery = dynamic(() => import('@/components/BeforeAfterGallery/BeforeAfterGallery'));
+const WhyChooseUs = dynamic(() => import('@/components/WhyChooseUs/WhyChooseUs'));
+const Services = dynamic(() => import('@/components/Services/Services'));
+const Gallery = dynamic(() => import('@/components/Gallery/Gallery'));
+const Testimonials = dynamic(() => import('@/components/Testimonials/Testimonials'));
+const ReferralBanner = dynamic(() => import('@/components/ReferralBanner/ReferralBanner'));
+const Contact = dynamic(() => import('@/components/Contact/Contact'));
 
 export const metadata: Metadata = {
   title: 'Pranje fasade, okućnice i terasa Zagreb | Šlauf i Šmrk',

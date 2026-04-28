@@ -6,6 +6,9 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: false,
   },
   excludeDefaultMomentLocales: true,
+  images: {
+    formats: ['image/avif', 'image/webp'],
+  },
   turbopack: {
     root: path.resolve(__dirname),
   },

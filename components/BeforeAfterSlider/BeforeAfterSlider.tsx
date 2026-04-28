@@ -74,7 +74,14 @@ export default function BeforeAfterSlider({
             >
                 {/* After image (full width background) */}
                 <div className={styles.imageWrapper}>
-                    <Image src={afterSrc} alt={afterAlt} fill className={styles.image} sizes="(max-width: 768px) 100vw, 50vw" />
+                    <Image 
+                        src={afterSrc} 
+                        alt={afterAlt} 
+                        fill 
+                        className={styles.image} 
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 480px"
+                        quality={85}
+                    />
                     <span className={styles.badge} style={{ right: '1rem', left: 'auto' }}>POSLIJE</span>
                 </div>
 
@@ -83,7 +90,14 @@ export default function BeforeAfterSlider({
                     className={styles.beforeWrapper}
                     style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
                 >
-                    <Image src={beforeSrc} alt={beforeAlt} fill className={styles.image} sizes="(max-width: 768px) 100vw, 50vw" />
+                    <Image 
+                        src={beforeSrc} 
+                        alt={beforeAlt} 
+                        fill 
+                        className={styles.image} 
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 480px"
+                        quality={85}
+                    />
                     <span className={styles.badge} style={{ left: '1rem', right: 'auto' }}>PRIJE</span>
                 </div>
 

@@ -1,5 +1,3 @@
-const version = "v=transparent-1";
-
 export const HOMEPAGE_MASCOT_DIMENSIONS = {
   width: 1792,
   height: 2400,
@@ -7,23 +5,23 @@ export const HOMEPAGE_MASCOT_DIMENSIONS = {
 
 export const homepageMascots = {
   heroGuide: {
-    src: `/characters/homepage/slauf-presenting.png?${version}`,
+    src: `/characters/homepage/slauf-presenting.webp`,
     alt: "",
   },
   heroBuddy: {
-    src: `/characters/homepage/smrk-thumbs-up.png?${version}`,
+    src: `/characters/homepage/smrk-thumbs-up.webp`,
     alt: "",
   },
   whyChooseUs: {
-    src: `/characters/homepage/slauf-hands-on-hips.png?${version}`,
+    src: `/characters/homepage/slauf-hands-on-hips.webp`,
     alt: "",
   },
   services: {
-    src: `/characters/homepage/slauf-pointing.png?${version}`,
+    src: `/characters/homepage/slauf-pointing.webp`,
     alt: "",
   },
   contact: {
-    src: `/characters/homepage/smrk-waving.png?${version}`,
+    src: `/characters/homepage/smrk-waving.webp`,
     alt: "",
   },
 } as const;

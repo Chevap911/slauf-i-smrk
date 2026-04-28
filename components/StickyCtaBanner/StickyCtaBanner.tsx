@@ -13,17 +13,9 @@ export default function StickyCtaBanner() {
     useMotionValueEvent(scrollY, "change", (latest) => {
         if (dismissed) return;
 
-        const contactSection = document.getElementById('kontakt');
-
-        // Show after scrolling 600px
+        // Show after scrolling 600px, keep it simple to avoid forced reflows
         if (latest > 600) {
-            // But hide when contact section is visible
-            if (contactSection) {
-                const rect = contactSection.getBoundingClientRect();
-                setVisible(rect.top > window.innerHeight);
-            } else {
-                setVisible(true);
-            }
+            setVisible(true);
         } else {
             setVisible(false);
         }
