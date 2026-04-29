@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ShieldCheck, Home, Car, TreeDeciduous, HeartHandshake } from 'lucide-react';
+import { ShieldCheck, Home, Car, TreeDeciduous, HeartHandshake, Building2 } from 'lucide-react';
 import Link from 'next/link';
 import HomepageMascot from '@/components/HomepageMascot/HomepageMascot';
 import { homepageMascots } from '@/components/HomepageMascot/homepageMascots';
@@ -43,6 +43,12 @@ const services = [
         description: "Oživljavamo vaše drvene terase, ograde i namještaj uklanjajući sivilo i pripremajući ih za novu zaštitu od vremenskih uvjeta.",
         icon: <ShieldCheck size={32} />,
         href: "/usluge/ciscenje-drvenih-povrsina"
+    },
+    {
+        title: "Pranje Poslovnih Objekata",
+        description: "Vanjsko čišćenje fasada, parkirišta, skladišta i hala. Redoviti ugovori, R1 račun, rad izvan radnog vremena. Za firme koje trebaju urednog i pouzdanog partnera.",
+        icon: <Building2 size={32} />,
+        href: "/usluge/poslovni-objekti"
     }
 ];
 

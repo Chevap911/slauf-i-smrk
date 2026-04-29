@@ -39,6 +39,7 @@ export default function Navigation() {
                                 <Link href="/usluge/detailing-automobila">Detailing auta</Link>
                                 <Link href="/usluge/pranje-bazena">Pranje bazena</Link>
                                 <Link href="/usluge/odrzavanje-grobnih-mjesta">Grobna mjesta</Link>
+                                <Link href="/usluge/poslovni-objekti">Poslovni objekti</Link>
                             </div>
                         </div>
                         <Link href="/#zasto-mi" className={styles.link}>O nama</Link>
@@ -97,6 +98,7 @@ export default function Navigation() {
                                 <Link href="/usluge/detailing-automobila" onClick={closeMenu}>Detailing auta</Link>
                                 <Link href="/usluge/pranje-bazena" onClick={closeMenu}>Pranje bazena</Link>
                                 <Link href="/usluge/odrzavanje-grobnih-mjesta" onClick={closeMenu}>Grobna mjesta</Link>
+                                <Link href="/usluge/poslovni-objekti" onClick={closeMenu}>Poslovni objekti</Link>
                             </div>
                         </div>
                         <Link href="/#zasto-mi" className={styles.mobileLink} onClick={closeMenu}>O nama</Link>
