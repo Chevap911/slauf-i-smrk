@@ -169,151 +169,40 @@
 }
 
 .visual {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
     gap: 1rem;
+    min-height: 480px;
 }
 
-.brandLogoCard {
-    width: min(100%, 360px);
-    margin: 0 auto;
-    padding: 0;
-    aspect-ratio: 3676 / 2048;
-}
-
-.brandLogoImage {
-    width: 100%;
-    height: 100%;
-    display: block;
-    filter: drop-shadow(0 18px 34px rgba(0, 51, 102, 0.14));
-}
-
-.visualStage {
+.photoCard {
     position: relative;
-    width: 100%;
-    min-height: 560px;
-}
-
-.mainImageCard {
-    position: relative;
-    min-height: 500px;
-    aspect-ratio: 16 / 10;
     border-radius: 2rem;
     overflow: hidden;
     box-shadow: 0 28px 60px rgba(0, 51, 102, 0.16);
     background: #d9e4ee;
 }
 
-.mainImage {
+.photoImg {
     object-fit: cover;
 }
 
-.resultBadge {
-    position: absolute;
-    left: 1.25rem;
-    bottom: 1.25rem;
-    display: inline-flex;
-    flex-direction: column;
-    gap: 0.15rem;
-    padding: 1rem 1.1rem;
-    border-radius: 1.1rem;
-    background: rgba(255, 255, 255, 0.92);
-    color: var(--secondary);
-    box-shadow: var(--shadow-md);
-}
-
-.resultBadge span {
-    font-size: 0.78rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: #52708a;
-}
-
-.resultBadge strong {
-    font-size: 1rem;
-}
-
-.beforeCard {
-    position: absolute;
-    right: -0.75rem;
-    bottom: 3rem;
-    width: min(255px, 45%);
-    border-radius: 1.35rem;
+.mascotCard {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    border-radius: 2rem;
+    background: linear-gradient(160deg, #fefce8 0%, rgba(255, 215, 0, 0.12) 100%);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    padding: 1.5rem 0.75rem 0;
     overflow: hidden;
-    background: #fff;
-    box-shadow: 0 20px 40px rgba(0, 51, 102, 0.16);
-    border: 1px solid rgba(0, 51, 102, 0.08);
 }
 
-.beforeCardImage {
-    position: relative;
-    aspect-ratio: 1.08;
-}
-
-.beforeImage {
-    object-fit: cover;
-}
-
-.beforeCardCopy {
-    padding: 0.9rem 1rem 1rem;
-}
-
-.beforeCardCopy span {
+.mascotImg {
+    width: 100%;
+    height: auto;
     display: block;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: #7d8ea0;
-    margin-bottom: 0.35rem;
-}
-
-.beforeCardCopy strong {
-    display: block;
-    color: var(--secondary);
-    line-height: 1.3;
-}
-
-.calloutCard {
-    position: absolute;
-    left: -1rem;
-    top: 2.5rem;
-    width: min(260px, 52%);
-    padding: 1.2rem 1.25rem;
-    border-radius: 1.35rem;
-    background: rgba(0, 51, 102, 0.96);
-    color: #fff;
-    box-shadow: 0 20px 42px rgba(0, 51, 102, 0.22);
-}
-
-.calloutLabel {
-    display: inline-block;
-    margin-bottom: 0.9rem;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.74);
-}
-
-.calloutCard ul {
-    list-style: none;
-    display: grid;
-    gap: 0.55rem;
-    margin-bottom: 1rem;
-}
-
-.calloutCard li {
-    font-weight: 600;
-}
-
-.calloutLink {
-    display: inline-flex;
-    align-items: center;
-    color: var(--primary);
-    font-weight: 700;
+    filter: drop-shadow(0 12px 24px rgba(0, 51, 102, 0.12));
 }
 
 @media (max-width: 992px) {
@@ -325,12 +214,8 @@
         grid-template-columns: minmax(0, 1fr);
     }
 
-    .brandLogoCard {
-        width: min(78%, 340px);
-    }
-
-    .visualStage {
-        min-height: 520px;
+    .visual {
+        min-height: 420px;
     }
 }
 
@@ -356,28 +241,9 @@
         grid-template-columns: 1fr;
     }
 
-    .brandLogoCard {
-        width: min(84%, 320px);
-    }
-
-    .visualStage {
-        min-height: auto;
-    }
-
-    .mainImageCard {
-        min-height: 360px;
-    }
-
-    .calloutCard {
-        position: static;
-        width: 100%;
-        margin-top: 1rem;
-    }
-
-    .beforeCard {
-        position: static;
-        width: min(320px, 78%);
-        margin: 1rem 0 0 auto;
+    .visual {
+        min-height: 240px;
+        gap: 0.75rem;
     }
 }
 
@@ -390,15 +256,11 @@
         font-size: 2.15rem;
     }
 
-    .brandLogoCard {
-        width: min(92%, 280px);
-    }
-
     .description {
         font-size: 1rem;
     }
 
-    .beforeCard {
-        width: 100%;
+    .visual {
+        min-height: 200px;
     }
 }

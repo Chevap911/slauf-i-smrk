@@ -11,62 +11,27 @@ export default function Hero() {
                     <HeroAnimatedContent />
 
                     <div className={styles.visual}>
-                        <div className={styles.brandLogoCard}>
+                        <div className={styles.photoCard}>
+                            <Image
+                                src="/prije-poslje/fasada-poslje.png"
+                                alt="Očišćena fasada obiteljske kuće u Zagrebu nakon profesionalnog pranja"
+                                fill
+                                className={styles.photoImg}
+                                priority
+                                sizes="(max-width: 576px) 55vw, (max-width: 992px) 60vw, 38vw"
+                                fetchPriority="high"
+                                quality={90}
+                            />
+                        </div>
+                        <div className={styles.mascotCard}>
                             <Image
                                 src={brandLogo}
                                 alt="Logo Šlauf i Šmrk"
-                                className={styles.brandLogoImage}
-                                sizes="(max-width: 576px) 240px, (max-width: 992px) 320px, 360px"
+                                className={styles.mascotImg}
+                                sizes="(max-width: 576px) 40vw, (max-width: 992px) 38vw, 22vw"
                                 priority
                                 fetchPriority="high"
                             />
-                        </div>
-
-                        <div className={styles.visualStage}>
-                            <div className={styles.mainImageCard}>
-                                <Image
-                                    src="/prije-poslje/fasada-poslje.png"
-                                    alt="Očišćena fasada obiteljske kuće u Zagrebu nakon profesionalnog pranja"
-                                    fill
-                                    className={styles.mainImage}
-                                    priority
-                                    sizes="(max-width: 992px) 100vw, 42vw"
-                                    fetchPriority="high"
-                                    quality={90}
-                                />
-                                <div className={styles.resultBadge}>
-                                    <span>Stvarni rezultat</span>
-                                    <strong>Pranje fasade u Zagrebu</strong>
-                                </div>
-                            </div>
-
-                            <div className={styles.beforeCard}>
-                                <div className={styles.beforeCardImage}>
-                                    <Image
-                                        src="/prije-poslje/fasada-prije.jpeg"
-                                        alt="Fasada prije čišćenja s algama i tamnim naslagama"
-                                        fill
-                                        className={styles.beforeImage}
-                                        sizes="(max-width: 992px) 50vw, 18vw"
-                                    />
-                                </div>
-                                <div className={styles.beforeCardCopy}>
-                                    <span>Prije zahvata</span>
-                                    <strong>Alge, pruge i sivi sloj prljavštine</strong>
-                                </div>
-                            </div>
-
-                            <div className={styles.calloutCard}>
-                                <span className={styles.calloutLabel}>Najtraženije usluge</span>
-                                <ul>
-                                    <li>Pranje fasade</li>
-                                    <li>Čišćenje okućnice i tlakavaca</li>
-                                    <li>Pranje terasa i prilaza</li>
-                                </ul>
-                                <a href="#usluge" className={styles.calloutLink}>
-                                    Pogledajte sve usluge
-                                </a>
-                            </div>
                         </div>
                     </div>
                 </div>
