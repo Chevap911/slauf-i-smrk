@@ -260,13 +260,38 @@ export default function LandingPageClient() {
                 </div>
             </section>
 
+            {/* Recenzije */}
+            <section className={styles.section}>
+                <div className={styles.container}>
+                    <h2 className={styles.title} style={{ textAlign: 'center', marginBottom: '0.5rem' }}>
+                        Što kažu klijenti
+                    </h2>
+                    <p className={styles.subtitle} style={{ textAlign: 'center', marginBottom: '2rem' }}>
+                        ⭐⭐⭐⭐⭐ 5,0 · Stvarne Google recenzije
+                    </p>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
+                        {([
+                            { text: 'Imam cca 80 m² terase uglavnom beton i pločice. Mislio sam da nije bila prljava. Ipak sam naručio čišćenje. Nakon što su je dečki očistili vidio sam koliko sam bio u krivu. Zahvalan sam i toplo ih mogu preporučiti.', name: 'Kuki Baldo', meta: 'Pranje terase (80 m²)' },
+                            { text: 'Odlična usluga i obavljen posao. Angažirala sam ih za čišćenje terase i sve je obavljeno brzo i profesionalno. Sve pohvale!', name: 'Hana Janjanin', meta: 'Pranje terase' },
+                        ] as const).map((t) => (
+                            <div key={t.name} style={{ background: 'var(--surface)', borderRadius: '1rem', padding: '1.5rem', border: '1px solid var(--border)' }}>
+                                <div style={{ fontSize: '1.1rem', color: '#fbbf24', marginBottom: '0.75rem' }}>★★★★★</div>
+                                <p style={{ fontSize: '0.95rem', color: '#374151', lineHeight: 1.6, fontStyle: 'italic', marginBottom: '1rem' }}>&ldquo;{t.text}&rdquo;</p>
+                                <strong style={{ display: 'block', fontSize: '0.9rem' }}>{t.name}</strong>
+                                <span style={{ fontSize: '0.8rem', color: '#6b7280' }}>{t.meta}</span>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             {/* FAQ */}
             <section className={styles.section} style={{ background: 'var(--surface)' }}>
                 <div className={styles.container}>
                     <h2 className={styles.title} style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
                         Česta pitanja
                     </h2>
-                    
+
                     <FaqAccordion />
                 </div>
             </section>
