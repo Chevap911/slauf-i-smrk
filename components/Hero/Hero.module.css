@@ -36,11 +36,10 @@
 }
 
 .title {
-    font-size: clamp(2.5rem, 5.2vw, 5rem);
+    font-size: clamp(2.5rem, 4.4vw, 4.25rem);
     margin-bottom: 1.5rem;
     color: var(--secondary);
     line-height: 1.1;
-    max-width: 12ch;
 }
 
 .highlight {
@@ -324,10 +323,6 @@
 
     .wrapper {
         grid-template-columns: minmax(0, 1fr);
-    }
-
-    .title {
-        max-width: none;
     }
 
     .brandLogoCard {
