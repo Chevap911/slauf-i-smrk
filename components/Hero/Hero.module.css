@@ -31,6 +31,8 @@
     letter-spacing: 0.04em;
     text-transform: uppercase;
     margin-bottom: 1.25rem;
+    max-width: 100%;
+    flex-wrap: wrap;
 }
 
 .title {
