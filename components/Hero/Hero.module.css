@@ -323,7 +323,7 @@
     }
 
     .wrapper {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
     }
 
     .title {
@@ -344,10 +344,15 @@
         flex-direction: column;
         width: 100%;
         gap: 1rem;
+        align-items: stretch;
     }
 
     .phoneBtn {
         width: 100%;
+        justify-content: center;
+    }
+
+    .whatsappBtn {
         justify-content: center;
     }
 
