@@ -48,8 +48,8 @@ export default function PranjeTerasaPage() {
             }}
             processSteps={[
                 {
-                    title: 'Pregled terase',
-                    description: 'Pregledamo materijal, fuge, rubove i stupanj zaprljanosti. Odmah vidimo treba li samo pranje ili i dodatni tretman protiv algi.',
+                    title: 'Procjena',
+                    description: 'Pošaljite 2–3 slike terase na WhatsApp i javljamo vam okvirnu cijenu. Za veće terase dolazimo na lokaciju, pregledamo materijal, fuge i stupanj zaprljanosti te odmah vidimo treba li predtretman.',
                 },
                 {
                     title: 'Predtretman naslaga',
@@ -90,12 +90,29 @@ export default function PranjeTerasaPage() {
                     <h2>Koliko košta pranje terasa?</h2>
                     <p>
                         Cijena ovisi o kvadraturi, materijalu i tome koliko su duboko ušle alge i crne naslage.
-                        Okvirno za Zagreb:
+                        Okvirne cijene za Zagreb i okolicu:
                     </p>
-                    <ul>
-                        <li><strong>Cijena po m²</strong>: 3 – 5 €/m²</li>
-                        <li><strong>Konačna cijena</strong>: ovisi o kvadraturi, vrsti podloge i stupnju zaprljanosti.</li>
-                    </ul>
+                    <table style={{ width: '100%', borderCollapse: 'collapse', margin: '1rem 0 1.5rem' }}>
+                        <thead>
+                            <tr style={{ background: 'var(--color-surface, #f4f4f4)' }}>
+                                <th style={{ padding: '10px 14px', textAlign: 'left', borderBottom: '2px solid #ddd' }}>Površina</th>
+                                <th style={{ padding: '10px 14px', textAlign: 'left', borderBottom: '2px solid #ddd' }}>Okvirna cijena</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {[
+                                { size: 'Do 50 m²', price: '150 – 250 €' },
+                                { size: '50 – 100 m²', price: '250 – 400 €' },
+                                { size: '100 – 200 m²', price: '400 – 700 €' },
+                                { size: '200 m²+', price: 'po procjeni' },
+                            ].map((row, i) => (
+                                <tr key={i} style={{ borderBottom: '1px solid #eee' }}>
+                                    <td style={{ padding: '10px 14px', fontWeight: 600 }}>{row.size}</td>
+                                    <td style={{ padding: '10px 14px' }}>{row.price}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
                     <p>
                         Ako je terasa dio šireg dvorišta, klijenti je često kombiniraju s <Link href="/usluge/pranje-okucnice">pranjem okućnice</Link> ili
                         <Link href="/usluge/pranje-prilaza"> pranjem prilaza</Link>, što je često isplativije nego naručivati odvojene dolaske.

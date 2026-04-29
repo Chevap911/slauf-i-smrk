@@ -58,7 +58,7 @@ export default function PranjeFasadePage() {
                 title="Pranje fasade u Zagrebu"
                 titleHighlight="fasade"
                 canonicalPath="/usluge/pranje-fasade"
-                description="Profesionalno pranje i čišćenje fasada za kuće, zgrade i poslovne objekte u Zagrebu i okolici. Uklanjamo alge, mahovinu, gljivice, crne tragove i nakupljenu prljavštinu uz prilagođen tlak za žbukane, ETICS i druge fasadne površine. Prije početka radova dolazimo na lokaciju, pregledamo fasadu i dajemo jasnu procjenu cijene."
+                description="Profesionalno pranje i čišćenje fasada za kuće, zgrade i poslovne objekte u Zagrebu i okolici. Uklanjamo alge, mahovinu, gljivice, crne tragove i nakupljenu prljavštinu uz prilagođen tlak za žbukane, ETICS i druge fasadne površine. Za okvirnu cijenu možete poslati slike fasade na WhatsApp, za veće objekte dolazimo na lokaciju i dajemo jasnu procjenu bez obaveza."
                 priceHint="4 - 6 €/m²"
                 heroImage="/seo-results/pranje-fasade/poslije.png"
                 heroImageAlt="Fasada kuće nakon profesionalnog čišćenja i uklanjanja algi u Zagrebu"
@@ -77,8 +77,8 @@ export default function PranjeFasadePage() {
                 }}
                 processSteps={[
                     {
-                        title: 'Procjena na lokaciji',
-                        description: 'Dolazimo na lokaciju, pregledamo fasadu, procjenjujemo stupanj zaprljanosti i vrstu površine. Dajemo jasnu ponudu prije nego krenemo s radom.',
+                        title: 'Procjena',
+                        description: 'Pošaljite 2–3 slike fasade na WhatsApp i javljamo vam okvirnu cijenu bez dolaska na lokaciju. Za veće objekte dolazimo osobno, pregledamo fasadu i dajemo jasnu ponudu prije nego krenemo s radom.',
                     },
                     {
                         title: 'Priprema',

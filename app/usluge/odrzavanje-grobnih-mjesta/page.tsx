@@ -21,16 +21,16 @@ export default function GrobnaMjestaPage() {
             title="Održavanje Grobnih Mjesta"
             titleHighlight="Grobnih Mjesta"
             canonicalPath="/usluge/odrzavanje-grobnih-mjesta"
-            description="Grobna mjesta vaših najmilijih zaslužuju dostojanstven izgled. Profesionalno čistimo i održavamo kamene nadgrobne spomenike, ploče, obrube i okolne površine. Uklanjamo mahovinu, lišajeve i nakupljenu prljavštinu s poštovanjem i pažnjom."
-            priceHint="od 100 €"
+            description="Grobna mjesta vaših najmilijih zaslužuju dostojanstven izgled. Profesionalno čistimo i održavamo kamene nadgrobne spomenike, ploče, obrube i okolne površine na svim zagrebačkim grobljima. Ne trebate biti prisutni, šaljemo fotografije prije i poslije. Idealno za iseljenike i obitelji izvan Zagreba. Uz čišćenje nudimo poliranje kamena i impregnaciju."
+            priceHint="od 200 €"
             processSteps={[
                 {
-                    title: 'Dogovor i lokacija',
-                    description: 'Javite nam se s lokacijom grobnog mjesta (groblje, polje, red). Možemo doći i bez vaše prisutnosti.',
+                    title: 'Prijavite grobno mjesto',
+                    description: 'Javite nam se s grobljem, poljem, redom i brojem groba (ako ne znate sve, nije problem, pomoći ćemo). WhatsApp, poziv ili forma, što vam je najbrže.',
                 },
                 {
-                    title: 'Prilagođeno čišćenje',
-                    description: 'Koristimo niski tlak i sredstva prilagođena vrsti kamena — mramor, granit ili vapnenac.',
+                    title: 'Potvrda i predujam 30%',
+                    description: 'Šaljemo pisanu potvrdu i upute za uplatu predujma (30%). Ostatak plaćate tek nakon što vidite fotografije rezultata.',
                 },
                 {
                     title: 'Detaljno čišćenje',
@@ -51,7 +51,7 @@ export default function GrobnaMjestaPage() {
                     </p>
                     <p>
                         Profesionalnim čišćenjem osiguravate da grobno mjesto izgleda dostojanstveno
-                        cijelo vrijeme. Čistimo s posebnom <strong>pažnjom i poštovanjem</strong>, koristeći njiežan
+                        cijelo vrijeme. Čistimo s posebnom <strong>pažnjom i poštovanjem</strong>, koristeći nježan
                         pristup prilagođen osjetljivom okruženju.
                     </p>
 
@@ -81,11 +81,14 @@ export default function GrobnaMjestaPage() {
                         <li>Ostala groblja u <Link href="/podrucje/zagreb">Zagrebu</Link> i okolici po dogovoru</li>
                     </ul>
 
-                    <h2>Cijene održavanja</h2>
+                    <h2>Cijene</h2>
                     <ul>
-                        <li><strong>Početna cijena usluge</strong>: od 100 €</li>
-                        <li><strong>Konačna cijena</strong>: ovisi o veličini grobnog mjesta, vrsti kamena, zaprljanosti i opsegu održavanja.</li>
-                        <li><strong>Redovito održavanje</strong> (4x godišnje): posebna cijena po dogovoru</li>
+                        <li><strong>Jednokratno čišćenje (jednostruki grob)</strong>: od 200 €</li>
+                        <li><strong>Jednokratno čišćenje (dvostruki grob / grobnica)</strong>: od 300 €</li>
+                        <li><strong>Poliranje kamena</strong> (vraćamo sjaj mramoru i granitu): od 150 €</li>
+                        <li><strong>Impregnacija</strong> (zaštitni premaz, grob ostaje čist 2–3 godine): od 50 €</li>
+                        <li><strong>Redovito održavanje</strong> (4× godišnje): po dogovoru, do 20% popust</li>
+                        <li><strong>Predujam za rezervaciju</strong>: 30% (ostatak plaćate tek nakon fotografija rezultata)</li>
                     </ul>
 
                     <h2>Kako funkcionira rezervacija?</h2>
@@ -96,10 +99,10 @@ export default function GrobnaMjestaPage() {
                     </p>
                     <p>
                         To znači da <strong>vi ne birate točan datum</strong>, ali znate da ćete biti obaviješteni čim
-                        termin za vaše groblje bude zakazan. Većina klijenata čeka 2 do 4 tjedna ovisno o groblju.
+                        termin za vaše groblje bude zakazan. Standardni rok izlaska: 1 do 3 tjedna nakon uplate predujma.
                     </p>
                     <p>
-                        Za rezervaciju mjesta na listi potrebno je platiti <strong>50% predujma</strong>.
+                        Za rezervaciju mjesta na listi potrebno je platiti <strong>30% predujma</strong>.
                         Ostatak se plaća po završetku radova, uz dostavu fotografija prije i poslije.
                     </p>
 
@@ -162,7 +165,7 @@ export default function GrobnaMjestaPage() {
             faq={[
                 {
                     question: 'Koliko košta čišćenje grobnog mjesta?',
-                    answer: 'Početna cijena kreće od 100 €. Konačna cijena ovisi o veličini grobnog mjesta, vrsti kamena i opsegu radova. Za rezervaciju mjesta na listi plaća se 50% predujma, ostatak po završetku.',
+                    answer: 'Jednokratno čišćenje kreće od 200 € (jednostruki grob) i od 300 € (dvostruki grob ili grobnica). Poliranje kamena od 150 €, impregnacija od 50 €. Konačna cijena ovisi o veličini, vrsti kamena i zaprljanosti. Predujam za rezervaciju je 30%, ostatak plaćate tek nakon fotografija rezultata.',
                 },
                 {
                     question: 'Kako se rezervira termin?',
@@ -170,19 +173,23 @@ export default function GrobnaMjestaPage() {
                 },
                 {
                     question: 'Mogu li sam odabrati datum čišćenja?',
-                    answer: 'Datume ne možete slobodno birati jer čišćenje organiziramo grupno. Odlazimo na groblje kada imamo dovoljno prijavljenih. Većina klijenata čeka 2 do 4 tjedna.',
+                    answer: 'Datume ne možete slobodno birati jer čišćenje organiziramo grupno po groblju. Odlazimo kada imamo 10+ prijavljenih. Standardni rok: 1 do 3 tjedna. Za posebne datume (godišnjice, blagdani) dogovorite se unaprijed.',
                 },
                 {
                     question: 'Trebam li biti prisutan na groblju?',
                     answer: 'Ne, ne trebate. Samo nam dostavite lokaciju grobnog mjesta. Nakon čišćenja šaljemo vam fotografije kao potvrdu obavljenog posla.',
                 },
                 {
-                    question: 'Zašto plaćam 50% unaprijed?',
-                    answer: 'Predujam osigurava vaše mjesto na listi i potvrđuje rezervaciju. Ostatak plaćate po završetku radova, uz fotografije kao dokaz.',
+                    question: 'Zašto plaćam 30% unaprijed?',
+                    answer: 'Predujam (30%) osigurava vaše mjesto na listi i potvrđuje rezervaciju. Izlazimo na teren kada skupimo 10+ rezervacija, tako možemo držati cijene pristupačnima. Ostatak plaćate tek nakon što dobijete fotografije rezultata.',
+                },
+                {
+                    question: 'Mogu li dodati poliranje ili impregnaciju?',
+                    answer: 'Da. Poliranje vraća sjaj mramoru i granitu (od 150 €). Impregnacija štiti kamen 2–3 godine od mahovine, vode i prljavštine (od 50 €). To su dodatne usluge uz nadoplatu uz čišćenje.',
                 },
                 {
                     question: 'Hoće li čišćenje oštetiti natpise ili fotografije na spomeniku?',
-                    answer: 'Ne, koristimo niski tlak i pažljiv pristup prilagođen vrsti kamena. Natpise i fotografije tretiramo izuzetno nježno.',
+                    answer: 'Ne, koristimo niski tlak i pažljiv pristup prilagođen vrsti kamena. Natpise i fotografije tretiramo izuzetno nježno, ručno.',
                 },
             ]}
             serviceAreas={[

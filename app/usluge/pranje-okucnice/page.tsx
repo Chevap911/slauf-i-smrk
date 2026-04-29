@@ -58,7 +58,7 @@ export default function PranjeOkucnicePage() {
                 title="Pranje okućnice i prilaza u Zagrebu"
                 titleHighlight="okućnice"
                 canonicalPath="/usluge/pranje-okucnice"
-                description="Profesionalno pranje okućnica, dvorišta, prilaza, terasa i većih vanjskih površina u Zagrebu i okolici. Uklanjamo mahovinu, alge, korov iz fuga, uljne mrlje, hrđu i nakupljenu prljavštinu s tlakavaca, betona, kamena i asfalta. Radimo privatne okućnice, ulaze u objekte, parkirne površine i poslovne prostore uz jasnu procjenu prije početka radova."
+                description="Profesionalno pranje okućnica, dvorišta, prilaza, terasa i većih vanjskih površina u Zagrebu i okolici. Uklanjamo mahovinu, alge, korov iz fuga, uljne mrlje, hrđu i nakupljenu prljavštinu s tlakavaca, betona, kamena i asfalta. Za okvirnu cijenu pošaljite slike na WhatsApp, za veće površine dolazimo na lokaciju i dajemo jasnu procjenu bez obaveza."
                 priceHint="2 - 4 €/m²"
                 heroImage="/seo-results/pranje-terasa/poslije.jpeg"
                 heroImageAlt="Okućnica i terasa nakon profesionalnog čišćenja u Zagrebu"
@@ -77,8 +77,8 @@ export default function PranjeOkucnicePage() {
                 }}
                 processSteps={[
                     {
-                        title: 'Procjena na lokaciji',
-                        description: 'Pregledamo površinu, identificiramo tip materijala i stupanj zaprljanosti. Dajemo ponudu odmah na licu mjesta bez obaveza.',
+                        title: 'Procjena',
+                        description: 'Pošaljite 2–3 slike dvorišta ili prilaza na WhatsApp i javljamo vam okvirnu cijenu. Za veće površine dolazimo na lokaciju, pregledamo materijal i stupanj zaprljanosti te dajemo ponudu bez obaveza.',
                     },
                     {
                         title: 'Predtretman',
@@ -155,10 +155,10 @@ export default function PranjeOkucnicePage() {
                             </thead>
                             <tbody>
                                 {[
-                                    { size: '50 m²', price: '100 – 200 €', note: 'manja terasa, ulaz ili dio dvorišta' },
-                                    { size: '100 m²', price: '200 – 400 €', note: 'standardna okućnica ili prilaz' },
-                                    { size: '200 m²', price: '400 – 800 €', note: 'veće dvorište, prilaz i staze' },
-                                    { size: '300 m²+', price: 'po procjeni', note: 'veće okućnice, zgrade i poslovni objekti' },
+                                    { size: 'Do 50 m²', price: '150 – 200 €', note: 'manja terasa, ulaz ili dio dvorišta' },
+                                    { size: '50 – 100 m²', price: '200 – 350 €', note: 'standardna okućnica ili prilaz' },
+                                    { size: '100 – 200 m²', price: '350 – 600 €', note: 'veće dvorište, prilaz i staze' },
+                                    { size: '200 m²+', price: 'po procjeni', note: 'veće okućnice, zgrade i poslovni objekti' },
                                     { size: 'Parkirne površine', price: 'po procjeni', note: 'ovisi o ulju, gumama i zaprljanosti' },
                                 ].map((row, i) => (
                                     <tr key={i} style={{ borderBottom: '1px solid #eee' }}>
