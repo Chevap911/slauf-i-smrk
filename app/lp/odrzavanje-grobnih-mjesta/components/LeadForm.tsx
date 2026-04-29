@@ -191,7 +191,7 @@ export default function LeadForm() {
                         onChange={(e) => setForm({ ...form, graveLocation: e.target.value })}
                     />
                     <p style={{ fontSize: '0.8rem', color: '#6b7280', marginTop: '0.25rem' }}>
-                        Ako ne znate točno, navedite što više možete — dogovorit ćemo detalje.
+                        Ako ne znate točno, navedite što više možete, dogovorit ćemo detalje.
                     </p>
                 </div>
 

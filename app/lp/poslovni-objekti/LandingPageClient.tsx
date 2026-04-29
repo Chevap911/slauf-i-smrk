@@ -21,14 +21,14 @@ export default function LandingPageClient() {
                     </h1>
 
                     <p className={styles.subtitle}>
-                        Fasade, parkirišta, skladišta i hale — redovito, po dogovoru, bez vaše organizacije.
+                        Fasade, parkirišta, skladišta i hale, redovito, po dogovoru, bez vaše organizacije.
                         R1 račun, rad izvan radnog vremena, foto-dokumentacija rezultata.
                     </p>
 
                     <ul className={styles.bullets}>
                         <li>
                             <CheckCircle2 className={styles.checkIcon} size={22} />
-                            <span>Redoviti ugovori — 2×, 4× godišnje ili po dogovoru</span>
+                            <span>Redoviti ugovori, 2×, 4× godišnje ili po dogovoru</span>
                         </li>
                         <li>
                             <CheckCircle2 className={styles.checkIcon} size={22} />
@@ -87,7 +87,7 @@ export default function LandingPageClient() {
                             { title: 'Istovarne zone i rampe', desc: 'Skladišne rampe, betonske ploče, žljebovi i drenaže.' },
                             { title: 'Ulazi i terase', desc: 'Reprezentativni ulazi, vanjske hodnike i zajedničke površine.' },
                             { title: 'Kameno i popločavanja', desc: 'Tlakavci, granitne ploče i sve kamene površine oko objekta.' },
-                            { title: 'Kombinirane usluge', desc: 'Fasada + parkirište + istovarne zone — sve u jednom terminu.' },
+                            { title: 'Kombinirane usluge', desc: 'Fasada + parkirište + istovarne zone, sve u jednom terminu.' },
                         ].map((item) => (
                             <div key={item.title} style={{ background: 'white', borderRadius: '0.75rem', padding: '1.25rem', border: '1px solid var(--border)' }}>
                                 <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
@@ -146,7 +146,7 @@ export default function LandingPageClient() {
                     <div className={styles.grid}>
                         <div className={styles.featureCard}>
                             <RefreshCw className={styles.featureIcon} size={28} />
-                            <span>Redoviti ugovori — jednom dogovoreno, mi se brinemo</span>
+                            <span>Redoviti ugovori, jednom dogovoreno, mi se brinemo</span>
                         </div>
                         <div className={styles.featureCard}>
                             <FileText className={styles.featureIcon} size={28} />
@@ -166,7 +166,7 @@ export default function LandingPageClient() {
                         </div>
                         <div className={styles.featureCard}>
                             <ShieldCheck className={styles.featureIcon} size={28} />
-                            <span>Fotografije rezultata — uvijek</span>
+                            <span>Fotografije rezultata, uvijek</span>
                         </div>
                     </div>
                 </div>
@@ -182,7 +182,7 @@ export default function LandingPageClient() {
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
                         {[
                             {
-                                text: 'Tražili smo nekoga tko može redovito čistiti naše parkirište i fasadu bez da mi moram svaki put organizirati. Šlauf i Šmrk to rade savršeno — dođu, naprave, pošalju slike i račun. Nema komplikacija.',
+                                text: 'Tražili smo nekoga tko može redovito čistiti naše parkirište i fasadu bez da mi moram svaki put organizirati. Šlauf i Šmrk to rade savršeno, dođu, naprave, pošalju slike i račun. Nema komplikacija.',
                                 name: 'Tomislav B.',
                                 meta: 'Logistički centar, Jankomir',
                             },

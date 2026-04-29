@@ -34,15 +34,15 @@ function FaqItem({ question, answer, isOpen, onClick }: FaqItemProps) {
 const faqData = [
     {
         question: 'Izdajete li R1 račun?',
-        answer: 'Da. Svim poslovnim klijentima izdajemo R1 račun. Uvjete plaćanja dogovaramo individualno — žiro, kartice, obročno za redovite klijente.'
+        answer: 'Da. Svim poslovnim klijentima izdajemo R1 račun. Uvjete plaćanja dogovaramo individualno, žiro, kartice, obročno za redovite klijente.'
     },
     {
         question: 'Možete li raditi izvan radnog vremena ili vikendom?',
-        answer: 'Da. Radimo po vašem rasporedu — rano ujutro, navečer ili vikendom. Nema potrebe za angažiranjem vašeg osoblja ili zaustavljanjem operacija.'
+        answer: 'Da. Radimo po vašem rasporedu, rano ujutro, navečer ili vikendom. Nema potrebe za angažiranjem vašeg osoblja ili zaustavljanjem operacija.'
     },
     {
         question: 'Što sve čistite na poslovnom objektu?',
-        answer: 'Fasade, parkirišta, rampe, istovarne zone, ulaze, terase, popločavanja, betonske i kamene površine — sve vanjske površine dogovorene u ponudi.'
+        answer: 'Fasade, parkirišta, rampe, istovarne zone, ulaze, terase, popločavanja, betonske i kamene površine, sve vanjske površine dogovorene u ponudi.'
     },
     {
         question: 'Koliko košta čišćenje poslovnog objekta?',
@@ -54,7 +54,7 @@ const faqData = [
     },
     {
         question: 'Kako izgleda redoviti ugovor?',
-        answer: 'Jednom dogovorimo uvjete, raspored i cijenu — i mi dolazimo po planu bez potrebe za vašim ponovnim angažmanom. Najčešće 2× ili 4× godišnje, po dogovoru.'
+        answer: 'Jednom dogovorimo uvjete, raspored i cijenu, i mi dolazimo po planu bez potrebe za vašim ponovnim angažmanom. Najčešće 2× ili 4× godišnje, po dogovoru.'
     },
     {
         question: 'Koliko vremena traje čišćenje?',

@@ -5,7 +5,7 @@ import ServicePage from '@/components/ServicePage/ServicePage';
 import { Home, TreeDeciduous, Waves } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Pranje Poslovnih Objekata Zagreb — Skladišta, Parkovi, Hale | Šlauf i Šmrk',
+    title: 'Pranje Poslovnih Objekata Zagreb, Skladišta, Parkovi, Hale | Šlauf i Šmrk',
     description: 'Vanjsko čišćenje poslovnih objekata u Zagrebu: pranje fasada, parkirališta, skladišta, hala i uredskih zgrada. Redoviti ugovori, R1 račun, rad izvan radnog vremena.',
     alternates: { canonical: '/usluge/poslovni-objekti' },
     openGraph: {
@@ -43,7 +43,7 @@ export default function PoslovniObjektiPage() {
                 title="Pranje poslovnih objekata u Zagrebu"
                 titleHighlight="poslovnih objekata"
                 canonicalPath="/usluge/poslovni-objekti"
-                description="Vanjsko čišćenje poslovnih objekata, skladišta, hala i uredskih zgrada u Zagrebu i okolici. Čistimo fasade, parkirišta, rampe, istovarne zone i sve vanjske površine. Nudimo redovite ugovore za klijente kojima je stalan uredan izgled prioritet — bez potrebe za internom organizacijom i praćenjem termina."
+                description="Vanjsko čišćenje poslovnih objekata, skladišta, hala i uredskih zgrada u Zagrebu i okolici. Čistimo fasade, parkirišta, rampe, istovarne zone i sve vanjske površine. Nudimo redovite ugovore za klijente kojima je stalan uredan izgled prioritet, bez potrebe za internom organizacijom i praćenjem termina."
                 priceHint="po dogovoru"
                 processSteps={[
                     {
@@ -52,7 +52,7 @@ export default function PoslovniObjektiPage() {
                     },
                     {
                         title: 'Dogovor termina',
-                        description: 'Radimo po dogovoru — izvan radnog vremena, vikendom ili kada vam najmanje smeta. Nema potrebe za prisutnošću vašeg osoblja.',
+                        description: 'Radimo po dogovoru, izvan radnog vremena, vikendom ili kada vam najmanje smeta. Nema potrebe za prisutnošću vašeg osoblja.',
                     },
                     {
                         title: 'Čišćenje',
@@ -67,7 +67,7 @@ export default function PoslovniObjektiPage() {
                     <>
                         <h2>Vanjsko čišćenje kao redovna usluga za firme</h2>
                         <p>
-                            Poslovni objekti zahtijevaju redovito vanjsko čišćenje — ne jednom u nekoliko godina, nego
+                            Poslovni objekti zahtijevaju redovito vanjsko čišćenje, ne jednom u nekoliko godina, nego
                             <strong> sezonski ili po dogovorenom rasporedu</strong>. Fasade, parkirišta, rampe i ulazne
                             površine direktno utječu na prvi dojam koji objekt ostavlja na vaše klijente, partnere i zaposlenike.
                         </p>
@@ -75,31 +75,31 @@ export default function PoslovniObjektiPage() {
                             Šlauf i Šmrk nudi <strong>redovite ugovore za čišćenje vanjskih površina</strong> poslovnih
                             objekata u Zagrebu i Zagrebačkoj županiji. Radimo s vlasnicima objekata, property menadžerima,
                             facility menadžerima i upraviteljima nekretnina koji trebaju pouzdanog partnera s kojim jednom
-                            dogovore uvjete — i onda nema brige.
+                            dogovore uvjete, i onda nema brige.
                         </p>
 
                         <h2>Što čistimo na poslovnim objektima?</h2>
                         <ul>
-                            <li><strong>Fasade</strong> — uredske zgrade, poslovni centri, maloprodajni objekti. Uklanjamo alge, mahovinu i zagađenja.</li>
-                            <li><strong>Parkirišta i prometne površine</strong> — uklanjamo ulja, gume, boje i dugotrajne naslage.</li>
-                            <li><strong>Istovarne zone i rampe</strong> — skladišne rampe, betonske ploče, žljebovi i drenaže.</li>
-                            <li><strong>Hale i industrijski objekti</strong> — vanjske zidove, podove ispred hale, cestovne pristupne površine.</li>
-                            <li><strong>Ulazi, terase i hodnike</strong> — reprezentativni ulazi, vanjski hodnici i zajednički prostori zgrada.</li>
-                            <li><strong>Kamene i betonske površine</strong> — popločavanja, tlakavci, kameni elementi oko objekta.</li>
+                            <li><strong>Fasade</strong>, uredske zgrade, poslovni centri, maloprodajni objekti. Uklanjamo alge, mahovinu i zagađenja.</li>
+                            <li><strong>Parkirišta i prometne površine</strong>, uklanjamo ulja, gume, boje i dugotrajne naslage.</li>
+                            <li><strong>Istovarne zone i rampe</strong>, skladišne rampe, betonske ploče, žljebovi i drenaže.</li>
+                            <li><strong>Hale i industrijski objekti</strong>, vanjske zidove, podove ispred hale, cestovne pristupne površine.</li>
+                            <li><strong>Ulazi, terase i hodnike</strong>, reprezentativni ulazi, vanjski hodnici i zajednički prostori zgrada.</li>
+                            <li><strong>Kamene i betonske površine</strong>, popločavanja, tlakavci, kameni elementi oko objekta.</li>
                         </ul>
                         <p>
                             Više o specifičnim uslugama: <Link href="/usluge/pranje-fasade">pranje fasada</Link>, <Link href="/usluge/pranje-okucnice">čišćenje okućnice i parkirišta</Link>, <Link href="/usluge/ciscenje-kamenih-povrsina">čišćenje kamenih površina</Link>.
                         </p>
 
-                        <h2>Redoviti ugovor — bez organizacije s vaše strane</h2>
+                        <h2>Redoviti ugovor, bez organizacije s vaše strane</h2>
                         <p>
-                            Jednom dogovorimo raspored, uvjete i cijenu — a onda mi dolazimo po rasporedu, bez potrebe
+                            Jednom dogovorimo raspored, uvjete i cijenu, a onda mi dolazimo po rasporedu, bez potrebe
                             za vašim angažmanom. Redoviti klijenti dobivaju:
                         </p>
                         <ul>
                             <li><strong>Fiksni raspored</strong> čišćenja (2× godišnje, 4× godišnje ili po dogovoru)</li>
-                            <li><strong>Prioritetne termine</strong> — vaš objekt ima prednost u zakazivanju</li>
-                            <li><strong>Konzistentne cijene</strong> — bez iznenađenja i naknadnih troškova</li>
+                            <li><strong>Prioritetne termine</strong>, vaš objekt ima prednost u zakazivanju</li>
+                            <li><strong>Konzistentne cijene</strong>, bez iznenađenja i naknadnih troškova</li>
                             <li><strong>Automatsko slanje računa</strong> (R1) nakon svake usluge</li>
                             <li><strong>Foto-dokumentacija</strong> rezultata za vašu evidenciju</li>
                         </ul>
@@ -107,7 +107,7 @@ export default function PoslovniObjektiPage() {
                         <h2>Radimo kada vama odgovara</h2>
                         <p>
                             Znamo da poslovni objekti moraju funkcionirati. Zato radimo <strong>izvan vašeg radnog
-                            vremena</strong> — rano ujutro, navečer ili vikendom. Nema potrebe da zaustavljate operacije,
+                            vremena</strong>, rano ujutro, navečer ili vikendom. Nema potrebe da zaustavljate operacije,
                             premiještate automobile ili organizirate osoblje za nadzor.
                         </p>
 
@@ -126,21 +126,21 @@ export default function PoslovniObjektiPage() {
                             <li>Benzinske postaje i autoservisi</li>
                             <li>Hoteli, restorani i ugostiteljski objekti</li>
                             <li>Stambene zgrade i zajednički prostori</li>
-                            <li>Property menadžment — više objekata na jednom ugovoru</li>
+                            <li>Property menadžment, više objekata na jednom ugovoru</li>
                         </ul>
 
                         <h2>Zašto firme u Zagrebu biraju Šlauf i Šmrk?</h2>
                         <ul>
-                            <li><strong>Pouzdanost</strong> — dolazimo u dogovoreno vrijeme, bez potrebe za podsjetnicima</li>
-                            <li><strong>Transparentnost</strong> — procjena, izvedba i faktura bez skrivenih troškova</li>
-                            <li><strong>Rezultati</strong> — šaljemo fotografije prije i poslije svakog čišćenja</li>
-                            <li><strong>Fleksibilnost</strong> — radimo vikendom i izvan radnog vremena</li>
+                            <li><strong>Pouzdanost</strong>, dolazimo u dogovoreno vrijeme, bez potrebe za podsjetnicima</li>
+                            <li><strong>Transparentnost</strong>, procjena, izvedba i faktura bez skrivenih troškova</li>
+                            <li><strong>Rezultati</strong>, šaljemo fotografije prije i poslije svakog čišćenja</li>
+                            <li><strong>Fleksibilnost</strong>, radimo vikendom i izvan radnog vremena</li>
                             <li><strong>Pokrivamo cijeli Zagreb i Zagrebačku županiju</strong></li>
                         </ul>
 
                         <h2>Kako dogovoriti čišćenje poslovnog objekta?</h2>
                         <p>
-                            Najbrže putem WhatsApp poruke s opisom objekta i željenom učestalošću — ili ispunite kratki
+                            Najbrže putem WhatsApp poruke s opisom objekta i željenom učestalošću, ili ispunite kratki
                             upit i mi se javljamo. Za veće objekte dolazimo na besplatnu procjenu.
                         </p>
                         <p>
@@ -152,7 +152,7 @@ export default function PoslovniObjektiPage() {
                 features={[
                     {
                         title: 'Redoviti ugovori',
-                        description: 'Jednom dogovorimo uvjete i raspored — vi ne razmišljate više o organizaciji čišćenja. Mi dolazimo po planu.',
+                        description: 'Jednom dogovorimo uvjete i raspored, vi ne razmišljate više o organizaciji čišćenja. Mi dolazimo po planu.',
                         icon: <RefreshCw size={24} />,
                     },
                     {
@@ -162,7 +162,7 @@ export default function PoslovniObjektiPage() {
                     },
                     {
                         title: 'Rad izvan radnog vremena',
-                        description: 'Radimo rano ujutro, navečer i vikendom — bez ometanja operacija, premještanja vozila ili angažiranja osoblja.',
+                        description: 'Radimo rano ujutro, navečer i vikendom, bez ometanja operacija, premještanja vozila ili angažiranja osoblja.',
                         icon: <Clock size={24} />,
                     },
                     {
@@ -172,7 +172,7 @@ export default function PoslovniObjektiPage() {
                     },
                     {
                         title: 'Veliki kapacitet',
-                        description: 'Opremljeni smo za čišćenje velikih površina — parking, hale, istovarne zone i vanjske fasade zgrada.',
+                        description: 'Opremljeni smo za čišćenje velikih površina, parking, hale, istovarne zone i vanjske fasade zgrada.',
                         icon: <Building2 size={24} />,
                     },
                     {
@@ -210,7 +210,7 @@ export default function PoslovniObjektiPage() {
                     },
                     {
                         question: 'Možete li raditi izvan radnog vremena ili vikendom?',
-                        answer: 'Da. Planiramo dolazak prema vašem rasporedu — rano ujutro, navečer ili vikendom. Nema potrebe za angažiranjem vašeg osoblja.',
+                        answer: 'Da. Planiramo dolazak prema vašem rasporedu, rano ujutro, navečer ili vikendom. Nema potrebe za angažiranjem vašeg osoblja.',
                     },
                     {
                         question: 'Izdajete li R1 račun?',
@@ -226,13 +226,13 @@ export default function PoslovniObjektiPage() {
                     },
                     {
                         question: 'Čistite li i unutarnje površine?',
-                        answer: 'Naša specijalizacija su vanjske površine — fasade, parkirišta, rampe i eksterijeri. Za unutarnja čišćenja hala i podova javite nam se s detaljima pa ćemo vidjeti što možemo ponuditi.',
+                        answer: 'Naša specijalizacija su vanjske površine, fasade, parkirišta, rampe i eksterijeri. Za unutarnja čišćenja hala i podova javite nam se s detaljima pa ćemo vidjeti što možemo ponuditi.',
                     },
                 ]}
                 serviceAreas={[
                     'Jankomir', 'Žitnjak', 'Lučko', 'Buzin', 'Sesvete', 'Rugvica',
                     'Velika Gorica', 'Zaprešić', 'Samobor', 'Dugo Selo', 'Črnkovec',
-                    'Remetinec', 'Novi Zagreb', 'Zagreb — Industrijska zona',
+                    'Remetinec', 'Novi Zagreb', 'Zagreb, Industrijska zona',
                 ]}
                 relatedServices={[
                     { title: 'Pranje fasade', href: '/usluge/pranje-fasade', icon: <Building2 size={18} /> },

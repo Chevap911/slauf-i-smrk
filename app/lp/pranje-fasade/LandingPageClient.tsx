@@ -25,7 +25,7 @@ export default function LandingPageClient() {
                     </h1>
                     
                     <p className={styles.subtitle}>
-                        Uklanjamo alge, mahovinu, gljivice i crne tragove s fasada kuća, zgrada i poslovnih objekata. Pošaljite slike fasade — javimo vam okvirnu cijenu.
+                        Uklanjamo alge, mahovinu, gljivice i crne tragove s fasada kuća, zgrada i poslovnih objekata. Pošaljite slike fasade, javimo vam okvirnu cijenu.
                     </p>
 
                     <ul className={styles.bullets}>

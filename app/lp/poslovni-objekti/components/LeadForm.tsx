@@ -304,7 +304,7 @@ export default function LeadForm() {
                     disabled={status === 'submitting'}
                     style={{ marginTop: '1rem' }}
                 >
-                    {status === 'submitting' ? 'Šaljem upit...' : 'Pošalji upit — javimo se'}
+                    {status === 'submitting' ? 'Šaljem upit...' : 'Pošalji upit, javimo se'}
                 </button>
                 <p className={styles.subtext}>Javljamo se s okvirnom ponudom ili prijedlogom za procjenu na lokaciji.</p>
 

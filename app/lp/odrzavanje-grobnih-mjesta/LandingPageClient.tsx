@@ -26,7 +26,7 @@ export default function LandingPageClient() {
 
                     <p className={styles.subtitle}>
                         Profesionalno čišćenje, pranje i impregnacija grobnih mjesta na svim zagrebačkim grobljima.
-                        Dolazimo s opremom, čistimo s pažnjom, šaljemo vam fotografije prije i poslije — sve s vašeg mobitela.
+                        Dolazimo s opremom, čistimo s pažnjom, šaljemo vam fotografije prije i poslije, sve s vašeg mobitela.
                     </p>
 
                     <ul className={styles.bullets}>
@@ -36,7 +36,7 @@ export default function LandingPageClient() {
                         </li>
                         <li>
                             <CheckCircle2 className={styles.checkIcon} size={22} />
-                            <span>Ne morate biti prisutni — fotografije stižu na WhatsApp ili e-mail</span>
+                            <span>Ne morate biti prisutni, fotografije stižu na WhatsApp ili e-mail</span>
                         </li>
                         <li>
                             <CheckCircle2 className={styles.checkIcon} size={22} />
@@ -100,22 +100,22 @@ export default function LandingPageClient() {
                         <p style={{ fontSize: '1.05rem', color: '#374151', lineHeight: 1.8, marginBottom: '1rem' }}>
                             Možda ne živite u Hrvatskoj i niste se mogli vratiti već godinama.
                             Možda zdravlje više ne dopušta penjanje stepenicama do groba.
-                            Možda jednostavno ne znate odakle početi — kamen je potamnio, mahovina prekrila imena,
+                            Možda jednostavno ne znate odakle početi, kamen je potamnio, mahovina prekrila imena,
                             a posjet groblja postao je razlog za grižnju savjesti umjesto mira.
                         </p>
                         <p style={{ fontSize: '1.05rem', color: '#374151', lineHeight: 1.8, fontWeight: 600 }}>
                             Naš posao je da vam taj mir vratimo.
-                            Vi nam javite — mi se pobrinemo da grob izgleda onako kako su zaslužili oni koji tamo počivaju.
+                            Vi nam javite, mi se pobrinemo da grob izgleda onako kako su zaslužili oni koji tamo počivaju.
                         </p>
                     </div>
                 </div>
             </section>
 
-            {/* Kako radimo — 3 koraka */}
+            {/* Kako radimo, 3 koraka */}
             <section className={styles.section} style={{ background: 'var(--surface)' }}>
                 <div className={styles.container}>
                     <h2 className={styles.title} style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-                        Kako do dostojanstveno uređenog groba — bez stresa
+                        Kako do dostojanstveno uređenog groba, bez stresa
                     </h2>
 
                     <div className={styles.steps}>
@@ -123,7 +123,7 @@ export default function LandingPageClient() {
                             <div className={styles.stepNumber}>1</div>
                             <div className={styles.stepContent}>
                                 <h3>Prijavite grobno mjesto</h3>
-                                <p>Pošaljete nam groblje, polje, red i broj groba (ako ne znate — nije problem, pomoći ćemo). WhatsApp, poziv ili forma — što vam je najbrže.</p>
+                                <p>Pošaljete nam groblje, polje, red i broj groba (ako ne znate, nije problem, pomoći ćemo). WhatsApp, poziv ili forma, što vam je najbrže.</p>
                             </div>
                         </div>
                         <div className={styles.step}>
@@ -137,7 +137,7 @@ export default function LandingPageClient() {
                             <div className={styles.stepNumber}>3</div>
                             <div className={styles.stepContent}>
                                 <h3>Čišćenje i fotografije na vaš mobitel</h3>
-                                <p>Dolazimo s profesionalnom opremom. Čistimo nježno i temeljito. Šaljemo vam fotografije prije i poslije — najčešće isti dan kad obavimo posao.</p>
+                                <p>Dolazimo s profesionalnom opremom. Čistimo nježno i temeljito. Šaljemo vam fotografije prije i poslije, najčešće isti dan kad obavimo posao.</p>
                             </div>
                         </div>
                     </div>
@@ -147,10 +147,10 @@ export default function LandingPageClient() {
                             ℹ️ Kako planiramo termine
                         </p>
                         <p style={{ fontSize: '0.9rem', color: '#92400e', margin: 0 }}>
-                            Radimo grupno po groblju — krećemo kad se skupi 10+ rezervacija. Mirogoj jedan dan, Miroševac drugi, Markovo Polje treći. Tako možemo držati cijene pristupačnima i posvetiti svakom grobu vrijeme koje zaslužuje.
+                            Radimo grupno po groblju, krećemo kad se skupi 10+ rezervacija. Mirogoj jedan dan, Miroševac drugi, Markovo Polje treći. Tako možemo držati cijene pristupačnima i posvetiti svakom grobu vrijeme koje zaslužuje.
                             <br /><br />
                             Standardni rok izlaska: 1–3 tjedna nakon uplate predujma.
-                            Za posebne datume (godišnjice, Svi sveti) — dogovorite se unaprijed, naći ćemo termin.
+                            Za posebne datume (godišnjice, Svi sveti), dogovorite se unaprijed, naći ćemo termin.
                         </p>
                     </div>
                 </div>
@@ -163,14 +163,14 @@ export default function LandingPageClient() {
                         Što radimo na svakom grobnom mjestu
                     </h2>
                     <p className={styles.subtitle} style={{ textAlign: 'center', marginBottom: '2rem' }}>
-                        Temeljito čistimo svaki element — bez agresivnih kemikalija koje oštećuju kamen.
+                        Temeljito čistimo svaki element, bez agresivnih kemikalija koje oštećuju kamen.
                     </p>
 
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
                         {[
                             { title: 'Nadgrobni spomenik (mramor, granit, vapnenac)', desc: 'Uklanjamo mahovinu, lišajeve, kalcifikacije i nakupljenu prljavštinu. Bez agresivnih kemikalija koje oštećuju kamen.' },
-                            { title: 'Nadgrobna ploča s natpisima', desc: 'Čistimo nježno, ručno oko gravura, slova i fotografija — bez rizika od oštećenja.' },
-                            { title: 'Obrubi, rubne ploče i staze oko groba', desc: 'Kameni i betonski elementi koji s vremenom potamne i obraste mahovinom — vraćamo ih u izvorni izgled.' },
+                            { title: 'Nadgrobna ploča s natpisima', desc: 'Čistimo nježno, ručno oko gravura, slova i fotografija, bez rizika od oštećenja.' },
+                            { title: 'Obrubi, rubne ploče i staze oko groba', desc: 'Kameni i betonski elementi koji s vremenom potamne i obraste mahovinom, vraćamo ih u izvorni izgled.' },
                             { title: 'Posude za cvijeće i lampioni', desc: 'Kamene, betonske i porculanske žardinjere temeljito čistimo iznutra i izvana.' },
                             { title: 'Okolna površina', desc: 'Uklanjamo korov, lišće, suho cvijeće, stare svijeće i sav otpad.' },
                         ].map((item) => (
@@ -191,10 +191,10 @@ export default function LandingPageClient() {
                             Dodatne usluge (uz nadoplatu)
                         </p>
                         <p style={{ fontSize: '0.95rem', color: '#166534', margin: '0 0 0.5rem' }}>
-                            <strong>Poliranje kamena</strong> — vraćamo sjaj mramoru i granitu nakon pranja. Idealno ako kamen izgleda mat ili izlizano.
+                            <strong>Poliranje kamena</strong>, vraćamo sjaj mramoru i granitu nakon pranja. Idealno ako kamen izgleda mat ili izlizano.
                         </p>
                         <p style={{ fontSize: '0.95rem', color: '#166534', margin: 0 }}>
-                            <strong>Impregnacija</strong> — zaštitni premaz koji odbija vodu, prljavštinu i mahovinu sljedećih 2–3 godine. Najpametnija investicija ako želite da grob duže ostane čist između čišćenja.
+                            <strong>Impregnacija</strong>, zaštitni premaz koji odbija vodu, prljavštinu i mahovinu sljedećih 2–3 godine. Najpametnija investicija ako želite da grob duže ostane čist između čišćenja.
                         </p>
                     </div>
                 </div>
@@ -207,7 +207,7 @@ export default function LandingPageClient() {
                         Iskreno: što se može, a što ne
                     </h2>
                     <p className={styles.subtitle} style={{ textAlign: 'center', marginBottom: '2rem' }}>
-                        Trudimo se vratiti grob u najbolji mogući izgled — ali važno je da znate istinu prije nego što platite.
+                        Trudimo se vratiti grob u najbolji mogući izgled, ali važno je da znate istinu prije nego što platite.
                     </p>
 
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem' }}>
@@ -232,7 +232,7 @@ export default function LandingPageClient() {
                                 ❌ Što se ne može popraviti čišćenjem
                             </p>
                             <p style={{ fontSize: '0.9rem', color: '#374151', lineHeight: 1.7, margin: 0 }}>
-                                Mehanička oštećenja, izlizani ili oštećeni natpis, pukotine u kamenu, ispucale fotografije. Za to su potrebni kamenoresci — ako trebate, preporučit ćemo provjerene majstore.
+                                Mehanička oštećenja, izlizani ili oštećeni natpis, pukotine u kamenu, ispucale fotografije. Za to su potrebni kamenoresci, ako trebate, preporučit ćemo provjerene majstore.
                             </p>
                         </div>
                     </div>
@@ -252,7 +252,7 @@ export default function LandingPageClient() {
                         Cijene
                     </h2>
                     <p className={styles.subtitle} style={{ textAlign: 'center', marginBottom: '2rem' }}>
-                        Konačna cijena ovisi o veličini groba, vrsti kamena i stupnju zaprljanosti — javljamo je prije početka.
+                        Konačna cijena ovisi o veličini groba, vrsti kamena i stupnju zaprljanosti, javljamo je prije početka.
                     </p>
 
                     <table className={styles.table}>
@@ -356,13 +356,13 @@ export default function LandingPageClient() {
 
                     <div style={{ maxWidth: '640px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                         {[
-                            { icon: '⭐', text: '5.0 ocjena na Google-u — provjereno od stvarnih klijenata' },
-                            { icon: '🛡️', text: 'Profesionalna oprema — visokotlačni uređaji s podesivim pritiskom (ne uništavaju kamen)' },
-                            { icon: '📸', text: 'Fotografije prije i poslije — uvijek, bez iznimke' },
-                            { icon: '✋', text: 'Nježan pristup — ručno čišćenje oko natpisa, slika i osjetljivih dijelova' },
-                            { icon: '🌍', text: 'Specijalizirani za iseljenike — komunikacija na hrvatskom, engleskom i njemačkom' },
-                            { icon: '🇭🇷', text: 'Sva groblja u Zagrebu i okolici — Mirogoj, Miroševac, Markovo Polje, Brestje, Krematorij i dalje' },
-                            { icon: '💬', text: 'Iskrena procjena — kažemo unaprijed što se može, a što ne' },
+                            { icon: '⭐', text: '5.0 ocjena na Google-u, provjereno od stvarnih klijenata' },
+                            { icon: '🛡️', text: 'Profesionalna oprema, visokotlačni uređaji s podesivim pritiskom (ne uništavaju kamen)' },
+                            { icon: '📸', text: 'Fotografije prije i poslije, uvijek, bez iznimke' },
+                            { icon: '✋', text: 'Nježan pristup, ručno čišćenje oko natpisa, slika i osjetljivih dijelova' },
+                            { icon: '🌍', text: 'Specijalizirani za iseljenike, komunikacija na hrvatskom, engleskom i njemačkom' },
+                            { icon: '🇭🇷', text: 'Sva groblja u Zagrebu i okolici, Mirogoj, Miroševac, Markovo Polje, Brestje, Krematorij i dalje' },
+                            { icon: '💬', text: 'Iskrena procjena, kažemo unaprijed što se može, a što ne' },
                         ].map((item) => (
                             <div key={item.icon} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', background: 'var(--surface)', borderRadius: '0.75rem', padding: '1rem 1.25rem', border: '1px solid var(--border)' }}>
                                 <span style={{ fontSize: '1.3rem', flexShrink: 0 }}>{item.icon}</span>
@@ -385,17 +385,17 @@ export default function LandingPageClient() {
                             {
                                 text: 'Živim u Njemačkoj i nisam bila u mogućnosti redovito posjećivati grob moje mame. Fotografije su bile nevjerojatne, sve blistavo čisto. Preporučujem svima koji su daleko.',
                                 name: 'Marija K.',
-                                meta: 'Njemačka — Miroševac',
+                                meta: 'Njemačka, Miroševac',
                             },
                             {
                                 text: 'Stariji sam i ne mogu se sagnuti za čišćenje. Oni su sve obavili profesionalno i s puno poštovanja. Primio sam slike i zaplakao od sreće. Hvala vam.',
                                 name: 'Stjepan P.',
-                                meta: 'Zagreb — Mirogoj',
+                                meta: 'Zagreb, Mirogoj',
                             },
                             {
                                 text: 'Javio sam se ekipi iz Kanade da mi očiste grob od roditelja, odradili su super posao! Bez previše dopisivanja i muke. Sve preporuke!',
                                 name: 'Ivan M.',
-                                meta: 'Toronto — Mirogoj',
+                                meta: 'Toronto, Mirogoj',
                             },
                         ] as const).map((t) => (
                             <div key={t.name} style={{ background: 'white', borderRadius: '1rem', padding: '1.5rem', border: '1px solid var(--border)' }}>
@@ -427,7 +427,7 @@ export default function LandingPageClient() {
                             Vaši najmiliji zaslužuju mjesto kojeg se ne morate stidjeti.
                         </h2>
                         <p style={{ color: '#4b5563', marginBottom: '1.5rem', fontWeight: 500 }}>
-                            Bez obzira gdje ste — u Zagrebu ili na drugom kraju svijeta — možete im to osigurati danas.
+                            Bez obzira gdje ste, u Zagrebu ili na drugom kraju svijeta, možete im to osigurati danas.
                             Javljamo se isti dan. Bez obveze.
                         </p>
 

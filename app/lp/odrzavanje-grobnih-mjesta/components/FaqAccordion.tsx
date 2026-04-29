@@ -34,15 +34,15 @@ function FaqItem({ question, answer, isOpen, onClick }: FaqItemProps) {
 const faqData = [
     {
         question: 'Koliko košta čišćenje grobnog mjesta?',
-        answer: 'Jednokratno čišćenje kreće od 200 € za jednostruki grob i od 300 € za dvostruki grob ili grobnicu. Konačnu cijenu javljamo prije početka — ovisi o veličini, vrsti kamena i koliko je grob zapušten. Za rezervaciju je predujam 30%, ostatak plaćate tek kad vidite fotografije rezultata.'
+        answer: 'Jednokratno čišćenje kreće od 200 € za jednostruki grob i od 300 € za dvostruki grob ili grobnicu. Konačnu cijenu javljamo prije početka, ovisi o veličini, vrsti kamena i koliko je grob zapušten. Za rezervaciju je predujam 30%, ostatak plaćate tek kad vidite fotografije rezultata.'
     },
     {
         question: 'Mogu li dodati poliranje i impregnaciju?',
-        answer: 'Da. Poliranje vraća sjaj kamenu (od 150 €), a impregnacija ga štiti 2–3 godine od mahovine, vode i prljavštine (od 50 €). To su dodatne usluge uz nadoplatu — predložit ćemo vam najbolju opciju nakon procjene groba.'
+        answer: 'Da. Poliranje vraća sjaj kamenu (od 150 €), a impregnacija ga štiti 2–3 godine od mahovine, vode i prljavštine (od 50 €). To su dodatne usluge uz nadoplatu, predložit ćemo vam najbolju opciju nakon procjene groba.'
     },
     {
         question: 'Što ako se neke fleke ne mogu skinuti?',
-        answer: 'Iskreni smo: neke duboke fleke (hrđa, stari lampioni, oksidacije) ne mogu se uvijek u potpunosti ukloniti — kamen ih upija godinama. Trudimo se ih maksimalno umanjiti i to vam unaprijed kažemo. Ne naplaćujemo ono što ne možemo postići.'
+        answer: 'Iskreni smo: neke duboke fleke (hrđa, stari lampioni, oksidacije) ne mogu se uvijek u potpunosti ukloniti, kamen ih upija godinama. Trudimo se ih maksimalno umanjiti i to vam unaprijed kažemo. Ne naplaćujemo ono što ne možemo postići.'
     },
     {
         question: 'Trebam li biti prisutan na groblju?',
@@ -50,7 +50,7 @@ const faqData = [
     },
     {
         question: 'Mogu li odabrati točan datum čišćenja?',
-        answer: 'Za standardne termine radimo grupno po groblju — skupljamo 10+ rezervacija prije izlaska, čekanje obično 1–3 tjedna. Za posebne datume (godišnjica, blagdani, Svi sveti) dogovorite se s nama unaprijed — moguće je, uz doplatu za izlazak.'
+        answer: 'Za standardne termine radimo grupno po groblju, skupljamo 10+ rezervacija prije izlaska, čekanje obično 1–3 tjedna. Za posebne datume (godišnjica, blagdani, Svi sveti) dogovorite se s nama unaprijed, moguće je, uz doplatu za izlazak.'
     },
     {
         question: 'Zašto trebam platiti 30% unaprijed?',
@@ -58,7 +58,7 @@ const faqData = [
     },
     {
         question: 'Na kojim grobljima radite?',
-        answer: 'Mirogoj, Miroševac, Markovo Polje, Brestje, Krematorij i sva manja groblja u Zagrebu i okolici. Za druga groblja u Hrvatskoj — pitajte, dogovaramo se.'
+        answer: 'Mirogoj, Miroševac, Markovo Polje, Brestje, Krematorij i sva manja groblja u Zagrebu i okolici. Za druga groblja u Hrvatskoj, pitajte, dogovaramo se.'
     },
     {
         question: 'Hoće li čišćenje oštetiti natpise, slike ili spomenik?',
@@ -66,7 +66,7 @@ const faqData = [
     },
     {
         question: 'Je li ova usluga prikladna za iseljenike?',
-        answer: 'Više od polovice naših klijenata su iseljenici — Njemačka, Austrija, Švicarska, Irska, SAD, Kanada, Australija. Komuniciramo na hrvatskom, engleskom i njemačkom. Plaćanje je moguće SEPA transferom, Wise-om, PayPal-om ili direktnom uplatom na Revolut.'
+        answer: 'Više od polovice naših klijenata su iseljenici, Njemačka, Austrija, Švicarska, Irska, SAD, Kanada, Australija. Komuniciramo na hrvatskom, engleskom i njemačkom. Plaćanje je moguće SEPA transferom, Wise-om, PayPal-om ili direktnom uplatom na Revolut.'
     },
     {
         question: 'Što ako nisam zadovoljan rezultatom?',

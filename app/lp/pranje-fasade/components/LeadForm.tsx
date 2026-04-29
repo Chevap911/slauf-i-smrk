@@ -243,7 +243,7 @@ export default function LeadForm() {
                     </label>
                     {form.unknownArea && (
                         <p style={{ fontSize: '0.85rem', color: '#4b5563', marginTop: '0.5rem', background: '#f3f4f6', padding: '0.5rem', borderRadius: '0.25rem' }}>
-                            Nema problema — procijenit ćemo prema slikama i lokaciji.
+                            Nema problema, procijenit ćemo prema slikama i lokaciji.
                         </p>
                     )}
                 </div>
@@ -338,7 +338,7 @@ export default function LeadForm() {
                     disabled={status === 'submitting'}
                     style={{ marginTop: '1rem' }}
                 >
-                    {status === 'submitting' ? 'Šaljem upit...' : 'Pošalji upit — javimo se'}
+                    {status === 'submitting' ? 'Šaljem upit...' : 'Pošalji upit, javimo se'}
                 </button>
                 <p className={styles.subtext}>Bez obveze. Javljamo se s okvirnom procjenom.</p>
                 

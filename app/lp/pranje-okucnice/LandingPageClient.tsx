@@ -25,7 +25,7 @@ export default function LandingPageClient() {
                     </h1>
                     
                     <p className={styles.subtitle}>
-                        Uklanjamo alge, mahovinu, mrlje od ulja i crne tragove s tlakavaca, prilaza i dvorišta. Pošaljite slike — javimo vam okvirnu cijenu.
+                        Uklanjamo alge, mahovinu, mrlje od ulja i crne tragove s tlakavaca, prilaza i dvorišta. Pošaljite slike, javimo vam okvirnu cijenu.
                     </p>
 
                     <ul className={styles.bullets}>
