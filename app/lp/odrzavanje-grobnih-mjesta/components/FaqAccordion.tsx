@@ -34,31 +34,43 @@ function FaqItem({ question, answer, isOpen, onClick }: FaqItemProps) {
 const faqData = [
     {
         question: 'Koliko košta čišćenje grobnog mjesta?',
-        answer: 'Početna cijena kreće od 100 €. Konačna cijena ovisi o veličini grobnog mjesta, vrsti kamena (mramor, granit, vapnenac) i stupnju zaprljanosti. Za rezervaciju plaća se 50% predujma, ostatak po završetku uz fotografije.'
+        answer: 'Jednokratno čišćenje kreće od 200 € za jednostruki grob i od 300 € za dvostruki grob ili grobnicu. Konačnu cijenu javljamo prije početka — ovisi o veličini, vrsti kamena i koliko je grob zapušten. Za rezervaciju je predujam 30%, ostatak plaćate tek kad vidite fotografije rezultata.'
+    },
+    {
+        question: 'Mogu li dodati poliranje i impregnaciju?',
+        answer: 'Da. Poliranje vraća sjaj kamenu (od 150 €), a impregnacija ga štiti 2–3 godine od mahovine, vode i prljavštine (od 50 €). To su dodatne usluge uz nadoplatu — predložit ćemo vam najbolju opciju nakon procjene groba.'
+    },
+    {
+        question: 'Što ako se neke fleke ne mogu skinuti?',
+        answer: 'Iskreni smo: neke duboke fleke (hrđa, stari lampioni, oksidacije) ne mogu se uvijek u potpunosti ukloniti — kamen ih upija godinama. Trudimo se ih maksimalno umanjiti i to vam unaprijed kažemo. Ne naplaćujemo ono što ne možemo postići.'
     },
     {
         question: 'Trebam li biti prisutan na groblju?',
-        answer: 'Ne, ne trebate biti prisutni. Samo nam javite lokaciju grobnog mjesta — groblje, polje, red i broj. Mi dolazimo, obavljamo posao i šaljemo vam fotografije prije i poslije čišćenja kao potvrdu.'
+        answer: 'Ne. Cijela usluga je dizajnirana tako da nikad ne morate doći. Plaćate online, dobivate fotografije, imate dokaz da je posao obavljen.'
     },
     {
         question: 'Mogu li odabrati točan datum čišćenja?',
-        answer: 'Čišćenje organiziramo grupno po groblju — odlazimo kada se skupi minimalno 10 grobnih mjesta na istom groblju. Vi se prijavite, platite 50% predujma i mi vas kontaktiramo čim termin bude zakazan. Većina klijenata čeka 2 do 4 tjedna.'
+        answer: 'Za standardne termine radimo grupno po groblju — skupljamo 10+ rezervacija prije izlaska, čekanje obično 1–3 tjedna. Za posebne datume (godišnjica, blagdani, Svi sveti) dogovorite se s nama unaprijed — moguće je, uz doplatu za izlazak.'
     },
     {
-        question: 'Zašto trebam platiti 50% unaprijed?',
-        answer: 'Predujam osigurava vaše mjesto na listi i potvrđuje rezervaciju. Ostatak se plaća po završetku radova, uz dostavu fotografija prije i poslije kao dokaz obavljenog posla.'
+        question: 'Zašto trebam platiti 30% unaprijed?',
+        answer: 'Predujam se plaća zbog rezervacije mjesta za čišćenje, jer izlazimo na teren kada skupimo 10+ rezervacija. Tako nam cijene mogu biti pristupačne i korektne.'
     },
     {
         question: 'Na kojim grobljima radite?',
-        answer: 'Pokrivamo sva veća groblja u Zagrebu: Mirogoj, Miroševac, Markovo Polje, Brestje i Krematorij. Za groblja izvan ove liste javite nam se — dogovorit ćemo po upitu.'
+        answer: 'Mirogoj, Miroševac, Markovo Polje, Brestje, Krematorij i sva manja groblja u Zagrebu i okolici. Za druga groblja u Hrvatskoj — pitajte, dogovaramo se.'
     },
     {
-        question: 'Hoće li čišćenje oštetiti natpise ili fotografije na spomeniku?',
-        answer: 'Ne. Koristimo niski tlak i pH-neutralna sredstva prilagođena vrsti kamena. Natpise, fotografije i ugravirane elemente tretiramo posebno pažljivo i nježno.'
+        question: 'Hoće li čišćenje oštetiti natpise, slike ili spomenik?',
+        answer: 'Ne. Koristimo profesionalnu opremu s podesivim pritiskom i ručno radimo oko osjetljivih dijelova (gravure, fotografije, mali ukrasi). Naša 5.0 Google ocjena potvrđuje da znamo što radimo.'
     },
     {
         question: 'Je li ova usluga prikladna za iseljenike?',
-        answer: 'Apsolutno. Ova usluga je posebno osmišljena za ljude koji žive izvan Zagreba ili u inozemstvu. Sve organiziramo remotely — javite nam lokaciju i mi se pobrinemo za sve. Fotografije dobivate na mobitel.'
+        answer: 'Više od polovice naših klijenata su iseljenici — Njemačka, Austrija, Švicarska, Irska, SAD, Kanada, Australija. Komuniciramo na hrvatskom, engleskom i njemačkom. Plaćanje je moguće SEPA transferom, Wise-om, PayPal-om ili direktnom uplatom na Revolut.'
+    },
+    {
+        question: 'Što ako nisam zadovoljan rezultatom?',
+        answer: 'Vraćamo se i dorađujemo bez doplate. Ako je problem da se nešto fizički ne može ukloniti (a to vam nismo pravovremeno rekli), umanjujemo cijenu. Naš ugled nam je važniji od jedne uplate.'
     },
 ];
 
