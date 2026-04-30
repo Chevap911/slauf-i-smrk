@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, CheckCircle2, MapPin, PhoneCall } from 'lucide-react';
+import { ArrowRight, CheckCircle2, PhoneCall } from 'lucide-react';
 import styles from './Hero.module.css';
 
 const trustPoints = [
@@ -70,22 +70,6 @@ export default function HeroAnimatedContent() {
                 </a>
             </div>
 
-            <div className={styles.metaRow}>
-                <div className={styles.metaCard}>
-                    <MapPin size={18} />
-                    <div>
-                        <strong>Zagreb i okolica</strong>
-                        <span>Brz dolazak za kuće, terase i prilaze</span>
-                    </div>
-                </div>
-                <div className={styles.metaCard}>
-                    <CheckCircle2 size={18} />
-                    <div>
-                        <strong>Rezultati prije i poslije</strong>
-                        <span>Stvarni projekti i jasan dogovor prije početka</span>
-                    </div>
-                </div>
-            </div>
         </motion.div>
     );
 }

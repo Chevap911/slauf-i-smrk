@@ -169,40 +169,56 @@
 }
 
 .visual {
-    display: grid;
-    grid-template-columns: 3fr 2fr;
+    display: flex;
+    flex-direction: column;
     gap: 1rem;
-    min-height: 480px;
-}
-
-.photoCard {
-    position: relative;
-    border-radius: 2rem;
-    overflow: hidden;
-    box-shadow: 0 28px 60px rgba(0, 51, 102, 0.16);
-    background: #d9e4ee;
-}
-
-.photoImg {
-    object-fit: cover;
 }
 
 .mascotCard {
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    border-radius: 2rem;
-    background: linear-gradient(160deg, #fefce8 0%, rgba(255, 215, 0, 0.12) 100%);
-    border: 1px solid rgba(255, 215, 0, 0.3);
-    padding: 1.5rem 0.75rem 0;
+    padding: 0 2rem 0;
     overflow: hidden;
 }
 
 .mascotImg {
-    width: 100%;
-    height: auto;
     display: block;
     filter: drop-shadow(0 12px 24px rgba(0, 51, 102, 0.12));
+}
+
+.photosRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    height: 320px;
+}
+
+.photoCard {
+    position: relative;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 16px 40px rgba(0, 51, 102, 0.14);
+    background: #d9e4ee;
+}
+
+.photoLabel {
+    position: absolute;
+    bottom: 0.75rem;
+    left: 0.75rem;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.52);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.65rem;
+    border-radius: 999px;
+}
+
+.photoImg {
+    object-fit: cover;
 }
 
 @media (max-width: 992px) {
@@ -212,10 +228,6 @@
 
     .wrapper {
         grid-template-columns: minmax(0, 1fr);
-    }
-
-    .visual {
-        min-height: 420px;
     }
 }
 
@@ -236,13 +248,12 @@
         justify-content: center;
     }
 
-    .trustList,
-    .metaRow {
+    .trustList {
         grid-template-columns: 1fr;
     }
 
-    .visual {
-        min-height: 240px;
+    .photosRow {
+        height: 240px;
         gap: 0.75rem;
     }
 }
@@ -260,7 +271,7 @@
         font-size: 1rem;
     }
 
-    .visual {
-        min-height: 200px;
+    .photosRow {
+        height: 200px;
     }
 }
