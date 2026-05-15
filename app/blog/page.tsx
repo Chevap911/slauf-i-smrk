@@ -16,6 +16,13 @@ export const metadata: Metadata = {
 
 const articles = [
     {
+        title: 'Koliko košta pranje terase u Zagrebu? Čišćenje terase cijena 2026.',
+        excerpt: 'Konkretne cifre za pranje betonskih, keramičkih i drvenih terasa u Zagrebu. Bez zaokruživanja prema gore i bez skrivenih stavki u ponudi.',
+        slug: '/blog/koliko-kosta-pranje-terase-zagreb',
+        date: '2026-05-15',
+        category: 'Cijene',
+    },
+    {
         title: 'Koliko košta pranje okućnice i tlakavaca? Čišćenje okućnice cijena 2026.',
         excerpt: 'Transparentan vodič kroz cijene pranja dvorišta, tlakavaca i betonskih kocki u Zagrebu. Pokriva i upite poput čišćenje okućnice cijena i pranje tlakavaca cijena.',
         slug: '/blog/koliko-kosta-pranje-okucnice-tlakavaca-zagreb',
