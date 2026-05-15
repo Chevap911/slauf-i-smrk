@@ -9,7 +9,7 @@
 **Slogan:** *"Mi ne čistimo površinski, mi čistimo dubinski!"*
 **Web:** https://slaufismrk.com/
 **Kontakt:** 095-844-2806 | slauf.i.smrk@gmail.com
-**Offer:** 15% popusta na prvo čišćenje
+**Offer:** Besplatna procjena (bez obaveze). Napomena: 15% popust je uklonjen sa svih blog postova (odluka 2026-05-15).
 
 **Ton komunikacije:**
 - Pišemo kao da objašnjavamo susjedu — opušteno, direktno, bez korporativnog žargona
@@ -27,7 +27,10 @@ Svaki blog post mora sadržavati **minimalno 2-3 interna linka** prema relevantn
 | Usluga | URL za linkanje |
 |---|---|
 | Pranje fasade | `/usluge/pranje-fasade` |
+| Pranje terasa | `/usluge/pranje-terasa` |
+| Pranje tlakavaca | `/usluge/pranje-tlakavaca` |
 | Pranje okućnice | `/usluge/pranje-okucnice` |
+| Pranje prilaza | `/usluge/pranje-prilaza` |
 | Kemijsko čišćenje namještaja | `/usluge/kemijsko-ciscenje-namjestaja` |
 | Čišćenje kamenih površina | `/usluge/ciscenje-kamenih-povrsina` |
 | Čišćenje drvenih površina | `/usluge/ciscenje-drvenih-povrsina` |
@@ -204,8 +207,8 @@ Na **informacijskim postovima** (edukacija, savjeti):
 > 📞 **[095-844-2806](tel:+385958442806)** | 📋 **[Ispunite formu](/kontakt)**
 
 Na **transakcijskim postovima** (cijene, usporedbe):
-> Nema skrivenih troškova ni iznenađenja. Nazovite ili ispunite formu — javimo se unutar 24 sata s konkretnom ponudom.
-> 📞 **[095-844-2806](tel:+385958442806)** | 📋 **[Zatražite procjenu — 15% popusta na prvo čišćenje!](/kontakt)**
+> Nema skrivenih troškova ni iznenađenja. Dolazimo na besplatnu procjenu, vidimo površinu i tip materijala, dajemo točnu cijenu. Bez obaveze.
+> 📞 **[095-844-2806](tel:+385958442806)** | 📋 **[Ispunite formu](/kontakt)**
 
 **Pravilo CTA-a:** Na informacijskim postovima ne nudimo odmah popust — nudimo procjenu. Popust nudimo kad je osoba u "buy mode" (čita o cijenama, uspoređuje).
 
@@ -291,4 +294,29 @@ Samobor, Zaprešić, Velika Gorica, Zabok, Dugo Selo, Sveta Nedjelja, Ivanić-Gr
 
 ---
 
-*Skill pripremljen za: Šlauf i Šmrk | slaufismrk.com | Travanj 2026.*
+---
+
+## 8. TEHNIČKI SETUP — Web repo
+
+**Repo lokacija (Cowork workspace):** `Šlauf i Šmrk/web-repo/`
+**GitHub:** `Chevap911/slauf-i-smrk` (main branch)
+**Deploy:** Vercel auto-deploy na svaki push na main
+**Framework:** Next.js App Router, TypeScript
+
+**Workflow za novi blog post:**
+1. Kreiraj folder: `web-repo/app/blog/[slug]/`
+2. Napiši `page.tsx` (prati strukturu postojećih postova)
+3. Kopiraj/napiši `article.module.css` (prati fasada template)
+4. Dodaj post u `web-repo/app/blog/page.tsx` (articles array, na vrh liste, najnoviji prvi)
+5. Marko radi: `git add . && git commit -m "..." && git push`
+
+**KRITIČNO -- CSS pravilo:** Ako `article.module.css` ima `.content h3 { color: var(--secondary); }`,
+obavezno dodaj `color: #fff` na `.ctaBox h3` inače tekst u CTA boxu postaje nevidljiv (tamna boja na tamnoj pozadini).
+
+**Objavljeni postovi:**
+- `/blog/koliko-kosta-pranje-fasade` (2026-02-26)
+- `/blog/koliko-kosta-pranje-okucnice-tlakavaca-zagreb` (2026-04-17)
+- `/blog/znakovi-da-fasadi-treba-pranje` (2026-04-13)
+- `/blog/koliko-kosta-pranje-terase-zagreb` (2026-05-15)
+
+*Skill zadnje ažuriran: 2026-05-15*
