@@ -12,16 +12,6 @@ export default function Hero() {
                     <HeroAnimatedContent />
 
                     <div className={styles.visual}>
-                        <div className={styles.mascotCard}>
-                            <Image
-                                src={brandLogo}
-                                alt="Logo Šlauf i Šmrk"
-                                style={{ height: '130px', width: 'auto' }}
-                                className={styles.mascotImg}
-                                priority
-                                fetchPriority="high"
-                            />
-                        </div>
                         <div className={styles.photosRow}>
                             <div className={styles.photoCard}>
                                 <span className={styles.photoLabel}>Prije</span>
@@ -46,6 +36,16 @@ export default function Hero() {
                                     sizes="(max-width: 576px) 45vw, (max-width: 992px) 45vw, 20vw"
                                     fetchPriority="high"
                                     quality={90}
+                                />
+                            </div>
+                            <div className={styles.mascotOverlay}>
+                                <Image
+                                    src={brandLogo}
+                                    alt="Logo Šlauf i Šmrk"
+                                    style={{ height: '110px', width: 'auto' }}
+                                    className={styles.mascotImg}
+                                    priority
+                                    fetchPriority="high"
                                 />
                             </div>
                         </div>
