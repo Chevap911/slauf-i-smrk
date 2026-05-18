@@ -16,6 +16,13 @@ export const metadata: Metadata = {
 
 const articles = [
     {
+        title: 'Čišćenje terasa u Zagrebu: alge, mahovina i crne naslage (2026.)',
+        excerpt: 'Što se skuplja na terasama, zašto kućni perač nije dovoljan i kako izgleda profesionalno čišćenje terasa. Vodič za vlasnike kuća u Zagrebu.',
+        slug: '/blog/ciscenje-terasa-zagreb',
+        date: '2026-05-18',
+        category: 'Savjeti',
+    },
+    {
         title: 'Koliko košta pranje terase u Zagrebu? Čišćenje terase cijena 2026.',
         excerpt: 'Konkretne cifre za pranje betonskih, keramičkih i drvenih terasa u Zagrebu. Bez zaokruživanja prema gore i bez skrivenih stavki u ponudi.',
         slug: '/blog/koliko-kosta-pranje-terase-zagreb',

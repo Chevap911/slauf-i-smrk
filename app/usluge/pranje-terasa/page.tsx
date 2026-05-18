@@ -5,12 +5,12 @@ import ServicePage from '@/components/ServicePage/ServicePage';
 import { Home, BrushCleaning, TreeDeciduous } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Pranje terasa Zagreb | Čišćenje terasa, pločica i kamena',
-    description: 'Profesionalno pranje terasa u Zagrebu. Čistimo vanjske terase, balkone, keramičke pločice, kamen i betonske površine. Uklanjamo alge, mahovinu i crne naslage uz besplatnu procjenu.',
+    title: 'Čišćenje terasa Zagreb | Profesionalno pranje terasa i pločica 2026.',
+    description: 'Profesionalno čišćenje terasa u Zagrebu. Uklanjamo alge, mahovinu i crne naslage s keramičkih, kamenih i betonskih terasa. Besplatna procjena na lokaciji.',
     alternates: { canonical: '/usluge/pranje-terasa' },
     openGraph: {
-        title: 'Pranje terasa Zagreb | Čišćenje terasa, pločica i kamena',
-        description: 'Profesionalno čišćenje vanjskih terasa, balkona, keramike i kamena u Zagrebu.',
+        title: 'Čišćenje terasa Zagreb | Profesionalno pranje terasa i pločica 2026.',
+        description: 'Profesionalno čišćenje vanjskih terasa, balkona, keramike i kamena u Zagrebu. Uklanjamo alge, mahovinu i crne naslage.',
         url: 'https://slaufismrk.com/usluge/pranje-terasa',
         images: [
             {
@@ -24,7 +24,59 @@ export const metadata: Metadata = {
 };
 
 export default function PranjeTerasaPage() {
+    const faqSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+            {
+                '@type': 'Question',
+                name: 'Koliko košta čišćenje terasa u Zagrebu?',
+                acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'Cijena čišćenja terasa u Zagrebu kreće se od 3 do 5 €/m². Za terasu do 50 m² to je okvirno 150-250 €, a za terasu 50-100 m² iznosi 250-400 €. Točna cijena ovisi o materijalu i zaprljanosti.',
+                },
+            },
+            {
+                '@type': 'Question',
+                name: 'Možete li oprati terasu bez oštećenja fuga i pločica?',
+                acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'Da. Koristimo profesionalnu opremu i prilagođen tlak kako bismo očistili površinu bez nepotrebnog oštećenja fuga ili završnog sloja pločica.',
+                },
+            },
+            {
+                '@type': 'Question',
+                name: 'Čistite li i balkone i manje gradske terase?',
+                acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'Da, čistimo i manje gradske terase, balkone i lođe ako postoji siguran pristup i mogućnost izvođenja radova.',
+                },
+            },
+            {
+                '@type': 'Question',
+                name: 'Što ako je terasa od drva ili WPC-a?',
+                acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'Drvene terase i WPC podloge čistimo posebnim pristupom s niskim tlakom i specijalnim sredstvima za drvo. Za njih pogledajte našu zasebnu uslugu čišćenja drvenih površina.',
+                },
+            },
+            {
+                '@type': 'Question',
+                name: 'Koliko često treba čistiti vanjsku terasu?',
+                acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'Najčešće jednom godišnje, a na sjenovitim i vlažnijim lokacijama i češće, ovisno o rastu algi i količini prljavštine.',
+                },
+            },
+        ],
+    };
+
     return (
+        <>
+        <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
         <ServicePage
             title="Pranje terasa u Zagrebu"
             titleHighlight="terasa"
@@ -203,5 +255,6 @@ export default function PranjeTerasaPage() {
                 { title: 'Kamene površine', href: '/usluge/ciscenje-kamenih-povrsina', icon: <TreeDeciduous size={18} /> },
             ]}
         />
+        </>
     );
 }
