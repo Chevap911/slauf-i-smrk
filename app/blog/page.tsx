@@ -16,6 +16,13 @@ export const metadata: Metadata = {
 
 const articles = [
     {
+        title: 'Softwash ili visokotlačno pranje fasade? Što je pravo za vaš dom',
+        excerpt: 'Stiropor fasada i kameni zid traže potpuno drugačiji pristup. Saznajte razliku između softwash i visokotlačnog pranja i koji je pravi za vašu fasadu.',
+        slug: '/blog/softwash-ili-visokotlacno-pranje-fasade',
+        date: '2026-05-22',
+        category: 'Savjeti',
+    },
+    {
         title: 'Čišćenje terasa u Zagrebu: alge, mahovina i crne naslage (2026.)',
         excerpt: 'Što se skuplja na terasama, zašto kućni perač nije dovoljan i kako izgleda profesionalno čišćenje terasa. Vodič za vlasnike kuća u Zagrebu.',
         slug: '/blog/ciscenje-terasa-zagreb',
