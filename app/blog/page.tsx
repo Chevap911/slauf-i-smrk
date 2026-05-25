@@ -16,6 +16,13 @@ export const metadata: Metadata = {
 
 const articles = [
     {
+        title: 'Čišćenje fasade od algi i gljivica — uzroci, metode i cijena',
+        excerpt: 'Zelene ili crne mrlje na fasadi? Vodič za trajno uklanjanje algi, gljivica i mahovine — razlika između softwash i visokotlačnog pranja, cijena i što ne raditi sami.',
+        slug: '/blog/ciscenje-fasade-od-algi-i-gljivica',
+        date: '2026-05-25',
+        category: 'Savjeti',
+    },
+    {
         title: 'Softwash ili visokotlačno pranje fasade? Što je pravo za vaš dom',
         excerpt: 'Stiropor fasada i kameni zid traže potpuno drugačiji pristup. Saznajte razliku između softwash i visokotlačnog pranja i koji je pravi za vašu fasadu.',
         slug: '/blog/softwash-ili-visokotlacno-pranje-fasade',
