@@ -4,11 +4,11 @@ import { ArrowLeft, Phone, ArrowRight } from 'lucide-react';
 import styles from './article.module.css';
 
 export const metadata: Metadata = {
-    title: 'Čišćenje fasade od algi i gljivica — uzroci, metode i cijena | Šlauf i Šmrk',
+    title: 'Čišćenje fasade od algi i gljivica: uzroci, metode i cijena | Šlauf i Šmrk',
     description: 'Zelene ili crne mrlje na fasadi? Vodič za čišćenje fasade od algi, gljivica i mahovine u Zagrebu. Cijena 4–6 €/m², softwash metoda za ETICS fasade, besplatna procjena.',
     alternates: { canonical: '/blog/ciscenje-fasade-od-algi-i-gljivica' },
     openGraph: {
-        title: 'Čišćenje fasade od algi i gljivica — uzroci, metode i cijena',
+        title: 'Čišćenje fasade od algi i gljivica: uzroci, metode i cijena',
         description: 'Kako ukloniti alge, gljivice i mahovinu s fasade bez oštećenja žbuke ili stiropora. Praktični vodič s cijenama za Zagreb i okolicu.',
         url: 'https://slaufismrk.com/blog/ciscenje-fasade-od-algi-i-gljivica',
         type: 'article',
@@ -19,7 +19,7 @@ export default function BlogArticle() {
     const articleSchema = {
         '@context': 'https://schema.org',
         '@type': 'Article',
-        headline: 'Čišćenje fasade od algi i gljivica — uzroci, metode i cijena',
+        headline: 'Čišćenje fasade od algi i gljivica: uzroci, metode i cijena',
         description: 'Kako ukloniti alge, gljivice, mahovinu i lišajeve s fasade. Razlika između softwash i visokotlačnog pranja, cijena u Zagrebu i što ne raditi sami.',
         author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
@@ -60,7 +60,7 @@ export default function BlogArticle() {
                 name: 'Mogu li sami ukloniti alge s fasade?',
                 acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'Na betonskim ili kamenim površinama, uz pravi tlak i sredstvo, to je izvedivo. Za stiropor (ETICS) fasade nije preporučljivo — visoki tlak oštećuje završni sloj i izolaciju. Pogrešna primjena kemije može izblijediti boju ili ubrzati ponovnu pojavu algi. Za trajne rezultate bez rizika bolje je angažirati stručnjaka.',
+                    text: 'Na betonskim ili kamenim površinama, uz pravi tlak i sredstvo, to je izvedivo. Za stiropor (ETICS) fasade nije preporučljivo jer visoki tlak oštećuje završni sloj i izolaciju. Pogrešna primjena kemije može izblijediti boju ili ubrzati ponovnu pojavu algi. Za trajne rezultate bez rizika bolje je angažirati stručnjaka.',
                 },
             },
             {
@@ -101,14 +101,14 @@ export default function BlogArticle() {
 
                     <header className={styles.header}>
                         <span className={styles.category}>Savjeti</span>
-                        <h1>Čišćenje fasade od algi i gljivica — uzroci, metode i cijena</h1>
+                        <h1>Čišćenje fasade od algi i gljivica: uzroci, metode i cijena</h1>
                         <p className={styles.meta}>Objavljeno 25. svibnja 2026. • Šlauf i Šmrk</p>
                     </header>
 
                     <div className={styles.content}>
                         <p>
                             Zelene naslage na fasadi nisu samo ružne. Alge, gljivice i mahovina zadržavaju vlagu
-                            uz zid i polako razaraju završni sloj fasade — posebno na stiropor objektima. Zanemarite
+                            uz zid i polako razaraju završni sloj fasade, posebno na stiropor objektima. Zanemarite
                             ih dovoljno dugo i od 400 € čišćenja stignete do 15.000 € sanacije.
                             Evo što se zapravo događa i kako se to riješiti trajno.
                         </p>
@@ -116,21 +116,21 @@ export default function BlogArticle() {
                         <h2>Zašto se alge i gljivice pojavljuju na fasadi?</h2>
                         <p>
                             Fasada je živa površina u kontaktu s okolišem. Pore žbuke i boje skupljaju vlagu,
-                            prašinu i organske čestice. Kad uvjeti odgovaraju — sjenovitost, vlaga, temperature
-                            između 5 i 25 stupnjeva — mikroorganizmi počinju rasti.
+                            prašinu i organske čestice. Kad uvjeti odgovaraju (sjenovitost, vlaga, temperature
+                            između 5 i 25 stupnjeva), mikroorganizmi počinju rasti.
                         </p>
                         <p>
                             Ovi faktori ubrzavaju pojavu algi i gljivica:
                         </p>
                         <ul>
-                            <li><strong>Orijentacija zida</strong> — sjeverne i sjeverozapadne strane dobivaju manje sunca i sporije se suše nakon kiše.</li>
-                            <li><strong>Blizina drveća</strong> — drveće u sjeni zida povećava vlažnost i unosi spore.</li>
-                            <li><strong>Loša odvodnja</strong> — začepljeni žljebovi ili pogrešno postavljena streha bacaju vodu uz fasadu.</li>
-                            <li><strong>Stara ili oštećena fasadna boja</strong> — boja bez biocida ili s isteklim zaštitnim sredstvima brzo kolonizira.</li>
-                            <li><strong>Urbanizacija</strong> — onečišćenje zraka ostavlja tanki organski film na fasadi koji je podloga za rast.</li>
+                            <li><strong>Orijentacija zida:</strong> sjeverne i sjeverozapadne strane dobivaju manje sunca i sporije se suše nakon kiše.</li>
+                            <li><strong>Blizina drveća:</strong> drveće u sjeni zida povećava vlažnost i unosi spore.</li>
+                            <li><strong>Loša odvodnja:</strong> začepljeni žljebovi ili pogrešno postavljena streha bacaju vodu uz fasadu.</li>
+                            <li><strong>Stara ili oštećena fasadna boja:</strong> boja bez biocida ili s isteklim zaštitnim sredstvima brzo kolonizira.</li>
+                            <li><strong>Urbanizacija:</strong> onečišćenje zraka ostavlja tanki organski film na fasadi koji je podloga za rast.</li>
                         </ul>
 
-                        <h2>Alge, gljivice, mahovina ili lišajevi — što je na vašoj fasadi?</h2>
+                        <h2>Alge, gljivice, mahovina ili lišajevi: što je na vašoj fasadi?</h2>
                         <p>
                             Svaki organizam zahtijeva malo drugačiji pristup. Evo kako ih razlikujete:
                         </p>
@@ -178,7 +178,7 @@ export default function BlogArticle() {
                         </ul>
                         <p>
                             Gljivice su agresivnije. Micelij prodire duboko u pore fasadnog materijala
-                            i ne može se ukloniti samo vodom pod pritiskom — treba biocidno sredstvo koje
+                            i ne može se ukloniti samo vodom pod pritiskom. Treba biocidno sredstvo koje
                             uništava spore u dubini, ne samo na površini.
                         </p>
 
@@ -202,7 +202,7 @@ export default function BlogArticle() {
                             </div>
                             <div className={styles.comparisonRow}>
                                 <span><strong>3. Čišćenje</strong></span>
-                                <span>Ispiranje prilagođenim tlakom — niži za stiropor, viši za kamen i beton</span>
+                                <span>Ispiranje prilagođenim tlakom: niži za stiropor, viši za kamen i beton</span>
                             </div>
                             <div className={styles.comparisonRow}>
                                 <span><strong>4. Zaštita</strong></span>
@@ -215,19 +215,19 @@ export default function BlogArticle() {
                             fasada ostaje čista 3 do 5 godina, ovisno o izloženosti.
                         </p>
 
-                        <h2>Softwash ili visokotlačno — što je pravo za vaš slučaj?</h2>
+                        <h2>Softwash ili visokotlačno: što je pravo za vaš slučaj?</h2>
                         <p>
                             Ovo je ključno pitanje i najčešći uzrok pogrešaka pri samostalnom čišćenju.
                         </p>
                         <p>
                             <strong>Softwash</strong> (niskotlačno kemijsko čišćenje) koristi biocidna sredstva
-                            koja se nanose na fasadu i ostave da djeluju, a potom se isperu niskim tlakom — sličnim
+                            koja se nanose na fasadu i ostave da djeluju, a potom se isperu niskim tlakom, sličnim
                             vrtnom cijevu. Organizam se uklanja kemijskom reakcijom, bez mehaničke sile.
                             Jedina ispravna metoda za stiropor (ETICS) fasade, tanke žbuke i osjetljive boje.
                         </p>
                         <p>
                             <strong>Visokotlačno pranje</strong> mehanički skida naslage vodom pod pritiskom od
-                            100 do 300 bara. Odlično radi na kamenu, betonu, opeci i keramici. Na stiroporu —
+                            100 do 300 bara. Odlično radi na kamenu, betonu, opeci i keramici. Na stiroporu
                             oštećuje završni sloj i otvara pore za prodor vlage. Greškom primijenjen, može stvoriti
                             problem koji košta 10 puta više od čišćenja.
                         </p>
@@ -238,17 +238,17 @@ export default function BlogArticle() {
                             </Link>.
                         </p>
 
-                        <h2>Čišćenje fasade od algi — što ne raditi sami</h2>
+                        <h2>Čišćenje fasade od algi: što ne raditi sami</h2>
                         <p>
-                            Svake sezone vidimo iste greške. Navedene stvari ne rade — ili rade kratkoročno ali
-                            stvaraju skuplje probleme:
+                            Svake sezone vidimo iste greške. Neke od navedenih stvari izgledaju kao rješenje
+                            ali stvaraju skuplje probleme:
                         </p>
                         <ul>
-                            <li><strong>Boja preko algi</strong> — alge ostaju ispod boje, nastavljaju rasti, nova boja se ljušti za godinu-dvije.</li>
-                            <li><strong>Visoki tlak na stiroporu</strong> — probija tanki završni sloj i otvara put vlazi u izolaciju.</li>
-                            <li><strong>Samo mehaničko čišćenje bez biocida</strong> — spore ostaju u porama i alge se vraćaju brže nego prvi put.</li>
-                            <li><strong>Izbjeljivač (NaOCl) u visokim koncentracijama</strong> — može izblijediti boju i oštetiti metal oko prozora, plus nije dugotrajno rješenje.</li>
-                            <li><strong>Čišćenje samo vidljive površine</strong> — gljivice prodiru dublje od vidljive mrlje. Treba tretirati čitavu zahvaćenu plohu.</li>
+                            <li><strong>Boja preko algi:</strong> alge ostaju ispod boje, nastavljaju rasti, nova boja se ljušti za godinu-dvije.</li>
+                            <li><strong>Visoki tlak na stiroporu:</strong> probija tanki završni sloj i otvara put vlazi u izolaciju.</li>
+                            <li><strong>Samo mehaničko čišćenje bez biocida:</strong> spore ostaju u porama i alge se vraćaju brže nego prvi put.</li>
+                            <li><strong>Izbjeljivač (NaOCl) u visokim koncentracijama:</strong> može izblijediti boju i oštetiti metal oko prozora, plus nije dugotrajno rješenje.</li>
+                            <li><strong>Čišćenje samo vidljive površine:</strong> gljivice prodiru dublje od vidljive mrlje. Treba tretirati čitavu zahvaćenu plohu.</li>
                         </ul>
 
                         <h2>Koliko košta čišćenje fasade od algi u Zagrebu?</h2>
@@ -277,7 +277,7 @@ export default function BlogArticle() {
                         </div>
 
                         <p>
-                            Na cijenu utječe i opseg zahvaćenosti — fasada s teškom gljivičnom zarazom zahtijeva
+                            Na cijenu utječe i opseg zahvaćenosti. Fasada s teškom gljivičnom zarazom zahtijeva
                             više biocidnog sredstva i dulje djelovanje, što povećava trošak materijala.
                             Detaljan pregled faktora koji utječu na cijenu pogledajte u vodiču{' '}
                             <Link href="/blog/koliko-kosta-pranje-fasade">koliko košta pranje fasade u Zagrebu</Link>.
@@ -285,8 +285,8 @@ export default function BlogArticle() {
 
                         <h2>Koliko traje zaštita i koliko često treba ponavljati tretman?</h2>
                         <p>
-                            S kompletnim softwash tretmanom i zaštitnim premazom — 3 do 5 godina na prosječno
-                            izloženim fasadama. Faktori koji skraćuju taj rok:
+                            S kompletnim softwash tretmanom i zaštitnim premazom, zaštita traje 3 do 5 godina na
+                            prosječno izloženim fasadama. Faktori koji skraćuju taj rok:
                         </p>
                         <ul>
                             <li>stalna sjenkovitost (sjever, uz visoko drveće)</li>
@@ -303,12 +303,12 @@ export default function BlogArticle() {
                         <p>
                             Da, za 50 do 70% u slučajevima gdje fasada nije konstruktivno oštećena.
                             Bojanje obiteljske kuće od 200 m² u Zagrebu iznosi 3.000 do 8.000 eura,
-                            ovisno o pripremi i materijalu. Čišćenje iste kuće — 800 do 1.200 eura.
+                            ovisno o pripremi i materijalu. Čišćenje iste kuće iznosi 800 do 1.200 eura.
                         </p>
                         <p>
-                            Čišćenje ima smisla kad: fasada nema pukotina, boja se ne ljušti
+                            Čišćenje ima smisla kad fasada nema pukotina, boja se ne ljušti
                             na velikim površinama, a problem su alge, gljivice ili prljavština.
-                            Bojanje je bolje kad: površina ima mehanička oštećenja, boja se ljušti
+                            Bojanje je bolje kad površina ima mehanička oštećenja, boja se ljušti
                             zbog starosti ili zahtijevate promjenu boje.
                         </p>
 
@@ -332,10 +332,10 @@ export default function BlogArticle() {
                             Najčešće intervencije za uklanjanje algi imamo u:
                         </p>
                         <ul>
-                            <li>Sesvetama i Dubravama — stariji objekti iz 1980-ih s klasičnom žbukom i intenzivnom vegetacijom uz fasadu</li>
-                            <li>Novom Zagrebu — stiropor objekti iz 1990-ih i 2000-ih s algama na sjevernim stranama</li>
-                            <li>Samoboru i Zaprešiću — obiteljske kuće uz prirodu s pojačanom vlažnošću</li>
-                            <li>Velikoj Gorici — kombinacija starih žbukanih i novih ETICS fasada</li>
+                            <li>Sesvetama i Dubravama: stariji objekti iz 1980-ih s klasičnom žbukom i intenzivnom vegetacijom uz fasadu</li>
+                            <li>Novom Zagrebu: stiropor objekti iz 1990-ih i 2000-ih s algama na sjevernim stranama</li>
+                            <li>Samoboru i Zaprešiću: obiteljske kuće uz prirodu s pojačanom vlažnošću</li>
+                            <li>Velikoj Gorici: kombinacija starih žbukanih i novih ETICS fasada</li>
                         </ul>
                         <p>
                             Za veće komercijalne projekte izlazimo i izvan Zagrebačke županije.
@@ -352,7 +352,7 @@ export default function BlogArticle() {
 
                         <h3>Koliko dugo traje zaštita fasade od algi nakon čišćenja?</h3>
                         <p>
-                            S kompletnim softwash tretmanom i zaštitnim premazom — 3 do 5 godina
+                            S kompletnim softwash tretmanom i zaštitnim premazom, zaštita traje 3 do 5 godina
                             na prosječno izloženim fasadama.
                         </p>
 
@@ -365,7 +365,7 @@ export default function BlogArticle() {
 
                         <h3>Mogu li sami ukloniti alge s fasade?</h3>
                         <p>
-                            Na kamenu ili betonu — da, uz pravi tlak i biocidno sredstvo.
+                            Na kamenu ili betonu, uz pravi tlak i biocidno sredstvo, da.
                             Na stiropor fasadama nije preporučljivo bez odgovarajuće opreme
                             jer visoki tlak oštećuje završni sloj.
                         </p>
