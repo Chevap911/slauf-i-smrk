@@ -61,15 +61,15 @@ export default function BlogArticle() {
                         <div className={styles.priceTable}>
                             <div className={styles.priceRow}>
                                 <span>Do 50 m²</span>
-                                <strong>150 – 250 €</strong>
+                                <strong>od 200 €</strong>
                             </div>
                             <div className={styles.priceRow}>
                                 <span>50 – 100 m²</span>
-                                <strong>250 – 400 €</strong>
+                                <strong>od 250 €</strong>
                             </div>
                             <div className={styles.priceRow}>
                                 <span>100 – 200 m²</span>
-                                <strong>400 – 700 €</strong>
+                                <strong>od 450 €</strong>
                             </div>
                         </div>
                         <p>

@@ -186,15 +186,15 @@ export default function LandingPageClient() {
                         <tbody>
                             <tr>
                                 <td>100 m²</td>
-                                <td>400 – 600 €</td>
+                                <td>od 500 €</td>
                             </tr>
                             <tr>
                                 <td>200 m²</td>
-                                <td>800 – 1.200 €</td>
+                                <td>od 1.000 €</td>
                             </tr>
                             <tr>
                                 <td>300 m²</td>
-                                <td>1.200 – 1.800 €</td>
+                                <td>od 1.500 €</td>
                             </tr>
                             <tr>
                                 <td>500 m²+</td>

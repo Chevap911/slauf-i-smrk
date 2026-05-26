@@ -46,7 +46,7 @@ export default function BlogArticle() {
                 name: 'Koliko košta pranje okućnice po kvadratnom metru u Zagrebu?',
                 acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'Cijena pranja okućnice u Zagrebu kreće se od 2 do 4 € po m² ovisno o veličini površine, stupnju zaprljanosti i količini korova u fugama. Manja dvorišta i terase obično ulaze u početni raspon od 100 do 200 €.',
+                    text: 'Cijena pranja okućnice u Zagrebu kreće se od od 4 € po m² ovisno o veličini površine, stupnju zaprljanosti i količini korova u fugama. Manja dvorišta i terase obično ulaze u početni raspon od 100 do 200 €.',
                 },
             },
             {
@@ -117,7 +117,7 @@ export default function BlogArticle() {
                         <div className={styles.priceTable}>
                             <div className={styles.priceRow}>
                                 <span>Manja dvorišta i prilazi (do 50 m²)</span>
-                                <strong>100 – 200 €</strong>
+                                <strong>od 200 €</strong>
                             </div>
                             <div className={styles.priceRow}>
                                 <span>Srednja dvorišta (50 – 100 m²)</span>
@@ -271,7 +271,7 @@ export default function BlogArticle() {
                             <div className={styles.faqItem}>
                                 <h3>Koliko košta pranje okućnice po kvadratnom metru u Zagrebu?</h3>
                                 <p>
-                                    Cijena pranja okućnice kreće se od 2 do 4 € po m² ovisno o veličini površine, stupnju
+                                    Cijena pranja okućnice kreće se od od 4 € po m² ovisno o veličini površine, stupnju
                                     zaprljanosti i količini korova u fugama. Manja dvorišta i terase obično ulaze u početni raspon od
                                     100 do 200 €.
                                 </p>

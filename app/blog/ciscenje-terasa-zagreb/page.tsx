@@ -52,7 +52,7 @@ export default function BlogArticle() {
                 name: 'Koliko košta čišćenje terasa u Zagrebu?',
                 acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'Cijena čišćenja terasa u Zagrebu kreće se od 150 do 400 € za terase do 100 m², ovisno o materijalu i stupnju zaprljanosti. Drvene terase su nešto skuplje (5-8 €/m²) zbog posebnog tretmana.',
+                    text: 'Cijena čišćenja terasa u Zagrebu kreće se od od 200 € za terase do 100 m², ovisno o materijalu i stupnju zaprljanosti. Drvene terase su nešto skuplje (5-8 €/m²) zbog posebnog tretmana.',
                 },
             },
             {

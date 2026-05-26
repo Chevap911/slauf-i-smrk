@@ -34,7 +34,7 @@ function FaqItem({ question, answer, isOpen, onClick }: FaqItemProps) {
 const faqData = [
     {
         question: 'Koliko košta pranje okućnice?',
-        answer: 'Cijena ovisi o kvadraturi i tipu podloge. Okvirni raspon je od 2 do 4 €/m². Za točniju procjenu pošaljite nam 2-3 slike dvorišta na WhatsApp.'
+        answer: 'Cijena ovisi o kvadraturi i tipu podloge. Okvirni raspon je od od 4 €/m². Za točniju procjenu pošaljite nam 2-3 slike dvorišta na WhatsApp.'
     },
     {
         question: 'Trebam li znati točnu kvadraturu dvorišta?',

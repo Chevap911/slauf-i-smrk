@@ -6,7 +6,7 @@ import { TreeDeciduous } from 'lucide-react';
 
 export const metadata: Metadata = {
     title: 'Pranje okućnice Zagreb | Čišćenje dvorišta i prilaza',
-    description: 'Profesionalno pranje okućnice, dvorišta, prilaza i vanjskih površina u Zagrebu. Uklanjamo mahovinu, alge, ulje, hrđu i prljavštinu. Cijena 2–4 €/m².',
+    description: 'Profesionalno pranje okućnice, dvorišta, prilaza i vanjskih površina u Zagrebu. Uklanjamo mahovinu, alge, ulje, hrđu i prljavštinu. Cijena od 4 €/m².',
     alternates: { canonical: '/usluge/pranje-okucnice' },
     openGraph: {
         title: 'Pranje okućnice Zagreb | Čišćenje dvorišta i prilaza',
@@ -59,7 +59,7 @@ export default function PranjeOkucnicePage() {
                 titleHighlight="okućnice"
                 canonicalPath="/usluge/pranje-okucnice"
                 description="Profesionalno pranje okućnica, dvorišta, prilaza, terasa i većih vanjskih površina u Zagrebu i okolici. Uklanjamo mahovinu, alge, korov iz fuga, uljne mrlje, hrđu i nakupljenu prljavštinu s tlakavaca, betona, kamena i asfalta. Za okvirnu cijenu pošaljite slike na WhatsApp, za veće površine dolazimo na lokaciju i dajemo jasnu procjenu bez obaveza."
-                priceHint="2 - 4 €/m²"
+                priceHint="od 4 €/m²"
                 heroImage="/seo-results/pranje-terasa/poslije.jpeg"
                 heroImageAlt="Okućnica i terasa nakon profesionalnog čišćenja u Zagrebu"
                 heroHighlights={[
@@ -155,9 +155,9 @@ export default function PranjeOkucnicePage() {
                             </thead>
                             <tbody>
                                 {[
-                                    { size: 'Do 50 m²', price: '150 – 200 €', note: 'manja terasa, ulaz ili dio dvorišta' },
-                                    { size: '50 – 100 m²', price: '200 – 350 €', note: 'standardna okućnica ili prilaz' },
-                                    { size: '100 – 200 m²', price: '350 – 600 €', note: 'veće dvorište, prilaz i staze' },
+                                    { size: 'Do 50 m²', price: 'od 200 €', note: 'manja terasa, ulaz ili dio dvorišta' },
+                                    { size: '50 – 100 m²', price: 'od 250 €', note: 'standardna okućnica ili prilaz' },
+                                    { size: '100 – 200 m²', price: 'od 450 €', note: 'veće dvorište, prilaz i staze' },
                                     { size: '200 m²+', price: 'po procjeni', note: 'veće okućnice, zgrade i poslovni objekti' },
                                     { size: 'Parkirne površine', price: 'po procjeni', note: 'ovisi o ulju, gumama i zaprljanosti' },
                                 ].map((row, i) => (
@@ -321,7 +321,7 @@ export default function PranjeOkucnicePage() {
                 faq={[
                     {
                         question: 'Koliko košta čišćenje okućnice u Zagrebu?',
-                        answer: 'Cijena ovisi o kvadraturi i materijalu. Okvirni raspon je 2 – 4 €/m². Za okućnicu od 100 m² to je okvirno 200 – 400 €. Točna cijena ovisi o stanju površine — nudimo procjenu na lokaciji.',
+                        answer: 'Cijena ovisi o kvadraturi i materijalu. Okvirni raspon je od 4 €/m². Za okućnicu od 100 m² to je okvirno od 200 €. Točna cijena ovisi o stanju površine — nudimo procjenu na lokaciji.',
                     },
                     {
                         question: 'Hoće li visokotlačno pranje oštetiti betonske kocke?',

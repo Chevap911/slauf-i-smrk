@@ -61,11 +61,11 @@ export default function BlogArticle() {
                         <div className={styles.priceTable}>
                             <div className={styles.priceRow}>
                                 <span>Manja fasada (do 80 m²)</span>
-                                <strong>320 – 480 €</strong>
+                                <strong>od 500 €</strong>
                             </div>
                             <div className={styles.priceRow}>
                                 <span>Srednja fasada (80–150 m²)</span>
-                                <strong>320 – 900 €</strong>
+                                <strong>od 1.000 €</strong>
                             </div>
                             <div className={styles.priceRow}>
                                 <span>Veća fasada (150+ m²)</span>
@@ -73,7 +73,7 @@ export default function BlogArticle() {
                             </div>
                             <div className={styles.priceRow}>
                                 <span>Cijena po m²</span>
-                                <strong>4 – 6 €/m²</strong>
+                                <strong>od 5 €/m²</strong>
                             </div>
                         </div>
 

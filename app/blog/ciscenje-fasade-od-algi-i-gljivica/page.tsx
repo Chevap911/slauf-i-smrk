@@ -5,7 +5,7 @@ import styles from './article.module.css';
 
 export const metadata: Metadata = {
     title: 'Čišćenje fasade od algi i gljivica: uzroci, metode i cijena | Šlauf i Šmrk',
-    description: 'Zelene ili crne mrlje na fasadi? Vodič za čišćenje fasade od algi, gljivica i mahovine u Zagrebu. Cijena 4–6 €/m², softwash metoda za ETICS fasade, besplatna procjena.',
+    description: 'Zelene ili crne mrlje na fasadi? Vodič za čišćenje fasade od algi, gljivica i mahovine u Zagrebu. Cijena od 5 €/m², softwash metoda za ETICS fasade, besplatna procjena.',
     alternates: { canonical: '/blog/ciscenje-fasade-od-algi-i-gljivica' },
     openGraph: {
         title: 'Čišćenje fasade od algi i gljivica: uzroci, metode i cijena',
@@ -36,7 +36,7 @@ export default function BlogArticle() {
                 name: 'Koliko košta čišćenje fasade od algi u Zagrebu?',
                 acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'Cijena čišćenja fasade od algi u Zagrebu kreće se od 4 do 6 €/m², ovisno o stupnju zaraženosti, tipu fasade i visini objekta. Za obiteljsku kuću od 200 m² to je okvirno 800 do 1.200 €. Za točnu procjenu dolazimo na lokaciju besplatno.',
+                    text: 'Cijena čišćenja fasade od algi u Zagrebu kreće se od 5 €/m², ovisno o stupnju zaraženosti, tipu fasade i visini objekta. Za obiteljsku kuću od 200 m² to je okvirno od 1.000 €. Za točnu procjenu dolazimo na lokaciju besplatno.',
                 },
             },
             {
@@ -109,7 +109,7 @@ export default function BlogArticle() {
                         <p>
                             Zelene naslage na fasadi nisu samo ružne. Alge, gljivice i mahovina zadržavaju vlagu
                             uz zid i polako razaraju završni sloj fasade, posebno na stiropor objektima. Zanemarite
-                            ih dovoljno dugo i od 400 € čišćenja stignete do 15.000 € sanacije.
+                            ih dovoljno dugo i od 500 € čišćenja stignete do 15.000 € sanacije.
                             Evo što se zapravo događa i kako se to riješiti trajno.
                         </p>
 
@@ -260,7 +260,7 @@ export default function BlogArticle() {
                         <div className={styles.priceTable}>
                             <div className={styles.priceRow}>
                                 <span>Manje od 100 m²</span>
-                                <strong>400 – 600 €</strong>
+                                <strong>od 500 €</strong>
                             </div>
                             <div className={styles.priceRow}>
                                 <span>100 – 200 m² (obiteljska kuća)</span>
@@ -268,7 +268,7 @@ export default function BlogArticle() {
                             </div>
                             <div className={styles.priceRow}>
                                 <span>200 – 300 m²</span>
-                                <strong>1.200 – 1.800 €</strong>
+                                <strong>od 1.500 €</strong>
                             </div>
                             <div className={styles.priceRow}>
                                 <span>300 m²+ / poslovni objekti</span>
@@ -345,8 +345,8 @@ export default function BlogArticle() {
 
                         <h3>Koliko košta čišćenje fasade od algi u Zagrebu?</h3>
                         <p>
-                            Cijena se kreće od 4 do 6 €/m². Za obiteljsku kuću od 200 m² to je
-                            800 do 1.200 €. Točna cijena ovisi o stupnju zaraženosti i tipu fasade.
+                            Cijena se kreće od 5 €/m². Za obiteljsku kuću od 200 m² to je
+                            od 1.000 €. Točna cijena ovisi o stupnju zaraženosti i tipu fasade.
                             Za procjenu pošaljite slike fasade na WhatsApp ili dogovorite besplatan izlazak.
                         </p>
 
