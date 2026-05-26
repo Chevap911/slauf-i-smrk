@@ -16,6 +16,13 @@ export const metadata: Metadata = {
 
 const articles = [
     {
+        title: 'Pranje fasade stiropor i ETICS: što smijete, što ne i cijena',
+        excerpt: 'Stiropor fasada (ETICS sustav) ima završni sloj debljine 1,5 do 3 mm. Visoki tlak ga probije. Vodič o jedino sigurnoj metodi čišćenja, cijeni i tome kako prepoznati koji tip fasade imate.',
+        slug: '/blog/pranje-fasade-stiropor-etics',
+        date: '2026-05-26',
+        category: 'Savjeti',
+    },
+    {
         title: 'Čišćenje fasade od algi i gljivica — uzroci, metode i cijena',
         excerpt: 'Zelene ili crne mrlje na fasadi? Vodič za trajno uklanjanje algi, gljivica i mahovine — razlika između softwash i visokotlačnog pranja, cijena i što ne raditi sami.',
         slug: '/blog/ciscenje-fasade-od-algi-i-gljivica',
