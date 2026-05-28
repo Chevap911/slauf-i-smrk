@@ -3,11 +3,6 @@ import type { MetadataRoute } from 'next';
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://slaufismrk.com';
     const serviceUpdated = new Date('2026-04-21');
-    const blogUpdated = {
-        'znakovi-da-fasadi-treba-pranje': new Date('2026-04-13'),
-        'koliko-kosta-pranje-fasade': new Date('2026-04-21'),
-        'koliko-kosta-pranje-okucnice-tlakavaca-zagreb': new Date('2026-04-21'),
-    } as const;
 
     const services = [
         'pranje-fasade',
@@ -23,17 +18,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
         'odrzavanje-grobnih-mjesta',
     ];
 
-    const blog = [
-        'znakovi-da-fasadi-treba-pranje',
-        'koliko-kosta-pranje-fasade',
-        'koliko-kosta-pranje-okucnice-tlakavaca-zagreb',
-    ] as const;
+    const blog: { slug: string; date: string }[] = [
+        { slug: 'pranje-fasade-stiropor-etics', date: '2026-05-26' },
+        { slug: 'ciscenje-fasade-od-algi-i-gljivica', date: '2026-05-25' },
+        { slug: 'softwash-ili-visokotlacno-pranje-fasade', date: '2026-05-22' },
+        { slug: 'ciscenje-terasa-zagreb', date: '2026-05-18' },
+        { slug: 'koliko-kosta-pranje-terase-zagreb', date: '2026-05-15' },
+        { slug: 'koliko-kosta-pranje-okucnice-tlakavaca-zagreb', date: '2026-04-21' },
+        { slug: 'znakovi-da-fasadi-treba-pranje', date: '2026-04-13' },
+        { slug: 'koliko-kosta-pranje-fasade', date: '2026-04-21' },
+    ];
 
     return [
         // Homepage
         {
             url: baseUrl,
-            lastModified: serviceUpdated,
+            lastModified: new Date('2026-05-26'),
             changeFrequency: 'weekly',
             priority: 1,
         },
@@ -51,16 +51,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'monthly' as const,
             priority: 0.8,
         },
-        // Blog
+        // Blog index
         {
             url: `${baseUrl}/blog`,
-            lastModified: serviceUpdated,
+            lastModified: new Date('2026-05-26'),
             changeFrequency: 'weekly' as const,
             priority: 0.7,
         },
-        ...blog.map(slug => ({
+        // Blog posts
+        ...blog.map(({ slug, date }) => ({
             url: `${baseUrl}/blog/${slug}`,
-            lastModified: blogUpdated[slug],
+            lastModified: new Date(date),
             changeFrequency: 'monthly' as const,
             priority: 0.6,
         })),
