@@ -23,6 +23,74 @@ export const metadata: Metadata = {
     },
 };
 
+
+
+const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+        {
+            '@type': 'Question',
+            name: "Koliko košta pranje prilaza u Zagrebu?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Okvirna cijena za pranje prilaza kreće se od od 4 €/m², a točna ponuda ovisi o materijalu, veličini i stupnju zaprljanosti.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Možete li ukloniti tragove motornog ulja s betonskog prilaza?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Često možemo postići jako veliko poboljšanje, posebno kod svježijih mrlja. Kod starih i duboko upijenih mrlja rezultat ovisi o stanju podloge.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Čistite li i ulaze u garažu i rubove uz zid?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Da. Čistimo cijeli prilazni sklop, uključujući ulaz u garažu, rubove uz zid, prijelaze prema okućnici i parkirna mjesta.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Je li bolje čistiti prilaz samostalno ili u paketu s okućnicom?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Ako je prilaz dio većeg dvorišta, gotovo uvijek se više isplati čistiti ga zajedno s okućnicom ili tlakavcima jer dobijete cjelovit rezultat.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Koliko često treba prati prilaz?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Najčešće jednom godišnje, a kod jako opterećenih prilaza i češće, posebno ako su izloženi vozilima, ulju i vlazi.",
+            },
+        }
+    ],
+};
+
+const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Početna',
+            item: 'https://slaufismrk.com/',
+        },
+        {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Pranje prilaza',
+            item: 'https://slaufismrk.com/usluge/pranje-prilaza',
+        }
+    ],
+};
+
 export default function PranjePrilazaPage() {
     return (
         <ServicePage

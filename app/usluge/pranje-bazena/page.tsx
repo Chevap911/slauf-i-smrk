@@ -15,6 +15,82 @@ export const metadata: Metadata = {
     },
 };
 
+
+
+const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+        {
+            '@type': 'Question',
+            name: "Koliko košta čišćenje bazena?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Početna cijena čišćenja bazena kreće od 600 €, a konačna cijena ovisi o veličini bazena, stanju površina i tome uključuje li ponuda i obodni kamen ili terasu.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Trebam li ispustiti vodu prije čišćenja?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Za temeljito čišćenje stijenki preporučujemo ispuštanje. Obodni kamen i terasu čistimo bez obzira na razinu vode.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Koliko često trebam čistiti bazen?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Preporučujemo profesionalno čišćenje dva puta godišnje — u proljeće (priprema) i jesen (winterizacija).",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Čistite li i jacuzzije?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Da, čistimo jacuzzije i whirlpool bazene. Cijena ovisi o veličini i stanju. Nazovite nas za procjenu.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Čistite li i terasu oko bazena?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Da! Ujedno čistimo kameni ili drveni pod oko bazena, staze, stepenice i prilaze. Nudimo paketnu cijenu za sve.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Koristite li sredstva sigurna za bazensku vodu?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Da, sva naša sredstva su kompatibilna s bazenskim sustavima i neće narušiti pH vode.",
+            },
+        }
+    ],
+};
+
+const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Početna',
+            item: 'https://slaufismrk.com/',
+        },
+        {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Pranje bazena',
+            item: 'https://slaufismrk.com/usluge/pranje-bazena',
+        }
+    ],
+};
+
 export default function PranjeBasenapPage() {
     return (
         <ServicePage

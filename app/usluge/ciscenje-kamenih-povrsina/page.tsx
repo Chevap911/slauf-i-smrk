@@ -15,6 +15,82 @@ export const metadata: Metadata = {
     },
 };
 
+
+
+const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+        {
+            '@type': 'Question',
+            name: "Može li se visokotlačno čistiti mramor?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Da, ali s pažljivo kalibriranim niskim tlakom i pH-neutralnim sredstvima. Nikada ne koristimo kisela sredstva na mramoru.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Koliko traje čišćenje kamene staze?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Prosječna kamena staza od 30–50 m² čisti se za 2–3 sata. Veće površine zahtijevaju pola dana do cijeli dan.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Hoće li se mahovine brzo vratiti?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "S redovitim čišćenjem jednom godišnje, mahovine neće imati priliku duboko se ukorijeniti. Zaštitni premaz dodatno usporava rast.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Čistite li i unutarnje kamene površine?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Da, čistimo kamene podove, stepenice i zidove u interijeru s prilagođenom opremom za unutarnje prostore.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Može li čišćenje kamena oštetiti okolne biljke?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Ne, naša sredstva su biorazgradiva i sigurna za biljke. Dodatno zaštićujemo osjetljive biljke prije čišćenja.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Koliko košta čišćenje kamene ograde?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Cijena za kamene površine najčešće se kreće od od 5 €/m², ovisno o vrsti kamena, veličini i zaprljanosti. Besplatna procjena.",
+            },
+        }
+    ],
+};
+
+const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Početna',
+            item: 'https://slaufismrk.com/',
+        },
+        {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Čišćenje kamenih površina',
+            item: 'https://slaufismrk.com/usluge/ciscenje-kamenih-povrsina',
+        }
+    ],
+};
+
 export default function KamenePovsinePage() {
     return (
         <ServicePage

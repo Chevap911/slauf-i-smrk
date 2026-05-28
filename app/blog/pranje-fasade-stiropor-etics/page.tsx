@@ -15,6 +15,32 @@ export const metadata: Metadata = {
     },
 };
 
+
+const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Početna',
+            item: 'https://slaufismrk.com/',
+        },
+        {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Blog',
+            item: 'https://slaufismrk.com/blog',
+        },
+        {
+            '@type': 'ListItem',
+            position: 3,
+            name: 'Pranje fasade stiropor i ETICS',
+            item: 'https://slaufismrk.com/blog/pranje-fasade-stiropor-etics',
+        }
+    ],
+};
+
 export default function BlogArticle() {
     const articleSchema = {
         '@context': 'https://schema.org',
@@ -25,6 +51,7 @@ export default function BlogArticle() {
         publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         datePublished: '2026-05-26',
         dateModified: '2026-05-26',
+        image: 'https://slaufismrk.com/prije-poslje/fasada-poslje.png',
     };
 
     const faqSchema = {
@@ -87,6 +114,10 @@ export default function BlogArticle() {
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
             />
             <script
                 type="application/ld+json"
@@ -195,7 +226,9 @@ export default function BlogArticle() {
                         <p>
                             Svaki posao počinje pregledom fasade. Provjerimo debljinu završnog sloja, stupanj
                             zaraženosti algama ili gljivicama i stanje u kritičnim zonama oko olukovnih cijevi
-                            i prozorskih klupica gdje se vlaga najdulje zadržava.
+                            i prozorskih klupica gdje se vlaga najdulje zadržava. Više o pristupu i cijenama
+                            pogledajte na stranici o{' '}
+                            <Link href="/usluge/pranje-fasade">pranju fasade u Zagrebu</Link>.
                         </p>
                         <p>
                             Biocidno sredstvo koje koristimo certificirano je za primjenu na ETICS sustavima.

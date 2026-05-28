@@ -15,9 +15,102 @@ export const metadata: Metadata = {
     },
 };
 
+
+
+const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+        {
+            '@type': 'Question',
+            name: "Koliko košta čišćenje grobnog mjesta?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Jednokratno čišćenje kreće od 200 € (jednostruki grob) i od 300 € (dvostruki grob ili grobnica). Poliranje kamena od 150 €, impregnacija od 50 €. Konačna cijena ovisi o veličini, vrsti kamena i zaprljanosti. Predujam za rezervaciju je 30%, ostatak plaćate tek nakon fotografija rezultata.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Kako se rezervira termin?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Javite nam se s lokacijom grobnog mjesta (groblje, polje, red, broj). Ubacujemo vas na listu za to groblje i kontaktiramo vas čim termin bude zakazan. Termin se zakazuje kada se skupi minimalno 10 grobnih mjesta na istom groblju.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Mogu li sam odabrati datum čišćenja?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Datume ne možete slobodno birati jer čišćenje organiziramo grupno po groblju. Odlazimo kada imamo 10+ prijavljenih. Standardni rok: 1 do 3 tjedna. Za posebne datume (godišnjice, blagdani) dogovorite se unaprijed.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Trebam li biti prisutan na groblju?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Ne, ne trebate. Samo nam dostavite lokaciju grobnog mjesta. Nakon čišćenja šaljemo vam fotografije kao potvrdu obavljenog posla.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Zašto plaćam 30% unaprijed?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Predujam (30%) osigurava vaše mjesto na listi i potvrđuje rezervaciju. Izlazimo na teren kada skupimo 10+ rezervacija, tako možemo držati cijene pristupačnima. Ostatak plaćate tek nakon što dobijete fotografije rezultata.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Mogu li dodati poliranje ili impregnaciju?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Da. Poliranje vraća sjaj mramoru i granitu (od 150 €). Impregnacija štiti kamen 2–3 godine od mahovine, vode i prljavštine (od 50 €). To su dodatne usluge uz nadoplatu uz čišćenje.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Hoće li čišćenje oštetiti natpise ili fotografije na spomeniku?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Ne, koristimo niski tlak i pažljiv pristup prilagođen vrsti kamena. Natpise i fotografije tretiramo izuzetno nježno, ručno.",
+            },
+        }
+    ],
+};
+
+const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Početna',
+            item: 'https://slaufismrk.com/',
+        },
+        {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Održavanje grobnih mjesta',
+            item: 'https://slaufismrk.com/usluge/odrzavanje-grobnih-mjesta',
+        }
+    ],
+};
+
 export default function GrobnaMjestaPage() {
     return (
-        <ServicePage
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+            />
+            <ServicePage
             title="Održavanje Grobnih Mjesta"
             titleHighlight="Grobnih Mjesta"
             canonicalPath="/usluge/odrzavanje-grobnih-mjesta"
@@ -203,5 +296,6 @@ export default function GrobnaMjestaPage() {
                 { title: 'Pranje bazena', href: '/usluge/pranje-bazena', icon: <Waves size={18} /> },
             ]}
         />
+        </>
     );
 }

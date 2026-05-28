@@ -15,6 +15,82 @@ export const metadata: Metadata = {
     },
 };
 
+
+
+const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+        {
+            '@type': 'Question',
+            name: "Koliko košta kemijsko čišćenje garniture?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Cijena garniture (trosjed+dvosjed+fotelja) kreće se od 80 €. Točna cijena ovisi o veličini i materijalu. Besplatna procjena.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Koliko dugo traje sušenje nakon čišćenja?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Garnitura se suši 4–6 sati, tepisi 6–8 sati. Preporučujemo čišćenje ujutro kako bi namještaj bio suh do večeri.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Mogu li se sve mrlje ukloniti?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Većina mrlja se potpuno uklanja. Starije, trajne mrlje (npr. od boje ili kemikalija) ne mogu se uvijek potpuno ukloniti, ali ih značajno smanjujemo.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Je li kemijsko čišćenje sigurno za kožni namještaj?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Da, koristimo specijalizirana sredstva za kožu koja čiste i hidratiziraju bez oštećivanja materijala.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Dolazite li na moju adresu?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Da! Kompletnu uslugu obavljamo na vašoj adresi u Zagrebu i okolici. Ne trebate nositi namještaj nikuda.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Koliko često trebam čistiti tepih?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Preporučujemo dubinsko čišćenje svakih 6–12 mjeseci, ovisno o korištenju. Obitelji s kućnim ljubimcima trebaju češće čišćenje.",
+            },
+        }
+    ],
+};
+
+const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Početna',
+            item: 'https://slaufismrk.com/',
+        },
+        {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Kemijsko čišćenje namještaja',
+            item: 'https://slaufismrk.com/usluge/kemijsko-ciscenje-namjestaja',
+        }
+    ],
+};
+
 export default function KemijskoCiscenjePage() {
     return (
         <ServicePage

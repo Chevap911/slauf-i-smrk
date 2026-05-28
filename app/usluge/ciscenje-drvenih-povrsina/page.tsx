@@ -15,6 +15,82 @@ export const metadata: Metadata = {
     },
 };
 
+
+
+const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+        {
+            '@type': 'Question',
+            name: "Hoće li visokotlačno pranje oštetiti drvo?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Ne, koristimo kalibrirani niski tlak (60–80 bar) i mekanu četku. To je dovoljno za uklanjanje prljavštine, ali nježno za drvena vlakna.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Koliko košta čišćenje drvene terase?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Cijena za čišćenje drvenih površina najčešće se kreće od 5 do 8 €/m², ovisno o vrsti drva, stanju i zaprljanosti. Besplatna procjena na licu mjesta.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Trebam li nauljivati drvo nakon čišćenja?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Preporučujemo nauljivanje ili lazuriranje unutar 48 sati od čišćenja. To značajno produžuje vijek trajanja i izgled drva.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Čistite li i WPC terase?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Da, WPC (drvo-plastični kompoziti) čistimo prilagođenim tlakom. WPC zahtijeva manje održavanja od prirodnog drva.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Koja je razlika između čišćenja i brušenja drva?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Čišćenje ne skida sloj materijala, već samo uklanja prljavštinu i vraća boju. Brže je, jeftinije i manje invazivno od brušenja.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Koliko često trebam čistiti drvenu terasu?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Preporučujemo jednom godišnje, idealno u proljeće. Redovitim održavanjem terasa može trajati 15–20+ godina.",
+            },
+        }
+    ],
+};
+
+const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Početna',
+            item: 'https://slaufismrk.com/',
+        },
+        {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Čišćenje drvenih površina',
+            item: 'https://slaufismrk.com/usluge/ciscenje-drvenih-povrsina',
+        }
+    ],
+};
+
 export default function DrvenePovrsinePage() {
     return (
         <ServicePage

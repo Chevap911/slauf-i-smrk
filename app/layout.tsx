@@ -54,7 +54,7 @@ export const metadata: Metadata = {
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "CleaningService",
   "@id": "https://slaufismrk.com/#business",
   name: "Šlauf i Šmrk",
   description:
@@ -81,6 +81,11 @@ const localBusinessSchema = {
     addressLocality: "Zagreb",
     addressCountry: "HR",
   },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 45.815,
+    longitude: 15.9819,
+  },
   priceRange: "€€",
   hasOfferCatalog: {
     "@type": "OfferCatalog",
@@ -98,8 +103,40 @@ const localBusinessSchema = {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Pranje okućnice i prilaza",
+          name: "Pranje okućnice i dvorišta",
           url: "https://slaufismrk.com/usluge/pranje-okucnice",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Pranje terasa",
+          url: "https://slaufismrk.com/usluge/pranje-terasa",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Pranje tlakavaca",
+          url: "https://slaufismrk.com/usluge/pranje-tlakavaca",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Pranje prilaza",
+          url: "https://slaufismrk.com/usluge/pranje-prilaza",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Kemijsko čišćenje namještaja",
+          url: "https://slaufismrk.com/usluge/kemijsko-ciscenje-namjestaja",
         },
       },
       {
@@ -110,7 +147,60 @@ const localBusinessSchema = {
           url: "https://slaufismrk.com/usluge/ciscenje-kamenih-povrsina",
         },
       },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Čišćenje drvenih površina",
+          url: "https://slaufismrk.com/usluge/ciscenje-drvenih-povrsina",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Detailing automobila",
+          url: "https://slaufismrk.com/usluge/detailing-automobila",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Pranje bazena",
+          url: "https://slaufismrk.com/usluge/pranje-bazena",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Održavanje grobnih mjesta",
+          url: "https://slaufismrk.com/usluge/odrzavanje-grobnih-mjesta",
+        },
+      },
     ],
+  },
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://slaufismrk.com/#organization",
+  name: "Šlauf i Šmrk",
+  url: "https://slaufismrk.com",
+  logo: {
+    "@type": "ImageObject",
+    url: "https://slaufismrk.com/icon.svg",
+    contentUrl: "https://slaufismrk.com/icon.svg",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+385958442806",
+    email: "slauf.i.smrk@gmail.com",
+    contactType: "customer service",
+    areaServed: "HR",
+    availableLanguage: "Croatian",
   },
 };
 
@@ -145,6 +235,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
       </head>
       <body>

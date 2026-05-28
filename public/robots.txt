@@ -2,8 +2,5 @@ User-agent: *
 Allow: /
 Disallow: /admin
 Disallow: /api/
-Disallow: /gallery/
-Disallow: /shop/
-Disallow: /category/
 
 Sitemap: https://slaufismrk.com/sitemap.xml

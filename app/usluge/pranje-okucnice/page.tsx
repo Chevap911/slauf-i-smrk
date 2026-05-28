@@ -47,12 +47,144 @@ const serviceOfferSchema = {
     },
 };
 
+
+
+const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+        {
+            '@type': 'Question',
+            name: "Koliko košta čišćenje okućnice u Zagrebu?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Cijena ovisi o kvadraturi i materijalu. Okvirni raspon je od 4 €/m². Za okućnicu od 100 m² to je okvirno od 200 €. Točna cijena ovisi o stanju površine — nudimo procjenu na lokaciji.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Hoće li visokotlačno pranje oštetiti betonske kocke?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Ne. Koristimo kalibrirani tlak i rotirajuću četku koja ravnomjerno čisti bez oštećenja. Imamo iskustvo sa svim tipovima podloga.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Koliko često trebam čistiti okućnicu?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Preporučujemo profesionalno čišćenje jednom godišnje, idealno u proljeće nakon zime. Okućnice u sjeni i poslovni ulazi trebaju češće čišćenje.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Možete li ukloniti mrlje od ulja?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Da, koristimo specijalne odmašćivače za uljne mrlje na betonu i betonskim kockama. Starije mrlje mogu zahtijevati više tretmana.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Trebam li osigurati vodu za čišćenje?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Da, najčešće se spajamo na vaš priključak za vodu i trebamo pristup struji. Profesionalnu opremu i sredstva donosimo mi.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Čistite li i stepenice i rubnjake?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Da, čistimo kompletnu okućnicu uključujući stepenice, rubnjake, žardinjere i rubove uz objekt.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Radite li čišćenje većih okućnica i poslovnih objekata?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Da. Osim privatnih dvorišta i prilaza, čistimo veće vanjske površine, ulaze u objekte, parkirna mjesta, terase lokala i okućnice poslovnih prostora. Za veće površine dolazimo na procjenu.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Možete li očistiti parkiralište ili ulaz u poslovni prostor?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Da. Čistimo manje i srednje parkirne površine, garažne prilaze, ulaze, stepenice i betonske površine oko poslovnih objekata. Kod jačih uljnih mrlja procjenjujemo stanje jer starije mrlje mogu zahtijevati više tretmana.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Koliko traje pranje okućnice?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Manje okućnice, prilazi i terase često se mogu očistiti u jednom danu. Veće površine ili jače zaprljanje mogu zahtijevati više vremena, što procjenjujemo prije početka radova.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Može li se pranje okućnice kombinirati s pranjem fasade?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Da. To je često najbolji izbor jer se u istom terminu može osvježiti cijeli vanjski izgled objekta: fasada, dvorište, terasa, tlakavci i stepenice.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Radite li sezonsko ili periodično održavanje?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Da, za veće privatne objekte, apartmane, lokale i poslovne prostore možemo dogovoriti sezonsko čišćenje jednom ili više puta godišnje.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Uklanjate li korov iz fuga?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Uklanjamo površinski korov, mahovinu i naslage iz fuga tijekom čišćenja. Ako su fuge jako oštećene ili prazne, nakon pranja može biti potrebno ponovno fugiranje.",
+            },
+        }
+    ],
+};
+
+const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Početna',
+            item: 'https://slaufismrk.com/',
+        },
+        {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Pranje okućnice',
+            item: 'https://slaufismrk.com/usluge/pranje-okucnice',
+        }
+    ],
+};
+
 export default function PranjeOkucnicePage() {
     return (
         <>
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceOfferSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
             />
             <ServicePage
                 title="Pranje okućnice i prilaza u Zagrebu"

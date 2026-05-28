@@ -23,6 +23,74 @@ export const metadata: Metadata = {
     },
 };
 
+
+
+const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+        {
+            '@type': 'Question',
+            name: "Koliko košta pranje tlakavaca u Zagrebu?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Okvirna cijena za pranje tlakavaca kreće se od od 4 €/m², a konačna ponuda ovisi o kvadraturi, stanju fuga i prisutnosti korova ili mrlja.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Uključuje li pranje tlakavaca i ponovno fugiranje pijeskom?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Osnovno pranje ne uključuje automatski ponovno fugiranje, ali ga možemo preporučiti i dogovoriti kao dodatnu stavku kad je potrebno.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Mogu li mrlje od ulja potpuno nestati?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "To ovisi o starosti mrlje i koliko je duboko ušla u podlogu. Često ih možemo značajno smanjiti, a svježe mrlje uklanjaju se puno uspješnije.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Koliko često treba prati tlakavce?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Najčešće jednom godišnje, a na sjenovitim i vlažnim lokacijama i češće, posebno ako se korov brzo vraća u fuge.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Čistite li i manje terase s betonskim kockama?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Da. Radimo i manje terase, dvorišta i okućnice ako postoji smislen pristup i ako je rezultat vrijedan zahvata.",
+            },
+        }
+    ],
+};
+
+const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Početna',
+            item: 'https://slaufismrk.com/',
+        },
+        {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Pranje tlakavaca',
+            item: 'https://slaufismrk.com/usluge/pranje-tlakavaca',
+        }
+    ],
+};
+
 export default function PranjeTlakavacaPage() {
     return (
         <ServicePage

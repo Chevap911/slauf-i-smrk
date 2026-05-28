@@ -15,6 +15,32 @@ export const metadata: Metadata = {
     },
 };
 
+
+const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Početna',
+            item: 'https://slaufismrk.com/',
+        },
+        {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Blog',
+            item: 'https://slaufismrk.com/blog',
+        },
+        {
+            '@type': 'ListItem',
+            position: 3,
+            name: 'Koliko košta pranje fasade',
+            item: 'https://slaufismrk.com/blog/koliko-kosta-pranje-fasade',
+        }
+    ],
+};
+
 export default function BlogArticle() {
     const articleSchema = {
         '@context': 'https://schema.org',
@@ -25,6 +51,7 @@ export default function BlogArticle() {
         publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         datePublished: '2026-02-26',
         dateModified: '2026-04-21',
+        image: 'https://slaufismrk.com/prije-poslje/fasada-poslje.png',
     };
 
     return (
@@ -32,6 +59,10 @@ export default function BlogArticle() {
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
             />
 
             <article className={styles.article}>

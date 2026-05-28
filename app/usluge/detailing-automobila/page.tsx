@@ -15,6 +15,74 @@ export const metadata: Metadata = {
     },
 };
 
+
+
+const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+        {
+            '@type': 'Question',
+            name: "Mogu li naručiti samo pranje auta bez druge usluge?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Možete, ali cijena uključuje poseban dolazak. Puno isplativije je dogovoriti auto uz dolazak za pranje fasade, okućnice ili neku drugu uslugu.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Koliko traje čišćenje automobila?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Vanjsko pranje traje sat do sat i pol. Kemijsko čišćenje sjedala + interijer 2 do 3 sata, ovisno o stanju vozila.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Čistite li i kožne interijere?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Da, koristimo specijalizirana sredstva za kožu koja čiste bez oštećivanja materijala.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Je li kemijsko čišćenje sjedala sigurno za tkaninu?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Da. Koristimo istu opremu i sredstva kao za kemijsko čišćenje namještaja u kući. Prilagođavamo tlak i sredstvo prema vrsti materijala.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Dolazite li i van Zagreba?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Da, pokrivamo cijelo područje Grada Zagreba i bližu okolicu. Pranje auta dogovaramo uz dolazak za drugu uslugu.",
+            },
+        }
+    ],
+};
+
+const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Početna',
+            item: 'https://slaufismrk.com/',
+        },
+        {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Detailing automobila',
+            item: 'https://slaufismrk.com/usluge/detailing-automobila',
+        }
+    ],
+};
+
 export default function DetailingAutoPage() {
     return (
         <ServicePage

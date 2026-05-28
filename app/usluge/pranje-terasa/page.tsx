@@ -23,6 +23,26 @@ export const metadata: Metadata = {
     },
 };
 
+
+const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Početna',
+            item: 'https://slaufismrk.com/',
+        },
+        {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Pranje terasa',
+            item: 'https://slaufismrk.com/usluge/pranje-terasa',
+        }
+    ],
+};
+
 export default function PranjeTerasaPage() {
     const faqSchema = {
         '@context': 'https://schema.org',
@@ -77,6 +97,10 @@ export default function PranjeTerasaPage() {
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+            />
         <ServicePage
             title="Pranje terasa u Zagrebu"
             titleHighlight="terasa"

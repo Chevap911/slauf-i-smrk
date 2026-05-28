@@ -18,6 +18,32 @@ export const metadata: Metadata = {
     },
 };
 
+
+const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Početna',
+            item: 'https://slaufismrk.com/',
+        },
+        {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Blog',
+            item: 'https://slaufismrk.com/blog',
+        },
+        {
+            '@type': 'ListItem',
+            position: 3,
+            name: '5 znakova da fasadi treba pranje',
+            item: 'https://slaufismrk.com/blog/znakovi-da-fasadi-treba-pranje',
+        }
+    ],
+};
+
 export default function BlogArticle() {
     const articleSchema = {
         '@context': 'https://schema.org',
@@ -30,6 +56,7 @@ export default function BlogArticle() {
         publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         datePublished: '2026-04-13',
         dateModified: '2026-04-13',
+        image: 'https://slaufismrk.com/blog/fasada-poslije-pranja.png',
         mainEntityOfPage: {
             '@type': 'WebPage',
             '@id': 'https://slaufismrk.com/blog/znakovi-da-fasadi-treba-pranje',
@@ -80,6 +107,10 @@ export default function BlogArticle() {
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
             />
             <script
                 type="application/ld+json"

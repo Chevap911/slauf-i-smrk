@@ -47,12 +47,144 @@ const serviceOfferSchema = {
     },
 };
 
+
+
+const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+        {
+            '@type': 'Question',
+            name: "Koliko košta visokotlačno pranje fasade?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Cijena ovisi o površini i stupnju zaprljanosti. Okvirni raspon je od 5 €/m². Za fasadu od 200 m² to je okvirno od 1.000 €. Za točnu cijenu dolazimo na procjenu lokacije.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Hoće li visokotlačno pranje oštetiti moju fasadu?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Ne, koristimo profesionalnu opremu s prilagodljivim tlakom. ETICS fasade tretiramo nižim tlakom od žbukanih ili kamenih. Svaki tip fasade procjenjujemo individualno.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Koliko često trebam prati fasadu?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Preporučujemo pranje svake 2–3 godine, ovisno o položaju objekta i izloženosti vlazi. Sjevernije strane i objekti u sjeni drveća obično trebaju češće čišćenje.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Koje dijelove Zagreba pokrivate?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Pokrivamo cijeli Zagreb i bližu okolicu — Špansko, Jarun, Trešnjevku, Maksimir, Dubravu, Sesvete, kao i Veliku Goricu, Samobor i Zaprešić.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Trebam li nešto pripremiti prije vašeg dolaska?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Najvažnije je da imamo slobodan pristup fasadi te priključak za vodu i struju. Ostalu opremu i sredstva donosimo mi.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Mogu li kombinirati pranje fasade s drugim uslugama?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Da. Većina klijenata kombinira pranje fasade s čišćenjem okućnice, tlakavaca ili kamenih površina. Nudimo paketne cijene za kombinirane usluge u jednom terminu.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Radite li pranje fasada na poslovnim objektima i zgradama?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Da. Radimo kuće, manje zgrade, poslovne prostore i veće objekte, ovisno o pristupu i sigurnim uvjetima rada. Za veće fasade dolazimo na procjenu i dogovaramo izvedbu prema površini i složenosti objekta.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Možete li oprati fasadu od 300 m² ili više?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Da, veće fasade procjenjujemo individualno. Kod takvih objekata gledamo pristup, visinu, vrstu fasade, stupanj zaprljanosti i mogućnost kombiniranja s pranjem okućnice, prilaza ili terasa.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Perete li ETICS fasade?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Da, ali takve fasade zahtijevaju pažljiv pristup. Ne koristi se isti tlak za svaku površinu — tlak i sredstva prilagođavamo stanju fasade kako bismo smanjili rizik od oštećenja.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Skida li pranje fasade alge i mahovinu?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Da, uklanjamo zelene naslage, mahovinu, gljivice i tamne tragove koji se najčešće pojavljuju na vlažnim i sjenovitim stranama objekta.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Treba li mi voda i struja na lokaciji?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Najčešće nam treba pristup vodi i struji. Ako uvjeti nisu standardni, najlakše je poslati slike i osnovne informacije pa ćemo reći što je potrebno za izvedbu.",
+            },
+        },
+        {
+            '@type': 'Question',
+            name: "Radite li izvan Zagreba?",
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Da, za veće objekte i komercijalne poslove izlazimo i izvan Zagrebačke županije, ovisno o veličini i isplativosti posla.",
+            },
+        }
+    ],
+};
+
+const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Početna',
+            item: 'https://slaufismrk.com/',
+        },
+        {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Pranje fasade',
+            item: 'https://slaufismrk.com/usluge/pranje-fasade',
+        }
+    ],
+};
+
 export default function PranjeFasadePage() {
     return (
         <>
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceOfferSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
             />
             <ServicePage
                 title="Pranje fasade u Zagrebu"
