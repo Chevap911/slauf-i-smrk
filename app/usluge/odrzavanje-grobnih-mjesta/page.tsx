@@ -180,7 +180,6 @@ export default function GrobnaMjestaPage() {
                         <li><strong>Jednokratno čišćenje (dvostruki grob / grobnica)</strong>: od 300 €</li>
                         <li><strong>Poliranje kamena</strong> (vraćamo sjaj mramoru i granitu): od 150 €</li>
                         <li><strong>Impregnacija</strong> (zaštitni premaz, grob ostaje čist 2–3 godine): od 50 €</li>
-                        <li><strong>Redovito održavanje</strong> (4× godišnje): po dogovoru, do 20% popust</li>
                         <li><strong>Predujam za rezervaciju</strong>: 30% (ostatak plaćate tek nakon fotografija rezultata)</li>
                     </ul>
 

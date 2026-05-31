@@ -274,9 +274,6 @@ export default function LandingPageClient() {
                                 <td>od 50 €</td>
                             </tr>
                             <tr>
-                                <td>Redovito održavanje 4× godišnje</td>
-                                <td>po dogovoru, do 20% popust</td>
-                            </tr>
                             <tr>
                                 <td>Predujam za rezervaciju</td>
                                 <td>30%</td>

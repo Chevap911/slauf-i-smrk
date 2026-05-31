@@ -364,9 +364,6 @@ export default function BlogArticle() {
                                     Ispunite formu za procjenu <ArrowRight size={16} />
                                 </Link>
                             </div>
-                            <span className={styles.ctaDiscount}>
-                                15% popusta na prvo čišćenje
-                            </span>
                         </div>
                     </div>
                 </div>

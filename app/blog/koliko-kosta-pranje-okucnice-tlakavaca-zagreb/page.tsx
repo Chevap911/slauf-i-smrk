@@ -335,9 +335,6 @@ export default function BlogArticle() {
                             Nema skrivenih troškova ni iznenađenja. Dolazimo na besplatnu procjenu, vidimo stanje, dajemo točnu cijenu.
                             Ako se dogovorimo — super. Ako ne — nema frke.
                         </p>
-                        <p className={styles.discount}>
-                            🎉 <strong>Za prve klijente: 15% popusta na prvo čišćenje.</strong>
-                        </p>
 
                         <div className={styles.ctaBox}>
                             <h3>Zatražite besplatnu procjenu</h3>
