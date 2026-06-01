@@ -41,8 +41,8 @@ const serviceOfferSchema = {
     offers: {
         '@type': 'AggregateOffer',
         priceCurrency: 'EUR',
-        lowPrice: '4',
-        highPrice: '6',
+        lowPrice: '5',
+        highPrice: '7',
         unitText: 'm2',
     },
 };
@@ -82,7 +82,7 @@ const faqSchema = {
             name: "Koje dijelove Zagreba pokrivate?",
             acceptedAnswer: {
                 '@type': 'Answer',
-                text: "Pokrivamo cijeli Zagreb i bližu okolicu — Špansko, Jarun, Trešnjevku, Maksimir, Dubravu, Sesvete, kao i Veliku Goricu, Samobor i Zaprešić.",
+                text: "Pokrivamo cijeli Zagreb i bližu okolicu, Špansko, Jarun, Trešnjevku, Maksimir, Dubravu, Sesvete, kao i Veliku Goricu, Samobor i Zaprešić.",
             },
         },
         {
@@ -122,7 +122,7 @@ const faqSchema = {
             name: "Perete li ETICS fasade?",
             acceptedAnswer: {
                 '@type': 'Answer',
-                text: "Da, ali takve fasade zahtijevaju pažljiv pristup. Ne koristi se isti tlak za svaku površinu — tlak i sredstva prilagođavamo stanju fasade kako bismo smanjili rizik od oštećenja.",
+                text: "Da, ali takve fasade zahtijevaju pažljiv pristup. Ne koristi se isti tlak za svaku površinu, tlak i sredstva prilagođavamo stanju fasade kako bismo smanjili rizik od oštećenja.",
             },
         },
         {
@@ -247,10 +247,10 @@ export default function PranjeFasadePage() {
                             Naš tim ima iskustvo s <strong>raznim tipovima fasada</strong> koje se koriste u Hrvatskoj:
                         </p>
                         <ul>
-                            <li><strong>Žbukana fasada</strong> — najčešći tip u Zagrebu. Zahtijeva pažljivo podešavanje tlaka da se ne ošteti sloj žbuke.</li>
-                            <li><strong>Stiropor (ETICS) fasada</strong> — termoizolacijski sustav zahtijeva posebnu pažnju i prilagođen tlak. Ne tretiramo ga na isti način kao beton ili kamen.</li>
-                            <li><strong>Kamena fasada</strong> — prirodni kamen, travertin, obložni kamen. Za dublje čišćenje kamena pogledajte našu uslugu <Link href="/usluge/ciscenje-kamenih-povrsina">čišćenja kamenih površina</Link>.</li>
-                            <li><strong>Drvena fasada</strong> — oblaganje drvenim daskama zahtijeva niži tlak i specijalna sredstva. Više na stranici <Link href="/usluge/ciscenje-drvenih-povrsina">čišćenja drvenih površina</Link>.</li>
+                            <li><strong>Žbukana fasada</strong>, najčešći tip u Zagrebu. Zahtijeva pažljivo podešavanje tlaka da se ne ošteti sloj žbuke.</li>
+                            <li><strong>Stiropor (ETICS) fasada</strong>, termoizolacijski sustav zahtijeva posebnu pažnju i prilagođen tlak. Ne tretiramo ga na isti način kao beton ili kamen.</li>
+                            <li><strong>Kamena fasada</strong>, prirodni kamen, travertin, obložni kamen. Za dublje čišćenje kamena pogledajte našu uslugu <Link href="/usluge/ciscenje-kamenih-povrsina">čišćenja kamenih površina</Link>.</li>
+                            <li><strong>Drvena fasada</strong>, oblaganje drvenim daskama zahtijeva niži tlak i specijalna sredstva. Više na stranici <Link href="/usluge/ciscenje-drvenih-povrsina">čišćenja drvenih površina</Link>.</li>
                         </ul>
 
                         <h2>Koliko košta pranje fasade?</h2>
@@ -288,7 +288,7 @@ export default function PranjeFasadePage() {
                             vodiču <Link href="/blog/koliko-kosta-pranje-fasade">koliko košta pranje fasade u Zagrebu</Link>.
                         </p>
 
-                        <h2>Radimo fasade svih veličina — od kuća do poslovnih objekata</h2>
+                        <h2>Radimo fasade svih veličina, od kuća do poslovnih objekata</h2>
                         <p>
                             Radimo fasade obiteljskih kuća, manjih zgrada, poslovnih prostora i većih objekata, ovisno o
                             pristupu i sigurnim uvjetima rada. Za veće komercijalne objekte dolazimo na procjenu i
@@ -316,7 +316,7 @@ export default function PranjeFasadePage() {
                             Ako želite kompletno osvježiti izgled nekretnine, fasadu možemo kombinirati s{' '}
                             <Link href="/usluge/pranje-okucnice">pranjem tlakavaca, okućnice</Link>, prilaza, terasa,
                             stepenica i kamenih površina. Ovo je najčešći izbor kod kuća, vila, poslovnih prostora i
-                            objekata koji žele jak prije/poslije rezultat u jednom terminu — bez dodatnih termina i
+                            objekata koji žele jak prije/poslije rezultat u jednom terminu, bez dodatnih termina i
                             organizacije. Za kombinirane usluge nudimo paketne cijene.
                         </p>
                         <p>
@@ -329,10 +329,10 @@ export default function PranjeFasadePage() {
                             nekoliko faktora:
                         </p>
                         <ul>
-                            <li><strong>Orijentacija objekta</strong> — sjevernije strane brže akumuliraju mahovinu i alge jer dobivaju manje sunca.</li>
-                            <li><strong>Blizina drveća</strong> — objekti u sjeni drveća trebaju češće čišćenje.</li>
-                            <li><strong>Lokacija</strong> — objekti uz prometnice izloženiji su čaði i prašini.</li>
-                            <li><strong>Boja fasade</strong> — svijetle fasade brže pokazuju prljavštinu.</li>
+                            <li><strong>Orijentacija objekta</strong>, sjevernije strane brže akumuliraju mahovinu i alge jer dobivaju manje sunca.</li>
+                            <li><strong>Blizina drveća</strong>, objekti u sjeni drveća trebaju češće čišćenje.</li>
+                            <li><strong>Lokacija</strong>, objekti uz prometnice izloženiji su čaði i prašini.</li>
+                            <li><strong>Boja fasade</strong>, svijetle fasade brže pokazuju prljavštinu.</li>
                         </ul>
 
                         <h2>Je li fasadu bolje oprati ili bojati?</h2>
@@ -381,12 +381,12 @@ export default function PranjeFasadePage() {
 
                         <h2>Zašto klijenti biraju Šlauf i Šmrk za pranje fasade?</h2>
                         <ul>
-                            <li><strong>Stvarne prije/poslije fotografije</strong> — pokazujemo rezultate naših izvedbi, ne stock fotografije</li>
-                            <li><strong>Procjena prije početka</strong> — nema rada napamet ni nejasne cijene</li>
-                            <li><strong>Prilagođen tlak za tip fasade</strong> — ne tretiramo ETICS kao beton</li>
-                            <li><strong>Brz odgovor na upite</strong> — odgovaramo u najkraćem roku</li>
-                            <li><strong>Mogućnost paketne usluge</strong> — fasada, okućnica, prilaz i terasa u jednom terminu</li>
-                            <li><strong>Zagreb i okolica</strong> — za veće objekte moguć dogovor i izvan županije</li>
+                            <li><strong>Stvarne prije/poslije fotografije</strong>, pokazujemo rezultate naših izvedbi, ne stock fotografije</li>
+                            <li><strong>Procjena prije početka</strong>, nema rada napamet ni nejasne cijene</li>
+                            <li><strong>Prilagođen tlak za tip fasade</strong>, ne tretiramo ETICS kao beton</li>
+                            <li><strong>Brz odgovor na upite</strong>, odgovaramo u najkraćem roku</li>
+                            <li><strong>Mogućnost paketne usluge</strong>, fasada, okućnica, prilaz i terasa u jednom terminu</li>
+                            <li><strong>Zagreb i okolica</strong>, za veće objekte moguć dogovor i izvan županije</li>
                         </ul>
                     </>
                 }
@@ -449,7 +449,7 @@ export default function PranjeFasadePage() {
                     },
                     {
                         question: 'Koje dijelove Zagreba pokrivate?',
-                        answer: 'Pokrivamo cijeli Zagreb i bližu okolicu — Špansko, Jarun, Trešnjevku, Maksimir, Dubravu, Sesvete, kao i Veliku Goricu, Samobor i Zaprešić.',
+                        answer: 'Pokrivamo cijeli Zagreb i bližu okolicu, Špansko, Jarun, Trešnjevku, Maksimir, Dubravu, Sesvete, kao i Veliku Goricu, Samobor i Zaprešić.',
                     },
                     {
                         question: 'Trebam li nešto pripremiti prije vašeg dolaska?',
@@ -469,7 +469,7 @@ export default function PranjeFasadePage() {
                     },
                     {
                         question: 'Perete li ETICS fasade?',
-                        answer: 'Da, ali takve fasade zahtijevaju pažljiv pristup. Ne koristi se isti tlak za svaku površinu — tlak i sredstva prilagođavamo stanju fasade kako bismo smanjili rizik od oštećenja.',
+                        answer: 'Da, ali takve fasade zahtijevaju pažljiv pristup. Ne koristi se isti tlak za svaku površinu, tlak i sredstva prilagođavamo stanju fasade kako bismo smanjili rizik od oštećenja.',
                     },
                     {
                         question: 'Skida li pranje fasade alge i mahovinu?',

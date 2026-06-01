@@ -79,7 +79,7 @@ export default function BlogArticle() {
                 name: 'Koliko košta čišćenje terasa u Zagrebu?',
                 acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'Cijena čišćenja terasa u Zagrebu kreće se od od 200 € za terase do 100 m², ovisno o materijalu i stupnju zaprljanosti. Drvene terase su nešto skuplje (5-8 €/m²) zbog posebnog tretmana.',
+                    text: 'Cijena čišćenja terasa u Zagrebu kreće se od 200 € za terase do 100 m², ovisno o materijalu i stupnju zaprljanosti. Drvene terase su nešto skuplje (6-8 €/m²) zbog posebnog tretmana.',
                 },
             },
             {
@@ -131,7 +131,7 @@ export default function BlogArticle() {
                     <div className={styles.content}>
                         <p>
                             Zeleni sloj na rubu pločice. Crne pruge u fugama. Terasa koja je bila svijetla, a sad izgleda kao da
-                            nikad nije ni bila čista. To nisu kozmetički problemi -- to su alge, mahovina i biofilm koji rastu
+                            nikad nije ni bila čista. To nisu kozmetički problemi, to su alge, mahovina i biofilm koji rastu
                             svake sezone i jedini način da ih se stvarno riješi je profesionalno čišćenje terasa.
                         </p>
                         <p>
@@ -149,11 +149,11 @@ export default function BlogArticle() {
                             Najčešći problemi koje vidimo na terasama u Zagrebu i okolici:
                         </p>
                         <ul>
-                            <li><strong>Zelene alge</strong> -- tanki sloj koji se javlja na svim vrstama podloge, posebno u sjeni i uz zidove</li>
-                            <li><strong>Mahovina</strong> -- raste u vlažnijim fugama i na sjenovitim dijelovima, puno teže se uklanja od algi</li>
-                            <li><strong>Crni biofilm</strong> -- kombinacija bakterija, gljivica i prašine koja se taloži u porama materijala</li>
-                            <li><strong>Naslage od grila i hrane</strong> -- masne mrlje koje privlače dodatnu prljavštinu</li>
-                            <li><strong>Vapnenačke naslage</strong> -- bijeli talog od kišnice na tamnim pločicama</li>
+                            <li><strong>Zelene alge</strong>, tanki sloj koji se javlja na svim vrstama podloge, posebno u sjeni i uz zidove</li>
+                            <li><strong>Mahovina</strong>, raste u vlažnijim fugama i na sjenovitim dijelovima, puno teže se uklanja od algi</li>
+                            <li><strong>Crni biofilm</strong>, kombinacija bakterija, gljivica i prašine koja se taloži u porama materijala</li>
+                            <li><strong>Naslage od grila i hrane</strong>, masne mrlje koje privlače dodatnu prljavštinu</li>
+                            <li><strong>Vapnenačke naslage</strong>, bijeli talog od kišnice na tamnim pločicama</li>
                         </ul>
 
                         <h2>Zašto kućni perač ne rješava problem</h2>
@@ -222,7 +222,7 @@ export default function BlogArticle() {
 
                         <h3>Drvene i WPC terase</h3>
                         <p>
-                            Drvo je jedini materijal na kojem visoki tlak radikalno šteti -- otvara vlakna i ubrzava
+                            Drvo je jedini materijal na kojem visoki tlak radikalno šteti, otvara vlakna i ubrzava
                             propadanje. Za drvene terase i WPC podloge koristimo poseban pristup s niskim tlakom i
                             specijalnim sredstvima za drvo. Detalje o tome nalazite na stranici{' '}
                             <Link href="/usluge/ciscenje-drvenih-povrsina">čišćenja drvenih površina</Link>.
@@ -235,7 +235,7 @@ export default function BlogArticle() {
                         </p>
                         <p>
                             Naslage se vraćaju brže ako fuge ostanu prazne nakon pranja. Preporučujemo fugiranje kvarcnim
-                            pijeskom uz svako veće čišćenje -- to je zaštitni sloj koji usporava rast algi i mahovine.
+                            pijeskom uz svako veće čišćenje, to je zaštitni sloj koji usporava rast algi i mahovine.
                         </p>
 
                         <h2>Čišćenje terase kao dio uređenja okućnice</h2>
@@ -256,7 +256,7 @@ export default function BlogArticle() {
                         <p>
                             Predtretmanom biorazgradivim sredstvom koji omekšava naslage, potom visokotlačnim pranjem
                             rotacijskim surface cleanerom. Kućni aparat može ukloniti gornji sloj, ali ne uništava
-                            korijen u fugama -- zato se alge brzo vraćaju.
+                            korijen u fugama, zato se alge brzo vraćaju.
                         </p>
 
                         <h3>Koliko traje čišćenje terase?</h3>

@@ -89,7 +89,7 @@ export default function DetailingAutoPage() {
             title="Pranje Auta Uz Dolazak"
             titleHighlight="Uz Dolazak"
             canonicalPath="/usluge/detailing-automobila"
-            description="Dok smo već kod vas zbog fasade, okućnice ili neke druge usluge — peremo i auto. Iznutra i izvana, uključujući kemijsko čišćenje sjedala. Bez dodatnog putnog troška jer smo već tu."
+            description="Dok smo već kod vas zbog fasade, okućnice ili neke druge usluge, peremo i auto. Iznutra i izvana, uključujući kemijsko čišćenje sjedala. Bez dodatnog putnog troška jer smo već tu."
             priceHint="od 60 € (vanjsko) · od 80 € (interijer) · od 130 € (komplet)"
             processSteps={[
                 {
@@ -114,12 +114,12 @@ export default function DetailingAutoPage() {
                     <h2>Zašto pratiti auto uz dolazak?</h2>
                     <p>
                         Već smo na vašoj adresi, već smo raspakirali opremu, već smo tu. To je idealan trenutak da riješite i auto
-                        koji čeka čišćenje. <strong>Nema posebnog dolaska, nema dodatnog putnog troška</strong> — samo dogovorite
+                        koji čeka čišćenje. <strong>Nema posebnog dolaska, nema dodatnog putnog troška</strong>, samo dogovorite
                         unaprijed kada naručujete glavnu uslugu.
                     </p>
                     <p>
                         Ovu opciju posebno vole klijenti koji nas naručuju za <Link href="/usluge/pranje-okucnice">pranje okućnice</Link> ili{' '}
-                        <Link href="/usluge/pranje-fasade">pranje fasade</Link> — dok mi radimo vani, auto se čisti u garaži ili na dvorištu.
+                        <Link href="/usluge/pranje-fasade">pranje fasade</Link>, dok mi radimo vani, auto se čisti u garaži ili na dvorištu.
                     </p>
 
                     <h2>Što uključuje pranje auta?</h2>

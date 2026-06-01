@@ -7,22 +7,22 @@ import {
 import styles from './zagreb.module.css';
 
 export const metadata: Metadata = {
-    title: 'Visokotlačno Čišćenje Zagreb — Sve Usluge | Šlauf i Šmrk',
-    description: 'Profesionalno visokotlačno čišćenje u Zagrebu — fasade, okućnice, kamene i drvene površine, detailing auta, kemijsko čišćenje tepiha. Pokrivamo sve kvartove.',
+    title: 'Visokotlačno Čišćenje Zagreb, Sve Usluge | Šlauf i Šmrk',
+    description: 'Profesionalno visokotlačno čišćenje u Zagrebu, fasade, okućnice, kamene i drvene površine, detailing auta, kemijsko čišćenje tepiha. Pokrivamo sve kvartove.',
     alternates: { canonical: '/podrucje/zagreb' },
     openGraph: {
         title: 'Visokotlačno Čišćenje Zagreb | Šlauf i Šmrk',
-        description: 'Profesionalno visokotlačno čišćenje u Zagrebu — fasade, okućnice, kamene površine, detailing auta.',
+        description: 'Profesionalno visokotlačno čišćenje u Zagrebu, fasade, okućnice, kamene površine, detailing auta.',
         url: 'https://slaufismrk.com/podrucje/zagreb',
     },
 };
 
 const services = [
     { title: 'Pranje Fasade', href: '/usluge/pranje-fasade', icon: <ShieldCheck size={24} />, desc: 'Uklanjamo alge, mahovinu i prljavštinu s fasade vaše kuće.' },
-    { title: 'Pranje Okućnice', href: '/usluge/pranje-okucnice', icon: <Home size={24} />, desc: 'Betonske kocke, kamene ploče, prilazi — vraćamo izvornu ljepotu.' },
-    { title: 'Kemijsko Čišćenje', href: '/usluge/kemijsko-ciscenje-namjestaja', icon: <Sofa size={24} />, desc: 'Tepisi, garniture, madraci — dubinsko čišćenje na vašoj adresi.' },
-    { title: 'Kamene Površine', href: '/usluge/ciscenje-kamenih-povrsina', icon: <TreeDeciduous size={24} />, desc: 'Klupice, stolovi, kipovi, staze — kamen će ponovno sjajiti.' },
-    { title: 'Drvene Površine', href: '/usluge/ciscenje-drvenih-povrsina', icon: <Droplets size={24} />, desc: 'Terase, ograde i vrtni namještaj — uklanjamo sivilo drva.' },
+    { title: 'Pranje Okućnice', href: '/usluge/pranje-okucnice', icon: <Home size={24} />, desc: 'Betonske kocke, kamene ploče, prilazi, vraćamo izvornu ljepotu.' },
+    { title: 'Kemijsko Čišćenje', href: '/usluge/kemijsko-ciscenje-namjestaja', icon: <Sofa size={24} />, desc: 'Tepisi, garniture, madraci, dubinsko čišćenje na vašoj adresi.' },
+    { title: 'Kamene Površine', href: '/usluge/ciscenje-kamenih-povrsina', icon: <TreeDeciduous size={24} />, desc: 'Klupice, stolovi, kipovi, staze, kamen će ponovno sjajiti.' },
+    { title: 'Drvene Površine', href: '/usluge/ciscenje-drvenih-povrsina', icon: <Droplets size={24} />, desc: 'Terase, ograde i vrtni namještaj, uklanjamo sivilo drva.' },
     { title: 'Detailing Auta', href: '/usluge/detailing-automobila', icon: <Car size={24} />, desc: 'Kompletna njega vozila: čišćenje, poliranje i zaštita laka.' },
     { title: 'Pranje Bazena', href: '/usluge/pranje-bazena', icon: <Waves size={24} />, desc: 'Pripremite vaš bazen za sezonu kupanja.' },
     { title: 'Grobna Mjesta', href: '/usluge/odrzavanje-grobnih-mjesta', icon: <HeartHandshake size={24} />, desc: 'Dostojanstvena njega nadgrobnih spomenika.' },
@@ -45,7 +45,7 @@ export default function ZagrebPage() {
                     <h1>Visokotlačno Čišćenje <span>Zagreb</span></h1>
                     <p>
                         Profesionalne usluge čišćenja u svim dijelovima Zagreba i okolice.
-                        Od fasada u Španskom do dvorišta u Maksimiru — tu smo za vas.
+                        Od fasada u Španskom do dvorišta u Maksimiru, tu smo za vas.
                     </p>
                     <Link href="/#kontakt" className={styles.heroCta}>
                         <Phone size={18} /> Besplatna procjena

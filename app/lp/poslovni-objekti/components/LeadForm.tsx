@@ -174,7 +174,7 @@ export default function LeadForm() {
                         value={form.facilityType}
                         onChange={(e) => setForm({ ...form, facilityType: e.target.value })}
                     >
-                        <option value="">— Odaberite tip —</option>
+                        <option value="">Odaberite tip</option>
                         <option>Skladište / logistički centar</option>
                         <option>Uredska zgrada / poslovni park</option>
                         <option>Maloprodajni objekt / showroom</option>
@@ -204,7 +204,7 @@ export default function LeadForm() {
                         value={form.frequency}
                         onChange={(e) => setForm({ ...form, frequency: e.target.value })}
                     >
-                        <option value="">— Odaberite —</option>
+                        <option value="">Odaberite</option>
                         <option>Jednokratno</option>
                         <option>2× godišnje</option>
                         <option>4× godišnje (sezonski)</option>

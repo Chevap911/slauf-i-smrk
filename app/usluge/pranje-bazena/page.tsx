@@ -5,7 +5,7 @@ import ServicePage from '@/components/ServicePage/ServicePage';
 import { Home, TreeDeciduous, HeartHandshake } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Pranje Bazena Zagreb — Čišćenje i Priprema Bazena | Šlauf i Šmrk',
+    title: 'Pranje Bazena Zagreb, Čišćenje i Priprema Bazena | Šlauf i Šmrk',
     description: 'Profesionalno čišćenje bazena, okolnog kamena i terasa u Zagrebu. Priprema bazena za sezonu. Uklanjamo alge i naslage. Besplatna procjena.',
     alternates: { canonical: '/usluge/pranje-bazena' },
     openGraph: {
@@ -42,7 +42,7 @@ const faqSchema = {
             name: "Koliko često trebam čistiti bazen?",
             acceptedAnswer: {
                 '@type': 'Answer',
-                text: "Preporučujemo profesionalno čišćenje dva puta godišnje — u proljeće (priprema) i jesen (winterizacija).",
+                text: "Preporučujemo profesionalno čišćenje dva puta godišnje, u proljeće (priprema) i jesen (winterizacija).",
             },
         },
         {
@@ -102,7 +102,7 @@ export default function PranjeBasenapPage() {
             processSteps={[
                 {
                     title: 'Ispuštanje vode',
-                    description: 'Pomoažemo s ispuštanjem vode ili čistimo bazen dok je pun — ovisno o tipu i problemu.',
+                    description: 'Pomoažemo s ispuštanjem vode ili čistimo bazen dok je pun, ovisno o tipu i problemu.',
                 },
                 {
                     title: 'Čišćenje stijenki',
@@ -124,8 +124,8 @@ export default function PranjeBasenapPage() {
                         Postoje dva ključna trenutka za profesionalno čišćenje bazena:
                     </p>
                     <ul>
-                        <li><strong>U proljeće</strong> — priprema bazena za sezonu kupanja. Nakon zime se na stijenkama nakupe alge, lišće i kalcifikacije koje treba ukloniti prije punjenja.</li>
-                        <li><strong>U jesen</strong> — čišćenje bazena prije winterizacije. Čist bazen mnogo lakše i jeftinije otvoriti sljedeće proljeće.</li>
+                        <li><strong>U proljeće</strong>, priprema bazena za sezonu kupanja. Nakon zime se na stijenkama nakupe alge, lišće i kalcifikacije koje treba ukloniti prije punjenja.</li>
+                        <li><strong>U jesen</strong>, čišćenje bazena prije winterizacije. Čist bazen mnogo lakše i jeftinije otvoriti sljedeće proljeće.</li>
                     </ul>
                     <p>
                         Tijekom sezone možemo obaviti <strong>održavanje obodnog kamena i terase</strong> bez ispuštanja vode,
@@ -137,11 +137,11 @@ export default function PranjeBasenapPage() {
                         Bazen je dio cjeline i okolina je jednako važna kao i sam bazen:
                     </p>
                     <ul>
-                        <li><strong>Stijenke i dno bazena</strong> — uklanjamo alge, kalcifikacije i zelenilo.</li>
-                        <li><strong>Obodni kamen (coping)</strong> — kamene ploče oko ruba bazena koje postaju klizave od algi. Za detaljnije čišćenje kamena pogledajte <Link href="/usluge/ciscenje-kamenih-povrsina">čišćenje kamenih površina</Link>.</li>
-                        <li><strong>Drvena terasa oko bazena</strong> — WPC ili prirodno drvo koje sivi i postaje klizavo. Pogledajte <Link href="/usluge/ciscenje-drvenih-povrsina">čišćenje drvenih površina</Link>.</li>
-                        <li><strong>Kameni prilaz bazenu</strong> — staze i stepenice do bazena.</li>
-                        <li><strong>Bazensku opremu</strong> — ljestve, ručke, prekrivače.</li>
+                        <li><strong>Stijenke i dno bazena</strong>, uklanjamo alge, kalcifikacije i zelenilo.</li>
+                        <li><strong>Obodni kamen (coping)</strong>, kamene ploče oko ruba bazena koje postaju klizave od algi. Za detaljnije čišćenje kamena pogledajte <Link href="/usluge/ciscenje-kamenih-povrsina">čišćenje kamenih površina</Link>.</li>
+                        <li><strong>Drvena terasa oko bazena</strong>, WPC ili prirodno drvo koje sivi i postaje klizavo. Pogledajte <Link href="/usluge/ciscenje-drvenih-povrsina">čišćenje drvenih površina</Link>.</li>
+                        <li><strong>Kameni prilaz bazenu</strong>, staze i stepenice do bazena.</li>
+                        <li><strong>Bazensku opremu</strong>, ljestve, ručke, prekrivače.</li>
                     </ul>
 
                     <h2>Cijena čišćenja bazena</h2>
@@ -150,7 +150,7 @@ export default function PranjeBasenapPage() {
                         <li><strong>Konačna cijena</strong>: ovisi o veličini bazena, stanju stijenki, kalcifikacijama i opsegu čišćenja okolnih površina.</li>
                     </ul>
                     <p>
-                        Većina naših klijenata naručuje <strong>kompletni paket</strong> — bazen + okolni kamen + terasa — za
+                        Većina naših klijenata naručuje <strong>kompletni paket</strong>, bazen + okolni kamen + terasa, za
                         što nudimo posebnu paketnu cijenu. Kombiniramo to s <Link href="/usluge/pranje-okucnice">čišćenjem
                             okućnice</Link> za kompletnu pripremu dvorišta za ljeto.
                     </p>
@@ -218,7 +218,7 @@ export default function PranjeBasenapPage() {
                 },
                 {
                     question: 'Koliko često trebam čistiti bazen?',
-                    answer: 'Preporučujemo profesionalno čišćenje dva puta godišnje — u proljeće (priprema) i jesen (winterizacija).',
+                    answer: 'Preporučujemo profesionalno čišćenje dva puta godišnje, u proljeće (priprema) i jesen (winterizacija).',
                 },
                 {
                     question: 'Čistite li i jacuzzije?',

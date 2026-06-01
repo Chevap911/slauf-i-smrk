@@ -34,7 +34,7 @@ function FaqItem({ question, answer, isOpen, onClick }: FaqItemProps) {
 const faqData = [
     {
         question: 'Koliko košta pranje fasade?',
-        answer: 'Cijena ovisi o kvadraturi i tipu fasade. Okvirni raspon je od od 5 €/m². Za točniju procjenu pošaljite nam 2-3 slike fasade na WhatsApp.'
+        answer: 'Cijena ovisi o kvadraturi i tipu fasade. Okvirni raspon je od 5 €/m². Za točniju procjenu pošaljite nam 2-3 slike fasade na WhatsApp.'
     },
     {
         question: 'Trebam li znati točnu kvadraturu fasade?',

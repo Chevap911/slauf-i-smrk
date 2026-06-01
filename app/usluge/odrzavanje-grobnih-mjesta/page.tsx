@@ -5,7 +5,7 @@ import ServicePage from '@/components/ServicePage/ServicePage';
 import { Home, TreeDeciduous, Waves } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Održavanje Grobnih Mjesta Zagreb — Čišćenje Kamenih Spomenika | Šlauf i Šmrk',
+    title: 'Održavanje Grobnih Mjesta Zagreb, Čišćenje Kamenih Spomenika | Šlauf i Šmrk',
     description: 'Profesionalno čišćenje i održavanje grobnih mjesta u Zagrebu. Uklanjamo mahovinu i naslage s kamenih spomenika. Mirogoj, Miroševac, Markovo Polje.',
     alternates: { canonical: '/usluge/odrzavanje-grobnih-mjesta' },
     openGraph: {
@@ -26,7 +26,7 @@ const faqSchema = {
             name: "Koliko košta čišćenje grobnog mjesta?",
             acceptedAnswer: {
                 '@type': 'Answer',
-                text: "Jednokratno čišćenje kreće od 200 € (jednostruki grob) i od 300 € (dvostruki grob ili grobnica). Poliranje kamena od 150 €, impregnacija od 50 €. Konačna cijena ovisi o veličini, vrsti kamena i zaprljanosti. Predujam za rezervaciju je 30%, ostatak plaćate tek nakon fotografija rezultata.",
+                text: "Jednokratno čišćenje kreće od 250 € (jednostruki grob) i od 300 € (dvostruki grob ili grobnica). Poliranje kamena od 150 €, impregnacija od 50 €. Konačna cijena ovisi o veličini, vrsti kamena i zaprljanosti. Predujam za rezervaciju je 30%, ostatak plaćate tek nakon fotografija rezultata.",
             },
         },
         {
@@ -115,7 +115,7 @@ export default function GrobnaMjestaPage() {
             titleHighlight="Grobnih Mjesta"
             canonicalPath="/usluge/odrzavanje-grobnih-mjesta"
             description="Grobna mjesta vaših najmilijih zaslužuju dostojanstven izgled. Profesionalno čistimo i održavamo kamene nadgrobne spomenike, ploče, obrube i okolne površine na svim zagrebačkim grobljima. Ne trebate biti prisutni, šaljemo fotografije prije i poslije. Idealno za iseljenike i obitelji izvan Zagreba. Uz čišćenje nudimo poliranje kamena i impregnaciju."
-            priceHint="od 200 €"
+            priceHint="od 250 €"
             processSteps={[
                 {
                     title: 'Prijavite grobno mjesto',
@@ -176,7 +176,7 @@ export default function GrobnaMjestaPage() {
 
                     <h2>Cijene</h2>
                     <ul>
-                        <li><strong>Jednokratno čišćenje (jednostruki grob)</strong>: od 200 €</li>
+                        <li><strong>Jednokratno čišćenje (jednostruki grob)</strong>: od 250 €</li>
                         <li><strong>Jednokratno čišćenje (dvostruki grob / grobnica)</strong>: od 300 €</li>
                         <li><strong>Poliranje kamena</strong> (vraćamo sjaj mramoru i granitu): od 150 €</li>
                         <li><strong>Impregnacija</strong> (zaštitni premaz, grob ostaje čist 2–3 godine): od 50 €</li>
@@ -257,7 +257,7 @@ export default function GrobnaMjestaPage() {
             faq={[
                 {
                     question: 'Koliko košta čišćenje grobnog mjesta?',
-                    answer: 'Jednokratno čišćenje kreće od 200 € (jednostruki grob) i od 300 € (dvostruki grob ili grobnica). Poliranje kamena od 150 €, impregnacija od 50 €. Konačna cijena ovisi o veličini, vrsti kamena i zaprljanosti. Predujam za rezervaciju je 30%, ostatak plaćate tek nakon fotografija rezultata.',
+                    answer: 'Jednokratno čišćenje kreće od 250 € (jednostruki grob) i od 300 € (dvostruki grob ili grobnica). Poliranje kamena od 150 €, impregnacija od 50 €. Konačna cijena ovisi o veličini, vrsti kamena i zaprljanosti. Predujam za rezervaciju je 30%, ostatak plaćate tek nakon fotografija rezultata.',
                 },
                 {
                     question: 'Kako se rezervira termin?',

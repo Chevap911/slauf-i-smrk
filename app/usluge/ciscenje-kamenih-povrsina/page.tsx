@@ -5,7 +5,7 @@ import ServicePage from '@/components/ServicePage/ServicePage';
 import { Home, HeartHandshake, TreeDeciduous } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Čišćenje Kamenih Površina Zagreb — Kamen, Granit, Mramor | Šlauf i Šmrk',
+    title: 'Čišćenje Kamenih Površina Zagreb, Kamen, Granit, Mramor | Šlauf i Šmrk',
     description: 'Profesionalno čišćenje kamenih površina: klupice, stolovi, staze, zidovi, kipovi. Uklanjamo mahovinu, lišaje i mrlje s kamena. Zagreb i okolica.',
     alternates: { canonical: '/usluge/ciscenje-kamenih-povrsina' },
     openGraph: {
@@ -66,7 +66,7 @@ const faqSchema = {
             name: "Koliko košta čišćenje kamene ograde?",
             acceptedAnswer: {
                 '@type': 'Answer',
-                text: "Cijena za kamene površine najčešće se kreće od od 5 €/m², ovisno o vrsti kamena, veličini i zaprljanosti. Besplatna procjena.",
+                text: "Cijena za kamene površine najčešće se kreće od 5 €/m², ovisno o vrsti kamena, veličini i zaprljanosti. Besplatna procjena.",
             },
         }
     ],
@@ -120,7 +120,7 @@ export default function KamenePovsinePage() {
                 },
                 {
                     title: 'Čišćenje prilagođenim tlakom',
-                    description: 'S precizno kalibriranim tlakom čistimo kamen — dovoljno jak za prljavštinu, ali nježan za površinu.',
+                    description: 'S precizno kalibriranim tlakom čistimo kamen, dovoljno jak za prljavštinu, ali nježan za površinu.',
                 },
                 {
                     title: 'Zaštita i pregled',
@@ -135,12 +135,12 @@ export default function KamenePovsinePage() {
                         eksterijeru i interijeru:
                     </p>
                     <ul>
-                        <li><strong>Granit</strong> — otporan kamen, ali lišajevi i mahovine duboko prodiru u pore.</li>
-                        <li><strong>Mramor</strong> — zahtijeva niži tlak i pH-neutralna sredstva. Nikada se ne smije čistiti kiselim sredstvima.</li>
-                        <li><strong>Travertin</strong> — popularan za terase i bazene. Porozan je i brzo upija prljavštinu.</li>
-                        <li><strong>Vapnenac</strong> — čest na starijim kućama i ogradama. Mek kamen koji zahtijeva nježan pristup.</li>
-                        <li><strong>Pješčenjak</strong> — sjajan za zidove i staze, ali vrlo porozan.Tretiramo ga niskim tlakom.</li>
-                        <li><strong>Obložni kamen</strong> — fasadne obloge od kamena čistimo zajedno s <Link href="/usluge/pranje-fasade">pranjem fasade</Link>.</li>
+                        <li><strong>Granit</strong>, otporan kamen, ali lišajevi i mahovine duboko prodiru u pore.</li>
+                        <li><strong>Mramor</strong>, zahtijeva niži tlak i pH-neutralna sredstva. Nikada se ne smije čistiti kiselim sredstvima.</li>
+                        <li><strong>Travertin</strong>, popularan za terase i bazene. Porozan je i brzo upija prljavštinu.</li>
+                        <li><strong>Vapnenac</strong>, čest na starijim kućama i ogradama. Mek kamen koji zahtijeva nježan pristup.</li>
+                        <li><strong>Pješčenjak</strong>, sjajan za zidove i staze, ali vrlo porozan.Tretiramo ga niskim tlakom.</li>
+                        <li><strong>Obložni kamen</strong>, fasadne obloge od kamena čistimo zajedno s <Link href="/usluge/pranje-fasade">pranjem fasade</Link>.</li>
                     </ul>
 
                     <h2>Gdje se koriste kamene površine?</h2>
@@ -148,12 +148,12 @@ export default function KamenePovsinePage() {
                         Kamen se u Zagrebu i okolici najčešće koristi za:
                     </p>
                     <ul>
-                        <li><strong>Vrtne staze i prilaze</strong> — kamene ploče i kocke. Za betonske kocke pogledajte <Link href="/usluge/pranje-okucnice">čišćenje okućnice</Link>.</li>
-                        <li><strong>Ograde i zidove</strong> — kameni zidići i gabioni koji zelene od mahovine.</li>
-                        <li><strong>Klupice, stolove i fontane</strong> — vrtni kameni namještaj.</li>
-                        <li><strong>Nadgrobne spomenike</strong> — za detalje pogledajte <Link href="/usluge/odrzavanje-grobnih-mjesta">održavanje grobnih mjesta</Link>.</li>
-                        <li><strong>Skulpture i ukrasne elemente</strong> — kipovi, vaze, kamene posude.</li>
-                        <li><strong>Bazenske obloge</strong> — kamene ploče oko bazena. Kombiniramo s <Link href="/usluge/pranje-bazena">čišćenjem bazena</Link>.</li>
+                        <li><strong>Vrtne staze i prilaze</strong>, kamene ploče i kocke. Za betonske kocke pogledajte <Link href="/usluge/pranje-okucnice">čišćenje okućnice</Link>.</li>
+                        <li><strong>Ograde i zidove</strong>, kameni zidići i gabioni koji zelene od mahovine.</li>
+                        <li><strong>Klupice, stolove i fontane</strong>, vrtni kameni namještaj.</li>
+                        <li><strong>Nadgrobne spomenike</strong>, za detalje pogledajte <Link href="/usluge/odrzavanje-grobnih-mjesta">održavanje grobnih mjesta</Link>.</li>
+                        <li><strong>Skulpture i ukrasne elemente</strong>, kipovi, vaze, kamene posude.</li>
+                        <li><strong>Bazenske obloge</strong>, kamene ploče oko bazena. Kombiniramo s <Link href="/usluge/pranje-bazena">čišćenjem bazena</Link>.</li>
                     </ul>
 
                     <h2>Koliko košta čišćenje kamena?</h2>
@@ -167,7 +167,7 @@ export default function KamenePovsinePage() {
                         Pokušaj samostalnog čišćenja kamena često rezultira <strong>oštećenjima</strong>. Previsok
                         tlak može izbiti materijal iz površine, a neodgovarajuća sredstva mogu promijeniti boju kamena
                         ili uzrokovati kemijske mrlje. Posebno je opasan <strong>klor</strong> koji mnogi koriste za
-                        uklanjanje mahovine — on može trajno oštetiti kamen i okolne biljke.
+                        uklanjanje mahovine, on može trajno oštetiti kamen i okolne biljke.
                     </p>
                     <p>
                         Mi koristimo profesionalnu opremu s preciznom regulacijom tlaka i <strong>pH-neutralna
@@ -178,7 +178,7 @@ export default function KamenePovsinePage() {
             features={[
                 {
                     title: 'Prilagođen tlak za svaki kamen',
-                    description: 'Kalibriramo tlak za svaki tip kamena — od nježnog za mramor do snažnijeg za granit.',
+                    description: 'Kalibriramo tlak za svaki tip kamena, od nježnog za mramor do snažnijeg za granit.',
                     icon: <Droplets size={24} />,
                 },
                 {
@@ -242,7 +242,7 @@ export default function KamenePovsinePage() {
                 },
                 {
                     question: 'Koliko košta čišćenje kamene ograde?',
-                    answer: 'Cijena za kamene površine najčešće se kreće od od 5 €/m², ovisno o vrsti kamena, veličini i zaprljanosti. Besplatna procjena.',
+                    answer: 'Cijena za kamene površine najčešće se kreće od 5 €/m², ovisno o vrsti kamena, veličini i zaprljanosti. Besplatna procjena.',
                 },
             ]}
             serviceAreas={[

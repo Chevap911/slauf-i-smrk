@@ -84,7 +84,7 @@ export default function BlogArticle() {
                         </p>
                         <p>
                             Terasa je površina koja skuplja sve: prljavštinu od grila, zelenilo od kiše, mrlje od cvijetnjaka, masnoće od stolova.
-                            I godinama izgleda &quot;dovoljno dobro&quot; -- sve dok jednog jutra ne primijetite da je postala siva.
+                            I godinama izgleda &quot;dovoljno dobro&quot;, sve dok jednog jutra ne primijetite da je postala siva.
                             Onda je pitanje samo jedno: koliko to košta oprati profesionalno?
                         </p>
 
@@ -96,11 +96,11 @@ export default function BlogArticle() {
                             </div>
                             <div className={styles.priceRow}>
                                 <span>50 – 100 m²</span>
-                                <strong>od 250 €</strong>
+                                <strong>od 400 €</strong>
                             </div>
                             <div className={styles.priceRow}>
                                 <span>100 – 200 m²</span>
-                                <strong>od 450 €</strong>
+                                <strong>od 800 €</strong>
                             </div>
                         </div>
                         <p>
@@ -114,14 +114,14 @@ export default function BlogArticle() {
                         <h3>1. Materijal terase</h3>
                         <p>
                             Betonska ploča, keramičke pločice i kamen peru se na različitim pritiscima s različitom kemijom.
-                            Kamen je najosjetljiviji -- previsok pritisak oštećuje površinu, pa koristimo niži tlak s dužim kontaktnim vremenom.
+                            Kamen je najosjetljiviji, previsok pritisak oštećuje površinu, pa koristimo niži tlak s dužim kontaktnim vremenom.
                             Cijena je slična, ali rad traje malo dulje.
                         </p>
 
                         <h3>2. Stanje površine</h3>
                         <p>
                             Terasa s tankim slojem prašine i terasa s trima sezonama zelenih naslaga, mrljama od grila i algama u fugama
-                            -- to nisu isti posao. Tvrdokorne organske naslage zahtijevaju biorazgradivi tretman kemijom prije pranja.
+                           , to nisu isti posao. Tvrdokorne organske naslage zahtijevaju biorazgradivi tretman kemijom prije pranja.
                             Kod jako zaprljanih terasa taj korak dodaje 20-30% vremena.
                         </p>
 
@@ -129,7 +129,7 @@ export default function BlogArticle() {
                         <p>
                             Ako su fuge između ploča zarasle u korov ili zelene naslage, moramo izbiti sve to prije pranja.
                             Nuspojava: izbijemo i stari pijesak. Bez novog kvarcnog pijeska fuge ostaju prazne i korov se vraća za sezonu.
-                            Fugiranje je dodatna stavka (1,50 -- 2,50 €/m²) i preporučujemo ga uz svaki veći zahvat.
+                            Fugiranje je dodatna stavka (1,50 do 2,50 €/m²) i preporučujemo ga uz svaki veći zahvat.
                         </p>
 
                         <h3>4. Pristupačnost i kat</h3>
@@ -146,7 +146,7 @@ export default function BlogArticle() {
                             Logistika se dijeli, cijena pada.
                         </p>
 
-                        <h2>Drvene terase -- poseban slučaj</h2>
+                        <h2>Drvene terase, poseban slučaj</h2>
                         <p>
                             Drvo je jedina površina na kojoj ne koristimo visoki pritisak. Visokotlačni perač otvara drvena vlakna
                             i ubrzava propadanje, čak i ako je efekt odmah vizualno dobar.
@@ -157,7 +157,7 @@ export default function BlogArticle() {
                             <Link href="/usluge/ciscenje-drvenih-povrsina">čišćenje drvenih površina</Link>.
                         </p>
                         <p>
-                            Cijena drvenih terasa: <strong>5 -- 8 €/m²</strong>. Nešto skuplje od betona, ali zahvat traje dulje
+                            Cijena drvenih terasa: <strong>6–8 €/m²</strong>. Nešto skuplje od betona, ali zahvat traje dulje
                             i zahtijeva drugačiju opremu i kemiju.
                         </p>
 
@@ -182,7 +182,7 @@ export default function BlogArticle() {
                         </p>
                         <p>
                             Praktičan prijevod: terasu od 60 m² peremo za 2 sata. S kućnim aparatom i standardnom mlaznicom
-                            -- pola dana, mokre cipele i pruge po cijeloj ploči.
+                           , pola dana, mokre cipele i pruge po cijeloj ploči.
                         </p>
 
                         <h2>Isplati li se kombinirati terasu i fasadu u jednom dolasku?</h2>
@@ -193,7 +193,7 @@ export default function BlogArticle() {
                         </p>
                         <p>
                             Isti princip vrijedi za{' '}
-                            <Link href="/usluge/pranje-okucnice">pranje okućnice i tlakavaca</Link> -- ako imate dvorište uz terasu,
+                            <Link href="/usluge/pranje-okucnice">pranje okućnice i tlakavaca</Link>, ako imate dvorište uz terasu,
                             ima smisla obuhvatiti sve u jednoj posjeti.
                         </p>
 

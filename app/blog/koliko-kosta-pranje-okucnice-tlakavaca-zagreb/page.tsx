@@ -72,7 +72,7 @@ export default function BlogArticle() {
                 name: 'Koliko košta pranje okućnice po kvadratnom metru u Zagrebu?',
                 acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'Cijena pranja okućnice u Zagrebu kreće se od od 4 € po m² ovisno o veličini površine, stupnju zaprljanosti i količini korova u fugama. Manja dvorišta i terase obično ulaze u početni raspon od 100 do 200 €.',
+                    text: 'Cijena pranja okućnice u Zagrebu kreće se od 4 € po m² ovisno o veličini površine, stupnju zaprljanosti i količini korova u fugama. Manja dvorišta i terase obično ulaze u početni raspon od 100 do 200 €.',
                 },
             },
             {
@@ -80,7 +80,7 @@ export default function BlogArticle() {
                 name: 'Uključuje li pranje tlakavaca i ponovno fugiranje pijeskom?',
                 acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'Osnovna cijena pranja ne uključuje kvarcni pijesak i fugiranje jer to ne žele svi klijenti. Međutim, toplo ga preporučujemo — bez novog pijeska, korov se vraća brže. Usluga fugiranja naplaćuje se dodatno, okvirno 1,50 do 2,50 € po m².',
+                    text: 'Osnovna cijena pranja ne uključuje kvarcni pijesak i fugiranje jer to ne žele svi klijenti. Međutim, toplo ga preporučujemo, bez novog pijeska, korov se vraća brže. Usluga fugiranja naplaćuje se dodatno, okvirno 1,50 do 2,50 € po m².',
                 },
             },
             {
@@ -135,12 +135,12 @@ export default function BlogArticle() {
                             koliko košta profesionalno čišćenje dvorišta u Zagrebu, ovdje imate pregled stvarnih raspona cijena i usluga.
                         </p>
                         <p>
-                            Dvorište koje je godinama skupljalo mahovinu, korov između betonskih kocki i mrlje od auta — poznata slika.
+                            Dvorište koje je godinama skupljalo mahovinu, korov između betonskih kocki i mrlje od auta, poznata slika.
                             U jednom trenutku to više ne možete ignorirati, i počnete tražiti: koliko to zapravo košta profesionalno oprati?
                         </p>
                         <p>
                             Odgovor nije &quot;ovisi&quot; bez objašnjenja. U ovom vodiču dajemo konkretne cijene, razlažemo što na njih
-                            utječe i govorimo vam iskreno što možete očekivati — bez skrivenih troškova.
+                            utječe i govorimo vam iskreno što možete očekivati, bez skrivenih troškova.
                         </p>
 
                         <h2>Okvirne cijene pranja okućnice u Zagrebu (2026.)</h2>
@@ -151,11 +151,11 @@ export default function BlogArticle() {
                             </div>
                             <div className={styles.priceRow}>
                                 <span>Srednja dvorišta (50 – 100 m²)</span>
-                                <strong>2 – 4 € po m²</strong>
+                                <strong>4 – 6 € po m²</strong>
                             </div>
                             <div className={styles.priceRow}>
                                 <span>Veće površine (preko 100 m²)</span>
-                                <strong>2 – 4 € po m²</strong>
+                                <strong>4 – 6 € po m²</strong>
                             </div>
                         </div>
                         <p>
@@ -183,7 +183,7 @@ export default function BlogArticle() {
                             <div className={styles.beforeAfterItem}>
                                 <Image
                                     src="/blog/pranje-okucnice/terasa-leggiero-prije.jpeg"
-                                    alt="Terasa Leggiero Family Mall prije čišćenja — zarasle betonske kocke, mahovina i prljavština"
+                                    alt="Terasa Leggiero Family Mall prije čišćenja, zarasle betonske kocke, mahovina i prljavština"
                                     title="Terasa prije profesionalnog pranja tlakavaca"
                                     width={700}
                                     height={467}
@@ -194,7 +194,7 @@ export default function BlogArticle() {
                             <div className={styles.beforeAfterItem}>
                                 <Image
                                     src="/blog/pranje-okucnice/terasa-leggiero-poslije.jpeg"
-                                    alt="Terasa Leggiero Family Mall poslije čišćenja — čiste i blistave betonske kocke Zagreb"
+                                    alt="Terasa Leggiero Family Mall poslije čišćenja, čiste i blistave betonske kocke Zagreb"
                                     title="Terasa poslije profesionalnog pranja tlakavaca"
                                     width={700}
                                     height={467}
@@ -209,7 +209,7 @@ export default function BlogArticle() {
                         <h3>1. Stanje površine i vrsta prljavštine</h3>
                         <p>
                             Nije isto peremo li prašinu s asfalta ili uklanjamo debele slojeve mahovine, stare mrlje od motornog ulja i
-                            zarasli korov. Tvrdokorne mrlje zahtijevaju specijaliziranu kemiju, više prolaza i više vremena — što se
+                            zarasli korov. Tvrdokorne mrlje zahtijevaju specijaliziranu kemiju, više prolaza i više vremena, što se
                             odražava na cijenu.
                         </p>
 
@@ -227,7 +227,7 @@ export default function BlogArticle() {
                         <h3>3. Potreba za ponovnim fugiranjem</h3>
                         <p>
                             Kad visokotlačnim peračem izbijemo korov i mahovinu, izbijemo i stari pijesak. Bez novog kvarcnog pijeska, fuge
-                            ostaju prazne i korov se vraća dvostruko brže. Fugiranje se naplaćuje dodatno — okvirno 1,50 do 2,50 € po m²
+                            ostaju prazne i korov se vraća dvostruko brže. Fugiranje se naplaćuje dodatno, okvirno 1,50 do 2,50 € po m²
                             ovisno o širini fuga.
                         </p>
 
@@ -256,13 +256,13 @@ export default function BlogArticle() {
 
                         <h2>Zašto ne koristiti kućni visokotlačni perač?</h2>
                         <p>
-                            Razumijemo logiku — kupite aparat za 400 € i oprete sami. Ali postoji razlika između <strong>pritiska</strong>{' '}
+                            Razumijemo logiku, kupite aparat za 400 € i oprete sami. Ali postoji razlika između <strong>pritiska</strong>{' '}
                             i <strong>protoka vode</strong>. Kućni aparati imaju visok pritisak, ali mali protok (litara u minuti). Naša
                             profesionalna oprema ima višestruko veći protok i rotacijske čistače koji peru ravnomjerno, bez prskanja
                             prljavštine po fasadi i prozorima.
                         </p>
                         <p>
-                            Rezultat: dvorište od 80 m² mi operemo za 2–3 sata. S kućnim aparatom — cijeli vikend, bolna leđa i
+                            Rezultat: dvorište od 80 m² mi operemo za 2–3 sata. S kućnim aparatom, cijeli vikend, bolna leđa i
                             &quot;šareni&quot; rezultat.
                         </p>
                         <p>
@@ -276,7 +276,7 @@ export default function BlogArticle() {
                         <h2>Radimo i na komercijalnim objektima</h2>
                         <p>
                             Osim privatnih dvorišta, redovito čistimo terase restorana, kafića i tržnih centara. Na fotografijama iznad
-                            prikazujemo primjer terase Leggiero kafića u Family Mallu — godinama su se nakupljale masne mrlje i mahovina,
+                            prikazujemo primjer terase Leggiero kafića u Family Mallu, godinama su se nakupljale masne mrlje i mahovina,
                             a nakon jedne intervencije terasa je blistala kao nova.
                         </p>
                         <p>
@@ -291,7 +291,7 @@ export default function BlogArticle() {
                             <Link href="/usluge/ciscenje-kamenih-povrsina" className={styles.inlineLink}>
                                 čišćenje kamenih površina
                             </Link>{' '}
-                            — prirodni kamen, granitne ploče i mramor zahtijevaju drugačiji pristup i niži tlak kako se površina ne bi
+                           , prirodni kamen, granitne ploče i mramor zahtijevaju drugačiji pristup i niži tlak kako se površina ne bi
                             oštetila.
                         </p>
 
@@ -301,7 +301,7 @@ export default function BlogArticle() {
                             <div className={styles.faqItem}>
                                 <h3>Koliko košta pranje okućnice po kvadratnom metru u Zagrebu?</h3>
                                 <p>
-                                    Cijena pranja okućnice kreće se od od 4 € po m² ovisno o veličini površine, stupnju
+                                    Cijena pranja okućnice kreće se od 4 € po m² ovisno o veličini površine, stupnju
                                     zaprljanosti i količini korova u fugama. Manja dvorišta i terase obično ulaze u početni raspon od
                                     100 do 200 €.
                                 </p>
@@ -310,7 +310,7 @@ export default function BlogArticle() {
                                 <h3>Uključuje li pranje tlakavaca i ponovno fugiranje pijeskom?</h3>
                                 <p>
                                     Osnovna cijena pranja ne uključuje kvarcni pijesak i fugiranje jer to ne žele svi klijenti.
-                                    Međutim, toplo ga preporučujemo — bez novog pijeska, korov se vraća brže. Usluga fugiranja
+                                    Međutim, toplo ga preporučujemo, bez novog pijeska, korov se vraća brže. Usluga fugiranja
                                     naplaćuje se dodatno, okvirno 1,50 do 2,50 € po m².
                                 </p>
                             </div>
@@ -333,12 +333,12 @@ export default function BlogArticle() {
 
                         <p className={styles.closing}>
                             Nema skrivenih troškova ni iznenađenja. Dolazimo na besplatnu procjenu, vidimo stanje, dajemo točnu cijenu.
-                            Ako se dogovorimo — super. Ako ne — nema frke.
+                            Ako se dogovorimo, super. Ako ne, nema frke.
                         </p>
 
                         <div className={styles.ctaBox}>
                             <h3>Zatražite besplatnu procjenu</h3>
-                            <p>Javite nam se i dobit ćete točnu cijenu za vaše dvorište — bez obaveze.</p>
+                            <p>Javite nam se i dobit ćete točnu cijenu za vaše dvorište, bez obaveze.</p>
                             <div className={styles.ctaButtons}>
                                 <a href="tel:+385958442806" className={styles.ctaBtn}>
                                     <Phone size={18} /> 095 844 2806

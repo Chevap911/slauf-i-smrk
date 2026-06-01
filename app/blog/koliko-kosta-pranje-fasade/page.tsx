@@ -85,36 +85,36 @@ export default function BlogArticle() {
                         <p>
                             Fasada je osobna iskaznica vašeg doma. S vremenom se na njoj nakupljaju alge, mahovine, prljavština i zagađenje
                             iz zraka koji narušavaju izgled, ali i oštećuju materijal. Visokotlačno pranje fasade najučinkovitiji je način
-                            vraćanja izvornog izgleda — ali koliko to zapravo košta?
+                            vraćanja izvornog izgleda, ali koliko to zapravo košta?
                         </p>
 
                         <h2>Okvirne cijene pranja fasade u Zagrebu (2026.)</h2>
                         <div className={styles.priceTable}>
                             <div className={styles.priceRow}>
-                                <span>Manja fasada (do 80 m²)</span>
+                                <span>Manja fasada (do 100 m²)</span>
                                 <strong>od 500 €</strong>
                             </div>
                             <div className={styles.priceRow}>
-                                <span>Srednja fasada (80–150 m²)</span>
+                                <span>Srednja fasada (100–200 m²)</span>
                                 <strong>od 1.000 €</strong>
                             </div>
                             <div className={styles.priceRow}>
-                                <span>Veća fasada (150+ m²)</span>
-                                <strong>od 600 €</strong>
+                                <span>Veća fasada (200 m²+)</span>
+                                <strong>od 1.500 €</strong>
                             </div>
                             <div className={styles.priceRow}>
                                 <span>Cijena po m²</span>
-                                <strong>od 5 €/m²</strong>
+                                <strong>5–7 €/m²</strong>
                             </div>
                         </div>
 
                         <h2>Od čega ovisi cijena?</h2>
                         <ul>
-                            <li><strong>Veličina fasade</strong> — Veće površine znače više rada i vremena, ali cijena po m² obično je niža.</li>
-                            <li><strong>Stupanj zaprljanosti</strong> — Fasade s gustom mahovinom i algama zahtijevaju više prolaza i sredstava za čišćenje.</li>
-                            <li><strong>Tip fasade</strong> — Različiti materijali (žbuka, kamen, drvo) zahtijevaju različite pristupe i opremu.</li>
-                            <li><strong>Pristupačnost</strong> — Veća visina ili teže dostupna područja mogu povećati cijenu zbog dodatne opreme.</li>
-                            <li><strong>Lokacija</strong> — U udaljenim mjestima može se zaračunati putni trošak.</li>
+                            <li><strong>Veličina fasade</strong>, Veće površine znače više rada i vremena, ali cijena po m² obično je niža.</li>
+                            <li><strong>Stupanj zaprljanosti</strong>, Fasade s gustom mahovinom i algama zahtijevaju više prolaza i sredstava za čišćenje.</li>
+                            <li><strong>Tip fasade</strong>, Različiti materijali (žbuka, kamen, drvo) zahtijevaju različite pristupe i opremu.</li>
+                            <li><strong>Pristupačnost</strong>, Veća visina ili teže dostupna područja mogu povećati cijenu zbog dodatne opreme.</li>
+                            <li><strong>Lokacija</strong>, U udaljenim mjestima može se zaračunati putni trošak.</li>
                         </ul>
 
                         <h2>Što uključuje cijena usluge?</h2>
@@ -154,7 +154,7 @@ export default function BlogArticle() {
 
                         <div className={styles.ctaBox}>
                             <h3>Zatražite besplatnu procjenu</h3>
-                            <p>Javite nam se i dobit ćete točnu cijenu za vašu fasadu — bez obaveze.</p>
+                            <p>Javite nam se i dobit ćete točnu cijenu za vašu fasadu, bez obaveze.</p>
                             <div className={styles.ctaButtons}>
                                 <a href="tel:+385958442806" className={styles.ctaBtn}>
                                     <Phone size={18} /> +385 95 844 2806

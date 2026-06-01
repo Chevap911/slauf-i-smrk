@@ -144,12 +144,12 @@ export default function KemijskoCiscenjePage() {
 
                     <h2>Što sve čistimo?</h2>
                     <ul>
-                        <li><strong>Tepisi</strong> — vuneni, sintetički, persijski, kilimi. Svaki materijal zahtijeva poseban pristup.</li>
-                        <li><strong>Garniture i sofe</strong> — tkanine, mikrovlakna, pliš. Kožne garniture tretiramo posebnim sredstvima.</li>
-                        <li><strong>Madraci</strong> — uklanjamo grinje, znoj, mrlje i alergene za zdraviji san.</li>
-                        <li><strong>Stolice</strong> — kancelarijske, blagovaonske, fotelje.</li>
-                        <li><strong>Autosjedala</strong> — kompletno čišćenje interijera vozila. Za potpuni tretman pogledajte <Link href="/usluge/detailing-automobila">detailing automobila</Link>.</li>
-                        <li><strong>Tepisi u poslovnim prostorima</strong> — uredski tepisi, hodnici, čekaonice.</li>
+                        <li><strong>Tepisi</strong>, vuneni, sintetički, persijski, kilimi. Svaki materijal zahtijeva poseban pristup.</li>
+                        <li><strong>Garniture i sofe</strong>, tkanine, mikrovlakna, pliš. Kožne garniture tretiramo posebnim sredstvima.</li>
+                        <li><strong>Madraci</strong>, uklanjamo grinje, znoj, mrlje i alergene za zdraviji san.</li>
+                        <li><strong>Stolice</strong>, kancelarijske, blagovaonske, fotelje.</li>
+                        <li><strong>Autosjedala</strong>, kompletno čišćenje interijera vozila. Za potpuni tretman pogledajte <Link href="/usluge/detailing-automobila">detailing automobila</Link>.</li>
+                        <li><strong>Tepisi u poslovnim prostorima</strong>, uredski tepisi, hodnici, čekaonice.</li>
                     </ul>
 
                     <h2>Koliko košta kemijsko čišćenje?</h2>
@@ -164,7 +164,7 @@ export default function KemijskoCiscenjePage() {
                     </ul>
                     <p>
                         Za veće projekte i poslovne prostore nudimo posebne cijene. Čišćenje obavljamo
-                        <strong> na vašoj adresi</strong> — ne trebate nositi namještaj nikuda.
+                        <strong> na vašoj adresi</strong>, ne trebate nositi namještaj nikuda.
                     </p>
 
                     <h2>Zašto je dubinsko čišćenje važno za zdravlje?</h2>
@@ -195,7 +195,7 @@ export default function KemijskoCiscenjePage() {
                 },
                 {
                     title: 'Uklanjanje grinja i alergena',
-                    description: 'Uklanjamo do 98% grinja, bakterija i alergena — idealno za obitelji s djecom i astmatičare.',
+                    description: 'Uklanjamo do 98% grinja, bakterija i alergena, idealno za obitelji s djecom i astmatičare.',
                     icon: <ShieldCheck size={24} />,
                 },
                 {

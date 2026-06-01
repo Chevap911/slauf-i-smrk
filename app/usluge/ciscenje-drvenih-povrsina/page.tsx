@@ -5,7 +5,7 @@ import ServicePage from '@/components/ServicePage/ServicePage';
 import { Home, TreeDeciduous, Waves } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Čišćenje Drvenih Površina Zagreb — Terase, Ograde, Namještaj | Šlauf i Šmrk',
+    title: 'Čišćenje Drvenih Površina Zagreb, Terase, Ograde, Namještaj | Šlauf i Šmrk',
     description: 'Profesionalno čišćenje drvenih terasa, ograda, pergola i vrtnog namještaja u Zagrebu. Uklanjamo sivilo, alge i mahovinu. Besplatna procjena.',
     alternates: { canonical: '/usluge/ciscenje-drvenih-povrsina' },
     openGraph: {
@@ -34,7 +34,7 @@ const faqSchema = {
             name: "Koliko košta čišćenje drvene terase?",
             acceptedAnswer: {
                 '@type': 'Answer',
-                text: "Cijena za čišćenje drvenih površina najčešće se kreće od 5 do 8 €/m², ovisno o vrsti drva, stanju i zaprljanosti. Besplatna procjena na licu mjesta.",
+                text: "Cijena za čišćenje drvenih površina najčešće se kreće od 6 do 8 €/m², ovisno o vrsti drva, stanju i zaprljanosti. Besplatna procjena na licu mjesta.",
             },
         },
         {
@@ -98,7 +98,7 @@ export default function DrvenePovrsinePage() {
             titleHighlight="Drvenih Površina"
             canonicalPath="/usluge/ciscenje-drvenih-povrsina"
             description="Drvo s vremenom gubi boju i sivi pod utjecajem sunca, kiše i vlage. Profesionalnim čišćenjem uklanjamo sivilo, alge i nakupljenu prljavštinu s terasa, ograda, pergola i vrtnog namještaja. Vraćamo drvu izvornu toplinu i ljepotu."
-            priceHint="5 - 8 €/m²"
+            priceHint="6–8 €/m²"
             heroImage="/seo-results/ciscenje-drvenih-povrsina/prije-poslije.jpeg"
             heroImageAlt="Prije i poslije rezultat čišćenja drvenih površina"
             resultsShowcase={{
@@ -122,7 +122,7 @@ export default function DrvenePovrsinePage() {
                 },
                 {
                     title: 'Sušenje i savjet',
-                    description: 'Savjetujemo vas o daljnjem tretmanu — bojanju, lakizanju ili nauljivanju za dugotrajan lijepi izgled.',
+                    description: 'Savjetujemo vas o daljnjem tretmanu, bojanju, lakizanju ili nauljivanju za dugotrajan lijepi izgled.',
                 },
             ]}
             detailedContent={
@@ -141,12 +141,12 @@ export default function DrvenePovrsinePage() {
 
                     <h2>Koje drvene površine čistimo?</h2>
                     <ul>
-                        <li><strong>Drvene terase (decking)</strong> — WPC, bor, ariš, tik, bangkirai. Svaki materijal zahtijeva poseban pristup.</li>
-                        <li><strong>Drvene ograde</strong> — letvice, paneli, prirodne ograde.</li>
-                        <li><strong>Pergole i nadstrešnice</strong> — nosive konstrukcije i dekorativni elementi.</li>
-                        <li><strong>Vrtni namještaj</strong> — stolovi, stolice, klupe, ležaljke.</li>
-                        <li><strong>Drvene fasade</strong> — obloge od drva. Kombiniramo s <Link href="/usluge/pranje-fasade">pranjem fasade</Link>.</li>
-                        <li><strong>Drveni podovi</strong> — balkonski i terasni podovi.</li>
+                        <li><strong>Drvene terase (decking)</strong>, WPC, bor, ariš, tik, bangkirai. Svaki materijal zahtijeva poseban pristup.</li>
+                        <li><strong>Drvene ograde</strong>, letvice, paneli, prirodne ograde.</li>
+                        <li><strong>Pergole i nadstrešnice</strong>, nosive konstrukcije i dekorativni elementi.</li>
+                        <li><strong>Vrtni namještaj</strong>, stolovi, stolice, klupe, ležaljke.</li>
+                        <li><strong>Drvene fasade</strong>, obloge od drva. Kombiniramo s <Link href="/usluge/pranje-fasade">pranjem fasade</Link>.</li>
+                        <li><strong>Drveni podovi</strong>, balkonski i terasni podovi.</li>
                     </ul>
 
                     <h2>Čišćenje vs. brušenje drva</h2>
@@ -156,13 +156,13 @@ export default function DrvenePovrsinePage() {
                         sloja materijala. Prednosti čišćenja pred brušenjem:
                     </p>
                     <ul>
-                        <li><strong>Brže</strong> — čišćenje traje 2–3 sata umjesto cijelog dana brušenja.</li>
-                        <li><strong>Jeftinije</strong> — ne trebate kupovati brusni papir ni plaćati višednevnu uslugu.</li>
-                        <li><strong>Manje prašine</strong> — nema prašine po cijelom dvorištu.</li>
-                        <li><strong>Manje oštećenja</strong> — ne skidamo sloj drva, poštujemo originalne dimenzije.</li>
+                        <li><strong>Brže</strong>, čišćenje traje 2–3 sata umjesto cijelog dana brušenja.</li>
+                        <li><strong>Jeftinije</strong>, ne trebate kupovati brusni papir ni plaćati višednevnu uslugu.</li>
+                        <li><strong>Manje prašine</strong>, nema prašine po cijelom dvorištu.</li>
+                        <li><strong>Manje oštećenja</strong>, ne skidamo sloj drva, poštujemo originalne dimenzije.</li>
                     </ul>
 
-                    <h2>Nakon čišćenja — što dalje?</h2>
+                    <h2>Nakon čišćenja, što dalje?</h2>
                     <p>
                         Očišćeno drvo idealno je za <strong>nauljivanje, lazuriranje ili bojanje</strong>.
                         Preporučujemo tretman unutar 48 sati od čišćenja dok su pore drva otvorene i spremne
@@ -183,7 +183,7 @@ export default function DrvenePovrsinePage() {
                 },
                 {
                     title: 'Vraćanje izvorne boje',
-                    description: 'Uklanjamo sivi sloj i vraćamo drvu prirodnu toplinu i boju — bez brušenja.',
+                    description: 'Uklanjamo sivi sloj i vraćamo drvu prirodnu toplinu i boju, bez brušenja.',
                     icon: <ShieldCheck size={24} />,
                 },
                 {
@@ -226,7 +226,7 @@ export default function DrvenePovrsinePage() {
                 },
                 {
                     question: 'Koliko košta čišćenje drvene terase?',
-                    answer: 'Cijena za čišćenje drvenih površina najčešće se kreće od 5 do 8 €/m², ovisno o vrsti drva, stanju i zaprljanosti. Besplatna procjena na licu mjesta.',
+                    answer: 'Cijena za čišćenje drvenih površina najčešće se kreće od 6 do 8 €/m², ovisno o vrsti drva, stanju i zaprljanosti. Besplatna procjena na licu mjesta.',
                 },
                 {
                     question: 'Trebam li nauljivati drvo nakon čišćenja?',

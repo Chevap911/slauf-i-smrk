@@ -142,7 +142,7 @@ export default function ScratchReveal({
         calculateScratched();
     };
 
-    // Check if already revealed — use a ref to avoid re-render
+    // Check if already revealed, use a ref to avoid re-render
     useEffect(() => {
         let frameId: number | undefined;
         try {

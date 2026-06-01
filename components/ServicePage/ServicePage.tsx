@@ -452,7 +452,7 @@ export default function ServicePage({
                 <div className="container">
                     <div className={styles.boldCtaInner}>
                         <h2>Trebate pomoć?</h2>
-                        <p>Nazovite nas za besplatnu procjenu — odgovaramo u roku od sat vremena</p>
+                        <p>Nazovite nas za besplatnu procjenu, odgovaramo u roku od sat vremena</p>
                         <a 
                             href="tel:+385958442806" 
                             className={styles.boldCtaPhone}

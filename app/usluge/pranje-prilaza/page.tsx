@@ -34,7 +34,7 @@ const faqSchema = {
             name: "Koliko košta pranje prilaza u Zagrebu?",
             acceptedAnswer: {
                 '@type': 'Answer',
-                text: "Okvirna cijena za pranje prilaza kreće se od od 4 €/m², a točna ponuda ovisi o materijalu, veličini i stupnju zaprljanosti.",
+                text: "Okvirna cijena za pranje prilaza kreće se od 4 €/m², a točna ponuda ovisi o materijalu, veličini i stupnju zaprljanosti.",
             },
         },
         {
@@ -148,10 +148,10 @@ export default function PranjePrilazaPage() {
 
                     <h2>Koje prilaze čistimo?</h2>
                     <ul>
-                        <li><strong>Betonske prilaze</strong> — ulazi u garažu, parkirna mjesta, staze uz kuću.</li>
-                        <li><strong>Opločene prilaze</strong> — betonske kocke, tlakavci i behaton. Za detaljniji fokus pogledajte <Link href="/usluge/pranje-tlakavaca">pranje tlakavaca</Link>.</li>
-                        <li><strong>Kamene prilaze</strong> — prirodni kamen i masivnije ploče uz kuću i vrt.</li>
-                        <li><strong>Asfaltne prilaze</strong> — uz prilagođen pristup i očekivanja vezana uz vrstu podloge.</li>
+                        <li><strong>Betonske prilaze</strong>, ulazi u garažu, parkirna mjesta, staze uz kuću.</li>
+                        <li><strong>Opločene prilaze</strong>, betonske kocke, tlakavci i behaton. Za detaljniji fokus pogledajte <Link href="/usluge/pranje-tlakavaca">pranje tlakavaca</Link>.</li>
+                        <li><strong>Kamene prilaze</strong>, prirodni kamen i masivnije ploče uz kuću i vrt.</li>
+                        <li><strong>Asfaltne prilaze</strong>, uz prilagođen pristup i očekivanja vezana uz vrstu podloge.</li>
                     </ul>
 
                     <h2>Koliko košta pranje prilaza?</h2>
@@ -223,7 +223,7 @@ export default function PranjePrilazaPage() {
             faq={[
                 {
                     question: 'Koliko košta pranje prilaza u Zagrebu?',
-                    answer: 'Okvirna cijena za pranje prilaza kreće se od od 4 €/m², a točna ponuda ovisi o materijalu, veličini i stupnju zaprljanosti.',
+                    answer: 'Okvirna cijena za pranje prilaza kreće se od 4 €/m², a točna ponuda ovisi o materijalu, veličini i stupnju zaprljanosti.',
                 },
                 {
                     question: 'Možete li ukloniti tragove motornog ulja s betonskog prilaza?',

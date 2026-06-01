@@ -171,7 +171,7 @@ export default function LeadForm() {
                         required
                         onChange={(e) => setForm({ ...form, cemetery: e.target.value })}
                     >
-                        <option value="">— Odaberite groblje —</option>
+                        <option value="">Odaberite groblje</option>
                         <option>Mirogoj</option>
                         <option>Miroševac</option>
                         <option>Markovo Polje</option>

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     alternates: { canonical: '/blog/softwash-ili-visokotlacno-pranje-fasade' },
     openGraph: {
         title: 'Softwash ili visokotlačno pranje fasade? Vodič 2026',
-        description: 'Razlika između softwash i visokotlačnog pranja fasade — koji pristup je pravi za stiropor, kamen i žbuku.',
+        description: 'Razlika između softwash i visokotlačnog pranja fasade, koji pristup je pravi za stiropor, kamen i žbuku.',
         url: 'https://slaufismrk.com/blog/softwash-ili-visokotlacno-pranje-fasade',
         type: 'article',
     },
@@ -46,7 +46,7 @@ export default function BlogArticle() {
         '@context': 'https://schema.org',
         '@type': 'Article',
         headline: 'Softwash ili visokotlačno pranje fasade? Što je pravo za vaš dom',
-        description: 'Vodič kroz razlike između softwash metode i visokotlačnog pranja fasade — koji pristup odabrati za stiropor, kamen ili žbuku.',
+        description: 'Vodič kroz razlike između softwash metode i visokotlačnog pranja fasade, koji pristup odabrati za stiropor, kamen ili žbuku.',
         author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         datePublished: '2026-05-22',

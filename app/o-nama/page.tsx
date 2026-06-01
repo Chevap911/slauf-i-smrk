@@ -5,11 +5,11 @@ import { Phone, ArrowRight, ShieldCheck, Eye, Sparkles, MapPin, Star } from 'luc
 import styles from './o-nama.module.css';
 
 export const metadata: Metadata = {
-    title: 'O nama — dvojica iza Šlauf i Šmrk | Pranje pod tlakom Zagreb',
+    title: 'O nama, dvojica iza Šlauf i Šmrk | Pranje pod tlakom Zagreb',
     description: 'Šlauf i Šmrk su dvojica iz Zagreba specijalizirana za visokotlačno pranje fasada, okućnica i terasa. Siguran pristup, čista procjena prije rada i rezultat koji se vidi. 5,0 na Google recenzijama.',
     alternates: { canonical: '/o-nama' },
     openGraph: {
-        title: 'O nama — dvojica iza Šlauf i Šmrk',
+        title: 'O nama, dvojica iza Šlauf i Šmrk',
         description: 'Dvojica iz Zagreba specijalizirana za visokotlačno pranje fasada, okućnica i terasa. Čista procjena prije rada i rezultat koji se vidi.',
         url: 'https://slaufismrk.com/o-nama',
         images: [
@@ -45,7 +45,7 @@ const breadcrumbSchema = {
 const aboutSchema = {
     '@context': 'https://schema.org',
     '@type': 'AboutPage',
-    name: 'O nama — Šlauf i Šmrk',
+    name: 'O nama, Šlauf i Šmrk',
     url: 'https://slaufismrk.com/o-nama',
     mainEntity: {
         '@type': 'LocalBusiness',
@@ -135,7 +135,7 @@ export default function ONamaPage() {
                                     sizes="(max-width: 768px) 140px, 220px"
                                 />
                             </div>
-                            <h3>Ivan — Šlauf</h3>
+                            <h3>Ivan (Šlauf)</h3>
                             <p>
                                 Dogovor, procjena i komunikacija s klijentima. Javlja se na upite i pazi
                                 da dogovoreno bude i odrađeno na vrijeme.
@@ -153,7 +153,7 @@ export default function ONamaPage() {
                                     sizes="(max-width: 768px) 140px, 220px"
                                 />
                             </div>
-                            <h3>Marko — Šmrk</h3>
+                            <h3>Marko (Šmrk)</h3>
                             <p>
                                 Na terenu, za peračem. Bira tlak i sredstvo prema materijalu i pazi
                                 da svaki kvadrat bude čist, bez oštećenja fasade ili pločnika.

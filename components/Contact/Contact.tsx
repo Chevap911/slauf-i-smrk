@@ -82,13 +82,13 @@ const SURFACE_SERVICE_RATES: Record<
     Exclude<ServiceId, 'chemical' | 'car' | 'pool' | 'grave'>,
     { min: number; max: number }
 > = {
-    facade: { min: 4, max: 6 },
-    yard: { min: 2, max: 4 },
-    terrace: { min: 3, max: 5 },
-    pavers: { min: 2, max: 4 },
-    driveway: { min: 2, max: 4 },
-    stone: { min: 4, max: 6 },
-    wood: { min: 5, max: 8 },
+    facade: { min: 5, max: 7 },
+    yard: { min: 4, max: 6 },
+    terrace: { min: 4, max: 6 },
+    pavers: { min: 4, max: 6 },
+    driveway: { min: 4, max: 6 },
+    stone: { min: 5, max: 7 },
+    wood: { min: 6, max: 8 },
 };
 
 const CHEMICAL_TYPE_OPTIONS = [
@@ -116,9 +116,9 @@ const POOL_OPTIONS = [
 ];
 
 const GRAVE_OPTIONS = [
-    { value: 'basic', label: 'Osnovno čišćenje i uređenje', min: 100, max: 130 },
-    { value: 'extended', label: 'Detaljnije čišćenje i više posla', min: 140, max: 180 },
-    { value: 'regular', label: 'Opsežnije ili redovno održavanje', min: 180, max: 250 },
+    { value: 'basic', label: 'Osnovno čišćenje i uređenje', min: 250, max: 350 },
+    { value: 'extended', label: 'Detaljnije čišćenje i poliranje', min: 350, max: 500 },
+    { value: 'regular', label: 'Opsežnije ili redovno održavanje', min: 500, max: 700 },
 ];
 
 const createInitialFormData = (): FormState => ({
@@ -354,12 +354,12 @@ export default function Contact() {
     const [leadId, setLeadId] = useState<string | null>(null);
     const [formData, setFormData] = useState<FormState>(createInitialFormData);
 
-    // Debounce timer za hot lead emailove — 10 minuta
+    // Debounce timer za hot lead emailove, 10 minuta
     const HOT_LEAD_DELAY_MS = 10 * 60 * 1000;
     const hotLeadTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
     const hotLeadStepRef = useRef<{ step: 1 | 2; formData: FormState; estimatedPrice: { min: number; max: number } } | null>(null);
 
-    // Šalje hot lead email — poziva se tek nakon isteka timera
+    // Šalje hot lead email, poziva se tek nakon isteka timera
     const sendHotLeadEmail = async (hotStep: 1 | 2, snapFormData: FormState, snapPrice: { min: number; max: number }) => {
         try {
             await fetch('/api/contact', {
@@ -511,7 +511,7 @@ export default function Contact() {
             return;
         }
 
-        // Korak 1 — spremi u DB, pokreći timer za hot lead email
+        // Korak 1, spremi u DB, pokreći timer za hot lead email
         if (step === 1) {
             try {
                 await savePartialLead();
@@ -537,7 +537,7 @@ export default function Contact() {
             return;
         }
 
-        // Korak 2 — spremi u DB, resetiraj timer na korak 2
+        // Korak 2, spremi u DB, resetiraj timer na korak 2
         if (step === 2 && formData.service) {
             try {
                 await saveStep2Lead();
@@ -593,7 +593,7 @@ export default function Contact() {
             return;
         }
 
-        // Korisnik je poslao finalni upit — poništi hot lead timer
+        // Korisnik je poslao finalni upit, poništi hot lead timer
         cancelHotLeadTimer();
 
         setIsSubmitting(true);

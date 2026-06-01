@@ -34,7 +34,7 @@ function FaqItem({ question, answer, isOpen, onClick }: FaqItemProps) {
 const faqData = [
     {
         question: 'Koliko košta pranje terasa?',
-        answer: 'Cijena ovisi o površini i materijalu (drvo, WPC, kamen, keramika). Okvirni raspon je od od 4 €/m². Za najbržu i najtočniju procjenu pošaljite nam slike terase na WhatsApp.'
+        answer: 'Cijena ovisi o površini i materijalu (drvo, WPC, kamen, keramika). Okvirni raspon je od 4 €/m². Za najbržu i najtočniju procjenu pošaljite nam slike terase na WhatsApp.'
     },
     {
         question: 'Trebam li znati točnu kvadraturu terase?',

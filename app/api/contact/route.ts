@@ -37,7 +37,7 @@ export async function POST(req: Request) {
                 await resend.emails.send({
                     from: 'Šlauf i Šmrk <info@slaufismrk.com>',
                     to: 'slauf.i.smrk@gmail.com',
-                    subject: `🔥 HOT LEAD (Korak ${step}): ${formData.name} — ${step === 1 ? (formData.city || 'Nepoznat grad') : serviceNameReadable}`,
+                    subject: `🔥 HOT LEAD (Korak ${step}): ${formData.name}, ${step === 1 ? (formData.city || 'Nepoznat grad') : serviceNameReadable}`,
                     react: HotLeadEmail({
                         step,
                         name: formData.name,
@@ -53,7 +53,7 @@ export async function POST(req: Request) {
             return NextResponse.json({ success: true });
         }
 
-        // ─── Mode: partial | step2 | final — DB save ─────────────────────────
+        // ─── Mode: partial | step2 | final, DB save ─────────────────────────
         const isPartial = mode === 'partial';
         const isStep2 = mode === 'step2';
         const isFinal = mode === 'final';
@@ -73,7 +73,7 @@ export async function POST(req: Request) {
                 },
             },
             message: (isPartial || isStep2)
-                ? `Nedovršeni lead — ${isPartial ? 'Korak 1' : 'Korak 2'}.`
+                ? `Nedovršeni lead, ${isPartial ? 'Korak 1' : 'Korak 2'}.`
                 : formData.message,
             estimated_price_min: minPrice,
             estimated_price_max: maxPrice,
@@ -110,7 +110,7 @@ export async function POST(req: Request) {
             inquiryId = data?.id ?? null;
         }
 
-        // Partial i step2 završavaju ovdje — email šalje frontend nakon timera
+        // Partial i step2 završavaju ovdje, email šalje frontend nakon timera
         if (isPartial || isStep2) {
             return NextResponse.json({ success: true, leadId: inquiryId });
         }

@@ -53,7 +53,7 @@ export default function PranjeTerasaPage() {
                 name: 'Koliko košta čišćenje terasa u Zagrebu?',
                 acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'Cijena čišćenja terasa u Zagrebu kreće se od od 4 €/m². Za terasu do 50 m² to je okvirno od 200 €, a za terasu 50-100 m² iznosi od 250 €. Točna cijena ovisi o materijalu i zaprljanosti.',
+                    text: 'Cijena čišćenja terasa u Zagrebu kreće se od 4 €/m². Za terasu do 50 m² to je okvirno od 200 €, a za terasu 50-100 m² iznosi od 400 €. Točna cijena ovisi o materijalu i zaprljanosti.',
                 },
             },
             {
@@ -156,11 +156,11 @@ export default function PranjeTerasaPage() {
 
                     <h2>Koje terase čistimo?</h2>
                     <ul>
-                        <li><strong>Keramičke terase</strong> — pločice na balkonima, lođama i dvorišnim terasama.</li>
-                        <li><strong>Kamene terase</strong> — prirodni kamen, granitne ploče, travertin i slični materijali.</li>
-                        <li><strong>Betonske i opločene terase</strong> — betonske ploče, grublje vanjske podloge i površine oko kuće.</li>
-                        <li><strong>Terase s tlakavcima</strong> — za detaljniji fokus pogledajte i <Link href="/usluge/pranje-tlakavaca">pranje tlakavaca</Link>.</li>
-                        <li><strong>Drvene terase</strong> — za osjetljivije drvene i WPC podloge imamo posebnu uslugu <Link href="/usluge/ciscenje-drvenih-povrsina">čišćenja drvenih površina</Link>.</li>
+                        <li><strong>Keramičke terase</strong>, pločice na balkonima, lođama i dvorišnim terasama.</li>
+                        <li><strong>Kamene terase</strong>, prirodni kamen, granitne ploče, travertin i slični materijali.</li>
+                        <li><strong>Betonske i opločene terase</strong>, betonske ploče, grublje vanjske podloge i površine oko kuće.</li>
+                        <li><strong>Terase s tlakavcima</strong>, za detaljniji fokus pogledajte i <Link href="/usluge/pranje-tlakavaca">pranje tlakavaca</Link>.</li>
+                        <li><strong>Drvene terase</strong>, za osjetljivije drvene i WPC podloge imamo posebnu uslugu <Link href="/usluge/ciscenje-drvenih-povrsina">čišćenja drvenih površina</Link>.</li>
                     </ul>
 
                     <h2>Koliko košta pranje terasa?</h2>
@@ -178,8 +178,8 @@ export default function PranjeTerasaPage() {
                         <tbody>
                             {[
                                 { size: 'Do 50 m²', price: 'od 200 €' },
-                                { size: '50 – 100 m²', price: 'od 250 €' },
-                                { size: '100 – 200 m²', price: 'od 450 €' },
+                                { size: '50 – 100 m²', price: 'od 400 €' },
+                                { size: '100 – 200 m²', price: 'od 800 €' },
                                 { size: '200 m²+', price: 'po procjeni' },
                             ].map((row, i) => (
                                 <tr key={i} style={{ borderBottom: '1px solid #eee' }}>
@@ -249,7 +249,7 @@ export default function PranjeTerasaPage() {
             faq={[
                 {
                     question: 'Koliko košta pranje terase u Zagrebu?',
-                    answer: 'Okvirna cijena za pranje terasa kreće se od od 4 €/m². Točna ponuda ovisi o materijalu, kvadraturi i zaprljanosti.',
+                    answer: 'Okvirna cijena za pranje terasa kreće se od 4 €/m². Točna ponuda ovisi o materijalu, kvadraturi i zaprljanosti.',
                 },
                 {
                     question: 'Možete li oprati terasu bez oštećenja fuga i pločica?',
