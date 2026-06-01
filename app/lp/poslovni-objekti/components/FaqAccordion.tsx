@@ -33,8 +33,8 @@ function FaqItem({ question, answer, isOpen, onClick }: FaqItemProps) {
 
 const faqData = [
     {
-        question: 'Izdajete li R1 račun?',
-        answer: 'Da. Svim poslovnim klijentima izdajemo R1 račun. Uvjete plaćanja dogovaramo individualno, žiro, kartice, obročno za redovite klijente.'
+        question: 'Izdajete li račun za tvrtke?',
+        answer: 'Da. Svim poslovnim klijentima izdajemo račun koji možete koristiti kao poslovni trošak. Obrt smo izvan sustava PDV-a, pa na računu nema PDV-a. Uvjete plaćanja dogovaramo individualno, žiro, kartice, obročno za redovite klijente.'
     },
     {
         question: 'Možete li raditi izvan radnog vremena ili vikendom?',

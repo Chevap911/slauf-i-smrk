@@ -46,7 +46,7 @@ const services = [
     },
     {
         title: "Pranje Poslovnih Objekata",
-        description: "Vanjsko čišćenje fasada, parkirišta, skladišta i hala. Redoviti ugovori, R1 račun, rad izvan radnog vremena. Za firme koje trebaju urednog i pouzdanog partnera.",
+        description: "Vanjsko čišćenje fasada, parkirišta, skladišta i hala. Redoviti ugovori, račun za tvrtke, rad izvan radnog vremena. Za firme koje trebaju urednog i pouzdanog partnera.",
         icon: <Building2 size={32} />,
         href: "/usluge/poslovni-objekti"
     }

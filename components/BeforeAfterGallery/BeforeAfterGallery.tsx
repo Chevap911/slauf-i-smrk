@@ -6,6 +6,20 @@ import styles from './BeforeAfterGallery.module.css';
 
 const pairs = [
     {
+        before: '/prije-poslje/pranje-zida-terase-zagreb-prije.jpeg',
+        after: '/prije-poslje/pranje-zida-terase-zagreb-poslje.jpeg',
+        beforeAlt: 'Zid terase prije pranja — alge, mahovina i tamne naslage Zagreb',
+        afterAlt: 'Zid terase poslije pranja pod tlakom — čista žbuka Zagreb',
+        label: 'Pranje zida terase — alge i mahovina',
+    },
+    {
+        before: '/prije-poslje/ciscenje-poda-terase-zagreb-prije.jpeg',
+        after: '/prije-poslje/ciscenje-poda-terase-zagreb-poslje.jpeg',
+        beforeAlt: 'Pod terase prije čišćenja — prljave i sive pločice Zagreb',
+        afterAlt: 'Pod terase poslije čišćenja — čiste pločice Zagreb',
+        label: 'Čišćenje poda terase — pločice',
+    },
+    {
         before: '/prije-poslje/terasa-leggiero-prije-1.jpeg',
         after: '/prije-poslje/terasa-leggiero-poslje-1.jpeg',
         beforeAlt: 'Terasa kafića prije čišćenja — mahovina i prljavština na betonskim kockama',
@@ -48,7 +62,7 @@ export default function BeforeAfterGallery() {
                     {pairs.map((pair, i) => (
                         <motion.div
                             key={i}
-                            className={i === 2 ? styles.fullWidth : undefined}
+                            className={i === pairs.length - 1 && pairs.length % 2 === 1 ? styles.fullWidth : undefined}
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: '0px 0px 200px 0px' }}

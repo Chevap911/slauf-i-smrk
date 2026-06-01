@@ -13,7 +13,7 @@ export default function LandingPageClient() {
             <section className={styles.hero}>
                 <div className={styles.container}>
                     <div className={styles.trustBar}>
-                        ⭐ 5.0 Google ocjena · R1 račun · Zagreb i okolica
+                        ⭐ 5.0 Google ocjena · račun za tvrtke · Zagreb i okolica
                     </div>
 
                     <h1 className={styles.title}>
@@ -22,7 +22,7 @@ export default function LandingPageClient() {
 
                     <p className={styles.subtitle}>
                         Fasade, parkirišta, skladišta i hale, redovito, po dogovoru, bez vaše organizacije.
-                        R1 račun, rad izvan radnog vremena, foto-dokumentacija rezultata.
+                        račun za tvrtke, rad izvan radnog vremena, foto-dokumentacija rezultata.
                     </p>
 
                     <ul className={styles.bullets}>
@@ -36,7 +36,7 @@ export default function LandingPageClient() {
                         </li>
                         <li>
                             <CheckCircle2 className={styles.checkIcon} size={22} />
-                            <span>R1 račun, fotografije rezultata, bez skrivenih troškova</span>
+                            <span>račun za tvrtke, fotografije rezultata, bez skrivenih troškova</span>
                         </li>
                     </ul>
 
@@ -129,7 +129,7 @@ export default function LandingPageClient() {
                             <div className={styles.stepNumber}>3</div>
                             <div className={styles.stepContent}>
                                 <h3>Čišćenje i dokumentacija</h3>
-                                <p>Dolazimo po dogovorenom rasporedu, čistimo i šaljemo fotografije rezultata i R1 račun. Vi ne trebate biti prisutni.</p>
+                                <p>Dolazimo po dogovorenom rasporedu, čistimo i šaljemo fotografije rezultata i račun za tvrtke. Vi ne trebate biti prisutni.</p>
                             </div>
                         </div>
                     </div>
@@ -150,7 +150,7 @@ export default function LandingPageClient() {
                         </div>
                         <div className={styles.featureCard}>
                             <FileText className={styles.featureIcon} size={28} />
-                            <span>R1 račun i transparentno fakturiranje</span>
+                            <span>račun za tvrtke i transparentno fakturiranje</span>
                         </div>
                         <div className={styles.featureCard}>
                             <Clock className={styles.featureIcon} size={28} />
@@ -187,7 +187,7 @@ export default function LandingPageClient() {
                                 meta: 'Logistički centar, Jankomir',
                             },
                             {
-                                text: 'Naš showroom mora uvijek izgledati reprezentativno. Dogovorili smo sezonsko čišćenje fasade i ulaznih površina. Dolaze točno, rade temeljito, R1 račun stiže isti dan. Preporučujem.',
+                                text: 'Naš showroom mora uvijek izgledati reprezentativno. Dogovorili smo sezonsko čišćenje fasade i ulaznih površina. Dolaze točno, rade temeljito, račun stiže isti dan. Preporučujem.',
                                 name: 'Ana M.',
                                 meta: 'Maloprodajni objekt, Novi Zagreb',
                             },

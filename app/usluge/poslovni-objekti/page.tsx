@@ -6,11 +6,11 @@ import { Home, TreeDeciduous, Waves } from 'lucide-react';
 
 export const metadata: Metadata = {
     title: 'Pranje Poslovnih Objekata Zagreb, Skladišta, Parkovi, Hale | Šlauf i Šmrk',
-    description: 'Vanjsko čišćenje poslovnih objekata u Zagrebu: pranje fasada, parkirališta, skladišta, hala i uredskih zgrada. Redoviti ugovori, R1 račun, rad izvan radnog vremena.',
+    description: 'Vanjsko čišćenje poslovnih objekata u Zagrebu: pranje fasada, parkirališta, skladišta, hala i uredskih zgrada. Redoviti ugovori, račun za tvrtke, rad izvan radnog vremena.',
     alternates: { canonical: '/usluge/poslovni-objekti' },
     openGraph: {
         title: 'Pranje Poslovnih Objekata Zagreb | Šlauf i Šmrk',
-        description: 'Vanjsko čišćenje poslovnih objekata: fasade, parkirališta, skladišta i hale. Redoviti ugovori i R1 račun.',
+        description: 'Vanjsko čišćenje poslovnih objekata: fasade, parkirališta, skladišta i hale. Redoviti ugovori i račun za tvrtke.',
         url: 'https://slaufismrk.com/usluge/poslovni-objekti',
     },
 };
@@ -56,10 +56,10 @@ const faqSchema = {
         },
         {
             '@type': 'Question',
-            name: "Izdajete li R1 račun?",
+            name: "Izdajete li račun za tvrtke?",
             acceptedAnswer: {
                 '@type': 'Answer',
-                text: "Da, svim poslovnim klijentima izdajemo R1 račun. Uvjete plaćanja dogovaramo individualno.",
+                text: "Da, svim poslovnim klijentima izdajemo račun koji možete koristiti kao poslovni trošak. Obrt smo izvan sustava PDV-a, pa na računu nema PDV-a. Uvjete plaćanja dogovaramo individualno.",
             },
         },
         {
@@ -144,7 +144,7 @@ export default function PoslovniObjektiPage() {
                     },
                     {
                         title: 'Izvještaj i faktura',
-                        description: 'Nakon svakog čišćenja šaljemo fotografije rezultata i R1 račun. Redoviti klijenti imaju fiksni raspored bez potrebe za ponovnim dogovorom.',
+                        description: 'Nakon svakog čišćenja šaljemo fotografije rezultata i račun za tvrtke. Redoviti klijenti imaju fiksni raspored bez potrebe za ponovnim dogovorom.',
                     },
                 ]}
                 detailedContent={
@@ -184,7 +184,7 @@ export default function PoslovniObjektiPage() {
                             <li><strong>Fiksni raspored</strong> čišćenja (2× godišnje, 4× godišnje ili po dogovoru)</li>
                             <li><strong>Prioritetne termine</strong>, vaš objekt ima prednost u zakazivanju</li>
                             <li><strong>Konzistentne cijene</strong>, bez iznenađenja i naknadnih troškova</li>
-                            <li><strong>Automatsko slanje računa</strong> (R1) nakon svake usluge</li>
+                            <li><strong>Automatsko slanje računa</strong> nakon svake usluge</li>
                             <li><strong>Foto-dokumentacija</strong> rezultata za vašu evidenciju</li>
                         </ul>
 
@@ -195,10 +195,11 @@ export default function PoslovniObjektiPage() {
                             premiještate automobile ili organizirate osoblje za nadzor.
                         </p>
 
-                        <h2>R1 račun i poslovna faktura</h2>
+                        <h2>Račun za tvrtke i poslovni trošak</h2>
                         <p>
-                            Svim poslovnim klijentima izdajemo <strong>R1 račun</strong> koji možete koristiti kao poslovni
-                            trošak. Za redovite ugovore dogovaramo uvjete plaćanja prema potrebama vaše firme.
+                            Svim poslovnim klijentima izdajemo <strong>račun za tvrtke</strong> koji možete koristiti kao poslovni
+                            trošak. Obrt smo izvan sustava PDV-a, pa na računu nema PDV-a. Za redovite ugovore dogovaramo
+                            uvjete plaćanja prema potrebama vaše firme.
                         </p>
 
                         <h2>Koje vrste poslovnih objekata opslužujemo?</h2>
@@ -240,8 +241,8 @@ export default function PoslovniObjektiPage() {
                         icon: <RefreshCw size={24} />,
                     },
                     {
-                        title: 'R1 račun za firme',
-                        description: 'Izdajemo poslovne račune (R1) prikladne kao poslovni trošak. Fiksne cijene bez naknadnih iznenađenja.',
+                        title: 'Račun za tvrtke',
+                        description: 'Izdajemo poslovne račune prikladne kao poslovni trošak. Fiksne cijene bez naknadnih iznenađenja.',
                         icon: <FileText size={24} />,
                     },
                     {
@@ -297,8 +298,8 @@ export default function PoslovniObjektiPage() {
                         answer: 'Da. Planiramo dolazak prema vašem rasporedu, rano ujutro, navečer ili vikendom. Nema potrebe za angažiranjem vašeg osoblja.',
                     },
                     {
-                        question: 'Izdajete li R1 račun?',
-                        answer: 'Da, svim poslovnim klijentima izdajemo R1 račun. Uvjete plaćanja dogovaramo individualno.',
+                        question: 'Izdajete li račun za tvrtke?',
+                        answer: 'Da, svim poslovnim klijentima izdajemo račun koji možete koristiti kao poslovni trošak. Obrt smo izvan sustava PDV-a, pa na računu nema PDV-a. Uvjete plaćanja dogovaramo individualno.',
                     },
                     {
                         question: 'Koliko košta čišćenje poslovnog objekta?',

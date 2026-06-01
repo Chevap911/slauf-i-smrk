@@ -137,8 +137,8 @@ export default function ONamaPage() {
                             </div>
                             <h3>Ivan — Šlauf</h3>
                             <p>
-                                Na terenu, za peračem. Bira tlak i sredstvo prema materijalu i pazi
-                                da svaki kvadrat bude čist, bez oštećenja fasade ili pločnika.
+                                Dogovor, procjena i komunikacija s klijentima. Javlja se na upite i pazi
+                                da dogovoreno bude i odrađeno na vrijeme.
                             </p>
                         </div>
 
@@ -155,8 +155,8 @@ export default function ONamaPage() {
                             </div>
                             <h3>Marko — Šmrk</h3>
                             <p>
-                                Dogovor, procjena i komunikacija s klijentima. Javlja se na upite i pazi
-                                da dogovoreno bude i odrađeno na vrijeme.
+                                Na terenu, za peračem. Bira tlak i sredstvo prema materijalu i pazi
+                                da svaki kvadrat bude čist, bez oštećenja fasade ili pločnika.
                             </p>
                         </div>
                     </div>
