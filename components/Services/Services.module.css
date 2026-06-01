@@ -30,6 +30,12 @@
     width: clamp(96px, 12vw, 150px);
 }
 
+.sectionMascotRight {
+    right: 3rem;
+    top: 0.5rem;
+    width: clamp(96px, 12vw, 150px);
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -119,7 +125,8 @@
 }
 
 @media (max-width: 768px) {
-    .sectionMascot {
+    .sectionMascot,
+    .sectionMascotRight {
         display: none;
     }
 

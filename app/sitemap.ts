@@ -19,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ];
 
     const blog: { slug: string; date: string }[] = [
+        { slug: 'kako-oprati-fasadu', date: '2026-06-01' },
         { slug: 'pranje-fasade-stiropor-etics', date: '2026-05-26' },
         { slug: 'ciscenje-fasade-od-algi-i-gljivica', date: '2026-05-25' },
         { slug: 'softwash-ili-visokotlacno-pranje-fasade', date: '2026-05-22' },
@@ -44,13 +45,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'monthly' as const,
             priority: 0.9,
         })),
-        // Local pages
+        // About
         {
-            url: `${baseUrl}/podrucje/zagreb`,
-            lastModified: serviceUpdated,
+            url: `${baseUrl}/o-nama`,
+            lastModified: new Date('2026-06-01'),
+            changeFrequency: 'monthly' as const,
+            priority: 0.6,
+        },
+        // Local pages
+        ...['zagreb', 'sesvete', 'velika-gorica', 'samobor', 'zapresic'].map(slug => ({
+            url: `${baseUrl}/podrucje/${slug}`,
+            lastModified: new Date('2026-06-01'),
             changeFrequency: 'monthly' as const,
             priority: 0.8,
-        },
+        })),
         // Blog index
         {
             url: `${baseUrl}/blog`,

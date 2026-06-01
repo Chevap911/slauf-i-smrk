@@ -4,6 +4,7 @@ import { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
     Phone,
+    MessageCircle,
     Mail,
     ArrowRight,
     ArrowLeft,
@@ -653,18 +654,31 @@ export default function Contact() {
                         className={styles.info}
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, margin: '0px 0px 200px 0px' }}
                         transition={{ duration: 0.6 }}
                     >
                         <h2 className={styles.title}>Spremni za <span className={styles.yellow}>čišćenje</span>?</h2>
                         <p className={styles.text}>
-                            Ispunite brzi obrazac i dobit ćete informativnu procjenu cijene. Čim prijeđete prvi korak,
-                            spremamo osnovne podatke vašeg upita kako bismo vas mogli lakše kontaktirati i nastaviti ponudu.
+                            Najbrže preko WhatsAppa: pošaljite 2-3 slike površine i javljamo okvirnu cijenu. Možete i nazvati,
+                            ili ispuniti obrazac desno za detaljnu ponudu.
                         </p>
 
                         <div className={styles.contactDetails}>
-                            <a 
-                                href="tel:+385958442806" 
+                            <a
+                                href="https://wa.me/385958442806?text=Pozdrav%2C%20%C5%A1aljem%20slike%20povr%C5%A1ine%20za%20procjenu%20%C4%8Di%C5%A1%C4%87enja."
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={`${styles.detailItem} ${styles.whatsappItem}`}
+                            >
+                                <div className={styles.iconCircle}><MessageCircle size={24} /></div>
+                                <div>
+                                    <span className={styles.label}>Najbrži odgovor, pošaljite slike</span>
+                                    <span className={styles.value}>WhatsApp: 095 844 2806</span>
+                                </div>
+                            </a>
+
+                            <a
+                                href="tel:+385958442806"
                                 className={styles.detailItem}
                                 onClick={() => {
                                     // @ts-ignore

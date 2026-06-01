@@ -20,6 +20,10 @@ export const homepageMascots = {
     src: `/characters/homepage/slauf-pointing.webp`,
     alt: "",
   },
+  servicesRight: {
+    src: `/characters/homepage/smrk-thumbs-up.webp`,
+    alt: "",
+  },
   contact: {
     src: `/characters/homepage/smrk-waving.webp`,
     alt: "",

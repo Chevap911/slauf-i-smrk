@@ -47,7 +47,7 @@ export default function WhyChooseUs() {
                     <div className={styles.headerCopy}>
                         <h2 className={styles.title}>Zašto odabrati nas?</h2>
                         <p className={styles.subtitle}>
-                            Povjerenje klijenata gradimo na kvaliteti, transparentnosti i vrhunskim rezultatima.
+                            5,0 na Googleu i 40 recenzija. Dvojica koja dođu, operu i dokumentiraju rezultat. Bez podizvođača i bez iznenađenja na fakturi.
                         </p>
                     </div>
 
@@ -65,8 +65,8 @@ export default function WhyChooseUs() {
                             className={styles.card}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            viewport={{ once: true, margin: '0px 0px 200px 0px' }}
+                            transition={{ duration: 0.5, delay: Math.min(index, 4) * 0.06 }}
                         >
                             <div className={styles.iconWrapper}>{reason.icon}</div>
                             <div className={styles.content}>

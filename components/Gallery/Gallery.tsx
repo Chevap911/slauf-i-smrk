@@ -1,7 +1,9 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { X } from 'lucide-react';
 import BeforeAfterSlider from '@/components/BeforeAfterSlider/BeforeAfterSlider';
 import styles from './Gallery.module.css';
 
@@ -40,6 +42,21 @@ const projectImages = [
 ];
 
 export default function Gallery() {
+    const [activeImg, setActiveImg] = useState<{ src: string; alt: string } | null>(null);
+
+    useEffect(() => {
+        if (!activeImg) return;
+        const onKey = (e: KeyboardEvent) => {
+            if (e.key === 'Escape') setActiveImg(null);
+        };
+        document.body.style.overflow = 'hidden';
+        window.addEventListener('keydown', onKey);
+        return () => {
+            document.body.style.overflow = '';
+            window.removeEventListener('keydown', onKey);
+        };
+    }, [activeImg]);
+
     return (
         <section id="galerija" className={styles.section}>
             <div className="container">
@@ -47,7 +64,7 @@ export default function Gallery() {
                     className={styles.header}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, margin: '0px 0px 200px 0px' }}
                 >
                     <h2 className={styles.title}>Rezultati koji govore sami za sebe</h2>
                     <p className={styles.subtitle}>Povucite klizač lijevo-desno i pogledajte transformacije!</p>
@@ -68,13 +85,16 @@ export default function Gallery() {
                     <h3 className={styles.label}>Naši ostali projekti</h3>
                     <div className={styles.projectGrid}>
                         {projectImages.map((item, index) => (
-                            <motion.div
+                            <motion.button
+                                type="button"
                                 key={index}
                                 className={styles.projectImageWrapper}
+                                onClick={() => setActiveImg(item)}
+                                aria-label={`Povećaj sliku: ${item.alt}`}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ delay: index * 0.08 }}
-                                viewport={{ once: true }}
+                                transition={{ delay: Math.min(index, 6) * 0.06 }}
+                                viewport={{ once: true, margin: '0px 0px 200px 0px' }}
                             >
                                 <Image
                                     src={item.src}
@@ -83,11 +103,37 @@ export default function Gallery() {
                                     height={300}
                                     className={styles.projectImg}
                                 />
-                            </motion.div>
+                            </motion.button>
                         ))}
                     </div>
                 </div>
             </div>
+
+            {activeImg && (
+                <div
+                    className={styles.lightbox}
+                    onClick={() => setActiveImg(null)}
+                    role="dialog"
+                    aria-modal="true"
+                    aria-label="Pregled slike"
+                >
+                    <button
+                        type="button"
+                        className={styles.lightboxClose}
+                        onClick={() => setActiveImg(null)}
+                        aria-label="Zatvori"
+                    >
+                        <X size={28} />
+                    </button>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                        src={activeImg.src}
+                        alt={activeImg.alt}
+                        className={styles.lightboxImg}
+                        onClick={(e) => e.stopPropagation()}
+                    />
+                </div>
+            )}
         </section>
     );
 }

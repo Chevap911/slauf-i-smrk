@@ -80,8 +80,8 @@ export default function Testimonials() {
                             className={styles.card}
                             initial={{ opacity: 0, scale: 0.9 }}
                             whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            viewport={{ once: true, margin: '0px 0px 200px 0px' }}
+                            transition={{ duration: 0.5, delay: Math.min(index, 4) * 0.06 }}
                         >
                             <div className={styles.quoteIcon}>
                                 <Quote size={24} fill="var(--primary)" color="var(--primary)" />

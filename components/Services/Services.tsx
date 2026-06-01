@@ -77,6 +77,11 @@ export default function Services() {
                         alt={homepageMascots.services.alt}
                         className={styles.sectionMascot}
                     />
+                    <HomepageMascot
+                        src={homepageMascots.servicesRight.src}
+                        alt={homepageMascots.servicesRight.alt}
+                        className={styles.sectionMascotRight}
+                    />
                 </div>
 
                 <div className={styles.grid}>
@@ -86,8 +91,8 @@ export default function Services() {
                                 className={styles.card}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                                viewport={{ once: true, margin: '0px 0px 200px 0px' }}
+                                transition={{ duration: 0.5, delay: Math.min(index, 4) * 0.06 }}
                                 whileHover={{ y: -10 }}
                             >
                                 <div className={styles.iconWrapper}>{service.icon}</div>

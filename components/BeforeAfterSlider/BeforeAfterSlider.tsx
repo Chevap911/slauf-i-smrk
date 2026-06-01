@@ -63,7 +63,7 @@ export default function BeforeAfterSlider({
             className={styles.wrapper}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: '0px 0px 200px 0px' }}
             transition={{ duration: 0.6 }}
         >
             {label && <h3 className={styles.label}>{label}</h3>}

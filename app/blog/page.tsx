@@ -16,6 +16,13 @@ export const metadata: Metadata = {
 
 const articles = [
     {
+        title: 'Kako oprati fasadu: vodič korak po korak i kada zvati profesionalce',
+        excerpt: 'Koji tlak za koju fasadu, koje sredstvo i zašto kućni perač griješi na stiropor fasadi. Postupak korak po korak, najčešće greške i cijena pranja fasade u Zagrebu.',
+        slug: '/blog/kako-oprati-fasadu',
+        date: '2026-06-01',
+        category: 'Savjeti',
+    },
+    {
         title: 'Pranje fasade stiropor i ETICS: što smijete, što ne i cijena',
         excerpt: 'Stiropor fasada (ETICS sustav) ima završni sloj debljine 1,5 do 3 mm. Visoki tlak ga probije. Vodič o jedino sigurnoj metodi čišćenja, cijeni i tome kako prepoznati koji tip fasade imate.',
         slug: '/blog/pranje-fasade-stiropor-etics',

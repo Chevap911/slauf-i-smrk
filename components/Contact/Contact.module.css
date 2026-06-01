@@ -109,6 +109,20 @@
     border-color: rgba(37, 99, 235, 0.1);
 }
 
+.whatsappItem {
+    border-color: rgba(37, 211, 102, 0.35);
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.12);
+}
+
+.whatsappItem:hover {
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.2);
+    border-color: rgba(37, 211, 102, 0.5);
+}
+
+.whatsappItem .iconCircle {
+    background: linear-gradient(135deg, #25d366, #128c4a);
+}
+
 .iconCircle {
     width: 48px;
     height: 48px;

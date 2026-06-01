@@ -61,7 +61,12 @@ export default function Footer() {
                     <div className={styles.section}>
                         <h4 className={styles.sectionTitle}>Sadržaj</h4>
                         <ul className={styles.list}>
+                            <li><Link href="/o-nama">O nama</Link></li>
                             <li><Link href="/podrucje/zagreb">Zagreb i okolica</Link></li>
+                            <li><Link href="/podrucje/sesvete">Sesvete</Link></li>
+                            <li><Link href="/podrucje/velika-gorica">Velika Gorica</Link></li>
+                            <li><Link href="/podrucje/samobor">Samobor</Link></li>
+                            <li><Link href="/podrucje/zapresic">Zaprešić</Link></li>
                             <li><Link href="/blog">Blog i vodiči o cijenama</Link></li>
                             <li><Link href="/blog/koliko-kosta-pranje-fasade">Pranje fasade cijena</Link></li>
                             <li><Link href="/blog/koliko-kosta-pranje-okucnice-tlakavaca-zagreb">Pranje okućnice i tlakavaca cijena</Link></li>
