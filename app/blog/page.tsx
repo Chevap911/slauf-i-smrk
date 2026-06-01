@@ -16,6 +16,34 @@ export const metadata: Metadata = {
 
 const articles = [
     {
+        title: 'Crne fleke na fasadi: kako smo ih skinuli na kući na Jarunu',
+        excerpt: 'Crne fleke nisu prljavština nego gljivice i biofilm. Na stvarnom poslu u Zagrebu pokazujemo kako ih skidamo do korijena da se ne vrate i koliko to košta.',
+        slug: '/blog/crne-fleke-na-fasadi',
+        date: '2026-06-01',
+        category: 'Naš posao',
+    },
+    {
+        title: 'Korov između kocki i tlakavaca: kako smo očistili dvorište u Velikoj Gorici',
+        excerpt: 'Korov se vraća svake sezone ako se samo počupa. Pokazujemo kako čistimo fuge do dna i čime usporavamo ponovni rast na stvarnom poslu.',
+        slug: '/blog/korov-izmedju-tlakavaca',
+        date: '2026-06-01',
+        category: 'Naš posao',
+    },
+    {
+        title: 'Salitra na fasadi: bijele naslage na kući u Španskom i kako smo ih riješili',
+        excerpt: 'Bijele praškaste naslage nisu plijesan nego salitra. Na stvarnom poslu objašnjavamo odakle dolazi, kako je skidamo i zašto se vraća ako se ne riješi vlaga.',
+        slug: '/blog/salitra-na-fasadi',
+        date: '2026-06-01',
+        category: 'Naš posao',
+    },
+    {
+        title: 'Bijela fasada na kući posivjela: kako smo je vratili na Maksimiru',
+        excerpt: 'Posivjela bijela fasada najčešće ne treba bojanje nego pranje. Na stvarnom poslu pokazujemo kako vraćamo boju za djelić cijene bojanja.',
+        slug: '/blog/bijela-fasada-posivjela',
+        date: '2026-06-01',
+        category: 'Naš posao',
+    },
+    {
         title: 'Kako oprati fasadu: vodič korak po korak i kada zvati profesionalce',
         excerpt: 'Koji tlak za koju fasadu, koje sredstvo i zašto kućni perač griješi na stiropor fasadi. Postupak korak po korak, najčešće greške i cijena pranja fasade u Zagrebu.',
         slug: '/blog/kako-oprati-fasadu',

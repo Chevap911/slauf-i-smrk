@@ -19,6 +19,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ];
 
     const blog: { slug: string; date: string }[] = [
+        { slug: 'crne-fleke-na-fasadi', date: '2026-06-01' },
+        { slug: 'korov-izmedju-tlakavaca', date: '2026-06-01' },
+        { slug: 'salitra-na-fasadi', date: '2026-06-01' },
+        { slug: 'bijela-fasada-posivjela', date: '2026-06-01' },
         { slug: 'kako-oprati-fasadu', date: '2026-06-01' },
         { slug: 'pranje-fasade-stiropor-etics', date: '2026-05-26' },
         { slug: 'ciscenje-fasade-od-algi-i-gljivica', date: '2026-05-25' },
