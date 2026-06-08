@@ -2,8 +2,8 @@
 .fab {
     position: fixed;
     right: 1rem;
-    bottom: 4.75rem; /* iznad sticky donje trake */
-    z-index: 1000;
+    top: 4.75rem; /* odmah ispod nav trake */
+    z-index: 900; /* ispod nav (1000) i mobilnog menija da ne prekriva X */
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -11,7 +11,7 @@
     border: none;
     border-radius: 999px;
     background: var(--accent);
-    color: var(--secondary);
+    color: #fff;
     font-family: var(--font-heading);
     font-weight: 800;
     font-size: 0.9rem;

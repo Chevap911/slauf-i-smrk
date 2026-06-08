@@ -16,6 +16,22 @@ export const QUOTE_SERVICES = [
 export const QUOTE_WHATSAPP =
     'https://wa.me/385958442806?text=Pozdrav%2C%20%C5%A1aljem%20slike%20povr%C5%A1ine%20za%20procjenu%20%C4%8Di%C5%A1%C4%87enja.';
 
+// Kanonske stope €/m² (vidi Šlauf i Šmrk/overview.md)
+const RATES: Record<string, [number, number]> = {
+    facade: [5, 7],
+    yard: [4, 6],
+    terrace: [4, 6],
+    pavers: [4, 6],
+    driveway: [4, 6],
+};
+
+function computeEstimate(service: string, size: string): { min: number; max: number } | null {
+    const rate = RATES[service];
+    const area = parseFloat((size || '').replace(',', '.'));
+    if (!rate || !area || area <= 0) return null;
+    return { min: Math.round(area * rate[0]), max: Math.round(area * rate[1]) };
+}
+
 export default function QuoteForm({ idPrefix = 'qf' }: { idPrefix?: string }) {
     const [sent, setSent] = useState(false);
     const [submitting, setSubmitting] = useState(false);
@@ -32,6 +48,7 @@ export default function QuoteForm({ idPrefix = 'qf' }: { idPrefix?: string }) {
             return;
         }
         const isEmail = contact.includes('@');
+        const est = computeEstimate(service, size);
         setSubmitting(true);
         try {
             const res = await fetch('/api/contact', {
@@ -46,10 +63,10 @@ export default function QuoteForm({ idPrefix = 'qf' }: { idPrefix?: string }) {
                         city: '',
                         service,
                         surfaceSize: size,
-                        message: `Brzi upit s forme. Površina: ${size || 'nije navedeno'} m².`,
+                        message: `Brzi upit s forme. Površina: ${size || 'nije navedeno'} m².${est ? ` Okvirna cijena prikazana korisniku: ${est.min} - ${est.max} €.` : ''}`,
                         marketingConsent: false,
                     },
-                    estimatedPrice: { min: 0, max: 0 },
+                    estimatedPrice: est || { min: 0, max: 0 },
                 }),
             });
             if (!res.ok) throw new Error('fail');
@@ -73,6 +90,8 @@ export default function QuoteForm({ idPrefix = 'qf' }: { idPrefix?: string }) {
             </div>
         );
     }
+
+    const estimate = computeEstimate(service, size);
 
     return (
         <div className={styles.wrap}>
@@ -108,6 +127,14 @@ export default function QuoteForm({ idPrefix = 'qf' }: { idPrefix?: string }) {
                         min="0"
                     />
                 </label>
+
+                {estimate && (
+                    <div className={styles.estimate}>
+                        <span className={styles.estimateLabel}>Okvirna cijena</span>
+                        <strong className={styles.estimateValue}>{estimate.min} – {estimate.max} €</strong>
+                        <span className={styles.estimateNote}>Informativno, konačna cijena nakon besplatne procjene.</span>
+                    </div>
+                )}
 
                 {error && <p className={styles.error}>{error}</p>}
 
