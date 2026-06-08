@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { MapPin, CheckCircle2 } from 'lucide-react';
 import brandLogo from '@/Media/Logo.png';
 import HeroAnimatedContent from './HeroAnimatedContent';
+import QuoteForm from '@/components/QuoteForm/QuoteForm';
 import styles from './Hero.module.css';
 
 export default function Hero() {
@@ -64,6 +65,10 @@ export default function Hero() {
                                     <span>Stvarni projekti i jasan dogovor prije početka</span>
                                 </div>
                             </div>
+                        </div>
+
+                        <div className={styles.heroForm}>
+                            <QuoteForm idPrefix="hero" />
                         </div>
                     </div>
                 </div>

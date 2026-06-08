@@ -13,7 +13,7 @@
     "@react-email/render": "^2.0.4",
     "@react-spring/web": "^10.0.3",
     "@supabase/supabase-js": "^2.98.0",
-    "framer-motion": "^12.34.3",
+    "framer-motion": "^12.40.0",
     "lucide-react": "^0.575.0",
     "next": "16.1.6",
     "react": "19.2.3",

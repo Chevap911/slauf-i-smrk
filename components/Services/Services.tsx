@@ -73,11 +73,13 @@ export default function Services() {
                     </div>
 
                     <HomepageMascot
+                        inline
                         src={homepageMascots.services.src}
                         alt={homepageMascots.services.alt}
                         className={styles.sectionMascot}
                     />
                     <HomepageMascot
+                        inline
                         src={homepageMascots.servicesRight.src}
                         alt={homepageMascots.servicesRight.alt}
                         className={styles.sectionMascotRight}

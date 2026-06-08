@@ -1,8 +1,19 @@
 'use client';
 
 import Link from 'next/link';
-import { Camera, CheckCircle2, Mail, MapPin, Phone } from 'lucide-react';
+import { Camera, CheckCircle2, Mail, MapPin, Phone, Facebook, Instagram, Star } from 'lucide-react';
 import styles from './Footer.module.css';
+
+// TODO: provjerite i po potrebi zamijenite ove linkove točnim profilima.
+const socialLinks = [
+    { label: 'Facebook', href: 'https://www.facebook.com/slaufismrk', icon: Facebook },
+    { label: 'Instagram', href: 'https://www.instagram.com/slaufismrk', icon: Instagram },
+    {
+        label: 'Google recenzije',
+        href: 'https://www.google.com/maps/search/?api=1&query=%C5%A0lauf+i+%C5%A0mrk+Zagreb',
+        icon: Star,
+    },
+];
 
 const highlights = [
     {
@@ -42,6 +53,24 @@ export default function Footer() {
                         <Link href="/#kontakt" className={styles.brandCta}>
                             Zatražite procjenu
                         </Link>
+
+                        <div className={styles.socials}>
+                            {socialLinks.map((social) => {
+                                const Icon = social.icon;
+                                return (
+                                    <a
+                                        key={social.label}
+                                        href={social.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={styles.socialLink}
+                                        aria-label={social.label}
+                                    >
+                                        <Icon size={20} />
+                                    </a>
+                                );
+                            })}
+                        </div>
                     </div>
 
                     <div className={styles.section}>

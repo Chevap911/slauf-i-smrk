@@ -35,6 +35,34 @@
     color: var(--secondary);
     margin-bottom: 1.25rem;
     box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.googleBadge:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    transform: translateY(-1px);
+}
+
+.ctaRow {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.allReviewsLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95rem;
+    padding: 0.6rem 1rem;
+    border-radius: 999px;
+    transition: gap 0.2s ease, color 0.2s ease;
+}
+
+.allReviewsLink:hover {
+    color: var(--secondary);
+    gap: 0.75rem;
 }
 
 .grid {

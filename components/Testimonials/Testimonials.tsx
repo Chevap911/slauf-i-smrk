@@ -1,8 +1,13 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Star, Quote } from 'lucide-react';
+import { Star, Quote, ExternalLink } from 'lucide-react';
 import styles from './Testimonials.module.css';
+
+// TODO: zamijenite ovaj URL s točnim linkom na vaš Google profil / recenzije
+// (npr. "Napiši recenziju" link iz Google Business profila ili g.page link).
+const GOOGLE_REVIEWS_URL =
+    'https://www.google.com/maps/search/?api=1&query=%C5%A0lauf+i+%C5%A0mrk+Zagreb';
 
 const testimonials = [
     {
@@ -60,15 +65,20 @@ export default function Testimonials() {
         <section id="recenzije" className={styles.section}>
             <div className="container">
                 <div className={styles.header}>
-                    <div className={styles.googleBadge}>
+                    <a
+                        href={GOOGLE_REVIEWS_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.googleBadge}
+                    >
                         <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true">
                             <path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.6 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 7.9 3L37.5 9.4C34.2 6.3 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.6-.4-3.9z" />
                             <path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.6 16 19 13 24 13c3.1 0 5.8 1.1 7.9 3l5.7-5.7C34.2 6.3 29.3 4 24 4 16.3 4 9.6 8.3 6.3 14.7z" />
                             <path fill="#4CAF50" d="M24 44c5.2 0 9.9-1.9 13.5-5.1l-6.2-5.2C29.6 35.6 26.9 37 24 37c-5.3 0-9.7-3.4-11.3-8H6.3C9.6 38.4 16.3 44 24 44z" />
                             <path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.1-4.1 5.5l6.2 5.2C37.2 38.7 44 33 44 24c0-1.3-.1-2.6-.4-3.9z" />
                         </svg>
-                        <span>5,0 · 20 Google recenzija</span>
-                    </div>
+                        <span>5,0 · 40 Google recenzija</span>
+                    </a>
                     <h2 className={styles.title}>Dojmovi naših klijenata</h2>
                     <p className={styles.subtitle}>Stvarne recenzije s Google Mapsa, neobrađene, kakve su stigle.</p>
                 </div>
@@ -98,6 +108,18 @@ export default function Testimonials() {
                             </div>
                         </motion.div>
                     ))}
+                </div>
+
+                <div className={styles.ctaRow}>
+                    <a
+                        href={GOOGLE_REVIEWS_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.allReviewsLink}
+                    >
+                        Pogledaj sve recenzije na Google-u
+                        <ExternalLink size={16} />
+                    </a>
                 </div>
             </div>
         </section>

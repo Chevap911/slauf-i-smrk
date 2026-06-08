@@ -53,9 +53,9 @@
 }
 
 .title {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     color: var(--secondary);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
     line-height: 1.1;
     font-weight: 800;
 }
@@ -79,9 +79,9 @@
 }
 
 .text {
-    font-size: 1.125rem;
+    font-size: 1rem;
     color: #555;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
     line-height: 1.6;
 }
 
@@ -158,12 +158,12 @@
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    padding: 3rem;
+    padding: 2.25rem;
     border-radius: 1.5rem;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.5);
     position: relative;
-    min-height: 500px;
+    min-height: 460px;
 }
 
 /* Progress Bar */
@@ -202,16 +202,16 @@
 
 /* Step Content Styles */
 .stepTitle {
-    font-size: 1.75rem;
+    font-size: 1.35rem;
     font-weight: 700;
     color: var(--secondary);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
 }
 
 .stepDesc {
     color: #64748b;
-    margin-bottom: 2rem;
-    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
 }
 
 /* Input Fields */
@@ -246,10 +246,10 @@
 }
 
 .inputField {
-    padding: 0.875rem 1rem;
+    padding: 0.75rem 0.9rem;
     border: 2px solid #e2e8f0;
     border-radius: 0.75rem;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-family: inherit;
     transition: all 0.2s ease;
     background: #f8fafc;
@@ -260,6 +260,35 @@
     border-color: var(--primary);
     background: white;
     box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.2);
+}
+
+.inputError {
+    border-color: #ef4444;
+    background: #fef2f2;
+}
+
+.inputError:focus {
+    border-color: #ef4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.18);
+}
+
+.errorText {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #dc2626;
+}
+
+.formError {
+    margin: 2rem 0 0;
+    padding: 0.85rem 1rem;
+    border-radius: 0.75rem;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #b91c1c;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.45;
 }
 
 .consentBox {
@@ -293,10 +322,10 @@
 
 .serviceSelect {
     width: 100%;
-    padding: 1.25rem 1rem 1.25rem 3.75rem;
+    padding: 1rem 1rem 1rem 3.5rem;
     border: 2px solid #e2e8f0;
-    border-radius: 1.25rem;
-    font-size: 1.15rem;
+    border-radius: 1.1rem;
+    font-size: 1.02rem;
     font-weight: 700;
     color: var(--secondary);
     background: white;
@@ -455,7 +484,7 @@
 }
 
 .priceTitle {
-    font-size: 1.125rem;
+    font-size: 1rem;
     opacity: 0.9;
     margin-bottom: 0.5rem;
     position: relative;
@@ -463,7 +492,7 @@
 }
 
 .priceAmount {
-    font-size: 3.5rem;
+    font-size: 2.75rem;
     font-weight: 800;
     line-height: 1;
     color: var(--primary);

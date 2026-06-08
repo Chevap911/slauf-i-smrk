@@ -346,6 +346,29 @@ const getServiceValidationError = (formData: FormState) => {
 const getAdditionalServiceOptions = (primaryService: ServiceId | '') =>
     SERVICE_TYPES.filter((service) => service.id !== 'grave' && service.id !== primaryService);
 
+type ContactField = 'name' | 'email' | 'phone' | 'city';
+
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+// Email je obavezan, telefon je opcionalan.
+const validateContact = (formData: FormState): Partial<Record<ContactField, string>> => {
+    const errors: Partial<Record<ContactField, string>> = {};
+
+    if (!formData.name.trim()) {
+        errors.name = 'Upišite ime i prezime.';
+    }
+    if (!formData.email.trim()) {
+        errors.email = 'Upišite email adresu.';
+    } else if (!EMAIL_REGEX.test(formData.email.trim())) {
+        errors.email = 'Provjerite format email adrese.';
+    }
+    if (!formData.city.trim()) {
+        errors.city = 'Upišite mjesto ili grad.';
+    }
+
+    return errors;
+};
+
 export default function Contact() {
     const [step, setStep] = useState(1);
     const [progress, setProgress] = useState(25);
@@ -353,6 +376,8 @@ export default function Contact() {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [leadId, setLeadId] = useState<string | null>(null);
     const [formData, setFormData] = useState<FormState>(createInitialFormData);
+    const [contactErrors, setContactErrors] = useState<Partial<Record<ContactField, string>>>({});
+    const [formError, setFormError] = useState<string | null>(null);
 
     // Debounce timer za hot lead emailove, 10 minuta
     const HOT_LEAD_DELAY_MS = 10 * 60 * 1000;
@@ -397,15 +422,25 @@ export default function Contact() {
     };
 
     const updateForm = <K extends keyof FormState>(field: K, value: FormState[K]) => {
+        // Očisti inline grešku za polje čim ga korisnik mijenja
+        if (field in contactErrors) {
+            setContactErrors((prev) => {
+                const next = { ...prev };
+                delete next[field as ContactField];
+                return next;
+            });
+        }
+        if (formError) setFormError(null);
+
         setFormData((prev) => {
             const next = { ...prev, [field]: value };
-            
-            // Ako je korisnik u Koraku 2 ili 3, resetiramo timer za hot lead pri svakoj promjeni
-            // tako da email ode tek 10 min nakon zadnje aktivnosti.
-            if (step >= 2 && next.service) {
+
+            // Na koraku kontakta (3) imamo i uslugu i kontakt — armiraj hot lead timer
+            // tako da email ode tek 10 min nakon zadnje aktivnosti ako korisnik ne pošalje upit.
+            if (step === 3 && next.service && next.email) {
                 scheduleHotLeadEmail(2, next, getTotalEstimate(next));
             }
-            
+
             return next;
         });
     };
@@ -478,100 +513,50 @@ export default function Contact() {
 
     const estimatedPrice = getTotalEstimate(formData);
 
-    const savePartialLead = async () => {
-        const response = await fetch('/api/contact', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ mode: 'partial', leadId, formData, estimatedPrice }),
-        });
-
-        if (!response.ok) throw new Error('Failed to save partial lead');
-
-        const data = await response.json();
-        if (data?.leadId) setLeadId(data.leadId);
+    const pushDataLayer = (payload: Record<string, unknown>) => {
+        if (typeof window === 'undefined') return;
+        (window as any).dataLayer = (window as any).dataLayer || [];
+        (window as any).dataLayer.push(payload);
     };
 
-    const saveStep2Lead = async () => {
-        const response = await fetch('/api/contact', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ mode: 'step2', leadId, formData, estimatedPrice }),
-        });
+    const handleNext = () => {
+        setFormError(null);
 
-        if (!response.ok) throw new Error('Failed to save step2 lead');
-
-        const data = await response.json();
-        if (data?.leadId) setLeadId(data.leadId);
-    };
-
-
-    const handleNext = async () => {
-        if (step === 1 && (!formData.name || !formData.email || !formData.phone || !formData.city)) {
-            alert('Molimo ispunite sva obavezna polja: ime, email, telefon i grad.');
-            return;
-        }
-
-        // Korak 1, spremi u DB, pokreći timer za hot lead email
+        // Korak 1: odabir usluge
         if (step === 1) {
-            try {
-                await savePartialLead();
-                scheduleHotLeadEmail(1, formData, estimatedPrice);
-
-                if (typeof window !== 'undefined') {
-                    (window as any).dataLayer = (window as any).dataLayer || [];
-                    (window as any).dataLayer.push({
-                        event: 'form_step1_completed',
-                        form_name: 'Kontakt forma',
-                        has_email: Boolean(formData.email),
-                        has_phone: Boolean(formData.phone),
-                        city: formData.city,
-                    });
-                }
-            } catch (error) {
-                console.error('Partial lead save failed:', error);
+            if (!formData.service) {
+                setFormError('Odaberite uslugu kako bismo mogli pripremiti procjenu.');
+                return;
             }
+            pushDataLayer({
+                event: 'form_service_selected',
+                form_name: 'Kontakt forma',
+                service_type: formData.service,
+            });
         }
 
-        if (step === 2 && !formData.service) {
-            alert('Odaberite uslugu prije nastavka.');
-            return;
-        }
-
-        // Korak 2, spremi u DB, resetiraj timer na korak 2
-        if (step === 2 && formData.service) {
-            try {
-                await saveStep2Lead();
-                scheduleHotLeadEmail(2, formData, estimatedPrice);
-            } catch (error) {
-                console.error('Step 2 lead save failed:', error);
+        // Korak 2: detalji i informativna procjena
+        if (step === 2) {
+            const validationError = getServiceValidationError(formData);
+            if (validationError) {
+                setFormError(validationError);
+                return;
             }
-
-            if (typeof window !== 'undefined') {
-                (window as any).dataLayer = (window as any).dataLayer || [];
-                (window as any).dataLayer.push({
-                    event: 'form_step2_completed',
-                    form_name: 'Kontakt forma',
-                    service_type: formData.service,
-                });
-            }
-        }
-
-        const newStep = step + 1;
-        setStep(newStep);
-        setProgress(Math.min(100, (newStep / 4) * 100));
-
-        if (step === 3 && typeof window !== 'undefined') {
-            (window as any).dataLayer = (window as any).dataLayer || [];
-            (window as any).dataLayer.push({
-                event: 'form_step3_completed',
+            pushDataLayer({
+                event: 'form_details_completed',
                 form_name: 'Kontakt forma',
                 service_type: formData.service,
                 estimated_value: estimatedPrice?.min || 0,
             });
         }
+
+        const newStep = step + 1;
+        setStep(newStep);
+        setProgress(Math.min(100, (newStep / 4) * 100));
     };
 
     const handleBack = () => {
+        setFormError(null);
         const newStep = step - 1;
         setStep(newStep);
         setProgress(Math.max(25, (newStep / 4) * 100));
@@ -582,16 +567,28 @@ export default function Contact() {
         setProgress(25);
         setLeadId(null);
         setFormData(createInitialFormData());
+        setContactErrors({});
+        setFormError(null);
     };
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
-        const validationError = getServiceValidationError(formData);
-        if (validationError) {
-            alert(validationError);
+        // Provjeri kontakt podatke (email obavezan, telefon opcionalan)
+        const cErrors = validateContact(formData);
+        if (Object.keys(cErrors).length > 0) {
+            setContactErrors(cErrors);
             return;
         }
+        setContactErrors({});
+
+        // Sigurnosna provjera usluge i detalja (već provjereno u ranijim koracima)
+        const validationError = getServiceValidationError(formData);
+        if (validationError) {
+            setFormError(validationError);
+            return;
+        }
+        setFormError(null);
 
         // Korisnik je poslao finalni upit, poništi hot lead timer
         cancelHotLeadTimer();
@@ -634,7 +631,7 @@ export default function Contact() {
             setTimeout(() => setShowConfetti(false), 8000);
         } catch (error) {
             console.error('Error submitting form:', error);
-            alert('Došlo je do greške prilikom slanja upita. Molimo pokušajte ponovno ili nas nazovite.');
+            setFormError('Došlo je do greške prilikom slanja upita. Molimo pokušajte ponovno ili nas nazovite na 095 844 2806.');
         } finally {
             setIsSubmitting(false);
         }
@@ -721,44 +718,48 @@ export default function Contact() {
 
                         <div className={styles.formBox}>
                             <AnimatePresence mode="wait">
-                                {step === 1 && (
+                                {step === 3 && (
                                     <motion.div
-                                        key="step1"
+                                        key="contact"
                                         initial={{ opacity: 0, x: 20 }}
                                         animate={{ opacity: 1, x: 0 }}
                                         exit={{ opacity: 0, x: -20 }}
                                         transition={{ duration: 0.3 }}
                                     >
-                                        <h3 className={styles.stepTitle}>Osobni podaci</h3>
-                                        <p className={styles.stepDesc}>Upišite kontakt kako bismo vam mogli poslati ponudu i slobodne termine.</p>
+                                        <h3 className={styles.stepTitle}>Vaši podaci</h3>
+                                        <p className={styles.stepDesc}>Još samo kontakt da vam pošaljemo konkretnu ponudu i slobodne termine.</p>
 
                                         <div className={styles.formGrid}>
                                             <div className={styles.inputGroup}>
                                                 <label>Ime i prezime *</label>
                                                 <input
                                                     type="text"
-                                                    className={styles.inputField}
+                                                    className={`${styles.inputField} ${contactErrors.name ? styles.inputError : ''}`}
                                                     placeholder="Vaše ime i prezime"
                                                     value={formData.name}
                                                     onChange={(e) => updateForm('name', e.target.value)}
+                                                    aria-invalid={Boolean(contactErrors.name)}
                                                 />
+                                                {contactErrors.name && <p className={styles.errorText}>{contactErrors.name}</p>}
                                             </div>
                                             <div className={styles.inputGroup}>
                                                 <label>Email adresa *</label>
                                                 <input
                                                     type="email"
-                                                    className={styles.inputField}
+                                                    className={`${styles.inputField} ${contactErrors.email ? styles.inputError : ''}`}
                                                     placeholder="vas@email.com"
                                                     value={formData.email}
                                                     onChange={(e) => updateForm('email', e.target.value)}
+                                                    aria-invalid={Boolean(contactErrors.email)}
                                                 />
+                                                {contactErrors.email && <p className={styles.errorText}>{contactErrors.email}</p>}
                                             </div>
                                             <div className={styles.inputGroup}>
-                                                <label>Broj telefona *</label>
+                                                <label>Broj telefona</label>
                                                 <input
                                                     type="tel"
                                                     className={styles.inputField}
-                                                    placeholder="09X XXX XXXX"
+                                                    placeholder="09X XXX XXXX (neobavezno)"
                                                     value={formData.phone}
                                                     onChange={(e) => updateForm('phone', e.target.value)}
                                                 />
@@ -767,21 +768,13 @@ export default function Contact() {
                                                 <label>Mjesto / Grad *</label>
                                                 <input
                                                     type="text"
-                                                    className={styles.inputField}
+                                                    className={`${styles.inputField} ${contactErrors.city ? styles.inputError : ''}`}
                                                     placeholder="Npr. Zagreb"
                                                     value={formData.city}
                                                     onChange={(e) => updateForm('city', e.target.value)}
+                                                    aria-invalid={Boolean(contactErrors.city)}
                                                 />
-                                            </div>
-                                            <div className={styles.inputGroup}>
-                                                <label>Adresa</label>
-                                                <input
-                                                    type="text"
-                                                    className={styles.inputField}
-                                                    placeholder="Ulica i kućni broj"
-                                                    value={formData.address}
-                                                    onChange={(e) => updateForm('address', e.target.value)}
-                                                />
+                                                {contactErrors.city && <p className={styles.errorText}>{contactErrors.city}</p>}
                                             </div>
                                         </div>
 
@@ -795,16 +788,18 @@ export default function Contact() {
                                                 <span>Želim povremeno primati korisne ponude i obavijesti emailom.</span>
                                             </label>
                                             <p className={styles.helperText}>
-                                                Ova privola je odvojena od samog upita. Osnovne podatke spremamo kad prijeđete na sljedeći korak kako vaš upit ne bi propao ako prekinete ispunjavanje.
+                                                Ova privola je odvojena od samog upita. Slanjem upita potvrđujete da ste upoznati s našom <a href="/politika-privatnosti" target="_blank" style={{ color: 'var(--accent)', textDecoration: 'underline' }}>Politikom privatnosti</a>.
                                             </p>
                                         </div>
 
-                                        <div className={`${styles.btnGroup} ${styles.right}`}>
-                                            <p style={{ fontSize: '0.8rem', color: '#6B7280', margin: '0 1rem 0 0', textAlign: 'right' }}>
-                                                Slanjem upita potvrđujete da ste upoznati s našom <a href="/politika-privatnosti" target="_blank" style={{ color: 'var(--accent)', textDecoration: 'underline' }}>Politikom privatnosti</a>.
-                                            </p>
-                                            <button className={`${styles.btn} ${styles.btnPrimary}`} onClick={handleNext}>
-                                                Odabir usluge <ArrowRight size={20} />
+                                        {formError && <p className={styles.formError} role="alert">{formError}</p>}
+
+                                        <div className={styles.btnGroup}>
+                                            <button className={`${styles.btn} ${styles.btnSecondary}`} onClick={handleBack}>
+                                                <ArrowLeft size={20} /> Povratak
+                                            </button>
+                                            <button className={`${styles.btn} ${styles.btnPrimary}`} onClick={handleSubmit} disabled={isSubmitting}>
+                                                {isSubmitting ? 'Slanje...' : <><Sparkles size={20} /> Zatraži pravu ponudu</>}
                                             </button>
                                         </div>
                                     </motion.div>
@@ -842,6 +837,8 @@ export default function Contact() {
                                                 })()}
                                             </div>
                                         </div>
+
+                                        {formError && <p className={styles.formError} role="alert">{formError}</p>}
 
                                         <div className={styles.btnGroup}>
                                             <button className={`${styles.btn} ${styles.btnSecondary}`} onClick={handleBack}>
@@ -999,6 +996,18 @@ export default function Contact() {
                                         )}
 
                                         <div className={`${styles.inputGroup} ${styles.full}`}>
+                                            <label>Adresa lokacije</label>
+                                            <input
+                                                type="text"
+                                                className={styles.inputField}
+                                                placeholder="Ulica i kućni broj (neobavezno)"
+                                                value={formData.address}
+                                                onChange={(e) => updateForm('address', e.target.value)}
+                                            />
+                                            <p className={styles.helperText}>Pomaže nam pripremiti dolazak i precizniju procjenu.</p>
+                                        </div>
+
+                                        <div className={`${styles.inputGroup} ${styles.full}`}>
                                             <label>Dodatna poruka</label>
                                             <textarea
                                                 className={styles.inputField}
@@ -1133,6 +1142,8 @@ export default function Contact() {
                                                     : 'Procjena je okvirna i može se promijeniti nakon uvida u stvarno stanje, pristup i opseg radova.'}
                                             </p>
                                         </div>
+
+                                        {formError && <p className={styles.formError} role="alert">{formError}</p>}
 
                                         <div className={styles.btnGroup}>
                                             <button className={`${styles.btn} ${styles.btnSecondary}`} onClick={handleBack}>

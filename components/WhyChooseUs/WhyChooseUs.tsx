@@ -1,41 +1,31 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { CheckCircle, Zap, Shield, Clock, BadgeEuro, Search } from 'lucide-react';
+import { Users, Camera, BadgeEuro, Star } from 'lucide-react';
 import HomepageMascot from '@/components/HomepageMascot/HomepageMascot';
 import { homepageMascots } from '@/components/HomepageMascot/homepageMascots';
 import styles from './WhyChooseUs.module.css';
 
 const reasons = [
     {
-        title: "Iskustvo i stručnost",
-        description: "Naš tim ima višegodišnje iskustvo u profesionalnom čišćenju svih vrsta površina.",
-        icon: <Shield size={32} />
+        title: "Dvojica koja dođu i odrade",
+        description: "Nema podizvođača ni rotacije ljudi. Mi koje vidite na slikama dolazimo, peremo i čistimo za sobom.",
+        icon: <Users size={32} />
     },
     {
-        title: "Moderna oprema",
-        description: "Koristimo najsuvremeniju visokotlačnu opremu koja učinkovito uklanja i najtvrdokorniju prljavštinu.",
-        icon: <Zap size={32} />
+        title: "Fotografiramo prije i poslije",
+        description: "Za veće zahvate dokumentiramo rezultat. Vidite točno što ste platili, bez priče na riječ.",
+        icon: <Camera size={32} />
     },
     {
-        title: "Ekološka sredstva",
-        description: "Sva sredstva koja koristimo su biorazgradiva i sigurna za okoliš te vaše ljubimce.",
-        icon: <CheckCircle size={32} />
-    },
-    {
-        title: "Brza i pouzdana usluga",
-        description: "Poštujemo vaše vrijeme i dogovorene rokove. Radimo efikasno bez kompromisa u kvaliteti.",
-        icon: <Clock size={32} />
-    },
-    {
-        title: "Konkurentne cijene",
-        description: "Nudimo vrhunsku kvalitetu po pristupačnim cijenama prilagođenim vašim potrebama.",
+        title: "Točna cijena prije početka",
+        description: "Dolazimo na besplatnu procjenu i dogovorimo fiksnu cijenu. Bez iznenađenja na fakturi.",
         icon: <BadgeEuro size={32} />
     },
     {
-        title: "Besplatna procjena",
-        description: "Prije početka radova, dolazimo na besplatnu procjenu i dajemo točnu, transparentnu ponudu.",
-        icon: <Search size={32} />
+        title: "5,0 na Google-u, 40 recenzija",
+        description: "Naši klijenti nas ocjenjuju najvišom ocjenom. Stvarne recenzije možete provjeriti na Google Mapsu.",
+        icon: <Star size={32} />
     }
 ];
 

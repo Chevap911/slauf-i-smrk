@@ -40,6 +40,13 @@ const pairs = [
         afterAlt: 'Fasada kuće poslije visokotlačnog pranja, čista bijela fasada Zagreb',
         label: 'Pranje fasade, alge i mahovina',
     },
+    {
+        before: '/assets/before1.png',
+        after: '/assets/after1.png',
+        beforeAlt: 'Kameni stol i klupe prije čišćenja, naslage i mahovina',
+        afterAlt: 'Kameni stol i klupe poslije čišćenja, vraćen prirodni kamen Zagreb',
+        label: 'Čišćenje kamenih površina, stol i klupe',
+    },
 ];
 
 export default function BeforeAfterGallery() {

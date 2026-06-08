@@ -178,6 +178,22 @@
     padding-top: 0.5rem;
 }
 
+/* Inline quote form — desktop only (mobile uses floating button) */
+.heroForm {
+    display: none;
+    margin-top: 1.25rem;
+    background: #fff;
+    border: 1px solid rgba(0, 51, 102, 0.1);
+    border-radius: 1.25rem;
+    padding: 1.5rem;
+    box-shadow: 0 16px 40px rgba(0, 51, 102, 0.12);
+}
+
+@media (min-width: 992px) {
+    .heroForm { display: block; }
+    .metaRow { display: none; }
+}
+
 .metaCard {
     display: flex;
     align-items: flex-start;

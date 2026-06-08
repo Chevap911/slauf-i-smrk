@@ -4,6 +4,7 @@ import Navigation from "@/components/Navigation/Navigation";
 import Footer from "@/components/Footer/Footer";
 import StickyCtaBanner from "@/components/StickyCtaBanner/StickyCtaBanner";
 import CookieBanner from "@/components/CookieBanner/CookieBanner";
+import QuoteFab from "@/components/QuoteFab/QuoteFab";
 import Script from "next/script";
 import "./globals.css";
 
@@ -281,6 +282,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <Navigation />
         <main>{children}</main>
         <Footer />
+        <QuoteFab />
         <StickyCtaBanner />
         <CookieBanner />
       </body>

@@ -2,11 +2,40 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Phone, Menu, X } from 'lucide-react';
 import styles from './Navigation.module.css';
 
+function BrandMark() {
+    return (
+        <svg
+            className={styles.brandMark}
+            viewBox="0 0 100 100"
+            aria-hidden="true"
+            focusable="false"
+        >
+            <rect width="100" height="100" rx="24" fill="var(--secondary)" />
+            <text
+                x="50%"
+                y="55%"
+                fontFamily="var(--font-heading), system-ui, sans-serif"
+                fontSize="50"
+                fontWeight="900"
+                fill="var(--primary)"
+                dominantBaseline="middle"
+                textAnchor="middle"
+            >
+                ŠŠ
+            </text>
+        </svg>
+    );
+}
+
 export default function Navigation() {
     const [isMobileOpen, setIsMobileOpen] = useState(false);
+    const pathname = usePathname();
+
+    const isActive = (href: string) => pathname === href;
 
     const toggleMenu = () => {
         setIsMobileOpen(!isMobileOpen);
@@ -20,7 +49,8 @@ export default function Navigation() {
         <nav className={styles.nav}>
             <div className="container">
                 <div className={styles.navWrapper}>
-                    <Link href="/" className={styles.logo}>
+                    <Link href="/" className={styles.logo} aria-label="Šlauf i Šmrk, početna">
+                        <BrandMark />
                         <span className={styles.brandName}>ŠLAUF <span className={styles.brandAmp}>i</span> ŠMRK</span>
                     </Link>
 
@@ -42,8 +72,8 @@ export default function Navigation() {
                                 <Link href="/usluge/poslovni-objekti">Poslovni objekti</Link>
                             </div>
                         </div>
-                        <Link href="/o-nama" className={styles.link}>O nama</Link>
-                        <Link href="/blog" className={styles.link}>Blog</Link>
+                        <Link href="/o-nama" className={`${styles.link} ${isActive('/o-nama') ? styles.linkActive : ''}`}>O nama</Link>
+                        <Link href="/blog" className={`${styles.link} ${isActive('/blog') ? styles.linkActive : ''}`}>Blog</Link>
                         <Link href="/#kontakt" className={styles.link}>Kontakt</Link>
                     </div>
 
