@@ -43,11 +43,11 @@ export default function QuoteForm({ idPrefix = 'qf' }: { idPrefix?: string }) {
     const submit = async (e: React.FormEvent) => {
         e.preventDefault();
         setError('');
-        if (!contact.trim()) {
-            setError('Upišite telefon ili email da vam se javimo.');
+        const phone = contact.trim();
+        if (phone.replace(/\D/g, '').length < 6) {
+            setError('Upišite ispravan broj mobitela da vas možemo nazvati.');
             return;
         }
-        const isEmail = contact.includes('@');
         const est = computeEstimate(service, size);
         setSubmitting(true);
         try {
@@ -58,8 +58,8 @@ export default function QuoteForm({ idPrefix = 'qf' }: { idPrefix?: string }) {
                     mode: 'final',
                     formData: {
                         name: 'Brzi upit (web)',
-                        email: isEmail ? contact.trim() : '',
-                        phone: isEmail ? '' : contact.trim(),
+                        email: '',
+                        phone,
                         city: '',
                         service,
                         surfaceSize: size,
@@ -107,13 +107,16 @@ export default function QuoteForm({ idPrefix = 'qf' }: { idPrefix?: string }) {
                 </label>
 
                 <label className={styles.field}>
-                    <span>Telefon ili email</span>
+                    <span>Broj mobitela</span>
                     <input
                         id={`${idPrefix}-contact`}
-                        type="text"
+                        type="tel"
+                        inputMode="tel"
+                        autoComplete="tel"
                         value={contact}
                         onChange={(e) => setContact(e.target.value)}
-                        placeholder="095 xxx xxxx ili vas@email.com"
+                        placeholder="npr. 095 123 4567"
+                        required
                     />
                 </label>
 
