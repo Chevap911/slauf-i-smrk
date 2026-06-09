@@ -23,6 +23,23 @@ const services = [
     { title: 'Grobna Mjesta', href: '/usluge/odrzavanje-grobnih-mjesta', icon: <HeartHandshake size={24} />, desc: 'Čišćenje i impregnacija nadgrobnih spomenika.' },
 ];
 
+const GUIDES = [
+    { title: 'Koliko košta pranje fasade', href: '/blog/koliko-kosta-pranje-fasade' },
+    { title: 'Kako oprati fasadu, vodič', href: '/blog/kako-oprati-fasadu' },
+    { title: 'Crne fleke na fasadi', href: '/blog/crne-fleke-na-fasadi' },
+    { title: 'Korov između tlakavaca', href: '/blog/korov-izmedju-tlakavaca' },
+];
+
+const ALL_AREAS = [
+    { city: 'Zagreb', slug: 'zagreb' },
+    { city: 'Sesvete', slug: 'sesvete' },
+    { city: 'Velika Gorica', slug: 'velika-gorica' },
+    { city: 'Samobor', slug: 'samobor' },
+    { city: 'Zaprešić', slug: 'zapresic' },
+    { city: 'Sveta Nedelja', slug: 'sveta-nedelja' },
+    { city: 'Dugo Selo', slug: 'dugo-selo' },
+];
+
 export default function AreaPage({ city, slug, intro, neighborhoods }: AreaPageProps) {
     const breadcrumbSchema = {
         '@context': 'https://schema.org',
@@ -85,6 +102,29 @@ export default function AreaPage({ city, slug, intro, neighborhoods }: AreaPageP
                         {neighborhoods.map((k, i) => (
                             <span key={i} className={styles.tag}>{k}</span>
                         ))}
+                    </div>
+                </div>
+            </section>
+
+            <section className={styles.links}>
+                <div className="container">
+                    <div className={styles.linksGrid}>
+                        <div>
+                            <h2>Korisni vodiči</h2>
+                            <ul className={styles.linkList}>
+                                {GUIDES.map((g) => (
+                                    <li key={g.href}><Link href={g.href}>{g.title}</Link></li>
+                                ))}
+                            </ul>
+                        </div>
+                        <div>
+                            <h2>Ostala područja</h2>
+                            <ul className={styles.linkList}>
+                                {ALL_AREAS.filter((a) => a.slug !== slug).map((a) => (
+                                    <li key={a.slug}><Link href={`/podrucje/${a.slug}`}>Čišćenje {a.city}</Link></li>
+                                ))}
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </section>

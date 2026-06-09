@@ -57,7 +57,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.6,
         },
         // Local pages
-        ...['zagreb', 'sesvete', 'velika-gorica', 'samobor', 'zapresic'].map(slug => ({
+        ...['zagreb', 'sesvete', 'velika-gorica', 'samobor', 'zapresic', 'sveta-nedelja', 'dugo-selo'].map(slug => ({
             url: `${baseUrl}/podrucje/${slug}`,
             lastModified: new Date('2026-06-01'),
             changeFrequency: 'monthly' as const,

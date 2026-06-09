@@ -96,6 +96,8 @@ export default function Footer() {
                             <li><Link href="/podrucje/velika-gorica">Velika Gorica</Link></li>
                             <li><Link href="/podrucje/samobor">Samobor</Link></li>
                             <li><Link href="/podrucje/zapresic">Zaprešić</Link></li>
+                            <li><Link href="/podrucje/sveta-nedelja">Sveta Nedelja</Link></li>
+                            <li><Link href="/podrucje/dugo-selo">Dugo Selo</Link></li>
                             <li><Link href="/blog">Blog i vodiči o cijenama</Link></li>
                             <li><Link href="/blog/koliko-kosta-pranje-fasade">Pranje fasade cijena</Link></li>
                             <li><Link href="/blog/koliko-kosta-pranje-okucnice-tlakavaca-zagreb">Pranje okućnice i tlakavaca cijena</Link></li>

@@ -6,6 +6,17 @@ import { Phone, ArrowRight, ChevronRight } from 'lucide-react';
 import BeforeAfterSlider from '@/components/BeforeAfterSlider/BeforeAfterSlider';
 import styles from './ServicePage.module.css';
 
+// Područja koja imaju svoju stranicu -> interni link
+const AREA_SLUGS: Record<string, string> = {
+    'Zagreb': 'zagreb',
+    'Sesvete': 'sesvete',
+    'Velika Gorica': 'velika-gorica',
+    'Samobor': 'samobor',
+    'Zaprešić': 'zapresic',
+    'Sveta Nedelja': 'sveta-nedelja',
+    'Dugo Selo': 'dugo-selo',
+};
+
 export interface ServiceFaq {
     question: string;
     answer: string;
@@ -440,9 +451,14 @@ export default function ServicePage({
                         <h2 className={styles.sectionTitle}>Pokrivamo ova područja</h2>
                         <p className={styles.sectionSubtitle}>Brz dolazak u svaki dio Zagreba i okolice</p>
                         <div className={styles.areaTags}>
-                            {serviceAreas.map((area, i) => (
-                                <span key={i} className={styles.areaTag}>{area}</span>
-                            ))}
+                            {serviceAreas.map((area, i) => {
+                                const slug = AREA_SLUGS[area];
+                                return slug ? (
+                                    <Link key={i} href={`/podrucje/${slug}`} className={styles.areaTag}>{area}</Link>
+                                ) : (
+                                    <span key={i} className={styles.areaTag}>{area}</span>
+                                );
+                            })}
                         </div>
                     </div>
                 </section>
