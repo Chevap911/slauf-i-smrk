@@ -80,34 +80,31 @@ export async function POST(req: Request) {
         };
 
         let inquiryId = leadId ?? null;
+        let dbOk = false;
 
-        if (inquiryId) {
-            const { data, error: updateError } = await supabase
-                .from('inquiries')
-                .update(inquiryPayload)
-                .eq('id', inquiryId)
-                .select('id')
-                .single();
-
-            if (updateError) {
-                console.error('Database Update Error:', updateError);
-                throw updateError;
+        // DB spremanje NIJE fatalno — ako padne (RLS/schema/env), svejedno šaljemo email da lead ne propadne
+        try {
+            if (inquiryId) {
+                const { data, error: updateError } = await supabase
+                    .from('inquiries')
+                    .update(inquiryPayload)
+                    .eq('id', inquiryId)
+                    .select('id')
+                    .single();
+                if (updateError) throw updateError;
+                inquiryId = data?.id ?? inquiryId;
+            } else {
+                const { data, error: insertError } = await supabase
+                    .from('inquiries')
+                    .insert([inquiryPayload])
+                    .select('id')
+                    .single();
+                if (insertError) throw insertError;
+                inquiryId = data?.id ?? null;
             }
-
-            inquiryId = data?.id ?? inquiryId;
-        } else {
-            const { data, error: insertError } = await supabase
-                .from('inquiries')
-                .insert([inquiryPayload])
-                .select('id')
-                .single();
-
-            if (insertError) {
-                console.error('Database Insert Error:', insertError);
-                throw insertError;
-            }
-
-            inquiryId = data?.id ?? null;
+            dbOk = true;
+        } catch (dbError) {
+            console.error('Database error (non-fatal, nastavljam na email):', dbError);
         }
 
         // Partial i step2 završavaju ovdje, email šalje frontend nakon timera
@@ -116,6 +113,7 @@ export async function POST(req: Request) {
         }
 
         // ─── Final submit: šalji email administratoru i klijentu ─────────────
+        let adminOk = false;
         if (isFinal) {
             // 1. Email administratoru
             try {
@@ -137,6 +135,7 @@ export async function POST(req: Request) {
                     }) as React.ReactElement,
                 });
                 console.log('Admin notification email sent');
+                adminOk = true;
             } catch (adminEmailError) {
                 console.error('Failed to send admin notification email:', adminEmailError);
             }
@@ -166,6 +165,11 @@ export async function POST(req: Request) {
                     console.error('Failed to send client confirmation email:', clientEmailError);
                 }
             }
+        }
+
+        // Vrati grešku samo ako baš ništa nije uspjelo (ni DB ni email)
+        if (isFinal && !dbOk && !adminOk) {
+            return NextResponse.json({ error: 'Submission failed' }, { status: 500 });
         }
 
         return NextResponse.json({ success: true, leadId: inquiryId });
