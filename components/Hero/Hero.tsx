@@ -45,8 +45,9 @@ export default function Hero() {
                                     alt="Logo Šlauf i Šmrk"
                                     style={{ height: '110px', width: 'auto' }}
                                     className={styles.mascotImg}
+                                    sizes="(max-width: 576px) 180px, 220px"
+                                    quality={70}
                                     priority
-                                    fetchPriority="high"
                                 />
                             </div>
                         </div>
