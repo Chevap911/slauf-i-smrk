@@ -20,7 +20,7 @@
 
 .brandTagline {
     max-width: 38ch;
-    color: #51677d;
+    color: #46586b;
     margin-bottom: 1.35rem;
     line-height: 1.7;
 }
@@ -103,7 +103,7 @@
 
 .list li {
     margin-bottom: 0.75rem;
-    color: #556b81;
+    color: #46586b;
     font-size: 0.95rem;
 }
 
@@ -126,7 +126,7 @@
     border-top: 1px solid var(--border);
     padding-top: 1.75rem;
     text-align: center;
-    color: #7f8fa0;
+    color: #46586b;
     font-size: 0.875rem;
 }
 
