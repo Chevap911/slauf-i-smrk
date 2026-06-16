@@ -16,6 +16,20 @@ export const metadata: Metadata = {
 
 const articles = [
     {
+        title: 'Uklanjanje grafita u Zagrebu: zašto se isplati i kako to radimo',
+        excerpt: 'Zagreb je pun grafita po fasadama i izlozima. Zašto ispisan zid privlači nove tagove, kako se boja skida bez oštećenja podloge i zašto antigrafitna zaštita štedi novac.',
+        slug: '/blog/uklanjanje-grafita-zagreb',
+        date: '2026-06-16',
+        category: 'Savjeti',
+    },
+    {
+        title: 'Zašto neredovito održavanje fasade na kraju košta puno više',
+        excerpt: 'Zelena mrlja koju ignorirate godinama postane sanacija žbuke za nekoliko tisuća eura. Kako mali problem poskupi i koliko košta da do toga ne dođe.',
+        slug: '/blog/odrzavanje-fasade-stedi-novac',
+        date: '2026-06-16',
+        category: 'Savjeti',
+    },
+    {
         title: 'Crne fleke na fasadi: kako smo ih skinuli na kući na Jarunu',
         excerpt: 'Crne fleke nisu prljavština nego gljivice i biofilm. Na stvarnom poslu u Zagrebu pokazujemo kako ih skidamo do korijena da se ne vrate i koliko to košta.',
         slug: '/blog/crne-fleke-na-fasadi',

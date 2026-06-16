@@ -19,6 +19,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ];
 
     const blog: { slug: string; date: string }[] = [
+        { slug: 'uklanjanje-grafita-zagreb', date: '2026-06-16' },
+        { slug: 'odrzavanje-fasade-stedi-novac', date: '2026-06-16' },
         { slug: 'crne-fleke-na-fasadi', date: '2026-06-01' },
         { slug: 'korov-izmedju-tlakavaca', date: '2026-06-01' },
         { slug: 'salitra-na-fasadi', date: '2026-06-01' },
