@@ -34,6 +34,7 @@ function computeEstimate(service: string, size: string): { min: number; max: num
 
 export default function QuoteForm({ idPrefix = 'qf' }: { idPrefix?: string }) {
     const [sent, setSent] = useState(false);
+    const [sentEstimate, setSentEstimate] = useState<{ min: number; max: number } | null>(null);
     const [submitting, setSubmitting] = useState(false);
     const [service, setService] = useState('facade');
     const [contact, setContact] = useState('');
@@ -70,6 +71,7 @@ export default function QuoteForm({ idPrefix = 'qf' }: { idPrefix?: string }) {
                 }),
             });
             if (!res.ok) throw new Error('fail');
+            setSentEstimate(est);
             setSent(true);
         } catch {
             setError('Greška pri slanju. Nazovite nas na 095 844 2806 ili WhatsApp.');
@@ -83,7 +85,18 @@ export default function QuoteForm({ idPrefix = 'qf' }: { idPrefix?: string }) {
             <div className={styles.success}>
                 <div className={styles.successIcon}><Check size={30} /></div>
                 <h3 className={styles.title}>Upit zaprimljen!</h3>
-                <p className={styles.sub}>Javimo vam se u najkraćem roku. Za brži odgovor pošaljite slike na WhatsApp.</p>
+                {sentEstimate ? (
+                    <>
+                        <div className={styles.estimate}>
+                            <span className={styles.estimateLabel}>Okvirna cijena za vašu površinu</span>
+                            <strong className={styles.estimateValue}>{sentEstimate.min} – {sentEstimate.max} €</strong>
+                            <span className={styles.estimateNote}>Informativno, konačnu cijenu potvrđujemo nakon besplatne procjene.</span>
+                        </div>
+                        <p className={styles.sub}>Javimo vam se u najkraćem roku. Za brži odgovor pošaljite slike na WhatsApp.</p>
+                    </>
+                ) : (
+                    <p className={styles.sub}>Javimo vam se u najkraćem roku s okvirnom cijenom. Za brži odgovor pošaljite slike na WhatsApp.</p>
+                )}
                 <a href={QUOTE_WHATSAPP} target="_blank" rel="noopener noreferrer" className={styles.whatsapp}>
                     <MessageCircle size={18} /> Pošaljite slike na WhatsApp
                 </a>
@@ -91,12 +104,10 @@ export default function QuoteForm({ idPrefix = 'qf' }: { idPrefix?: string }) {
         );
     }
 
-    const estimate = computeEstimate(service, size);
-
     return (
         <div className={styles.wrap}>
             <h3 className={styles.title}>Zatražite besplatnu procjenu</h3>
-            <p className={styles.sub}>Javimo vam okvirnu cijenu u najkraćem roku. Bez obveze.</p>
+            <p className={styles.sub}>Ispunite kratki obrazac i odmah dobijete okvirnu cijenu. Bez obveze.</p>
 
             <form onSubmit={submit} className={styles.form}>
                 <label className={styles.field}>
@@ -130,14 +141,6 @@ export default function QuoteForm({ idPrefix = 'qf' }: { idPrefix?: string }) {
                         min="0"
                     />
                 </label>
-
-                {estimate && (
-                    <div className={styles.estimate}>
-                        <span className={styles.estimateLabel}>Okvirna cijena</span>
-                        <strong className={styles.estimateValue}>{estimate.min} – {estimate.max} €</strong>
-                        <span className={styles.estimateNote}>Informativno, konačna cijena nakon besplatne procjene.</span>
-                    </div>
-                )}
 
                 {error && <p className={styles.error}>{error}</p>}
 
