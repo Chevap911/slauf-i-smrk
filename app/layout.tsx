@@ -88,6 +88,12 @@ const localBusinessSchema = {
     longitude: 15.9819,
   },
   priceRange: "€€",
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "5.0",
+    reviewCount: "40",
+    bestRating: "5",
+  },
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Usluge čišćenja",

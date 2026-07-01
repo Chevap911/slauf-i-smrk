@@ -4,17 +4,60 @@ import {
     ShieldCheck, Home, Car, TreeDeciduous, HeartHandshake, Droplets,
     Sofa, ArrowRight, Phone, Waves
 } from 'lucide-react';
+import { GUIDES, ALL_AREAS } from '@/components/AreaPage/areaLinks';
 import styles from './zagreb.module.css';
 
 export const metadata: Metadata = {
-    title: 'Visokotlačno Čišćenje Zagreb, Sve Usluge | Šlauf i Šmrk',
-    description: 'Profesionalno visokotlačno čišćenje u Zagrebu, fasade, okućnice, kamene i drvene površine, detailing auta, kemijsko čišćenje tepiha. Pokrivamo sve kvartove.',
+    title: 'Pranje fasade i okućnice Zagreb | Šlauf i Šmrk',
+    description: 'Visokotlačno pranje fasada, okućnica, kamenih i drvenih površina u Zagrebu. Detailing auta, kemijsko čišćenje tepiha. Besplatna procjena, pokrivamo sve kvartove.',
     alternates: { canonical: '/podrucje/zagreb' },
     openGraph: {
-        title: 'Visokotlačno Čišćenje Zagreb | Šlauf i Šmrk',
-        description: 'Profesionalno visokotlačno čišćenje u Zagrebu, fasade, okućnice, kamene površine, detailing auta.',
+        title: 'Pranje fasade i okućnice Zagreb | Šlauf i Šmrk',
+        description: 'Visokotlačno pranje fasada, okućnica i kamenih površina u Zagrebu, detailing auta.',
         url: 'https://slaufismrk.com/podrucje/zagreb',
     },
+};
+
+const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Početna', item: 'https://slaufismrk.com' },
+        { '@type': 'ListItem', position: 2, name: 'Zagreb', item: 'https://slaufismrk.com/podrucje/zagreb' },
+    ],
+};
+
+const faq = [
+    {
+        question: 'Koliko košta pranje fasade u Zagrebu?',
+        answer: 'Cijena pranja fasade u Zagrebu kreće se od 5 €/m², ovisno o veličini, materijalu i stupnju zaprljanosti. Za točnu cijenu šaljemo procjenu na temelju slika ili dolazimo na lokaciju.',
+    },
+    {
+        question: 'Koliko košta čišćenje okućnice u Zagrebu?',
+        answer: 'Cijena čišćenja okućnice u Zagrebu kreće se od 4 €/m², ovisno o kvadraturi i materijalu. Za veće površine i pakete dajemo procjenu prije početka rada.',
+    },
+    {
+        question: 'Koliko brzo dolazite u Zagrebu?',
+        answer: 'Odgovaramo u roku od sat vremena, a termin dogovaramo prema vašoj dostupnosti. Za brzu okvirnu cijenu pošaljite slike fasade ili okućnice na WhatsApp.',
+    },
+    {
+        question: 'Koje dijelove Zagreba pokrivate?',
+        answer: 'Pokrivamo cijeli Zagreb: Špansko, Jarun, Trešnjevku, Maksimir, Dubravu, Sesvete i ostale kvartove, kao i Veliku Goricu, Samobor i Zaprešić.',
+    },
+    {
+        question: 'Mogu li kombinirati pranje fasade i okućnice u istom terminu?',
+        answer: 'Da, najčešći izbor je kombinacija fasade, okućnice, terase i prilaza u jednom terminu uz paketnu cijenu.',
+    },
+];
+
+const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((item) => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: { '@type': 'Answer', text: item.answer },
+    })),
 };
 
 const services = [
@@ -37,15 +80,18 @@ const kvartovi = [
 export default function ZagrebPage() {
     return (
         <div className={styles.page}>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+
             <section className={styles.hero}>
                 <div className="container">
                     <div className={styles.breadcrumb}>
                         <Link href="/">Početna</Link> › <span>Zagreb</span>
                     </div>
-                    <h1>Visokotlačno Čišćenje <span>Zagreb</span></h1>
+                    <h1>Pranje fasade i okućnice <span>u Zagrebu</span></h1>
                     <p>
-                        Profesionalne usluge čišćenja u svim dijelovima Zagreba i okolice.
-                        Od fasada u Španskom do dvorišta u Maksimiru, tu smo za vas.
+                        Profesionalne usluge pranja fasade, okućnice i vanjskih površina u svim dijelovima
+                        Zagreba i okolice. Od fasada u Španskom do dvorišta u Maksimiru, tu smo za vas.
                     </p>
                     <Link href="/#kontakt" className={styles.heroCta}>
                         <Phone size={18} /> Besplatna procjena
@@ -77,6 +123,43 @@ export default function ZagrebPage() {
                         {kvartovi.map((k, i) => (
                             <span key={i} className={styles.tag}>{k}</span>
                         ))}
+                    </div>
+                </div>
+            </section>
+
+            <section className={styles.faq}>
+                <div className="container">
+                    <h2>Česta pitanja, Zagreb</h2>
+                    <div className={styles.faqList}>
+                        {faq.map((item, i) => (
+                            <div key={i} className={styles.faqItem}>
+                                <h3 className={styles.faqQuestion}>{item.question}</h3>
+                                <p className={styles.faqAnswer}>{item.answer}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            <section className={styles.links}>
+                <div className="container">
+                    <div className={styles.linksGrid}>
+                        <div>
+                            <h2>Korisni vodiči</h2>
+                            <ul className={styles.linkList}>
+                                {GUIDES.map((g) => (
+                                    <li key={g.href}><Link href={g.href}>{g.title}</Link></li>
+                                ))}
+                            </ul>
+                        </div>
+                        <div>
+                            <h2>Ostala područja</h2>
+                            <ul className={styles.linkList}>
+                                {ALL_AREAS.filter((a) => a.slug !== 'zagreb').map((a) => (
+                                    <li key={a.slug}><Link href={`/podrucje/${a.slug}`}>Čišćenje {a.city}</Link></li>
+                                ))}
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </section>

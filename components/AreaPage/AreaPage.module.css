@@ -203,6 +203,46 @@
     border-bottom-color: var(--primary);
 }
 
+/* FAQ */
+.faq {
+    padding: var(--section-padding);
+}
+
+.faq h2 {
+    font-size: 2rem;
+    color: var(--secondary);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.faqList {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.faqItem {
+    background: var(--surface);
+    border-radius: 1rem;
+    padding: 1.5rem 2rem;
+    border: 1px solid var(--border);
+}
+
+.faqQuestion {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
+}
+
+.faqAnswer {
+    color: #666;
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
 /* CTA */
 .cta {
     padding: var(--section-padding);

@@ -4,10 +4,7 @@ import { motion } from 'framer-motion';
 import { Star, Quote, ExternalLink } from 'lucide-react';
 import styles from './Testimonials.module.css';
 
-// TODO: zamijenite ovaj URL s točnim linkom na vaš Google profil / recenzije
-// (npr. "Napiši recenziju" link iz Google Business profila ili g.page link).
-const GOOGLE_REVIEWS_URL =
-    'https://www.google.com/maps/search/?api=1&query=%C5%A0lauf+i+%C5%A0mrk+Zagreb';
+const GOOGLE_REVIEWS_URL = 'https://g.page/r/CRYIaoctBHyJEBM/review';
 
 const testimonials = [
     {

@@ -3,6 +3,7 @@ import {
     ShieldCheck, Home, Car, TreeDeciduous, HeartHandshake, Droplets,
     Sofa, ArrowRight, Phone, Waves
 } from 'lucide-react';
+import { GUIDES, ALL_AREAS, CITY_LOCATIVE, CITY_GENITIVE } from './areaLinks';
 import styles from './AreaPage.module.css';
 
 export type AreaPageProps = {
@@ -21,23 +22,6 @@ const services = [
     { title: 'Detailing Auta', href: '/usluge/detailing-automobila', icon: <Car size={24} />, desc: 'Vanjsko i unutarnje čišćenje uz dolazak na vašu adresu.' },
     { title: 'Pranje Bazena', href: '/usluge/pranje-bazena', icon: <Waves size={24} />, desc: 'Pripremamo bazen za sezonu kupanja.' },
     { title: 'Grobna Mjesta', href: '/usluge/odrzavanje-grobnih-mjesta', icon: <HeartHandshake size={24} />, desc: 'Čišćenje i impregnacija nadgrobnih spomenika.' },
-];
-
-const GUIDES = [
-    { title: 'Koliko košta pranje fasade', href: '/blog/koliko-kosta-pranje-fasade' },
-    { title: 'Kako oprati fasadu, vodič', href: '/blog/kako-oprati-fasadu' },
-    { title: 'Crne fleke na fasadi', href: '/blog/crne-fleke-na-fasadi' },
-    { title: 'Korov između tlakavaca', href: '/blog/korov-izmedju-tlakavaca' },
-];
-
-const ALL_AREAS = [
-    { city: 'Zagreb', slug: 'zagreb' },
-    { city: 'Sesvete', slug: 'sesvete' },
-    { city: 'Velika Gorica', slug: 'velika-gorica' },
-    { city: 'Samobor', slug: 'samobor' },
-    { city: 'Zaprešić', slug: 'zapresic' },
-    { city: 'Sveta Nedelja', slug: 'sveta-nedelja' },
-    { city: 'Dugo Selo', slug: 'dugo-selo' },
 ];
 
 export default function AreaPage({ city, slug, intro, neighborhoods }: AreaPageProps) {
@@ -60,17 +44,54 @@ export default function AreaPage({ city, slug, intro, neighborhoods }: AreaPageP
         provider: { '@type': 'LocalBusiness', name: 'Šlauf i Šmrk', url: 'https://slaufismrk.com' },
     };
 
+    const cityLoc = CITY_LOCATIVE[city] ?? city;
+    const cityGen = CITY_GENITIVE[city] ?? city;
+
+    const faq = [
+        {
+            question: `Koliko košta pranje fasade u ${cityLoc}?`,
+            answer: `Cijena pranja fasade u ${cityLoc} kreće se od 5 €/m², ovisno o veličini, materijalu i stupnju zaprljanosti. Za točnu cijenu šaljemo procjenu na temelju slika ili dolazimo na lokaciju.`,
+        },
+        {
+            question: `Koliko košta čišćenje okućnice u ${cityLoc}?`,
+            answer: `Cijena čišćenja okućnice u ${cityLoc} kreće se od 4 €/m², ovisno o kvadraturi i materijalu. Za veće površine i pakete dajemo procjenu prije početka rada.`,
+        },
+        {
+            question: `Koliko brzo dolazite u ${cityLoc}?`,
+            answer: `Odgovaramo u roku od sat vremena, a termin dogovaramo prema vašoj dostupnosti. Za brzu okvirnu cijenu pošaljite slike fasade ili okućnice na WhatsApp.`,
+        },
+        {
+            question: `Radite li i u okolnim naseljima oko ${cityGen}?`,
+            answer: `Da, radimo u ${cityLoc} i okolnim naseljima: ${neighborhoods.slice(0, 4).join(', ')}, te šire područje po dogovoru.`,
+        },
+        {
+            question: 'Mogu li kombinirati pranje fasade i okućnice u istom terminu?',
+            answer: 'Da, najčešći izbor je kombinacija fasade, okućnice, terase i prilaza u jednom terminu uz paketnu cijenu.',
+        },
+    ];
+
+    const faqSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faq.map((item) => ({
+            '@type': 'Question',
+            name: item.question,
+            acceptedAnswer: { '@type': 'Answer', text: item.answer },
+        })),
+    };
+
     return (
         <div className={styles.page}>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
             <section className={styles.hero}>
                 <div className="container">
                     <div className={styles.breadcrumb}>
                         <Link href="/">Početna</Link> › <span>{city}</span>
                     </div>
-                    <h1>Visokotlačno Čišćenje <span>{city}</span></h1>
+                    <h1>Pranje fasade i okućnice <span>u {cityLoc}</span></h1>
                     <p>{intro}</p>
                     <Link href="/#kontakt" className={styles.heroCta}>
                         <Phone size={18} /> Besplatna procjena
@@ -80,7 +101,7 @@ export default function AreaPage({ city, slug, intro, neighborhoods }: AreaPageP
 
             <section className={styles.services}>
                 <div className="container">
-                    <h2>Naše usluge u {city}</h2>
+                    <h2>Naše usluge u {cityLoc}</h2>
                     <div className={styles.grid}>
                         {services.map((s, i) => (
                             <Link key={i} href={s.href} className={styles.card}>
@@ -97,10 +118,24 @@ export default function AreaPage({ city, slug, intro, neighborhoods }: AreaPageP
             <section className={styles.areas}>
                 <div className="container">
                     <h2>Naselja i područja koja pokrivamo</h2>
-                    <p className={styles.areasSubtitle}>Dolazimo u {city} i okolna naselja</p>
+                    <p className={styles.areasSubtitle}>Dolazimo u {cityLoc} i okolna naselja</p>
                     <div className={styles.tags}>
                         {neighborhoods.map((k, i) => (
                             <span key={i} className={styles.tag}>{k}</span>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            <section className={styles.faq}>
+                <div className="container">
+                    <h2>Česta pitanja, {city}</h2>
+                    <div className={styles.faqList}>
+                        {faq.map((item, i) => (
+                            <div key={i} className={styles.faqItem}>
+                                <h3 className={styles.faqQuestion}>{item.question}</h3>
+                                <p className={styles.faqAnswer}>{item.answer}</p>
+                            </div>
                         ))}
                     </div>
                 </div>
@@ -132,7 +167,7 @@ export default function AreaPage({ city, slug, intro, neighborhoods }: AreaPageP
             <section className={styles.cta}>
                 <div className="container">
                     <div className={styles.ctaBox}>
-                        <h2>Trebate čišćenje u {city}?</h2>
+                        <h2>Trebate čišćenje u {cityLoc}?</h2>
                         <p>Pošaljite 2-3 slike površine na WhatsApp za okvirnu cijenu, ili nazovite za besplatnu procjenu na licu mjesta.</p>
                         <div className={styles.ctaButtons}>
                             <a href="tel:+385958442806" className={styles.ctaBtn}>
