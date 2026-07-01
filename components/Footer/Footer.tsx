@@ -134,7 +134,7 @@ export default function Footer() {
                 </div>
 
                 <div className={styles.bottom}>
-                    <p>© {new Date().getFullYear()} Šlauf i Šmrk. Sva prava pridržana. | <Link href="/politika-privatnosti">Politika privatnosti</Link></p>
+                    <p>© {new Date().getFullYear()} Šlauf i Šmrk. Sva prava pridržana. | <Link href="/politika-privatnosti">Politika privatnosti</Link> | Web izradio <a href="https://budemai.com" target="_blank" rel="noopener noreferrer">BudemAI</a></p>
                 </div>
             </div>
         </footer>
