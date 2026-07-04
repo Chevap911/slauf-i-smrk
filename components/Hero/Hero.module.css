@@ -1,38 +1,11 @@
+/* Markova odluka (2026-07-04): NEMA pozadinske fotografije. Prije/poslije
+   ide kao zasebna slika ispod teksta (photosRow), pozadina je čisti navy. */
 .hero {
     position: relative;
     overflow: hidden;
     padding: 2rem 0 2.25rem;
-    background: var(--secondary);
+    background: linear-gradient(160deg, #00284f 0%, var(--secondary) 55%, #004178 100%);
     color: #fff;
-}
-
-/* Markova odluka (2026-07-04): foto SAMO iza teksta, ne full-bleed.
-   Na punoj širini se razvuče i ne čita se, ovako ostaje prepoznatljiva. */
-.bgImage {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 62%;
-    z-index: 0;
-}
-
-.bgImg {
-    object-fit: cover;
-    object-position: center 30%;
-}
-
-/* Overlay fades photo to solid brand colour before the form column starts */
-.bgOverlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        100deg,
-        rgba(0, 51, 102, 0.62) 0%,
-        rgba(0, 51, 102, 0.74) 52%,
-        rgba(0, 51, 102, 1) 84%,
-        rgba(0, 51, 102, 1) 100%
-    );
 }
 
 .wrapper {
@@ -89,10 +62,10 @@
 }
 
 .title {
-    font-size: clamp(2.5rem, 4.4vw, 4.25rem);
-    margin-bottom: 1.25rem;
+    font-size: clamp(2.25rem, 3.3vw, 3.25rem);
+    margin-bottom: 1rem;
     color: #fff;
-    line-height: 1.1;
+    line-height: 1.12;
 }
 
 .highlight {
@@ -164,6 +137,49 @@
     color: #fff;
     transform: translateY(-2px);
     box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
+}
+
+/* Prije/poslije strip below the text — the actual proof, compact so the
+   whole hero still fits above the fold */
+.photosRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    height: 175px;
+}
+
+.photoCard {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.3);
+    background: #0a2c4f;
+}
+
+.photoImg {
+    object-fit: cover;
+    object-position: center 35%;
+}
+
+.photoLabel {
+    position: absolute;
+    bottom: 0.6rem;
+    left: 0.6rem;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.28rem 0.6rem;
+    border-radius: 999px;
+    backdrop-filter: blur(4px);
+}
+
+.photoLabelAfter {
+    background: rgba(37, 211, 102, 0.85);
+    color: #04351c;
 }
 
 /* Form column — floats right, visible without scrolling */
@@ -262,19 +278,6 @@
 @media (max-width: 992px) {
     .hero {
         padding: 3rem 0 2rem;
-    }
-
-    /* On mobile (single column) restore full-bleed photo behind all content */
-    .bgImage {
-        width: 100%;
-    }
-
-    .bgOverlay {
-        background: linear-gradient(
-            180deg,
-            rgba(0, 51, 102, 0.82) 0%,
-            rgba(0, 51, 102, 0.88) 100%
-        );
     }
 
     .wrapper {

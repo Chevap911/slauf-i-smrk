@@ -8,20 +8,6 @@ import styles from './Hero.module.css';
 export default function Hero() {
     return (
         <section className={styles.hero}>
-            <div className={styles.bgImage}>
-                <Image
-                    src="/prije-poslje/fasada-poslje.png"
-                    alt=""
-                    aria-hidden="true"
-                    fill
-                    priority
-                    sizes="100vw"
-                    quality={80}
-                    className={styles.bgImg}
-                />
-                <div className={styles.bgOverlay} />
-            </div>
-
             <div className="container">
                 <div className={styles.wrapper}>
                     <HeroAnimatedContent />

@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import styles from './Hero.module.css';
@@ -69,6 +70,33 @@ export default function HeroAnimatedContent() {
                     </svg>
                     WhatsApp upit
                 </a>
+            </motion.div>
+
+            <motion.div variants={item} className={styles.photosRow}>
+                <div className={styles.photoCard}>
+                    <Image
+                        src="/prije-poslje/fasada-prije.jpeg"
+                        alt="Prljava fasada obiteljske kuće prije visokotlačnog pranja, Zagreb"
+                        fill
+                        priority
+                        sizes="(max-width: 992px) 50vw, 30vw"
+                        quality={75}
+                        className={styles.photoImg}
+                    />
+                    <span className={styles.photoLabel}>Prije</span>
+                </div>
+                <div className={styles.photoCard}>
+                    <Image
+                        src="/prije-poslje/fasada-poslje.png"
+                        alt="Očišćena fasada nakon profesionalnog visokotlačnog pranja, Zagreb"
+                        fill
+                        priority
+                        sizes="(max-width: 992px) 50vw, 30vw"
+                        quality={75}
+                        className={styles.photoImg}
+                    />
+                    <span className={`${styles.photoLabel} ${styles.photoLabelAfter}`}>Poslije</span>
+                </div>
             </motion.div>
 
         </motion.div>
