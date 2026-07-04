@@ -6,13 +6,14 @@
     color: #fff;
 }
 
-/* Full-bleed real photo backdrop, dimmed so the copy stays readable */
+/* Markova odluka (2026-07-04): foto SAMO iza teksta, ne full-bleed.
+   Na punoj širini se razvuče i ne čita se, ovako ostaje prepoznatljiva. */
 .bgImage {
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
-    width: 100%;
+    width: 62%;
     z-index: 0;
 }
 
@@ -21,16 +22,16 @@
     object-position: center 30%;
 }
 
-/* Photo stays visible edge to edge (woodruff/savannah pattern); slightly
-   darker on the right only so the white form card pops, never fully solid */
+/* Overlay fades photo to solid brand colour before the form column starts */
 .bgOverlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(
         100deg,
-        rgba(0, 51, 102, 0.70) 0%,
-        rgba(0, 51, 102, 0.76) 55%,
-        rgba(0, 51, 102, 0.84) 100%
+        rgba(0, 51, 102, 0.62) 0%,
+        rgba(0, 51, 102, 0.74) 52%,
+        rgba(0, 51, 102, 1) 84%,
+        rgba(0, 51, 102, 1) 100%
     );
 }
 
