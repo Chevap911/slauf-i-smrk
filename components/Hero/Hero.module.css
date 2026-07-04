@@ -1,11 +1,85 @@
-/* Markova odluka (2026-07-04): NEMA pozadinske fotografije. Prije/poslije
-   ide kao zasebna slika ispod teksta (photosRow), pozadina je čisti navy. */
+/* Markova odluka (2026-07-04): pozadina preko CIJELOG heroa je prije/poslije
+   split. Prije lijevo, poslije desno od linije na 32% (da poslije ostane
+   cijela vidljiva u prostoru prije form kartice). Obje fotke su portretne,
+   svaka polovica ih prikazuje gotovo cijele, bez razvlačenja. */
 .hero {
     position: relative;
     overflow: hidden;
     padding: 2rem 0 2.25rem;
-    background: linear-gradient(160deg, #00284f 0%, var(--secondary) 55%, #004178 100%);
+    background: var(--secondary);
     color: #fff;
+}
+
+.bgSplit {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    display: grid;
+    grid-template-columns: 32% 68%;
+}
+
+.bgHalf {
+    position: relative;
+    overflow: hidden;
+}
+
+.bgImg {
+    object-fit: cover;
+    object-position: center 25%;
+}
+
+.bgDivider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 32%;
+    width: 3px;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.85);
+    z-index: 2;
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.35);
+}
+
+/* Labels sit above the overlay so they stay readable */
+.bgLabel {
+    position: absolute;
+    bottom: 0.9rem;
+    right: 0.9rem;
+    z-index: 3;
+    background: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.65rem;
+    border-radius: 999px;
+    backdrop-filter: blur(4px);
+}
+
+/* PRIJE in the bottom-left corner, POSLIJE bottom-right: frames the split
+   and keeps both clear of the CTA buttons */
+.bgHalf:first-child .bgLabel {
+    right: auto;
+    left: 0.9rem;
+}
+
+.bgLabelAfter {
+    background: rgba(37, 211, 102, 0.88);
+    color: #04351c;
+}
+
+/* Uniform dim so H1/copy stay readable over both photos */
+.bgOverlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+        100deg,
+        rgba(0, 51, 102, 0.72) 0%,
+        rgba(0, 51, 102, 0.62) 45%,
+        rgba(0, 51, 102, 0.74) 100%
+    );
 }
 
 .wrapper {
@@ -139,49 +213,6 @@
     box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
 }
 
-/* Prije/poslije strip below the text — the actual proof, compact so the
-   whole hero still fits above the fold */
-.photosRow {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.75rem;
-    height: 175px;
-}
-
-.photoCard {
-    position: relative;
-    border-radius: 1rem;
-    overflow: hidden;
-    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.3);
-    background: #0a2c4f;
-}
-
-.photoImg {
-    object-fit: cover;
-    object-position: center 35%;
-}
-
-.photoLabel {
-    position: absolute;
-    bottom: 0.6rem;
-    left: 0.6rem;
-    z-index: 2;
-    background: rgba(0, 0, 0, 0.55);
-    color: #fff;
-    font-size: 0.68rem;
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 0.28rem 0.6rem;
-    border-radius: 999px;
-    backdrop-filter: blur(4px);
-}
-
-.photoLabelAfter {
-    background: rgba(37, 211, 102, 0.85);
-    color: #04351c;
-}
-
 /* Form column — floats right, visible without scrolling */
 .formCol {
     position: relative;
@@ -278,6 +309,27 @@
 @media (max-width: 992px) {
     .hero {
         padding: 3rem 0 2rem;
+    }
+
+    /* Single column: split bi bio uski slijepljeni sliver, pa mobitel
+       dobiva samo "poslije" fotku kao teksturu; prije/poslije dokaz je
+       odmah ispod u BeforeAfterGallery sekciji */
+    .bgSplit {
+        grid-template-columns: 1fr;
+    }
+
+    .bgHalf:first-child,
+    .bgDivider,
+    .bgLabel {
+        display: none;
+    }
+
+    .bgOverlay {
+        background: linear-gradient(
+            180deg,
+            rgba(0, 51, 102, 0.82) 0%,
+            rgba(0, 51, 102, 0.88) 100%
+        );
     }
 
     .wrapper {
