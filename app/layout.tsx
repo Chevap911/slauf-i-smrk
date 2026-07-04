@@ -55,7 +55,10 @@ export const metadata: Metadata = {
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "CleaningService",
+  // "CleaningService" nije schema.org tip; Google ga tretira kao nepoznat objekt
+  // pa Review snippets javlja "Invalid object type". HomeAndConstructionBusiness
+  // je validan LocalBusiness podtip najbliži djelatnosti.
+  "@type": "HomeAndConstructionBusiness",
   "@id": "https://slaufismrk.com/#business",
   name: "Šlauf i Šmrk",
   description:

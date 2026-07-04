@@ -36,7 +36,8 @@ export default function AreaPage({ city, slug, intro, neighborhoods }: AreaPageP
 
     const businessSchema = {
         '@context': 'https://schema.org',
-        '@type': 'CleaningService',
+        // "CleaningService" nije schema.org tip (isti fix kao u layout.tsx)
+        '@type': 'HomeAndConstructionBusiness',
         name: `Šlauf i Šmrk, pranje pod tlakom ${city}`,
         url: `https://slaufismrk.com/podrucje/${slug}`,
         telephone: '+385958442806',
