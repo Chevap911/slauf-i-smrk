@@ -5,37 +5,51 @@ import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import styles from './Hero.module.css';
 
 const trustPoints = [
-    'Fasade, okućnice i terase',
+    '5,0 ★ · 40+ Google recenzija',
     'Besplatna procjena na lokaciji',
     'Prilagođen tlak za svaki materijal',
 ];
+
+const container = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.12, delayChildren: 0.05 } },
+};
+
+const item = {
+    hidden: { opacity: 0, y: 18 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] } },
+};
 
 export default function HeroAnimatedContent() {
     return (
         <motion.div
             className={styles.content}
-            initial={{ opacity: 1, y: 0 }}
-            animate={{ opacity: 1, y: 0 }}
+            variants={container}
+            initial="hidden"
+            animate="visible"
         >
-            <span className={styles.eyebrow}>Profesionalno visokotlačno čišćenje za Zagreb i okolicu</span>
-            <h1 className={styles.title}>
-                Pranje <span className={styles.highlight}>fasada, okućnica i terasa</span> koje vraća prvi dojam
-            </h1>
-            <p className={styles.description}>
-                Dolazimo, pregledamo površinu i damo točnu cijenu.
-                Bez iznenađenja na fakturi, bez kućnog perača pod pritiskom.
-            </p>
+            <motion.span variants={item} className={styles.eyebrow}>Profesionalno visokotlačno čišćenje za Zagreb i okolicu</motion.span>
 
-            <div className={styles.trustList}>
+            <motion.div variants={item} className={styles.textGroup}>
+                <h1 className={styles.title}>
+                    Visokotlačno pranje <span className={styles.highlight}>fasada, okućnica i terasa</span> u Zagrebu
+                </h1>
+                <p className={styles.description}>
+                    Profesionalni servis za čišćenje fasada, tlakavaca i popločanih površina.
+                    Dolazimo na lokaciju, besplatno procjenjujemo i dajemo točnu cijenu - bez iznenađenja.
+                </p>
+            </motion.div>
+
+            <motion.div variants={item} className={styles.trustList}>
                 {trustPoints.map((point) => (
                     <div key={point} className={styles.trustItem}>
                         <CheckCircle2 size={15} />
                         <span>{point}</span>
                     </div>
                 ))}
-            </div>
+            </motion.div>
 
-            <div className={styles.actions}>
+            <motion.div variants={item} className={styles.actions}>
                 <a href="#kontakt" className="btn btn-primary">
                     Zatražite besplatnu procjenu
                     <ArrowRight size={18} style={{ marginLeft: '8px' }} />
@@ -55,7 +69,7 @@ export default function HeroAnimatedContent() {
                     </svg>
                     WhatsApp upit
                 </a>
-            </div>
+            </motion.div>
 
         </motion.div>
     );

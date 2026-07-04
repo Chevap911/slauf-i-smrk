@@ -1,77 +1,57 @@
 import Image from 'next/image';
-import { MapPin, CheckCircle2 } from 'lucide-react';
-import brandLogo from '@/Media/Logo.png';
 import HeroAnimatedContent from './HeroAnimatedContent';
+import HeroVisualMotion from './HeroVisualMotion';
+import { homepageMascots } from '@/components/HomepageMascot/homepageMascots';
 import QuoteForm from '@/components/QuoteForm/QuoteForm';
 import styles from './Hero.module.css';
 
 export default function Hero() {
     return (
         <section className={styles.hero}>
+            <div className={styles.bgImage}>
+                <Image
+                    src="/prije-poslje/fasada-poslje.png"
+                    alt=""
+                    aria-hidden="true"
+                    fill
+                    priority
+                    sizes="100vw"
+                    quality={80}
+                    className={styles.bgImg}
+                />
+                <div className={styles.bgOverlay} />
+            </div>
+
             <div className="container">
                 <div className={styles.wrapper}>
                     <HeroAnimatedContent />
 
-                    <div className={styles.visual}>
-                        <div className={styles.photosRow}>
-                            <div className={styles.photoCard}>
-                                <span className={styles.photoLabel}>Prije</span>
-                                <Image
-                                    src="/prije-poslje/fasada-prije.jpeg"
-                                    alt="Fasada prije profesionalnog pranja"
-                                    fill
-                                    className={styles.photoImg}
-                                    priority
-                                    sizes="(max-width: 576px) 45vw, (max-width: 992px) 45vw, 20vw"
-                                    quality={85}
-                                />
+                    <HeroVisualMotion className={styles.formCol}>
+                        <div className={styles.formGlow} />
+                        <div className={styles.formCard}>
+                            <div className={styles.formHeader}>
+                                <span className={styles.formEyebrow}>Besplatna procjena</span>
+                                <h2 className={styles.formTitle}>Dobijte cijenu odmah</h2>
+                                <p className={styles.formSubtitle}>
+                                    Ispunite kratki obrazac i odmah dobijete okvirnu cijenu. Bez obveze.
+                                </p>
                             </div>
-                            <div className={styles.photoCard}>
-                                <span className={styles.photoLabel}>Poslije</span>
-                                <Image
-                                    src="/prije-poslje/fasada-poslje.png"
-                                    alt="Fasada poslije profesionalnog pranja"
-                                    fill
-                                    className={styles.photoImg}
-                                    priority
-                                    sizes="(max-width: 576px) 45vw, (max-width: 992px) 45vw, 20vw"
-                                    fetchPriority="high"
-                                    quality={90}
-                                />
-                            </div>
-                            <div className={styles.mascotOverlay}>
-                                <Image
-                                    src={brandLogo}
-                                    alt="Logo Šlauf i Šmrk"
-                                    style={{ height: '110px', width: 'auto' }}
-                                    className={styles.mascotImg}
-                                    sizes="(max-width: 576px) 180px, 220px"
-                                    quality={70}
-                                    priority
-                                />
-                            </div>
-                        </div>
-                        <div className={styles.metaRow}>
-                            <div className={styles.metaCard}>
-                                <MapPin size={18} />
-                                <div>
-                                    <strong>Zagreb i okolica</strong>
-                                    <span>Brz dolazak za kuće, terase i prilaze</span>
-                                </div>
-                            </div>
-                            <div className={styles.metaCard}>
-                                <CheckCircle2 size={18} />
-                                <div>
-                                    <strong>Rezultati prije i poslije</strong>
-                                    <span>Stvarni projekti i jasan dogovor prije početka</span>
-                                </div>
+                            <div className={styles.formBody}>
+                                <QuoteForm idPrefix="hero" hideHeading />
                             </div>
                         </div>
 
-                        <div className={styles.heroForm}>
-                            <QuoteForm idPrefix="hero" />
+                        <div className={styles.mascotChip}>
+                            <Image
+                                src={homepageMascots.heroBuddy.src}
+                                alt="Šmrk pozdravlja"
+                                width={126}
+                                height={169}
+                                className={styles.mascotChipImg}
+                            />
+                            <span className={styles.mascotChipText}>5,0 na Google-u</span>
                         </div>
-                    </div>
+                    </HeroVisualMotion>
                 </div>
             </div>
         </section>

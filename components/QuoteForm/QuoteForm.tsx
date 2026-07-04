@@ -32,7 +32,7 @@ function computeEstimate(service: string, size: string): { min: number; max: num
     return { min: Math.round(area * rate[0]), max: Math.round(area * rate[1]) };
 }
 
-export default function QuoteForm({ idPrefix = 'qf' }: { idPrefix?: string }) {
+export default function QuoteForm({ idPrefix = 'qf', hideHeading = false }: { idPrefix?: string; hideHeading?: boolean }) {
     const [sent, setSent] = useState(false);
     const [sentEstimate, setSentEstimate] = useState<{ min: number; max: number } | null>(null);
     const [submitting, setSubmitting] = useState(false);
@@ -106,8 +106,12 @@ export default function QuoteForm({ idPrefix = 'qf' }: { idPrefix?: string }) {
 
     return (
         <div className={styles.wrap}>
-            <h3 className={styles.title}>Zatražite besplatnu procjenu</h3>
-            <p className={styles.sub}>Ispunite kratki obrazac i odmah dobijete okvirnu cijenu. Bez obveze.</p>
+            {!hideHeading && (
+                <>
+                    <h3 className={styles.title}>Zatražite besplatnu procjenu</h3>
+                    <p className={styles.sub}>Ispunite kratki obrazac i odmah dobijete okvirnu cijenu. Bez obveze.</p>
+                </>
+            )}
 
             <form onSubmit={submit} className={styles.form}>
                 <label className={styles.field}>

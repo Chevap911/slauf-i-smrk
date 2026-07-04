@@ -1,21 +1,67 @@
 .hero {
-    padding: 6rem 0;
-    background:
-        radial-gradient(circle at top left, rgba(255, 215, 0, 0.18) 0%, transparent 42%),
-        linear-gradient(180deg, #ffffff 0%, #f6f9fc 100%);
-    overflow: hidden;
     position: relative;
+    overflow: hidden;
+    padding: 2rem 0 2.25rem;
+    background: var(--secondary);
+    color: #fff;
+}
+
+/* Full-bleed real photo backdrop, dimmed so the copy stays readable */
+.bgImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 0;
+}
+
+.bgImg {
+    object-fit: cover;
+    object-position: center 30%;
+}
+
+/* Photo stays visible edge to edge (woodruff/savannah pattern); slightly
+   darker on the right only so the white form card pops, never fully solid */
+.bgOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        100deg,
+        rgba(0, 51, 102, 0.70) 0%,
+        rgba(0, 51, 102, 0.76) 55%,
+        rgba(0, 51, 102, 0.84) 100%
+    );
 }
 
 .wrapper {
+    position: relative;
+    z-index: 2;
     display: grid;
-    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-    align-items: center;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    align-items: stretch;
     gap: 3rem;
 }
 
 .content {
     z-index: 2;
+}
+
+/* Desktop: distribute the copy across the full column height instead of
+   centering it, so there's no dead space above/below the text block. */
+@media (min-width: 992px) {
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .eyebrow,
+    .textGroup,
+    .trustList,
+    .actions {
+        margin-bottom: 0;
+    }
 }
 
 .eyebrow {
@@ -24,8 +70,9 @@
     gap: 0.5rem;
     padding: 0.55rem 1rem;
     border-radius: 999px;
-    background: rgba(0, 51, 102, 0.08);
-    color: var(--secondary);
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #fff;
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.04em;
@@ -33,22 +80,27 @@
     margin-bottom: 1.25rem;
     max-width: 100%;
     flex-wrap: wrap;
+    backdrop-filter: blur(6px);
+}
+
+.textGroup {
+    margin-bottom: 1.5rem;
 }
 
 .title {
     font-size: clamp(2.5rem, 4.4vw, 4.25rem);
     margin-bottom: 1.25rem;
-    color: var(--secondary);
+    color: #fff;
     line-height: 1.1;
 }
 
 .highlight {
-    color: var(--accent);
+    color: var(--primary);
 }
 
 .description {
     font-size: 1.1rem;
-    color: #27415c;
+    color: rgba(255, 255, 255, 0.82);
     margin-bottom: 1.5rem;
     max-width: 54ch;
     line-height: 1.65;
@@ -68,17 +120,17 @@
     gap: 0.45rem;
     padding: 0.45rem 0.9rem;
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.9);
-    border: 1px solid rgba(0, 51, 102, 0.1);
-    box-shadow: var(--shadow-sm);
-    color: var(--secondary);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(6px);
+    color: #fff;
     font-weight: 600;
     font-size: 0.875rem;
     white-space: nowrap;
 }
 
 .trustItem svg {
-    color: var(--accent);
+    color: var(--primary);
     flex-shrink: 0;
 }
 
@@ -95,9 +147,9 @@
     gap: 0.65rem;
     padding: 1rem 1.4rem;
     border-radius: 999px;
-    border: 1px solid rgba(37, 211, 102, 0.3);
-    color: #075E54;
-    background: rgba(37, 211, 102, 0.1);
+    border: 1px solid rgba(37, 211, 102, 0.4);
+    color: #fff;
+    background: rgba(37, 211, 102, 0.16);
     font-family: var(--font-heading);
     font-size: 0.9rem;
     font-weight: 700;
@@ -113,123 +165,124 @@
     box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
 }
 
-/* Visual column */
-.visual {
+/* Form column — floats right, visible without scrolling */
+.formCol {
+    position: relative;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    justify-content: center;
 }
 
-.photosRow {
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    height: 400px;
+.formGlow {
+    position: absolute;
+    inset: -0.75rem;
+    border-radius: 2rem;
+    background: linear-gradient(135deg, var(--primary), var(--accent-light));
+    opacity: 0.55;
+    filter: blur(18px);
+    z-index: 0;
 }
 
-.photoCard {
+.formCard {
     position: relative;
+    z-index: 1;
+    background: #fff;
     border-radius: 1.5rem;
     overflow: hidden;
-    box-shadow: 0 16px 40px rgba(0, 51, 102, 0.14);
-    background: #d9e4ee;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35);
 }
 
-.photoLabel {
-    position: absolute;
-    bottom: 0.75rem;
-    left: 0.75rem;
-    z-index: 2;
-    background: rgba(0, 0, 0, 0.52);
+.formHeader {
+    padding: 1.5rem 1.75rem 1.25rem;
+    background: linear-gradient(135deg, var(--secondary), #004b8f);
     color: #fff;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.06em;
+}
+
+.formEyebrow {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    padding: 0.3rem 0.65rem;
-    border-radius: 999px;
+    color: var(--primary);
+    margin-bottom: 0.35rem;
 }
 
-.photoImg {
-    object-fit: cover;
+.formTitle {
+    font-size: 1.4rem;
+    margin: 0 0 0.4rem;
+    color: #fff;
 }
 
-/* Mascot overlaid at bottom-center of photos */
-.mascotOverlay {
+.formSubtitle {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.78);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.formBody {
+    padding: 1.5rem 1.75rem 1.75rem;
+}
+
+/* Mascot moved off the photo entirely — small trust chip pinned to the
+   TOP corner of the form card (fixed header height, never collides with
+   form fields below, unlike the bottom edge which grows with form content). */
+.mascotChip {
     position: absolute;
-    bottom: -1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
-    pointer-events: none;
-}
-
-.mascotImg {
-    display: block;
-    filter: drop-shadow(0 8px 20px rgba(0, 51, 102, 0.18));
-}
-
-/* Meta row */
-.metaRow {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
-    padding-top: 0.5rem;
-}
-
-/* Inline quote form — desktop only (mobile uses floating button) */
-.heroForm {
-    display: none;
-    margin-top: 1.25rem;
-    background: #fff;
-    border: 1px solid rgba(0, 51, 102, 0.1);
-    border-radius: 1.25rem;
-    padding: 1.5rem;
-    box-shadow: 0 16px 40px rgba(0, 51, 102, 0.12);
-}
-
-@media (min-width: 992px) {
-    .heroForm { display: block; }
-    .metaRow { display: none; }
-}
-
-.metaCard {
+    top: -1.1rem;
+    right: -0.75rem;
+    z-index: 3;
     display: flex;
-    align-items: flex-start;
-    gap: 0.85rem;
-    padding: 1rem 1.1rem;
-    border-radius: 1.1rem;
-    background: rgba(255, 255, 255, 0.92);
-    border: 1px solid rgba(0, 51, 102, 0.08);
-    box-shadow: var(--shadow-sm);
+    align-items: flex-end;
+    gap: 0.5rem;
+    padding: 0.3rem 1rem 0.3rem 0.3rem;
+    border-radius: 999px;
+    background: #fff;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+    transform: rotate(4deg);
 }
 
-.metaCard svg {
+.mascotChipImg {
+    width: auto;
+    height: 56px;
     flex-shrink: 0;
-    color: var(--secondary);
-    margin-top: 0.15rem;
+    object-fit: contain;
+    display: block;
 }
 
-.metaCard strong {
-    display: block;
+.mascotChipText {
+    font-size: 0.78rem;
+    font-weight: 800;
     color: var(--secondary);
-    margin-bottom: 0.2rem;
-}
-
-.metaCard span {
-    display: block;
-    color: #57718a;
-    font-size: 0.92rem;
+    white-space: nowrap;
 }
 
 @media (max-width: 992px) {
     .hero {
-        padding: 4.5rem 0;
+        padding: 3rem 0 2rem;
+    }
+
+    /* On mobile (single column) restore full-bleed photo behind all content */
+    .bgImage {
+        width: 100%;
+    }
+
+    .bgOverlay {
+        background: linear-gradient(
+            180deg,
+            rgba(0, 51, 102, 0.82) 0%,
+            rgba(0, 51, 102, 0.88) 100%
+        );
     }
 
     .wrapper {
         grid-template-columns: minmax(0, 1fr);
+        gap: 1.5rem;
+    }
+
+    .formCol {
+        margin-top: 1.25rem;
     }
 }
 
@@ -248,26 +301,9 @@
     .trustList {
         gap: 0.5rem;
     }
-
-    .photosRow {
-        height: 260px;
-        gap: 0.75rem;
-    }
-
-    .mascotOverlay {
-        bottom: -0.75rem;
-    }
-
-    .mascotImg {
-        height: 80px !important;
-    }
 }
 
 @media (max-width: 576px) {
-    .hero {
-        padding: 4rem 0;
-    }
-
     .title {
         font-size: 2.15rem;
     }
@@ -276,12 +312,16 @@
         font-size: 1rem;
     }
 
-    .photosRow {
-        height: 200px;
-    }
-
     .trustItem {
         font-size: 0.8rem;
         padding: 0.4rem 0.75rem;
+    }
+
+    .formHeader {
+        padding: 1.25rem 1.25rem 1rem;
+    }
+
+    .formBody {
+        padding: 1.25rem 1.25rem 1.5rem;
     }
 }
