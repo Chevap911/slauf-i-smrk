@@ -42,7 +42,6 @@ export default function Hero() {
                     <HeroAnimatedContent />
 
                     <HeroVisualMotion className={styles.formCol}>
-                        <div className={styles.formGlow} />
                         <div className={styles.formCard}>
                             <div className={styles.formHeader}>
                                 <span className={styles.formEyebrow}>Besplatna procjena</span>

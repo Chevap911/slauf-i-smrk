@@ -25,9 +25,34 @@
     overflow: hidden;
 }
 
+/* Poslije fotka se mekano gasi u navy PRIJE nego što joj završi okvir,
+   nema tvrdog reza na rubu prema formi */
+.bgHalf:nth-child(2) {
+    mask-image: linear-gradient(to right, #000 55%, transparent 97%);
+    -webkit-mask-image: linear-gradient(to right, #000 55%, transparent 97%);
+}
+
 .bgImg {
     object-fit: cover;
     object-position: center 25%;
+    animation: heroKenBurns 22s ease-in-out infinite alternate;
+    will-change: transform;
+}
+
+/* Jedva primjetan "živi" zoom, fotke ne stoje mrtve. Transform-only (GPU). */
+@keyframes heroKenBurns {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.07);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .bgImg {
+        animation: none;
+    }
 }
 
 .bgDivider {
@@ -66,8 +91,8 @@
     color: #04351c;
 }
 
-/* Dim za čitljivost teksta; od ~64% prelazi u puni navy da sakrije rub
-   druge fotke i da forma sjedi na mirnoj pozadini */
+/* Dim za čitljivost teksta; rub fotke rješava mask na .bgHalf, pa overlay
+   samo lagano tamni prema desno, bez tvrdih prijelaza */
 .bgOverlay {
     position: absolute;
     inset: 0;
@@ -76,9 +101,8 @@
         100deg,
         rgba(0, 51, 102, 0.72) 0%,
         rgba(0, 51, 102, 0.62) 40%,
-        rgba(0, 51, 102, 0.72) 60%,
-        rgba(0, 51, 102, 1) 80%,
-        rgba(0, 51, 102, 1) 100%
+        rgba(0, 51, 102, 0.78) 66%,
+        rgba(0, 51, 102, 0.9) 100%
     );
 }
 
@@ -221,16 +245,6 @@
     justify-content: center;
 }
 
-.formGlow {
-    position: absolute;
-    inset: -0.75rem;
-    border-radius: 2rem;
-    background: linear-gradient(135deg, var(--primary), var(--accent-light));
-    opacity: 0.55;
-    filter: blur(18px);
-    z-index: 0;
-}
-
 .formCard {
     position: relative;
     z-index: 1;
@@ -276,34 +290,40 @@
 /* Mascot moved off the photo entirely — small trust chip pinned to the
    TOP corner of the form card (fixed header height, never collides with
    form fields below, unlike the bottom edge which grows with form content). */
+/* Tamni stakleni chip umjesto bijelog oblačića: maskota viri iznad ruba,
+   tekst na brend podlozi, bez velike bijele plohe */
 .mascotChip {
     position: absolute;
-    top: -1.1rem;
-    right: -0.75rem;
+    top: -1rem;
+    right: 1rem;
     z-index: 3;
     display: flex;
     align-items: flex-end;
-    gap: 0.5rem;
-    padding: 0.3rem 1rem 0.3rem 0.3rem;
+    gap: 0.4rem;
+    padding: 0.25rem 0.8rem 0.25rem 0.25rem;
     border-radius: 999px;
-    background: #fff;
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
-    transform: rotate(4deg);
+    background: rgba(0, 32, 64, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
 }
 
 .mascotChipImg {
     width: auto;
-    height: 56px;
+    height: 46px;
     flex-shrink: 0;
     object-fit: contain;
     display: block;
+    margin-top: -14px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.35));
 }
 
 .mascotChipText {
-    font-size: 0.78rem;
+    font-size: 0.75rem;
     font-weight: 800;
-    color: var(--secondary);
+    color: #fff;
     white-space: nowrap;
+    padding-bottom: 0.25rem;
 }
 
 @media (max-width: 992px) {
@@ -322,6 +342,12 @@
     .bgDivider,
     .bgLabel {
         display: none;
+    }
+
+    /* Fotka je jedina i full-width, fade s desktopa bi joj pojeo pola */
+    .bgHalf:nth-child(2) {
+        mask-image: none;
+        -webkit-mask-image: none;
     }
 
     .bgOverlay {
