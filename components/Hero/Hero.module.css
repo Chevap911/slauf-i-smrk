@@ -10,12 +10,14 @@
     color: #fff;
 }
 
+/* Obje fotke dobivaju jednako širok okvir (32%/34%) da im cover zoom bude
+   isti; treća kolona (iza forme) je prazna, overlay je prelije u puni navy */
 .bgSplit {
     position: absolute;
     inset: 0;
     z-index: 0;
     display: grid;
-    grid-template-columns: 32% 68%;
+    grid-template-columns: 32% 34% 1fr;
 }
 
 .bgHalf {
@@ -40,11 +42,12 @@
     box-shadow: 0 0 14px rgba(0, 0, 0, 0.35);
 }
 
-/* Labels sit above the overlay so they stay readable */
+/* Labels sit above the overlay so they stay readable; top edge is the only
+   zone guaranteed free of eyebrow/CTA/form collisions */
 .bgLabel {
     position: absolute;
-    bottom: 0.9rem;
-    right: 0.9rem;
+    top: 0.9rem;
+    left: 0.9rem;
     z-index: 3;
     background: rgba(0, 0, 0, 0.55);
     color: #fff;
@@ -57,19 +60,14 @@
     backdrop-filter: blur(4px);
 }
 
-/* PRIJE in the bottom-left corner, POSLIJE bottom-right: frames the split
-   and keeps both clear of the CTA buttons */
-.bgHalf:first-child .bgLabel {
-    right: auto;
-    left: 0.9rem;
-}
 
 .bgLabelAfter {
     background: rgba(37, 211, 102, 0.88);
     color: #04351c;
 }
 
-/* Uniform dim so H1/copy stay readable over both photos */
+/* Dim za čitljivost teksta; od ~64% prelazi u puni navy da sakrije rub
+   druge fotke i da forma sjedi na mirnoj pozadini */
 .bgOverlay {
     position: absolute;
     inset: 0;
@@ -77,8 +75,10 @@
     background: linear-gradient(
         100deg,
         rgba(0, 51, 102, 0.72) 0%,
-        rgba(0, 51, 102, 0.62) 45%,
-        rgba(0, 51, 102, 0.74) 100%
+        rgba(0, 51, 102, 0.62) 40%,
+        rgba(0, 51, 102, 0.72) 60%,
+        rgba(0, 51, 102, 1) 80%,
+        rgba(0, 51, 102, 1) 100%
     );
 }
 

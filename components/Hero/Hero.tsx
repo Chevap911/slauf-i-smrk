@@ -16,7 +16,7 @@ export default function Hero() {
                         fill
                         priority
                         sizes="35vw"
-                        quality={78}
+                        quality={75}
                         className={styles.bgImg}
                     />
                     <span className={styles.bgLabel}>Prije</span>
@@ -28,7 +28,7 @@ export default function Hero() {
                         fill
                         priority
                         sizes="70vw"
-                        quality={78}
+                        quality={75}
                         className={styles.bgImg}
                     />
                     <span className={`${styles.bgLabel} ${styles.bgLabelAfter}`}>Poslije</span>
