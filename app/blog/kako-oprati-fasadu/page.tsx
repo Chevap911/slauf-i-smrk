@@ -4,7 +4,7 @@ import { ArrowLeft, Phone, ArrowRight } from 'lucide-react';
 import styles from './article.module.css';
 
 export const metadata: Metadata = {
-    title: 'Kako oprati fasadu: vodič korak po korak i kada zvati profesionalce | Šlauf i Šmrk',
+    title: 'Kako oprati fasadu: vodič korak po korak | Šlauf i Šmrk',
     description: 'Kako oprati fasadu bez oštećenja: koji tlak, koje sredstvo i zašto kućni perač griješi na stiropor fasadi. Vodič korak po korak plus cijena pranja fasade u Zagrebu.',
     alternates: { canonical: '/blog/kako-oprati-fasadu' },
     openGraph: {

@@ -36,13 +36,19 @@ export default function AreaPage({ city, slug, intro, neighborhoods }: AreaPageP
 
     const businessSchema = {
         '@context': 'https://schema.org',
-        // "CleaningService" nije schema.org tip (isti fix kao u layout.tsx)
+        // "CleaningService" nije schema.org tip (isti fix kao u layout.tsx).
+        // "provider" nije validno svojstvo LocalBusinessa (Semrush error), maknut;
+        // "address" je obavezan za LocalBusiness rich results.
         '@type': 'HomeAndConstructionBusiness',
         name: `Šlauf i Šmrk, pranje pod tlakom ${city}`,
         url: `https://slaufismrk.com/podrucje/${slug}`,
         telephone: '+385958442806',
+        address: {
+            '@type': 'PostalAddress',
+            addressLocality: 'Zagreb',
+            addressCountry: 'HR',
+        },
         areaServed: { '@type': 'City', name: city },
-        provider: { '@type': 'LocalBusiness', name: 'Šlauf i Šmrk', url: 'https://slaufismrk.com' },
     };
 
     const cityLoc = CITY_LOCATIVE[city] ?? city;

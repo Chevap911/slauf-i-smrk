@@ -4,8 +4,8 @@ import { ArrowLeft, Phone, ArrowRight } from 'lucide-react';
 import styles from './article.module.css';
 
 export const metadata: Metadata = {
-    title: 'Čišćenje terasa u Zagrebu: alge, mahovina i crne naslage (2026.) | Šlauf i Šmrk',
-    description: 'Profesionalno čišćenje terasa u Zagrebu. Uklanjamo alge, mahovinu i crne naslage s keramičkih, kamenih i betonskih terasa. Besplatna procjena na lokaciji.',
+    title: 'Čišćenje terasa Zagreb: alge, mahovina, crne naslage | Šlauf i Šmrk',
+    description: 'Zašto terasa pozeleni i što stvarno uklanja alge, mahovinu i crne naslage s pločica. Vodič kroz profesionalno čišćenje terasa u Zagrebu, s primjerima.',
     alternates: { canonical: '/blog/ciscenje-terasa-zagreb' },
     openGraph: {
         title: 'Čišćenje terasa u Zagrebu: alge, mahovina i crne naslage (2026.)',

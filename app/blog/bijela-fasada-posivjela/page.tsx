@@ -4,7 +4,7 @@ import { ArrowLeft, Phone, ArrowRight } from 'lucide-react';
 import styles from './article.module.css';
 
 export const metadata: Metadata = {
-    title: 'Bijela fasada na kući posivjela: kako smo je vratili na Maksimiru | Šlauf i Šmrk',
+    title: 'Bijela fasada posivjela: kako smo je vratili | Šlauf i Šmrk',
     description: 'Bijela fasada s godinama posivi od algi i prašine. Na stvarnom poslu u Zagrebu pokazujemo kako je vraćamo bez bojanja i koliko to košta.',
     alternates: { canonical: '/blog/bijela-fasada-posivjela' },
     openGraph: {

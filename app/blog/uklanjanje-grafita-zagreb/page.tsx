@@ -4,7 +4,7 @@ import { ArrowLeft, Phone, ArrowRight } from 'lucide-react';
 import styles from './article.module.css';
 
 export const metadata: Metadata = {
-    title: 'Uklanjanje grafita u Zagrebu: zašto se isplati i kako to radimo | Šlauf i Šmrk',
+    title: 'Uklanjanje grafita u Zagrebu: kako to radimo | Šlauf i Šmrk',
     description: 'Zagreb je pun grafita po fasadama, izlozima i kamenu. Objašnjavamo zašto ih treba maknuti odmah, kako se skidaju bez oštećenja podloge i koliko košta.',
     alternates: { canonical: '/blog/uklanjanje-grafita-zagreb' },
     openGraph: {

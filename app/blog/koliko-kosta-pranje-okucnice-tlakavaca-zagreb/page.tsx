@@ -343,7 +343,7 @@ export default function BlogArticle() {
                                 <a href="tel:+385958442806" className={styles.ctaBtn}>
                                     <Phone size={18} /> 095 844 2806
                                 </a>
-                                <Link href="/kontakt" className={styles.ctaBtnSecondary}>
+                                <Link href="/#kontakt" className={styles.ctaBtnSecondary}>
                                     Ispunite formu <ArrowRight size={16} />
                                 </Link>
                             </div>

@@ -169,6 +169,11 @@ export default function ServicePage({
             name: 'Šlauf i Šmrk',
             url: baseUrl,
             telephone: '+385958442806',
+            address: {
+                '@type': 'PostalAddress',
+                addressLocality: 'Zagreb',
+                addressCountry: 'HR',
+            },
             areaServed: ['Zagreb', 'Zagrebačka županija'],
         },
     } : null;
@@ -234,7 +239,7 @@ export default function ServicePage({
                                     Zatražite besplatnu procjenu
                                 </Link>
                                 <a 
-                                    href="https://wa.me/385958442806?text=Bok!%20Zanima%20me%20procjena%20za%20uslugu%20${title}..." 
+                                    href={`https://wa.me/385958442806?text=${encodeURIComponent(`Bok! Zanima me procjena za uslugu ${title}...`)}`}
                                     className={styles.whatsappBtn}
                                     target="_blank"
                                     rel="noopener noreferrer"

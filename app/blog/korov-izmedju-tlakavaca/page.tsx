@@ -4,7 +4,7 @@ import { ArrowLeft, Phone, ArrowRight } from 'lucide-react';
 import styles from './article.module.css';
 
 export const metadata: Metadata = {
-    title: 'Korov između kocki i tlakavaca: kako smo očistili dvorište u Velikoj Gorici | Šlauf i Šmrk',
+    title: 'Korov i trava između kocki i tlakavaca: rješenje | Šlauf i Šmrk',
     description: 'Korov između betonskih kocki se uvijek vraća ako se samo počupa. Pokazujemo na stvarnom poslu kako čistimo fuge i čime usporavamo ponovni rast.',
     alternates: { canonical: '/blog/korov-izmedju-tlakavaca' },
     openGraph: {

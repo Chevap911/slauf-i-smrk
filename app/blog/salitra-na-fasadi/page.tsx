@@ -4,7 +4,7 @@ import { ArrowLeft, Phone, ArrowRight } from 'lucide-react';
 import styles from './article.module.css';
 
 export const metadata: Metadata = {
-    title: 'Salitra na fasadi: bijele naslage na kući u Španskom i kako smo ih riješili | Šlauf i Šmrk',
+    title: 'Salitra na fasadi: bijele naslage i kako ih riješiti | Šlauf i Šmrk',
     description: 'Bijele praškaste naslage na fasadi su salitra (eflorescencija). Pokazujemo na stvarnom poslu u Zagrebu odakle dolaze, kako ih skidamo i na što paziti.',
     alternates: { canonical: '/blog/salitra-na-fasadi' },
     openGraph: {
