@@ -6,16 +6,17 @@ import Image from 'next/image';
 import { X } from 'lucide-react';
 import styles from './Gallery.module.css';
 
+/* Kuracija 2026-07-04: 6 najjačih kadrova umjesto 9.
+   Izbačeni: projekt-7 (duplikat projekta-1), projekt-3 (kauč, premračno,
+   nečitljivo u gridu) i projekt-8 (noćna terasa, premračno). Akcijska fotka
+   s brendiranom majicom ide prva. */
 const projectImages = [
-    { src: "/projekti/projekt-1.jpeg", alt: "Čišćenje terase kafića Leggiero, poslije pranja betonskih kocki Zagreb" },
+    { src: "/assets/gallery-6.jpg", alt: "Šlauf i Šmrk u akciji, visokotlačno pranje terase kafića Leggiero Zagreb" },
+    { src: "/projekti/projekt-5.jpeg", alt: "Pola oprano pola prljavo, kontrast visokotlačnog pranja pločica terase Zagreb" },
     { src: "/projekti/projekt-2.jpeg", alt: "Pranje terase kavane Ravnice, čiste pločice poslije visokotlačnog čišćenja" },
-    { src: "/projekti/projekt-3.jpeg", alt: "Kemijsko čišćenje garniture, sofa poslije dubokog čišćenja Zagreb" },
-    { src: "/projekti/projekt-5.jpeg", alt: "Profesionalno čišćenje vanjskih površina, projekt Šlauf i Šmrk Zagreb" },
+    { src: "/projekti/projekt-9.jpeg", alt: "Visokotlačno pranje betona i tlakavaca u tijeku, projekt Šlauf i Šmrk Zagreb" },
+    { src: "/projekti/projekt-1.jpeg", alt: "Čišćenje terase kafića Leggiero, poslije pranja betonskih kocki Zagreb" },
     { src: "/projekti/projekt-6.jpeg", alt: "Visokotlačno pranje okućnice i dvorišta, projekt Šlauf i Šmrk" },
-    { src: "/projekti/projekt-7.jpeg", alt: "Pranje vanjskih površina, referentni projekt Zagreb" },
-    { src: "/projekti/projekt-8.jpeg", alt: "Profesionalno čišćenje terase i okućnice, rezultat Šlauf i Šmrk" },
-    { src: "/projekti/projekt-9.jpeg", alt: "Visokotlačno pranje betona i tlakavaca, projekt Šlauf i Šmrk Zagreb" },
-    { src: "/assets/gallery-6.jpg", alt: "Kemijsko čišćenje namještaja, projekt Šlauf i Šmrk" },
 ];
 
 export default function Gallery() {
