@@ -16,6 +16,13 @@ export const metadata: Metadata = {
 
 const articles = [
     {
+        title: 'Koliko košta kemijsko čišćenje namještaja? Cijene garniture, trosjeda i madraca',
+        excerpt: 'Garnitura od 80 €, trosjed od 40 €, madrac od 30 €, tepih od 5 €/m². Realne cijene dubinskog čišćenja namještaja u Zagrebu, koliko traje sušenje i što je realno s mrljama.',
+        slug: '/blog/koliko-kosta-kemijsko-ciscenje-namjestaja',
+        date: '2026-07-06',
+        category: 'Cijene',
+    },
+    {
         title: 'Uklanjanje grafita u Zagrebu: zašto se isplati i kako to radimo',
         excerpt: 'Zagreb je pun grafita po fasadama i izlozima. Zašto ispisan zid privlači nove tagove, kako se boja skida bez oštećenja podloge i zašto antigrafitna zaštita štedi novac.',
         slug: '/blog/uklanjanje-grafita-zagreb',

@@ -19,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ];
 
     const blog: { slug: string; date: string }[] = [
+        { slug: 'koliko-kosta-kemijsko-ciscenje-namjestaja', date: '2026-07-06' },
         { slug: 'uklanjanje-grafita-zagreb', date: '2026-06-16' },
         { slug: 'odrzavanje-fasade-stedi-novac', date: '2026-06-16' },
         { slug: 'crne-fleke-na-fasadi', date: '2026-06-01' },

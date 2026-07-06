@@ -166,6 +166,10 @@ export default function KemijskoCiscenjePage() {
                         Za veće projekte i poslovne prostore nudimo posebne cijene. Čišćenje obavljamo
                         <strong> na vašoj adresi</strong>, ne trebate nositi namještaj nikuda.
                     </p>
+                    <p>
+                        Detaljan vodič kroz cijene, trajanje sušenja i što je realno očekivati od mrlja:{' '}
+                        <Link href="/blog/koliko-kosta-kemijsko-ciscenje-namjestaja">koliko košta kemijsko čišćenje namještaja</Link>.
+                    </p>
 
                     <h2>Zašto je dubinsko čišćenje važno za zdravlje?</h2>
                     <p>
