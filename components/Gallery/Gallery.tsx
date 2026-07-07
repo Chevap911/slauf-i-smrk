@@ -45,7 +45,7 @@ export default function Gallery() {
                     viewport={{ once: true, margin: '0px 0px 200px 0px' }}
                 >
                     <h2 className={styles.title}>Naši projekti</h2>
-                    <p className={styles.subtitle}>Nedavni zahvati u Zagrebu i okolici. Kliknite na sliku za povećani prikaz.</p>
+                    <p className={styles.subtitle}>Nedavna pranja fasada, terasa i tlakavaca u Zagrebu i okolici. Kliknite na sliku za povećani prikaz.</p>
                 </motion.div>
 
                 <div className={styles.projectsSection}>

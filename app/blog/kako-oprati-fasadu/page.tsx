@@ -198,7 +198,7 @@ export default function BlogArticle() {
                         <p>
                             Računica je jednostavna. Najam perača, sredstvo i dan posla nisu besplatni, a rizik
                             od oštećenja stiropora pretvara uštedu u veliki trošak. Profesionalno pranje fasade
-                            u Zagrebu kreće od 5 €/m², s pravim tlakom, biocidnim tretmanom i dokumentiranim rezultatom.
+                            u Zagrebu kreće od 5 €/m², s pravim tlakom, biocidnim tretmanom i fotografijama prije i poslije.
                         </p>
 
                         <h2>Koliko košta pranje fasade u Zagrebu</h2>

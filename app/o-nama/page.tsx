@@ -5,12 +5,12 @@ import { Phone, ArrowRight, ShieldCheck, Eye, Sparkles, MapPin, Star } from 'luc
 import styles from './o-nama.module.css';
 
 export const metadata: Metadata = {
-    title: 'O nama, dvojica iza Šlauf i Šmrk | Pranje pod tlakom Zagreb',
-    description: 'Šlauf i Šmrk su dvojica iz Zagreba specijalizirana za visokotlačno pranje fasada, okućnica i terasa. Siguran pristup, čista procjena prije rada i rezultat koji se vidi. 5,0 na Google recenzijama.',
+    title: 'O nama, Ivan i Marko | Visokotlačno pranje fasada Zagreb | Šlauf i Šmrk',
+    description: 'Iza Šlauf i Šmrka smo Ivan i Marko iz Zagreba, specijalizirani za visokotlačno pranje fasada, okućnica i terasa. Besplatna procjena, fiksna cijena prije početka i 5,0 na Google recenzijama.',
     alternates: { canonical: '/o-nama' },
     openGraph: {
-        title: 'O nama, dvojica iza Šlauf i Šmrk',
-        description: 'Dvojica iz Zagreba specijalizirana za visokotlačno pranje fasada, okućnica i terasa. Čista procjena prije rada i rezultat koji se vidi.',
+        title: 'O nama, Ivan i Marko iza Šlauf i Šmrka',
+        description: 'Ivan i Marko iz Zagreba, specijalizirani za visokotlačno pranje fasada, okućnica i terasa. Besplatna procjena i fiksna cijena prije početka rada.',
         url: 'https://slaufismrk.com/o-nama',
         images: [
             {
@@ -80,7 +80,7 @@ const values = [
     {
         icon: <Sparkles size={28} />,
         title: 'Rezultat koji se vidi',
-        desc: 'Svaki veći posao dokumentiramo fotografijom prije i poslije. Ako rezultat nije čist, nije gotov.',
+        desc: 'Svako pranje fasade, terase ili tlakavaca fotografiramo prije i poslije. Ako rezultat nije čist, nije gotov.',
     },
 ];
 
@@ -101,11 +101,11 @@ export default function ONamaPage() {
                     <div className={styles.breadcrumb}>
                         <Link href="/">Početna</Link> › <span>O nama</span>
                     </div>
-                    <h1>Dvojica iza <span>Šlauf i Šmrk</span></h1>
+                    <h1>Ivan i Marko iza <span>Šlauf i Šmrk</span></h1>
                     <p>
-                        Šlauf i Šmrk nismo agencija ni veliki servis s call centrom. Dvojica smo iz Zagreba
-                        koja peru fasade, okućnice i terase i koja se javljaju na telefon. Kad nas nazovete,
-                        razgovarate s ljudima koji će raditi na vašoj kući.
+                        Šlauf i Šmrk nismo agencija ni veliki servis s call centrom. Mi smo Ivan i Marko
+                        iz Zagreba, peremo fasade, okućnice i terase i javljamo se na telefon. Kad nas
+                        nazovete, razgovarate s ljudima koji će raditi na vašoj kući.
                     </p>
                     <Link href="/#kontakt" className={styles.heroCta}>
                         <Phone size={18} /> Besplatna procjena
@@ -118,9 +118,17 @@ export default function ONamaPage() {
                 <div className="container">
                     <h2>Tko smo</h2>
                     <p className={styles.teamIntro}>
-                        Pokrenuli smo Šlauf i Šmrk jer smo se naljutili na zapuštene fasade i prljave terase
-                        koje godinama nitko ne dira. Vidjeli smo koliko jedan dan rada promijeni izgled kuće
-                        i pretvorili to u posao koji radimo ozbiljno.
+                        Prijatelji smo već 25 godina, još od školskih klupa: Ivan s Jaruna, Marko s
+                        Trešnjevke. Ivan je prije pet godina krenuo s kemijskim čišćenjem kaučeva, madraca
+                        i tepiha kao dodatnom zaradom, a onda smo jedne večeri uz piće odlučili proširiti
+                        posao. Ivan je donio iskustvo s čišćenjem, Marko web, kameru i marketing. Tako je
+                        nastao Šlauf i Šmrk: servis za visokotlačno pranje fasada, okućnica i terasa u Zagrebu.
+                    </p>
+                    <p className={styles.teamIntro}>
+                        A imena? Malo smo puniji, pa je Šlauf šatrovački za trbuh, a Šmrk se uz njega
+                        jednostavno posložio. Nismo velika firma i ne glumimo da jesmo: očevi smo, muževi
+                        i dugogodišnji prijatelji koji grade nešto svoje i drže se jednostavnog pravila,
+                        napravi više nego što je naplaćeno.
                     </p>
 
                     <div className={styles.duo}>
@@ -128,7 +136,7 @@ export default function ONamaPage() {
                             <div className={styles.memberPhoto}>
                                 <Image
                                     src="/characters/homepage/slauf-hands-on-hips.webp"
-                                    alt="Ivan (Šlauf), jedan od dvojice iza Šlauf i Šmrk"
+                                    alt="Ivan (Šlauf), suosnivač Šlauf i Šmrka, pranje fasada Zagreb"
                                     width={1792}
                                     height={2400}
                                     className={styles.memberImg}
@@ -137,8 +145,10 @@ export default function ONamaPage() {
                             </div>
                             <h3>Ivan (Šlauf)</h3>
                             <p>
-                                Dogovor, procjena i komunikacija s klijentima. Javlja se na upite i pazi
-                                da dogovoreno bude i odrađeno na vrijeme.
+                                S Jaruna, suprug i otac troje djece. U čišćenju je od početka: krenuo je
+                                s kemijskim čišćenjem kaučeva, madraca i tepiha, a danas vodi dogovor,
+                                procjene i teren. Javlja se na upite i pazi da dogovoreno bude i odrađeno
+                                na vrijeme.
                             </p>
                         </div>
 
@@ -146,7 +156,7 @@ export default function ONamaPage() {
                             <div className={styles.memberPhoto}>
                                 <Image
                                     src="/characters/homepage/smrk-thumbs-up.webp"
-                                    alt="Marko (Šmrk), jedan od dvojice iza Šlauf i Šmrk"
+                                    alt="Marko (Šmrk), suosnivač Šlauf i Šmrka, visokotlačno pranje Zagreb"
                                     width={1792}
                                     height={2400}
                                     className={styles.memberImg}
@@ -155,10 +165,23 @@ export default function ONamaPage() {
                             </div>
                             <h3>Marko (Šmrk)</h3>
                             <p>
-                                Na terenu, za peračem. Bira tlak i sredstvo prema materijalu i pazi
-                                da svaki kvadrat bude čist, bez oštećenja fasade ili pločnika.
+                                S Trešnjevke, suprug i otac jedne kćeri. Na terenu za peračem, a iza
+                                ekrana za sve što vidite online: web, fotografije prije i poslije i
+                                snimke s terena. Bira tlak i sredstvo prema materijalu da fasada ili
+                                pločnik ostanu neoštećeni.
                             </p>
                         </div>
+                    </div>
+
+                    <div className={styles.story}>
+                        <h3>Posao koji pamtimo</h3>
+                        <p>
+                            Jedan od prvih poslova: ogromna terasa kafića, a mi s malim kućnim peračem.
+                            Trajalo je duplo duže nego što smo planirali i izgorjeli smo na suncu, ali
+                            nismo otišli dok i zadnja ploča nije bila oprana. Danas imamo profesionalnu
+                            opremu za visokotlačno pranje, ali pravilo je ostalo isto: ne odustajemo dok
+                            površina nije čista.
+                        </p>
                     </div>
                 </div>
             </section>
@@ -195,7 +218,7 @@ export default function ONamaPage() {
                         </div>
                         <div className={styles.trustItem}>
                             <div className={styles.trustNumber}>Prije / poslije</div>
-                            <span>Svaki veći posao dokumentiran fotografijom</span>
+                            <span>Svako pranje fotografirano prije i poslije</span>
                         </div>
                     </div>
                 </div>
@@ -205,7 +228,7 @@ export default function ONamaPage() {
             <section className={styles.cta}>
                 <div className="container">
                     <div className={styles.ctaBox}>
-                        <h2>Javite se dvojici koja će i raditi</h2>
+                        <h2>Javite se Ivanu i Marku izravno</h2>
                         <p>Pošaljite 2-3 slike površine na WhatsApp i javljamo okvirnu cijenu. Za veće objekte dolazimo na besplatnu procjenu.</p>
                         <div className={styles.ctaButtons}>
                             <a href="tel:+385958442806" className={styles.ctaBtn}>

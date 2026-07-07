@@ -222,7 +222,7 @@ export default function PranjeFasadePage() {
                     },
                     {
                         title: 'Završna kontrola',
-                        description: 'Pregledavamo cijelu površinu, ispremo ostatke sredstva i dokumentiramo rezultat.',
+                        description: 'Pregledavamo cijelu opranu fasadu, ispremo ostatke sredstva i fotografiramo prije i poslije, da razliku vidite odmah.',
                     },
                 ]}
                 detailedContent={

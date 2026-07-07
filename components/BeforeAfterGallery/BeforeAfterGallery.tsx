@@ -62,7 +62,7 @@ export default function BeforeAfterGallery() {
                 >
                     <span className={styles.eyebrow}>Rezultati govore sami za sebe</span>
                     <h2>Prije i poslije</h2>
-                    <p>Povucite klizač i vidite razliku profesionalnog čišćenja na djelu.</p>
+                    <p>Povucite klizač i usporedite kako površina izgleda prije i poslije visokotlačnog pranja.</p>
                 </motion.div>
 
                 <div className={styles.grid}>

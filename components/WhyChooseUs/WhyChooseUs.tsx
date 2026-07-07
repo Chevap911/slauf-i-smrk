@@ -8,13 +8,13 @@ import styles from './WhyChooseUs.module.css';
 
 const reasons = [
     {
-        title: "Dvojica koja dođu i odrade",
-        description: "Nema podizvođača ni rotacije ljudi. Mi koje vidite na slikama dolazimo, peremo i čistimo za sobom.",
+        title: "Ivan i Marko, bez podizvođača",
+        description: "Svako pranje fasade, terase ili okućnice radimo osobno nas dvojica. S kim dogovorite posao, taj vam i dolazi oprati površinu.",
         icon: <Users size={32} />
     },
     {
-        title: "Fotografiramo prije i poslije",
-        description: "Za veće zahvate dokumentiramo rezultat. Vidite točno što ste platili, bez priče na riječ.",
+        title: "Prije i poslije fotografije",
+        description: "Svako visokotlačno pranje fotografiramo prije i poslije, pa razliku vidite odmah na vlastitoj fasadi, terasi ili tlakavcima.",
         icon: <Camera size={32} />
     },
     {
@@ -37,7 +37,7 @@ export default function WhyChooseUs() {
                     <div className={styles.headerCopy}>
                         <h2 className={styles.title}>Zašto odabrati nas?</h2>
                         <p className={styles.subtitle}>
-                            5,0 na Googleu i 40 recenzija. Dvojica koja dođu, operu i dokumentiraju rezultat. Bez podizvođača i bez iznenađenja na fakturi.
+                            Iza Šlauf i Šmrka smo Ivan i Marko. Visokotlačno pranje fasada, okućnica i terasa u Zagrebu radimo sami, od besplatne procjene do zadnjeg ispiranja.
                         </p>
                     </div>
 

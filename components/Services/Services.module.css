@@ -135,6 +135,10 @@
         grid-template-columns: 1fr;
     }
 
+    .headerCopy {
+        grid-column: 1;
+    }
+
     .sectionMascot,
     .sectionMascotRight {
         display: none;

@@ -123,6 +123,28 @@
     line-height: 1.6;
 }
 
+.story {
+    max-width: 700px;
+    margin: 3rem auto 0;
+    padding: 2rem 2.25rem;
+    border-radius: 1rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 5px solid var(--primary);
+}
+
+.story h3 {
+    font-size: 1.2rem;
+    color: var(--secondary);
+    margin-bottom: 0.75rem;
+}
+
+.story p {
+    color: #555;
+    line-height: 1.75;
+    margin: 0;
+}
+
 /* Values */
 .values {
     padding: var(--section-padding);
