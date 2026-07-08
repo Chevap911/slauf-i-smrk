@@ -1,0 +1,418 @@
+.pin {
+    position: relative;
+    height: 300vh;
+    background: var(--surface);
+}
+
+.pin.flip {
+    background: var(--background);
+}
+
+.sticky {
+    position: sticky;
+    top: var(--wr-nav, 70px);
+    height: calc(100svh - var(--wr-nav, 70px));
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1.08fr;
+    gap: clamp(2rem, 5vw, 4.5rem);
+    align-items: center;
+    width: 100%;
+}
+
+.flip .copy {
+    order: 2;
+}
+
+.flip .stageWrap {
+    order: 1;
+}
+
+/* ---------- copy ---------- */
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(0, 51, 102, 0.07);
+    color: var(--secondary);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 0.45rem 1rem;
+    border-radius: 999px;
+    margin-bottom: 1.15rem;
+}
+
+.dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--primary);
+}
+
+.copy h2 {
+    font-size: clamp(1.7rem, 3.2vw, 2.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.1rem;
+    color: var(--secondary);
+    text-wrap: balance;
+}
+
+.copy h2 mark {
+    background: linear-gradient(transparent 62%, var(--primary) 62%);
+    color: inherit;
+    padding: 0 0.06em;
+}
+
+.text {
+    color: #46586b;
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+    font-size: 0.97rem;
+    max-width: 52ch;
+}
+
+.points {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.9rem;
+    display: grid;
+    gap: 0.7rem;
+}
+
+.points li {
+    display: flex;
+    gap: 0.7rem;
+    align-items: flex-start;
+    font-size: 0.93rem;
+    color: #1f2937;
+    font-weight: 500;
+    line-height: 1.45;
+}
+
+.pointIcon {
+    flex: none;
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: var(--secondary);
+    display: grid;
+    place-items: center;
+    margin-top: 0.05rem;
+}
+
+.ctaRow {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    background: var(--primary);
+    color: var(--secondary);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.88rem;
+    padding: 0.95rem 1.7rem;
+    border-radius: 999px;
+    text-decoration: none;
+    box-shadow: 0 4px 14px 0 var(--primary-glow);
+    transition: var(--transition-fast);
+}
+
+.cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px 0 var(--primary-glow);
+}
+
+.ctaPhone {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--secondary);
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 0.95rem 0.4rem;
+    text-decoration: none;
+}
+
+.ctaPhone:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+/* ---------- photo stage ---------- */
+.stageWrap {
+    min-width: 0;
+}
+
+.stage {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.stage::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    transform: translate(13px, 13px);
+    border-radius: 24px;
+    background: linear-gradient(140deg, var(--primary) 0%, #ffc400 100%);
+}
+
+.card {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    aspect-ratio: 3 / 4.05;
+    width: auto;
+    height: min(calc(100svh - var(--wr-nav, 70px) - 8.5rem), 620px, calc((100vw - 3rem) * 1.35));
+    box-shadow: 0 44px 80px -32px rgba(0, 25, 51, 0.55);
+    background: #dfe5ea;
+}
+
+.ph {
+    position: absolute;
+    inset: 0;
+    will-change: transform;
+}
+
+.dirty {
+    filter: saturate(0.82) contrast(1.02);
+}
+
+.clean {
+    will-change: transform, mask-image, -webkit-mask-image;
+    mask-image: linear-gradient(to bottom, #000 -25%, transparent -3%);
+    -webkit-mask-image: linear-gradient(to bottom, #000 -25%, transparent -3%);
+}
+
+.sheen {
+    position: absolute;
+    left: -6%;
+    width: 112%;
+    height: 130px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    opacity: 0;
+    background: linear-gradient(
+        180deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0) 28%,
+        rgba(255, 255, 255, 0.32) 48%,
+        rgba(64, 224, 208, 0.14) 60%,
+        transparent 100%
+    );
+    filter: blur(5px);
+    will-change: top, opacity;
+}
+
+.drips {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    pointer-events: none;
+    opacity: 0;
+    will-change: top, opacity;
+}
+
+.drips span {
+    position: absolute;
+    top: 0;
+    width: 2px;
+    border-radius: 2px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0));
+}
+
+.drips span:nth-child(1) { left: 16%; height: 54px; }
+.drips span:nth-child(2) { left: 33%; height: 34px; }
+.drips span:nth-child(3) { left: 52%; height: 64px; }
+.drips span:nth-child(4) { left: 68%; height: 40px; }
+.drips span:nth-child(5) { left: 85%; height: 56px; }
+
+.chip {
+    position: absolute;
+    z-index: 3;
+    font-family: var(--font-heading);
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    padding: 0.48rem 1.05rem;
+    border-radius: 999px;
+    will-change: opacity, transform;
+}
+
+.chipPrije {
+    top: 1.05rem;
+    left: 1.05rem;
+    background: rgba(10, 20, 30, 0.6);
+    color: #fff;
+    backdrop-filter: blur(6px);
+}
+
+.chipPoslije {
+    bottom: 1.05rem;
+    right: 1.05rem;
+    background: var(--primary);
+    color: var(--secondary);
+    box-shadow: 0 8px 20px var(--primary-glow);
+    opacity: 0;
+}
+
+.badge {
+    position: absolute;
+    z-index: 4;
+    left: -1.4rem;
+    bottom: 2.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: #fff;
+    border-radius: 14px;
+    padding: 0.75rem 1.05rem;
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    will-change: opacity, transform;
+}
+
+.badgeIcon {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #e6f4ef;
+    color: #0c7a52;
+    display: grid;
+    place-items: center;
+    flex: none;
+}
+
+.badge b {
+    font-size: 0.8rem;
+    color: var(--foreground);
+    display: block;
+    font-weight: 700;
+}
+
+.badge small {
+    font-size: 0.68rem;
+    color: #6b7280;
+    display: block;
+}
+
+.caption {
+    text-align: center;
+    font-size: 0.78rem;
+    color: #8a94a1;
+    margin-top: 1.05rem;
+}
+
+/* ---------- mobile ----------
+   Fiksni elementi na mobitelu: QuoteFab gore (~48px ispod nava) i
+   StickyCtaBanner dolje (~98px). Sticky sadržaj mora stati između njih. */
+@media (max-width: 860px) {
+    .pin {
+        height: 240vh;
+    }
+
+    .sticky {
+        padding: 50px 0 102px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        align-content: center;
+    }
+
+    /* na mobitelu tekst uvijek iznad slike, i kod flip varijante */
+    .flip .copy {
+        order: 1;
+    }
+
+    .flip .stageWrap {
+        order: 2;
+    }
+
+    /* eyebrow i caption ne nose dovoljno na malom ekranu, prostor ide kartici */
+    .eyebrow,
+    .caption,
+    .points {
+        display: none;
+    }
+
+    .copy h2 {
+        font-size: 1.35rem;
+        margin-bottom: 0.65rem;
+    }
+
+    .text {
+        font-size: 0.85rem;
+        margin-bottom: 0.85rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .cta {
+        padding: 0.8rem 1.4rem;
+        font-size: 0.82rem;
+    }
+
+    .ctaPhone {
+        padding: 0.8rem 0.2rem;
+        font-size: 0.85rem;
+    }
+
+    .stage::before {
+        transform: translate(10px, 10px);
+    }
+
+    .card {
+        height: max(220px, min(46svh, calc(100svh - 512px), calc((100vw - 3.4rem) * 1.35)));
+    }
+
+    .badge {
+        left: -0.4rem;
+        bottom: 1.2rem;
+        padding: 0.6rem 0.85rem;
+    }
+
+    /* na maloj kartici badge prekrije donji desni kut, POSLIJE ide gore desno */
+    .chipPoslije {
+        bottom: auto;
+        top: 0.9rem;
+        right: 0.9rem;
+    }
+
+    .chipPrije {
+        top: 0.9rem;
+        left: 0.9rem;
+    }
+}
+
+/* vrlo niski ekrani: tekst otpada, ostaje naslov + CTA + kartica */
+@media (max-width: 860px) and (max-height: 660px) {
+    .text {
+        display: none;
+    }
+
+    .card {
+        height: max(200px, min(40svh, calc(100svh - 420px)));
+    }
+}
