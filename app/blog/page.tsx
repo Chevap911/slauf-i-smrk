@@ -16,6 +16,13 @@ export const metadata: Metadata = {
 
 const articles = [
     {
+        title: 'Koliko košta čišćenje grobnog mjesta? Cijene održavanja spomenika Zagreb 2026',
+        excerpt: 'Jednostruki grob od 250 €, dvostruki od 300 €. Konkretne cijene čišćenja nadgrobnih spomenika u Zagrebu, kako funkcionira rezervacija i zašto koristimo niski tlak.',
+        slug: '/blog/koliko-kosta-ciscenje-grobnog-mjesta',
+        date: '2026-07-08',
+        category: 'Cijene',
+    },
+    {
         title: 'Koliko košta kemijsko čišćenje namještaja? Cijene garniture, trosjeda i madraca',
         excerpt: 'Garnitura od 80 €, trosjed od 40 €, madrac od 30 €, tepih od 5 €/m². Realne cijene dubinskog čišćenja namještaja u Zagrebu, koliko traje sušenje i što je realno s mrljama.',
         slug: '/blog/koliko-kosta-kemijsko-ciscenje-namjestaja',

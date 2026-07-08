@@ -175,6 +175,11 @@ export default function GrobnaMjestaPage() {
                     </ul>
 
                     <h2>Cijene</h2>
+                    <p>
+                        Detaljan pregled cijena s primjerima i faktorima koji utječu na konačnu ponudu
+                        pogledajte u našem vodiču{' '}
+                        <Link href="/blog/koliko-kosta-ciscenje-grobnog-mjesta">koliko košta čišćenje grobnog mjesta</Link>.
+                    </p>
                     <ul>
                         <li><strong>Jednokratno čišćenje (jednostruki grob)</strong>: od 250 €</li>
                         <li><strong>Jednokratno čišćenje (dvostruki grob / grobnica)</strong>: od 300 €</li>

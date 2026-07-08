@@ -3,7 +3,12 @@
 }
 
 .article {
-    padding: var(--section-padding);
+    padding: 1.5rem 0 4rem;
+}
+
+.article > .container {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .back {
@@ -13,7 +18,7 @@
     color: var(--secondary);
     font-weight: 600;
     font-size: 0.9rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
 }
 
 .back:hover {
@@ -22,7 +27,7 @@
 
 /* Header */
 .header {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     padding-bottom: 2rem;
     border-bottom: 1px solid var(--border);
 }
@@ -54,7 +59,7 @@
 
 /* Content */
 .content {
-    max-width: 720px;
+    max-width: 100%;
 }
 
 .content h2 {
