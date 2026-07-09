@@ -8,32 +8,18 @@ import styles from './Hero.module.css';
 export default function Hero() {
     return (
         <section className={styles.hero}>
-            <div className={styles.bgSplit} aria-hidden="true">
-                <div className={styles.bgHalf}>
+            <div className={styles.bg} aria-hidden="true">
+                <div className={styles.bgPhoto}>
                     <Image
-                        src="/prije-poslje/fasada-prije.jpeg"
+                        src="/hero-foto/ivan-pranje-terase-nocu.jpg"
                         alt=""
                         fill
                         priority
-                        sizes="35vw"
+                        sizes="(max-width: 992px) 100vw, 67vw"
                         quality={75}
                         className={styles.bgImg}
                     />
-                    <span className={styles.bgLabel}>Prije</span>
                 </div>
-                <div className={styles.bgHalf}>
-                    <Image
-                        src="/prije-poslje/fasada-poslje.png"
-                        alt=""
-                        fill
-                        priority
-                        sizes="70vw"
-                        quality={75}
-                        className={styles.bgImg}
-                    />
-                    <span className={`${styles.bgLabel} ${styles.bgLabelAfter}`}>Poslije</span>
-                </div>
-                <div className={styles.bgDivider} />
                 <div className={styles.bgOverlay} />
             </div>
 

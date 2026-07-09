@@ -2,7 +2,7 @@
 .fab {
     position: fixed;
     right: 1rem;
-    top: 4.75rem; /* odmah ispod nav trake */
+    top: calc(var(--nav-h) + 0.75rem); /* odmah ispod nav trake */
     z-index: 900; /* ispod nav (1000) i mobilnog menija da ne prekriva X */
     display: inline-flex;
     align-items: center;

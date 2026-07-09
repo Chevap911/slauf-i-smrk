@@ -5,13 +5,52 @@
     background: var(--glass);
     backdrop-filter: var(--glass-blur);
     border-bottom: 1px solid var(--border);
-    padding: 1rem 0;
+    padding: 0;
+    transition: background 250ms ease, border-color 250ms ease;
 }
 
+/* Fiksna visina (--nav-h u globals.css): hero se podvlaci pod traku
+   za tocno tu vrijednost pa fotka ide do samog vrha ekrana */
 .navWrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: calc(var(--nav-h) - 1px);
+}
+
+/* Prozirna varijanta na vrhu naslovnice: traka "lezi" na hero fotki */
+.navOverlay {
+    background: transparent;
+    backdrop-filter: none;
+    border-bottom-color: transparent;
+}
+
+.navOverlay .brandName {
+    color: #fff;
+}
+
+.navOverlay .brandMark rect {
+    fill: var(--primary);
+}
+
+.navOverlay .brandMark text {
+    fill: var(--secondary);
+}
+
+.navOverlay .link {
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.navOverlay .link:hover {
+    color: var(--primary);
+}
+
+.navOverlay .linkActive {
+    color: #fff;
+}
+
+.navOverlay .mobileMenuBtn {
+    color: #fff;
 }
 
 .logo {

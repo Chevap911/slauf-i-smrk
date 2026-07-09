@@ -1,40 +1,39 @@
-/* Markova odluka (2026-07-04): pozadina preko CIJELOG heroa je prije/poslije
-   split. Prije lijevo, poslije desno od linije na 32% (da poslije ostane
-   cijela vidljiva u prostoru prije form kartice). Obje fotke su portretne,
-   svaka polovica ih prikazuje gotovo cijele, bez razvlačenja. */
+/* Markova odluka (2026-07-08): umjesto prije/poslije splita, jedna akcijska
+   fotka (Ivan s leđa pere terasu noću, brendirana majica). Fotka je usidrena
+   desno i mekano se fadea ulijevo u navy iza H1 teksta. Prije/poslije dokaz
+   su WashReveal sekcije odmah ispod heroa, pa se fotke ne ponavljaju.
+   Hero se podvlači pod prozirnu nav traku (margin-top: -nav-h). */
 .hero {
     position: relative;
     overflow: hidden;
-    padding: 2rem 0 2.25rem;
+    margin-top: calc(var(--nav-h) * -1);
+    padding: calc(2rem + var(--nav-h)) 0 2.25rem;
     background: var(--secondary);
     color: #fff;
 }
 
-/* Obje fotke dobivaju jednako širok okvir (32%/34%) da im cover zoom bude
-   isti; treća kolona (iza forme) je prazna, overlay je prelije u puni navy */
-.bgSplit {
+.bg {
     position: absolute;
     inset: 0;
     z-index: 0;
-    display: grid;
-    grid-template-columns: 32% 34% 1fr;
 }
 
-.bgHalf {
-    position: relative;
+/* Fotka pokriva desnih ~58% heroa i gasi se ulijevo u navy podlogu;
+   iza H1 je čisti navy, Ivan sjeda u prostor između teksta i forme */
+.bgPhoto {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 67%;
     overflow: hidden;
-}
-
-/* Poslije fotka se mekano gasi u navy PRIJE nego što joj završi okvir,
-   nema tvrdog reza na rubu prema formi */
-.bgHalf:nth-child(2) {
-    mask-image: linear-gradient(to right, #000 55%, transparent 97%);
-    -webkit-mask-image: linear-gradient(to right, #000 55%, transparent 97%);
+    mask-image: linear-gradient(to right, transparent 0%, #000 42%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 42%);
 }
 
 .bgImg {
     object-fit: cover;
-    object-position: center 25%;
+    object-position: center 24%;
     animation: heroKenBurns 22s ease-in-out infinite alternate;
     will-change: transform;
 }
@@ -55,54 +54,18 @@
     }
 }
 
-.bgDivider {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 32%;
-    width: 3px;
-    transform: translateX(-50%);
-    background: rgba(255, 255, 255, 0.85);
-    z-index: 2;
-    box-shadow: 0 0 14px rgba(0, 0, 0, 0.35);
-}
-
-/* Labels sit above the overlay so they stay readable; top edge is the only
-   zone guaranteed free of eyebrow/CTA/form collisions */
-.bgLabel {
-    position: absolute;
-    top: 0.9rem;
-    left: 0.9rem;
-    z-index: 3;
-    background: rgba(0, 0, 0, 0.55);
-    color: #fff;
-    font-size: 0.7rem;
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 0.3rem 0.65rem;
-    border-radius: 999px;
-    backdrop-filter: blur(4px);
-}
-
-
-.bgLabelAfter {
-    background: rgba(37, 211, 102, 0.88);
-    color: #04351c;
-}
-
-/* Dim za čitljivost teksta; rub fotke rješava mask na .bgHalf, pa overlay
-   samo lagano tamni prema desno, bez tvrdih prijelaza */
+/* Dim za čitljivost: fade lijevog ruba rješava mask na .bgPhoto, overlay
+   samo lagano tamni sredinu (ispod H1 repa) i desni rub (iza forme) */
 .bgOverlay {
     position: absolute;
     inset: 0;
     z-index: 1;
     background: linear-gradient(
         100deg,
-        rgba(0, 51, 102, 0.72) 0%,
-        rgba(0, 51, 102, 0.62) 40%,
-        rgba(0, 51, 102, 0.78) 66%,
-        rgba(0, 51, 102, 0.9) 100%
+        rgba(0, 51, 102, 0.5) 0%,
+        rgba(0, 51, 102, 0.2) 45%,
+        rgba(0, 51, 102, 0.04) 70%,
+        rgba(0, 51, 102, 0.22) 100%
     );
 }
 
@@ -327,25 +290,15 @@
 }
 
 @media (max-width: 992px) {
+    /* top padding preskače i QuoteFab (fiksiran ispod nav trake) */
     .hero {
-        padding: 3rem 0 2rem;
+        padding: calc(4.5rem + var(--nav-h)) 0 2rem;
     }
 
-    /* Single column: split bi bio uski slijepljeni sliver, pa mobitel
-       dobiva samo "poslije" fotku kao teksturu; prije/poslije dokaz je
-       odmah ispod u BeforeAfterGallery sekciji */
-    .bgSplit {
-        grid-template-columns: 1fr;
-    }
-
-    .bgHalf:first-child,
-    .bgDivider,
-    .bgLabel {
-        display: none;
-    }
-
-    /* Fotka je jedina i full-width, fade s desktopa bi joj pojeo pola */
-    .bgHalf:nth-child(2) {
+    /* Mobitel: fotka je full-width tekstura ispod tamnijeg overlaya,
+       fade s desktopa bi joj pojeo pola */
+    .bgPhoto {
+        width: 100%;
         mask-image: none;
         -webkit-mask-image: none;
     }
@@ -353,8 +306,8 @@
     .bgOverlay {
         background: linear-gradient(
             180deg,
-            rgba(0, 51, 102, 0.82) 0%,
-            rgba(0, 51, 102, 0.88) 100%
+            rgba(0, 51, 102, 0.72) 0%,
+            rgba(0, 51, 102, 0.85) 100%
         );
     }
 

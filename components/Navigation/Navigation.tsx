@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Phone, Menu, X } from 'lucide-react';
@@ -33,7 +33,19 @@ function BrandMark() {
 
 export default function Navigation() {
     const [isMobileOpen, setIsMobileOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
     const pathname = usePathname();
+
+    useEffect(() => {
+        const onScroll = () => setScrolled(window.scrollY > 24);
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        return () => window.removeEventListener('scroll', onScroll);
+    }, []);
+
+    // Na vrhu naslovnice traka je prozirna preko hero fotke; cim korisnik
+    // scrolla (ili otvori mobilni meni), vraca se bijela glass podloga.
+    const overHero = pathname === '/' && !scrolled && !isMobileOpen;
 
     const isActive = (href: string) => pathname === href;
 
@@ -46,7 +58,7 @@ export default function Navigation() {
     };
 
     return (
-        <nav className={styles.nav}>
+        <nav className={`${styles.nav} ${overHero ? styles.navOverlay : ''}`}>
             <div className="container">
                 <div className={styles.navWrapper}>
                     <Link href="/" className={styles.logo} aria-label="Šlauf i Šmrk, početna">

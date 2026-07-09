@@ -330,7 +330,7 @@
     }
 
     .sticky {
-        padding: 50px 0 102px;
+        padding: 68px 0 102px;
     }
 
     .grid {
@@ -384,7 +384,7 @@
     }
 
     .card {
-        height: max(220px, min(46svh, calc(100svh - 512px), calc((100vw - 3.4rem) * 1.35)));
+        height: max(220px, min(46svh, calc(100svh - 530px), calc((100vw - 3.4rem) * 1.35)));
     }
 
     .badge {
