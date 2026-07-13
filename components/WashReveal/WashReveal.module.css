@@ -1,6 +1,6 @@
 .pin {
     position: relative;
-    height: 300vh;
+    height: 230vh;
     background: var(--surface);
 }
 
@@ -326,7 +326,7 @@
    StickyCtaBanner dolje (~98px). Sticky sadržaj mora stati između njih. */
 @media (max-width: 860px) {
     .pin {
-        height: 240vh;
+        height: 200vh;
     }
 
     .sticky {

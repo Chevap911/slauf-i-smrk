@@ -9,10 +9,15 @@ import styles from './Gallery.module.css';
 /* Kuracija 2026-07-04: 6 najjačih kadrova umjesto 9.
    Izbačeni: projekt-7 (duplikat projekta-1), projekt-3 (kauč, premračno,
    nečitljivo u gridu) i projekt-8 (noćna terasa, premračno). Akcijska fotka
-   s brendiranom majicom ide prva. */
+   s brendiranom majicom ide prva.
+   2026-07-13: dodane 3 fotke pranja fasade (Hrašće) jer galerija nije imala
+   nijednu fasadu, a to je usluga #1 i H2 vodi s "pranje fasada". */
 const projectImages = [
+    { src: "/projekti/fasada-djelatnik-teleskopska-lanca-zagreb.jpeg", alt: "Djelatnik Šlauf i Šmrk pere fasadu obiteljske kuće teleskopskom lancom, Zagreb" },
     { src: "/assets/gallery-6.jpg", alt: "Šlauf i Šmrk u akciji, visokotlačno pranje terase kafića Leggiero Zagreb" },
+    { src: "/projekti/oprana-fasada-obiteljske-kuce-zagreb.jpeg", alt: "Oprana bež fasada obiteljske kuće nakon pranja fasade, Zagreb" },
     { src: "/projekti/projekt-5.jpeg", alt: "Pola oprano pola prljavo, kontrast visokotlačnog pranja pločica terase Zagreb" },
+    { src: "/projekti/pranje-fasade-prije-poslije-zagreb.jpeg", alt: "Fasada prije i poslije pranja, uklonjene alge i sivilo sa žbuke, Zagreb" },
     { src: "/projekti/projekt-2.jpeg", alt: "Pranje terase kavane Ravnice, čiste pločice poslije visokotlačnog čišćenja" },
     { src: "/projekti/projekt-9.jpeg", alt: "Visokotlačno pranje betona i tlakavaca u tijeku, projekt Šlauf i Šmrk Zagreb" },
     { src: "/projekti/projekt-1.jpeg", alt: "Čišćenje terase kafića Leggiero, poslije pranja betonskih kocki Zagreb" },
@@ -44,7 +49,7 @@ export default function Gallery() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: '0px 0px 200px 0px' }}
                 >
-                    <h2 className={styles.title}>Naši projekti</h2>
+                    <h2 className={styles.title}>Pranje fasada i terasa u Zagrebu: prije i poslije</h2>
                     <p className={styles.subtitle}>Nedavna pranja fasada, terasa i tlakavaca u Zagrebu i okolici. Kliknite na sliku za povećani prikaz.</p>
                 </motion.div>
 

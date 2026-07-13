@@ -9,43 +9,43 @@ import styles from './Services.module.css';
 
 const services = [
     {
-        title: "Pranje Fasada",
+        title: "Pranje fasada u Zagrebu",
         description: "Uklanjamo alge, gljivice i mahovinu koji narušavaju izgled i oštećuju vašu fasadu. Vraćamo originalnu boju i sjaj te produljujemo životni vijek vašeg doma.",
         icon: <ShieldCheck size={32} />,
         href: "/usluge/pranje-fasade"
     },
     {
-        title: "Pranje Okućnica i Prilaza",
+        title: "Pranje okućnica i prilaza",
         description: "Visokotlačno čišćenje betonskih kocki, kamenih ploča i asfalta. Vraćamo prvobitnu ljepotu vašem vanjskom prostoru i uklanjamo nakupljenu prljavštinu i korov.",
         icon: <Home size={32} />,
         href: "/usluge/pranje-okucnice"
     },
     {
-        title: "Čišćenje Kamenih Površina",
+        title: "Čišćenje kamenih površina",
         description: "Profesionalno čišćenje kamenih klupica, kipova, stolova i drugih kamenih površina. Vraćamo im prvobitni sjaj i činimo ih ponosom vašeg vrta.",
         icon: <TreeDeciduous size={32} />,
         href: "/usluge/ciscenje-kamenih-povrsina"
     },
     {
-        title: "Pranje Auta Uz Dolazak",
+        title: "Pranje auta uz dolazak",
         description: "Peremo auto iznutra i izvana dok smo već na vašoj lokaciji. Vanjsko pranje, kemijsko čišćenje sjedala i interijer. Bez dodatnog putnog troška.",
         icon: <Car size={32} />,
         href: "/usluge/detailing-automobila"
     },
     {
-        title: "Održavanje Grobnih Mjesta",
+        title: "Održavanje grobnih mjesta",
         description: "Specijalizirana usluga čišćenja nadgrobnih ploča, uklanjanje mahovine i algi te impregnacija koja štiti površinu od budućih onečišćenja.",
         icon: <HeartHandshake size={32} />,
         href: "/usluge/odrzavanje-grobnih-mjesta"
     },
     {
-        title: "Čišćenje Drvenih Površina",
+        title: "Čišćenje drvenih površina",
         description: "Oživljavamo vaše drvene terase, ograde i namještaj uklanjajući sivilo i pripremajući ih za novu zaštitu od vremenskih uvjeta.",
         icon: <ShieldCheck size={32} />,
         href: "/usluge/ciscenje-drvenih-povrsina"
     },
     {
-        title: "Pranje Poslovnih Objekata",
+        title: "Pranje poslovnih objekata",
         description: "Vanjsko čišćenje fasada, parkirišta, skladišta i hala. Redoviti ugovori, račun za tvrtke, rad izvan radnog vremena. Za firme koje trebaju urednog i pouzdanog partnera.",
         icon: <Building2 size={32} />,
         href: "/usluge/poslovni-objekti"
@@ -67,9 +67,9 @@ export default function Services() {
             <div className="container">
                 <div className={styles.header}>
                     <div className={styles.headerCopy}>
-                        <h2 className={styles.subtitle}>Naše Usluge</h2>
+                        <h2 className={styles.subtitle}>Usluge pranja i čišćenja u Zagrebu</h2>
                         <p className={styles.sectionDesc}>
-                            Specijalizirani smo za visokotlačno pranje svih vanjskih površina. Naša stručnost i ekološki prihvatljiva sredstva jamče vrhunske rezultate.
+                            Visokotlačno i softwash pranje fasada, okućnica, terasa i tlakavaca u Zagrebu i okolici. Dolazimo na lokaciju i radimo prilagođenim tlakom za svaki materijal.
                         </p>
                     </div>
 

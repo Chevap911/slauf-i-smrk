@@ -35,7 +35,7 @@ export default function WhyChooseUs() {
             <div className="container">
                 <div className={styles.header}>
                     <div className={styles.headerCopy}>
-                        <h2 className={styles.title}>Zašto odabrati nas?</h2>
+                        <h2 className={styles.title}>Zašto odabrati Šlauf i Šmrk za pranje u Zagrebu?</h2>
                         <p className={styles.subtitle}>
                             Iza Šlauf i Šmrka smo Ivan i Marko. Visokotlačno pranje fasada, okućnica i terasa u Zagrebu radimo sami, od besplatne procjene do zadnjeg ispiranja.
                         </p>

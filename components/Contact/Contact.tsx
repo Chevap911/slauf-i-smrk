@@ -656,7 +656,7 @@ export default function Contact() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <h2 className={styles.title}>Spremni za <span className={styles.yellow}>čišćenje</span>?</h2>
+                        <h2 className={styles.title}>Zatražite besplatnu procjenu <span className={styles.yellow}>pranja</span> u Zagrebu</h2>
                         <p className={styles.text}>
                             Ispunite brzi obrazac i dobit ćete informativnu procjenu cijene. Čim prijeđete prvi korak,
                             spremamo osnovne podatke vašeg upita kako bismo vas mogli lakše kontaktirati i nastaviti ponudu.

@@ -31,9 +31,9 @@ export default function Hero() {
                         <div className={styles.formCard}>
                             <div className={styles.formHeader}>
                                 <span className={styles.formEyebrow}>Besplatna procjena</span>
-                                <h2 className={styles.formTitle}>Dobijte cijenu odmah</h2>
+                                <h2 className={styles.formTitle}>Saznajte cijenu pranja odmah</h2>
                                 <p className={styles.formSubtitle}>
-                                    Ispunite kratki obrazac i odmah dobijete okvirnu cijenu. Bez obveze.
+                                    Ispunite kratki obrazac i odmah vidite okvirnu cijenu. Bez obveze.
                                 </p>
                             </div>
                             <div className={styles.formBody}>

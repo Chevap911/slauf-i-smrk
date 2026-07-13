@@ -76,7 +76,7 @@ export default function Testimonials() {
                         </svg>
                         <span>5,0 · 40 Google recenzija</span>
                     </a>
-                    <h2 className={styles.title}>Dojmovi naših klijenata</h2>
+                    <h2 className={styles.title}>Recenzije za pranje fasada i terasa u Zagrebu</h2>
                     <p className={styles.subtitle}>Stvarne recenzije s Google Mapsa, neobrađene, kakve su stigle.</p>
                 </div>
 

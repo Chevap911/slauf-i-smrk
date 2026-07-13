@@ -109,7 +109,7 @@ export default function QuoteForm({ idPrefix = 'qf', hideHeading = false }: { id
             {!hideHeading && (
                 <>
                     <h3 className={styles.title}>Zatražite besplatnu procjenu</h3>
-                    <p className={styles.sub}>Ispunite kratki obrazac i odmah dobijete okvirnu cijenu. Bez obveze.</p>
+                    <p className={styles.sub}>Ispunite kratki obrazac i odmah vidite okvirnu cijenu. Bez obveze.</p>
                 </>
             )}
 

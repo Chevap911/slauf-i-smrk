@@ -74,9 +74,9 @@ export default function WashReveal({
         };
 
         const render = (p: number) => {
-            const w = easeInOut(seg(p, 0.1, 0.86));
+            const w = easeInOut(seg(p, 0.0, 0.82));
 
-            const edge = -14 + w * 128;
+            const edge = -8 + w * 120;
             const mask = `linear-gradient(to bottom, #000 ${edge - 11}%, transparent ${edge + 11}%)`;
             if (cleanRef.current) {
                 cleanRef.current.style.maskImage = mask;
@@ -116,7 +116,7 @@ export default function WashReveal({
             const rect = pin.getBoundingClientRect();
             const total = rect.height - (window.innerHeight - navH);
             target = total > 0 ? clamp((-rect.top + navH) / total, 0, 1) : 0;
-            current = reduced ? target : current + (target - current) * 0.16;
+            current = reduced ? target : current + (target - current) * 0.2;
             render(current);
             rafId = requestAnimationFrame(loop);
         };
