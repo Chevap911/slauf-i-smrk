@@ -6,6 +6,20 @@ import styles from './BeforeAfterGallery.module.css';
 
 const pairs = [
     {
+        before: '/prije-poslje/fasada-narancasta-prije.jpeg',
+        after: '/prije-poslje/fasada-narancasta-poslje.jpeg',
+        beforeAlt: 'Fasada kuće prije pranja, sivi film i naslage prljavštine preko narančaste žbuke Zagreb',
+        afterAlt: 'Fasada kuće poslije visokotlačnog pranja, vraćena živa narančasta boja žbuke Zagreb',
+        label: 'Pranje fasade kuće, vraćena boja žbuke',
+    },
+    {
+        before: '/prije-poslje/zid-parking-prije.jpeg',
+        after: '/prije-poslje/zid-parking-poslje.jpeg',
+        beforeAlt: 'Betonski zid parkinga prije pranja, sive naslage i tamni tragovi Zagreb',
+        afterAlt: 'Betonski zid parkinga poslije visokotlačnog pranja, čist beton Zagreb',
+        label: 'Pranje betonskog zida i parkinga',
+    },
+    {
         before: '/prije-poslje/pranje-zida-terase-zagreb-prije.jpeg',
         after: '/prije-poslje/pranje-zida-terase-zagreb-poslje.jpeg',
         beforeAlt: 'Zid terase prije pranja, alge, mahovina i tamne naslage Zagreb',
@@ -20,25 +34,11 @@ const pairs = [
         label: 'Čišćenje poda terase, pločice',
     },
     {
-        before: '/prije-poslje/terasa-leggiero-prije-1.jpeg',
-        after: '/prije-poslje/terasa-leggiero-poslje-1.jpeg',
-        beforeAlt: 'Terasa kafića prije čišćenja, mahovina i prljavština na betonskim kockama',
-        afterAlt: 'Terasa kafića poslije čišćenja, blistave betonske kocke Zagreb',
-        label: 'Pranje terase, kafić Leggiero',
-    },
-    {
         before: '/prije-poslje/terasa-leggiero-prije-2.jpeg',
         after: '/prije-poslje/terasa-leggiero-poslje-2.jpeg',
         beforeAlt: 'Vanjska terasa prije čišćenja, zarasle fuge i korov',
         afterAlt: 'Vanjska terasa poslije profesionalnog pranja tlakavaca Zagreb',
         label: 'Pranje okućnice, tlakavci',
-    },
-    {
-        before: '/prije-poslje/fasada-prije.jpeg',
-        after: '/prije-poslje/fasada-poslje.png',
-        beforeAlt: 'Fasada kuće prije čišćenja, zelene alge i mahovine Zagreb',
-        afterAlt: 'Fasada kuće poslije visokotlačnog pranja, čista bijela fasada Zagreb',
-        label: 'Pranje fasade, alge i mahovina',
     },
     {
         before: '/assets/before1.png',

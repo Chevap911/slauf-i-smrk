@@ -1,6 +1,31 @@
+# Šlauf i Šmrk - robots.txt
+
+# Standardni tražilički botovi
 User-agent: *
 Allow: /
 Disallow: /admin
 Disallow: /api/
+
+# AI search botovi (citiranje u ChatGPT, Claude, Perplexity, Google AI Overviews)
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
 
 Sitemap: https://slaufismrk.com/sitemap.xml

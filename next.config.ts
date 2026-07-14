@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
   excludeDefaultMomentLocales: true,
   images: {
     formats: ['image/avif', 'image/webp'],
+    qualities: [75, 85],
   },
   turbopack: {
     root: path.resolve(__dirname),

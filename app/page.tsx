@@ -4,6 +4,7 @@ import Hero from '@/components/Hero/Hero';
 import WashReveal from '@/components/WashReveal/WashReveal';
 
 const WhyChooseUs = dynamic(() => import('@/components/WhyChooseUs/WhyChooseUs'));
+const BeforeAfterGallery = dynamic(() => import('@/components/BeforeAfterGallery/BeforeAfterGallery'));
 const Services = dynamic(() => import('@/components/Services/Services'));
 const Gallery = dynamic(() => import('@/components/Gallery/Gallery'));
 const Testimonials = dynamic(() => import('@/components/Testimonials/Testimonials'));
@@ -83,6 +84,7 @@ export default function Home() {
         badgeSub="Bez prekida rada lokala"
       />
       <WhyChooseUs />
+      <BeforeAfterGallery />
       <Services />
       <Gallery />
       <Testimonials />

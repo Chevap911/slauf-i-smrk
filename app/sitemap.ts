@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         'detailing-automobila',
         'pranje-bazena',
         'odrzavanje-grobnih-mjesta',
+        'poslovni-objekti',
     ];
 
     const blog: { slug: string; date: string }[] = [
