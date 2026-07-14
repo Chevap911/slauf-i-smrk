@@ -82,7 +82,10 @@ const localBusinessSchema = {
   ],
   address: {
     "@type": "PostalAddress",
+    streetAddress: "Primoštenska ulica 11",
     addressLocality: "Zagreb",
+    postalCode: "10000",
+    addressRegion: "Zagreb",
     addressCountry: "HR",
   },
   geo: {

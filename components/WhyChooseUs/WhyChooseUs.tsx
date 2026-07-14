@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Users, Camera, BadgeEuro, Star } from 'lucide-react';
+import { Users, Camera, BadgeEuro, Star, ShieldCheck } from 'lucide-react';
 import HomepageMascot from '@/components/HomepageMascot/HomepageMascot';
 import { homepageMascots } from '@/components/HomepageMascot/homepageMascots';
 import styles from './WhyChooseUs.module.css';
@@ -66,6 +66,22 @@ export default function WhyChooseUs() {
                         </motion.div>
                     ))}
                 </div>
+
+                <motion.div
+                    className={styles.guarantee}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: '0px 0px 200px 0px' }}
+                    transition={{ duration: 0.5 }}
+                >
+                    <ShieldCheck size={44} />
+                    <div>
+                        <h3 className={styles.guaranteeTitle}>Garancija zadovoljstva</h3>
+                        <p className={styles.guaranteeText}>
+                            Ne obećavamo nemoguće, ali ne odlazimo dok niste zadovoljni obavljenim poslom. Ako nešto nije kako treba, vraćamo se i popravimo.
+                        </p>
+                    </div>
+                </motion.div>
             </div>
         </section>
     );

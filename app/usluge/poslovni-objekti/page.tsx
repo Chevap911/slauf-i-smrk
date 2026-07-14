@@ -5,7 +5,7 @@ import ServicePage from '@/components/ServicePage/ServicePage';
 import { Home, TreeDeciduous, Waves } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Pranje Poslovnih Objekata Zagreb, Skladišta, Parkovi, Hale | Šlauf i Šmrk',
+    title: 'Pranje poslovnih objekata Zagreb, skladišta i hale | Šlauf i Šmrk',
     description: 'Vanjsko čišćenje poslovnih objekata u Zagrebu: pranje fasada, parkirališta, skladišta, hala i uredskih zgrada. Redoviti ugovori, račun za tvrtke, rad izvan radnog vremena.',
     alternates: { canonical: '/usluge/poslovni-objekti' },
     openGraph: {
@@ -27,6 +27,14 @@ const serviceOfferSchema = {
         name: 'Šlauf i Šmrk',
         url: 'https://slaufismrk.com',
         telephone: '+385958442806',
+        address: {
+            '@type': 'PostalAddress',
+            streetAddress: 'Primoštenska ulica 11',
+            addressLocality: 'Zagreb',
+            postalCode: '10000',
+            addressRegion: 'Zagreb',
+            addressCountry: 'HR',
+        },
         areaServed: ['Zagreb', 'Zagrebačka županija', 'Velika Gorica', 'Samobor', 'Zaprešić'],
     },
     areaServed: ['Zagreb', 'Zagrebačka županija'],

@@ -45,7 +45,10 @@ export default function AreaPage({ city, slug, intro, neighborhoods }: AreaPageP
         telephone: '+385958442806',
         address: {
             '@type': 'PostalAddress',
+            streetAddress: 'Primoštenska ulica 11',
             addressLocality: 'Zagreb',
+            postalCode: '10000',
+            addressRegion: 'Zagreb',
             addressCountry: 'HR',
         },
         areaServed: { '@type': 'City', name: city },

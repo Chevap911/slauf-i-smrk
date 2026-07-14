@@ -5,7 +5,7 @@ import ServicePage from '@/components/ServicePage/ServicePage';
 import { Sofa, Home, TreeDeciduous } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Pranje Auta Uz Dolazak | Čišćenje Automobila Zagreb | Šlauf i Šmrk',
+    title: 'Detailing i pranje auta uz dolazak, Zagreb | Šlauf i Šmrk',
     description: 'Peremo auto iznutra i izvana dok smo već na vašoj lokaciji. Vanjsko pranje, kemijsko čišćenje sjedala i interijer. Bez dodatnog putnog troška. Samo dogovorite uz ostalu uslugu.',
     alternates: { canonical: '/usluge/detailing-automobila' },
     openGraph: {

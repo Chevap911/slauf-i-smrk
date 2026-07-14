@@ -5,7 +5,7 @@ import { Phone, ArrowRight, ShieldCheck, Eye, Sparkles, MapPin, Star } from 'luc
 import styles from './o-nama.module.css';
 
 export const metadata: Metadata = {
-    title: 'O nama, Ivan i Marko | Visokotlačno pranje fasada Zagreb | Šlauf i Šmrk',
+    title: 'O nama, Ivan i Marko | Pranje fasada Zagreb | Šlauf i Šmrk',
     description: 'Iza Šlauf i Šmrka smo Ivan i Marko iz Zagreba, specijalizirani za visokotlačno pranje fasada, okućnica i terasa. Besplatna procjena, fiksna cijena prije početka i 5,0 na Google recenzijama.',
     alternates: { canonical: '/o-nama' },
     openGraph: {
@@ -53,6 +53,14 @@ const aboutSchema = {
         url: 'https://slaufismrk.com',
         telephone: '+385958442806',
         email: 'slauf.i.smrk@gmail.com',
+        address: {
+            '@type': 'PostalAddress',
+            streetAddress: 'Primoštenska ulica 11',
+            addressLocality: 'Zagreb',
+            postalCode: '10000',
+            addressRegion: 'Zagreb',
+            addressCountry: 'HR',
+        },
         areaServed: ['Zagreb', 'Velika Gorica', 'Samobor', 'Zaprešić', 'Sesvete', 'Dugo Selo'],
         employee: [
             { '@type': 'Person', name: 'Ivan', jobTitle: 'Suosnivač i izvođač' },

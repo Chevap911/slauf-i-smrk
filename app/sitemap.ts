@@ -61,6 +61,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'monthly' as const,
             priority: 0.6,
         },
+        // Galerija
+        {
+            url: `${baseUrl}/galerija`,
+            lastModified: new Date('2026-07-14'),
+            changeFrequency: 'monthly' as const,
+            priority: 0.7,
+        },
         // Local pages
         ...['zagreb', 'sesvete', 'velika-gorica', 'samobor', 'zapresic', 'sveta-nedelja', 'dugo-selo'].map(slug => ({
             url: `${baseUrl}/podrucje/${slug}`,

@@ -84,6 +84,7 @@ export default function Navigation() {
                                 <Link href="/usluge/poslovni-objekti">Poslovni objekti</Link>
                             </div>
                         </div>
+                        <Link href="/galerija" className={`${styles.link} ${isActive('/galerija') ? styles.linkActive : ''}`}>Galerija</Link>
                         <Link href="/o-nama" className={`${styles.link} ${isActive('/o-nama') ? styles.linkActive : ''}`}>O nama</Link>
                         <Link href="/blog" className={`${styles.link} ${isActive('/blog') ? styles.linkActive : ''}`}>Blog</Link>
                         <Link href="/#kontakt" className={styles.link}>Kontakt</Link>
@@ -143,6 +144,7 @@ export default function Navigation() {
                                 <Link href="/usluge/poslovni-objekti" onClick={closeMenu}>Poslovni objekti</Link>
                             </div>
                         </div>
+                        <Link href="/galerija" className={styles.mobileLink} onClick={closeMenu}>Galerija</Link>
                         <Link href="/o-nama" className={styles.mobileLink} onClick={closeMenu}>O nama</Link>
                         <Link href="/blog" className={styles.mobileLink} onClick={closeMenu}>Blog</Link>
                         <Link href="/#kontakt" className={styles.mobileLink} onClick={closeMenu}>Kontakt</Link>

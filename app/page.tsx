@@ -6,7 +6,6 @@ import WashReveal from '@/components/WashReveal/WashReveal';
 const WhyChooseUs = dynamic(() => import('@/components/WhyChooseUs/WhyChooseUs'));
 const BeforeAfterGallery = dynamic(() => import('@/components/BeforeAfterGallery/BeforeAfterGallery'));
 const Services = dynamic(() => import('@/components/Services/Services'));
-const Gallery = dynamic(() => import('@/components/Gallery/Gallery'));
 const Testimonials = dynamic(() => import('@/components/Testimonials/Testimonials'));
 const ReferralBanner = dynamic(() => import('@/components/ReferralBanner/ReferralBanner'));
 const Contact = dynamic(() => import('@/components/Contact/Contact'));
@@ -86,7 +85,6 @@ export default function Home() {
       <WhyChooseUs />
       <BeforeAfterGallery />
       <Services />
-      <Gallery />
       <Testimonials />
       <ReferralBanner />
       <Contact />

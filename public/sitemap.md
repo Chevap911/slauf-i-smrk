@@ -52,6 +52,10 @@
 - [Korov između tlakavaca](https://slaufismrk.com/blog/korov-izmedju-tlakavaca)
 - [Uklanjanje grafita u Zagrebu](https://slaufismrk.com/blog/uklanjanje-grafita-zagreb)
 
+## Galerija
+
+- [Galerija radova](https://slaufismrk.com/galerija): fotografije pranja fasada, terasa i okućnica u Zagrebu, prije i poslije
+
 ## O nama
 
 - [O nama](https://slaufismrk.com/o-nama): tko su Ivan i Marko, kako radimo, oprema i pristup

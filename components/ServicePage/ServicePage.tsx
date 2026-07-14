@@ -171,7 +171,10 @@ export default function ServicePage({
             telephone: '+385958442806',
             address: {
                 '@type': 'PostalAddress',
+                streetAddress: 'Primoštenska ulica 11',
                 addressLocality: 'Zagreb',
+                postalCode: '10000',
+                addressRegion: 'Zagreb',
                 addressCountry: 'HR',
             },
             areaServed: ['Zagreb', 'Zagrebačka županija'],
@@ -298,6 +301,7 @@ export default function ServicePage({
                                     <li>Jasnu procjenu prije početka radova</li>
                                     <li>Prilagođen tlak za tip površine</li>
                                     <li>Brz dolazak po Zagrebu i okolici</li>
+                                    <li>Garanciju zadovoljstva, vraćamo se ako nešto nije kako treba</li>
                                 </ul>
                             </div>
                         </div>

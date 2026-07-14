@@ -5,7 +5,7 @@ import ServicePage from '@/components/ServicePage/ServicePage';
 import { Home, TreeDeciduous, Waves } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Održavanje Grobnih Mjesta Zagreb, Čišćenje Kamenih Spomenika | Šlauf i Šmrk',
+    title: 'Održavanje grobnih mjesta Zagreb, čišćenje spomenika | Šlauf i Šmrk',
     description: 'Profesionalno čišćenje i održavanje grobnih mjesta u Zagrebu. Uklanjamo mahovinu i naslage s kamenih spomenika. Mirogoj, Miroševac, Markovo Polje.',
     alternates: { canonical: '/usluge/odrzavanje-grobnih-mjesta' },
     openGraph: {
