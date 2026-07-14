@@ -78,7 +78,7 @@ export default function WhyChooseUs() {
                     <div>
                         <h3 className={styles.guaranteeTitle}>Garancija zadovoljstva</h3>
                         <p className={styles.guaranteeText}>
-                            Ne obećavamo nemoguće, ali ne odlazimo dok niste zadovoljni obavljenim poslom. Ako nešto nije kako treba, vraćamo se i popravimo.
+                            Ne obećavamo nemoguće, ali ne odlazimo dok niste zadovoljni obavljenim poslom.
                         </p>
                     </div>
                 </motion.div>
