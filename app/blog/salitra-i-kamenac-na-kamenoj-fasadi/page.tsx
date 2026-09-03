@@ -5,9 +5,9 @@ import { ArrowLeft, Phone, ArrowRight, AlertTriangle } from 'lucide-react';
 import styles from './article.module.css';
 
 export const metadata: Metadata = {
-    title: 'Salitra i kamenac na kamenoj fasadi: kako smo očistili vilu u Zagrebu | Šlauf i Šmrk',
+    title: 'Salitra i kamenac na kamenoj fasadi, Zagreb | Šlauf i Šmrk',
     description:
-        'Bijeli curci kamenca i salitre probijali su kroz fuge kamene fasade i cijedili se niz ploče. Kako smo ih skinuli, zašto je rub fuge najteži dio i što se mora dobro odraditi kod ugradnje da se to ne dogodi.',
+        'Bijeli curci kamenca i salitre probijali su kroz fuge kamene fasade. Kako smo ih skinuli, zašto je rub fuge najteži dio i što paziti kod ugradnje.',
     keywords: [
         'salitra na kamenoj fasadi',
         'kamenac na fasadi',
