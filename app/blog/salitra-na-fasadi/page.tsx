@@ -105,6 +105,14 @@ export default function BlogArticle() {
                             Razlika prema algama je jednostavna. Alge i gljivice su zelene ili crne i žive na površini.
                             Salitra je bijela, suha i dolazi iznutra. Ako je tretirate kao alge, samo gubite vrijeme.
                         </p>
+                        <p>
+                            Na kamenim i pločastim oblogama ista se stvar javlja u obliku bijelih curaka koji izlaze iz
+                            fuga. Kako to izgleda i kako smo to skidali opisali smo u tekstu{' '}
+                            <Link href="/blog/salitra-i-kamenac-na-kamenoj-fasadi">
+                                salitra i kamenac na kamenoj fasadi
+                            </Link>
+                            .
+                        </p>
 
                         <h2>Kako smo to riješili</h2>
                         <p>

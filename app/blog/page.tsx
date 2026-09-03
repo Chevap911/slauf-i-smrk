@@ -16,6 +16,13 @@ export const metadata: Metadata = {
 
 const articles = [
     {
+        title: 'Salitra i kamenac na kamenoj fasadi: kako smo očistili vilu u Zagrebu',
+        excerpt: 'Bijeli curci probijali su kroz fuge i cijedili se niz kamene ploče. Što je skidalo tanke tragove, zašto je rub fuge trajao satima i koje detalje ugradnje treba odraditi da se to ne dogodi.',
+        slug: '/blog/salitra-i-kamenac-na-kamenoj-fasadi',
+        date: '2026-08-21',
+        category: 'Naš posao',
+    },
+    {
         title: 'Koliko košta čišćenje grobnog mjesta? Cijene održavanja spomenika Zagreb 2026',
         excerpt: 'Jednostruki grob od 250 €, dvostruki od 300 €. Konkretne cijene čišćenja nadgrobnih spomenika u Zagrebu, kako funkcionira rezervacija i zašto koristimo niski tlak.',
         slug: '/blog/koliko-kosta-ciscenje-grobnog-mjesta',

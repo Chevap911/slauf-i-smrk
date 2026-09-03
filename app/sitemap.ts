@@ -20,6 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ];
 
     const blog: { slug: string; date: string }[] = [
+        { slug: 'salitra-i-kamenac-na-kamenoj-fasadi', date: '2026-08-21' },
         { slug: 'koliko-kosta-ciscenje-grobnog-mjesta', date: '2026-07-08' },
         { slug: 'koliko-kosta-kemijsko-ciscenje-namjestaja', date: '2026-07-06' },
         { slug: 'uklanjanje-grafita-zagreb', date: '2026-06-16' },
