@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Droplets, ShieldCheck, Clock, Leaf, AlertTriangle, Bug, Sparkles, Shirt } from 'lucide-react';
 import ServicePage from '@/components/ServicePage/ServicePage';
 import { Car, Home, TreeDeciduous } from 'lucide-react';
+import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Kemijsko Čišćenje Tepiha i Garnitura Zagreb | Šlauf i Šmrk',
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
         title: 'Kemijsko Čišćenje Tepiha i Garnitura Zagreb | Šlauf i Šmrk',
         description: 'Profesionalno kemijsko čišćenje tepiha, garnitura, madraca i autosjedala u Zagrebu.',
         url: 'https://slaufismrk.com/usluge/kemijsko-ciscenje-namjestaja',
+        images: [OG_IMAGE],
     },
 };
 

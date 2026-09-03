@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft, Phone, ArrowRight } from 'lucide-react';
 import styles from './article.module.css';
+import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Koliko košta pranje fasade? Čišćenje fasade cijena 2026 | Šlauf i Šmrk',
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
         description: 'Aktualne cijene za pranje i čišćenje fasade u Zagrebu, uz pregled faktora koji najviše utječu na ponudu.',
         url: 'https://slaufismrk.com/blog/koliko-kosta-pranje-fasade',
         type: 'article',
+        images: [OG_IMAGE],
     },
 };
 

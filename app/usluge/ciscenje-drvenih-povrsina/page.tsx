@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Droplets, ShieldCheck, Clock, Leaf, AlertTriangle, Bug, Paintbrush, Sun } from 'lucide-react';
 import ServicePage from '@/components/ServicePage/ServicePage';
 import { Home, TreeDeciduous, Waves } from 'lucide-react';
+import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Čišćenje drvenih površina Zagreb, terase i ograde | Šlauf i Šmrk',
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
         title: 'Čišćenje Drvenih Površina Zagreb | Šlauf i Šmrk',
         description: 'Profesionalno čišćenje drvenih terasa, ograda, pergola i vrtnog namještaja u Zagrebu.',
         url: 'https://slaufismrk.com/usluge/ciscenje-drvenih-povrsina',
+        images: [OG_IMAGE],
     },
 };
 

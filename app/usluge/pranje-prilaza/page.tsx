@@ -3,23 +3,17 @@ import Link from 'next/link';
 import { Droplets, ShieldCheck, Clock, Leaf, CarFront, Fuel, Ruler } from 'lucide-react';
 import ServicePage from '@/components/ServicePage/ServicePage';
 import { Home, BrushCleaning, ShieldAlert } from 'lucide-react';
+import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Pranje prilaza Zagreb | Čišćenje betonskih i kamenih prilaza',
-    description: 'Profesionalno pranje prilaza u Zagrebu. Čistimo betonske, kamene i opločene prilaze, uklanjamo ulje, tragove guma, hrđu, mahovinu i tvrdokornu prljavštinu uz besplatnu procjenu.',
+    description: 'Pranje prilaza u Zagrebu. Čistimo betonske, kamene i opločene prilaze, uklanjamo ulje, tragove guma, hrđu i mahovinu. Besplatna procjena.',
     alternates: { canonical: '/usluge/pranje-prilaza' },
     openGraph: {
         title: 'Pranje prilaza Zagreb | Čišćenje betonskih i kamenih prilaza',
         description: 'Profesionalno čišćenje garažnih, dvorišnih i parkirnih prilaza u Zagrebu.',
         url: 'https://slaufismrk.com/usluge/pranje-prilaza',
-        images: [
-            {
-                url: '/assets/after2.png',
-                width: 1200,
-                height: 900,
-                alt: 'Očišćen prilaz i zid nakon profesionalnog pranja u Zagrebu',
-            },
-        ],
+        images: [OG_IMAGE],
     },
 };
 

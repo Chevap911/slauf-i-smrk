@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft, Phone, ArrowRight } from 'lucide-react';
 import styles from './article.module.css';
+import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Čišćenje terasa Zagreb: alge, mahovina, crne naslage | Šlauf i Šmrk',
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
         description: 'Što stvarno uklanja alge i mahovinu s terase, zašto kućni perač nije dovoljan i kako izgleda profesionalno čišćenje terasa u Zagrebu.',
         url: 'https://slaufismrk.com/blog/ciscenje-terasa-zagreb',
         type: 'article',
+        images: [OG_IMAGE],
     },
 };
 

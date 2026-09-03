@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Droplets, ShieldCheck, Clock, Leaf, AlertTriangle, Bug, Landmark, Snowflake } from 'lucide-react';
 import ServicePage from '@/components/ServicePage/ServicePage';
 import { Home, HeartHandshake, TreeDeciduous } from 'lucide-react';
+import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Čišćenje kamenih površina Zagreb, granit i mramor | Šlauf i Šmrk',
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
         title: 'Čišćenje Kamenih Površina Zagreb | Šlauf i Šmrk',
         description: 'Profesionalno čišćenje kamenih površina: klupice, stolovi, staze, zidovi, kipovi.',
         url: 'https://slaufismrk.com/usluge/ciscenje-kamenih-povrsina',
+        images: [OG_IMAGE],
     },
 };
 

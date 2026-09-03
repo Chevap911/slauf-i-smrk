@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Droplets, ShieldCheck, Clock, Leaf, AlertTriangle, Bug, Waves, ThermometerSun } from 'lucide-react';
 import ServicePage from '@/components/ServicePage/ServicePage';
 import { Home, TreeDeciduous, HeartHandshake } from 'lucide-react';
+import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Pranje Bazena Zagreb, Čišćenje i Priprema Bazena | Šlauf i Šmrk',
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
         title: 'Pranje Bazena Zagreb | Šlauf i Šmrk',
         description: 'Profesionalno čišćenje bazena, okolnog kamena i terasa u Zagrebu. Priprema za sezonu.',
         url: 'https://slaufismrk.com/usluge/pranje-bazena',
+        images: [OG_IMAGE],
     },
 };
 

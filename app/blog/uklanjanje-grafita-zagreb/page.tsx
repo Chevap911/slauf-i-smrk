@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft, Phone, ArrowRight } from 'lucide-react';
 import styles from './article.module.css';
+import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Uklanjanje grafita u Zagrebu: kako to radimo | Šlauf i Šmrk',
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
         description: 'Grafiti na fasadi snižavaju vrijednost zgrade i privlače nove. Kako ih skidamo s žbuke, kamena i stakla bez oštećenja podloge.',
         url: 'https://slaufismrk.com/blog/uklanjanje-grafita-zagreb',
         type: 'article',
+        images: [OG_IMAGE],
     },
 };
 

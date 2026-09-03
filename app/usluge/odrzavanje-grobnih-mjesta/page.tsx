@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Droplets, ShieldCheck, Clock, AlertTriangle, Bug, Landmark, Heart } from 'lucide-react';
 import ServicePage from '@/components/ServicePage/ServicePage';
 import { Home, TreeDeciduous, Waves } from 'lucide-react';
+import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Održavanje grobnih mjesta Zagreb, čišćenje spomenika | Šlauf i Šmrk',
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
         title: 'Održavanje Grobnih Mjesta Zagreb | Šlauf i Šmrk',
         description: 'Profesionalno čišćenje i održavanje grobnih mjesta u Zagrebu. Mirogoj, Miroševac, Markovo Polje.',
         url: 'https://slaufismrk.com/usluge/odrzavanje-grobnih-mjesta',
+        images: [OG_IMAGE],
     },
 };
 

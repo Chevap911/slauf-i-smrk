@@ -2,16 +2,18 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft, Phone, ArrowRight } from 'lucide-react';
 import styles from './article.module.css';
+import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
-    title: 'Koliko košta čišćenje grobnog mjesta? Cijene održavanja spomenika Zagreb 2026 | Šlauf i Šmrk',
-    description: 'Cijene profesionalnog čišćenja grobnih mjesta u Zagrebu: jednostruki grob od 250 €, dvostruki od 300 €. Poliranje, impregnacija, Mirogoj i sva groblja. Fotografije prije i poslije.',
+    title: 'Čišćenje grobnog mjesta Zagreb, cijene 2026 | Šlauf i Šmrk',
+    description: 'Čišćenje grobnih mjesta u Zagrebu: jednostruki grob od 250 €, dvostruki od 300 €. Poliranje, impregnacija, Mirogoj i sva groblja.',
     alternates: { canonical: '/blog/koliko-kosta-ciscenje-grobnog-mjesta' },
     openGraph: {
         title: 'Koliko košta čišćenje grobnog mjesta? Cijene 2026.',
         description: 'Realne cijene čišćenja nadgrobnih spomenika u Zagrebu. Jednostruki grob od 250 €, dvostruki od 300 €. Bez skrivenih troškova.',
         url: 'https://slaufismrk.com/blog/koliko-kosta-ciscenje-grobnog-mjesta',
         type: 'article',
+        images: [OG_IMAGE],
     },
 };
 

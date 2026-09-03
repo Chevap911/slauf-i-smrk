@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft, Phone, ArrowRight } from 'lucide-react';
 import styles from './article.module.css';
+import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Softwash ili visokotlačno pranje fasade? Vodič 2026 | Šlauf i Šmrk',
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
         description: 'Razlika između softwash i visokotlačnog pranja fasade, koji pristup je pravi za stiropor, kamen i žbuku.',
         url: 'https://slaufismrk.com/blog/softwash-ili-visokotlacno-pranje-fasade',
         type: 'article',
+        images: [OG_IMAGE],
     },
 };
 

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Droplets, ShieldCheck, Clock, Leaf, AlertTriangle, Bug, Paintbrush, ThermometerSun, Building2, CheckCircle2 } from 'lucide-react';
 import ServicePage from '@/components/ServicePage/ServicePage';
 import { Home, TreeDeciduous, Sofa } from 'lucide-react';
+import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Pranje fasade Zagreb | Čišćenje algi i cijena | Šlauf i Šmrk',
@@ -12,14 +13,7 @@ export const metadata: Metadata = {
         title: 'Pranje fasade Zagreb | Čišćenje algi i cijena | Šlauf i Šmrk',
         description: 'Profesionalno pranje i čišćenje fasade u Zagrebu i okolici. Uklanjamo alge, mahovinu i tamne naslage za kuće, zgrade i poslovne objekte.',
         url: 'https://slaufismrk.com/usluge/pranje-fasade',
-        images: [
-            {
-                url: '/prije-poslje/fasada-poslje.png',
-                width: 1200,
-                height: 630,
-                alt: 'Fasada kuće nakon profesionalnog pranja i uklanjanja algi u Zagrebu',
-            },
-        ],
+        images: [OG_IMAGE],
     },
 };
 

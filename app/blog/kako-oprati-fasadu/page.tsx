@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft, Phone, ArrowRight } from 'lucide-react';
 import styles from './article.module.css';
+import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Kako oprati fasadu: vodič korak po korak | Šlauf i Šmrk',
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
         description: 'Koji tlak i sredstvo za koju fasadu, najčešće greške s kućnim peračem i kada se isplati zvati profesionalce.',
         url: 'https://slaufismrk.com/blog/kako-oprati-fasadu',
         type: 'article',
+        images: [OG_IMAGE],
     },
 };
 

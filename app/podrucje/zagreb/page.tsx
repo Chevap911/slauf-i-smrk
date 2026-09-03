@@ -6,6 +6,7 @@ import {
 } from 'lucide-react';
 import { GUIDES, ALL_AREAS } from '@/components/AreaPage/areaLinks';
 import styles from './zagreb.module.css';
+import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Pranje fasade i okućnice Zagreb | Šlauf i Šmrk',
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
         title: 'Pranje fasade i okućnice Zagreb | Šlauf i Šmrk',
         description: 'Visokotlačno pranje fasada, okućnica i kamenih površina u Zagrebu, detailing auta.',
         url: 'https://slaufismrk.com/podrucje/zagreb',
+        images: [OG_IMAGE],
     },
 };
 

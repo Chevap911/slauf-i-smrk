@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Gallery from '@/components/Gallery/Gallery';
+import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Galerija radova, pranje fasada i terasa Zagreb | Šlauf i Šmrk',
@@ -12,14 +13,7 @@ export const metadata: Metadata = {
         description:
             'Fotografije naših radova: pranje fasada, terasa i okućnica u Zagrebu i okolici.',
         url: 'https://slaufismrk.com/galerija',
-        images: [
-            {
-                url: '/projekti/pranje-fasade-prije-poslije-zagreb.jpeg',
-                width: 1200,
-                height: 630,
-                alt: 'Pranje fasade prije i poslije, Zagreb',
-            },
-        ],
+        images: [OG_IMAGE],
     },
 };
 

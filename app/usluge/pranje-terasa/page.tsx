@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Droplets, ShieldCheck, Clock, Leaf, AlertTriangle, Footprints, Sun, Waves } from 'lucide-react';
 import ServicePage from '@/components/ServicePage/ServicePage';
 import { Home, BrushCleaning, TreeDeciduous } from 'lucide-react';
+import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Čišćenje terasa Zagreb | Profesionalno pranje terasa i pločica 2026.',
@@ -12,14 +13,7 @@ export const metadata: Metadata = {
         title: 'Čišćenje terasa Zagreb | Profesionalno pranje terasa i pločica 2026.',
         description: 'Profesionalno čišćenje vanjskih terasa, balkona, keramike i kamena u Zagrebu. Uklanjamo alge, mahovinu i crne naslage.',
         url: 'https://slaufismrk.com/usluge/pranje-terasa',
-        images: [
-            {
-                url: '/prije-poslje/terasa-leggiero-poslje-2.jpeg',
-                width: 1200,
-                height: 900,
-                alt: 'Čista terasa nakon profesionalnog pranja u Zagrebu',
-            },
-        ],
+        images: [OG_IMAGE],
     },
 };
 

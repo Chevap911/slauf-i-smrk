@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Droplets, ShieldCheck, Clock, Leaf, AlertTriangle, Bug, Ruler, Footprints, Building2, CheckCircle2 } from 'lucide-react';
 import ServicePage from '@/components/ServicePage/ServicePage';
 import { TreeDeciduous } from 'lucide-react';
+import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Pranje okućnice Zagreb | Čišćenje dvorišta i prilaza',
@@ -12,14 +13,7 @@ export const metadata: Metadata = {
         title: 'Pranje okućnice Zagreb | Čišćenje dvorišta i prilaza',
         description: 'Profesionalno pranje okućnica, dvorišta, prilaza i vanjskih površina u Zagrebu za privatne i poslovne objekte.',
         url: 'https://slaufismrk.com/usluge/pranje-okucnice',
-        images: [
-            {
-                url: '/seo-results/pranje-terasa/poslije.jpeg',
-                width: 1200,
-                height: 900,
-                alt: 'Očišćena okućnica i terasa nakon profesionalnog pranja u Zagrebu',
-            },
-        ],
+        images: [OG_IMAGE],
     },
 };
 

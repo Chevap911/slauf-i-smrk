@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowLeft, Phone, ArrowRight, AlertTriangle } from 'lucide-react';
 import styles from './article.module.css';
+import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Salitra i kamenac na kamenoj fasadi, Zagreb | Šlauf i Šmrk',
@@ -23,14 +24,7 @@ export const metadata: Metadata = {
             'Bijeli curci probijali su kroz fuge i cijedili se niz kamene ploče. Što smo koristili, što je bilo teško i kako se to spriječi kod ugradnje.',
         url: 'https://slaufismrk.com/blog/salitra-i-kamenac-na-kamenoj-fasadi',
         type: 'article',
-        images: [
-            {
-                url: 'https://slaufismrk.com/blog/salitra-kamena-fasada/bijeli-curci-kamenca-niz-fasadnu-plocu.jpg',
-                width: 1200,
-                height: 1600,
-                alt: 'Bijeli curci kamenca i salitre cijede se niz kamenu fasadnu ploču ispod fuge',
-            },
-        ],
+        images: [OG_IMAGE],
     },
 };
 

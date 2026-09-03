@@ -2,9 +2,10 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft, Phone, ArrowRight } from 'lucide-react';
 import styles from './article.module.css';
+import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
-    title: 'Koliko košta pranje terase u Zagrebu? Čišćenje terase cijena 2026 | Šlauf i Šmrk',
+    title: 'Pranje terase Zagreb, cijena čišćenja 2026 | Šlauf i Šmrk',
     description: 'Tražite pranje terase cijena ili koliko košta pranje terase Zagreb? Konkretne cifre za betonske, keramičke i drvene terase, bez skrivenih troškova.',
     alternates: { canonical: '/blog/koliko-kosta-pranje-terase-zagreb' },
     openGraph: {
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
         description: 'Aktualne cijene pranja terase u Zagrebu uz pregled faktora koji utječu na ponudu i što je uključeno u uslugu.',
         url: 'https://slaufismrk.com/blog/koliko-kosta-pranje-terase-zagreb',
         type: 'article',
+        images: [OG_IMAGE],
     },
 };
 

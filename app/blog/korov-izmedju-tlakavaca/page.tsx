@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft, Phone, ArrowRight } from 'lucide-react';
 import styles from './article.module.css';
+import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Korov i trava između kocki i tlakavaca: rješenje | Šlauf i Šmrk',
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
         description: 'Stvarni posao: kako čistimo korov i mahovinu iz fuga tlakavaca i čime usporavamo da se vrati.',
         url: 'https://slaufismrk.com/blog/korov-izmedju-tlakavaca',
         type: 'article',
+        images: [OG_IMAGE],
     },
 };
 

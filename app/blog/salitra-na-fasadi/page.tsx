@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft, Phone, ArrowRight } from 'lucide-react';
 import styles from './article.module.css';
+import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Salitra na fasadi: bijele naslage i kako ih riješiti | Šlauf i Šmrk',
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
         description: 'Stvarni posao iz Zagreba: što je salitra na fasadi, odakle dolazi i kako je uklanjamo.',
         url: 'https://slaufismrk.com/blog/salitra-na-fasadi',
         type: 'article',
+        images: [OG_IMAGE],
     },
 };
 

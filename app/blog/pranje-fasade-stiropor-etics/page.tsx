@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft, Phone, ArrowRight } from 'lucide-react';
 import styles from './article.module.css';
+import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Pranje fasade stiropor i ETICS: što smijete, što ne i cijena | Šlauf i Šmrk',
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
         description: 'ETICS fasada ne podnosi visoki tlak. Jedina sigurna metoda čišćenja, cijena i savjeti za vlasnike stiropor fasada u Zagrebu.',
         url: 'https://slaufismrk.com/blog/pranje-fasade-stiropor-etics',
         type: 'article',
+        images: [OG_IMAGE],
     },
 };
 

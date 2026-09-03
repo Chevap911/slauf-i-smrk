@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import AreaPage from '@/components/AreaPage/AreaPage';
+import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Pranje fasade i okućnice Samobor | Šlauf i Šmrk',
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
         title: 'Pranje fasade i okućnice Samobor | Šlauf i Šmrk',
         description: 'Visokotlačno čišćenje fasada, okućnica i terasa u Samoboru i okolici.',
         url: 'https://slaufismrk.com/podrucje/samobor',
+        images: [OG_IMAGE],
     },
 };
 

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft, Phone, ArrowRight } from 'lucide-react';
 import styles from './article.module.css';
+import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Čišćenje fasade od algi i gljivica: uzroci, metode i cijena | Šlauf i Šmrk',
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
         description: 'Kako ukloniti alge, gljivice i mahovinu s fasade bez oštećenja žbuke ili stiropora. Praktični vodič s cijenama za Zagreb i okolicu.',
         url: 'https://slaufismrk.com/blog/ciscenje-fasade-od-algi-i-gljivica',
         type: 'article',
+        images: [OG_IMAGE],
     },
 };
 

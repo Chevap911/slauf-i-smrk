@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft, Phone, ArrowRight } from 'lucide-react';
 import styles from './article.module.css';
+import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Zašto neredovito održavanje fasade na kraju košta puno više | Šlauf i Šmrk',
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
         description: 'Alge i vlaga koje se ignoriraju godinama prelaze iz pranja od nekoliko stotina eura u sanaciju žbuke i bojanje od nekoliko tisuća.',
         url: 'https://slaufismrk.com/blog/odrzavanje-fasade-stedi-novac',
         type: 'article',
+        images: [OG_IMAGE],
     },
 };
 

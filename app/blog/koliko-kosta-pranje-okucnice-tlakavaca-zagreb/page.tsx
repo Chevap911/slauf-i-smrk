@@ -3,9 +3,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowLeft, Phone, ArrowRight } from 'lucide-react';
 import styles from './article.module.css';
+import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
-    title: 'Koliko košta pranje okućnice i tlakavaca? Čišćenje okućnice cijena 2026 | Šlauf i Šmrk',
+    title: 'Pranje okućnice i tlakavaca, cijena 2026 | Šlauf i Šmrk',
     description: 'Tražite čišćenje okućnice cijena ili pranje tlakavaca cijena? Donosimo realne cijene za Zagreb, faktore koji utječu na ponudu i što dobivate u usluzi 2026.',
     alternates: { canonical: '/blog/koliko-kosta-pranje-okucnice-tlakavaca-zagreb' },
     openGraph: {
@@ -13,14 +14,7 @@ export const metadata: Metadata = {
         description: 'Realne cijene za pranje okućnice, tlakavaca i betonskih kocki u Zagrebu, bez nejasnih raspona i skrivenih troškova.',
         url: 'https://slaufismrk.com/blog/koliko-kosta-pranje-okucnice-tlakavaca-zagreb',
         type: 'article',
-        images: [
-            {
-                url: '/blog/pranje-okucnice/terasa-leggiero-poslije.jpeg',
-                width: 1200,
-                height: 800,
-                alt: 'Pranje terase - rezultat čišćenja tlakavaca Zagreb',
-            },
-        ],
+        images: [OG_IMAGE],
     },
 };
 

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, Calendar } from 'lucide-react';
 import styles from './blog.module.css';
+import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Blog, Savjeti za Čišćenje | Šlauf i Šmrk',
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
         title: 'Blog, Savjeti za Čišćenje | Šlauf i Šmrk',
         description: 'Savjeti, vodiči kroz cijene i korisne informacije o pranju fasade, čišćenju okućnice, terasa i tlakavaca.',
         url: 'https://slaufismrk.com/blog',
+        images: [OG_IMAGE],
     },
 };
 

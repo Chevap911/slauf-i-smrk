@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft, Phone, ArrowRight } from 'lucide-react';
 import styles from './article.module.css';
+import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Bijela fasada posivjela: kako smo je vratili | Šlauf i Šmrk',
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
         description: 'Stvarni posao iz Zagreba: zašto bijela fasada posivi i kako je čišćenjem vraćamo bez bojanja.',
         url: 'https://slaufismrk.com/blog/bijela-fasada-posivjela',
         type: 'article',
+        images: [OG_IMAGE],
     },
 };
 

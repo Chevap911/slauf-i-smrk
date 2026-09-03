@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import Hero from '@/components/Hero/Hero';
 import WashReveal from '@/components/WashReveal/WashReveal';
+import { OG_IMAGE } from '@/lib/seo';
 
 const WhyChooseUs = dynamic(() => import('@/components/WhyChooseUs/WhyChooseUs'));
 const BeforeAfterGallery = dynamic(() => import('@/components/BeforeAfterGallery/BeforeAfterGallery'));
@@ -22,14 +23,7 @@ export const metadata: Metadata = {
     description:
       'Pranje fasade, čišćenje okućnice, terasa, prilaza i tlakavaca u Zagrebu i okolici.',
     url: 'https://slaufismrk.com',
-    images: [
-      {
-        url: '/prije-poslje/fasada-poslje.png',
-        width: 1200,
-        height: 630,
-        alt: 'Rezultat profesionalnog pranja fasade u Zagrebu',
-      },
-    ],
+    images: [OG_IMAGE],
   },
 };
 

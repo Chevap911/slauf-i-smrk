@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import AreaPage from '@/components/AreaPage/AreaPage';
+import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Pranje fasade i okućnice Sesvete | Šlauf i Šmrk',
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
         title: 'Pranje fasade i okućnice Sesvete | Šlauf i Šmrk',
         description: 'Visokotlačno čišćenje fasada, okućnica i terasa u Sesvetama i okolici.',
         url: 'https://slaufismrk.com/podrucje/sesvete',
+        images: [OG_IMAGE],
     },
 };
 

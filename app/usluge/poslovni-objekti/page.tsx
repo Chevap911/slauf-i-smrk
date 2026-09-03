@@ -3,15 +3,17 @@ import Link from 'next/link';
 import { Droplets, ShieldCheck, Clock, RefreshCw, Building2, FileText, Zap, AlertTriangle } from 'lucide-react';
 import ServicePage from '@/components/ServicePage/ServicePage';
 import { Home, TreeDeciduous, Waves } from 'lucide-react';
+import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Pranje poslovnih objekata Zagreb, skladišta i hale | Šlauf i Šmrk',
-    description: 'Vanjsko čišćenje poslovnih objekata u Zagrebu: pranje fasada, parkirališta, skladišta, hala i uredskih zgrada. Redoviti ugovori, račun za tvrtke, rad izvan radnog vremena.',
+    description: 'Vanjsko čišćenje poslovnih objekata u Zagrebu: fasade, parkirališta, skladišta i hale. Redoviti ugovori i rad izvan radnog vremena.',
     alternates: { canonical: '/usluge/poslovni-objekti' },
     openGraph: {
         title: 'Pranje Poslovnih Objekata Zagreb | Šlauf i Šmrk',
         description: 'Vanjsko čišćenje poslovnih objekata: fasade, parkirališta, skladišta i hale. Redoviti ugovori i račun za tvrtke.',
         url: 'https://slaufismrk.com/usluge/poslovni-objekti',
+        images: [OG_IMAGE],
     },
 };
 

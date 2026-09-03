@@ -3,15 +3,17 @@ import Link from 'next/link';
 import { Droplets, ShieldCheck, Clock, Leaf, AlertTriangle, Bug, Sparkles, Wind } from 'lucide-react';
 import ServicePage from '@/components/ServicePage/ServicePage';
 import { Sofa, Home, TreeDeciduous } from 'lucide-react';
+import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Detailing i pranje auta uz dolazak, Zagreb | Šlauf i Šmrk',
-    description: 'Peremo auto iznutra i izvana dok smo već na vašoj lokaciji. Vanjsko pranje, kemijsko čišćenje sjedala i interijer. Bez dodatnog putnog troška. Samo dogovorite uz ostalu uslugu.',
+    description: 'Peremo auto iznutra i izvana dok smo već na vašoj lokaciji. Vanjsko pranje, kemijsko čišćenje sjedala i interijer, bez putnog troška.',
     alternates: { canonical: '/usluge/detailing-automobila' },
     openGraph: {
         title: 'Pranje Auta Uz Dolazak | Šlauf i Šmrk',
         description: 'Peremo auto iznutra i izvana dok smo već na vašoj lokaciji. Bez dodatnog putnog troška.',
         url: 'https://slaufismrk.com/usluge/detailing-automobila',
+        images: [OG_IMAGE],
     },
 };
 

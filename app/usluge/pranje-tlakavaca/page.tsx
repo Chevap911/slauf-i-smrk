@@ -3,23 +3,17 @@ import Link from 'next/link';
 import { Droplets, ShieldCheck, Clock, Leaf, AlertTriangle, Bug, Ruler } from 'lucide-react';
 import ServicePage from '@/components/ServicePage/ServicePage';
 import { Home, CarFront, Waves } from 'lucide-react';
+import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Pranje tlakavaca Zagreb | Čišćenje behatona i betonskih kocki',
-    description: 'Profesionalno pranje tlakavaca u Zagrebu. Čistimo behaton, betonske kocke i opločene površine, uklanjamo mahovinu, korov i mrlje od ulja te vraćamo uredan izgled dvorištu i prilazu.',
+    description: 'Pranje tlakavaca u Zagrebu. Čistimo behaton, betonske kocke i opločene površine, uklanjamo mahovinu, korov i mrlje od ulja. Cijena od 4 €/m².',
     alternates: { canonical: '/usluge/pranje-tlakavaca' },
     openGraph: {
         title: 'Pranje tlakavaca Zagreb | Čišćenje behatona i betonskih kocki',
         description: 'Profesionalno čišćenje tlakavaca, behatona i betonskih kocki u Zagrebu.',
         url: 'https://slaufismrk.com/usluge/pranje-tlakavaca',
-        images: [
-            {
-                url: '/blog/pranje-okucnice/terasa-leggiero-poslije.jpeg',
-                width: 1200,
-                height: 900,
-                alt: 'Tlakavci nakon profesionalnog pranja u Zagrebu',
-            },
-        ],
+        images: [OG_IMAGE],
     },
 };
 

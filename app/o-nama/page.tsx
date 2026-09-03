@@ -3,23 +3,17 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Phone, ArrowRight, ShieldCheck, Eye, Sparkles, MapPin, Star } from 'lucide-react';
 import styles from './o-nama.module.css';
+import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'O nama, Ivan i Marko | Pranje fasada Zagreb | Šlauf i Šmrk',
-    description: 'Iza Šlauf i Šmrka smo Ivan i Marko iz Zagreba, specijalizirani za visokotlačno pranje fasada, okućnica i terasa. Besplatna procjena, fiksna cijena prije početka i 5,0 na Google recenzijama.',
+    description: 'Iza Šlauf i Šmrka smo Ivan i Marko iz Zagreba. Peremo fasade, okućnice i terase. Besplatna procjena, fiksna cijena prije početka, 5,0 na Googleu.',
     alternates: { canonical: '/o-nama' },
     openGraph: {
         title: 'O nama, Ivan i Marko iza Šlauf i Šmrka',
         description: 'Ivan i Marko iz Zagreba, specijalizirani za visokotlačno pranje fasada, okućnica i terasa. Besplatna procjena i fiksna cijena prije početka rada.',
         url: 'https://slaufismrk.com/o-nama',
-        images: [
-            {
-                url: '/prije-poslje/fasada-poslje.png',
-                width: 1200,
-                height: 630,
-                alt: 'Šlauf i Šmrk, pranje fasade u Zagrebu',
-            },
-        ],
+        images: [OG_IMAGE],
     },
 };
 

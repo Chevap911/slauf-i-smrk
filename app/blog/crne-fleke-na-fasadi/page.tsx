@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft, Phone, ArrowRight } from 'lucide-react';
 import styles from './article.module.css';
+import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Crne fleke na fasadi: kako smo ih skinuli na kući na Jarunu | Šlauf i Šmrk',
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
         description: 'Stvarni posao iz Zagreba: što su crne fleke na fasadi, zašto se vraćaju i kako ih trajno uklanjamo.',
         url: 'https://slaufismrk.com/blog/crne-fleke-na-fasadi',
         type: 'article',
+        images: [OG_IMAGE],
     },
 };
 

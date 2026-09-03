@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowLeft, Phone, ArrowRight } from 'lucide-react';
 import styles from './article.module.css';
+import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: '5 znakova da fasadi treba pranje | Šlauf i Šmrk Zagreb',
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
             'Zelene mrlje, tamne pruge, loš miris. Fasada vam govori nešto. Otkrijte 5 jasnih znakova da je vrijeme za dubinsko pranje fasade u Zagrebu.',
         url: 'https://slaufismrk.com/blog/znakovi-da-fasadi-treba-pranje',
         type: 'article',
+        images: [OG_IMAGE],
     },
 };
 
