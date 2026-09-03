@@ -5,7 +5,7 @@ import styles from './article.module.css';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
-    title: 'Zašto neredovito održavanje fasade na kraju košta puno više | Šlauf i Šmrk',
+    title: 'Održavanje fasade: zašto neredovito košta puno više',
     description: 'Zelena mrlja koju ignorirate godinu dana postane saniranje žbuke za nekoliko tisuća eura. Kako zapuštena fasada poskupljuje i koliko košta da do toga ne dođe.',
     alternates: { canonical: '/blog/odrzavanje-fasade-stedi-novac' },
     openGraph: {

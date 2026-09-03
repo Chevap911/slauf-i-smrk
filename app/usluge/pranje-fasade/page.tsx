@@ -7,7 +7,7 @@ import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Pranje fasade Zagreb | Čišćenje algi i cijena | Šlauf i Šmrk',
-    description: 'Pranje i čišćenje fasade u Zagrebu: uklanjanje algi, mahovine i tamnih tragova uz prilagođen tlak za žbuku i ETICS fasade. Cijena od 5 €/m² i jasna procjena prije rada.',
+    description: 'Pranje i čišćenje fasade u Zagrebu: alge, mahovina i tamni tragovi, uz prilagođen tlak za žbuku i ETICS. Cijena od 5 €/m².',
     alternates: { canonical: '/usluge/pranje-fasade' },
     openGraph: {
         title: 'Pranje fasade Zagreb | Čišćenje algi i cijena | Šlauf i Šmrk',
@@ -251,7 +251,7 @@ export default function PranjeFasadePage() {
                         <ul>
                             <li><strong>Žbukana fasada</strong>, najčešći tip u Zagrebu. Zahtijeva pažljivo podešavanje tlaka da se ne ošteti sloj žbuke.</li>
                             <li><strong>Stiropor (ETICS) fasada</strong>, termoizolacijski sustav zahtijeva posebnu pažnju i prilagođen tlak. Ne tretiramo ga na isti način kao beton ili kamen.</li>
-                            <li><strong>Kamena fasada</strong>, prirodni kamen, travertin, obložni kamen. Za dublje čišćenje kamena pogledajte našu uslugu <Link href="/usluge/ciscenje-kamenih-povrsina">čišćenja kamenih površina</Link>.</li>
+                            <li><strong>Kamena fasada</strong>, prirodni kamen, travertin, obložni kamen. Za dublje čišćenje kamena pogledajte našu uslugu <Link href="/usluge/ciscenje-kamenih-povrsina">čišćenja kamenih površina</Link>, a ako iz fuga izlaze bijeli curci, pročitajte kako smo rješavali <Link href="/blog/salitra-i-kamenac-na-kamenoj-fasadi">salitru i kamenac na kamenoj fasadi</Link>.</li>
                             <li><strong>Drvena fasada</strong>, oblaganje drvenim daskama zahtijeva niži tlak i specijalna sredstva. Više na stranici <Link href="/usluge/ciscenje-drvenih-povrsina">čišćenja drvenih površina</Link>.</li>
                         </ul>
 

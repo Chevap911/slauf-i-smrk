@@ -5,8 +5,8 @@ import styles from './article.module.css';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
-    title: 'Pranje fasade stiropor i ETICS: što smijete, što ne i cijena | Šlauf i Šmrk',
-    description: 'Stiropor fasada (ETICS sustav) ne podnosi visoki tlak. Saznajte jedinu sigurnu metodu čišćenja, koliko košta i kako prepoznati je li vaša fasada ETICS. Zagreb i okolica.',
+    title: 'Pranje fasade stiropor i ETICS: što smijete i cijena',
+    description: 'Stiropor fasada (ETICS) ne podnosi visoki tlak. Jedina sigurna metoda čišćenja, cijena i kako prepoznati je li vaša fasada ETICS.',
     alternates: { canonical: '/blog/pranje-fasade-stiropor-etics' },
     openGraph: {
         title: 'Pranje fasade stiropor i ETICS: što smijete, što ne i cijena',

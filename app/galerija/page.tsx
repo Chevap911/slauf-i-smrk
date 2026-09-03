@@ -4,7 +4,7 @@ import Gallery from '@/components/Gallery/Gallery';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
-    title: 'Galerija radova, pranje fasada i terasa Zagreb | Šlauf i Šmrk',
+    title: 'Galerija radova, pranje fasada i terasa Zagreb',
     description:
         'Fotografije naših radova: pranje fasada, terasa, okućnica i tlakavaca u Zagrebu i okolici. Pravi projekti Ivana i Marka, prije i poslije.',
     alternates: { canonical: '/galerija' },

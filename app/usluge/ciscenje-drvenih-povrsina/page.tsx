@@ -6,7 +6,7 @@ import { Home, TreeDeciduous, Waves } from 'lucide-react';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
-    title: 'Čišćenje drvenih površina Zagreb, terase i ograde | Šlauf i Šmrk',
+    title: 'Čišćenje drvenih površina Zagreb, terase i ograde',
     description: 'Profesionalno čišćenje drvenih terasa, ograda, pergola i vrtnog namještaja u Zagrebu. Uklanjamo sivilo, alge i mahovinu. Besplatna procjena.',
     alternates: { canonical: '/usluge/ciscenje-drvenih-povrsina' },
     openGraph: {

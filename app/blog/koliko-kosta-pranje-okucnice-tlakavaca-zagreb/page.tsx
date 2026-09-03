@@ -6,7 +6,7 @@ import styles from './article.module.css';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
-    title: 'Pranje okućnice i tlakavaca, cijena 2026 | Šlauf i Šmrk',
+    title: 'Koliko košta pranje okućnice i tlakavaca 2026 | Šlauf',
     description: 'Tražite čišćenje okućnice cijena ili pranje tlakavaca cijena? Donosimo realne cijene za Zagreb, faktore koji utječu na ponudu i što dobivate u usluzi 2026.',
     alternates: { canonical: '/blog/koliko-kosta-pranje-okucnice-tlakavaca-zagreb' },
     openGraph: {

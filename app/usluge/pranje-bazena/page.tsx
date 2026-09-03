@@ -6,7 +6,7 @@ import { Home, TreeDeciduous, HeartHandshake } from 'lucide-react';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
-    title: 'Pranje Bazena Zagreb, Čišćenje i Priprema Bazena | Šlauf i Šmrk',
+    title: 'Pranje bazena Zagreb, čišćenje i priprema bazena',
     description: 'Profesionalno čišćenje bazena, okolnog kamena i terasa u Zagrebu. Priprema bazena za sezonu. Uklanjamo alge i naslage. Besplatna procjena.',
     alternates: { canonical: '/usluge/pranje-bazena' },
     openGraph: {

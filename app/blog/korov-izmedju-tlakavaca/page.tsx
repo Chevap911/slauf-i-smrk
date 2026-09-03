@@ -5,7 +5,7 @@ import styles from './article.module.css';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
-    title: 'Korov i trava između kocki i tlakavaca: rješenje | Šlauf i Šmrk',
+    title: 'Korov i trava između kocki i tlakavaca: rješenje',
     description: 'Korov između betonskih kocki se uvijek vraća ako se samo počupa. Pokazujemo na stvarnom poslu kako čistimo fuge i čime usporavamo ponovni rast.',
     alternates: { canonical: '/blog/korov-izmedju-tlakavaca' },
     openGraph: {

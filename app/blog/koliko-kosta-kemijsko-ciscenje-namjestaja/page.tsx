@@ -6,9 +6,9 @@ import styles from './article.module.css';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
-    title: 'Kemijsko čišćenje namještaja, cijene 2026 | Šlauf i Šmrk',
+    title: 'Koliko košta kemijsko čišćenje namještaja | Šlauf i Šmrk',
     description:
-        'Kemijsko čišćenje garniture od 80 €, trosjed od 40 €, madrac od 30 €, tepih od 5 €/m². Realne cijene dubinskog čišćenja namještaja u Zagrebu i što sve ulazi u uslugu.',
+        'Kemijsko čišćenje garniture od 80 €, trosjed od 40 €, madrac od 30 €, tepih od 5 €/m². Realne cijene dubinskog čišćenja u Zagrebu.',
     alternates: { canonical: '/blog/koliko-kosta-kemijsko-ciscenje-namjestaja' },
     openGraph: {
         title: 'Koliko košta kemijsko čišćenje namještaja? Cijene 2026.',

@@ -6,7 +6,7 @@ import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Kako oprati fasadu: vodič korak po korak | Šlauf i Šmrk',
-    description: 'Kako oprati fasadu bez oštećenja: koji tlak, koje sredstvo i zašto kućni perač griješi na stiropor fasadi. Vodič korak po korak plus cijena pranja fasade u Zagrebu.',
+    description: 'Kako oprati fasadu bez oštećenja: koji tlak, koje sredstvo i zašto kućni perač griješi na stiropor fasadi. Plus cijena pranja u Zagrebu.',
     alternates: { canonical: '/blog/kako-oprati-fasadu' },
     openGraph: {
         title: 'Kako oprati fasadu: vodič korak po korak',

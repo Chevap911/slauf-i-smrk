@@ -5,7 +5,7 @@ import styles from './article.module.css';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
-    title: 'Crne fleke na fasadi: kako smo ih skinuli na kući na Jarunu | Šlauf i Šmrk',
+    title: 'Crne fleke na fasadi: kako smo ih skinuli na Jarunu',
     description: 'Crne fleke na fasadi nisu prljavština nego gljivice i biofilm. Pokazujemo na stvarnom poslu u Zagrebu kako ih skidamo do korijena i koliko košta.',
     alternates: { canonical: '/blog/crne-fleke-na-fasadi' },
     openGraph: {

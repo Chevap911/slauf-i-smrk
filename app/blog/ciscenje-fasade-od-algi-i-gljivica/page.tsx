@@ -5,8 +5,8 @@ import styles from './article.module.css';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
-    title: 'Čišćenje fasade od algi i gljivica: uzroci, metode i cijena | Šlauf i Šmrk',
-    description: 'Zelene ili crne mrlje na fasadi? Vodič za čišćenje fasade od algi, gljivica i mahovine u Zagrebu. Cijena od 5 €/m², softwash metoda za ETICS fasade, besplatna procjena.',
+    title: 'Čišćenje fasade od algi i gljivica: metode i cijena',
+    description: 'Zelene ili crne mrlje na fasadi? Vodič za čišćenje fasade od algi, gljivica i mahovine u Zagrebu. Cijena od 5 €/m², softwash za ETICS.',
     alternates: { canonical: '/blog/ciscenje-fasade-od-algi-i-gljivica' },
     openGraph: {
         title: 'Čišćenje fasade od algi i gljivica: uzroci, metode i cijena',

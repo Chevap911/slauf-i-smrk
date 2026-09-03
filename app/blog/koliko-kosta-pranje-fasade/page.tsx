@@ -5,7 +5,7 @@ import styles from './article.module.css';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
-    title: 'Koliko košta pranje fasade? Čišćenje fasade cijena 2026 | Šlauf i Šmrk',
+    title: 'Koliko košta pranje fasade u Zagrebu 2026 | Šlauf i Šmrk',
     description: 'Tražite pranje fasade cijena ili čišćenje fasade cijena? Donosimo aktualne cijene za Zagreb, faktore koji utječu na ponudu i što je uključeno u uslugu 2026.',
     alternates: { canonical: '/blog/koliko-kosta-pranje-fasade' },
     openGraph: {

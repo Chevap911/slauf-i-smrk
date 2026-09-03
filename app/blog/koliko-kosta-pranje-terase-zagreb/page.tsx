@@ -5,7 +5,7 @@ import styles from './article.module.css';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
-    title: 'Pranje terase Zagreb, cijena čišćenja 2026 | Šlauf i Šmrk',
+    title: 'Koliko košta pranje terase u Zagrebu 2026 | Šlauf i Šmrk',
     description: 'Tražite pranje terase cijena ili koliko košta pranje terase Zagreb? Konkretne cifre za betonske, keramičke i drvene terase, bez skrivenih troškova.',
     alternates: { canonical: '/blog/koliko-kosta-pranje-terase-zagreb' },
     openGraph: {

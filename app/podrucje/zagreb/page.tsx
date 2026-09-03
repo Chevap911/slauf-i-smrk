@@ -10,7 +10,7 @@ import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Pranje fasade i okućnice Zagreb | Šlauf i Šmrk',
-    description: 'Visokotlačno pranje fasada, okućnica, kamenih i drvenih površina u Zagrebu. Detailing auta, kemijsko čišćenje tepiha. Besplatna procjena, pokrivamo sve kvartove.',
+    description: 'Visokotlačno pranje fasada, okućnica, kamenih i drvenih površina u Zagrebu. Besplatna procjena, pokrivamo sve kvartove.',
     alternates: { canonical: '/podrucje/zagreb' },
     openGraph: {
         title: 'Pranje fasade i okućnice Zagreb | Šlauf i Šmrk',

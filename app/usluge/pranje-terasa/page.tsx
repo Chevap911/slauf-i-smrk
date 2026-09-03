@@ -6,7 +6,7 @@ import { Home, BrushCleaning, TreeDeciduous } from 'lucide-react';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
-    title: 'Čišćenje terasa Zagreb | Profesionalno pranje terasa i pločica 2026.',
+    title: 'Čišćenje terasa Zagreb | Pranje terasa i pločica 2026.',
     description: 'Profesionalno čišćenje terasa u Zagrebu. Uklanjamo alge, mahovinu i crne naslage s keramičkih, kamenih i betonskih terasa. Besplatna procjena na lokaciji.',
     alternates: { canonical: '/usluge/pranje-terasa' },
     openGraph: {

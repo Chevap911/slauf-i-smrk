@@ -5,7 +5,7 @@ import styles from './article.module.css';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
-    title: 'Čišćenje terasa Zagreb: alge, mahovina, crne naslage | Šlauf i Šmrk',
+    title: 'Čišćenje terasa Zagreb: alge, mahovina, crne naslage',
     description: 'Zašto terasa pozeleni i što stvarno uklanja alge, mahovinu i crne naslage s pločica. Vodič kroz profesionalno čišćenje terasa u Zagrebu, s primjerima.',
     alternates: { canonical: '/blog/ciscenje-terasa-zagreb' },
     openGraph: {

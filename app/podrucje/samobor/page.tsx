@@ -4,7 +4,7 @@ import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Pranje fasade i okućnice Samobor | Šlauf i Šmrk',
-    description: 'Visokotlačno pranje fasada, okućnica i terasa u Samoboru i okolici. Brežuljkast i vlažan teren znači više algi na fasadama, mi ih skidamo. Besplatna procjena prije rada.',
+    description: 'Visokotlačno pranje fasada, okućnica i terasa u Samoboru. Vlažan i brežuljkast teren znači više algi, mi ih skidamo. Besplatna procjena.',
     alternates: { canonical: '/podrucje/samobor' },
     openGraph: {
         title: 'Pranje fasade i okućnice Samobor | Šlauf i Šmrk',

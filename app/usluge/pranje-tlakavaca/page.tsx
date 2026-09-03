@@ -6,7 +6,7 @@ import { Home, CarFront, Waves } from 'lucide-react';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
-    title: 'Pranje tlakavaca Zagreb | Čišćenje behatona i betonskih kocki',
+    title: 'Pranje tlakavaca Zagreb, behaton i betonske kocke',
     description: 'Pranje tlakavaca u Zagrebu. Čistimo behaton, betonske kocke i opločene površine, uklanjamo mahovinu, korov i mrlje od ulja. Cijena od 4 €/m².',
     alternates: { canonical: '/usluge/pranje-tlakavaca' },
     openGraph: {

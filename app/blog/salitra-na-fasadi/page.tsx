@@ -5,7 +5,7 @@ import styles from './article.module.css';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
-    title: 'Salitra na fasadi: bijele naslage i kako ih riješiti | Šlauf i Šmrk',
+    title: 'Salitra na fasadi: bijele naslage i kako ih riješiti',
     description: 'Bijele praškaste naslage na fasadi su salitra (eflorescencija). Pokazujemo na stvarnom poslu u Zagrebu odakle dolaze, kako ih skidamo i na što paziti.',
     alternates: { canonical: '/blog/salitra-na-fasadi' },
     openGraph: {

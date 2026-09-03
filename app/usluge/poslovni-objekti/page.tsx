@@ -6,7 +6,7 @@ import { Home, TreeDeciduous, Waves } from 'lucide-react';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
-    title: 'Pranje poslovnih objekata Zagreb, skladišta i hale | Šlauf i Šmrk',
+    title: 'Pranje poslovnih objekata Zagreb, skladišta i hale',
     description: 'Vanjsko čišćenje poslovnih objekata u Zagrebu: fasade, parkirališta, skladišta i hale. Redoviti ugovori i rad izvan radnog vremena.',
     alternates: { canonical: '/usluge/poslovni-objekti' },
     openGraph: {

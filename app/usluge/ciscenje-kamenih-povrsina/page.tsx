@@ -6,7 +6,7 @@ import { Home, HeartHandshake, TreeDeciduous } from 'lucide-react';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
-    title: 'Čišćenje kamenih površina Zagreb, granit i mramor | Šlauf i Šmrk',
+    title: 'Čišćenje kamenih površina Zagreb, granit i mramor',
     description: 'Profesionalno čišćenje kamenih površina: klupice, stolovi, staze, zidovi, kipovi. Uklanjamo mahovinu, lišaje i mrlje s kamena. Zagreb i okolica.',
     alternates: { canonical: '/usluge/ciscenje-kamenih-povrsina' },
     openGraph: {
@@ -174,6 +174,12 @@ export default function KamenePovsinePage() {
                     <p>
                         Mi koristimo profesionalnu opremu s preciznom regulacijom tlaka i <strong>pH-neutralna
                             sredstva</strong> prilagođena svakom tipu kamena.
+                    </p>
+                    <p>
+                        Kad se radi o bijelim naslagama koje izlaze iz fuga, tu ni pH-neutralno sredstvo nije
+                        dovoljno. Na stvarnom poslu na vili u Zagrebu pokazali smo što skida tanke curke, zašto je
+                        rub fuge najteži dio i koje detalje ugradnje treba odraditi da do toga uopće ne dođe:{' '}
+                        <Link href="/blog/salitra-i-kamenac-na-kamenoj-fasadi">salitra i kamenac na kamenoj fasadi</Link>.
                     </p>
                 </>
             }

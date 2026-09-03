@@ -5,7 +5,7 @@ import styles from './article.module.css';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
-    title: 'Softwash ili visokotlačno pranje fasade? Vodič 2026 | Šlauf i Šmrk',
+    title: 'Softwash ili visokotlačno pranje fasade? Vodič 2026',
     description: 'Stiropor fasada ili kamen? Saznajte razliku između softwash i visokotlačnog pranja fasade i koji je pristup pravi za vaš dom. Besplatna procjena u Zagrebu.',
     alternates: { canonical: '/blog/softwash-ili-visokotlacno-pranje-fasade' },
     openGraph: {

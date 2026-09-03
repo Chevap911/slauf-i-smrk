@@ -5,7 +5,7 @@ import styles from './article.module.css';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
-    title: 'Čišćenje grobnog mjesta Zagreb, cijene 2026 | Šlauf i Šmrk',
+    title: 'Koliko košta čišćenje grobnog mjesta 2026 | Šlauf i Šmrk',
     description: 'Čišćenje grobnih mjesta u Zagrebu: jednostruki grob od 250 €, dvostruki od 300 €. Poliranje, impregnacija, Mirogoj i sva groblja.',
     alternates: { canonical: '/blog/koliko-kosta-ciscenje-grobnog-mjesta' },
     openGraph: {
