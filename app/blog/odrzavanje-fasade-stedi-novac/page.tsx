@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft, Phone, ArrowRight } from 'lucide-react';
 import styles from './article.module.css';
+import ArticleQuote from '@/components/ArticleQuote/ArticleQuote';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -66,7 +67,7 @@ export default function BlogArticle() {
                 name: 'Je li pranje fasade jeftinije od bojanja?',
                 acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'Znatno. Pranje fasade kreće od 5 €/m², dok obnova s ličenjem ide nekoliko puta više po kvadratu i traži skele i materijal. Redovito pranje produžava vijek fasade i odgađa skupu obnovu.',
+                    text: 'Znatno. Pranje fasade kreće od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²), dok obnova s ličenjem ide nekoliko puta više po kvadratu i traži skele i materijal. Redovito pranje produžava vijek fasade i odgađa skupu obnovu.',
                 },
             },
         ],
@@ -116,9 +117,16 @@ export default function BlogArticle() {
                             dok je bila samo zelena, koštalo bi nekoliko stotina.
                         </p>
 
+                        <ArticleQuote
+                            location="blog-odrzavanje"
+                            service="facade"
+                            title="Koliko bi pranje vaše fasade koštalo?"
+                            whatsappText="Pozdrav, zanima me pranje fasade. Šaljem slike za procjenu."
+                        />
+
                         <h2>Brojke koje to čine očitim</h2>
                         <p>
-                            Uzmimo kuću s oko 200 m² fasade. Pranje kreće od 5 €/m², dakle red veličine od oko 1.000 € da se
+                            Uzmimo kuću s oko 200 m² fasade. Pranje kreće od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²), dakle red veličine od oko 1.000 € (na 10. 9. 2026.: oko 1.000 €) da se
                             fasada vrati u red i zaštiti. Obnova s saniranjem žbuke, skelama, materijalom i ličenjem ide
                             višestruko više po kvadratu. Razlika između ta dva scenarija je razlika između toga jeste li reagirali
                             na vrijeme ili ste čekali da problem dozrije.

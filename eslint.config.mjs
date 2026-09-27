@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Stari WordPress plugin za kontakt formu, nije dio Next weba (isključen i u tsconfigu).
+    "wordpress-kontakt-forma/**",
   ]),
 ]);
 

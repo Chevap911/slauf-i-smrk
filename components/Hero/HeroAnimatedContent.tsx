@@ -60,7 +60,6 @@ export default function HeroAnimatedContent() {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => {
-                        // @ts-ignore
                         window.dataLayer?.push({ event: 'whatsapp_click', cta_location: 'pocetna_hero' });
                     }}
                 >

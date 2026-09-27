@@ -4,16 +4,17 @@
 
 ## Usluge
 
-- [Pranje fasade](https://slaufismrk.com/usluge/pranje-fasade): uklanjanje algi, gljivica i mahovine, od 5 €/m²
-- [Pranje okućnice](https://slaufismrk.com/usluge/pranje-okucnice): dvorišta, tlakavci i prilazi, od 4 €/m²
+- [Pranje fasade](https://slaufismrk.com/usluge/pranje-fasade): uklanjanje algi, gljivica i mahovine, od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²)
+- [Pranje okućnice](https://slaufismrk.com/usluge/pranje-okucnice): dvorišta, tlakavci i prilazi, od 4 €/m² (cijena na 10. 9. 2026.: od 4 €/m²)
 - [Pranje terasa](https://slaufismrk.com/usluge/pranje-terasa): keramika, kamen i beton
 - [Pranje tlakavaca](https://slaufismrk.com/usluge/pranje-tlakavaca): betonske kocke i behaton
-- [Kemijsko čišćenje namještaja](https://slaufismrk.com/usluge/kemijsko-ciscenje-namjestaja): garniture od 80 €, madraci od 30 €
+- [Kemijsko čišćenje namještaja](https://slaufismrk.com/usluge/kemijsko-ciscenje-namjestaja): garniture od 80 €, madraci od 30 € (na 10. 9. 2026.: od 80 € i od 30 €)
 - [Održavanje grobnih mjesta](https://slaufismrk.com/usluge/odrzavanje-grobnih-mjesta)
 - [Sve usluge](https://slaufismrk.com/#usluge)
 
 ## Cijene i vodiči
 
+- [Cjenik usluga](https://slaufismrk.com/cjenik): sve cijene po m² i po usluzi, uz cijene na 10. 9. 2026. i CSV datoteku
 - [Koliko košta pranje fasade](https://slaufismrk.com/blog/koliko-kosta-pranje-fasade)
 - [Koliko košta pranje okućnice i tlakavaca](https://slaufismrk.com/blog/koliko-kosta-pranje-okucnice-tlakavaca-zagreb)
 - [Koliko košta kemijsko čišćenje namještaja](https://slaufismrk.com/blog/koliko-kosta-kemijsko-ciscenje-namjestaja)

@@ -1,0 +1,26 @@
+﻿naziv_usluge;kategorija;jedinica_mjere;maloprodajna_cijena;cijena_od_eur;cijena_do_eur;posebni_oblik_prodaje;naziv_posebnog_oblika_prodaje;sidrena_cijena;sidrena_cijena_od_eur;sidrena_cijena_do_eur;datum_sidrene_cijene;napomena
+Pranje fasade (žbuka, ETICS i stiropor);Vanjske površine (cijena po m²);m2;5,00-7,00 EUR/m2;5,00;7,00;NE;;5,00-7,00 EUR/m2;5,00;7,00;10.09.2026;konačna cijena ovisi o zaprljanosti, visini objekta i pristupu
+Pranje okućnice i dvorišta;Vanjske površine (cijena po m²);m2;4,00-6,00 EUR/m2;4,00;6,00;NE;;4,00-6,00 EUR/m2;4,00;6,00;10.09.2026;površine do 50 m²: od 200 €
+Pranje terase;Vanjske površine (cijena po m²);m2;4,00-6,00 EUR/m2;4,00;6,00;NE;;4,00-6,00 EUR/m2;4,00;6,00;10.09.2026;površine do 50 m²: od 200 €
+Pranje tlakavaca;Vanjske površine (cijena po m²);m2;4,00-6,00 EUR/m2;4,00;6,00;NE;;4,00-6,00 EUR/m2;4,00;6,00;10.09.2026;
+Pranje prilaza;Vanjske površine (cijena po m²);m2;4,00-6,00 EUR/m2;4,00;6,00;NE;;4,00-6,00 EUR/m2;4,00;6,00;10.09.2026;
+Čišćenje kamenih površina;Vanjske površine (cijena po m²);m2;5,00-7,00 EUR/m2;5,00;7,00;NE;;5,00-7,00 EUR/m2;5,00;7,00;10.09.2026;
+Čišćenje drvenih površina i drvenih terasa;Vanjske površine (cijena po m²);m2;6,00-8,00 EUR/m2;6,00;8,00;NE;;6,00-8,00 EUR/m2;6,00;8,00;10.09.2026;
+Fugiranje kvarcnim pijeskom;Vanjske površine (cijena po m²);m2;1,50-2,50 EUR/m2;1,50;2,50;NE;;1,50-2,50 EUR/m2;1,50;2,50;10.09.2026;dodatna stavka uz pranje
+Čišćenje jednostrukog groba;Grobna mjesta;usluga;od 250,00 EUR;250,00;;NE;;od 250,00 EUR;250,00;;10.09.2026;
+Čišćenje dvostrukog groba ili grobnice;Grobna mjesta;usluga;od 300,00 EUR;300,00;;NE;;od 300,00 EUR;300,00;;10.09.2026;
+Poliranje kamena;Grobna mjesta;usluga;od 150,00 EUR;150,00;;NE;;od 150,00 EUR;150,00;;10.09.2026;uz čišćenje
+Impregnacija kamena;Grobna mjesta;usluga;od 50,00 EUR;50,00;;NE;;od 50,00 EUR;50,00;;10.09.2026;uz čišćenje
+Čišćenje, poliranje i impregnacija (komplet);Grobna mjesta;usluga;od 400,00 EUR;400,00;;NE;;od 400,00 EUR;400,00;;10.09.2026;
+Kompletna garnitura (3+2+1);Kemijsko čišćenje namještaja;komad;od 80,00 EUR;80,00;;NE;;od 80,00 EUR;80,00;;10.09.2026;
+Trosjed;Kemijsko čišćenje namještaja;komad;od 40,00 EUR;40,00;;NE;;od 40,00 EUR;40,00;;10.09.2026;
+Dvosjed;Kemijsko čišćenje namještaja;komad;od 30,00 EUR;30,00;;NE;;od 30,00 EUR;30,00;;10.09.2026;
+Fotelja;Kemijsko čišćenje namještaja;komad;od 20,00 EUR;20,00;;NE;;od 20,00 EUR;20,00;;10.09.2026;
+Madrac (jednostruki);Kemijsko čišćenje namještaja;komad;od 30,00 EUR;30,00;;NE;;od 30,00 EUR;30,00;;10.09.2026;
+Madrac (bračni);Kemijsko čišćenje namještaja;komad;od 40,00 EUR;40,00;;NE;;od 40,00 EUR;40,00;;10.09.2026;
+Tepih;Kemijsko čišćenje namještaja;m2;od 5,00 EUR/m2;5,00;;NE;;od 5,00 EUR/m2;5,00;;10.09.2026;
+Vanjsko pranje;Detailing automobila;usluga;od 60,00 EUR;60,00;;NE;;od 60,00 EUR;60,00;;10.09.2026;
+Interijer (basic);Detailing automobila;usluga;od 80,00 EUR;80,00;;NE;;od 80,00 EUR;80,00;;10.09.2026;
+Kemijsko čišćenje sjedala;Detailing automobila;usluga;od 60,00 EUR;60,00;;NE;;od 60,00 EUR;60,00;;10.09.2026;
+Komplet (unutra i vani);Detailing automobila;usluga;od 130,00 EUR;130,00;;NE;;od 130,00 EUR;130,00;;10.09.2026;
+Pranje bazena;Bazeni;usluga;od 600,00 EUR;600,00;;NE;;od 600,00 EUR;600,00;;10.09.2026;konačna cijena ovisi o veličini bazena i obodu

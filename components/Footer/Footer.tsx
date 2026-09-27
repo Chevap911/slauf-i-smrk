@@ -90,6 +90,7 @@ export default function Footer() {
                     <div className={styles.section}>
                         <h4 className={styles.sectionTitle}>Sadržaj</h4>
                         <ul className={styles.list}>
+                            <li><Link href="/cjenik">Cjenik usluga</Link></li>
                             <li><Link href="/o-nama">O nama</Link></li>
                             <li><Link href="/podrucje/zagreb">Zagreb i okolica</Link></li>
                             <li><Link href="/podrucje/sesvete">Sesvete</Link></li>
@@ -114,7 +115,6 @@ export default function Footer() {
                                 <a 
                                     href="tel:+385958442806"
                                     onClick={() => {
-                                        // @ts-ignore
                                         window.dataLayer?.push({ event: 'call_click', cta_location: 'footer' });
                                     }}
                                 >

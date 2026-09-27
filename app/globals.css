@@ -146,3 +146,16 @@ img {
     font-size: 0.8rem;
   }
 }
+/*
+ * Dodatna (sidrena) cijena, obvezna od 1. 10. 2026. (NN 101/2026): stoji uz
+ * svaku istaknutu cijenu, na istom mjestu, i kad je jednaka trenutnoj.
+ * Nasljeđuje boju roditelja pa je čitljiva i na žutoj i na tamnoj podlozi.
+ */
+.sidrena {
+  display: block;
+  font-size: max(12px, 0.85em);
+  font-weight: 500;
+  line-height: 1.35;
+  opacity: 0.85;
+  margin-top: 0.15em;
+}

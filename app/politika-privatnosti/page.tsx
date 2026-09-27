@@ -66,17 +66,17 @@ export default function PolitikaPrivatnosti() {
                 <ul>
                     <li>Zatražiti pristup vašim osobnim podacima koje posjedujemo.</li>
                     <li>Zatražiti ispravak netočnih podataka.</li>
-                    <li>Zatražiti brisanje vaših podataka ("pravo na zaborav").</li>
+                    <li>Zatražiti brisanje vaših podataka („pravo na zaborav“).</li>
                     <li>Povući privolu za obradu podataka i primanje marketinških poruka.</li>
                 </ul>
                 <p>Za ostvarivanje svojih prava, kontaktirajte nas putem emaila: <a href="mailto:slauf.i.smrk@gmail.com">slauf.i.smrk@gmail.com</a>.</p>
 
                 <h2>7. Pravila o kolačićima (Cookie Policy)</h2>
                 <p>
-                    Naša web stranica koristi "kolačiće" (eng. cookies) za poboljšanje korisničkog iskustva, analizu posjećenosti i optimizaciju oglasa. Prilikom prvog posjeta stranici, putem skočnog prozora (bannera) tražimo vašu privolu za korištenje kolačića koji nisu neophodni za osnovno funkcioniranje weba.
+                    Naša web stranica koristi „kolačiće“ (eng. cookies) za poboljšanje korisničkog iskustva, analizu posjećenosti i optimizaciju oglasa. Prilikom prvog posjeta stranici, putem skočnog prozora (bannera) tražimo vašu privolu za korištenje kolačića koji nisu neophodni za osnovno funkcioniranje weba.
                 </p>
                 <p>
-                    Kroz funkcionalnost <strong>Google Consent Mode v2</strong> osiguravamo da se podaci za Google Analytics i Google Ads prikupljaju u potpunosti samo ako ste odabrali opciju "Prihvaćam sve". Ako ste odabrali opciju "Samo nužni", analitika se vrši anonimno bez spremanja identifikacijskih kolačića na vaš uređaj.
+                    Kroz funkcionalnost <strong>Google Consent Mode v2</strong> osiguravamo da se podaci za Google Analytics i Google Ads prikupljaju u potpunosti samo ako ste odabrali opciju „Prihvaćam sve“. Ako ste odabrali opciju „Samo nužni“, analitika se vrši anonimno bez spremanja identifikacijskih kolačića na vaš uređaj.
                 </p>
 
                 <h2>8. Promjene Politike privatnosti</h2>

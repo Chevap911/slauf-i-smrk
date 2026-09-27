@@ -854,3 +854,8 @@
         font-size: 1.6rem;
     }
 }
+
+/* Kad je uz cijenu i cijena na 10. 9. 2026., pill postaje dvoredna kartica */
+.heroPrice:has(:global(.sidrena)) {
+    border-radius: 1rem;
+}

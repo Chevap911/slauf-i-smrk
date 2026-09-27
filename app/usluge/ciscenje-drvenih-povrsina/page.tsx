@@ -6,8 +6,8 @@ import { Home, TreeDeciduous, Waves } from 'lucide-react';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
-    title: 'Čišćenje drvenih površina Zagreb, terase i ograde',
-    description: 'Profesionalno čišćenje drvenih terasa, ograda, pergola i vrtnog namještaja u Zagrebu. Uklanjamo sivilo, alge i mahovinu. Besplatna procjena.',
+    title: 'Čišćenje drvene terase bez brušenja, Zagreb',
+    description: 'Posivjela drvena terasa ne treba uvijek brušenje. Čistimo niskim tlakom i mekanom četkom, drvo ostaje cijelo. 6–8 €/m² (na 10. 9. 2026.: 6–8 €/m²).',
     alternates: { canonical: '/usluge/ciscenje-drvenih-povrsina' },
     openGraph: {
         title: 'Čišćenje Drvenih Površina Zagreb | Šlauf i Šmrk',
@@ -36,7 +36,7 @@ const faqSchema = {
             name: "Koliko košta čišćenje drvene terase?",
             acceptedAnswer: {
                 '@type': 'Answer',
-                text: "Cijena za čišćenje drvenih površina najčešće se kreće od 6 do 8 €/m², ovisno o vrsti drva, stanju i zaprljanosti. Besplatna procjena na licu mjesta.",
+                text: "Cijena za čišćenje drvenih površina najčešće se kreće od 6 do 8 €/m² (cijena na 10. 9. 2026.: od 6 do 8 €/m²), ovisno o vrsti drva, stanju i zaprljanosti. Besplatna procjena na licu mjesta.",
             },
         },
         {
@@ -101,6 +101,7 @@ export default function DrvenePovrsinePage() {
             canonicalPath="/usluge/ciscenje-drvenih-povrsina"
             description="Drvo s vremenom gubi boju i sivi pod utjecajem sunca, kiše i vlage. Profesionalnim čišćenjem uklanjamo sivilo, alge i nakupljenu prljavštinu s terasa, ograda, pergola i vrtnog namještaja. Vraćamo drvu izvornu toplinu i ljepotu."
             priceHint="6–8 €/m²"
+            priceAnchor="6–8 €/m²"
             heroImage="/seo-results/ciscenje-drvenih-povrsina/prije-poslije.jpeg"
             heroImageAlt="Prije i poslije rezultat čišćenja drvenih površina"
             resultsShowcase={{
@@ -175,6 +176,10 @@ export default function DrvenePovrsinePage() {
                         Za kompletnu obnovu dvorišta, kombinirajte čišćenje drva s <Link href="/usluge/pranje-okucnice">pranjem
                             okućnice</Link> i <Link href="/usluge/ciscenje-kamenih-povrsina">čišćenjem kamenih površina</Link>.
                     </p>
+                    <p>
+                        Dvoumite se između pranja i brušenja? Razliku, cijenu i što napraviti nakon čišćenja objasnili smo
+                        u vodiču <Link href="/blog/ciscenje-drvene-terase">čišćenje drvene terase</Link>.
+                    </p>
                 </>
             }
             features={[
@@ -228,7 +233,7 @@ export default function DrvenePovrsinePage() {
                 },
                 {
                     question: 'Koliko košta čišćenje drvene terase?',
-                    answer: 'Cijena za čišćenje drvenih površina najčešće se kreće od 6 do 8 €/m², ovisno o vrsti drva, stanju i zaprljanosti. Besplatna procjena na licu mjesta.',
+                    answer: 'Cijena za čišćenje drvenih površina najčešće se kreće od 6 do 8 €/m² (cijena na 10. 9. 2026.: od 6 do 8 €/m²), ovisno o vrsti drva, stanju i zaprljanosti. Besplatna procjena na licu mjesta.',
                 },
                 {
                     question: 'Trebam li nauljivati drvo nakon čišćenja?',

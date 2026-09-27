@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft, Phone, ArrowRight } from 'lucide-react';
 import styles from './article.module.css';
+import ArticleQuote from '@/components/ArticleQuote/ArticleQuote';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -79,7 +80,7 @@ export default function BlogArticle() {
                 name: 'Koliko košta pranje fasade u Zagrebu?',
                 acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'Cijena se kreće od 5 €/m². Za obiteljsku kuću od 200 m² to je okvirno od 1.000 €, ovisno o stupnju zaprljanosti, tipu fasade i visini objekta. Za točnu cijenu dolazimo na besplatnu procjenu.',
+                    text: 'Cijena se kreće od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²). Za obiteljsku kuću od 200 m² to je okvirno od 1.000 € (na 10. 9. 2026.: od 1.000 €), ovisno o stupnju zaprljanosti, tipu fasade i visini objekta. Za točnu cijenu dolazimo na besplatnu procjenu.',
                 },
             },
             {
@@ -133,6 +134,13 @@ export default function BlogArticle() {
                             radi se o stiropor sustavu i tu kućni perač otpada. Više detalja u vodiču{' '}
                             <Link href="/blog/pranje-fasade-stiropor-etics">pranje fasade stiropor i ETICS</Link>.
                         </p>
+
+                        <ArticleQuote
+                            location="blog-kako-oprati"
+                            service="facade"
+                            title="Radije da je operemo mi? Saznajte cijenu"
+                            whatsappText="Pozdrav, zanima me pranje fasade. Šaljem slike za procjenu."
+                        />
 
                         <h2>Kako oprati fasadu: postupak korak po korak</h2>
                         <p>
@@ -200,22 +208,22 @@ export default function BlogArticle() {
                         <p>
                             Računica je jednostavna. Najam perača, sredstvo i dan posla nisu besplatni, a rizik
                             od oštećenja stiropora pretvara uštedu u veliki trošak. Profesionalno pranje fasade
-                            u Zagrebu kreće od 5 €/m², s pravim tlakom, biocidnim tretmanom i fotografijama prije i poslije.
+                            u Zagrebu kreće od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²), s pravim tlakom, biocidnim tretmanom i fotografijama prije i poslije.
                         </p>
 
                         <h2>Koliko košta pranje fasade u Zagrebu</h2>
                         <div className={styles.priceTable}>
                             <div className={styles.priceRow}>
                                 <span>Manje od 100 m²</span>
-                                <strong>od 500 €</strong>
+                                <strong>od 500 €<span className="sidrena">Cijena na 10. 9. 2026.: od 500 €</span></strong>
                             </div>
                             <div className={styles.priceRow}>
                                 <span>100 – 200 m² (obiteljska kuća)</span>
-                                <strong>600 – 1.200 €</strong>
+                                <strong>500 – 1.400 €<span className="sidrena">Cijena na 10. 9. 2026.: 500 – 1.400 €</span></strong>
                             </div>
                             <div className={styles.priceRow}>
                                 <span>200 – 300 m²</span>
-                                <strong>od 1.500 €</strong>
+                                <strong>od 1.500 €<span className="sidrena">Cijena na 10. 9. 2026.: od 1.500 €</span></strong>
                             </div>
                             <div className={styles.priceRow}>
                                 <span>300 m²+ / poslovni objekti</span>

@@ -207,6 +207,9 @@ export const ClientInquiryEmail = ({
                             <Text style={priceDisclaimer}>
                                 *Ovo je okvirna informativna cijena izračunata na temelju unesenih parametara. Konačna cijena može varirati nakon uvida u stanje uživo.
                             </Text>
+                            <Text style={priceDisclaimer}>
+                                Cijene po kojima računamo i cijene na 10. 9. 2026. su u cjeniku: https://slaufismrk.com/cjenik
+                            </Text>
 
                             <Hr style={{ borderColor: '#eaeaea', margin: '20px 0' }} />
                             <Text style={{ ...priceBoxTitle, textAlign: 'left', marginBottom: '8px' }}>Vaše odabrane specifikacije:</Text>

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft, Phone, ArrowRight } from 'lucide-react';
 import styles from './article.module.css';
+import ArticleQuote from '@/components/ArticleQuote/ArticleQuote';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -73,7 +74,7 @@ export default function BlogArticle() {
                 name: 'Koliko košta pranje stiropor fasade u Zagrebu?',
                 acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'Pranje ETICS fasade u Zagrebu kreće se od 5 €/m². Za obiteljsku kuću od 200 m² fasade to je od 1.000 €. Točna cijena ovisi o stupnju zaraženosti algama ili gljivicama i dostupnosti površine.',
+                    text: 'Pranje ETICS fasade u Zagrebu kreće se od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²). Za obiteljsku kuću od 200 m² fasade to je od 1.000 € (na 10. 9. 2026.: od 1.000 €). Točna cijena ovisi o stupnju zaraženosti algama ili gljivicama i dostupnosti površine.',
                 },
             },
             {
@@ -161,6 +162,13 @@ export default function BlogArticle() {
                             sanaciju vrijednu desetaka tisuća eura.
                         </p>
 
+                        <ArticleQuote
+                            location="blog-etics"
+                            service="facade"
+                            title="Koliko bi pranje vaše ETICS fasade koštalo?"
+                            whatsappText="Pozdrav, zanima me pranje fasade od stiropora. Šaljem slike za procjenu."
+                        />
+
                         <h2>Jedina sigurna metoda: softwash</h2>
                         <p>
                             Softwash je nisko-tlačno kemijsko čišćenje. Pumpa radi na 20 do 50 bara, otprilike kao
@@ -182,11 +190,11 @@ export default function BlogArticle() {
 
                         <h2>Kako prepoznati je li vaša fasada ETICS?</h2>
                         <p>
-                            Kucnite šakom lagano po fasadi na više mjesta. Šuplje, mekše "bum" zvuk znači ETICS.
+                            Kucnite šakom lagano po fasadi na više mjesta. Šuplje, mekše „bum“ zvuk znači ETICS.
                             Puni, tvrdi zvuk znači klasična žbuka na ciglarskom ili betonskom zidu.
                         </p>
                         <p>
-                            Drugi znak: pogledajte prozorske okvire. Na ETICS fasadama prozori su često "utonuli"
+                            Drugi znak: pogledajte prozorske okvire. Na ETICS fasadama prozori su često „utonuli“
                             u zid za 10-tak centimetara jer izolacijski sloj izlazi pred originalnu građevinu.
                             Na klasičnoj žbuci prozori su u ravnini s fasadom ili blago izbočeni.
                         </p>
@@ -247,15 +255,15 @@ export default function BlogArticle() {
                         <div className={styles.priceTable}>
                             <div className={styles.priceRow}>
                                 <span>ETICS fasada (softwash)</span>
-                                <strong>od 5 €/m²</strong>
+                                <strong>od 5 €/m²<span className="sidrena">Cijena na 10. 9. 2026.: od 5 €/m²</span></strong>
                             </div>
                             <div className={styles.priceRow}>
                                 <span>Obiteljska kuća 150 m² fasade</span>
-                                <strong>od 750 €</strong>
+                                <strong>od 750 €<span className="sidrena">Cijena na 10. 9. 2026.: od 750 €</span></strong>
                             </div>
                             <div className={styles.priceRow}>
                                 <span>Obiteljska kuća 250 m² fasade</span>
-                                <strong>od 1.250 €</strong>
+                                <strong>od 1.250 €<span className="sidrena">Cijena na 10. 9. 2026.: od 1.250 €</span></strong>
                             </div>
                             <div className={styles.priceRow}>
                                 <span>Besplatna procjena na licu mjesta</span>
@@ -278,7 +286,7 @@ export default function BlogArticle() {
                         <p>
                             Sanacija ETICS fasade na obiteljskoj kući od 150 m² iznosi 15.000 do 40.000 €,
                             ovisno o tome koliko slojeva treba skinuti i jesu li u igri i termička oštećenja
-                            stiropore ispod. Softwash tretman koji košta od 750 € postaje iznimno isplativa
+                            stiropore ispod. Softwash tretman koji košta od 750 € (cijena na 10. 9. 2026.: od 750 €) postaje iznimno isplativa
                             prevencija.
                         </p>
 
@@ -293,8 +301,8 @@ export default function BlogArticle() {
 
                         <h3>Koliko košta pranje stiropor fasade?</h3>
                         <p>
-                            Pranje ETICS fasade kreće se od 5 €/m². Za obiteljsku kuću od 200 m² fasade
-                            to je od 1.000 €. Točna cijena ovisi o stupnju zaraženosti i dostupnosti površine.
+                            Pranje ETICS fasade kreće se od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²). Za obiteljsku kuću od 200 m² fasade
+                            to je od 1.000 € (na 10. 9. 2026.: od 1.000 €). Točna cijena ovisi o stupnju zaraženosti i dostupnosti površine.
                         </p>
 
                         <h3>Kako prepoznati je li moja fasada ETICS?</h3>

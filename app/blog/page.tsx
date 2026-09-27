@@ -18,6 +18,20 @@ export const metadata: Metadata = {
 
 const articles = [
     {
+        title: 'Čišćenje drvene terase: pranje ili brušenje i koliko košta',
+        excerpt: 'Posivjela drvena terasa najčešće ne treba brušenje. Zašto drvo posivi, kako ga peremo niskim tlakom, kada ipak treba brusiti i što napraviti nakon čišćenja.',
+        slug: '/blog/ciscenje-drvene-terase',
+        date: '2026-09-27',
+        category: 'Vodič',
+    },
+    {
+        title: 'Kamena terasa iz 80-ih: čišćenje umjesto zamjene ploča',
+        excerpt: 'Vlasnica kuće podno Sljemena htjela je mijenjati ploče na terasi. Oprali smo kamen, stepenice i stazu uz kuću. Stvarne fotografije prije i poslije i kada pranje nije dovoljno.',
+        slug: '/blog/obnova-kamene-terase-bez-zamjene-ploca',
+        date: '2026-09-27',
+        category: 'Naš posao',
+    },
+    {
         title: 'Salitra i kamenac na kamenoj fasadi: kako smo očistili vilu u Zagrebu',
         excerpt: 'Bijeli curci probijali su kroz fuge i cijedili se niz kamene ploče. Što je skidalo tanke tragove, zašto je rub fuge trajao satima i koje detalje ugradnje treba odraditi da se to ne dogodi.',
         slug: '/blog/salitra-i-kamenac-na-kamenoj-fasadi',
@@ -26,14 +40,14 @@ const articles = [
     },
     {
         title: 'Koliko košta čišćenje grobnog mjesta? Cijene održavanja spomenika Zagreb 2026',
-        excerpt: 'Jednostruki grob od 250 €, dvostruki od 300 €. Konkretne cijene čišćenja nadgrobnih spomenika u Zagrebu, kako funkcionira rezervacija i zašto koristimo niski tlak.',
+        excerpt: 'Jednostruki grob od 250 €, dvostruki od 300 € (na 10. 9. 2026.: od 250 € i od 300 €). Konkretne cijene čišćenja nadgrobnih spomenika u Zagrebu, kako funkcionira rezervacija i zašto koristimo niski tlak.',
         slug: '/blog/koliko-kosta-ciscenje-grobnog-mjesta',
         date: '2026-07-08',
         category: 'Cijene',
     },
     {
         title: 'Koliko košta kemijsko čišćenje namještaja? Cijene garniture, trosjeda i madraca',
-        excerpt: 'Garnitura od 80 €, trosjed od 40 €, madrac od 30 €, tepih od 5 €/m². Realne cijene dubinskog čišćenja namještaja u Zagrebu, koliko traje sušenje i što je realno s mrljama.',
+        excerpt: 'Garnitura od 80 €, trosjed od 40 €, madrac od 30 €, tepih od 5 €/m² (na 10. 9. 2026.: od 80 €, od 40 €, od 30 € i od 5 €/m²). Realne cijene dubinskog čišćenja namještaja u Zagrebu, koliko traje sušenje i što je realno s mrljama.',
         slug: '/blog/koliko-kosta-kemijsko-ciscenje-namjestaja',
         date: '2026-07-06',
         category: 'Cijene',

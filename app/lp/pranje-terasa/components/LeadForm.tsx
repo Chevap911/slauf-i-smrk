@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import styles from '../../LandingPage.module.css';
 
 interface FormState {
@@ -27,7 +27,6 @@ export default function LeadForm() {
     });
 
     const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
-    const [priceRange, setPriceRange] = useState<{ min: number; max: number } | null>(null);
     const [validationError, setValidationError] = useState<string>('');
 
     // Load UTM params
@@ -35,20 +34,17 @@ export default function LeadForm() {
         const urlParams = new URLSearchParams(window.location.search);
         const paramsToSave = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'gbraid', 'wbraid'];
         
-        let hasNewParams = false;
         paramsToSave.forEach(param => {
             if (urlParams.has(param)) {
                 sessionStorage.setItem(param, urlParams.get(param)!);
-                hasNewParams = true;
             }
         });
     }, []);
 
     // Price calculation
-    useEffect(() => {
+    const priceRange = useMemo<{ min: number; max: number } | null>(() => {
         if (form.unknownArea || !form.area || isNaN(Number(form.area)) || Number(form.area) <= 0) {
-            setPriceRange(null);
-            return;
+            return null;
         }
 
         const area = Number(form.area);
@@ -70,10 +66,10 @@ export default function LeadForm() {
                 minRate = 3; maxRate = 5; break;
         }
 
-        setPriceRange({
+        return {
             min: area * minRate,
             max: area * maxRate,
-        });
+        };
     }, [form.area, form.facadeType, form.unknownArea]);
 
     const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -141,7 +137,6 @@ export default function LeadForm() {
 
             if (res.ok) {
                 setStatus('success');
-                // @ts-ignore
                 window.dataLayer?.push({
                     event: "lead_form_submit",
                     event_category: "google_ads_landing_page",
@@ -178,7 +173,6 @@ export default function LeadForm() {
                         href={`https://wa.me/385958442806?text=Bok%2C%20poslao%2Fsla%20sam%20upit%20za%20pranje%20terasa.%20Šaljem%20slike.`}
                         className={styles.btnPrimary}
                         onClick={() => {
-                            // @ts-ignore
                             window.dataLayer?.push({ event: "whatsapp_click", cta_location: "success_state" });
                         }}
                     >
@@ -189,7 +183,6 @@ export default function LeadForm() {
                         href="tel:+385958442806"
                         className={styles.btnSecondary}
                         onClick={() => {
-                            // @ts-ignore
                             window.dataLayer?.push({ event: "call_click", cta_location: "success_state" });
                         }}
                     >
@@ -255,6 +248,7 @@ export default function LeadForm() {
                     <div className={styles.priceEstimate}>
                         <div className={styles.priceValue}>Okvirni raspon: {priceRange.min} – {priceRange.max} €</div>
                         <div className={styles.priceNote}>Konačna cijena ovisi o stanju podloge, stupnju zaprljanosti i pristupu.</div>
+                        <div className={styles.priceNote}>Cijene po m² i cijene na 10. 9. 2026. su u <a href="/cjenik">cjeniku</a>.</div>
                     </div>
                 )}
 

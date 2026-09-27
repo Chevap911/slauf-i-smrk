@@ -2,70 +2,86 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft, Phone, ArrowRight } from 'lucide-react';
 import styles from './article.module.css';
+import ArticleQuote from '@/components/ArticleQuote/ArticleQuote';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
-    title: 'Koliko košta pranje fasade u Zagrebu 2026 | Šlauf i Šmrk',
-    description: 'Tražite pranje fasade cijena ili čišćenje fasade cijena? Donosimo aktualne cijene za Zagreb, faktore koji utječu na ponudu i što je uključeno u uslugu 2026.',
+    title: 'Koliko košta pranje fasade? Cijena po m² 2026 | Šlauf i Šmrk',
+    description:
+        'Pranje fasade u Zagrebu je 5–7 €/m² (na 10. 9. 2026.: 5–7 €/m²). Primjeri za kuće od 100 do 300 m², kako izračunati kvadraturu i što ulazi u cijenu.',
     alternates: { canonical: '/blog/koliko-kosta-pranje-fasade' },
     openGraph: {
-        title: 'Koliko košta pranje fasade? Čišćenje fasade cijena 2026',
-        description: 'Aktualne cijene za pranje i čišćenje fasade u Zagrebu, uz pregled faktora koji najviše utječu na ponudu.',
+        title: 'Koliko košta pranje fasade? Cijena po m² i primjeri za 2026.',
+        description:
+            'Cijena po m², primjeri za kuće od 100 do 300 m², izračun kvadrature i što ulazi u cijenu pranja fasade u Zagrebu.',
         url: 'https://slaufismrk.com/blog/koliko-kosta-pranje-fasade',
         type: 'article',
         images: [OG_IMAGE],
     },
 };
 
+const faq = [
+    {
+        q: 'Koliko košta pranje fasade po m²?',
+        a: 'Kod nas je pranje fasade 5–7 €/m² (cijena na 10. 9. 2026.: 5–7 €/m²). Donji dio raspona je za blago zaprljanu fasadu do koje se lako dođe, gornji za fasadu s gustim algama i mahovinom ili otežanim pristupom.',
+    },
+    {
+        q: 'Koliko košta pranje fasade obiteljske kuće od 200 m²?',
+        a: 'Okvirno 1.000 do 1.400 € (na 10. 9. 2026.: 1.000 do 1.400 €), ovisno o zaprljanosti, tipu fasade i visini. Točnu cijenu potvrđujemo nakon besplatne procjene, prije početka rada.',
+    },
+    {
+        q: 'Je li pranje fasade jeftinije od bojanja?',
+        a: 'Jest. Bojanje traži skele, pripremu podloge i materijal, pa košta višestruko više po m². Ako boja nije oštećena nego samo prljava, pranje vraća izgled bez bojanja.',
+    },
+    {
+        q: 'Koliko često treba prati fasadu?',
+        a: 'Svake 2–3 godine. Fasade okrenute prema sjeveru ili u sjeni drveća trebaju češće pranje jer se na njima brže hvataju alge i mahovina.',
+    },
+    {
+        q: 'Perete li i fasade zgrada?',
+        a: 'Da. Za zgrade i poslovne objekte cijenu radimo po ponudi, nakon procjene na lokaciji, jer ovisi o visini, pristupu i opremi za rad na visini.',
+    },
+];
 
 const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-        {
-            '@type': 'ListItem',
-            position: 1,
-            name: 'Početna',
-            item: 'https://slaufismrk.com/',
-        },
-        {
-            '@type': 'ListItem',
-            position: 2,
-            name: 'Blog',
-            item: 'https://slaufismrk.com/blog',
-        },
-        {
-            '@type': 'ListItem',
-            position: 3,
-            name: 'Koliko košta pranje fasade',
-            item: 'https://slaufismrk.com/blog/koliko-kosta-pranje-fasade',
-        }
+        { '@type': 'ListItem', position: 1, name: 'Početna', item: 'https://slaufismrk.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://slaufismrk.com/blog' },
+        { '@type': 'ListItem', position: 3, name: 'Koliko košta pranje fasade', item: 'https://slaufismrk.com/blog/koliko-kosta-pranje-fasade' },
     ],
 };
 
-export default function BlogArticle() {
-    const articleSchema = {
-        '@context': 'https://schema.org',
-        '@type': 'Article',
-        headline: 'Koliko košta pranje fasade? Vodič kroz cijene čišćenja fasade',
-        description: 'Detaljan vodič o cijenama pranja i čišćenja fasade u Zagrebu: raspon cijena, faktori, usluga i savjeti.',
-        author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
-        publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
-        datePublished: '2026-02-26',
-        dateModified: '2026-04-21',
-        image: 'https://slaufismrk.com/prije-poslje/fasada-poslje.png',
-    };
+const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'Koliko košta pranje fasade? Cijena po m² i primjeri za 2026.',
+    description:
+        'Cijena pranja fasade po m² u Zagrebu, primjeri za kuće od 100 do 300 m², kako izračunati kvadraturu fasade i što ulazi u cijenu.',
+    author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
+    publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
+    datePublished: '2026-02-26',
+    dateModified: '2026-09-27',
+    image: 'https://slaufismrk.com/prije-poslje/fasada-poslje.png',
+};
 
+const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map(({ q, a }) => ({
+        '@type': 'Question',
+        name: q,
+        acceptedAnswer: { '@type': 'Answer', text: a },
+    })),
+};
+
+export default function BlogArticle() {
     return (
         <div className={styles.page}>
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-            />
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-            />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
             <article className={styles.article}>
                 <div className="container">
@@ -75,84 +91,130 @@ export default function BlogArticle() {
 
                     <header className={styles.header}>
                         <span className={styles.category}>Cijene</span>
-                        <h1>Koliko košta pranje fasade?</h1>
-                        <p className={styles.meta}>Objavljeno 26. veljače 2026. • Šlauf i Šmrk</p>
+                        <h1>Koliko košta pranje fasade? Cijena po m² (2026.)</h1>
+                        <p className={styles.meta}>Ažurirano 27. rujna 2026. • Šlauf i Šmrk</p>
                     </header>
 
                     <div className={styles.content}>
                         <p>
-                            Ako tražite pojmove poput <strong>&quot;pranje fasade cijena&quot;</strong> ili <strong>&quot;čišćenje fasade cijena&quot;</strong>,
-                            ovdje ćete dobiti jasan pregled raspona cijena, što utječe na ponudu i kada se profesionalno pranje fasade isplati.
-                        </p>
-                        <p>
-                            Fasada je osobna iskaznica vašeg doma. S vremenom se na njoj nakupljaju alge, mahovine, prljavština i zagađenje
-                            iz zraka koji narušavaju izgled, ali i oštećuju materijal. Visokotlačno pranje fasade najučinkovitiji je način
-                            vraćanja izvornog izgleda, ali koliko to zapravo košta?
+                            Kratki odgovor: pranje fasade kod nas je <strong>5–7 €/m²</strong> (cijena na 10. 9. 2026.:
+                            5–7 €/m²). Obiteljska kuća s 200 m² fasade dođe okvirno 1.000 do 1.400 € (na 10. 9. 2026.: 1.000 do
+                            1.400 €). Ispod su primjeri,
+                            način kako sami izračunate kvadraturu i sve što pomiče cijenu gore ili dolje.
                         </p>
 
-                        <h2>Okvirne cijene pranja fasade u Zagrebu (2026.)</h2>
+                        <h2>Cijene pranja fasade u Zagrebu (2026.)</h2>
                         <div className={styles.priceTable}>
                             <div className={styles.priceRow}>
-                                <span>Manja fasada (do 100 m²)</span>
-                                <strong>od 500 €</strong>
+                                <span>Kuća sa 100 m² fasade</span>
+                                <strong>od 500 €<span className="sidrena">Cijena na 10. 9. 2026.: od 500 €</span></strong>
                             </div>
                             <div className={styles.priceRow}>
-                                <span>Srednja fasada (100–200 m²)</span>
-                                <strong>od 1.000 €</strong>
+                                <span>Kuća s 200 m² fasade</span>
+                                <strong>od 1.000 €<span className="sidrena">Cijena na 10. 9. 2026.: od 1.000 €</span></strong>
                             </div>
                             <div className={styles.priceRow}>
-                                <span>Veća fasada (200 m²+)</span>
-                                <strong>od 1.500 €</strong>
+                                <span>Kuća s 300 m² fasade</span>
+                                <strong>od 1.500 €<span className="sidrena">Cijena na 10. 9. 2026.: od 1.500 €</span></strong>
                             </div>
                             <div className={styles.priceRow}>
                                 <span>Cijena po m²</span>
-                                <strong>5–7 €/m²</strong>
+                                <strong>5–7 €/m²<span className="sidrena">Cijena na 10. 9. 2026.: 5–7 €/m²</span></strong>
                             </div>
                         </div>
-
-                        <h2>Od čega ovisi cijena?</h2>
-                        <ul>
-                            <li><strong>Veličina fasade</strong>, Veće površine znače više rada i vremena, ali cijena po m² obično je niža.</li>
-                            <li><strong>Stupanj zaprljanosti</strong>, Fasade s gustom mahovinom i algama zahtijevaju više prolaza i sredstava za čišćenje.</li>
-                            <li><strong>Tip fasade</strong>, Različiti materijali (žbuka, kamen, drvo) zahtijevaju različite pristupe i opremu.</li>
-                            <li><strong>Pristupačnost</strong>, Veća visina ili teže dostupna područja mogu povećati cijenu zbog dodatne opreme.</li>
-                            <li><strong>Lokacija</strong>, U udaljenim mjestima može se zaračunati putni trošak.</li>
-                        </ul>
-
-                        <h2>Što uključuje cijena usluge?</h2>
-                        <p>Kod nas, cijena visokotlačnog pranja fasade uključuje:</p>
-                        <ul>
-                            <li>Dolazak s kompletnom profesionalnom opremom</li>
-                            <li>Ekološka sredstva za čišćenje (biorazgradiva)</li>
-                            <li>Temeljito uklanjanje algi, mahovine i prljavštine</li>
-                            <li>Ispiranje čistom vodom</li>
-                            <li>Odvoz otpadnih voda (po potrebi)</li>
-                        </ul>
                         <p>
-                            Ako želite odmah vidjeti kako izgleda sama usluga i što sve radimo na terenu, otvorite i našu glavnu stranicu za{' '}
-                            <Link href="/usluge/pranje-fasade">pranje fasade u Zagrebu</Link>.
+                            Iznosi u tablici računati su s donjim dijelom raspona. Zgrade i fasade veće od 500 m²
+                            radimo po ponudi. Sve naše cijene su i u <Link href="/cjenik">cjeniku</Link>.
                         </p>
 
-                        <h2>Trebam li profesionalno čišćenje fasade?</h2>
+                        <ArticleQuote
+                            location="blog-fasada-cijena"
+                            service="facade"
+                            title="Koliko bi pranje vaše fasade koštalo?"
+                            whatsappText="Pozdrav, zanima me pranje fasade. Šaljem slike za procjenu."
+                        />
+
+                        <h2>Kako izračunati kvadraturu fasade</h2>
                         <p>
-                            Da, ako primijetite zelene naslage, tamne mrlje ili općenito prljav izgled fasade. Profesionalnim čišćenjem:
+                            Ne trebate nacrt. Izmjerite opseg kuće, pomnožite ga s visinom zida do strehe i oduzmite veće
+                            staklene površine.
                         </p>
                         <ul>
-                            <li>Sprječavate oštećenja koje uzrokuju alge i mahovine</li>
-                            <li>Produžujete životni vijek fasadne boje</li>
-                            <li>Podižete estetsku i tržišnu vrijednost nekretnine</li>
-                            <li>Osiguravate zdraviji životni prostor</li>
+                            <li>Kuća 10 × 10 m ima opseg 40 m.</li>
+                            <li>Uz visinu od 6 m to je 40 × 6 = 240 m² zida.</li>
+                            <li>Oduzmite prozore i vrata, recimo 30 m², i ostaje oko 210 m² za pranje.</li>
+                        </ul>
+                        <p>
+                            Zabati, balkoni i dimnjaci mijenjaju račun, pa broj uvijek potvrdimo na procjeni. Za okvirnu
+                            cijenu dovoljna je i ovakva gruba kvadratura.
+                        </p>
+
+                        <h2>Od čega ovisi cijena</h2>
+                        <ul>
+                            <li>
+                                <strong>Zaprljanost:</strong> fasada s gustim algama i mahovinom traži sredstvo koje ubija
+                                korijen i više prolaza, pa ide prema gornjem dijelu raspona.
+                            </li>
+                            <li>
+                                <strong>Tip fasade:</strong> žbuka, kamen i ETICS fasada od stiropora ne peru se isto.
+                                ETICS traži niski tlak i softwash, o tome smo pisali u tekstu{' '}
+                                <Link href="/blog/pranje-fasade-stiropor-etics">pranje fasade od stiropora</Link>.
+                            </li>
+                            <li>
+                                <strong>Visina i pristup:</strong> sve što se ne može sigurno oprati s tla ili ljestava traži
+                                dodatnu opremu i ide po ponudi.
+                            </li>
+                            <li>
+                                <strong>Veličina:</strong> veća površina znači više sati rada, ali cijena po m² na većim
+                                fasadama obično pada.
+                            </li>
+                            <li>
+                                <strong>Lokacija:</strong> radimo Zagreb i okolicu, a za udaljenija mjesta dogovaramo putni
+                                trošak unaprijed.
+                            </li>
                         </ul>
 
-                        <h2>Koliko često trebam prati fasadu?</h2>
+                        <h2>Što ulazi u cijenu</h2>
+                        <ul>
+                            <li>dolazak s profesionalnom opremom i vodom pod kontroliranim tlakom</li>
+                            <li>biorazgradiva sredstva za alge, mahovinu i prljavštinu</li>
+                            <li>ispiranje fasade i okolnih površina</li>
+                            <li>fotografije prije i poslije za veće zahvate</li>
+                        </ul>
                         <p>
-                            Preporučujemo pranje svake <strong>2–3 godine</strong>. Fasade okrenute prema sjeveru ili u sjeni drveća
-                            trebaju češće čišćenje jer su podložnije rastu algi i mahovine.
+                            Zaštitni premaz nakon pranja i rad na visini iznad dohvata ljestava naplaćuju se posebno i
+                            uvijek su navedeni u ponudi.
+                        </p>
+
+                        <h2>Pranje ili bojanje fasade</h2>
+                        <p>
+                            Posivjela fasada najčešće ne treba bojanje nego pranje. Bojanje traži skele, pripremu podloge
+                            i materijal, pa košta višestruko više po m². Ako boja nije oštećena nego prljava, pranje vraća
+                            izgled za djelić te cijene. Primjer s Maksimira pokazali smo u tekstu{' '}
+                            <Link href="/blog/bijela-fasada-posivjela">bijela fasada posivjela</Link>, a zašto se ne isplati
+                            čekati piše u tekstu <Link href="/blog/odrzavanje-fasade-stedi-novac">zapuštena fasada košta više</Link>.
+                        </p>
+
+                        <h2>Kako do točne cijene</h2>
+                        <p>
+                            Pošaljite 2–3 slike fasade na WhatsApp i recite nam gdje je kuća. Iz toga dajemo okvirnu
+                            cijenu. Ako vam odgovara, dolazimo na besplatnu procjenu, potvrdimo kvadraturu i pošaljemo
+                            ponudu. Termin se rezervira uz predujam od 30%.
                         </p>
                         <p>
-                            Ako uz fasadu želite urediti i kompletan vanjski dio kuće, često se isplati kombinirati{' '}
-                            <Link href="/usluge/pranje-okucnice">pranje okućnice</Link> i prilaza u istom dolasku.
+                            Cijelu uslugu opisali smo na stranici{' '}
+                            <Link href="/usluge/pranje-fasade">pranje fasade u Zagrebu</Link>, a ako uz fasadu želite urediti
+                            i dvorište, u istom dolasku isplati se dodati{' '}
+                            <Link href="/usluge/pranje-okucnice">pranje okućnice</Link>.
                         </p>
+
+                        <h2>Česta pitanja</h2>
+                        {faq.map(({ q, a }) => (
+                            <div key={q}>
+                                <h3>{q}</h3>
+                                <p>{a}</p>
+                            </div>
+                        ))}
 
                         <div className={styles.ctaBox}>
                             <h3>Zatražite besplatnu procjenu</h3>

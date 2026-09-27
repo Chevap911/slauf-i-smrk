@@ -6,8 +6,8 @@ import { Home, HeartHandshake, TreeDeciduous } from 'lucide-react';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
-    title: 'Čišćenje kamenih površina Zagreb, granit i mramor',
-    description: 'Profesionalno čišćenje kamenih površina: klupice, stolovi, staze, zidovi, kipovi. Uklanjamo mahovinu, lišaje i mrlje s kamena. Zagreb i okolica.',
+    title: 'Čišćenje i impregnacija kamena, Zagreb',
+    description: 'Čistimo kamene terase, stepenice, staze i zidove, a po želji ih impregniramo. Od 5 €/m² (na 10. 9. 2026.: od 5 €/m²), procjena besplatna.',
     alternates: { canonical: '/usluge/ciscenje-kamenih-povrsina' },
     openGraph: {
         title: 'Čišćenje Kamenih Površina Zagreb | Šlauf i Šmrk',
@@ -68,7 +68,7 @@ const faqSchema = {
             name: "Koliko košta čišćenje kamene ograde?",
             acceptedAnswer: {
                 '@type': 'Answer',
-                text: "Cijena za kamene površine najčešće se kreće od 5 €/m², ovisno o vrsti kamena, veličini i zaprljanosti. Besplatna procjena.",
+                text: "Cijena za kamene površine najčešće se kreće od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²), ovisno o vrsti kamena, veličini i zaprljanosti. Besplatna procjena.",
             },
         }
     ],
@@ -101,6 +101,7 @@ export default function KamenePovsinePage() {
             canonicalPath="/usluge/ciscenje-kamenih-povrsina"
             description="Kamen je izdržljiv, ali s vremenom gubi ljepotu pod nanosima mahovine, lišajeva i prljavštine. Profesionalnim čišćenjem vraćamo izvorni sjaj kamenim stazama, klupicama, zidovima, kipovima i fasadnim oblogama. Prilagođavamo pristup svakom tipu kamena."
             priceHint="od 5 €/m²"
+            priceAnchor="od 5 €/m²"
             heroImage="/seo-results/ciscenje-kamenih-povrsina/poslije.png"
             heroImageAlt="Kamena površina nakon profesionalnog čišćenja"
             resultsShowcase={{
@@ -160,7 +161,7 @@ export default function KamenePovsinePage() {
 
                     <h2>Koliko košta čišćenje kamena?</h2>
                     <ul>
-                        <li><strong>Cijena po m²</strong>: od 5 €/m²</li>
+                        <li><strong>Cijena po m²</strong>: od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²)</li>
                         <li><strong>Konačna cijena</strong>: ovisi o vrsti kamena, pristupu, detaljima i stupnju zaprljanosti.</li>
                     </ul>
 
@@ -180,6 +181,11 @@ export default function KamenePovsinePage() {
                         dovoljno. Na stvarnom poslu na vili u Zagrebu pokazali smo što skida tanke curke, zašto je
                         rub fuge najteži dio i koje detalje ugradnje treba odraditi da do toga uopće ne dođe:{' '}
                         <Link href="/blog/salitra-i-kamenac-na-kamenoj-fasadi">salitra i kamenac na kamenoj fasadi</Link>.
+                    </p>
+                    <p>
+                        Ako razmišljate o zamjeni ploča na staroj terasi, pogledajte prvo primjer kuće iz 80-ih podno
+                        Sljemena, gdje je pranje vratilo kamenu boju od prije četrdeset godina:{' '}
+                        <Link href="/blog/obnova-kamene-terase-bez-zamjene-ploca">kamena terasa, čišćenje umjesto zamjene ploča</Link>.
                     </p>
                 </>
             }
@@ -250,7 +256,7 @@ export default function KamenePovsinePage() {
                 },
                 {
                     question: 'Koliko košta čišćenje kamene ograde?',
-                    answer: 'Cijena za kamene površine najčešće se kreće od 5 €/m², ovisno o vrsti kamena, veličini i zaprljanosti. Besplatna procjena.',
+                    answer: 'Cijena za kamene površine najčešće se kreće od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²), ovisno o vrsti kamena, veličini i zaprljanosti. Besplatna procjena.',
                 },
             ]}
             serviceAreas={[

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft, Phone, ArrowRight } from 'lucide-react';
 import styles from './article.module.css';
+import ArticleQuote from '@/components/ArticleQuote/ArticleQuote';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -81,7 +82,7 @@ export default function BlogArticle() {
                 name: 'Koliko košta čišćenje terasa u Zagrebu?',
                 acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'Cijena čišćenja terasa u Zagrebu kreće se od 200 € za terase do 100 m², ovisno o materijalu i stupnju zaprljanosti. Drvene terase su nešto skuplje (6-8 €/m²) zbog posebnog tretmana.',
+                    text: 'Cijena čišćenja terasa u Zagrebu kreće se od 200 € za terase do 50 m² (cijena na 10. 9. 2026.: od 200 €), ovisno o materijalu i stupnju zaprljanosti. Drvene terase su nešto skuplje (6-8 €/m², cijena na 10. 9. 2026.: 6-8 €/m²) zbog posebnog tretmana.',
                 },
             },
             {
@@ -157,6 +158,13 @@ export default function BlogArticle() {
                             <li><strong>Naslage od grila i hrane</strong>, masne mrlje koje privlače dodatnu prljavštinu</li>
                             <li><strong>Vapnenačke naslage</strong>, bijeli talog od kišnice na tamnim pločicama</li>
                         </ul>
+
+                        <ArticleQuote
+                            location="blog-ciscenje-terasa"
+                            service="terrace"
+                            title="Koliko bi pranje vaše terase koštalo?"
+                            whatsappText="Pozdrav, zanima me pranje terase. Šaljem slike za procjenu."
+                        />
 
                         <h2>Zašto kućni perač ne rješava problem</h2>
                         <p>

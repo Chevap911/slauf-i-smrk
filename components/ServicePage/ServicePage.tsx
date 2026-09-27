@@ -68,6 +68,8 @@ export interface ServicePageProps {
     description: string;
     canonicalPath?: string;
     priceHint?: string;
+    /** Cijena na 10. 9. 2026. (NN 101/2026). Obavezna uz priceHint, ne mijenja se kad se mijenja priceHint. */
+    priceAnchor?: string;
     features: ServiceFeature[];
     faq: ServiceFaq[];
     relatedServices: RelatedService[];
@@ -88,6 +90,7 @@ export default function ServicePage({
     description,
     canonicalPath,
     priceHint,
+    priceAnchor,
     features,
     faq,
     relatedServices,
@@ -226,7 +229,10 @@ export default function ServicePage({
                             <p className={styles.heroSubtitle}>{description}</p>
 
                             {priceHint && (
-                                <div className={styles.heroPrice}>💰 {priceHint}</div>
+                                <div className={styles.heroPrice}>
+                                    {priceHint}
+                                    {priceAnchor && <span className="sidrena">Cijena na 10. 9. 2026.: {priceAnchor}</span>}
+                                </div>
                             )}
 
                             <div className={styles.heroHighlights}>
@@ -247,7 +253,6 @@ export default function ServicePage({
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     onClick={() => {
-                                        // @ts-ignore
                                         window.dataLayer?.push({ event: 'whatsapp_click', cta_location: 'service_page_hero' });
                                     }}
                                 >
@@ -260,7 +265,6 @@ export default function ServicePage({
                                     href="tel:+385958442806" 
                                     className={styles.heroCtaSecondary}
                                     onClick={() => {
-                                        // @ts-ignore
                                         window.dataLayer?.push({ event: 'call_click', cta_location: 'service_page_hero' });
                                     }}
                                 >
@@ -482,7 +486,6 @@ export default function ServicePage({
                             href="tel:+385958442806" 
                             className={styles.boldCtaPhone}
                             onClick={() => {
-                                // @ts-ignore
                                 window.dataLayer?.push({ event: 'call_click', cta_location: 'service_page_footer_cta' });
                             }}
                         >
@@ -508,7 +511,6 @@ export default function ServicePage({
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 onClick={() => {
-                                    // @ts-ignore
                                     window.dataLayer?.push({ event: 'whatsapp_click', cta_location: 'service_page_footer' });
                                 }}
                             >
@@ -521,7 +523,6 @@ export default function ServicePage({
                                 href="tel:+385958442806" 
                                 className={styles.ctaCallBtn}
                                 onClick={() => {
-                                    // @ts-ignore
                                     window.dataLayer?.push({ event: 'call_click', cta_location: 'service_page_footer' });
                                 }}
                             >

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowLeft, Phone, ArrowRight, AlertTriangle } from 'lucide-react';
 import styles from './article.module.css';
+import ArticleQuote from '@/components/ArticleQuote/ArticleQuote';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -99,7 +100,7 @@ export default function BlogArticle() {
                 name: 'Koliko košta čišćenje salitre i kamenca s kamene fasade u Zagrebu?',
                 acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'Pranje fasade kreće od 5 €/m². Skidanje tvrdih naslaga kamenca i salitre je ručni rad po kvadratu i cijenu dajemo tek nakon izlaska na lokaciju, kad vidimo koliko je naslaga tvrda i koliko je ploča osjetljiva.',
+                    text: 'Pranje fasade kreće od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²). Skidanje tvrdih naslaga kamenca i salitre je ručni rad po kvadratu i cijenu dajemo tek nakon izlaska na lokaciju, kad vidimo koliko je naslaga tvrda i koliko je ploča osjetljiva.',
                 },
             },
         ],
@@ -162,6 +163,13 @@ export default function BlogArticle() {
                             Ako imate klasičnu žbukanu fasadu s bijelim naslagama na soklu, o tome smo pisali u tekstu{' '}
                             <Link href="/blog/salitra-na-fasadi">salitra na fasadi i kako je rješavamo</Link>.
                         </p>
+
+                        <ArticleQuote
+                            location="blog-kamena-fasada"
+                            service="facade"
+                            title="Bijeli tragovi na kamenoj fasadi? Pošaljite slike"
+                            whatsappText="Pozdrav, imam bijele tragove na kamenoj fasadi. Šaljem slike za procjenu."
+                        />
 
                         <h2>Odakle voda</h2>
                         <p>
@@ -374,7 +382,7 @@ export default function BlogArticle() {
 
                         <h2>Koliko to košta</h2>
                         <p>
-                            Pranje fasade kod nas kreće od 5 €/m². Skidanje kamenca i salitre s kamene obloge je ručni
+                            Pranje fasade kod nas kreće od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²). Skidanje kamenca i salitre s kamene obloge je ručni
                             rad, pa cijenu dajemo tek nakon izlaska na lokaciju kad vidimo koliko je naslaga tvrda i
                             koliko ploča podnosi. Više o cijenama piše u vodiču{' '}
                             <Link href="/blog/koliko-kosta-pranje-fasade">koliko košta pranje fasade</Link>, a usluge su

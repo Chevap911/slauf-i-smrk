@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft, Phone, ArrowRight } from 'lucide-react';
 import styles from './article.module.css';
+import ArticleQuote from '@/components/ArticleQuote/ArticleQuote';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -66,7 +67,7 @@ export default function BlogArticle() {
                 name: 'Koliko košta uklanjanje crnih fleka s fasade u Zagrebu?',
                 acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'Cijena pranja fasade kreće se od 5 €/m². Za kuću od 200 m² to je okvirno od 1.000 €, ovisno o stupnju zaraženosti i visini objekta. Dolazimo na besplatnu procjenu.',
+                    text: 'Cijena pranja fasade kreće se od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²). Za kuću od 200 m² to je okvirno od 1.000 € (na 10. 9. 2026.: od 1.000 €), ovisno o stupnju zaraženosti i visini objekta. Dolazimo na besplatnu procjenu.',
                 },
             },
         ],
@@ -109,6 +110,13 @@ export default function BlogArticle() {
                             ili dva, a za godinu dana bi se vratile jače. Korijen gljivice ostaje u podlozi.
                         </p>
 
+                        <ArticleQuote
+                            location="blog-crne-fleke"
+                            service="facade"
+                            title="Crne fleke na fasadi? Saznajte cijenu pranja"
+                            whatsappText="Pozdrav, imam crne fleke na fasadi. Šaljem slike za procjenu."
+                        />
+
                         <h2>Kako smo to riješili</h2>
                         <p>
                             Posao smo odradili u dvije faze. Prvo smo nanijeli biocidno sredstvo po cijeloj zahvaćenoj plohi
@@ -130,7 +138,7 @@ export default function BlogArticle() {
 
                         <h2>Koliko to košta</h2>
                         <p>
-                            Pranje fasade kod nas kreće od 5 €/m². Za kuću od 200 m² to je okvirno od 1.000 €, ovisno o
+                            Pranje fasade kod nas kreće od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²). Za kuću od 200 m² to je okvirno od 1.000 € (na 10. 9. 2026.: od 1.000 €), ovisno o
                             stupnju zaraženosti i visini objekta. Detaljan pregled cijena imate u vodiču{' '}
                             <Link href="/blog/koliko-kosta-pranje-fasade">koliko košta pranje fasade</Link>, a cijelu uslugu na
                             stranici <Link href="/usluge/pranje-fasade">pranje fasade u Zagrebu</Link>.

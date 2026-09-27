@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft, Phone, ArrowRight } from 'lucide-react';
 import styles from './article.module.css';
+import ArticleQuote from '@/components/ArticleQuote/ArticleQuote';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -66,7 +67,7 @@ export default function BlogArticle() {
                 name: 'Koliko košta vraćanje bijele fasade u Zagrebu?',
                 acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'Pranje fasade kreće od 5 €/m². Za kuću od 200 m² to je okvirno od 1.000 €, dok bojanje iste kuće obično iznosi nekoliko tisuća eura. Dolazimo na besplatnu procjenu.',
+                    text: 'Pranje fasade kreće od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²). Za kuću od 200 m² to je okvirno od 1.000 € (na 10. 9. 2026.: od 1.000 €), dok bojanje iste kuće obično iznosi nekoliko tisuća eura. Dolazimo na besplatnu procjenu.',
                 },
             },
         ],
@@ -105,6 +106,13 @@ export default function BlogArticle() {
                             Boja ispod svega toga bila je potpuno u redu.
                         </p>
 
+                        <ArticleQuote
+                            location="blog-bijela-fasada"
+                            service="facade"
+                            title="Koliko bi pranje vaše fasade koštalo?"
+                            whatsappText="Pozdrav, fasada mi je posivjela. Šaljem slike za procjenu."
+                        />
+
                         <h2>Kako smo vratili bijelu boju</h2>
                         <p>
                             Nanijeli smo sredstvo koje razgrađuje alge i organski sloj, ostavili da odradi, pa isprali
@@ -123,7 +131,7 @@ export default function BlogArticle() {
 
                         <h2>Koliko to košta</h2>
                         <p>
-                            Pranje fasade kreće od 5 €/m². Za kuću od 200 m² to je okvirno od 1.000 €. Pregled cijena imate u
+                            Pranje fasade kreće od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²). Za kuću od 200 m² to je okvirno od 1.000 € (na 10. 9. 2026.: od 1.000 €). Pregled cijena imate u
                             vodiču <Link href="/blog/koliko-kosta-pranje-fasade">koliko košta pranje fasade</Link>, a usluga je
                             opisana na stranici <Link href="/usluge/pranje-fasade">pranje fasade u Zagrebu</Link>. Ako se uz
                             fasadu nakupila i prljavština po dvorištu, isplati se kombinirati i{' '}

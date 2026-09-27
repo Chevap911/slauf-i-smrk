@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft, Phone, ArrowRight } from 'lucide-react';
 import styles from './article.module.css';
+import ArticleQuote from '@/components/ArticleQuote/ArticleQuote';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -94,15 +95,15 @@ export default function BlogArticle() {
                         <div className={styles.priceTable}>
                             <div className={styles.priceRow}>
                                 <span>Do 50 m²</span>
-                                <strong>od 200 €</strong>
+                                <strong>od 200 €<span className="sidrena">Cijena na 10. 9. 2026.: od 200 €</span></strong>
                             </div>
                             <div className={styles.priceRow}>
-                                <span>50 – 100 m²</span>
-                                <strong>od 400 €</strong>
+                                <span>100 m²</span>
+                                <strong>od 400 €<span className="sidrena">Cijena na 10. 9. 2026.: od 400 €</span></strong>
                             </div>
                             <div className={styles.priceRow}>
-                                <span>100 – 200 m²</span>
-                                <strong>od 800 €</strong>
+                                <span>200 m²</span>
+                                <strong>od 800 €<span className="sidrena">Cijena na 10. 9. 2026.: od 800 €</span></strong>
                             </div>
                         </div>
                         <p>
@@ -110,6 +111,13 @@ export default function BlogArticle() {
                             Sve informacije o samoj usluzi, opremi i procesu nalazite na stranici{' '}
                             <Link href="/usluge/pranje-terasa">pranje terasa u Zagrebu</Link>.
                         </p>
+
+                        <ArticleQuote
+                            location="blog-terasa-cijena"
+                            service="terrace"
+                            title="Koliko bi pranje vaše terase koštalo?"
+                            whatsappText="Pozdrav, zanima me pranje terase. Šaljem slike za procjenu."
+                        />
 
                         <h2>Od čega ovisi konačna cijena?</h2>
 
@@ -131,7 +139,7 @@ export default function BlogArticle() {
                         <p>
                             Ako su fuge između ploča zarasle u korov ili zelene naslage, moramo izbiti sve to prije pranja.
                             Nuspojava: izbijemo i stari pijesak. Bez novog kvarcnog pijeska fuge ostaju prazne i korov se vraća za sezonu.
-                            Fugiranje je dodatna stavka (1,50 do 2,50 €/m²) i preporučujemo ga uz svaki veći zahvat.
+                            Fugiranje je dodatna stavka (1,50 do 2,50 €/m², cijena na 10. 9. 2026.: 1,50 do 2,50 €/m²) i preporučujemo ga uz svaki veći zahvat.
                         </p>
 
                         <h3>4. Pristupačnost i kat</h3>
@@ -155,11 +163,15 @@ export default function BlogArticle() {
                         </p>
                         <p>
                             Za drvene terase, balkonske podove i pergole koristimo kombinaciju niske temperature, niskog pritiska i
-                            specijalnog sredstva za drvo koje uklanja sivilo i biološke naslage bez oštećenja vlakana. Više o tome na stranici{' '}
-                            <Link href="/usluge/ciscenje-drvenih-povrsina">čišćenje drvenih površina</Link>.
+                            specijalnog sredstva za drvo koje uklanja sivilo i biološke naslage bez oštećenja vlakana. Kada je dovoljno pranje,
+                            a kada brušenje, objasnili smo u vodiču{' '}
+                            <Link href="/blog/ciscenje-drvene-terase">čišćenje drvene terase</Link>. Više o usluzi na stranici{' '}
+                            <Link href="/usluge/ciscenje-drvenih-povrsina">čišćenje drvenih površina</Link>. Kako izgleda
+                            kamena terasa koju je vlasnica htjela popločati ispočetka, a pranje je bilo dovoljno, pokazali smo u tekstu{' '}
+                            <Link href="/blog/obnova-kamene-terase-bez-zamjene-ploca">kamena terasa, čišćenje umjesto zamjene ploča</Link>.
                         </p>
                         <p>
-                            Cijena drvenih terasa: <strong>6–8 €/m²</strong>. Nešto skuplje od betona, ali zahvat traje dulje
+                            Cijena drvenih terasa: <strong>6–8 €/m²</strong> (cijena na 10. 9. 2026.: 6–8 €/m²). Nešto skuplje od betona, ali zahvat traje dulje
                             i zahtijeva drugačiju opremu i kemiju.
                         </p>
 

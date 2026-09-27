@@ -20,6 +20,7 @@ Komunikacija s Markom: hrvatski. Sav sadržaj na webu: hrvatski.
 3. **SEO:** H1/H2 uvijek nose uslugu + lokaciju. Meta title/description postoje u `app/layout.tsx`. Schema: `HomeAndConstructionBusiness` (NE `CleaningService`, nije validan schema.org tip).
 4. **Perf:** GTM/FB/Clarity idu preko `lazyOnload`. Hero H1 pun opacity iz SSR-a (LCP).
 5. Bez lažnog social proofa. Stvarne brojke: ~40 Google recenzija, ocjena 5,0 (stanje 6/2026).
+6. **Sidrena cijena i CSV cjenik (obveza od 1. 10. 2026., NN 101/2026, kazna za obrt 1.000 do 20.000 € po prekršaju).** Uz svaku cijenu na webu stoji i cijena na 10. 9. 2026., na istom mjestu, i kad je jednaka. Izvor cijena je `lib/cjenik.ts`, stranica `/cjenik`, CSV-ovi u `public/cjenik/`. Kad se cijena mijenja: promijeni `cijena`, nikad `sidrena`; `npm run cjenik` (nova datoteka, stare se nikad ne brišu, moraju biti dostupne 30+ dana); ažuriraj tekstove (`grep -rn "10. 9. 2026." app components`); deploy najkasnije do 8:00 na dan kad nova cijena vrijedi. Nova cijena ili nova usluga na webu bez sidrene = prekršaj. Akcija/popust traži tri cijene: akcijska, najniža u zadnjih 30 dana i sidrena.
 
 ## Dev
 

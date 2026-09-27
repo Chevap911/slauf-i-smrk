@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft, Phone, ArrowRight } from 'lucide-react';
 import styles from './article.module.css';
+import ArticleQuote from '@/components/ArticleQuote/ArticleQuote';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -114,6 +115,13 @@ export default function BlogArticle() {
                             dojam prije nego što je išla unutra. Za zgradu sa stanovima to je pitanje vrijednosti nekretnine,
                             čista, uredna fasada nosi drugačiju cijenu od one ispisane sprejom.
                         </p>
+
+                        <ArticleQuote
+                            location="blog-grafiti"
+                            service=""
+                            title="Grafit na zidu? Saznajte cijenu uklanjanja"
+                            whatsappText="Pozdrav, trebam ukloniti grafit. Šaljem slike i lokaciju."
+                        />
 
                         <h2>Zašto se grafit ne skida običnim pranjem</h2>
                         <p>

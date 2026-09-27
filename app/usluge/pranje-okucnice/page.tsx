@@ -7,7 +7,7 @@ import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Pranje okućnice Zagreb | Čišćenje dvorišta i prilaza',
-    description: 'Profesionalno pranje okućnice, dvorišta, prilaza i vanjskih površina u Zagrebu. Uklanjamo mahovinu, alge, ulje, hrđu i prljavštinu. Cijena od 4 €/m².',
+    description: 'Pranje okućnice, dvorišta i prilaza u Zagrebu. Uklanjamo mahovinu, alge, ulje, hrđu i prljavštinu. Cijena od 4 €/m² (na 10. 9. 2026.: od 4 €/m²).',
     alternates: { canonical: '/usluge/pranje-okucnice' },
     openGraph: {
         title: 'Pranje okućnice Zagreb | Čišćenje dvorišta i prilaza',
@@ -60,7 +60,7 @@ const faqSchema = {
             name: "Koliko košta čišćenje okućnice u Zagrebu?",
             acceptedAnswer: {
                 '@type': 'Answer',
-                text: "Cijena ovisi o kvadraturi i materijalu. Okvirni raspon je od 4 €/m². Za okućnicu od 100 m² to je okvirno od 400 €. Točna cijena ovisi o stanju površine, nudimo procjenu na lokaciji.",
+                text: "Cijena ovisi o kvadraturi i materijalu. Okvirni raspon je od 4 €/m² (cijena na 10. 9. 2026.: od 4 €/m²). Za okućnicu od 100 m² to je okvirno od 400 € (na 10. 9. 2026.: od 400 €). Točna cijena ovisi o stanju površine, nudimo procjenu na lokaciji.",
             },
         },
         {
@@ -194,6 +194,7 @@ export default function PranjeOkucnicePage() {
                 canonicalPath="/usluge/pranje-okucnice"
                 description="Profesionalno pranje okućnica, dvorišta, prilaza, terasa i većih vanjskih površina u Zagrebu i okolici. Uklanjamo mahovinu, alge, korov iz fuga, uljne mrlje, hrđu i nakupljenu prljavštinu s tlakavaca, betona, kamena i asfalta. Za okvirnu cijenu pošaljite slike na WhatsApp, za veće površine dolazimo na lokaciju i dajemo jasnu procjenu bez obaveza."
                 priceHint="od 4 €/m²"
+                priceAnchor="od 4 €/m²"
                 heroImage="/seo-results/pranje-terasa/poslije.jpeg"
                 heroImageAlt="Okućnica i terasa nakon profesionalnog čišćenja u Zagrebu"
                 heroHighlights={[
@@ -289,15 +290,15 @@ export default function PranjeOkucnicePage() {
                             </thead>
                             <tbody>
                                 {[
-                                    { size: 'Do 50 m²', price: 'od 200 €', note: 'manja terasa, ulaz ili dio dvorišta' },
-                                    { size: '50 – 100 m²', price: 'od 400 €', note: 'standardna okućnica ili prilaz' },
-                                    { size: '100 – 200 m²', price: 'od 800 €', note: 'veće dvorište, prilaz i staze' },
-                                    { size: '200 m²+', price: 'po procjeni', note: 'veće okućnice, zgrade i poslovni objekti' },
+                                    { size: 'Do 50 m²', price: 'od 200 €', anchor: 'od 200 €', note: 'manja terasa, ulaz ili dio dvorišta' },
+                                    { size: '100 m²', price: 'od 400 €', anchor: 'od 400 €', note: 'standardna okućnica ili prilaz' },
+                                    { size: '200 m²', price: 'od 800 €', anchor: 'od 800 €', note: 'veće dvorište, prilaz i staze' },
+                                    { size: 'Veće od 200 m²', price: 'po procjeni', anchor: '', note: 'veće okućnice, zgrade i poslovni objekti' },
                                     { size: 'Parkirne površine', price: 'po procjeni', note: 'ovisi o ulju, gumama i zaprljanosti' },
                                 ].map((row, i) => (
                                     <tr key={i} style={{ borderBottom: '1px solid #eee' }}>
                                         <td style={{ padding: '10px 14px', fontWeight: 600 }}>{row.size}</td>
-                                        <td style={{ padding: '10px 14px' }}>{row.price}</td>
+                                        <td style={{ padding: '10px 14px' }}>{row.price}{row.anchor && <span className="sidrena">Cijena na 10. 9. 2026.: {row.anchor}</span>}</td>
                                         <td style={{ padding: '10px 14px', color: '#666', fontSize: '0.9em' }}>{row.note}</td>
                                     </tr>
                                 ))}
@@ -455,7 +456,7 @@ export default function PranjeOkucnicePage() {
                 faq={[
                     {
                         question: 'Koliko košta čišćenje okućnice u Zagrebu?',
-                        answer: 'Cijena ovisi o kvadraturi i materijalu. Okvirni raspon je od 4 €/m². Za okućnicu od 100 m² to je okvirno od 400 €. Točna cijena ovisi o stanju površine, nudimo procjenu na lokaciji.',
+                        answer: 'Cijena ovisi o kvadraturi i materijalu. Okvirni raspon je od 4 €/m² (cijena na 10. 9. 2026.: od 4 €/m²). Za okućnicu od 100 m² to je okvirno od 400 € (na 10. 9. 2026.: od 400 €). Točna cijena ovisi o stanju površine, nudimo procjenu na lokaciji.',
                     },
                     {
                         question: 'Hoće li visokotlačno pranje oštetiti betonske kocke?',

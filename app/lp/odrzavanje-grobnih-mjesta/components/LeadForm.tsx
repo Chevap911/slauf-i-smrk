@@ -99,7 +99,6 @@ export default function LeadForm() {
 
             if (res.ok) {
                 setStatus('success');
-                // @ts-ignore
                 window.dataLayer?.push({
                     event: 'lead_form_submit',
                     event_category: 'google_ads_landing_page',
@@ -136,7 +135,6 @@ export default function LeadForm() {
                         href="https://wa.me/385958442806?text=Bok%2C%20upravo%20sam%20poslao%2Fla%20upit%20za%20čišćenje%20grobnog%20mjesta.%20Lokacija:%20"
                         className={styles.btnPrimary}
                         onClick={() => {
-                            // @ts-ignore
                             window.dataLayer?.push({ event: 'whatsapp_click', cta_location: 'success_state' });
                         }}
                     >
@@ -147,7 +145,6 @@ export default function LeadForm() {
                         href="tel:+385958442806"
                         className={styles.btnSecondary}
                         onClick={() => {
-                            // @ts-ignore
                             window.dataLayer?.push({ event: 'call_click', cta_location: 'success_state' });
                         }}
                     >

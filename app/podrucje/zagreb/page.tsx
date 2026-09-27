@@ -32,11 +32,11 @@ const breadcrumbSchema = {
 const faq = [
     {
         question: 'Koliko košta pranje fasade u Zagrebu?',
-        answer: 'Cijena pranja fasade u Zagrebu kreće se od 5 €/m², ovisno o veličini, materijalu i stupnju zaprljanosti. Za točnu cijenu šaljemo procjenu na temelju slika ili dolazimo na lokaciju.',
+        answer: 'Cijena pranja fasade u Zagrebu kreće se od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²), ovisno o veličini, materijalu i stupnju zaprljanosti. Za točnu cijenu šaljemo procjenu na temelju slika ili dolazimo na lokaciju.',
     },
     {
         question: 'Koliko košta čišćenje okućnice u Zagrebu?',
-        answer: 'Cijena čišćenja okućnice u Zagrebu kreće se od 4 €/m², ovisno o kvadraturi i materijalu. Za veće površine i pakete dajemo procjenu prije početka rada.',
+        answer: 'Cijena čišćenja okućnice u Zagrebu kreće se od 4 €/m² (cijena na 10. 9. 2026.: od 4 €/m²), ovisno o kvadraturi i materijalu. Za veće površine i pakete dajemo procjenu prije početka rada.',
     },
     {
         question: 'Koliko brzo dolazite u Zagrebu?',

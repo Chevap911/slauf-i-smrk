@@ -32,11 +32,28 @@ function computeEstimate(service: string, size: string): { min: number; max: num
     return { min: Math.round(area * rate[0]), max: Math.round(area * rate[1]) };
 }
 
-export default function QuoteForm({ idPrefix = 'qf', hideHeading = false }: { idPrefix?: string; hideHeading?: boolean }) {
+type QuoteFormProps = {
+    idPrefix?: string;
+    hideHeading?: boolean;
+    /** Unaprijed odabrana usluga, npr. 'facade' na blogu o fasadi. */
+    initialService?: string;
+    /** Tekst WhatsApp poruke, da vlasnik odmah vidi o čemu se radi. */
+    whatsappText?: string;
+};
+
+const trackWhatsapp = (location: string) => {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'whatsapp_click', cta_location: location });
+};
+
+export default function QuoteForm({ idPrefix = 'qf', hideHeading = false, initialService = 'facade', whatsappText }: QuoteFormProps) {
+    const whatsappHref = whatsappText
+        ? `https://wa.me/385958442806?text=${encodeURIComponent(whatsappText)}`
+        : QUOTE_WHATSAPP;
     const [sent, setSent] = useState(false);
     const [sentEstimate, setSentEstimate] = useState<{ min: number; max: number } | null>(null);
     const [submitting, setSubmitting] = useState(false);
-    const [service, setService] = useState('facade');
+    const [service, setService] = useState(initialService);
     const [contact, setContact] = useState('');
     const [size, setSize] = useState('');
     const [error, setError] = useState('');
@@ -71,6 +88,9 @@ export default function QuoteForm({ idPrefix = 'qf', hideHeading = false }: { id
                 }),
             });
             if (!res.ok) throw new Error('fail');
+            // Ista konverzija kao glavna kontakt forma, da je GTM i Google Ads broje
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({ event: 'form_submit', form_name: 'Brzi upit', form_location: idPrefix, service_type: service });
             setSentEstimate(est);
             setSent(true);
         } catch {
@@ -91,13 +111,14 @@ export default function QuoteForm({ idPrefix = 'qf', hideHeading = false }: { id
                             <span className={styles.estimateLabel}>Okvirna cijena za vašu površinu</span>
                             <strong className={styles.estimateValue}>{sentEstimate.min} – {sentEstimate.max} €</strong>
                             <span className={styles.estimateNote}>Informativno, konačnu cijenu potvrđujemo nakon besplatne procjene.</span>
+                            <span className={styles.estimateNote}>Cijene po m² i cijene na 10. 9. 2026. su u <a href="/cjenik">cjeniku</a>.</span>
                         </div>
                         <p className={styles.sub}>Javimo vam se u najkraćem roku. Za brži odgovor pošaljite slike na WhatsApp.</p>
                     </>
                 ) : (
                     <p className={styles.sub}>Javimo vam se u najkraćem roku s okvirnom cijenom. Za brži odgovor pošaljite slike na WhatsApp.</p>
                 )}
-                <a href={QUOTE_WHATSAPP} target="_blank" rel="noopener noreferrer" className={styles.whatsapp}>
+                <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className={styles.whatsapp} onClick={() => trackWhatsapp(idPrefix)}>
                     <MessageCircle size={18} /> Pošaljite slike na WhatsApp
                 </a>
             </div>
@@ -154,10 +175,17 @@ export default function QuoteForm({ idPrefix = 'qf', hideHeading = false }: { id
             </form>
 
             <div className={styles.divider}><span>imate slike?</span></div>
-            <a href={QUOTE_WHATSAPP} target="_blank" rel="noopener noreferrer" className={styles.whatsapp}>
+            <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className={styles.whatsapp} onClick={() => trackWhatsapp(idPrefix)}>
                 <MessageCircle size={18} /> Pošaljite slike na WhatsApp
             </a>
-            <a href="tel:+385958442806" className={styles.callLine}>
+            <a
+                href="tel:+385958442806"
+                className={styles.callLine}
+                onClick={() => {
+                    window.dataLayer = window.dataLayer || [];
+                    window.dataLayer.push({ event: 'call_click', cta_location: idPrefix });
+                }}
+            >
                 <Phone size={15} /> ili nazovite 095 844 2806
             </a>
         </div>

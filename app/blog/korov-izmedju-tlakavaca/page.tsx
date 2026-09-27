@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft, Phone, ArrowRight } from 'lucide-react';
 import styles from './article.module.css';
+import ArticleQuote from '@/components/ArticleQuote/ArticleQuote';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -66,7 +67,7 @@ export default function BlogArticle() {
                 name: 'Koliko košta pranje tlakavaca i dvorišta u Zagrebu?',
                 acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'Pranje tlakavaca i okućnice kreće od 4 €/m². Fugiranje kvarcnim pijeskom je dodatna stavka, okvirno 1,50 do 2,50 €/m². Točnu cijenu dajemo nakon procjene.',
+                    text: 'Pranje tlakavaca i okućnice kreće od 4 €/m² (cijena na 10. 9. 2026.: od 4 €/m²). Fugiranje kvarcnim pijeskom je dodatna stavka, okvirno 1,50 do 2,50 €/m² (cijena na 10. 9. 2026.: 1,50 do 2,50 €/m²). Točnu cijenu dajemo nakon procjene.',
                 },
             },
         ],
@@ -104,6 +105,13 @@ export default function BlogArticle() {
                             Da bi prestalo, fuga mora biti čista do dna, a onda zatvorena.
                         </p>
 
+                        <ArticleQuote
+                            location="blog-korov"
+                            service="pavers"
+                            title="Korov između kocki? Saznajte cijenu pranja"
+                            whatsappText="Pozdrav, zanima me pranje tlakavaca i korov u fugama. Šaljem slike za procjenu."
+                        />
+
                         <h2>Kako smo očistili dvorište</h2>
                         <p>
                             Prvo smo prošli cijelu površinu visokim tlakom i isprali fuge do dna, izvadili korijen, mahovinu i
@@ -125,8 +133,8 @@ export default function BlogArticle() {
 
                         <h2>Koliko to košta</h2>
                         <p>
-                            Pranje tlakavaca i okućnice kreće od 4 €/m². Fugiranje kvarcnim pijeskom je dodatna stavka,
-                            okvirno 1,50 do 2,50 €/m². Detaljan pregled imate u vodiču{' '}
+                            Pranje tlakavaca i okućnice kreće od 4 €/m² (cijena na 10. 9. 2026.: od 4 €/m²). Fugiranje kvarcnim pijeskom je dodatna stavka,
+                            okvirno 1,50 do 2,50 €/m² (cijena na 10. 9. 2026.: 1,50 do 2,50 €/m²). Detaljan pregled imate u vodiču{' '}
                             <Link href="/blog/koliko-kosta-pranje-okucnice-tlakavaca-zagreb">koliko košta pranje okućnice i tlakavaca</Link>,
                             a uslugu na stranici <Link href="/usluge/pranje-tlakavaca">pranje tlakavaca</Link> i{' '}
                             <Link href="/usluge/pranje-okucnice">pranje okućnice</Link>.

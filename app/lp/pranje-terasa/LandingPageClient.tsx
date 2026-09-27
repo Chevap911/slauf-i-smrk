@@ -50,7 +50,6 @@ export default function LandingPageClient() {
                             onClick={() => {
                                 
                                  
-                                 // @ts-ignore
                                 window.dataLayer?.push({ event: "lead_form_submit", event_category: "google_ads_landing_page", service: "Pranje terasa", landing_page: "/lp/pranje-terasa" });
                             }}
                         >
@@ -63,7 +62,6 @@ export default function LandingPageClient() {
                             onClick={() => {
                                 
                                  
-                                 // @ts-ignore
                                 window.dataLayer?.push({ event: "call_click", cta_location: "hero" });
                             }}
                         >
@@ -99,7 +97,6 @@ export default function LandingPageClient() {
                             onClick={() => {
                                 
                                  
-                                 // @ts-ignore
                                 window.dataLayer?.push({ event: "quote_cta_click", cta_location: "before_after" });
                             }}
                         >
@@ -192,18 +189,18 @@ export default function LandingPageClient() {
                         <tbody>
                             <tr>
                                 <td>Do 50 m²</td>
-                                <td>od 200 €</td>
+                                <td>od 200 €<span className="sidrena">Cijena na 10. 9. 2026.: od 200 €</span></td>
                             </tr>
                             <tr>
-                                <td>50 – 100 m²</td>
-                                <td>od 250 €</td>
+                                <td>100 m²</td>
+                                <td>od 400 €<span className="sidrena">Cijena na 10. 9. 2026.: od 400 €</span></td>
                             </tr>
                             <tr>
-                                <td>100 – 200 m²</td>
-                                <td>od 450 €</td>
+                                <td>200 m²</td>
+                                <td>od 800 €<span className="sidrena">Cijena na 10. 9. 2026.: od 800 €</span></td>
                             </tr>
                             <tr>
-                                <td>200 m²+</td>
+                                <td>Veće od 200 m²</td>
                                 <td>po procjeni</td>
                             </tr>
                         </tbody>
@@ -217,7 +214,6 @@ export default function LandingPageClient() {
                             onClick={() => {
                                 
                                  
-                                 // @ts-ignore
                                 window.dataLayer?.push({ event: "quote_cta_click", cta_location: "price" });
                             }}
                         >
@@ -310,7 +306,6 @@ export default function LandingPageClient() {
                             onClick={() => {
                                 
                                  
-                                 // @ts-ignore
                                 window.dataLayer?.push({ event: "whatsapp_click", cta_location: "footer" });
                             }}
                         >
@@ -324,7 +319,6 @@ export default function LandingPageClient() {
                             onClick={() => {
                                 
                                  
-                                 // @ts-ignore
                                 window.dataLayer?.push({ event: "call_click", cta_location: "footer" });
                             }}
                         >
@@ -337,7 +331,6 @@ export default function LandingPageClient() {
                             onClick={() => {
                                 
                                  
-                                 // @ts-ignore
                                 window.dataLayer?.push({ event: "quote_cta_click", cta_location: "footer" });
                             }}
                         >
@@ -355,7 +348,6 @@ export default function LandingPageClient() {
                     onClick={() => {
                         
                          
-                                 // @ts-ignore
                                 window.dataLayer?.push({ event: "call_click", cta_location: "sticky_bar" });
                     }}
                 >
@@ -368,7 +360,6 @@ export default function LandingPageClient() {
                     onClick={() => {
                         
                          
-                                 // @ts-ignore
                                 window.dataLayer?.push({ event: "whatsapp_click", cta_location: "sticky_bar" });
                     }}
                 >
@@ -381,7 +372,6 @@ export default function LandingPageClient() {
                     onClick={() => {
                         
                          
-                                 // @ts-ignore
                                 window.dataLayer?.push({ event: "quote_cta_click", cta_location: "sticky_bar" });
                     }}
                 >

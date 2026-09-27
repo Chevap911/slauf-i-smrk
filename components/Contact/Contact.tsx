@@ -517,8 +517,8 @@ export default function Contact() {
                 scheduleHotLeadEmail(1, formData, estimatedPrice);
 
                 if (typeof window !== 'undefined') {
-                    (window as any).dataLayer = (window as any).dataLayer || [];
-                    (window as any).dataLayer.push({
+                    window.dataLayer = window.dataLayer || [];
+                    window.dataLayer.push({
                         event: 'form_step1_completed',
                         form_name: 'Kontakt forma',
                         has_email: Boolean(formData.email),
@@ -546,8 +546,8 @@ export default function Contact() {
             }
 
             if (typeof window !== 'undefined') {
-                (window as any).dataLayer = (window as any).dataLayer || [];
-                (window as any).dataLayer.push({
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
                     event: 'form_step2_completed',
                     form_name: 'Kontakt forma',
                     service_type: formData.service,
@@ -560,8 +560,8 @@ export default function Contact() {
         setProgress(Math.min(100, (newStep / 4) * 100));
 
         if (step === 3 && typeof window !== 'undefined') {
-            (window as any).dataLayer = (window as any).dataLayer || [];
-            (window as any).dataLayer.push({
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
                 event: 'form_step3_completed',
                 form_name: 'Kontakt forma',
                 service_type: formData.service,
@@ -617,8 +617,8 @@ export default function Contact() {
 
             // GTM Konverzija - Data Layer Push
             if (typeof window !== 'undefined') {
-                (window as any).dataLayer = (window as any).dataLayer || [];
-                (window as any).dataLayer.push({
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
                     event: 'form_submit',
                     form_name: 'Glavna kontakt forma',
                     service_type: formData.service,
@@ -667,7 +667,6 @@ export default function Contact() {
                                 href="tel:+385958442806" 
                                 className={styles.detailItem}
                                 onClick={() => {
-                                    // @ts-ignore
                                     window.dataLayer?.push({ event: 'call_click', cta_location: 'kontakt_sekcija' });
                                 }}
                             >
@@ -1117,6 +1116,9 @@ export default function Contact() {
                                                 {formData.additionalServices.length > 0
                                                     ? 'Procjena uključuje glavnu uslugu i dodatne usluge, uz 10% popusta na svaku dodatnu uslugu jer se radovi izvode u istom dolasku.'
                                                     : 'Procjena je okvirna i može se promijeniti nakon uvida u stvarno stanje, pristup i opseg radova.'}
+                                            </p>
+                                            <p className={styles.priceDisclaimer}>
+                                                Cijene po kojima računamo i cijene na 10. 9. 2026. su u <a href="/cjenik">cjeniku</a>.
                                             </p>
                                         </div>
 

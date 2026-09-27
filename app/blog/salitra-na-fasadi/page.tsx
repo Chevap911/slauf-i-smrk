@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft, Phone, ArrowRight } from 'lucide-react';
 import styles from './article.module.css';
+import ArticleQuote from '@/components/ArticleQuote/ArticleQuote';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -66,7 +67,7 @@ export default function BlogArticle() {
                 name: 'Koliko košta čišćenje fasade od salitre u Zagrebu?',
                 acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'Čišćenje fasade kreće od 5 €/m². Salitra zahtijeva pažljiviji rad i procjenu uzroka vlage, pa cijenu dajemo nakon izlaska na lokaciju.',
+                    text: 'Čišćenje fasade kreće od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²). Salitra zahtijeva pažljiviji rad i procjenu uzroka vlage, pa cijenu dajemo nakon izlaska na lokaciju.',
                 },
             },
         ],
@@ -116,6 +117,13 @@ export default function BlogArticle() {
                             .
                         </p>
 
+                        <ArticleQuote
+                            location="blog-salitra"
+                            service="facade"
+                            title="Salitra na fasadi? Saznajte cijenu čišćenja"
+                            whatsappText="Pozdrav, imam salitru na fasadi. Šaljem slike za procjenu."
+                        />
+
                         <h2>Kako smo to riješili</h2>
                         <p>
                             Prvo smo pregledali odakle dolazi vlaga. Na ovoj kući uzrok je bio sokl koji je upijao vodu od
@@ -136,7 +144,7 @@ export default function BlogArticle() {
 
                         <h2>Koliko to košta</h2>
                         <p>
-                            Čišćenje fasade kreće od 5 €/m². Salitra traži pažljiviji pristup i procjenu uzroka vlage, pa
+                            Čišćenje fasade kreće od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²). Salitra traži pažljiviji pristup i procjenu uzroka vlage, pa
                             cijenu dajemo nakon izlaska na lokaciju. Više o cijenama imate u vodiču{' '}
                             <Link href="/blog/koliko-kosta-pranje-fasade">koliko košta pranje fasade</Link>, a uslugu na
                             stranici <Link href="/usluge/pranje-fasade">pranje fasade u Zagrebu</Link>.

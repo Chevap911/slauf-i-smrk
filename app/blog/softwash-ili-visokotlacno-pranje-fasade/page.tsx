@@ -2,11 +2,12 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft, Phone, ArrowRight } from 'lucide-react';
 import styles from './article.module.css';
+import ArticleQuote from '@/components/ArticleQuote/ArticleQuote';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
-    title: 'Softwash ili visokotlačno pranje fasade? Vodič 2026',
-    description: 'Stiropor fasada ili kamen? Saznajte razliku između softwash i visokotlačnog pranja fasade i koji je pristup pravi za vaš dom. Besplatna procjena u Zagrebu.',
+    title: 'Visokotlačno pranje ili softwash fasade: što odabrati',
+    description: 'Visokotlačno pranje ne smije na stiropor. Kada ide jači tlak, a kada softwash, kako prepoznati svoju fasadu i koliko to znači za cijenu.',
     alternates: { canonical: '/blog/softwash-ili-visokotlacno-pranje-fasade' },
     openGraph: {
         title: 'Softwash ili visokotlačno pranje fasade? Vodič 2026',
@@ -145,6 +146,13 @@ export default function BlogArticle() {
                             može probiti tanku završnu boju, oštetiti sloj stiropore ispod i stvoriti mikrootvore koji
                             upijaju vlagu. Ono što izgleda kao brzo i lako čišćenje postaje uvod u skupu sanaciju.
                         </p>
+
+                        <ArticleQuote
+                            location="blog-softwash"
+                            service="facade"
+                            title="Ne znate koja metoda treba vašoj fasadi? Pošaljite slike"
+                            whatsappText="Pozdrav, zanima me pranje fasade. Šaljem slike za procjenu."
+                        />
 
                         <h2>Što je softwash metoda?</h2>
                         <p>

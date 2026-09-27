@@ -57,7 +57,6 @@ export default function LandingPageClient() {
                             href="https://wa.me/385958442806?text=Bok,%20zanima%20me%20čišćenje%20grobnog%20mjesta.%20Groblje:%20"
                             className={styles.btnPrimary}
                             onClick={() => {
-                                // @ts-ignore
                                 window.dataLayer?.push({ event: 'whatsapp_click', cta_location: 'hero' });
                             }}
                         >
@@ -68,7 +67,6 @@ export default function LandingPageClient() {
                             href="tel:+385954442806"
                             className={styles.btnSecondary}
                             onClick={() => {
-                                // @ts-ignore
                                 window.dataLayer?.push({ event: 'call_click', cta_location: 'hero' });
                             }}
                         >
@@ -259,19 +257,19 @@ export default function LandingPageClient() {
                         <tbody>
                             <tr>
                                 <td>Jednokratno čišćenje (jednostruki grob)</td>
-                                <td>od 200 €</td>
+                                <td>od 250 €<span className="sidrena">Cijena na 10. 9. 2026.: od 250 €</span></td>
                             </tr>
                             <tr>
                                 <td>Jednokratno čišćenje (dvostruki grob / grobnica)</td>
-                                <td>od 300 €</td>
+                                <td>od 300 €<span className="sidrena">Cijena na 10. 9. 2026.: od 300 €</span></td>
                             </tr>
                             <tr>
                                 <td>Poliranje kamena (uz čišćenje)</td>
-                                <td>od 150 €</td>
+                                <td>od 150 €<span className="sidrena">Cijena na 10. 9. 2026.: od 150 €</span></td>
                             </tr>
                             <tr>
                                 <td>Impregnacija (uz čišćenje)</td>
-                                <td>od 50 €</td>
+                                <td>od 50 €<span className="sidrena">Cijena na 10. 9. 2026.: od 50 €</span></td>
                             </tr>
                             <tr>
                                 <td>Predujam za rezervaciju</td>
@@ -298,7 +296,6 @@ export default function LandingPageClient() {
                             className={styles.btnPrimary}
                             style={{ display: 'inline-flex', width: '100%' }}
                             onClick={() => {
-                                // @ts-ignore
                                 window.dataLayer?.push({ event: 'quote_cta_click', cta_location: 'price' });
                             }}
                         >
@@ -431,7 +428,6 @@ export default function LandingPageClient() {
                             href="https://wa.me/385958442806?text=Bok,%20zanima%20me%20čišćenje%20grobnog%20mjesta.%20Groblje:%20"
                             className={styles.btnPrimary}
                             onClick={() => {
-                                // @ts-ignore
                                 window.dataLayer?.push({ event: 'whatsapp_click', cta_location: 'footer' });
                             }}
                         >
@@ -443,7 +439,6 @@ export default function LandingPageClient() {
                             className={styles.btnSecondary}
                             style={{ marginBottom: '1rem' }}
                             onClick={() => {
-                                // @ts-ignore
                                 window.dataLayer?.push({ event: 'call_click', cta_location: 'footer' });
                             }}
                         >
@@ -454,7 +449,6 @@ export default function LandingPageClient() {
                             href="#prijava"
                             style={{ color: '#6b7280', textDecoration: 'underline', fontWeight: 500 }}
                             onClick={() => {
-                                // @ts-ignore
                                 window.dataLayer?.push({ event: 'quote_cta_click', cta_location: 'footer' });
                             }}
                         >
@@ -470,7 +464,6 @@ export default function LandingPageClient() {
                     href="tel:+385954442806"
                     className={styles.stickyBtn}
                     onClick={() => {
-                        // @ts-ignore
                         window.dataLayer?.push({ event: 'call_click', cta_location: 'sticky_bar' });
                     }}
                 >
@@ -481,7 +474,6 @@ export default function LandingPageClient() {
                     href="https://wa.me/385958442806?text=Bok,%20zanima%20me%20čišćenje%20grobnog%20mjesta.%20Groblje:%20"
                     className={styles.stickyBtn}
                     onClick={() => {
-                        // @ts-ignore
                         window.dataLayer?.push({ event: 'whatsapp_click', cta_location: 'sticky_bar' });
                     }}
                 >
@@ -492,7 +484,6 @@ export default function LandingPageClient() {
                     href="#prijava"
                     className={`${styles.stickyBtn} ${styles.stickyBtnPrimary}`}
                     onClick={() => {
-                        // @ts-ignore
                         window.dataLayer?.push({ event: 'quote_cta_click', cta_location: 'sticky_bar' });
                     }}
                 >

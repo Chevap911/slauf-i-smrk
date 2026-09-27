@@ -11,8 +11,8 @@ export default function CookieBanner() {
     const updateConsent = (granted: boolean) => {
         const consentValue = granted ? 'granted' : 'denied';
         
-        if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
-            (window as any).gtag('consent', 'update', {
+        if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+            window.gtag('consent', 'update', {
                 'ad_storage': consentValue,
                 'ad_user_data': consentValue,
                 'ad_personalization': consentValue,
@@ -24,6 +24,8 @@ export default function CookieBanner() {
     useEffect(() => {
         const consentCookie = localStorage.getItem('cookie_consent');
         if (!consentCookie) {
+            // localStorage postoji tek u pregledniku, pa se banner može uključiti tek nakon mounta
+            // eslint-disable-next-line react-hooks/set-state-in-effect
             setShowBanner(true);
         } else if (consentCookie === 'granted') {
             updateConsent(true);
@@ -52,8 +54,8 @@ export default function CookieBanner() {
                     <div className={styles.title}>Postavke privatnosti i kolačića</div>
                     <div className={styles.description}>
                         Koristimo kolačiće kako bismo vam pružili najbolje iskustvo na našoj web stranici, analizirali promet i prikazivali personalizirane oglase. 
-                        Klikom na "Prihvaćam sve", pristajete na upotrebu svih kolačića. 
-                        Možete odabrati "Samo nužni" ako ne želite kolačiće za praćenje.
+                        Klikom na „Prihvaćam sve“, pristajete na upotrebu svih kolačića. 
+                        Možete odabrati „Samo nužni“ ako ne želite kolačiće za praćenje.
                     </div>
                 </div>
                 <div className={styles.actions}>

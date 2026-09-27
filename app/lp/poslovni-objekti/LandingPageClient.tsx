@@ -45,7 +45,6 @@ export default function LandingPageClient() {
                             href="https://wa.me/385958442806?text=Bok,%20zanima%20me%20čišćenje%20poslovnog%20objekta.%20Tip%20objekta:%20"
                             className={styles.btnPrimary}
                             onClick={() => {
-                                // @ts-ignore
                                 window.dataLayer?.push({ event: 'whatsapp_click', cta_location: 'hero' });
                             }}
                         >
@@ -56,7 +55,6 @@ export default function LandingPageClient() {
                             href="tel:+385958442806"
                             className={styles.btnSecondary}
                             onClick={() => {
-                                // @ts-ignore
                                 window.dataLayer?.push({ event: 'call_click', cta_location: 'hero' });
                             }}
                         >
@@ -194,7 +192,7 @@ export default function LandingPageClient() {
                         ].map((t) => (
                             <div key={t.name} style={{ background: 'var(--surface)', borderRadius: '1rem', padding: '1.5rem', border: '1px solid var(--border)' }}>
                                 <div style={{ fontSize: '1.25rem', color: '#fbbf24', marginBottom: '0.75rem' }}>★★★★★</div>
-                                <p style={{ fontSize: '0.95rem', color: '#374151', lineHeight: 1.6, fontStyle: 'italic', marginBottom: '1rem' }}>"{t.text}"</p>
+                                <p style={{ fontSize: '0.95rem', color: '#374151', lineHeight: 1.6, fontStyle: 'italic', marginBottom: '1rem' }}>„{t.text}“</p>
                                 <div>
                                     <strong style={{ display: 'block', fontSize: '0.9rem' }}>{t.name}</strong>
                                     <span style={{ fontSize: '0.8rem', color: '#6b7280' }}>{t.meta}</span>
@@ -230,7 +228,6 @@ export default function LandingPageClient() {
                             href="https://wa.me/385958442806?text=Bok,%20zanima%20me%20čišćenje%20poslovnog%20objekta.%20Tip%20objekta:%20"
                             className={styles.btnPrimary}
                             onClick={() => {
-                                // @ts-ignore
                                 window.dataLayer?.push({ event: 'whatsapp_click', cta_location: 'footer' });
                             }}
                         >
@@ -242,7 +239,6 @@ export default function LandingPageClient() {
                             className={styles.btnSecondary}
                             style={{ marginBottom: '1rem' }}
                             onClick={() => {
-                                // @ts-ignore
                                 window.dataLayer?.push({ event: 'call_click', cta_location: 'footer' });
                             }}
                         >
@@ -253,7 +249,6 @@ export default function LandingPageClient() {
                             href="#ponuda"
                             style={{ color: '#6b7280', textDecoration: 'underline', fontWeight: 500 }}
                             onClick={() => {
-                                // @ts-ignore
                                 window.dataLayer?.push({ event: 'quote_cta_click', cta_location: 'footer' });
                             }}
                         >
@@ -269,7 +264,6 @@ export default function LandingPageClient() {
                     href="tel:+385958442806"
                     className={styles.stickyBtn}
                     onClick={() => {
-                        // @ts-ignore
                         window.dataLayer?.push({ event: 'call_click', cta_location: 'sticky_bar' });
                     }}
                 >
@@ -280,7 +274,6 @@ export default function LandingPageClient() {
                     href="https://wa.me/385958442806?text=Bok,%20zanima%20me%20čišćenje%20poslovnog%20objekta.%20Tip%20objekta:%20"
                     className={styles.stickyBtn}
                     onClick={() => {
-                        // @ts-ignore
                         window.dataLayer?.push({ event: 'whatsapp_click', cta_location: 'sticky_bar' });
                     }}
                 >
@@ -291,7 +284,6 @@ export default function LandingPageClient() {
                     href="#ponuda"
                     className={`${styles.stickyBtn} ${styles.stickyBtnPrimary}`}
                     onClick={() => {
-                        // @ts-ignore
                         window.dataLayer?.push({ event: 'quote_cta_click', cta_location: 'sticky_bar' });
                     }}
                 >

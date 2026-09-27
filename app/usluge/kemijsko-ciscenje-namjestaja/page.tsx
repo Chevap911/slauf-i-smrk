@@ -28,7 +28,7 @@ const faqSchema = {
             name: "Koliko košta kemijsko čišćenje garniture?",
             acceptedAnswer: {
                 '@type': 'Answer',
-                text: "Cijena garniture (trosjed+dvosjed+fotelja) kreće se od 80 €. Točna cijena ovisi o veličini i materijalu. Besplatna procjena.",
+                text: "Cijena garniture (trosjed+dvosjed+fotelja) kreće se od 80 € (cijena na 10. 9. 2026.: od 80 €). Točna cijena ovisi o veličini i materijalu. Besplatna procjena.",
             },
         },
         {
@@ -100,7 +100,8 @@ export default function KemijskoCiscenjePage() {
             titleHighlight="Namještaja"
             canonicalPath="/usluge/kemijsko-ciscenje-namjestaja"
             description="Profesionalno dubinsko čišćenje tepiha, garnitura, madraca, stolica i autosjedala na vašoj adresi. Koristimo profesionalne injektirno-ekstrakcijske strojeve koji dubinski uklanjaju prljavštinu, grinje, alergene i mrlje. Vaš namještaj bit će čist, svjež i bez neugodnih mirisa."
-            priceHint="tepih od 5 €/m² · garnitura od 60 €"
+            priceHint="tepih od 5 €/m² · garnitura od 80 €"
+            priceAnchor="tepih od 5 €/m² · garnitura od 80 €"
             heroImage="/seo-results/kemijsko-ciscenje-namjestaja/poslije.jpeg"
             heroImageAlt="Garnitura nakon dubinskog kemijskog čišćenja"
             resultsShowcase={{
@@ -156,13 +157,13 @@ export default function KemijskoCiscenjePage() {
 
                     <h2>Koliko košta kemijsko čišćenje?</h2>
                     <ul>
-                        <li><strong>Tepih</strong>: od 5 €/m²</li>
-                        <li><strong>Trosjed</strong>: od 40 €</li>
-                        <li><strong>Dvosjed</strong>: od 30 €</li>
-                        <li><strong>Fotelja</strong>: od 20 €</li>
-                        <li><strong>Kompletna garnitura</strong> (3+2+1): od 80 €</li>
-                        <li><strong>Madrac</strong> (jednostruki): od 30 €</li>
-                        <li><strong>Madrac</strong> (bračni): od 40 €</li>
+                        <li><strong>Tepih</strong>: od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²)</li>
+                        <li><strong>Trosjed</strong>: od 40 € (cijena na 10. 9. 2026.: od 40 €)</li>
+                        <li><strong>Dvosjed</strong>: od 30 € (cijena na 10. 9. 2026.: od 30 €)</li>
+                        <li><strong>Fotelja</strong>: od 20 € (cijena na 10. 9. 2026.: od 20 €)</li>
+                        <li><strong>Kompletna garnitura</strong> (3+2+1): od 80 € (cijena na 10. 9. 2026.: od 80 €)</li>
+                        <li><strong>Madrac</strong> (jednostruki): od 30 € (cijena na 10. 9. 2026.: od 30 €)</li>
+                        <li><strong>Madrac</strong> (bračni): od 40 € (cijena na 10. 9. 2026.: od 40 €)</li>
                     </ul>
                     <p>
                         Za veće projekte i poslovne prostore nudimo posebne cijene. Čišćenje obavljamo
@@ -240,7 +241,7 @@ export default function KemijskoCiscenjePage() {
             faq={[
                 {
                     question: 'Koliko košta kemijsko čišćenje garniture?',
-                    answer: 'Cijena garniture (trosjed+dvosjed+fotelja) kreće se od 80 €. Točna cijena ovisi o veličini i materijalu. Besplatna procjena.',
+                    answer: 'Cijena garniture (trosjed+dvosjed+fotelja) kreće se od 80 € (cijena na 10. 9. 2026.: od 80 €). Točna cijena ovisi o veličini i materijalu. Besplatna procjena.',
                 },
                 {
                     question: 'Koliko dugo traje sušenje nakon čišćenja?',

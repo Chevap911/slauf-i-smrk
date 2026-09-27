@@ -2,15 +2,16 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft, Phone, ArrowRight } from 'lucide-react';
 import styles from './article.module.css';
+import ArticleQuote from '@/components/ArticleQuote/ArticleQuote';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Koliko košta čišćenje grobnog mjesta 2026 | Šlauf i Šmrk',
-    description: 'Čišćenje grobnih mjesta u Zagrebu: jednostruki grob od 250 €, dvostruki od 300 €. Poliranje, impregnacija, Mirogoj i sva groblja.',
+    description: 'Čišćenje grobnih mjesta u Zagrebu: jednostruki grob od 250 €, dvostruki od 300 € (na 10. 9. 2026.: od 250 € i od 300 €). Mirogoj i sva groblja.',
     alternates: { canonical: '/blog/koliko-kosta-ciscenje-grobnog-mjesta' },
     openGraph: {
         title: 'Koliko košta čišćenje grobnog mjesta? Cijene 2026.',
-        description: 'Realne cijene čišćenja nadgrobnih spomenika u Zagrebu. Jednostruki grob od 250 €, dvostruki od 300 €. Bez skrivenih troškova.',
+        description: 'Realne cijene čišćenja nadgrobnih spomenika u Zagrebu. Jednostruki grob od 250 €, dvostruki od 300 € (na 10. 9. 2026.: od 250 € i od 300 €). Bez skrivenih troškova.',
         url: 'https://slaufismrk.com/blog/koliko-kosta-ciscenje-grobnog-mjesta',
         type: 'article',
         images: [OG_IMAGE],
@@ -47,7 +48,7 @@ export default function BlogArticle() {
         '@context': 'https://schema.org',
         '@type': 'Article',
         headline: 'Koliko košta čišćenje grobnog mjesta? Cijene održavanja spomenika u Zagrebu 2026.',
-        description: 'Cijene profesionalnog čišćenja grobnih mjesta u Zagrebu: od 250 € za jednostruki grob. Poliranje, impregnacija i sva zagrebačka groblja.',
+        description: 'Cijene profesionalnog čišćenja grobnih mjesta u Zagrebu: od 250 € za jednostruki grob (na 10. 9. 2026.: od 250 €). Poliranje, impregnacija i sva zagrebačka groblja.',
         author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         datePublished: '2026-07-08',
@@ -63,7 +64,7 @@ export default function BlogArticle() {
                 name: 'Koliko košta čišćenje grobnog mjesta u Zagrebu?',
                 acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'Čišćenje jednostrukog grobnog mjesta kreće od 250 €, dvostrukog od 300 €. Poliranje kamena se naplaćuje od 150 €, a impregnacija od 50 €. Konačna cijena ovisi o veličini, vrsti kamena i stupnju zaprljanosti.',
+                    text: 'Čišćenje jednostrukog grobnog mjesta kreće od 250 €, dvostrukog od 300 €. Poliranje kamena se naplaćuje od 150 €, a impregnacija od 50 €. Cijene na 10. 9. 2026.: od 250 €, od 300 €, od 150 € i od 50 €. Konačna cijena ovisi o veličini, vrsti kamena i stupnju zaprljanosti.',
                 },
             },
             {
@@ -149,6 +150,11 @@ export default function BlogArticle() {
                             U ovom tekstu donosimo konkretne cijene čišćenja grobnih mjesta u Zagrebu, što sve
                             usluga uključuje i kako funkcionira rezervacija.
                         </p>
+                        <p>
+                            Najviše ljudi grob sređuje uoči Svih svetih, 1. studenoga. Ako želite da bude čist do tada,
+                            pošaljite sliku groba na WhatsApp i recite na kojem je groblju, pa vam javimo cijenu i slobodan
+                            termin. Nakon čišćenja dobivate fotografije, pa grob ne morate ni obilaziti.
+                        </p>
 
                         <h2>Cijene čišćenja grobnih mjesta u Zagrebu</h2>
                         <p>
@@ -160,23 +166,23 @@ export default function BlogArticle() {
                         <div className={styles.priceTable}>
                             <div className={styles.priceRow}>
                                 <span>Jednostruki grob (čišćenje)</span>
-                                <strong>od 250 €</strong>
+                                <strong>od 250 €<span className="sidrena">Cijena na 10. 9. 2026.: od 250 €</span></strong>
                             </div>
                             <div className={styles.priceRow}>
                                 <span>Dvostruki grob ili grobnica</span>
-                                <strong>od 300 €</strong>
+                                <strong>od 300 €<span className="sidrena">Cijena na 10. 9. 2026.: od 300 €</span></strong>
                             </div>
                             <div className={styles.priceRow}>
                                 <span>Poliranje kamena (mramor, granit)</span>
-                                <strong>od 150 €</strong>
+                                <strong>od 150 €<span className="sidrena">Cijena na 10. 9. 2026.: od 150 €</span></strong>
                             </div>
                             <div className={styles.priceRow}>
                                 <span>Impregnacija (zaštita 2-3 godine)</span>
-                                <strong>od 50 €</strong>
+                                <strong>od 50 €<span className="sidrena">Cijena na 10. 9. 2026.: od 50 €</span></strong>
                             </div>
                             <div className={styles.priceRow}>
                                 <span>Čišćenje + poliranje + impregnacija (komplet)</span>
-                                <strong>od 400 €</strong>
+                                <strong>od 400 €<span className="sidrena">Cijena na 10. 9. 2026.: od 400 €</span></strong>
                             </div>
                         </div>
 
@@ -186,6 +192,13 @@ export default function BlogArticle() {
                             površinskim nakupinama. Kad nam pošaljete fotografiju groba, dajemo vam točnu cijenu
                             prije nego potvrdite rezervaciju.
                         </p>
+
+                        <ArticleQuote
+                            location="blog-grob-cijena"
+                            title="Pošaljite sliku groba, javimo cijenu"
+                            whatsappText="Pozdrav, zanima me čišćenje groba. Šaljem sliku i groblje."
+                            whatsappLabel="Pošaljite sliku groba na WhatsApp"
+                        />
 
                         <h2>Što utječe na cijenu?</h2>
 
@@ -298,7 +311,7 @@ export default function BlogArticle() {
                                 <h3>Koliko košta čišćenje grobnog mjesta u Zagrebu?</h3>
                                 <p>
                                     Jednostruki grob od 250 €, dvostruki ili grobnica od 300 €. Poliranje
-                                    kamena od 150 €, impregnacija od 50 €. Točnu cijenu za vaš slučaj dajemo
+                                    kamena od 150 €, impregnacija od 50 €. Cijene na 10. 9. 2026.: od 250 €, od 300 €, od 150 € i od 50 €. Točnu cijenu za vaš slučaj dajemo
                                     nakon što pošaljete fotografiju groba.
                                 </p>
                             </div>

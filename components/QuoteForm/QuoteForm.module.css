@@ -172,7 +172,8 @@
     align-items: center;
     justify-content: center;
     gap: 0.4rem;
-    margin-top: 0.7rem;
+    min-height: 44px;
+    margin-top: 0.35rem;
     color: var(--secondary);
     font-size: 0.85rem;
     font-weight: 600;

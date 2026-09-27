@@ -44,7 +44,6 @@ export default function StickyCtaBanner() {
                             href="tel:+385958442806" 
                             className={styles.phoneBtn}
                             onClick={() => {
-                                // @ts-ignore
                                 window.dataLayer?.push({ event: 'call_click', cta_location: 'sticky_banner' });
                             }}
                         >
@@ -57,7 +56,6 @@ export default function StickyCtaBanner() {
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={() => {
-                                // @ts-ignore
                                 window.dataLayer?.push({ event: 'whatsapp_click', cta_location: 'sticky_banner' });
                             }}
                         >

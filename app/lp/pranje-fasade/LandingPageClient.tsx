@@ -48,7 +48,6 @@ export default function LandingPageClient() {
                             href="https://wa.me/385958442806?text=Bok,%20zanima%20me%20pranje%20fasade.%20Mogu%20poslati%20slike%20za%20okvirnu%20procjenu.%20Lokacija:%20" 
                             className={styles.btnPrimary}
                             onClick={() => {
-                                // @ts-ignore
                                 window.dataLayer?.push({ event: "whatsapp_click", cta_location: "hero" });
                             }}
                         >
@@ -59,7 +58,6 @@ export default function LandingPageClient() {
                             href="tel:+385958442806" 
                             className={styles.btnSecondary}
                             onClick={() => {
-                                // @ts-ignore
                                 window.dataLayer?.push({ event: "call_click", cta_location: "hero" });
                             }}
                         >
@@ -93,7 +91,6 @@ export default function LandingPageClient() {
                             className={styles.btnPrimary}
                             style={{ display: 'inline-flex', width: 'auto', minWidth: '250px' }}
                             onClick={() => {
-                                // @ts-ignore
                                 window.dataLayer?.push({ event: "quote_cta_click", cta_location: "before_after" });
                             }}
                         >
@@ -186,15 +183,15 @@ export default function LandingPageClient() {
                         <tbody>
                             <tr>
                                 <td>100 m²</td>
-                                <td>od 500 €</td>
+                                <td>od 500 €<span className="sidrena">Cijena na 10. 9. 2026.: od 500 €</span></td>
                             </tr>
                             <tr>
                                 <td>200 m²</td>
-                                <td>od 1.000 €</td>
+                                <td>od 1.000 €<span className="sidrena">Cijena na 10. 9. 2026.: od 1.000 €</span></td>
                             </tr>
                             <tr>
                                 <td>300 m²</td>
-                                <td>od 1.500 €</td>
+                                <td>od 1.500 €<span className="sidrena">Cijena na 10. 9. 2026.: od 1.500 €</span></td>
                             </tr>
                             <tr>
                                 <td>500 m²+</td>
@@ -209,7 +206,6 @@ export default function LandingPageClient() {
                             className={styles.btnPrimary}
                             style={{ display: 'inline-flex', width: '100%' }}
                             onClick={() => {
-                                // @ts-ignore
                                 window.dataLayer?.push({ event: "quote_cta_click", cta_location: "price" });
                             }}
                         >
@@ -300,7 +296,6 @@ export default function LandingPageClient() {
                             href="https://wa.me/385958442806?text=Bok,%20zanima%20me%20pranje%20fasade.%20Mogu%20poslati%20slike%20za%20okvirnu%20procjenu.%20Lokacija:%20" 
                             className={styles.btnPrimary}
                             onClick={() => {
-                                // @ts-ignore
                                 window.dataLayer?.push({ event: "whatsapp_click", cta_location: "footer" });
                             }}
                         >
@@ -312,7 +307,6 @@ export default function LandingPageClient() {
                             className={styles.btnSecondary}
                             style={{ marginBottom: '1rem' }}
                             onClick={() => {
-                                // @ts-ignore
                                 window.dataLayer?.push({ event: "call_click", cta_location: "footer" });
                             }}
                         >
@@ -323,7 +317,6 @@ export default function LandingPageClient() {
                             href="#procjena" 
                             style={{ color: '#6b7280', textDecoration: 'underline', fontWeight: 500 }}
                             onClick={() => {
-                                // @ts-ignore
                                 window.dataLayer?.push({ event: "quote_cta_click", cta_location: "footer" });
                             }}
                         >
@@ -339,7 +332,6 @@ export default function LandingPageClient() {
                     href="tel:+385958442806" 
                     className={styles.stickyBtn}
                     onClick={() => {
-                        // @ts-ignore
                         window.dataLayer?.push({ event: "call_click", cta_location: "sticky_bar" });
                     }}
                 >
@@ -350,7 +342,6 @@ export default function LandingPageClient() {
                     href="https://wa.me/385958442806?text=Bok,%20zanima%20me%20pranje%20fasade.%20Mogu%20poslati%20slike%20za%20okvirnu%20procjenu.%20Lokacija:%20" 
                     className={styles.stickyBtn}
                     onClick={() => {
-                        // @ts-ignore
                         window.dataLayer?.push({ event: "whatsapp_click", cta_location: "sticky_bar" });
                     }}
                 >
@@ -361,7 +352,6 @@ export default function LandingPageClient() {
                     href="#procjena" 
                     className={`${styles.stickyBtn} ${styles.stickyBtnPrimary}`}
                     onClick={() => {
-                        // @ts-ignore
                         window.dataLayer?.push({ event: "quote_cta_click", cta_location: "sticky_bar" });
                     }}
                 >

@@ -95,7 +95,6 @@ export default function Navigation() {
                             href="tel:+385958442806" 
                             className="btn btn-primary"
                             onClick={() => {
-                                // @ts-ignore
                                 window.dataLayer?.push({ event: 'call_click', cta_location: 'navigacija_desktop' });
                             }}
                         >
@@ -110,7 +109,6 @@ export default function Navigation() {
                             className={styles.mobilePhoneBtn} 
                             aria-label="Nazovite nas"
                             onClick={() => {
-                                // @ts-ignore
                                 window.dataLayer?.push({ event: 'call_click', cta_location: 'navigacija_mobile_icon' });
                             }}
                         >
@@ -153,7 +151,6 @@ export default function Navigation() {
                             href="tel:+385958442806" 
                             className={`btn btn-primary ${styles.mobileCtaBtn}`}
                             onClick={() => {
-                                // @ts-ignore
                                 window.dataLayer?.push({ event: 'call_click', cta_location: 'navigacija_mobile_menu' });
                             }}
                         >

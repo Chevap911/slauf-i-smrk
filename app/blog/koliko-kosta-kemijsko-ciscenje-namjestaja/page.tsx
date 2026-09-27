@@ -3,12 +3,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowLeft, Phone, ArrowRight } from 'lucide-react';
 import styles from './article.module.css';
+import ArticleQuote from '@/components/ArticleQuote/ArticleQuote';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Koliko košta kemijsko čišćenje namještaja | Šlauf i Šmrk',
     description:
-        'Kemijsko čišćenje garniture od 80 €, trosjed od 40 €, madrac od 30 €, tepih od 5 €/m². Realne cijene dubinskog čišćenja u Zagrebu.',
+        'Kemijsko čišćenje garniture od 80 € (na 10. 9. 2026.: od 80 €), trosjeda, madraca i tepiha. Realne cijene dubinskog čišćenja u Zagrebu.',
     alternates: { canonical: '/blog/koliko-kosta-kemijsko-ciscenje-namjestaja' },
     openGraph: {
         title: 'Koliko košta kemijsko čišćenje namještaja? Cijene 2026.',
@@ -68,7 +69,7 @@ export default function BlogArticle() {
                 name: 'Koliko košta kemijsko čišćenje garniture u Zagrebu?',
                 acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'Kompletna garnitura (trosjed, dvosjed i fotelja) kreće se od 80 €. Pojedinačno: trosjed od 40 €, dvosjed od 30 €, fotelja od 20 €. Točna cijena ovisi o veličini, materijalu i zaprljanosti, a potvrđujemo je besplatnom procjenom prije početka.',
+                    text: 'Kompletna garnitura (trosjed, dvosjed i fotelja) kreće se od 80 €. Pojedinačno: trosjed od 40 €, dvosjed od 30 €, fotelja od 20 €. Cijene na 10. 9. 2026.: od 80 €, od 40 €, od 30 € i od 20 €. Točna cijena ovisi o veličini, materijalu i zaprljanosti, a potvrđujemo je besplatnom procjenom prije početka.',
                 },
             },
             {
@@ -151,31 +152,31 @@ export default function BlogArticle() {
                         <div className={styles.priceTable}>
                             <div className={styles.priceRow}>
                                 <span>Kompletna garnitura (3+2+1)</span>
-                                <strong>od 80 €</strong>
+                                <strong>od 80 €<span className="sidrena">Cijena na 10. 9. 2026.: od 80 €</span></strong>
                             </div>
                             <div className={styles.priceRow}>
                                 <span>Trosjed</span>
-                                <strong>od 40 €</strong>
+                                <strong>od 40 €<span className="sidrena">Cijena na 10. 9. 2026.: od 40 €</span></strong>
                             </div>
                             <div className={styles.priceRow}>
                                 <span>Dvosjed</span>
-                                <strong>od 30 €</strong>
+                                <strong>od 30 €<span className="sidrena">Cijena na 10. 9. 2026.: od 30 €</span></strong>
                             </div>
                             <div className={styles.priceRow}>
                                 <span>Fotelja</span>
-                                <strong>od 20 €</strong>
+                                <strong>od 20 €<span className="sidrena">Cijena na 10. 9. 2026.: od 20 €</span></strong>
                             </div>
                             <div className={styles.priceRow}>
                                 <span>Madrac (jednostruki)</span>
-                                <strong>od 30 €</strong>
+                                <strong>od 30 €<span className="sidrena">Cijena na 10. 9. 2026.: od 30 €</span></strong>
                             </div>
                             <div className={styles.priceRow}>
                                 <span>Madrac (bračni)</span>
-                                <strong>od 40 €</strong>
+                                <strong>od 40 €<span className="sidrena">Cijena na 10. 9. 2026.: od 40 €</span></strong>
                             </div>
                             <div className={styles.priceRow}>
                                 <span>Tepih</span>
-                                <strong>od 5 € po m²</strong>
+                                <strong>od 5 € po m²<span className="sidrena">Cijena na 10. 9. 2026.: od 5 € po m²</span></strong>
                             </div>
                         </div>
                         <p>
@@ -204,6 +205,13 @@ export default function BlogArticle() {
                                 <span className={styles.beforeAfterLabel}>Naš rad</span>
                             </div>
                         </div>
+
+                        <ArticleQuote
+                            location="blog-kemijsko-cijena"
+                            title="Pošaljite sliku namještaja, javimo cijenu"
+                            whatsappText="Pozdrav, zanima me kemijsko čišćenje namještaja. Šaljem slike."
+                            whatsappLabel="Pošaljite slike na WhatsApp"
+                        />
 
                         <h2>Od čega ovisi konačna cijena?</h2>
 
@@ -265,7 +273,7 @@ export default function BlogArticle() {
                                 <h3>Koliko košta kemijsko čišćenje garniture u Zagrebu?</h3>
                                 <p>
                                     Kompletna garnitura (trosjed, dvosjed i fotelja) od 80 €. Pojedinačno: trosjed od 40 €, dvosjed od
-                                    30 €, fotelja od 20 €. Točnu cijenu potvrđujemo besplatnom procjenom.
+                                    30 €, fotelja od 20 €. Cijene na 10. 9. 2026.: od 80 €, od 40 €, od 30 € i od 20 €. Točnu cijenu potvrđujemo besplatnom procjenom.
                                 </p>
                             </div>
                             <div className={styles.faqItem}>

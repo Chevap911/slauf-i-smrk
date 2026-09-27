@@ -28,7 +28,7 @@ const faqSchema = {
             name: "Koliko košta čišćenje bazena?",
             acceptedAnswer: {
                 '@type': 'Answer',
-                text: "Početna cijena čišćenja bazena kreće od 600 €, a konačna cijena ovisi o veličini bazena, stanju površina i tome uključuje li ponuda i obodni kamen ili terasu.",
+                text: "Početna cijena čišćenja bazena kreće od 600 € (cijena na 10. 9. 2026.: od 600 €), a konačna cijena ovisi o veličini bazena, stanju površina i tome uključuje li ponuda i obodni kamen ili terasu.",
             },
         },
         {
@@ -101,6 +101,7 @@ export default function PranjeBasenapPage() {
             canonicalPath="/usluge/pranje-bazena"
             description="Pripremite bazen za sezonu kupanja ili ga očistite nakon ljeta. Profesionalno čistimo stijenke bazena, obodni kamen, terasu oko bazena i sve prateće površine. Uklanjamo alge, naslage i nakupljenu prljavštinu za kristalno čistu vodu i siguran prostor za kupanje."
             priceHint="od 600 €"
+            priceAnchor="od 600 €"
             processSteps={[
                 {
                     title: 'Ispuštanje vode',
@@ -148,7 +149,7 @@ export default function PranjeBasenapPage() {
 
                     <h2>Cijena čišćenja bazena</h2>
                     <ul>
-                        <li><strong>Početna cijena usluge</strong>: od 600 €</li>
+                        <li><strong>Početna cijena usluge</strong>: od 600 € (cijena na 10. 9. 2026.: od 600 €)</li>
                         <li><strong>Konačna cijena</strong>: ovisi o veličini bazena, stanju stijenki, kalcifikacijama i opsegu čišćenja okolnih površina.</li>
                     </ul>
                     <p>
@@ -212,7 +213,7 @@ export default function PranjeBasenapPage() {
             faq={[
                 {
                     question: 'Koliko košta čišćenje bazena?',
-                    answer: 'Početna cijena čišćenja bazena kreće od 600 €, a konačna cijena ovisi o veličini bazena, stanju površina i tome uključuje li ponuda i obodni kamen ili terasu.',
+                    answer: 'Početna cijena čišćenja bazena kreće od 600 € (cijena na 10. 9. 2026.: od 600 €), a konačna cijena ovisi o veličini bazena, stanju površina i tome uključuje li ponuda i obodni kamen ili terasu.',
                 },
                 {
                     question: 'Trebam li ispustiti vodu prije čišćenja?',
