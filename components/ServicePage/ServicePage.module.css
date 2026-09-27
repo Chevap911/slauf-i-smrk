@@ -905,3 +905,12 @@
         padding-top: 4.5rem;
     }
 }
+
+/* Naslov na računalu 3,5x veći od teksta (judge rubrika, 28. 9. 2026.; bio 2,5rem = 2,4x) */
+@media (min-width: 992px) {
+    .heroText h1 {
+        font-size: clamp(2.75rem, 3.9vw, 3.5rem);
+        line-height: 1.06;
+        letter-spacing: -0.025em;
+    }
+}

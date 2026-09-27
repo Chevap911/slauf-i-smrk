@@ -156,8 +156,9 @@
   }
 
   .heroIntro .title {
-    font-size: 3rem;
-    line-height: 1.12;
+    font-size: clamp(2.5rem, 3.9vw, 3.5rem);
+    line-height: 1.06;
+    letter-spacing: -0.025em;
   }
 
   .heroForm > :first-child {
