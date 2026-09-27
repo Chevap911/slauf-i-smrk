@@ -64,7 +64,7 @@ export default function BlogArticle() {
                 name: 'Koliko košta čišćenje grobnog mjesta u Zagrebu?',
                 acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'Čišćenje jednostrukog grobnog mjesta kreće od 250 €, dvostrukog od 300 €. Poliranje kamena se naplaćuje od 150 €, a impregnacija od 50 €. Cijene na 10. 9. 2026.: od 250 €, od 300 €, od 150 € i od 50 €. Konačna cijena ovisi o veličini, vrsti kamena i stupnju zaprljanosti.',
+                    text: 'Čišćenje jednostrukog grobnog mjesta kreće od 250 €, dvostrukog od 300 €. Poliranje kamena se naplaćuje od 150 €, a impregnacija 100 €. Cijene na 10. 9. 2026.: od 250 €, od 300 €, od 150 € i od 50 €. Konačna cijena ovisi o veličini, vrsti kamena i stupnju zaprljanosti.',
                 },
             },
             {
@@ -178,7 +178,7 @@ export default function BlogArticle() {
                             </div>
                             <div className={styles.priceRow}>
                                 <span>Impregnacija (zaštita 2-3 godine)</span>
-                                <strong>od 50 €<span className="sidrena">Cijena na 10. 9. 2026.: od 50 €</span></strong>
+                                <strong>100 €<span className="sidrena">Cijena na 10. 9. 2026.: od 50 €</span></strong>
                             </div>
                             <div className={styles.priceRow}>
                                 <span>Čišćenje + poliranje + impregnacija (komplet)</span>
@@ -311,7 +311,7 @@ export default function BlogArticle() {
                                 <h3>Koliko košta čišćenje grobnog mjesta u Zagrebu?</h3>
                                 <p>
                                     Jednostruki grob od 250 €, dvostruki ili grobnica od 300 €. Poliranje
-                                    kamena od 150 €, impregnacija od 50 €. Cijene na 10. 9. 2026.: od 250 €, od 300 €, od 150 € i od 50 €. Točnu cijenu za vaš slučaj dajemo
+                                    kamena od 150 €, impregnacija 100 €. Cijene na 10. 9. 2026.: od 250 €, od 300 €, od 150 € i od 50 €. Točnu cijenu za vaš slučaj dajemo
                                     nakon što pošaljete fotografiju groba.
                                 </p>
                             </div>

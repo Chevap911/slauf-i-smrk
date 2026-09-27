@@ -269,7 +269,7 @@ export default function LandingPageClient() {
                             </tr>
                             <tr>
                                 <td>Impregnacija (uz čišćenje)</td>
-                                <td>od 50 €<span className="sidrena">Cijena na 10. 9. 2026.: od 50 €</span></td>
+                                <td>100 €<span className="sidrena">Cijena na 10. 9. 2026.: od 50 €</span></td>
                             </tr>
                             <tr>
                                 <td>Predujam za rezervaciju</td>

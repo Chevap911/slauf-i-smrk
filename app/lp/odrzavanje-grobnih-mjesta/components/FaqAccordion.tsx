@@ -38,7 +38,7 @@ const faqData = [
     },
     {
         question: 'Mogu li dodati poliranje i impregnaciju?',
-        answer: 'Da. Poliranje vraća sjaj kamenu (od 150 €, cijena na 10. 9. 2026.: od 150 €), a impregnacija ga štiti 2–3 godine od mahovine, vode i prljavštine (od 50 €, cijena na 10. 9. 2026.: od 50 €). To su dodatne usluge uz nadoplatu, predložit ćemo vam najbolju opciju nakon procjene groba.'
+        answer: 'Da. Poliranje vraća sjaj kamenu (od 150 €, cijena na 10. 9. 2026.: od 150 €), a impregnacija ga štiti 2–3 godine od mahovine, vode i prljavštine (100 €, cijena na 10. 9. 2026.: od 50 €). To su dodatne usluge uz nadoplatu, predložit ćemo vam najbolju opciju nakon procjene groba.'
     },
     {
         question: 'Što ako se neke fleke ne mogu skinuti?',

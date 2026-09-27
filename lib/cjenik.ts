@@ -23,7 +23,7 @@ export type Jedinica = 'm2' | 'usluga' | 'komad';
 
 export type Iznos = {
     min: number;
-    /** Gornja granica raspona. Bez nje se cijena ispisuje kao "od X €". */
+    /** Gornja granica raspona. Bez nje se cijena ispisuje kao "od X €", a kad je jednaka min, kao fiksna cijena. */
     max?: number;
 };
 
@@ -66,7 +66,8 @@ export const CJENIK: Kategorija[] = [
             { naziv: 'Čišćenje jednostrukog groba', jedinica: 'usluga', ...isto(250) },
             { naziv: 'Čišćenje dvostrukog groba ili grobnice', jedinica: 'usluga', ...isto(300) },
             { naziv: 'Poliranje kamena', jedinica: 'usluga', ...isto(150), napomena: 'uz čišćenje' },
-            { naziv: 'Impregnacija kamena', jedinica: 'usluga', ...isto(50), napomena: 'uz čišćenje' },
+            // Marko 27. 9. 2026.: fiksno 100 €. Na dan 10. 9. na webu je pisalo "od 50 €", to ostaje sidrena.
+            { naziv: 'Impregnacija groba', jedinica: 'usluga', cijena: { min: 100, max: 100 }, sidrena: { min: 50 }, napomena: 'uz čišćenje' },
             { naziv: 'Čišćenje, poliranje i impregnacija (komplet)', jedinica: 'usluga', ...isto(400) },
         ],
     },
@@ -108,7 +109,7 @@ const broj = (n: number) =>
 /** "5–7 €/m²", "od 250 €", "1,50–2,50 €/m²" */
 export function formatIznos(iznos: Iznos, jedinica: Jedinica): string {
     const po = jedinica === 'm2' ? ' €/m²' : ' €';
-    return iznos.max === undefined
-        ? `od ${broj(iznos.min)}${po}`
-        : `${broj(iznos.min)}–${broj(iznos.max)}${po}`;
+    if (iznos.max === undefined) return `od ${broj(iznos.min)}${po}`;
+    if (iznos.max === iznos.min) return `${broj(iznos.min)}${po}`;
+    return `${broj(iznos.min)}–${broj(iznos.max)}${po}`;
 }

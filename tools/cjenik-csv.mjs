@@ -25,9 +25,9 @@ const broj = (n) => n.toFixed(2).replace('.', ',');
 const jedinica = (j) => ({ m2: 'm2', usluga: 'usluga', komad: 'komad' })[j];
 const tekst = (iznos, j) => {
     const po = j === 'm2' ? ' EUR/m2' : ' EUR';
-    return iznos.max === undefined
-        ? `od ${broj(iznos.min)}${po}`
-        : `${broj(iznos.min)}-${broj(iznos.max)}${po}`;
+    if (iznos.max === undefined) return `od ${broj(iznos.min)}${po}`;
+    if (iznos.max === iznos.min) return `${broj(iznos.min)}${po}`;
+    return `${broj(iznos.min)}-${broj(iznos.max)}${po}`;
 };
 const polje = (v) => {
     const s = String(v ?? '');
