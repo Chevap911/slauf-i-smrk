@@ -182,10 +182,12 @@ const getEstimatedPrice = (formData: FormState) => {
         }
 
         const rate = SURFACE_SERVICE_RATES[formData.service];
+        // Cjenik: okućnica i terasa do 50 m² od 200 €
+        const floor = formData.service === 'yard' || formData.service === 'terrace' ? 200 : 0;
 
         return {
-            min: roundPrice(area * rate.min),
-            max: roundPrice(area * rate.max),
+            min: Math.max(floor, roundPrice(area * rate.min)),
+            max: Math.max(floor, roundPrice(area * rate.max)),
         };
     }
 

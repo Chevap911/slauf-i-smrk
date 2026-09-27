@@ -48,25 +48,21 @@ export default function LeadForm() {
         }
 
         const area = Number(form.area);
-        let minRate = 2;
-        let maxRate = 4;
+        // Stope iz cjenika (lib/cjenik.ts). Do 27. 9. 2026. ovdje je stajalo 2–4 €/m²,
+        // upola ispod cjenika.
+        let minRate = 4;
+        let maxRate = 6;
 
         switch (form.facadeType) {
-            case 'Tlakavci':
-                minRate = 2; maxRate = 4; break;
-            case 'Beton / Asfalt':
-                minRate = 2; maxRate = 3; break;
             case 'Kamene ploče':
-                minRate = 3; maxRate = 5; break;
-            case 'Cijela okućnica':
-                minRate = 2; maxRate = 4; break;
+                minRate = 5; maxRate = 7; break;
             default:
-                minRate = 2; maxRate = 4; break;
+                minRate = 4; maxRate = 6; break;
         }
 
         return {
-            min: area * minRate,
-            max: area * maxRate,
+            min: Math.max(200, area * minRate),
+            max: Math.max(200, area * maxRate),
         };
     }, [form.area, form.facadeType, form.unknownArea]);
 
@@ -243,7 +239,7 @@ export default function LeadForm() {
 
                 {priceRange && (
                     <div className={styles.priceEstimate}>
-                        <div className={styles.priceValue}>Okvirni raspon: {priceRange.min} – {priceRange.max} €</div>
+                        <div className={styles.priceValue}>{priceRange.min === priceRange.max ? `Okvirna cijena: od ${priceRange.min} €` : `Okvirni raspon: ${priceRange.min} – ${priceRange.max} €`}</div>
                         <div className={styles.priceNote}>Konačna cijena ovisi o stanju podloge, stupnju zaprljanosti i pristupu.</div>
                         <div className={styles.priceNote}>Cijene po m² i cijene na 10. 9. 2026. su u <a href="/cjenik">cjeniku</a>.</div>
                     </div>

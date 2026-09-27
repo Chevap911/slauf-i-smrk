@@ -29,7 +29,9 @@ function computeEstimate(service: string, size: string): { min: number; max: num
     const rate = RATES[service];
     const area = parseFloat((size || '').replace(',', '.'));
     if (!rate || !area || area <= 0) return null;
-    return { min: Math.round(area * rate[0]), max: Math.round(area * rate[1]) };
+    // Cjenik: okućnica i terasa do 50 m² od 200 €
+    const floor = service === 'yard' || service === 'terrace' ? 200 : 0;
+    return { min: Math.max(floor, Math.round(area * rate[0])), max: Math.max(floor, Math.round(area * rate[1])) };
 }
 
 type QuoteFormProps = {
@@ -109,7 +111,7 @@ export default function QuoteForm({ idPrefix = 'qf', hideHeading = false, initia
                     <>
                         <div className={styles.estimate}>
                             <span className={styles.estimateLabel}>Okvirna cijena za vašu površinu</span>
-                            <strong className={styles.estimateValue}>{sentEstimate.min} – {sentEstimate.max} €</strong>
+                            <strong className={styles.estimateValue}>{sentEstimate.min === sentEstimate.max ? `od ${sentEstimate.min} €` : `${sentEstimate.min} – ${sentEstimate.max} €`}</strong>
                             <span className={styles.estimateNote}>Informativno, konačnu cijenu potvrđujemo nakon besplatne procjene.</span>
                             <span className={styles.estimateNote}>Cijene po m² i cijene na 10. 9. 2026. su u <a href="/cjenik">cjeniku</a>.</span>
                         </div>
