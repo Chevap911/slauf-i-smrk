@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Phone, ArrowRight, ChevronRight } from 'lucide-react';
 import BeforeAfterSlider from '@/components/BeforeAfterSlider/BeforeAfterSlider';
+import QuoteCard from '@/components/QuoteCard/QuoteCard';
 import styles from './ServicePage.module.css';
 
 // Područja koja imaju svoju stranicu -> interni link
@@ -82,6 +83,10 @@ export interface ServicePageProps {
     serviceAreas?: string[];
     detailedContent?: React.ReactNode;
     resultsShowcase?: ServiceResultsShowcase;
+    /** Usluga odabrana u formi u vrhu stranice (id iz QuoteForm). */
+    quoteService?: string;
+    /** Naslov kartice s formom, npr. "Koliko bi pranje vaše fasade koštalo?" */
+    quoteTitle?: string;
 }
 
 export default function ServicePage({
@@ -103,6 +108,8 @@ export default function ServicePage({
     serviceAreas,
     detailedContent,
     resultsShowcase,
+    quoteService = '',
+    quoteTitle,
 }: ServicePageProps) {
     const baseUrl = 'https://slaufismrk.com';
     const serviceUrl = canonicalPath ? `${baseUrl}${canonicalPath}` : undefined;
@@ -244,9 +251,9 @@ export default function ServicePage({
                             </div>
 
                             <div className={styles.heroBtns}>
-                                <Link href="/#kontakt" className={styles.heroCta}>
+                                <a href="#procjena" className={styles.heroCta}>
                                     Zatražite besplatnu procjenu
-                                </Link>
+                                </a>
                                 <a 
                                     href={`https://wa.me/385958442806?text=${encodeURIComponent(`Bok! Zanima me procjena za uslugu ${title}...`)}`}
                                     className={styles.whatsappBtn}
@@ -268,46 +275,59 @@ export default function ServicePage({
                                         window.dataLayer?.push({ event: 'call_click', cta_location: 'service_page_hero' });
                                     }}
                                 >
-                                    📞 095 844 2806
+                                    <Phone size={18} /> 095 844 2806
                                 </a>
                             </div>
                         </div>
 
                         <div className={styles.heroVisual}>
-                            <div className={styles.heroImage}>
-                                {heroImage ? (
-                                    <>
-                                        <Image
-                                            src={heroImage}
-                                            alt={heroImageAlt ?? title}
-                                            fill
-                                            className={styles.heroImg}
-                                            sizes="(max-width: 992px) 100vw, 42vw"
-                                        />
-                                        <div className={styles.heroImageBadge}>
-                                            <span>Stvarni projekt</span>
-                                            <strong>Rezultat nakon čišćenja</strong>
-                                        </div>
-                                    </>
-                                ) : (
-                                    <div className={styles.heroImagePlaceholder}>
-                                        <strong>Profesionalni pristup</strong>
-                                        <p>
-                                            Na svakoj lokaciji prvo provjeravamo materijal, stupanj
-                                            zaprljanosti i pristup vodi prije nego krenemo s pranjem.
-                                        </p>
+                            <QuoteCard
+                                title={quoteTitle ?? 'Saznajte cijenu za svoj objekt'}
+                                location={`usluga-${quoteService || 'ostalo'}`}
+                                service={quoteService}
+                                whatsappText={`Pozdrav, zanima me usluga: ${title}. Šaljem slike za procjenu.`}
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className={styles.heroProof}>
+                <div className="container">
+                    <div className={styles.heroProofGrid}>
+                        <div className={styles.heroImage}>
+                            {heroImage ? (
+                                <>
+                                    <Image
+                                        src={heroImage}
+                                        alt={heroImageAlt ?? title}
+                                        fill
+                                        className={styles.heroImg}
+                                        sizes="(max-width: 992px) 100vw, 42vw"
+                                    />
+                                    <div className={styles.heroImageBadge}>
+                                        <span>Stvarni projekt</span>
+                                        <strong>Rezultat nakon čišćenja</strong>
                                     </div>
-                                )}
-                            </div>
-                            <div className={styles.heroAsideCard}>
-                                <span className={styles.heroAsideLabel}>Što dobivate</span>
-                                <ul>
-                                    <li>Jasnu procjenu prije početka radova</li>
-                                    <li>Prilagođen tlak za tip površine</li>
-                                    <li>Brz dolazak po Zagrebu i okolici</li>
-                                    <li>Garanciju zadovoljstva, vraćamo se ako nešto nije kako treba</li>
-                                </ul>
-                            </div>
+                                </>
+                            ) : (
+                                <div className={styles.heroImagePlaceholder}>
+                                    <strong>Profesionalni pristup</strong>
+                                    <p>
+                                        Na svakoj lokaciji prvo provjeravamo materijal, stupanj
+                                        zaprljanosti i pristup vodi prije nego krenemo s pranjem.
+                                    </p>
+                                </div>
+                            )}
+                        </div>
+                        <div className={styles.heroAsideCard}>
+                            <span className={styles.heroAsideLabel}>Što dobivate</span>
+                            <ul>
+                                <li>Jasnu procjenu prije početka radova</li>
+                                <li>Prilagođen tlak za tip površine</li>
+                                <li>Brz dolazak po Zagrebu i okolici</li>
+                                <li>Garanciju zadovoljstva, vraćamo se ako nešto nije kako treba</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -502,11 +522,11 @@ export default function ServicePage({
                         <h2>Spremni za blistavo čist prostor?</h2>
                         <p>Javite nam se danas i dobijte besplatnu procjenu za vašu nekretninu. Naš tim će vam se javiti u najkraćem roku.</p>
                         <div className={styles.ctaActions}>
-                            <Link href="/#kontakt" className={styles.ctaBtn}>
+                            <a href="#procjena" className={styles.ctaBtn}>
                                 Zatražite ponudu <ArrowRight size={18} />
-                            </Link>
+                            </a>
                             <a 
-                                href="https://wa.me/385958442806?text=Bok!%20Zanima%20me%20procjena%20za%20uslugu%20${title}..." 
+                                href={`https://wa.me/385958442806?text=${encodeURIComponent(`Pozdrav, zanima me usluga: ${title}. Šaljem slike za procjenu.`)}`}
                                 className={styles.whatsappBtn}
                                 target="_blank"
                                 rel="noopener noreferrer"

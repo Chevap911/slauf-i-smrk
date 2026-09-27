@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     description: 'Posivjela drvena terasa ne treba uvijek brušenje. Čistimo niskim tlakom i mekanom četkom, drvo ostaje cijelo. 6–8 €/m² (na 10. 9. 2026.: 6–8 €/m²).',
     alternates: { canonical: '/usluge/ciscenje-drvenih-povrsina' },
     openGraph: {
-        title: 'Čišćenje Drvenih Površina Zagreb | Šlauf i Šmrk',
+        title: 'Čišćenje drvenih površina Zagreb | Šlauf i Šmrk',
         description: 'Profesionalno čišćenje drvenih terasa, ograda, pergola i vrtnog namještaja u Zagrebu.',
         url: 'https://slaufismrk.com/usluge/ciscenje-drvenih-povrsina',
         images: [OG_IMAGE],
@@ -96,8 +96,10 @@ const breadcrumbSchema = {
 export default function DrvenePovrsinePage() {
     return (
         <ServicePage
-            title="Čišćenje Drvenih Površina"
-            titleHighlight="Drvenih Površina"
+            title="Čišćenje drvenih površina u Zagrebu"
+            quoteService="wood"
+            quoteTitle="Koliko bi čišćenje vaše drvene terase koštalo?"
+            titleHighlight="drvenih površina"
             canonicalPath="/usluge/ciscenje-drvenih-povrsina"
             description="Drvo s vremenom gubi boju i sivi pod utjecajem sunca, kiše i vlage. Profesionalnim čišćenjem uklanjamo sivilo, alge i nakupljenu prljavštinu s terasa, ograda, pergola i vrtnog namještaja. Vraćamo drvu izvornu toplinu i ljepotu."
             priceHint="6–8 €/m²"
@@ -144,7 +146,7 @@ export default function DrvenePovrsinePage() {
 
                     <h2>Koje drvene površine čistimo?</h2>
                     <ul>
-                        <li><strong>Drvene terase (decking)</strong>, WPC, bor, ariš, tik, bangkirai. Svaki materijal zahtijeva poseban pristup.</li>
+                        <li><strong>Drvene terase (decking)</strong>: WPC, bor, ariš, tik, bangkirai. Svaki materijal zahtijeva poseban pristup.</li>
                         <li><strong>Drvene ograde</strong>, letvice, paneli, prirodne ograde.</li>
                         <li><strong>Pergole i nadstrešnice</strong>, nosive konstrukcije i dekorativni elementi.</li>
                         <li><strong>Vrtni namještaj</strong>, stolovi, stolice, klupe, ležaljke.</li>

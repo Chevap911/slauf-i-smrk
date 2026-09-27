@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     description: 'Čistimo kamene terase, stepenice, staze i zidove, a po želji ih impregniramo. Od 5 €/m² (na 10. 9. 2026.: od 5 €/m²), procjena besplatna.',
     alternates: { canonical: '/usluge/ciscenje-kamenih-povrsina' },
     openGraph: {
-        title: 'Čišćenje Kamenih Površina Zagreb | Šlauf i Šmrk',
+        title: 'Čišćenje kamenih površina Zagreb | Šlauf i Šmrk',
         description: 'Profesionalno čišćenje kamenih površina: klupice, stolovi, staze, zidovi, kipovi.',
         url: 'https://slaufismrk.com/usluge/ciscenje-kamenih-povrsina',
         images: [OG_IMAGE],
@@ -96,8 +96,10 @@ const breadcrumbSchema = {
 export default function KamenePovsinePage() {
     return (
         <ServicePage
-            title="Čišćenje Kamenih Površina"
-            titleHighlight="Kamenih Površina"
+            title="Čišćenje kamenih površina u Zagrebu"
+            quoteService="stone"
+            quoteTitle="Koliko bi čišćenje vašeg kamena koštalo?"
+            titleHighlight="kamenih površina"
             canonicalPath="/usluge/ciscenje-kamenih-povrsina"
             description="Kamen je izdržljiv, ali s vremenom gubi ljepotu pod nanosima mahovine, lišajeva i prljavštine. Profesionalnim čišćenjem vraćamo izvorni sjaj kamenim stazama, klupicama, zidovima, kipovima i fasadnim oblogama. Prilagođavamo pristup svakom tipu kamena."
             priceHint="od 5 €/m²"

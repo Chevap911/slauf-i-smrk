@@ -2,9 +2,10 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { Phone, CheckCircle2, MessageCircle, ArrowRight, Zap, Target, ThumbsUp, MapPin, Package } from 'lucide-react';
+import { Phone, CheckCircle2, MessageCircle, ArrowRight, Zap, Target, ThumbsUp, MapPin, Package, Star } from 'lucide-react';
 import styles from '../LandingPage.module.css';
 import LeadForm from './components/LeadForm';
+import HeroReview from '../HeroReview';
 import FaqAccordion from './components/FaqAccordion';
 import BeforeAfterSlider from '@/components/BeforeAfterSlider/BeforeAfterSlider';
 
@@ -15,63 +16,74 @@ export default function LandingPageClient() {
 
             {/* Hero Section */}
             <section className={styles.hero}>
-                <div className={styles.container}>
-                    <div className={styles.trustBar}>
-                        ⭐ 5.0 Google ocjena · Brz odgovor · Zagreb i okolica
-                    </div>
+                <div className={styles.heroContainer}>
+                    <div className={styles.heroIntro}>
+                        <div className={styles.trustBar}>
+                            <Star size={15} fill="currentColor" aria-hidden="true" /> 5,0 Google ocjena · Brz odgovor · Zagreb i okolica
+                        </div>
                     
-                    <h1 className={styles.title}>
-                        Pranje <span className={styles.highlight}>terasa</span> u Zagrebu
-                    </h1>
+                        <h1 className={styles.title}>
+                            Pranje <span className={styles.highlight}>terasa</span> u Zagrebu
+                        </h1>
                     
-                    <p className={styles.subtitle}>
-                        Čistimo terase kafića, restorana, apartmana i obiteljskih kuća. Uklanjamo mrlje od hrane, algi i prljavštinu s drveta, kamena i keramike.
-                    </p>
-
-                    <ul className={styles.bullets}>
-                        <li>
-                            <CheckCircle2 className={styles.checkIcon} size={22} />
-                            <span>Procjena po slikama ili dolazak na lokaciju</span>
-                        </li>
-                        <li>
-                            <CheckCircle2 className={styles.checkIcon} size={22} />
-                            <span>Sigurno pranje keramičkih, kamenih i drvenih terasa</span>
-                        </li>
-                        <li>
-                            <CheckCircle2 className={styles.checkIcon} size={22} />
-                            <span>Brza usluga - spremite terasu za sezonu</span>
-                        </li>
-                    </ul>
-
-                    <div style={{ marginTop: '2rem' }}>
-                        <a 
-                            href="https://wa.me/385958442806?text=Bok,%20zanima%20me%20pranje%20terasa.%20Mogu%20poslati%20slike%20za%20okvirnu%20procjenu.%20Lokacija:%20" 
-                            className={styles.btnPrimary}
-                            onClick={() => {
-                                
-                                 
-                                window.dataLayer?.push({ event: "lead_form_submit", event_category: "google_ads_landing_page", service: "Pranje terasa", landing_page: "/lp/pranje-terasa" });
-                            }}
-                        >
-                            <MessageCircle size={22} />
-                            Pošalji slike na WhatsApp
-                        </a>
-                        <a 
-                            href="tel:+385958442806" 
-                            className={styles.btnSecondary}
-                            onClick={() => {
-                                
-                                 
-                                window.dataLayer?.push({ event: "call_click", cta_location: "hero" });
-                            }}
-                        >
-                            <Phone size={22} />
-                            Nazovi odmah
-                        </a>
-                        <p className={styles.subtext}>Ili ispunite kratki upit i javimo se mi vama ↓</p>
+                        <p className={styles.subtitle}>
+                            Čistimo terase kafića, restorana, apartmana i obiteljskih kuća. Uklanjamo mrlje od hrane, algi i prljavštinu s drveta, kamena i keramike.
+                        </p>
                     </div>
 
-                    <LeadForm />
+                    <div className={styles.heroForm}>
+                        <LeadForm />
+                    </div>
+
+                    <div className={styles.heroMore}>
+                        <ul className={styles.bullets}>
+                            <li>
+                                <CheckCircle2 className={styles.checkIcon} size={22} />
+                                <span>Procjena po slikama ili dolazak na lokaciju</span>
+                            </li>
+                            <li>
+                                <CheckCircle2 className={styles.checkIcon} size={22} />
+                                <span>Sigurno pranje keramičkih, kamenih i drvenih terasa</span>
+                            </li>
+                            <li>
+                                <CheckCircle2 className={styles.checkIcon} size={22} />
+                                <span>Brza usluga - spremite terasu za sezonu</span>
+                            </li>
+                        </ul>
+
+                        <div style={{ marginTop: '2rem' }}>
+                            <a 
+                                href="https://wa.me/385958442806?text=Bok,%20zanima%20me%20pranje%20terasa.%20Mogu%20poslati%20slike%20za%20okvirnu%20procjenu.%20Lokacija:%20" 
+                                className={styles.btnPrimary}
+                                onClick={() => {
+                                
+                                 
+                                    window.dataLayer?.push({ event: "lead_form_submit", event_category: "google_ads_landing_page", service: "Pranje terasa", landing_page: "/lp/pranje-terasa" });
+                                }}
+                            >
+                                <MessageCircle size={22} />
+                                Pošalji slike na WhatsApp
+                            </a>
+                            <a 
+                                href="tel:+385958442806" 
+                                className={styles.btnSecondary}
+                                onClick={() => {
+                                
+                                 
+                                    window.dataLayer?.push({ event: "call_click", cta_location: "hero" });
+                                }}
+                            >
+                                <Phone size={22} />
+                                Nazovi odmah
+                            </a>
+                        </div>
+
+                        <HeroReview
+                            text="Dečki su brzi, ali efikasni. Okućnica nam je kao nova. Skinuli su i mrlje koje godinama nismo mogli ukloniti."
+                            name="Andrej Maroš"
+                            meta="Google recenzija, pranje okućnice"
+                        />
+                    </div>
                 </div>
             </section>
 
@@ -263,7 +275,7 @@ export default function LandingPageClient() {
                         Što kažu klijenti
                     </h2>
                     <p className={styles.subtitle} style={{ textAlign: 'center', marginBottom: '2rem' }}>
-                        ⭐⭐⭐⭐⭐ 5,0 · Stvarne Google recenzije
+                        <span aria-hidden="true" style={{ color: '#f59e0b', letterSpacing: '0.1em' }}>★★★★★</span> 5,0 · Stvarne Google recenzije
                     </p>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
                         {([

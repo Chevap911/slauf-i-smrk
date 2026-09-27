@@ -89,6 +89,8 @@ export default function PranjePrilazaPage() {
     return (
         <ServicePage
             title="Pranje prilaza u Zagrebu"
+            quoteService="driveway"
+            quoteTitle="Koliko bi pranje vašeg prilaza koštalo?"
             titleHighlight="prilaza"
             canonicalPath="/usluge/pranje-prilaza"
             description="Pranje prilaza vraća uredan i siguran izgled ulazu u dvorište, kuću ili garažu. Uklanjamo uljne mrlje, tragove guma, hrđu, mahovinu i duboku prljavštinu s betonskih, kamenih i opločenih prilaza u Zagrebu i okolici."

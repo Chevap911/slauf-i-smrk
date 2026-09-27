@@ -190,6 +190,8 @@ export default function PranjeOkucnicePage() {
             />
             <ServicePage
                 title="Pranje okućnice i prilaza u Zagrebu"
+                quoteService="yard"
+                quoteTitle="Koliko bi pranje vaše okućnice koštalo?"
                 titleHighlight="okućnice"
                 canonicalPath="/usluge/pranje-okucnice"
                 description="Profesionalno pranje okućnica, dvorišta, prilaza, terasa i većih vanjskih površina u Zagrebu i okolici. Uklanjamo mahovinu, alge, korov iz fuga, uljne mrlje, hrđu i nakupljenu prljavštinu s tlakavaca, betona, kamena i asfalta. Za okvirnu cijenu pošaljite slike na WhatsApp, za veće površine dolazimo na lokaciju i dajemo jasnu procjenu bez obaveza."
@@ -332,7 +334,7 @@ export default function PranjeOkucnicePage() {
                             <li>prije/poslije fotografije za veće zahvate</li>
                         </ul>
                         <p>
-                            <Link href="/#kontakt">Zatražite paketnu procjenu</Link>
+                            <Link href="#procjena">Zatražite paketnu procjenu</Link>
                         </p>
 
                         <h2>Čišćenje okućnica i prilaza za poslovne objekte</h2>

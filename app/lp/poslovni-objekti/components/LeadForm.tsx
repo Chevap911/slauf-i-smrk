@@ -1,5 +1,6 @@
 'use client';
 
+import { CheckCircle2, MessageCircle, Phone } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import styles from '../../LandingPage.module.css';
 
@@ -127,7 +128,7 @@ export default function LeadForm() {
         return (
             <div className={styles.formCard} id="ponuda">
                 <div style={{ textAlign: 'center', padding: '1rem 0' }}>
-                    <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>✅</div>
+                    <CheckCircle2 size={52} color="#16a34a" aria-hidden="true" style={{ display: 'block', margin: '0 auto 1rem' }} />
                     <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--secondary)', marginBottom: '1rem' }}>
                         Zaprimili smo vaš upit.
                     </h3>
@@ -142,7 +143,7 @@ export default function LeadForm() {
                             window.dataLayer?.push({ event: 'whatsapp_click', cta_location: 'success_state' });
                         }}
                     >
-                        📲 Nastavite razgovor na WhatsApp
+                        <MessageCircle size={18} aria-hidden="true" /> Nastavite razgovor na WhatsApp
                     </a>
 
                     <a
@@ -152,7 +153,7 @@ export default function LeadForm() {
                             window.dataLayer?.push({ event: 'call_click', cta_location: 'success_state' });
                         }}
                     >
-                        📞 Nazovite odmah
+                        <Phone size={18} aria-hidden="true" /> Nazovite odmah
                     </a>
                 </div>
             </div>
@@ -289,8 +290,8 @@ export default function LeadForm() {
                             Nešto je pošlo po krivu. Pokušajte ponovno ili nas nazovite.
                         </p>
                         <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.75rem' }}>
-                            <a href="tel:+385958442806" className={styles.btnSecondary} style={{ minHeight: '40px', fontSize: '0.9rem', marginBottom: 0 }}>📞 Nazovi</a>
-                            <a href="https://wa.me/385958442806" className={styles.btnSecondary} style={{ minHeight: '40px', fontSize: '0.9rem', marginBottom: 0 }}>📲 WhatsApp</a>
+                            <a href="tel:+385958442806" className={styles.btnSecondary} style={{ minHeight: '40px', fontSize: '0.9rem', marginBottom: 0 }}><Phone size={18} aria-hidden="true" /> Nazovi</a>
+                            <a href="https://wa.me/385958442806" className={styles.btnSecondary} style={{ minHeight: '40px', fontSize: '0.9rem', marginBottom: 0 }}><MessageCircle size={18} aria-hidden="true" /> WhatsApp</a>
                         </div>
                     </div>
                 )}

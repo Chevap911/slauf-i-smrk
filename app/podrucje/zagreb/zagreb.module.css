@@ -1,13 +1,23 @@
-.page {
-    padding-top: 5rem;
-}
-
 /* Hero */
 .hero {
     padding: 4rem 0 3rem;
     background: linear-gradient(135deg, var(--secondary) 0%, #1a4d80 100%);
     color: #fff;
     position: relative;
+}
+
+.heroGrid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+@media (max-width: 900px) {
+    .heroGrid {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+    }
 }
 
 .breadcrumb {
@@ -327,5 +337,23 @@
 
     .ctaBox {
         padding: 2rem 1.5rem;
+    }
+}
+
+/* Nav traka je sticky i sama drži svoje mjesto (do 28. 9. 2026. ovdje je bio i padding
+   od 5rem, pa je iznad heroja stajao prazan bijeli pojas). Ispod 992px hero preskače QuoteFab. */
+@media (max-width: 992px) {
+    .hero {
+        padding-top: 4.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .heroIntro {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        margin-bottom: 1.5rem !important;
     }
 }

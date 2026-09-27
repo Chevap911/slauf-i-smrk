@@ -10,6 +10,12 @@ export const QUOTE_SERVICES = [
     { id: 'terrace', label: 'Pranje terase' },
     { id: 'pavers', label: 'Pranje tlakavaca' },
     { id: 'driveway', label: 'Pranje prilaza' },
+    { id: 'stone', label: 'Čišćenje kamena' },
+    { id: 'wood', label: 'Čišćenje drvene terase' },
+    { id: 'grave', label: 'Grobno mjesto' },
+    { id: 'pool', label: 'Pranje bazena' },
+    { id: 'chemical', label: 'Kemijsko čišćenje namještaja' },
+    { id: 'car', label: 'Detailing automobila' },
     { id: '', label: 'Ostalo / nisam siguran' },
 ];
 
@@ -23,7 +29,12 @@ const RATES: Record<string, [number, number]> = {
     terrace: [4, 6],
     pavers: [4, 6],
     driveway: [4, 6],
+    stone: [5, 7],
+    wood: [6, 8],
 };
+
+// Kvadratura ima smisla samo gdje se cijena računa po m²
+const PER_M2 = new Set(Object.keys(RATES));
 
 function computeEstimate(service: string, size: string): { min: number; max: number } | null {
     const rate = RATES[service];
@@ -68,7 +79,7 @@ export default function QuoteForm({ idPrefix = 'qf', hideHeading = false, initia
             setError('Upišite ispravan broj mobitela da vas možemo nazvati.');
             return;
         }
-        const est = computeEstimate(service, size);
+        const est = PER_M2.has(service) ? computeEstimate(service, size) : null;
         setSubmitting(true);
         try {
             const res = await fetch('/api/contact', {
@@ -81,9 +92,14 @@ export default function QuoteForm({ idPrefix = 'qf', hideHeading = false, initia
                         email: '',
                         phone,
                         city: '',
-                        service,
+                        service: service || 'other',
                         surfaceSize: size,
-                        message: `Brzi upit s forme. Površina: ${size || 'nije navedeno'} m².${est ? ` Okvirna cijena prikazana korisniku: ${est.min} - ${est.max} €.` : ''}`,
+                        // idPrefix kaže s koje stranice je upit (npr. usluga-grave, blog-fasada-cijena, podrucje-zagreb)
+                        message: [
+                            `Brzi upit s weba (${idPrefix}).`,
+                            PER_M2.has(service) ? `Površina: ${size || 'nije navedeno'} m².` : null,
+                            est ? `Okvirna cijena prikazana korisniku: ${est.min} - ${est.max} €.` : null,
+                        ].filter(Boolean).join(' '),
                         marketingConsent: false,
                     },
                     estimatedPrice: est || { min: 0, max: 0 },
@@ -158,16 +174,18 @@ export default function QuoteForm({ idPrefix = 'qf', hideHeading = false, initia
                     />
                 </label>
 
-                <label className={styles.field}>
-                    <span>Okvirna kvadratura (nije obavezno)</span>
-                    <input
-                        type="number"
-                        value={size}
-                        onChange={(e) => setSize(e.target.value)}
-                        placeholder="npr. 150"
-                        min="0"
-                    />
-                </label>
+                {PER_M2.has(service) && (
+                    <label className={styles.field}>
+                        <span>Okvirna kvadratura (nije obavezno)</span>
+                        <input
+                            type="number"
+                            value={size}
+                            onChange={(e) => setSize(e.target.value)}
+                            placeholder="npr. 150"
+                            min="0"
+                        />
+                    </label>
+                )}
 
                 {error && <p className={styles.error}>{error}</p>}
 

@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { Phone, ArrowRight, ShieldCheck, Eye, Sparkles, MapPin, Star } from 'lucide-react';
 import styles from './o-nama.module.css';
 import { OG_IMAGE } from '@/lib/seo';
+import QuoteLink from '@/components/QuoteLink/QuoteLink';
 
 export const metadata: Metadata = {
     title: 'O nama, Ivan i Marko | Pranje fasada Zagreb | Šlauf i Šmrk',
@@ -109,9 +110,9 @@ export default function ONamaPage() {
                         iz Zagreba, peremo fasade, okućnice i terase i javljamo se na telefon. Kad nas
                         nazovete, razgovarate s ljudima koji će raditi na vašoj kući.
                     </p>
-                    <Link href="/#kontakt" className={styles.heroCta}>
-                        <Phone size={18} /> Besplatna procjena
-                    </Link>
+                    <QuoteLink className={styles.heroCta}>
+                        Besplatna procjena <ArrowRight size={18} />
+                    </QuoteLink>
                 </div>
             </section>
 
@@ -236,9 +237,9 @@ export default function ONamaPage() {
                             <a href="tel:+385958442806" className={styles.ctaBtn}>
                                 <Phone size={18} /> +385 95 844 2806
                             </a>
-                            <Link href="/#kontakt" className={styles.ctaBtnSecondary}>
+                            <QuoteLink className={styles.ctaBtnSecondary}>
                                 Ispunite formu <ArrowRight size={16} />
-                            </Link>
+                            </QuoteLink>
                         </div>
                     </div>
                 </div>

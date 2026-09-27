@@ -37,7 +37,7 @@ export default function ArticleQuote({ location, title, service, whatsappText, w
     const withForm = service !== undefined;
 
     return (
-        <aside className={styles.card} aria-label="Besplatna procjena">
+        <aside className={styles.card} aria-label="Besplatna procjena" id="procjena" data-service={service}>
             <div className={styles.header}>
                 <span className={styles.eyebrow}>Besplatna procjena</span>
                 <p className={styles.title}>{title}</p>

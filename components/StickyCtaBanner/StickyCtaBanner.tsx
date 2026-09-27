@@ -1,14 +1,17 @@
 'use client';
 
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
 import { Phone, X } from 'lucide-react';
+import { otvoriProcjenu } from '@/components/QuoteLink/QuoteLink';
 import styles from './StickyCtaBanner.module.css';
 
 export default function StickyCtaBanner() {
     const [visible, setVisible] = useState(false);
     const [dismissed, setDismissed] = useState(false);
     const { scrollY } = useScroll();
+    const pathname = usePathname();
 
     useMotionValueEvent(scrollY, "change", (latest) => {
         if (dismissed) return;
@@ -21,10 +24,20 @@ export default function StickyCtaBanner() {
         }
     });
 
+    // Forma je na vrhu gotovo svake stranice (id="procjena"). Gdje je nema,
+    // otvara se isti modal kao iz QuoteFab, da posjetitelj ne završi na naslovnici.
+    const openQuote = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        e.preventDefault();
+        otvoriProcjenu();
+    };
+
     const handleDismiss = () => {
         setDismissed(true);
         setVisible(false);
     };
+
+    // Landing stranice za oglase imaju svoju traku na dnu
+    if (pathname?.startsWith('/lp')) return null;
 
     return (
         <AnimatePresence>
@@ -48,7 +61,8 @@ export default function StickyCtaBanner() {
                             }}
                         >
                             <Phone size={18} />
-                            <span>095 844 2806</span>
+                            <span className={styles.phoneNumber}>095 844 2806</span>
+                            <span className={styles.phoneLabel}>Nazovi</span>
                         </a>
                         <a 
                             href="https://wa.me/385958442806?text=Bok!%20Zanima%20me%20brza%20procjena%20za%20čišćenje..." 
@@ -64,8 +78,9 @@ export default function StickyCtaBanner() {
                             </svg>
                             <span>WhatsApp</span>
                         </a>
-                        <a href="#kontakt" className={styles.ctaBtn}>
-                            Besplatna procjena
+                        <a href="#procjena" className={styles.ctaBtn} onClick={openQuote}>
+                            <span className={styles.ctaLong}>Besplatna procjena</span>
+                            <span className={styles.ctaShort}>Procjena</span>
                         </a>
                         <button
                             className={styles.closeBtn}

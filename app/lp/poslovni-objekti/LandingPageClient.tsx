@@ -1,8 +1,9 @@
 'use client';
 
-import { Phone, CheckCircle2, MessageCircle, ArrowRight, RefreshCw, FileText, Clock, Building2, Zap, ShieldCheck } from 'lucide-react';
+import { Phone, CheckCircle2, MessageCircle, ArrowRight, RefreshCw, FileText, Clock, Building2, Zap, ShieldCheck, Star } from 'lucide-react';
 import styles from '../LandingPage.module.css';
 import LeadForm from './components/LeadForm';
+import HeroReview from '../HeroReview';
 import FaqAccordion from './components/FaqAccordion';
 
 export default function LandingPageClient() {
@@ -11,60 +12,71 @@ export default function LandingPageClient() {
 
             {/* Hero Section */}
             <section className={styles.hero}>
-                <div className={styles.container}>
-                    <div className={styles.trustBar}>
-                        ⭐ 5.0 Google ocjena · račun za tvrtke · Zagreb i okolica
+                <div className={styles.heroContainer}>
+                    <div className={styles.heroIntro}>
+                        <div className={styles.trustBar}>
+                            <Star size={15} fill="currentColor" aria-hidden="true" /> 5,0 Google ocjena · račun za tvrtke · Zagreb i okolica
+                        </div>
+
+                        <h1 className={styles.title}>
+                            Vanjsko čišćenje <span className={styles.highlight}>poslovnih objekata</span> u Zagrebu
+                        </h1>
+
+                        <p className={styles.subtitle}>
+                            Fasade, parkirišta, skladišta i hale, redovito, po dogovoru, bez vaše organizacije.
+                            račun za tvrtke, rad izvan radnog vremena, foto-dokumentacija rezultata.
+                        </p>
                     </div>
 
-                    <h1 className={styles.title}>
-                        Vanjsko čišćenje <span className={styles.highlight}>poslovnih objekata</span> u Zagrebu
-                    </h1>
-
-                    <p className={styles.subtitle}>
-                        Fasade, parkirišta, skladišta i hale, redovito, po dogovoru, bez vaše organizacije.
-                        račun za tvrtke, rad izvan radnog vremena, foto-dokumentacija rezultata.
-                    </p>
-
-                    <ul className={styles.bullets}>
-                        <li>
-                            <CheckCircle2 className={styles.checkIcon} size={22} />
-                            <span>Redoviti ugovori, 2×, 4× godišnje ili po dogovoru</span>
-                        </li>
-                        <li>
-                            <CheckCircle2 className={styles.checkIcon} size={22} />
-                            <span>Radimo izvan radnog vremena i vikendom</span>
-                        </li>
-                        <li>
-                            <CheckCircle2 className={styles.checkIcon} size={22} />
-                            <span>račun za tvrtke, fotografije rezultata, bez skrivenih troškova</span>
-                        </li>
-                    </ul>
-
-                    <div style={{ marginTop: '2rem' }}>
-                        <a
-                            href="https://wa.me/385958442806?text=Bok,%20zanima%20me%20čišćenje%20poslovnog%20objekta.%20Tip%20objekta:%20"
-                            className={styles.btnPrimary}
-                            onClick={() => {
-                                window.dataLayer?.push({ event: 'whatsapp_click', cta_location: 'hero' });
-                            }}
-                        >
-                            <MessageCircle size={22} />
-                            Pišite nam na WhatsApp
-                        </a>
-                        <a
-                            href="tel:+385958442806"
-                            className={styles.btnSecondary}
-                            onClick={() => {
-                                window.dataLayer?.push({ event: 'call_click', cta_location: 'hero' });
-                            }}
-                        >
-                            <Phone size={22} />
-                            Nazovite odmah
-                        </a>
-                        <p className={styles.subtext}>Ili ispunite kratki upit i javljamo se s ponudom ↓</p>
+                    <div className={styles.heroForm}>
+                        <LeadForm />
                     </div>
 
-                    <LeadForm />
+                    <div className={styles.heroMore}>
+                        <ul className={styles.bullets}>
+                            <li>
+                                <CheckCircle2 className={styles.checkIcon} size={22} />
+                                <span>Redoviti ugovori, 2×, 4× godišnje ili po dogovoru</span>
+                            </li>
+                            <li>
+                                <CheckCircle2 className={styles.checkIcon} size={22} />
+                                <span>Radimo izvan radnog vremena i vikendom</span>
+                            </li>
+                            <li>
+                                <CheckCircle2 className={styles.checkIcon} size={22} />
+                                <span>račun za tvrtke, fotografije rezultata, bez skrivenih troškova</span>
+                            </li>
+                        </ul>
+
+                        <div style={{ marginTop: '2rem' }}>
+                            <a
+                                href="https://wa.me/385958442806?text=Bok,%20zanima%20me%20čišćenje%20poslovnog%20objekta.%20Tip%20objekta:%20"
+                                className={styles.btnPrimary}
+                                onClick={() => {
+                                    window.dataLayer?.push({ event: 'whatsapp_click', cta_location: 'hero' });
+                                }}
+                            >
+                                <MessageCircle size={22} />
+                                Pišite nam na WhatsApp
+                            </a>
+                            <a
+                                href="tel:+385958442806"
+                                className={styles.btnSecondary}
+                                onClick={() => {
+                                    window.dataLayer?.push({ event: 'call_click', cta_location: 'hero' });
+                                }}
+                            >
+                                <Phone size={22} />
+                                Nazovite odmah
+                            </a>
+                        </div>
+
+                        <HeroReview
+                            text="Sve pohvale za detaljno čišćenje i brz dogovor oko termina! Sve preporuke za ekipu."
+                            name="Nina Cvijanović"
+                            meta="Google recenzija"
+                        />
+                    </div>
                 </div>
             </section>
 
@@ -174,20 +186,20 @@ export default function LandingPageClient() {
             <section className={styles.section}>
                 <div className={styles.container}>
                     <h2 className={styles.title} style={{ textAlign: 'center', marginBottom: '2rem' }}>
-                        Što kažu naši poslovni klijenti
+                        Što kažu klijenti na Googleu
                     </h2>
 
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
                         {[
                             {
-                                text: 'Tražili smo nekoga tko može redovito čistiti naše parkirište i fasadu bez da mi moram svaki put organizirati. Šlauf i Šmrk to rade savršeno, dođu, naprave, pošalju slike i račun. Nema komplikacija.',
-                                name: 'Tomislav B.',
-                                meta: 'Logistički centar, Jankomir',
+                                text: 'Naručio sam čišćenje pročelja kuće i prilaza. Dečki su mrak. Mladi, brzi i odgovorni. Odrade sve po dogovoru, čak i više. Cijena i više nego pristupačna. Preporučujem svima.',
+                                name: 'Bogdan Janjanin',
+                                meta: 'Google recenzija · Pranje pročelja i prilaza',
                             },
                             {
-                                text: 'Naš showroom mora uvijek izgledati reprezentativno. Dogovorili smo sezonsko čišćenje fasade i ulaznih površina. Dolaze točno, rade temeljito, račun stiže isti dan. Preporučujem.',
-                                name: 'Ana M.',
-                                meta: 'Maloprodajni objekt, Novi Zagreb',
+                                text: 'Više puta sam koristila ove usluge i svaki put sam baš ugodno iznenađena. Prali su mi i kauč i auto i stvarno odrade top posao svaki put.',
+                                name: 'Senka Zadro',
+                                meta: 'Google recenzija · Kauč i detailing auta',
                             },
                         ].map((t) => (
                             <div key={t.name} style={{ background: 'var(--surface)', borderRadius: '1rem', padding: '1.5rem', border: '1px solid var(--border)' }}>

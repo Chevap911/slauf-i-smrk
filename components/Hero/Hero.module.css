@@ -215,6 +215,7 @@
     border-radius: 1.5rem;
     overflow: hidden;
     box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35);
+    scroll-margin-top: calc(var(--nav-h) + 1rem);
 }
 
 .formHeader {
@@ -318,6 +319,11 @@
 
     .formCol {
         margin-top: 1.25rem;
+    }
+
+    /* ispod nav trake stoji i QuoteFab */
+    .formCard {
+        scroll-margin-top: calc(var(--nav-h) + 4.5rem);
     }
 }
 

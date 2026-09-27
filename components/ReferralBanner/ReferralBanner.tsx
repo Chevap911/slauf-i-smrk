@@ -1,6 +1,6 @@
-import Link from 'next/link';
 import { Gift } from 'lucide-react';
 import styles from './ReferralBanner.module.css';
+import QuoteLink from '@/components/QuoteLink/QuoteLink';
 
 export default function ReferralBanner() {
     return (
@@ -17,10 +17,10 @@ export default function ReferralBanner() {
                         Popust vrijedi tek kada preporučeni klijent <strong>dogovori i obavi uslugu</strong> kod nas.
                         Možete skupiti do <strong>50% popusta ukupno</strong> kombiniranjem više preporuka.
                     </p>
-                    <Link href="/#kontakt" className={styles.cta}>
+                    <QuoteLink className={styles.cta}>
                         <Gift size={20} />
                         Naručite i saznajte više
-                    </Link>
+                    </QuoteLink>
                 </div>
 
                 <div className={styles.steps}>

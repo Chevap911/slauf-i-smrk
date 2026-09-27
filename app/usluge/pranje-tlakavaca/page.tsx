@@ -89,6 +89,8 @@ export default function PranjeTlakavacaPage() {
     return (
         <ServicePage
             title="Pranje tlakavaca u Zagrebu"
+            quoteService="pavers"
+            quoteTitle="Koliko bi pranje vaših tlakavaca koštalo?"
             titleHighlight="tlakavaca"
             canonicalPath="/usluge/pranje-tlakavaca"
             description="Profesionalno pranje tlakavaca uklanja mahovinu, korov iz fuga, crne naslage i mrlje od ulja s betonskih kocki i behatona. Vraćamo ujednačenu boju i čist izgled dvorištu, terasi i prilazu u Zagrebu i okolici."

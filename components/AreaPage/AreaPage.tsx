@@ -5,6 +5,7 @@ import {
 } from 'lucide-react';
 import { GUIDES, ALL_AREAS, CITY_LOCATIVE, CITY_GENITIVE } from './areaLinks';
 import styles from './AreaPage.module.css';
+import QuoteCard from '@/components/QuoteCard/QuoteCard';
 
 export type AreaPageProps = {
     city: string;
@@ -98,14 +99,23 @@ export default function AreaPage({ city, slug, intro, neighborhoods }: AreaPageP
 
             <section className={styles.hero}>
                 <div className="container">
-                    <div className={styles.breadcrumb}>
-                        <Link href="/">Početna</Link> › <span>{city}</span>
+                <div className={styles.heroGrid}>
+                    <div>
+                        <div className={styles.breadcrumb}>
+                            <Link href="/">Početna</Link> › <span>{city}</span>
+                        </div>
+                        <h1>Pranje fasade i okućnice <span>u {cityLoc}</span></h1>
+                        <p className={styles.heroIntro}>{intro}</p>
+                        <a href="tel:+385958442806" className={styles.heroCta}>
+                            <Phone size={18} /> Nazovite 095 844 2806
+                        </a>
                     </div>
-                    <h1>Pranje fasade i okućnice <span>u {cityLoc}</span></h1>
-                    <p>{intro}</p>
-                    <Link href="/#kontakt" className={styles.heroCta}>
-                        <Phone size={18} /> Besplatna procjena
-                    </Link>
+                    <QuoteCard
+                        title={`Koliko košta pranje u ${cityLoc}?`}
+                        location="podrucje"
+                        service="facade"
+                    />
+                </div>
                 </div>
             </section>
 
@@ -183,7 +193,7 @@ export default function AreaPage({ city, slug, intro, neighborhoods }: AreaPageP
                             <a href="tel:+385958442806" className={styles.ctaBtn}>
                                 <Phone size={18} /> +385 95 844 2806
                             </a>
-                            <Link href="/#kontakt" className={styles.ctaBtnSecondary}>
+                            <Link href="#procjena" className={styles.ctaBtnSecondary}>
                                 Ispunite formu <ArrowRight size={16} />
                             </Link>
                         </div>

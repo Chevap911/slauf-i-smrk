@@ -6,6 +6,7 @@ import {
 } from 'lucide-react';
 import { GUIDES, ALL_AREAS } from '@/components/AreaPage/areaLinks';
 import styles from './zagreb.module.css';
+import QuoteCard from '@/components/QuoteCard/QuoteCard';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -87,17 +88,26 @@ export default function ZagrebPage() {
 
             <section className={styles.hero}>
                 <div className="container">
-                    <div className={styles.breadcrumb}>
-                        <Link href="/">Početna</Link> › <span>Zagreb</span>
+                <div className={styles.heroGrid}>
+                    <div>
+                        <div className={styles.breadcrumb}>
+                            <Link href="/">Početna</Link> › <span>Zagreb</span>
+                        </div>
+                        <h1>Pranje fasade i okućnice <span>u Zagrebu</span></h1>
+                        <p className={styles.heroIntro}>
+                            Profesionalne usluge pranja fasade, okućnice i vanjskih površina u svim dijelovima
+                            Zagreba i okolice. Od fasada u Španskom do dvorišta u Maksimiru, tu smo za vas.
+                        </p>
+                        <a href="tel:+385958442806" className={styles.heroCta}>
+                            <Phone size={18} /> Nazovite 095 844 2806
+                        </a>
                     </div>
-                    <h1>Pranje fasade i okućnice <span>u Zagrebu</span></h1>
-                    <p>
-                        Profesionalne usluge pranja fasade, okućnice i vanjskih površina u svim dijelovima
-                        Zagreba i okolice. Od fasada u Španskom do dvorišta u Maksimiru, tu smo za vas.
-                    </p>
-                    <Link href="/#kontakt" className={styles.heroCta}>
-                        <Phone size={18} /> Besplatna procjena
-                    </Link>
+                    <QuoteCard
+                        title={'Koliko košta pranje u Zagrebu?'}
+                        location="podrucje-zagreb"
+                        service="facade"
+                    />
+                </div>
                 </div>
             </section>
 
@@ -175,7 +185,7 @@ export default function ZagrebPage() {
                             <a href="tel:+385958442806" className={styles.ctaBtn}>
                                 <Phone size={18} /> +385 95 844 2806
                             </a>
-                            <Link href="/#kontakt" className={styles.ctaBtnSecondary}>
+                            <Link href="#procjena" className={styles.ctaBtnSecondary}>
                                 Ispunite formu <ArrowRight size={16} />
                             </Link>
                         </div>

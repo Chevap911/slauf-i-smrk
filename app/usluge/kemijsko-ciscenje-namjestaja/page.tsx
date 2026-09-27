@@ -6,11 +6,11 @@ import { Car, Home, TreeDeciduous } from 'lucide-react';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
-    title: 'Kemijsko Čišćenje Tepiha i Garnitura Zagreb | Šlauf i Šmrk',
+    title: 'Kemijsko čišćenje tepiha i garnitura Zagreb | Šlauf i Šmrk',
     description: 'Profesionalno kemijsko čišćenje tepiha, garnitura, madraca i autosjedala u Zagrebu. Dubinsko čišćenje na vašoj adresi. Besplatna procjena.',
     alternates: { canonical: '/usluge/kemijsko-ciscenje-namjestaja' },
     openGraph: {
-        title: 'Kemijsko Čišćenje Tepiha i Garnitura Zagreb | Šlauf i Šmrk',
+        title: 'Kemijsko čišćenje tepiha i garnitura Zagreb | Šlauf i Šmrk',
         description: 'Profesionalno kemijsko čišćenje tepiha, garnitura, madraca i autosjedala u Zagrebu.',
         url: 'https://slaufismrk.com/usluge/kemijsko-ciscenje-namjestaja',
         images: [OG_IMAGE],
@@ -96,8 +96,10 @@ const breadcrumbSchema = {
 export default function KemijskoCiscenjePage() {
     return (
         <ServicePage
-            title="Kemijsko Čišćenje Namještaja"
-            titleHighlight="Namještaja"
+            title="Kemijsko čišćenje namještaja u Zagrebu"
+            quoteService="chemical"
+            quoteTitle="Koliko bi čišćenje vašeg namještaja koštalo?"
+            titleHighlight="namještaja"
             canonicalPath="/usluge/kemijsko-ciscenje-namjestaja"
             description="Profesionalno dubinsko čišćenje tepiha, garnitura, madraca, stolica i autosjedala na vašoj adresi. Koristimo profesionalne injektirno-ekstrakcijske strojeve koji dubinski uklanjaju prljavštinu, grinje, alergene i mrlje. Vaš namještaj bit će čist, svjež i bez neugodnih mirisa."
             priceHint="tepih od 5 €/m² · garnitura od 80 €"

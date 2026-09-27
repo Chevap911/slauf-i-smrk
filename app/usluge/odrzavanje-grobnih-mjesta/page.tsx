@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { Droplets, ShieldCheck, Clock, AlertTriangle, Bug, Landmark, Heart } from 'lucide-react';
 import ServicePage from '@/components/ServicePage/ServicePage';
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
     description: 'Profesionalno čišćenje i održavanje grobnih mjesta u Zagrebu. Uklanjamo mahovinu i naslage s kamenih spomenika. Mirogoj, Miroševac, Markovo Polje.',
     alternates: { canonical: '/usluge/odrzavanje-grobnih-mjesta' },
     openGraph: {
-        title: 'Održavanje Grobnih Mjesta Zagreb | Šlauf i Šmrk',
+        title: 'Održavanje grobnih mjesta Zagreb | Šlauf i Šmrk',
         description: 'Profesionalno čišćenje i održavanje grobnih mjesta u Zagrebu. Mirogoj, Miroševac, Markovo Polje.',
         url: 'https://slaufismrk.com/usluge/odrzavanje-grobnih-mjesta',
         images: [OG_IMAGE],
@@ -113,12 +114,16 @@ export default function GrobnaMjestaPage() {
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
             />
             <ServicePage
-            title="Održavanje Grobnih Mjesta"
-            titleHighlight="Grobnih Mjesta"
+            title="Održavanje grobnih mjesta u Zagrebu"
+            quoteService="grave"
+            quoteTitle="Koliko bi čišćenje groba koštalo?"
+            titleHighlight="grobnih mjesta"
             canonicalPath="/usluge/odrzavanje-grobnih-mjesta"
             description="Grobna mjesta vaših najmilijih zaslužuju dostojanstven izgled. Profesionalno čistimo i održavamo kamene nadgrobne spomenike, ploče, obrube i okolne površine na svim zagrebačkim grobljima. Ne trebate biti prisutni, šaljemo fotografije prije i poslije. Idealno za iseljenike i obitelji izvan Zagreba. Uz čišćenje nudimo poliranje kamena i impregnaciju."
             priceHint="od 250 €"
             priceAnchor="od 250 €"
+            heroImage="/grob/grob-poslije-ciscenja-bijeli-kulir.jpg"
+            heroImageAlt="Očišćen grob s tamnim granitnim okvirom i bijelim kulirom umjesto zemlje i korova"
             processSteps={[
                 {
                     title: 'Prijavite grobno mjesto',
@@ -145,6 +150,28 @@ export default function GrobnaMjestaPage() {
                         pošaljite sliku groba na WhatsApp i recite na kojem je groblju, pa vam javimo cijenu i slobodan
                         termin. Nakon čišćenja dobivate fotografije, pa grob ne morate ni obilaziti.
                     </p>
+                    <h2>Prije i poslije: grob koji smo radili</h2>
+                    <p>
+                        Okvir je bio siv i prljav, baza od teraca požutjela, a umjesto cvijeća rasli su korov i trava.
+                        Očistili smo spomenik, okvir i bazu, a zemlju zamijenili bijelim kulirom, pa grob ostaje uredan
+                        bez plijevljenja. Kulir nudimo uz čišćenje, cijena je po dogovoru.
+                    </p>
+                    {[
+                        ['grob-prije-ciscenja-korov-i-prljav-okvir', 'Grob prije čišćenja, korov i trava umjesto cvijeća, prljav okvir', 'grob-poslije-ciscenja-bijeli-kulir', 'Isti grob nakon čišćenja, bijeli kulir i očišćen granitni okvir', 844, 1500],
+                        ['grob-bocna-strana-prije-ciscenja', 'Bočna strana groba prije čišćenja, požutjela baza od teraca', 'grob-bocna-strana-poslije-ciscenja', 'Bočna strana groba nakon čišćenja, svijetla baza i bijeli kulir', 1600, 901],
+                        ['spomenik-straznja-strana-prije-ciscenja', 'Stražnja strana spomenika prije čišćenja, zeleni i tamni tragovi curenja', 'spomenik-straznja-strana-poslije-ciscenja', 'Stražnja strana spomenika nakon čišćenja, jednolična svijetla površina', 1600, 901],
+                    ].map(([prije, prijeAlt, poslije, poslijeAlt, w, h]) => (
+                        <div key={prije as string} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', margin: '1.25rem 0' }}>
+                            <figure style={{ margin: 0 }}>
+                                <Image src={`/grob/${prije}.jpg`} alt={prijeAlt as string} width={w as number} height={h as number} style={{ width: '100%', height: 'auto', borderRadius: '0.75rem' }} sizes="(max-width: 768px) 50vw, 400px" />
+                                <figcaption style={{ fontSize: '0.85rem', color: '#666', marginTop: '0.35rem' }}>Prije</figcaption>
+                            </figure>
+                            <figure style={{ margin: 0 }}>
+                                <Image src={`/grob/${poslije}.jpg`} alt={poslijeAlt as string} width={w as number} height={h as number} style={{ width: '100%', height: 'auto', borderRadius: '0.75rem' }} sizes="(max-width: 768px) 50vw, 400px" />
+                                <figcaption style={{ fontSize: '0.85rem', color: '#666', marginTop: '0.35rem' }}>Poslije</figcaption>
+                            </figure>
+                        </div>
+                    ))}
                     <h2>Zašto profesionalno čišćenje grobnog mjesta?</h2>
                     <p>
                         Mnogi ljudi žele održavati grobna mjesta svojih najmilijih, ali <strong>nemaju vremena,
@@ -194,6 +221,7 @@ export default function GrobnaMjestaPage() {
                         <li><strong>Jednokratno čišćenje (dvostruki grob / grobnica)</strong>: od 300 € (cijena na 10. 9. 2026.: od 300 €)</li>
                         <li><strong>Poliranje kamena</strong> (vraćamo sjaj mramoru i granitu): od 150 € (cijena na 10. 9. 2026.: od 150 €)</li>
                         <li><strong>Impregnacija</strong> (zaštitni premaz, grob ostaje čist 2–3 godine): 100 € (cijena na 10. 9. 2026.: od 50 €)</li>
+                        <li><strong>Kulir</strong> (bijeli ukrasni kamen umjesto zemlje i korova): po dogovoru</li>
                         <li><strong>Predujam za rezervaciju</strong>: 30% (ostatak plaćate tek nakon fotografija rezultata)</li>
                     </ul>
 

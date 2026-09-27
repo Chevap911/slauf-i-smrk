@@ -187,8 +187,8 @@ export default function BlogArticle() {
                         <p>
                             To vam govori jednu važnu stvar:{' '}
                             <strong>u vašem zidu ima previše vlage.</strong> Uzroci mogu biti
-                            različiti - loša hidro-izolacija, oštećeni žljebovi, prljava fasada koja
-                            zadržava vlagu - ali čišćenje je uvijek prvi korak dijagnoze i
+                            različiti (loša hidroizolacija, oštećeni žljebovi, prljava fasada koja
+                            zadržava vlagu), ali čišćenje je uvijek prvi korak dijagnoze i
                             rješavanja.
                         </p>
                         <p>
@@ -276,7 +276,7 @@ export default function BlogArticle() {
                                 <Image
                                     src="/blog/fasada-poslije-pranja.png"
                                     alt="Potpuno čista bijela fasada kuće nakon profesionalnog visokotlačnog pranja"
-                                    title="Rezultat pranja: fasada čista, bijela i zaštićena - kao nova"
+                                    title="Rezultat pranja: fasada čista, bijela i zaštićena, kao nova"
                                     width={600}
                                     height={800}
                                     className={styles.beforeAfterImg}
@@ -301,7 +301,7 @@ export default function BlogArticle() {
                             Alge i mahovina koje se danas uklanjaju visokotlačnim pranjem, za 2-3
                             godine mogu zahtijevati potpunu sanaciju fasade s impregnacijom ili čak
                             djelomičnim žbukanjem. Razlika između pranja (stotine eura) i sanacije
-                            (tisuće eura) je samo - vrijeme.
+                            (tisuće eura) je samo vrijeme.
                         </p>
                         <p>
                             Mi to vidimo svako proljeće. Dolazimo kod klijenta koji je &quot;čekao
@@ -370,7 +370,7 @@ export default function BlogArticle() {
                                 <a href="tel:+385958442806" className={styles.ctaBtn}>
                                     <Phone size={18} /> 095-844-2806
                                 </a>
-                                <Link href="/#kontakt" className={styles.ctaBtnSecondary}>
+                                <Link href="#procjena" className={styles.ctaBtnSecondary}>
                                     Ispunite formu za procjenu <ArrowRight size={16} />
                                 </Link>
                             </div>

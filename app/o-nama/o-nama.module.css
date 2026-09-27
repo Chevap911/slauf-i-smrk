@@ -1,7 +1,3 @@
-.page {
-    padding-top: 5rem;
-}
-
 /* Hero */
 .hero {
     padding: 4rem 0 3rem;
@@ -314,5 +310,13 @@
 
     .ctaBox {
         padding: 2rem 1.5rem;
+    }
+}
+
+/* Nav traka je sticky i sama drži svoje mjesto (do 28. 9. 2026. ovdje je bio i padding
+   od 5rem, pa je iznad heroja stajao prazan bijeli pojas). Ispod 992px hero preskače QuoteFab. */
+@media (max-width: 992px) {
+    .hero {
+        padding-top: 4.5rem;
     }
 }

@@ -190,6 +190,8 @@ export default function PranjeFasadePage() {
             />
             <ServicePage
                 title="Pranje fasade u Zagrebu"
+                quoteService="facade"
+                quoteTitle="Koliko bi pranje vaše fasade koštalo?"
                 titleHighlight="fasade"
                 canonicalPath="/usluge/pranje-fasade"
                 description="Profesionalno pranje i čišćenje fasada za kuće, zgrade i poslovne objekte u Zagrebu i okolici. Uklanjamo alge, mahovinu, gljivice, crne tragove i nakupljenu prljavštinu uz prilagođen tlak za žbukane, ETICS i druge fasadne površine. Za okvirnu cijenu možete poslati slike fasade na WhatsApp, za veće objekte dolazimo na lokaciju i dajemo jasnu procjenu bez obaveza."
@@ -323,7 +325,7 @@ export default function PranjeFasadePage() {
                             organizacije. Za kombinirane usluge nudimo paketne cijene.
                         </p>
                         <p>
-                            <Link href="/#kontakt">Zatražite paketnu procjenu</Link>
+                            <Link href="#procjena">Zatražite paketnu procjenu</Link>
                         </p>
 
                         <h2>Koliko često trebam prati fasadu?</h2>

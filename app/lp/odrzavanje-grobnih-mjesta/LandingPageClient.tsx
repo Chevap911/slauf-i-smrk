@@ -1,9 +1,10 @@
 'use client';
 
 import Image from 'next/image';
-import { Phone, CheckCircle2, MessageCircle, ArrowRight } from 'lucide-react';
+import { Phone, CheckCircle2, MessageCircle, ArrowRight, Star, AlertTriangle, XCircle, ShieldCheck, Camera, Hand, Globe, MapPin, MessageSquare } from 'lucide-react';
 import styles from '../LandingPage.module.css';
 import LeadForm from './components/LeadForm';
+import HeroReview from '../HeroReview';
 import FaqAccordion from './components/FaqAccordion';
 
 export default function LandingPageClient() {
@@ -12,71 +13,82 @@ export default function LandingPageClient() {
 
             {/* Hero Section */}
             <section className={styles.hero}>
-                <div className={styles.container}>
-                    <div className={styles.trustBar}>
-                        ⭐ 5.0 Google ocjena · Zagreb i okolica · Fotografije prije i poslije
+                <div className={styles.heroContainer}>
+                    <div className={styles.heroIntro}>
+                        <div className={styles.trustBar}>
+                            <Star size={15} fill="currentColor" aria-hidden="true" /> 5,0 Google ocjena · Zagreb i okolica · Fotografije prije i poslije
+                        </div>
+
+                        <h1 className={styles.title}>
+                            Grob vaših najmilijih zaslužuje da uvijek izgleda dostojanstveno.
+                            <span className={styles.highlight} style={{ display: 'block', marginTop: '0.25rem' }}>
+                                A vi ne morate biti tu da to osigurate.
+                            </span>
+                        </h1>
+
+                        <p className={styles.subtitle}>
+                            Profesionalno čišćenje, pranje i impregnacija grobnih mjesta na svim zagrebačkim grobljima.
+                            Dolazimo s opremom, čistimo s pažnjom, šaljemo vam fotografije prije i poslije, sve s vašeg mobitela.
+                        </p>
                     </div>
 
-                    <h1 className={styles.title}>
-                        Grob vaših najmilijih zaslužuje da uvijek izgleda dostojanstveno.
-                        <span className={styles.highlight} style={{ display: 'block', marginTop: '0.25rem' }}>
-                            A vi ne morate biti tu da to osigurate.
-                        </span>
-                    </h1>
-
-                    <p className={styles.subtitle}>
-                        Profesionalno čišćenje, pranje i impregnacija grobnih mjesta na svim zagrebačkim grobljima.
-                        Dolazimo s opremom, čistimo s pažnjom, šaljemo vam fotografije prije i poslije, sve s vašeg mobitela.
-                    </p>
-
-                    <ul className={styles.bullets}>
-                        <li>
-                            <CheckCircle2 className={styles.checkIcon} size={22} />
-                            <span>Mirogoj · Miroševac · Markovo Polje · Brestje · Krematorij</span>
-                        </li>
-                        <li>
-                            <CheckCircle2 className={styles.checkIcon} size={22} />
-                            <span>Ne morate biti prisutni, fotografije stižu na WhatsApp ili e-mail</span>
-                        </li>
-                        <li>
-                            <CheckCircle2 className={styles.checkIcon} size={22} />
-                            <span>Iskustvo s mramorom, granitom i vapnencem</span>
-                        </li>
-                        <li>
-                            <CheckCircle2 className={styles.checkIcon} size={22} />
-                            <span>Pranje, poliranje i impregnacija (uz dodatnu naknadu)</span>
-                        </li>
-                        <li>
-                            <CheckCircle2 className={styles.checkIcon} size={22} />
-                            <span>Idealno za iseljenike i obitelji izvan Zagreba</span>
-                        </li>
-                    </ul>
-
-                    <div style={{ marginTop: '2rem' }}>
-                        <a
-                            href="https://wa.me/385958442806?text=Bok,%20zanima%20me%20čišćenje%20grobnog%20mjesta.%20Groblje:%20"
-                            className={styles.btnPrimary}
-                            onClick={() => {
-                                window.dataLayer?.push({ event: 'whatsapp_click', cta_location: 'hero' });
-                            }}
-                        >
-                            <MessageCircle size={22} />
-                            Javite nam se na WhatsApp
-                        </a>
-                        <a
-                            href="tel:+385954442806"
-                            className={styles.btnSecondary}
-                            onClick={() => {
-                                window.dataLayer?.push({ event: 'call_click', cta_location: 'hero' });
-                            }}
-                        >
-                            <Phone size={22} />
-                            Nazovite odmah: 095 844 2806
-                        </a>
-                        <p className={styles.subtext}>Ili ispunite prijavu u 60 sekundi i javimo se mi vama ↓</p>
+                    <div className={styles.heroForm}>
+                        <LeadForm />
                     </div>
 
-                    <LeadForm />
+                    <div className={styles.heroMore}>
+                        <ul className={styles.bullets}>
+                            <li>
+                                <CheckCircle2 className={styles.checkIcon} size={22} />
+                                <span>Mirogoj · Miroševac · Markovo Polje · Brestje · Krematorij</span>
+                            </li>
+                            <li>
+                                <CheckCircle2 className={styles.checkIcon} size={22} />
+                                <span>Ne morate biti prisutni, fotografije stižu na WhatsApp ili e-mail</span>
+                            </li>
+                            <li>
+                                <CheckCircle2 className={styles.checkIcon} size={22} />
+                                <span>Iskustvo s mramorom, granitom i vapnencem</span>
+                            </li>
+                            <li>
+                                <CheckCircle2 className={styles.checkIcon} size={22} />
+                                <span>Pranje, poliranje i impregnacija (uz dodatnu naknadu)</span>
+                            </li>
+                            <li>
+                                <CheckCircle2 className={styles.checkIcon} size={22} />
+                                <span>Idealno za iseljenike i obitelji izvan Zagreba</span>
+                            </li>
+                        </ul>
+
+                        <div style={{ marginTop: '2rem' }}>
+                            <a
+                                href="https://wa.me/385958442806?text=Bok,%20zanima%20me%20čišćenje%20grobnog%20mjesta.%20Groblje:%20"
+                                className={styles.btnPrimary}
+                                onClick={() => {
+                                    window.dataLayer?.push({ event: 'whatsapp_click', cta_location: 'hero' });
+                                }}
+                            >
+                                <MessageCircle size={22} />
+                                Javite nam se na WhatsApp
+                            </a>
+                            <a
+                                href="tel:+385958442806"
+                                className={styles.btnSecondary}
+                                onClick={() => {
+                                    window.dataLayer?.push({ event: 'call_click', cta_location: 'hero' });
+                                }}
+                            >
+                                <Phone size={22} />
+                                Nazovite odmah: 095 844 2806
+                            </a>
+                        </div>
+
+                        <HeroReview
+                            text="Više puta sam koristila ove usluge i svaki put sam baš ugodno iznenađena."
+                            name="Senka Zadro"
+                            meta="Google recenzija"
+                        />
+                    </div>
                 </div>
             </section>
 
@@ -211,7 +223,7 @@ export default function LandingPageClient() {
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem' }}>
                         <div style={{ background: 'white', borderRadius: '0.75rem', padding: '1.25rem', border: '1px solid #86efac' }}>
                             <p style={{ fontWeight: 700, color: '#166534', marginBottom: '0.75rem', fontSize: '1rem' }}>
-                                ✅ Što se gotovo uvijek riješi
+                                <CheckCircle2 size={18} aria-hidden="true" style={{ verticalAlign: '-3px', marginRight: '0.4rem' }} />Što se gotovo uvijek riješi
                             </p>
                             <p style={{ fontSize: '0.9rem', color: '#374151', lineHeight: 1.7, margin: 0 }}>
                                 Mahovina, lišajevi, prašina, blato, tragovi cvijeća i svijeća, površinska prljavština, zelene naslage.
@@ -219,7 +231,7 @@ export default function LandingPageClient() {
                         </div>
                         <div style={{ background: 'white', borderRadius: '0.75rem', padding: '1.25rem', border: '1px solid #fbbf24' }}>
                             <p style={{ fontWeight: 700, color: '#92400e', marginBottom: '0.75rem', fontSize: '1rem' }}>
-                                ⚠️ Što često uspijemo umanjiti, ali ne uvijek u potpunosti
+                                <AlertTriangle size={18} aria-hidden="true" style={{ verticalAlign: '-3px', marginRight: '0.4rem' }} />Što često uspijemo umanjiti, ali ne uvijek u potpunosti
                             </p>
                             <p style={{ fontSize: '0.9rem', color: '#374151', lineHeight: 1.7, margin: 0 }}>
                                 Duboke fleke od hrđe, tragovi starih lampiona ugrađeni u kamen, mrlje od korijena biljaka, oksidirane mrlje na mramoru, žute fleke od godina prljavštine koja je prodrla u poroznu strukturu.
@@ -227,7 +239,7 @@ export default function LandingPageClient() {
                         </div>
                         <div style={{ background: 'white', borderRadius: '0.75rem', padding: '1.25rem', border: '1px solid #fecaca' }}>
                             <p style={{ fontWeight: 700, color: '#991b1b', marginBottom: '0.75rem', fontSize: '1rem' }}>
-                                ❌ Što se ne može popraviti čišćenjem
+                                <XCircle size={18} aria-hidden="true" style={{ verticalAlign: '-3px', marginRight: '0.4rem' }} />Što se ne može popraviti čišćenjem
                             </p>
                             <p style={{ fontSize: '0.9rem', color: '#374151', lineHeight: 1.7, margin: 0 }}>
                                 Mehanička oštećenja, izlizani ili oštećeni natpis, pukotine u kamenu, ispucale fotografije. Za to su potrebni kamenoresci, ako trebate, preporučit ćemo provjerene majstore.
@@ -272,6 +284,10 @@ export default function LandingPageClient() {
                                 <td>100 €<span className="sidrena">Cijena na 10. 9. 2026.: od 50 €</span></td>
                             </tr>
                             <tr>
+                                <td>Kulir (bijeli ukrasni kamen umjesto zemlje i korova)</td>
+                                <td>po dogovoru</td>
+                            </tr>
+                            <tr>
                                 <td>Predujam za rezervaciju</td>
                                 <td>30%</td>
                             </tr>
@@ -280,13 +296,13 @@ export default function LandingPageClient() {
 
                     <div style={{ background: '#f0fdf4', border: '1px solid #86efac', borderRadius: '0.75rem', padding: '1.25rem', marginTop: '1.5rem' }}>
                         <p style={{ fontSize: '0.9rem', color: '#166534', fontWeight: 600, margin: '0 0 0.25rem' }}>
-                            ✅ Ostatak se plaća tek nakon što dobijete fotografije rezultata.
+                            <CheckCircle2 size={16} aria-hidden="true" style={{ verticalAlign: '-3px', marginRight: '0.4rem' }} />Ostatak se plaća tek nakon što dobijete fotografije rezultata.
                         </p>
                         <p style={{ fontSize: '0.9rem', color: '#166534', fontWeight: 600, margin: '0 0 0.25rem' }}>
-                            ✅ Bez skrivenih troškova.
+                            <CheckCircle2 size={16} aria-hidden="true" style={{ verticalAlign: '-3px', marginRight: '0.4rem' }} />Bez skrivenih troškova.
                         </p>
                         <p style={{ fontSize: '0.9rem', color: '#166534', fontWeight: 600, margin: 0 }}>
-                            ✅ Bez naplate ako rezultat nije ono što smo dogovorili.
+                            <CheckCircle2 size={16} aria-hidden="true" style={{ verticalAlign: '-3px', marginRight: '0.4rem' }} />Bez naplate ako rezultat nije ono što smo dogovorili.
                         </p>
                     </div>
 
@@ -315,28 +331,26 @@ export default function LandingPageClient() {
                         Šaljemo fotografije ovakve kvalitete direktno na vaš mobitel.
                     </p>
 
+                    {/* Stvarni grob koji smo radili (imena i fotografije na spomeniku zamućene). Do 28. 9. 2026.
+                        ovdje su bile slike groblje-1/2.png koje nikad nisu postojale, pa su se vidjela dva prazna okvira. */}
                     <div className={styles.galleryGrid}>
-                        <div className={styles.galleryImage}>
-                            <Image
-                                src="/lp-gallery/groblje-1.png"
-                                alt="Čišćenje nadgrobnog kamena - rezultat"
-                                fill
-                                className={styles.galleryImg}
-                                sizes="(max-width: 600px) 50vw, 300px"
-                                onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-                            />
-                        </div>
-                        <div className={styles.galleryImage}>
-                            <Image
-                                src="/lp-gallery/groblje-2.png"
-                                alt="Očišćeni grobni obrubi - rezultat"
-                                fill
-                                className={styles.galleryImg}
-                                sizes="(max-width: 600px) 50vw, 300px"
-                                onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-                            />
-                        </div>
+                        {([
+                            { src: '/grob/grob-prije-ciscenja-korov-i-prljav-okvir.jpg', alt: 'Grob prije čišćenja: korov, zemlja i prljav okvir', label: 'Prije', ratio: '3/4' },
+                            { src: '/grob/grob-poslije-ciscenja-bijeli-kulir.jpg', alt: 'Isti grob poslije čišćenja, s bijelim kulirom umjesto zemlje', label: 'Poslije, s kulirom', ratio: '3/4' },
+                            { src: '/grob/grob-bocna-strana-prije-ciscenja.jpg', alt: 'Bočna strana groba prije čišćenja', label: 'Prije', ratio: '16/9' },
+                            { src: '/grob/grob-bocna-strana-poslije-ciscenja.jpg', alt: 'Bočna strana groba poslije čišćenja', label: 'Poslije', ratio: '16/9' },
+                        ] as const).map((img) => (
+                            <div key={img.src} className={styles.galleryImage} style={{ aspectRatio: img.ratio }}>
+                                <Image src={img.src} alt={img.alt} fill className={styles.galleryImg} sizes="(max-width: 600px) 50vw, 300px" />
+                                <span style={{ position: 'absolute', left: '0.5rem', bottom: '0.5rem', background: 'rgba(0, 32, 64, 0.82)', color: '#fff', fontSize: '0.75rem', fontWeight: 700, padding: '0.25rem 0.6rem', borderRadius: '999px' }}>
+                                    {img.label}
+                                </span>
+                            </div>
+                        ))}
                     </div>
+                    <p style={{ fontSize: '0.9rem', color: '#4b5563', textAlign: 'center', marginTop: '1rem' }}>
+                        Na ovom grobu smo uz čišćenje zemlju i korov zamijenili bijelim kulirom. Kulir radimo po dogovoru.
+                    </p>
                 </div>
             </section>
 
@@ -349,16 +363,16 @@ export default function LandingPageClient() {
 
                     <div style={{ maxWidth: '640px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                         {[
-                            { icon: '⭐', text: '5.0 ocjena na Google-u, provjereno od stvarnih klijenata' },
-                            { icon: '🛡️', text: 'Profesionalna oprema, visokotlačni uređaji s podesivim pritiskom (ne uništavaju kamen)' },
-                            { icon: '📸', text: 'Fotografije prije i poslije, uvijek, bez iznimke' },
-                            { icon: '✋', text: 'Nježan pristup, ručno čišćenje oko natpisa, slika i osjetljivih dijelova' },
-                            { icon: '🌍', text: 'Specijalizirani za iseljenike, komunikacija na hrvatskom, engleskom i njemačkom' },
-                            { icon: '🇭🇷', text: 'Sva groblja u Zagrebu i okolici, Mirogoj, Miroševac, Markovo Polje, Brestje, Krematorij i dalje' },
-                            { icon: '💬', text: 'Iskrena procjena, kažemo unaprijed što se može, a što ne' },
+                            { icon: Star, text: '5,0 ocjena na Googleu, provjereno od stvarnih klijenata' },
+                            { icon: ShieldCheck, text: 'Profesionalna oprema, visokotlačni uređaji s podesivim pritiskom (ne uništavaju kamen)' },
+                            { icon: Camera, text: 'Fotografije prije i poslije, uvijek, bez iznimke' },
+                            { icon: Hand, text: 'Nježan pristup, ručno čišćenje oko natpisa, slika i osjetljivih dijelova' },
+                            { icon: Globe, text: 'Specijalizirani za iseljenike, komunikacija na hrvatskom, engleskom i njemačkom' },
+                            { icon: MapPin, text: 'Sva groblja u Zagrebu i okolici, Mirogoj, Miroševac, Markovo Polje, Brestje, Krematorij i dalje' },
+                            { icon: MessageSquare, text: 'Iskrena procjena, kažemo unaprijed što se može, a što ne' },
                         ].map((item) => (
-                            <div key={item.icon} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', background: 'var(--surface)', borderRadius: '0.75rem', padding: '1rem 1.25rem', border: '1px solid var(--border)' }}>
-                                <span style={{ fontSize: '1.3rem', flexShrink: 0 }}>{item.icon}</span>
+                            <div key={item.text} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', background: 'var(--surface)', borderRadius: '0.75rem', padding: '1rem 1.25rem', border: '1px solid var(--border)' }}>
+                                <item.icon size={20} aria-hidden="true" style={{ flexShrink: 0, marginTop: '2px', color: 'var(--secondary)' }} />
                                 <span style={{ fontSize: '0.95rem', color: '#374151', lineHeight: 1.6 }}>{item.text}</span>
                             </div>
                         ))}
@@ -370,25 +384,25 @@ export default function LandingPageClient() {
             <section className={styles.section} style={{ background: 'var(--surface)' }}>
                 <div className={styles.container}>
                     <h2 className={styles.title} style={{ textAlign: 'center', marginBottom: '2rem' }}>
-                        Što kažu naši klijenti
+                        Što kažu klijenti na Googleu
                     </h2>
 
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
                         {([
                             {
-                                text: 'Živim u Njemačkoj i nisam bila u mogućnosti redovito posjećivati grob moje mame. Fotografije su bile nevjerojatne, sve blistavo čisto. Preporučujem svima koji su daleko.',
-                                name: 'Marija K.',
-                                meta: 'Njemačka, Miroševac',
+                                text: 'Naručio sam čišćenje pročelja kuće i prilaza. Dečki su mrak. Mladi, brzi i odgovorni. Odrade sve po dogovoru, čak i više. Cijena i više nego pristupačna. Preporučujem svima.',
+                                name: 'Bogdan Janjanin',
+                                meta: 'Google recenzija · Pranje pročelja i prilaza',
                             },
                             {
-                                text: 'Stariji sam i ne mogu se sagnuti za čišćenje. Oni su sve obavili profesionalno i s puno poštovanja. Primio sam slike i zaplakao od sreće. Hvala vam.',
-                                name: 'Stjepan P.',
-                                meta: 'Zagreb, Mirogoj',
+                                text: 'Sve pohvale za detaljno čišćenje i brz dogovor oko termina! Sve preporuke za ekipu.',
+                                name: 'Nina Cvijanović',
+                                meta: 'Google recenzija · 5/5',
                             },
                             {
-                                text: 'Javio sam se ekipi iz Kanade da mi očiste grob od roditelja, odradili su super posao! Bez previše dopisivanja i muke. Sve preporuke!',
-                                name: 'Ivan M.',
-                                meta: 'Toronto, Mirogoj',
+                                text: 'Odlična usluga i obavljen posao. Angažirala sam ih za čišćenje terase i sve je obavljeno brzo i profesionalno. Sve pohvale!',
+                                name: 'Hana Janjanin',
+                                meta: 'Google recenzija · Pranje terase',
                             },
                         ] as const).map((t) => (
                             <div key={t.name} style={{ background: 'white', borderRadius: '1rem', padding: '1.5rem', border: '1px solid var(--border)' }}>
@@ -435,7 +449,7 @@ export default function LandingPageClient() {
                             WhatsApp
                         </a>
                         <a
-                            href="tel:+385954442806"
+                            href="tel:+385958442806"
                             className={styles.btnSecondary}
                             style={{ marginBottom: '1rem' }}
                             onClick={() => {
@@ -461,7 +475,7 @@ export default function LandingPageClient() {
             {/* Sticky Mobile Bar */}
             <div className={styles.stickyBar}>
                 <a
-                    href="tel:+385954442806"
+                    href="tel:+385958442806"
                     className={styles.stickyBtn}
                     onClick={() => {
                         window.dataLayer?.push({ event: 'call_click', cta_location: 'sticky_bar' });

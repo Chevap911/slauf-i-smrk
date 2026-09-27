@@ -1,6 +1,7 @@
 /* Ista kartica kao hero forma (components/Hero/Hero.module.css: formCard, formHeader, formBody),
    samo uža sjena jer stoji u tekstu članka, a ne preko fotke. */
 .card {
+    scroll-margin-top: calc(var(--nav-h) + 1rem);
     margin: 2.25rem 0;
     background: #fff;
     border-radius: 1.5rem;
@@ -108,5 +109,12 @@
     .body {
         padding-left: 1.2rem;
         padding-right: 1.2rem;
+    }
+}
+
+/* Ispod 992px ispod nav trake stoji i QuoteFab */
+@media (max-width: 992px) {
+    .card {
+        scroll-margin-top: calc(var(--nav-h) + 4.5rem);
     }
 }

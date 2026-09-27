@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowLeft, Phone, ArrowRight } from 'lucide-react';
 import styles from './article.module.css';
 import ArticleQuote from '@/components/ArticleQuote/ArticleQuote';
@@ -237,6 +238,22 @@ export default function BlogArticle() {
                             pristupačnima, jer dolazak na groblje za samo jedno grobno mjesto ne bi bio
                             ekonomičan ni za nas ni za vas.
                         </p>
+                        <h3>Primjer: grob prije i poslije</h3>
+                        <p>
+                            Na ovom grobu okvir je bio siv i prljav, a umjesto cvijeća rasli su korov i trava. Očistili
+                            smo spomenik, okvir i bazu, a zemlju zamijenili bijelim kulirom, pa grob ostaje uredan bez
+                            plijevljenja. Kulir nudimo uz čišćenje, cijena je po dogovoru.
+                        </p>
+                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', margin: '1.25rem 0 2rem' }}>
+                            <figure style={{ margin: 0 }}>
+                                <Image src="/grob/grob-prije-ciscenja-korov-i-prljav-okvir.jpg" alt="Grob prije čišćenja, korov i trava umjesto cvijeća, prljav okvir" width={844} height={1500} style={{ width: '100%', height: 'auto', borderRadius: '0.75rem' }} sizes="(max-width: 768px) 50vw, 400px" />
+                                <figcaption style={{ fontSize: '0.85rem', color: '#666', marginTop: '0.35rem' }}>Prije</figcaption>
+                            </figure>
+                            <figure style={{ margin: 0 }}>
+                                <Image src="/grob/grob-poslije-ciscenja-bijeli-kulir.jpg" alt="Isti grob nakon čišćenja, bijeli kulir i očišćen granitni okvir" width={844} height={1500} style={{ width: '100%', height: 'auto', borderRadius: '0.75rem' }} sizes="(max-width: 768px) 50vw, 400px" />
+                                <figcaption style={{ fontSize: '0.85rem', color: '#666', marginTop: '0.35rem' }}>Poslije</figcaption>
+                            </figure>
+                        </div>
                         <p>
                             Postupak izgleda ovako:
                         </p>

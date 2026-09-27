@@ -28,7 +28,7 @@ export default function Hero() {
                     <HeroAnimatedContent />
 
                     <HeroVisualMotion className={styles.formCol}>
-                        <div className={styles.formCard}>
+                        <div className={styles.formCard} id="procjena">
                             <div className={styles.formHeader}>
                                 <span className={styles.formEyebrow}>Besplatna procjena</span>
                                 <h2 className={styles.formTitle}>Saznajte cijenu pranja odmah</h2>

@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://slaufismrk.com';
-    const serviceUpdated = new Date('2026-09-27');
+    const serviceUpdated = new Date('2026-09-28');
 
     const services = [
         'pranje-fasade',
@@ -81,7 +81,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         // Local pages
         ...['zagreb', 'sesvete', 'velika-gorica', 'samobor', 'zapresic', 'sveta-nedelja', 'dugo-selo'].map(slug => ({
             url: `${baseUrl}/podrucje/${slug}`,
-            lastModified: new Date('2026-09-27'),
+            lastModified: new Date('2026-09-28'),
             changeFrequency: 'monthly' as const,
             priority: 0.8,
         })),

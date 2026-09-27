@@ -17,6 +17,7 @@ const serviceNames: Record<string, string> = {
     car: 'Detailing automobila',
     pool: 'Pranje bazena',
     grave: 'Održavanje grobnih mjesta',
+    other: 'Ostalo / nije odabrano',
 };
 
 export async function POST(req: Request) {

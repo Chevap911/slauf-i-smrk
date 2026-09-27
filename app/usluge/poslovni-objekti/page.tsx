@@ -135,6 +135,8 @@ export default function PoslovniObjektiPage() {
             />
             <ServicePage
                 title="Pranje poslovnih objekata u Zagrebu"
+                quoteService=""
+                quoteTitle="Zatražite ponudu za svoj objekt"
                 titleHighlight="poslovnih objekata"
                 canonicalPath="/usluge/poslovni-objekti"
                 description="Vanjsko čišćenje poslovnih objekata, skladišta, hala i uredskih zgrada u Zagrebu i okolici. Čistimo fasade, parkirišta, rampe, istovarne zone i sve vanjske površine. Nudimo redovite ugovore za klijente kojima je stalan uredan izgled prioritet, bez potrebe za internom organizacijom i praćenjem termina."

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     description: 'Profesionalno čišćenje bazena, okolnog kamena i terasa u Zagrebu. Priprema bazena za sezonu. Uklanjamo alge i naslage. Besplatna procjena.',
     alternates: { canonical: '/usluge/pranje-bazena' },
     openGraph: {
-        title: 'Pranje Bazena Zagreb | Šlauf i Šmrk',
+        title: 'Pranje bazena Zagreb | Šlauf i Šmrk',
         description: 'Profesionalno čišćenje bazena, okolnog kamena i terasa u Zagrebu. Priprema za sezonu.',
         url: 'https://slaufismrk.com/usluge/pranje-bazena',
         images: [OG_IMAGE],
@@ -96,8 +96,10 @@ const breadcrumbSchema = {
 export default function PranjeBasenapPage() {
     return (
         <ServicePage
-            title="Pranje Bazena"
-            titleHighlight="Bazena"
+            title="Pranje bazena u Zagrebu"
+            quoteService="pool"
+            quoteTitle="Koliko bi pranje vašeg bazena koštalo?"
+            titleHighlight="bazena"
             canonicalPath="/usluge/pranje-bazena"
             description="Pripremite bazen za sezonu kupanja ili ga očistite nakon ljeta. Profesionalno čistimo stijenke bazena, obodni kamen, terasu oko bazena i sve prateće površine. Uklanjamo alge, naslage i nakupljenu prljavštinu za kristalno čistu vodu i siguran prostor za kupanje."
             priceHint="od 600 €"
@@ -142,7 +144,7 @@ export default function PranjeBasenapPage() {
                     <ul>
                         <li><strong>Stijenke i dno bazena</strong>, uklanjamo alge, kalcifikacije i zelenilo.</li>
                         <li><strong>Obodni kamen (coping)</strong>, kamene ploče oko ruba bazena koje postaju klizave od algi. Za detaljnije čišćenje kamena pogledajte <Link href="/usluge/ciscenje-kamenih-povrsina">čišćenje kamenih površina</Link>.</li>
-                        <li><strong>Drvena terasa oko bazena</strong>, WPC ili prirodno drvo koje sivi i postaje klizavo. Pogledajte <Link href="/usluge/ciscenje-drvenih-povrsina">čišćenje drvenih površina</Link>.</li>
+                        <li><strong>Drvena terasa oko bazena</strong>: WPC ili prirodno drvo koje sivi i postaje klizavo. Pogledajte <Link href="/usluge/ciscenje-drvenih-povrsina">čišćenje drvenih površina</Link>.</li>
                         <li><strong>Kameni prilaz bazenu</strong>, staze i stepenice do bazena.</li>
                         <li><strong>Bazensku opremu</strong>, ljestve, ručke, prekrivače.</li>
                     </ul>

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Gallery from '@/components/Gallery/Gallery';
 import { OG_IMAGE } from '@/lib/seo';
+import QuoteLink from '@/components/QuoteLink/QuoteLink';
 
 export const metadata: Metadata = {
     title: 'Galerija radova, pranje fasada i terasa Zagreb',
@@ -38,9 +39,9 @@ export default function GalerijaPage() {
             <Gallery />
 
             <div style={{ textAlign: 'center', paddingBottom: '4rem' }}>
-                <Link href="/#kontakt" className="btn btn-primary">
+                <QuoteLink className="btn btn-primary">
                     Zatražite besplatnu procjenu
-                </Link>
+                </QuoteLink>
             </div>
         </main>
     );

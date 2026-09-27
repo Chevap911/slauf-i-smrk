@@ -1,0 +1,81 @@
+/* Preuzeto iz components/Hero/Hero.module.css (formCard, formHeader, formBody) */
+.card {
+    position: relative;
+    z-index: 1;
+    background: #fff;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35);
+    color: var(--foreground);
+    scroll-margin-top: calc(var(--nav-h) + 1rem);
+}
+
+.header {
+    padding: 1.4rem 1.75rem 1.15rem;
+    background: linear-gradient(135deg, var(--secondary), #004b8f);
+    color: #fff;
+}
+
+.eyebrow {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 0.35rem;
+}
+
+.title {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.25 !important;
+    margin: 0 0 0.4rem !important;
+    color: #fff !important;
+    opacity: 1 !important;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    line-height: 1.5 !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    margin: 0 0 0.6rem !important;
+    max-width: none !important;
+    opacity: 1 !important;
+}
+
+.trust {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    line-height: 1.4 !important;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--primary) !important;
+    margin: 0 !important;
+    opacity: 1 !important;
+}
+
+.body {
+    padding: 1.4rem 1.75rem 1.6rem;
+}
+
+@media (max-width: 600px) {
+    .card {
+        border-radius: 1.1rem;
+    }
+
+    .header,
+    .body {
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+    }
+}
+
+/* Ispod 992px ispod nav trake stoji i QuoteFab */
+@media (max-width: 992px) {
+    .card {
+        scroll-margin-top: calc(var(--nav-h) + 4.5rem);
+    }
+}

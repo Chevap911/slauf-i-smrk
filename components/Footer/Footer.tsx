@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { Camera, CheckCircle2, Mail, MapPin, Phone, Facebook, Instagram, Star } from 'lucide-react';
 import styles from './Footer.module.css';
+import QuoteLink from '@/components/QuoteLink/QuoteLink';
 
 // TODO: provjerite i po potrebi zamijenite ove linkove točnim profilima.
 const socialLinks = [
@@ -50,9 +51,9 @@ export default function Footer() {
                             })}
                         </div>
 
-                        <Link href="/#kontakt" className={styles.brandCta}>
+                        <QuoteLink className={styles.brandCta}>
                             Zatražite procjenu
-                        </Link>
+                        </QuoteLink>
 
                         <div className={styles.socials}>
                             {socialLinks.map((social) => {

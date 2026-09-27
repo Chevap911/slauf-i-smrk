@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     description: 'Peremo auto iznutra i izvana dok smo već na vašoj lokaciji. Vanjsko pranje, kemijsko čišćenje sjedala i interijer, bez putnog troška.',
     alternates: { canonical: '/usluge/detailing-automobila' },
     openGraph: {
-        title: 'Pranje Auta Uz Dolazak | Šlauf i Šmrk',
+        title: 'Pranje auta uz dolazak, Zagreb | Šlauf i Šmrk',
         description: 'Peremo auto iznutra i izvana dok smo već na vašoj lokaciji. Bez dodatnog putnog troška.',
         url: 'https://slaufismrk.com/usluge/detailing-automobila',
         images: [OG_IMAGE],
@@ -88,8 +88,10 @@ const breadcrumbSchema = {
 export default function DetailingAutoPage() {
     return (
         <ServicePage
-            title="Pranje Auta Uz Dolazak"
-            titleHighlight="Uz Dolazak"
+            title="Pranje auta uz dolazak u Zagrebu"
+            quoteService="car"
+            quoteTitle="Koliko bi detailing vašeg auta koštao?"
+            titleHighlight="uz dolazak"
             canonicalPath="/usluge/detailing-automobila"
             description="Dok smo već kod vas zbog fasade, okućnice ili neke druge usluge, peremo i auto. Iznutra i izvana, uključujući kemijsko čišćenje sjedala. Bez dodatnog putnog troška jer smo već tu."
             priceHint="od 60 € (vanjsko) · od 80 € (interijer) · od 130 € (komplet)"

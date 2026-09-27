@@ -97,6 +97,8 @@ export default function PranjeTerasaPage() {
             />
         <ServicePage
             title="Pranje terasa u Zagrebu"
+            quoteService="terrace"
+            quoteTitle="Koliko bi pranje vaše terase koštalo?"
             titleHighlight="terasa"
             canonicalPath="/usluge/pranje-terasa"
             description="Profesionalno pranje terasa vraća čistoću i sigurnost vanjskom prostoru. Uklanjamo alge, mahovinu, crne naslage, klizavi biofilm i tvrdokornu prljavštinu s keramičkih, kamenih i betonskih terasa u Zagrebu i okolici."

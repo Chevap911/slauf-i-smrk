@@ -1,7 +1,3 @@
-.servicePage {
-    padding-top: 5rem;
-}
-
 /* Hero */
 .hero {
     padding: 4rem 0 3rem;
@@ -25,9 +21,30 @@
 
 .heroContent {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.05fr 0.95fr;
     gap: 3rem;
     align-items: center;
+}
+
+/* Fotka i "Što dobivate" ispod heroja (do 28. 9. 2026. stajale su desno, gdje je sad forma) */
+.heroProof {
+    padding: 3rem 0 0;
+}
+
+.heroProofGrid {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+.heroProof .heroAsideCard {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--secondary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .heroText h1 {
@@ -796,9 +813,30 @@
 /* ================================ */
 /*    RESPONSIVE                    */
 /* ================================ */
+@media (max-width: 992px) {
+    .heroContent,
+    .heroProofGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 768px) {
     .heroContent {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    /* Na mobitelu forma ide odmah ispod naslova; poziv i WhatsApp su u traci na dnu ekrana */
+    .heroHighlights,
+    .heroBtns {
+        display: none;
+    }
+
+    .heroSubtitle {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
 
     .heroImage {
@@ -858,4 +896,12 @@
 /* Kad je uz cijenu i cijena na 10. 9. 2026., pill postaje dvoredna kartica */
 .heroPrice:has(:global(.sidrena)) {
     border-radius: 1rem;
+}
+
+/* Nav traka je sticky i sama drži svoje mjesto (do 28. 9. 2026. ovdje je bio i padding
+   od 5rem, pa je iznad heroja stajao prazan bijeli pojas). Ispod 992px hero preskače QuoteFab. */
+@media (max-width: 992px) {
+    .hero {
+        padding-top: 4.5rem;
+    }
 }
