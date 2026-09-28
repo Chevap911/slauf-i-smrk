@@ -368,7 +368,7 @@ export default function BlogArticle() {
                             </p>
                             <div className={styles.ctaButtons}>
                                 <a href="tel:+385958442806" className={styles.ctaBtn}>
-                                    <Phone size={18} /> 095-844-2806
+                                    <Phone size={18} /> +385 95 844 2806
                                 </a>
                                 <Link href="#procjena" className={styles.ctaBtnSecondary}>
                                     Ispunite formu za procjenu <ArrowRight size={16} />

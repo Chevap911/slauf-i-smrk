@@ -99,7 +99,7 @@ export default function ZagrebPage() {
                             Zagreba i okolice. Od fasada u Španskom do dvorišta u Maksimiru, tu smo za vas.
                         </p>
                         <a href="tel:+385958442806" className={styles.heroCta}>
-                            <Phone size={18} /> Nazovite 095 844 2806
+                            <Phone size={18} /> Nazovite +385 95 844 2806
                         </a>
                     </div>
                     <QuoteCard

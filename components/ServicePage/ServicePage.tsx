@@ -275,7 +275,7 @@ export default function ServicePage({
                                         window.dataLayer?.push({ event: 'call_click', cta_location: 'service_page_hero' });
                                     }}
                                 >
-                                    <Phone size={18} /> 095 844 2806
+                                    <Phone size={18} /> +385 95 844 2806
                                 </a>
                             </div>
                         </div>
@@ -510,7 +510,7 @@ export default function ServicePage({
                             }}
                         >
                             <Phone size={24} />
-                            (095) 844-2806
+                            +385 95 844 2806
                         </a>
                     </div>
                 </div>

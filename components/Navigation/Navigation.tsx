@@ -99,7 +99,7 @@ export default function Navigation() {
                             }}
                         >
                             <Phone size={18} style={{ marginRight: '8px' }} />
-                            095 844 2806
+                            +385 95 844 2806
                         </a>
                     </div>
 

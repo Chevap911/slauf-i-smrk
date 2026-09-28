@@ -176,7 +176,7 @@ export default function WashReveal({
                             </a>
                             <a href="tel:+385958442806" className={styles.ctaPhone}>
                                 <Phone size={15} strokeWidth={2.2} aria-hidden="true" />
-                                095 844 2806
+                                +385 95 844 2806
                             </a>
                         </div>
                     </div>

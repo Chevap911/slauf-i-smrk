@@ -112,7 +112,7 @@ export default function QuoteForm({ idPrefix = 'qf', hideHeading = false, initia
             setSentEstimate(est);
             setSent(true);
         } catch {
-            setError('Greška pri slanju. Nazovite nas na 095 844 2806 ili WhatsApp.');
+            setError('Greška pri slanju. Nazovite nas na +385 95 844 2806 ili WhatsApp.');
         } finally {
             setSubmitting(false);
         }
@@ -206,7 +206,7 @@ export default function QuoteForm({ idPrefix = 'qf', hideHeading = false, initia
                     window.dataLayer.push({ event: 'call_click', cta_location: idPrefix });
                 }}
             >
-                <Phone size={15} /> ili nazovite 095 844 2806
+                <Phone size={15} /> ili nazovite +385 95 844 2806
             </a>
         </div>
     );

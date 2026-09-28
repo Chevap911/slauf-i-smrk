@@ -248,7 +248,7 @@ export default function BlogArticle() {
                             <p>Dolazimo na procjenu, vidimo površinu i tip materijala, dajemo točnu cijenu. Bez obaveze.</p>
                             <div className={styles.ctaButtons}>
                                 <a href="tel:+385958442806" className={styles.ctaBtn}>
-                                    <Phone size={18} /> 095 844 2806
+                                    <Phone size={18} /> +385 95 844 2806
                                 </a>
                                 <Link href="#procjena" className={styles.ctaBtnSecondary}>
                                     Ispunite formu <ArrowRight size={16} />

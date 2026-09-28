@@ -62,11 +62,11 @@ const faqData = [
     },
     {
         question: 'Hoće li čišćenje oštetiti natpise, slike ili spomenik?',
-        answer: 'Ne. Koristimo profesionalnu opremu s podesivim pritiskom i ručno radimo oko osjetljivih dijelova (gravure, fotografije, mali ukrasi). Naša 5.0 Google ocjena potvrđuje da znamo što radimo.'
+        answer: 'Ne. Koristimo profesionalnu opremu s podesivim pritiskom i ručno radimo oko osjetljivih dijelova (gravure, fotografije, mali ukrasi). Naša ocjena 5,0 na Googleu potvrđuje da znamo što radimo.'
     },
     {
         question: 'Je li ova usluga prikladna za iseljenike?',
-        answer: 'Više od polovice naših klijenata su iseljenici, Njemačka, Austrija, Švicarska, Irska, SAD, Kanada, Australija. Komuniciramo na hrvatskom, engleskom i njemačkom. Plaćanje je moguće SEPA transferom, Wise-om, PayPal-om ili direktnom uplatom na Revolut.'
+        answer: 'Da. Ne morate dolaziti: dogovor ide preko WhatsAppa ili maila, a fotografije prije i poslije šaljemo na mobitel. Komuniciramo na hrvatskom i engleskom. Plaćate uplatom na naš račun (IBAN), iz bilo koje banke ili preko Wisea i Revoluta.'
     },
     {
         question: 'Što ako nisam zadovoljan rezultatom?',

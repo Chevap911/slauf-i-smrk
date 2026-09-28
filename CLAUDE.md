@@ -21,6 +21,7 @@ Komunikacija s Markom: hrvatski. Sav sadržaj na webu: hrvatski.
 4. **Perf:** GTM/FB/Clarity idu preko `lazyOnload`. Hero H1 pun opacity iz SSR-a (LCP).
 5. Bez lažnog social proofa. Stvarne brojke: ~40 Google recenzija, ocjena 5,0 (stanje 6/2026).
 6. **Sidrena cijena i CSV cjenik (obveza od 1. 10. 2026., NN 101/2026, kazna za obrt 1.000 do 20.000 € po prekršaju).** Uz svaku cijenu na webu stoji i cijena na 10. 9. 2026., na istom mjestu, i kad je jednaka. Izvor cijena je `lib/cjenik.ts`, stranica `/cjenik`, CSV-ovi u `public/cjenik/`. Kad se cijena mijenja: promijeni `cijena`, nikad `sidrena`; `npm run cjenik` (nova datoteka, stare se nikad ne brišu, moraju biti dostupne 30+ dana); ažuriraj tekstove (`grep -rn "10. 9. 2026." app components`); deploy najkasnije do 8:00 na dan kad nova cijena vrijedi. Nova cijena ili nova usluga na webu bez sidrene = prekršaj. Akcija/popust traži tri cijene: akcijska, najniža u zadnjih 30 dana i sidrena.
+7. **Telefon i WhatsApp: jedan broj, jedan zapis (Marko 2026-09-28).** Na ekranu uvijek `+385 95 844 2806`, u linkovima `tel:+385958442806` i `https://wa.me/385958442806`, u schemi `+385958442806`. Nikad `095 844 2806`, `(095) 844-2806` ni drugi oblik. Prije deploya: `grep -rInE "844[ -]?28|8442806" app components lib public | grep -v "+385 95 844 2806\|385958442806"` mora biti prazan. Razlog: landing za grobove je od 29. 4. do 28. 9. 2026. zvao +385 95 444 2806, a na webu su bila četiri različita zapisa broja. Jezici: hrvatski i engleski (njemački ne).
 
 ## Dev
 

@@ -143,7 +143,7 @@ export default function BlogArticle() {
                             <p>Pošaljite slike na WhatsApp i recimo vam treba li pranje ili bojanje. Dolazimo na besplatnu procjenu.</p>
                             <div className={styles.ctaButtons}>
                                 <a href="tel:+385958442806" className={styles.ctaBtn}>
-                                    <Phone size={16} /> 095 844 2806
+                                    <Phone size={16} /> +385 95 844 2806
                                 </a>
                                 <Link href="/usluge/pranje-fasade" className={styles.ctaBtnSecondary}>
                                     Usluga pranja fasade <ArrowRight size={16} />

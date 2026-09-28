@@ -61,7 +61,7 @@ export default function StickyCtaBanner() {
                             }}
                         >
                             <Phone size={18} />
-                            <span className={styles.phoneNumber}>095 844 2806</span>
+                            <span className={styles.phoneNumber}>+385 95 844 2806</span>
                             <span className={styles.phoneLabel}>Nazovi</span>
                         </a>
                         <a 

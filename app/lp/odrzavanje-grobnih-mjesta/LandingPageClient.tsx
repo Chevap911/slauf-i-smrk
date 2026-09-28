@@ -79,7 +79,7 @@ export default function LandingPageClient() {
                                 }}
                             >
                                 <Phone size={22} />
-                                Nazovite odmah: 095 844 2806
+                                +385 95 844 2806
                             </a>
                         </div>
 
@@ -367,7 +367,7 @@ export default function LandingPageClient() {
                             { icon: ShieldCheck, text: 'Profesionalna oprema, visokotlačni uređaji s podesivim pritiskom (ne uništavaju kamen)' },
                             { icon: Camera, text: 'Fotografije prije i poslije, uvijek, bez iznimke' },
                             { icon: Hand, text: 'Nježan pristup, ručno čišćenje oko natpisa, slika i osjetljivih dijelova' },
-                            { icon: Globe, text: 'Specijalizirani za iseljenike, komunikacija na hrvatskom, engleskom i njemačkom' },
+                            { icon: Globe, text: 'Specijalizirani za iseljenike, komunikacija na hrvatskom i engleskom' },
                             { icon: MapPin, text: 'Sva groblja u Zagrebu i okolici, Mirogoj, Miroševac, Markovo Polje, Brestje, Krematorij i dalje' },
                             { icon: MessageSquare, text: 'Iskrena procjena, kažemo unaprijed što se može, a što ne' },
                         ].map((item) => (
@@ -457,7 +457,7 @@ export default function LandingPageClient() {
                             }}
                         >
                             <Phone size={22} />
-                            Nazovi 095 844 2806
+                            +385 95 844 2806
                         </a>
                         <a
                             href="#prijava"

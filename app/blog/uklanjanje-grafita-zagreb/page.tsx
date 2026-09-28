@@ -182,7 +182,7 @@ export default function BlogArticle() {
                             <p>Pošaljite slike na WhatsApp i javimo okvirnu cijenu. Za veće plohe i zgrade dolazimo na besplatnu procjenu.</p>
                             <div className={styles.ctaButtons}>
                                 <a href="tel:+385958442806" className={styles.ctaBtn}>
-                                    <Phone size={16} /> 095 844 2806
+                                    <Phone size={16} /> +385 95 844 2806
                                 </a>
                                 <Link href="/usluge/pranje-fasade" className={styles.ctaBtnSecondary}>
                                     Pogledajte pranje fasade <ArrowRight size={16} />

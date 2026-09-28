@@ -65,7 +65,7 @@ export default function ArticleQuote({ location, title, service, whatsappText, w
                             <MessageCircle size={18} /> {whatsappLabel}
                         </a>
                         <a href={`tel:${PHONE}`} className={styles.call} onClick={() => track('call_click', location)}>
-                            <Phone size={18} /> 095 844 2806
+                            <Phone size={18} /> +385 95 844 2806
                         </a>
                     </div>
                 )}
