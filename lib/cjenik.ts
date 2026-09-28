@@ -36,9 +36,16 @@ export type Stavka = {
     napomena?: string;
 };
 
+/** Usluga koja se nudi, ali bez istaknute cijene: cijena se daje u ponudi. Nema broja, pa nema ni sidrene, i ne ide u CSV. */
+export type PoDogovoru = {
+    naziv: string;
+    napomena?: string;
+};
+
 export type Kategorija = {
     naziv: string;
     stavke: Stavka[];
+    poDogovoru?: PoDogovoru[];
 };
 
 const isto = (min: number, max?: number): Pick<Stavka, 'cijena' | 'sidrena'> => ({
@@ -64,11 +71,15 @@ export const CJENIK: Kategorija[] = [
         naziv: 'Grobna mjesta',
         stavke: [
             { naziv: 'Čišćenje jednostrukog groba', jedinica: 'usluga', ...isto(250) },
-            { naziv: 'Čišćenje dvostrukog groba ili grobnice', jedinica: 'usluga', ...isto(300) },
             { naziv: 'Poliranje kamena', jedinica: 'usluga', ...isto(150), napomena: 'uz čišćenje' },
-            // Marko 27. 9. 2026.: fiksno 100 €. Na dan 10. 9. na webu je pisalo "od 50 €", to ostaje sidrena.
-            { naziv: 'Impregnacija groba', jedinica: 'usluga', cijena: { min: 100, max: 100 }, sidrena: { min: 50 }, napomena: 'uz čišćenje' },
-            { naziv: 'Čišćenje, poliranje i impregnacija (komplet)', jedinica: 'usluga', ...isto(400) },
+        ],
+        // Marko 28. 9. 2026.: ove stavke idu po dogovoru, cijena je u ponudi (CRM). Do tada su na webu
+        // bile dvostruki od 300 €, impregnacija 100 € (10. 9.: od 50 €) i komplet od 400 €; stari CSV-ovi to čuvaju.
+        poDogovoru: [
+            { naziv: 'Čišćenje dvostrukog groba ili grobnice', napomena: 'ovisi o veličini' },
+            { naziv: 'Impregnacija groba', napomena: 'uz čišćenje' },
+            { naziv: 'Čišćenje, poliranje i impregnacija (komplet)' },
+            { naziv: 'Kulir', napomena: 'bijeli ukrasni kamen umjesto zemlje i korova' },
         ],
     },
     {

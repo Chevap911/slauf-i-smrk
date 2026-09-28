@@ -273,7 +273,7 @@ export default function LandingPageClient() {
                             </tr>
                             <tr>
                                 <td>Jednokratno čišćenje (dvostruki grob / grobnica)</td>
-                                <td>od 300 €<span className="sidrena">Cijena na 10. 9. 2026.: od 300 €</span></td>
+                                <td>po dogovoru</td>
                             </tr>
                             <tr>
                                 <td>Poliranje kamena (uz čišćenje)</td>
@@ -281,7 +281,7 @@ export default function LandingPageClient() {
                             </tr>
                             <tr>
                                 <td>Impregnacija (uz čišćenje)</td>
-                                <td>100 €<span className="sidrena">Cijena na 10. 9. 2026.: od 50 €</span></td>
+                                <td>po dogovoru</td>
                             </tr>
                             <tr>
                                 <td>Kulir (bijeli ukrasni kamen umjesto zemlje i korova)</td>

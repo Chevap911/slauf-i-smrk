@@ -36,6 +36,15 @@ interface InquiryEmailProps {
     details?: Record<string, unknown>;
 }
 
+// Klijentov broj za wa.me: samo znamenke, s pozivnim 385 (091 234 5678 -> 385912345678)
+const waBroj = (phone?: string) => {
+    const d = (phone || '').replace(/\D/g, '');
+    if (d.length < 8) return '';
+    if (d.startsWith('00')) return d.slice(2);
+    if (d.startsWith('0')) return `385${d.slice(1)}`;
+    return d;
+};
+
 const formatDetails = (details?: Record<string, unknown>) => {
     if (!details) return null;
 
@@ -253,7 +262,7 @@ export const AdminNotificationEmail = ({
     return (
         <Html>
             <Head />
-            <Preview>NOVI UPIT: {name} - {serviceName}</Preview>
+            <Preview>NOVI UPIT: {serviceName}, {phone}</Preview>
             <Body style={main}>
                 <Container style={container}>
                     <Section style={{ ...header, backgroundColor: '#dc2626' }}>
@@ -261,6 +270,13 @@ export const AdminNotificationEmail = ({
                     </Section>
                     <Section style={content}>
                         <Heading style={heading}>Novi zahtjev s weba</Heading>
+                        {/* Odgovor jednim dodirom s mobitela: tko se prvi javi, uzme posao */}
+                        {waBroj(phone) && (
+                            <Section style={{ marginBottom: '24px' }}>
+                                <Link href={`tel:+${waBroj(phone)}`} style={callButton}>Nazovi {phone}</Link>
+                                <Link href={`https://wa.me/${waBroj(phone)}`} style={waButton}>WhatsApp</Link>
+                            </Section>
+                        )}
                         <Text style={paragraph}><strong>Ime:</strong> {name}</Text>
                         <Text style={paragraph}><strong>Telefon:</strong> <Link href={`tel:${phone}`}>{phone}</Link></Text>
                         <Text style={paragraph}><strong>Email:</strong> <Link href={`mailto:${email}`}>{email}</Link></Text>
@@ -268,7 +284,9 @@ export const AdminNotificationEmail = ({
 
                         <Section style={priceBox}>
                             <Text style={paragraph}><strong>Tražena usluga:</strong> {serviceName}</Text>
-                            <Text style={paragraph}><strong>Procjena sustava:</strong> {estimatedPriceMin} - {estimatedPriceMax} €</Text>
+                            {estimatedPriceMin > 0 && (
+                                <Text style={paragraph}><strong>Procjena sustava:</strong> {estimatedPriceMin} - {estimatedPriceMax} €</Text>
+                            )}
 
                             <Hr style={{ borderColor: '#eaeaea', margin: '20px 0' }} />
                             <Text style={{ fontSize: '12px', fontWeight: 'bold', textTransform: 'uppercase', color: brandColors.grayText, textAlign: 'left', marginBottom: '8px' }}>Tehnički detalji i narudžba:</Text>
@@ -395,6 +413,23 @@ const priceBox = {
     marginTop: '32px',
     marginBottom: '32px',
     textAlign: 'center' as const,
+};
+
+const callButton = {
+    display: 'inline-block',
+    backgroundColor: '#16a34a',
+    color: '#ffffff',
+    fontSize: '17px',
+    fontWeight: 'bold',
+    padding: '14px 22px',
+    borderRadius: '8px',
+    textDecoration: 'none',
+    margin: '0 10px 10px 0',
+};
+
+const waButton = {
+    ...callButton,
+    backgroundColor: '#25d366',
 };
 
 const priceBoxTitle = {

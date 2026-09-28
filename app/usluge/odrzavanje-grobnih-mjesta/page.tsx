@@ -29,7 +29,7 @@ const faqSchema = {
             name: "Koliko košta čišćenje grobnog mjesta?",
             acceptedAnswer: {
                 '@type': 'Answer',
-                text: "Jednokratno čišćenje kreće od 250 € (jednostruki grob) i od 300 € (dvostruki grob ili grobnica). Poliranje kamena od 150 €, impregnacija 100 €. Cijene na 10. 9. 2026.: od 250 €, od 300 €, od 150 € i od 50 €. Konačna cijena ovisi o veličini, vrsti kamena i zaprljanosti. Predujam za rezervaciju je 30%, ostatak plaćate tek nakon fotografija rezultata.",
+                text: "Jednokratno čišćenje jednostrukog groba kreće od 250 €, poliranje kamena od 150 € (cijene na 10. 9. 2026.: od 250 € i od 150 €). Dvostruki grob ili grobnica, impregnacija i kulir idu po dogovoru, cijenu javljamo nakon slike groba. Konačna cijena ovisi o veličini, vrsti kamena i zaprljanosti. Predujam za rezervaciju je 30%, ostatak plaćate tek nakon fotografija rezultata.",
             },
         },
         {
@@ -69,7 +69,7 @@ const faqSchema = {
             name: "Mogu li dodati poliranje ili impregnaciju?",
             acceptedAnswer: {
                 '@type': 'Answer',
-                text: "Da. Poliranje vraća sjaj mramoru i granitu (od 150 €, cijena na 10. 9. 2026.: od 150 €). Impregnacija štiti kamen 2–3 godine od mahovine, vode i prljavštine (100 €, cijena na 10. 9. 2026.: od 50 €). To su dodatne usluge uz nadoplatu uz čišćenje.",
+                text: "Da. Poliranje vraća sjaj mramoru i granitu (od 150 €, cijena na 10. 9. 2026.: od 150 €). Impregnacija štiti kamen 2–3 godine od mahovine, vode i prljavštine, cijena je po dogovoru. To su dodatne usluge uz čišćenje.",
             },
         },
         {
@@ -218,9 +218,9 @@ export default function GrobnaMjestaPage() {
                     </p>
                     <ul>
                         <li><strong>Jednokratno čišćenje (jednostruki grob)</strong>: od 250 € (cijena na 10. 9. 2026.: od 250 €)</li>
-                        <li><strong>Jednokratno čišćenje (dvostruki grob / grobnica)</strong>: od 300 € (cijena na 10. 9. 2026.: od 300 €)</li>
+                        <li><strong>Jednokratno čišćenje (dvostruki grob / grobnica)</strong>: po dogovoru, ovisno o veličini</li>
                         <li><strong>Poliranje kamena</strong> (vraćamo sjaj mramoru i granitu): od 150 € (cijena na 10. 9. 2026.: od 150 €)</li>
-                        <li><strong>Impregnacija</strong> (zaštitni premaz, grob ostaje čist 2–3 godine): 100 € (cijena na 10. 9. 2026.: od 50 €)</li>
+                        <li><strong>Impregnacija</strong> (zaštitni premaz, grob ostaje čist 2–3 godine): po dogovoru</li>
                         <li><strong>Kulir</strong> (bijeli ukrasni kamen umjesto zemlje i korova): po dogovoru</li>
                         <li><strong>Predujam za rezervaciju</strong>: 30% (ostatak plaćate tek nakon fotografija rezultata)</li>
                     </ul>
@@ -299,7 +299,7 @@ export default function GrobnaMjestaPage() {
             faq={[
                 {
                     question: 'Koliko košta čišćenje grobnog mjesta?',
-                    answer: 'Jednokratno čišćenje kreće od 250 € (jednostruki grob) i od 300 € (dvostruki grob ili grobnica). Poliranje kamena od 150 €, impregnacija 100 €. Cijene na 10. 9. 2026.: od 250 €, od 300 €, od 150 € i od 50 €. Konačna cijena ovisi o veličini, vrsti kamena i zaprljanosti. Predujam za rezervaciju je 30%, ostatak plaćate tek nakon fotografija rezultata.',
+                    answer: 'Jednokratno čišćenje jednostrukog groba kreće od 250 €, poliranje kamena od 150 € (cijene na 10. 9. 2026.: od 250 € i od 150 €). Dvostruki grob ili grobnica, impregnacija i kulir idu po dogovoru, cijenu javljamo nakon slike groba. Konačna cijena ovisi o veličini, vrsti kamena i zaprljanosti. Predujam za rezervaciju je 30%, ostatak plaćate tek nakon fotografija rezultata.',
                 },
                 {
                     question: 'Kako se rezervira termin?',
@@ -319,7 +319,7 @@ export default function GrobnaMjestaPage() {
                 },
                 {
                     question: 'Mogu li dodati poliranje ili impregnaciju?',
-                    answer: 'Da. Poliranje vraća sjaj mramoru i granitu (od 150 €, cijena na 10. 9. 2026.: od 150 €). Impregnacija štiti kamen 2–3 godine od mahovine, vode i prljavštine (100 €, cijena na 10. 9. 2026.: od 50 €). To su dodatne usluge uz nadoplatu uz čišćenje.',
+                    answer: 'Da. Poliranje vraća sjaj mramoru i granitu (od 150 €, cijena na 10. 9. 2026.: od 150 €). Impregnacija štiti kamen 2–3 godine od mahovine, vode i prljavštine, cijena je po dogovoru. To su dodatne usluge uz čišćenje.',
                 },
                 {
                     question: 'Hoće li čišćenje oštetiti natpise ili fotografije na spomeniku?',

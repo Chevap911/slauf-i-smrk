@@ -49,9 +49,6 @@ function objave(): Objava[] {
 
 export default function CjenikPage() {
     const [vazeci, ...arhiva] = objave();
-    const bezPromjena = CJENIK.every((k) =>
-        k.stavke.every((s) => s.cijena.min === s.sidrena.min && s.cijena.max === s.sidrena.max),
-    );
 
     return (
         <div className={styles.page}>
@@ -70,15 +67,13 @@ export default function CjenikPage() {
 
                     <div className={styles.content}>
                         <p>
-                            Vanjske površine naplaćujemo po kvadratu, ostale usluge imaju početnu cijenu. Točan iznos za
+                            Vanjske površine naplaćujemo po kvadratu, ostale usluge imaju početnu cijenu ili idu po dogovoru. Točan iznos za
                             vaš objekt dobijete nakon besplatne procjene na lokaciji, prije nego krenemo s radom.
                         </p>
                         <p>
                             Uz svaku cijenu piše i cijena koja je vrijedila {SIDRENI_DATUM} Tako od 1. listopada 2026.
-                            propisuje Odluka o isticanju dodatne cijene (NN 101/2026).
-                            {bezPromjena
-                                ? ' Naše cijene se od tog dana nisu mijenjale.'
-                                : ' Gdje se cijena od tada promijenila, vidite obje.'}
+                            propisuje Odluka o isticanju dodatne cijene (NN 101/2026). Usluge po dogovoru nemaju
+                            istaknutu cijenu, iznos dobijete u ponudi.
                         </p>
 
                         {CJENIK.map((kategorija, i) => (
@@ -105,6 +100,15 @@ export default function CjenikPage() {
                                                         <span className={styles.anchorLabel}>Cijena na {SIDRENI_DATUM}: </span>
                                                         {formatIznos(s.sidrena, s.jedinica)}
                                                     </td>
+                                                </tr>
+                                            ))}
+                                            {kategorija.poDogovoru?.map((s) => (
+                                                <tr key={s.naziv}>
+                                                    <td>
+                                                        {s.naziv}
+                                                        {s.napomena && <span className={styles.note}>{s.napomena}</span>}
+                                                    </td>
+                                                    <td className={styles.price} colSpan={2}>po dogovoru</td>
                                                 </tr>
                                             ))}
                                         </tbody>

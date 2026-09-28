@@ -23,7 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         { slug: 'ciscenje-drvene-terase', date: '2026-09-27' },
         { slug: 'obnova-kamene-terase-bez-zamjene-ploca', date: '2026-09-27' },
         { slug: 'salitra-i-kamenac-na-kamenoj-fasadi', date: '2026-09-27' },
-        { slug: 'koliko-kosta-ciscenje-grobnog-mjesta', date: '2026-09-27' },
+        { slug: 'koliko-kosta-ciscenje-grobnog-mjesta', date: '2026-09-28' },
         { slug: 'koliko-kosta-kemijsko-ciscenje-namjestaja', date: '2026-09-27' },
         { slug: 'uklanjanje-grafita-zagreb', date: '2026-06-16' },
         { slug: 'odrzavanje-fasade-stedi-novac', date: '2026-09-27' },
@@ -60,7 +60,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         // Cjenik (NN 101/2026)
         {
             url: `${baseUrl}/cjenik`,
-            lastModified: new Date('2026-09-27'),
+            lastModified: new Date('2026-09-28'),
             changeFrequency: 'monthly' as const,
             priority: 0.8,
         },

@@ -34,11 +34,11 @@ function FaqItem({ question, answer, isOpen, onClick }: FaqItemProps) {
 const faqData = [
     {
         question: 'Koliko košta čišćenje grobnog mjesta?',
-        answer: 'Jednokratno čišćenje kreće od 250 € za jednostruki grob i od 300 € za dvostruki grob ili grobnicu (na 10. 9. 2026.: od 250 € i od 300 €). Konačnu cijenu javljamo prije početka, ovisi o veličini, vrsti kamena i koliko je grob zapušten. Za rezervaciju je predujam 30%, ostatak plaćate tek kad vidite fotografije rezultata.'
+        answer: 'Jednokratno čišćenje jednostrukog groba kreće od 250 € (cijena na 10. 9. 2026.: od 250 €). Dvostruki grob ili grobnica ide po dogovoru, ovisno o veličini. Konačnu cijenu javljamo prije početka, ovisi o veličini, vrsti kamena i koliko je grob zapušten. Za rezervaciju je predujam 30%, ostatak plaćate tek kad vidite fotografije rezultata.'
     },
     {
         question: 'Mogu li dodati poliranje i impregnaciju?',
-        answer: 'Da. Poliranje vraća sjaj kamenu (od 150 €, cijena na 10. 9. 2026.: od 150 €), a impregnacija ga štiti 2–3 godine od mahovine, vode i prljavštine (100 €, cijena na 10. 9. 2026.: od 50 €). To su dodatne usluge uz nadoplatu, predložit ćemo vam najbolju opciju nakon procjene groba.'
+        answer: 'Da. Poliranje vraća sjaj kamenu (od 150 €, cijena na 10. 9. 2026.: od 150 €), a impregnacija ga štiti 2–3 godine od mahovine, vode i prljavštine (cijena po dogovoru). To su dodatne usluge uz nadoplatu, predložit ćemo vam najbolju opciju nakon procjene groba.'
     },
     {
         question: 'Što ako se neke fleke ne mogu skinuti?',

@@ -40,7 +40,7 @@ const articles = [
     },
     {
         title: 'Koliko košta čišćenje grobnog mjesta? Cijene održavanja spomenika Zagreb 2026',
-        excerpt: 'Jednostruki grob od 250 €, dvostruki od 300 € (na 10. 9. 2026.: od 250 € i od 300 €). Konkretne cijene čišćenja nadgrobnih spomenika u Zagrebu, kako funkcionira rezervacija i zašto koristimo niski tlak.',
+        excerpt: 'Jednostruki grob od 250 € (na 10. 9. 2026.: od 250 €), dvostruki po dogovoru. Konkretne cijene čišćenja nadgrobnih spomenika u Zagrebu, kako funkcionira rezervacija i zašto koristimo niski tlak.',
         slug: '/blog/koliko-kosta-ciscenje-grobnog-mjesta',
         date: '2026-07-08',
         category: 'Cijene',

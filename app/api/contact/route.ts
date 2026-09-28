@@ -38,7 +38,7 @@ export async function POST(req: Request) {
                 await resend.emails.send({
                     from: 'Šlauf i Šmrk <info@slaufismrk.com>',
                     to: 'slauf.i.smrk@gmail.com',
-                    subject: `🔥 HOT LEAD (Korak ${step}): ${formData.name}, ${step === 1 ? (formData.city || 'Nepoznat grad') : serviceNameReadable}`,
+                    subject: `🔥 HOT LEAD (Korak ${step}): ${formData.name}, ${formData.phone ? `${formData.phone}, ` : ''}${step === 1 ? (formData.city || 'Nepoznat grad') : serviceNameReadable}`,
                     react: HotLeadEmail({
                         step,
                         name: formData.name,
@@ -121,7 +121,8 @@ export async function POST(req: Request) {
                 await resend.emails.send({
                     from: 'Šlauf i Šmrk <info@slaufismrk.com>',
                     to: 'slauf.i.smrk@gmail.com',
-                    subject: `NOVI UPIT: ${formData.name} - ${serviceNameReadable}`,
+                    // Broj u naslovu: vidi se već u obavijesti na mobitelu, bez otvaranja maila (brzina odgovora)
+                    subject: `NOVI UPIT: ${serviceNameReadable}, ${formData.phone || 'bez broja'}${formData.name && formData.name !== 'Brzi upit (web)' ? `, ${formData.name}` : ''}`,
                     react: AdminNotificationEmail({
                         name: formData.name || 'N/A',
                         email: formData.email || 'N/A',

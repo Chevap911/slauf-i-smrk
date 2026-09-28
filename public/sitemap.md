@@ -8,12 +8,12 @@
 
 ## Usluge
 
-- [Pranje fasade Zagreb](https://slaufismrk.com/usluge/pranje-fasade): uklanjanje algi, mahovine i tamnih tragova, prilagođen tlak za žbuku i ETICS, od 5 €/m²
-- [Pranje okućnice](https://slaufismrk.com/usluge/pranje-okucnice): dvorišta, tlakavci i prilazi, od 4 €/m²
+- [Pranje fasade Zagreb](https://slaufismrk.com/usluge/pranje-fasade): uklanjanje algi, mahovine i tamnih tragova, prilagođen tlak za žbuku i ETICS, od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²)
+- [Pranje okućnice](https://slaufismrk.com/usluge/pranje-okucnice): dvorišta, tlakavci i prilazi, od 4 €/m² (cijena na 10. 9. 2026.: od 4 €/m²)
 - [Pranje terasa](https://slaufismrk.com/usluge/pranje-terasa): keramika, kamen i beton
 - [Pranje tlakavaca](https://slaufismrk.com/usluge/pranje-tlakavaca): betonske kocke i behaton, uklanjanje korova i mahovine
 - [Pranje prilaza](https://slaufismrk.com/usluge/pranje-prilaza): kolni i pješački prilazi
-- [Kemijsko čišćenje namještaja](https://slaufismrk.com/usluge/kemijsko-ciscenje-namjestaja): garniture od 80 €, madraci od 30 €
+- [Kemijsko čišćenje namještaja](https://slaufismrk.com/usluge/kemijsko-ciscenje-namjestaja): garniture od 80 €, madraci od 30 € (na 10. 9. 2026.: od 80 € i od 30 €)
 - [Čišćenje kamenih površina](https://slaufismrk.com/usluge/ciscenje-kamenih-povrsina): prirodni i umjetni kamen
 - [Čišćenje drvenih površina](https://slaufismrk.com/usluge/ciscenje-drvenih-povrsina): terase, ograde i drvene obloge
 - [Detailing automobila](https://slaufismrk.com/usluge/detailing-automobila): vanjsko i unutarnje čišćenje vozila
