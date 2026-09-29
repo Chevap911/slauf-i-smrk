@@ -282,8 +282,8 @@ export default function RootLayout({
             Zajedno su ~600 KB JS-a i ~1 s rada procesora na mobitelu, pa se učitavaju
             tek na prvi dodir, scroll ili tipku, najkasnije 4 s nakon učitavanja.
             dataLayer eventi (call_click, lead_form_submit...) čekaju u redu i GTM
-            ih obradi kad se učita. Posjet s oglasa (gclid, fbclid...) dobiva tagove
-            odmah nakon učitavanja, da se klik s oglasa ne izgubi. */}
+            ih obradi kad se učita. Posjet s oglasa ili kampanje (gclid, fbclid, utm_...)
+            dobiva tagove odmah nakon učitavanja, da se izvor posjeta ne izgubi. */}
         {/* eslint-disable-next-line @next/next/next-script-for-ga -- GoogleTagManager iz @next/third-parties bi ga učitao odmah */}
         <script
           dangerouslySetInnerHTML={{
@@ -312,7 +312,7 @@ export default function RootLayout({
   }
   function onLoad() {
     ready = true;
-    if (wanted || /[?&](gclid|gbraid|wbraid|fbclid|msclkid)=/.test(location.search)) {
+    if (wanted || /[?&](gclid|gbraid|wbraid|fbclid|msclkid|utm_[a-z]+)=/.test(location.search)) {
       (w.requestIdleCallback || setTimeout)(load);
     } else {
       setTimeout(load, 4000);
