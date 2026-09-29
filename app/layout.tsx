@@ -7,11 +7,16 @@ import CookieBanner from "@/components/CookieBanner/CookieBanner";
 import QuoteFab from "@/components/QuoteFab/QuoteFab";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-body", display: "swap" });
+// Bez preloada: fontovi koji se krenu učitavati prije prvog iscrtavanja u Chromeu 153
+// drže iscrtavanje (izmjereno kroz usporeni proxy: prvo iscrtavanje 2,3 s → 0,27 s,
+// PageSpeed 78 → 100, uz inlineCss u next.config.ts). Fontovi se i dalje učitaju
+// odmah, a tekst do tada stoji u zamjenskom fontu istih mjera (swap).
+const inter = Inter({ subsets: ["latin"], variable: "--font-body", display: "swap", preload: false });
 const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-heading",
   display: "swap",
+  preload: false,
 });
 
 export const viewport: Viewport = {

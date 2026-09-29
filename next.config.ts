@@ -6,6 +6,12 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: false,
   },
   excludeDefaultMomentLocales: true,
+  experimental: {
+    // CSS (~23 KB) ide u <head> umjesto 7 zasebnih fajlova, pa se stranica iscrta
+    // čim stigne HTML. Samo zajedno s fontovima bez preloada (app/layout.tsx):
+    // kroz usporeni proxy obje izmjene zajedno 100, svaka zasebno 73-82.
+    inlineCss: true,
+  },
   images: {
     formats: ['image/avif', 'image/webp'],
     qualities: [75, 85],
