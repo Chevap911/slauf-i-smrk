@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import HeroAnimatedContent from './HeroAnimatedContent';
-import HeroVisualMotion from './HeroVisualMotion';
 import { homepageMascots } from '@/components/HomepageMascot/homepageMascots';
 import QuoteForm from '@/components/QuoteForm/QuoteForm';
 import styles from './Hero.module.css';
@@ -27,7 +26,7 @@ export default function Hero() {
                 <div className={styles.wrapper}>
                     <HeroAnimatedContent />
 
-                    <HeroVisualMotion className={styles.formCol}>
+                    <div className={`${styles.formCol} ${styles.enterForm}`}>
                         <div className={styles.formCard} id="procjena">
                             <div className={styles.formHeader}>
                                 <span className={styles.formEyebrow}>Besplatna procjena</span>
@@ -51,7 +50,7 @@ export default function Hero() {
                             />
                             <span className={styles.mascotChipText}>5,0 na Google-u</span>
                         </div>
-                    </HeroVisualMotion>
+                    </div>
                 </div>
             </div>
         </section>

@@ -1,6 +1,5 @@
 'use client';
 
-import { motion, type Variants } from 'framer-motion';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import styles from './Hero.module.css';
 
@@ -10,27 +9,14 @@ const trustPoints = [
     'Prilagođen tlak za svaki materijal',
 ];
 
-const container: Variants = {
-    hidden: {},
-    visible: { transition: { staggerChildren: 0.12, delayChildren: 0.05 } },
-};
-
-const item: Variants = {
-    hidden: { opacity: 0, y: 18 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] } },
-};
-
+// Ulaz ide kroz CSS (.enter* u Hero.module.css), ne kroz framer-motion: server
+// ga renderira vidljivog pa H1, LCP element na mobitelu, ne čeka JavaScript.
 export default function HeroAnimatedContent() {
     return (
-        <motion.div
-            className={styles.content}
-            variants={container}
-            initial="hidden"
-            animate="visible"
-        >
-            <motion.span variants={item} className={styles.eyebrow}>Profesionalno visokotlačno čišćenje za Zagreb i okolicu</motion.span>
+        <div className={styles.content}>
+            <span className={`${styles.eyebrow} ${styles.enter}`}>Profesionalno visokotlačno čišćenje za Zagreb i okolicu</span>
 
-            <motion.div variants={item} className={styles.textGroup}>
+            <div className={`${styles.textGroup} ${styles.enterLcp}`}>
                 <h1 className={styles.title}>
                     Visokotlačno pranje <span className={styles.highlight}>fasada, okućnica i terasa</span> u Zagrebu
                 </h1>
@@ -38,18 +24,18 @@ export default function HeroAnimatedContent() {
                     Profesionalni servis za čišćenje fasada, tlakavaca i popločanih površina.
                     Dolazimo na lokaciju, besplatno procjenjujemo i dajemo točnu cijenu - bez iznenađenja.
                 </p>
-            </motion.div>
+            </div>
 
-            <motion.div variants={item} className={styles.trustList}>
+            <div className={`${styles.trustList} ${styles.enter} ${styles.enterTrust}`}>
                 {trustPoints.map((point) => (
                     <div key={point} className={styles.trustItem}>
                         <CheckCircle2 size={15} />
                         <span>{point}</span>
                     </div>
                 ))}
-            </motion.div>
+            </div>
 
-            <motion.div variants={item} className={styles.actions}>
+            <div className={`${styles.actions} ${styles.enter} ${styles.enterActions}`}>
                 <a href="#kontakt" className="btn btn-primary">
                     Zatražite besplatnu procjenu
                     <ArrowRight size={18} style={{ marginLeft: '8px' }} />
@@ -68,8 +54,8 @@ export default function HeroAnimatedContent() {
                     </svg>
                     WhatsApp upit
                 </a>
-            </motion.div>
+            </div>
 
-        </motion.div>
+        </div>
     );
 }

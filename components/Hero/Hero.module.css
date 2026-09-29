@@ -48,8 +48,58 @@
     }
 }
 
+/* Ulaz sadržaja: CSS umjesto framer-motiona, kreće s prvim iscrtavanjem i ne
+   čeka hidrataciju. H1 blok (LCP na mobitelu) se samo podiže, bez fadea, jer
+   element s opacity 0 ne može biti LCP. Kašnjenja prate stari stagger od 0,12 s. */
+@keyframes heroRise {
+    from {
+        transform: translateY(18px);
+    }
+    to {
+        transform: none;
+    }
+}
+
+@keyframes heroRiseFade {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.enter,
+.enterLcp,
+.enterForm {
+    animation: heroRiseFade 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both;
+}
+
+.enterLcp {
+    animation-name: heroRise;
+    animation-delay: 0.17s;
+}
+
+.enterTrust {
+    animation-delay: 0.29s;
+}
+
+.enterActions {
+    animation-delay: 0.41s;
+}
+
+.enterForm {
+    animation-duration: 0.7s;
+    animation-delay: 0.15s;
+}
+
 @media (prefers-reduced-motion: reduce) {
-    .bgImg {
+    .bgImg,
+    .enter,
+    .enterLcp,
+    .enterForm {
         animation: none;
     }
 }

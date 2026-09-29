@@ -13,6 +13,12 @@
     gap: 1.5rem;
 }
 
+/* Već odabrano: <head> skripta postavi html[data-consent] prije prvog
+   iscrtavanja, pa se banner iz serverskog HTML-a ni ne bljesne */
+:global(html[data-consent]) .banner {
+    display: none;
+}
+
 .content {
     max-width: 1200px;
     margin: 0 auto;
