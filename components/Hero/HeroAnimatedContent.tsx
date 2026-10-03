@@ -36,7 +36,7 @@ export default function HeroAnimatedContent() {
             </div>
 
             <div className={`${styles.actions} ${styles.enter} ${styles.enterActions}`}>
-                <a href="#kontakt" className="btn btn-primary">
+                <a href="#procjena" className="btn btn-primary">
                     Zatražite besplatnu procjenu
                     <ArrowRight size={18} style={{ marginLeft: '8px' }} />
                 </a>

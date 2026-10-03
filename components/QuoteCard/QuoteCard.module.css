@@ -73,9 +73,9 @@
     }
 }
 
-/* Ispod 992px ispod nav trake stoji i QuoteFab */
+/* Ispod 992px forma ne smije završiti ispod nav trake */
 @media (max-width: 992px) {
     .card {
-        scroll-margin-top: calc(var(--nav-h) + 4.5rem);
+        scroll-margin-top: calc(var(--nav-h) + 1rem);
     }
 }

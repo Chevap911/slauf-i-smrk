@@ -340,10 +340,11 @@
 }
 
 /* Nav traka je sticky i sama drži svoje mjesto (do 28. 9. 2026. ovdje je bio i padding
-   od 5rem, pa je iznad heroja stajao prazan bijeli pojas). Ispod 992px hero preskače QuoteFab. */
+   od 5rem, pa je iznad heroja stajao prazan bijeli pojas). Do 4. 10. 2026. hero je na
+   mobitelu preskakao i plutajući QuoteFab gumb (4,5rem). */
 @media (max-width: 992px) {
     .hero {
-        padding-top: 4.5rem;
+        padding-top: 2rem;
     }
 }
 

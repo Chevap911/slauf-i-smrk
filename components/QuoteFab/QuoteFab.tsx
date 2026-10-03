@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
-import { Sparkles, X } from 'lucide-react';
+import { X } from 'lucide-react';
 import QuoteForm from '@/components/QuoteForm/QuoteForm';
 import styles from './QuoteFab.module.css';
 
@@ -13,11 +13,6 @@ export default function QuoteFab() {
     const [open, setOpen] = useState(false);
     const [service, setService] = useState<string | undefined>();
     const pathname = usePathname();
-
-    const otvori = () => {
-        setService(uslugaSaStranice());
-        setOpen(true);
-    };
 
     // StickyCtaBanner otvara ovaj modal na stranicama bez forme
     useEffect(() => {
@@ -42,15 +37,6 @@ export default function QuoteFab() {
 
     return (
         <>
-            <button
-                type="button"
-                className={styles.fab}
-                onClick={otvori}
-                aria-label="Zatražite besplatnu procjenu"
-            >
-                <Sparkles size={18} />
-                <span>Besplatna procjena</span>
-            </button>
 
             {open && (
                 <div className={styles.overlay} onClick={() => setOpen(false)} role="dialog" aria-modal="true">

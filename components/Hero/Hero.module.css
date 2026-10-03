@@ -173,7 +173,8 @@
 }
 
 .title {
-    font-size: clamp(2.25rem, 3.3vw, 3.25rem);
+    /* isto kao H1 na stranicama usluga (96b1224): 3,5rem na 1440, 3,5× tekst */
+    font-size: clamp(2.25rem, 3.9vw, 3.5rem);
     margin-bottom: 1rem;
     color: #fff;
     line-height: 1.12;
@@ -341,9 +342,9 @@
 }
 
 @media (max-width: 992px) {
-    /* top padding preskače i QuoteFab (fiksiran ispod nav trake) */
+    /* do 4. 10. 2026. top padding je preskakao i plutajući QuoteFab gumb (4,5rem) */
     .hero {
-        padding: calc(4.5rem + var(--nav-h)) 0 2rem;
+        padding: calc(1.75rem + var(--nav-h)) 0 2rem;
     }
 
     /* Mobitel: fotka je full-width tekstura ispod tamnijeg overlaya,
@@ -371,9 +372,8 @@
         margin-top: 1.25rem;
     }
 
-    /* ispod nav trake stoji i QuoteFab */
     .formCard {
-        scroll-margin-top: calc(var(--nav-h) + 4.5rem);
+        scroll-margin-top: calc(var(--nav-h) + 1rem);
     }
 }
 

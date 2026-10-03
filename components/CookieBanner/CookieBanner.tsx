@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import styles from './CookieBanner.module.css';
 
 export default function CookieBanner() {
@@ -59,14 +60,11 @@ export default function CookieBanner() {
     return (
         <div className={styles.banner}>
             <div className={styles.content}>
-                <div className={styles.text}>
-                    <div className={styles.title}>Postavke privatnosti i kolačića</div>
-                    <div className={styles.description}>
-                        Koristimo kolačiće kako bismo vam pružili najbolje iskustvo na našoj web stranici, analizirali promet i prikazivali personalizirane oglase. 
-                        Klikom na „Prihvaćam sve“, pristajete na upotrebu svih kolačića. 
-                        Možete odabrati „Samo nužni“ ako ne želite kolačiće za praćenje.
-                    </div>
-                </div>
+                {/* Do 4. 10. 2026. naslov i tri rečenice; na mobitelu je banner pokrivao ~40 % ekrana */}
+                <p className={styles.description}>
+                    Kolačiće za analitiku i oglase koristimo samo uz vaš pristanak.{' '}
+                    <Link href="/politika-privatnosti">Politika privatnosti</Link>
+                </p>
                 <div className={styles.actions}>
                     <button onClick={handleReject} className={`${styles.btn} ${styles.btnReject}`}>
                         Samo nužni
