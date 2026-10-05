@@ -18,6 +18,13 @@ export const metadata: Metadata = {
 
 const articles = [
     {
+        title: 'Pranje vrućom vodom pod visokim tlakom: ulje i žvakaće s betona',
+        excerpt: 'Stroj od 500 bara grije vodu do 130 °C. Test na kamenom podu punom ulja i žvakaćih: fotografije prije i poslije, kako radimo i što ova metoda može, a što ne.',
+        slug: '/blog/pranje-vrucom-vodom-ulje-zvakace',
+        date: '2026-10-05',
+        category: 'Naš posao',
+    },
+    {
         title: 'Čišćenje drvene terase: pranje ili brušenje i koliko košta',
         excerpt: 'Posivjela drvena terasa najčešće ne treba brušenje. Zašto drvo posivi, kako ga peremo niskim tlakom, kada ipak treba brusiti i što napraviti nakon čišćenja.',
         slug: '/blog/ciscenje-drvene-terase',
