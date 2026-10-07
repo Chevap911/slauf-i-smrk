@@ -64,42 +64,27 @@ export default function BlogArticle() {
             {
                 '@type': 'Question',
                 name: 'Kako se čisti terasa od algi i mahovine?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Profesionalno čišćenje terasa od algi i mahovine uključuje predtretman biorazgradivim sredstvom koje omekšava naslage, potom visokotlačno pranje rotacijskim surface cleanerom koji ravnomjerno pere cijelu površinu bez zebra-efekta. Kućni aparat može ukloniti gornji sloj, ali ne uništava korijen algi u fugama.',
-                },
+                acceptedAnswer: { '@type': 'Answer', text: 'Predtretmanom biorazgradivim sredstvom koji omekšava naslage, potom visokotlačnim pranjem rotacijskim surface cleanerom. Kućni aparat može ukloniti gornji sloj, ali ne uništava korijen u fugama, zato se alge brzo vraćaju.' },
             },
             {
                 '@type': 'Question',
                 name: 'Koliko traje čišćenje terase?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Terasu do 60 m² čistimo za 2 sata. Veće terase ili jako zaprljane površine s dubokim algama u fugama mogu trajati 3-4 sata zbog predtretmana.',
-                },
-            },
-            {
-                '@type': 'Question',
-                name: 'Koliko košta čišćenje terasa u Zagrebu?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Cijena čišćenja terasa u Zagrebu kreće se od 200 € za terase do 50 m² (cijena na 10. 9. 2026.: od 200 €), ovisno o materijalu i stupnju zaprljanosti. Drvene terase su nešto skuplje (6-8 €/m², cijena na 10. 9. 2026.: 6-8 €/m²) zbog posebnog tretmana.',
-                },
+                acceptedAnswer: { '@type': 'Answer', text: 'Terasu do 60 m² čistimo za 2 sata. Jako zaprljane terase s dubokim algama u fugama mogu trajati 3-4 sata zbog predtretmana.' },
             },
             {
                 '@type': 'Question',
                 name: 'Mogu li se čistiti keramičke pločice na terasi?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Da. Keramičke pločice čistimo prilagođenim tlakom i kemijom koja uklanja naslage bez oštećenja glazure. Posebnu pažnju posvećujemo fugama gdje se skuplja najviše prljavštine i algi.',
-                },
+                acceptedAnswer: { '@type': 'Answer', text: 'Da. Keramičke pločice čistimo prilagođenim tlakom koji ne oštećuje glazuru. Posebno se fokusiramo na fuge gdje se skuplja najviše naslaga.' },
             },
             {
                 '@type': 'Question',
                 name: 'Koliko često treba čistiti vanjsku terasu?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Jednom godišnje za terase na suncu, a svake 6-8 mjeseci za sjenovite terase ili terase ispod drveća gdje alge i mahovina rastu brže zbog vlage.',
-                },
+                acceptedAnswer: { '@type': 'Answer', text: 'Jednom godišnje za terase na suncu. Svake 6-8 mjeseci za sjenovite terase ili terase ispod drveća gdje alge rastu brže zbog stalne vlage.' },
+            },
+            {
+                '@type': 'Question',
+                name: 'Čistite li i balkone u stambenim zgradama?',
+                acceptedAnswer: { '@type': 'Answer', text: 'Da. Balkoni i terase u zgradama redovit su dio posla. Za više stanova u zgradi postoji grupna ponuda s nižom cijenom po stanu.' },
             },
         ],
     };

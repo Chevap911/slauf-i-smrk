@@ -63,42 +63,27 @@ export default function BlogArticle() {
             {
                 '@type': 'Question',
                 name: 'Koliko košta čišćenje grobnog mjesta u Zagrebu?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Čišćenje jednostrukog grobnog mjesta kreće od 250 €, a poliranje kamena od 150 € (cijene na 10. 9. 2026.: od 250 € i od 150 €). Dvostruki grob ili grobnica, impregnacija i komplet idu po dogovoru. Konačna cijena ovisi o veličini, vrsti kamena i stupnju zaprljanosti.',
-                },
+                acceptedAnswer: { '@type': 'Answer', text: 'Jednostruki grob od 250 €, poliranje kamena od 150 € (cijene na 10. 9. 2026.: od 250 € i od 150 €). Dvostruki grob, grobnica i impregnacija idu po dogovoru. Točnu cijenu za vaš slučaj dajemo nakon što pošaljete fotografiju groba.' },
             },
             {
                 '@type': 'Question',
                 name: 'Trebam li biti na groblju za vrijeme čišćenja?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Ne. Dovoljno je da nam javite lokaciju grobnog mjesta (groblje, polje, red i broj). Nakon čišćenja šaljemo fotografije prije i poslije kao dokaz obavljenog posla.',
-                },
+                acceptedAnswer: { '@type': 'Answer', text: 'Ne. Dovoljno je da nam javite lokaciju grobnog mjesta. Nakon čišćenja šaljemo fotografije prije i poslije kao dokaz obavljenog posla.' },
             },
             {
                 '@type': 'Question',
-                name: 'Na kojim grobljima u Zagrebu radite?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Pokrivamo sva veća zagrebačka groblja: Mirogoj, Miroševac, Markovo Polje, Krematorij, Brestje i okolna groblja po dogovoru.',
-                },
+                name: 'Na kojim grobljima radite?',
+                acceptedAnswer: { '@type': 'Answer', text: 'Sva veća zagrebačka groblja: Mirogoj, Miroševac, Markovo Polje, Krematorij, Brestje. Okolna groblja (Velika Gorica, Samobor, Zaprešić) po dogovoru.' },
             },
             {
                 '@type': 'Question',
-                name: 'Koliko vremena treba da se očisti grobno mjesto?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Samo čišćenje traje 2 do 4 sata, ovisno o veličini i zaprljanosti. Organiziramo terminski po groblju: kad se skupi 10+ prijava za isto groblje, zakazujemo dan. Standardni rok od prijave do čišćenja je 1 do 3 tjedna.',
-                },
+                name: 'Koliko traje čišćenje jednog groba?',
+                acceptedAnswer: { '@type': 'Answer', text: 'Samo čišćenje 2 do 4 sata, ovisno o veličini i zaprljanosti. Od prijave do termina prođe 1 do 3 tjedna (čekamo da se lista za groblje popuni).' },
             },
             {
                 '@type': 'Question',
-                name: 'Hoće li čišćenje oštetiti natpise ili fotografije na spomeniku?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Ne. Koristimo niski tlak i sredstva prilagođena vrsti kamena. Natpise, fotografije i pozlatu tretiramo ručno, bez kontakta s visokotlačnim mlazom.',
-                },
+                name: 'Može li se oštetiti natpis ili fotografija na porculanu?',
+                acceptedAnswer: { '@type': 'Answer', text: 'Ne. Koristimo niski tlak i sredstva prilagođena kamenu. Natpise, pozlatu i porculanske fotografije čistimo ručno, bez kontakta s mlazom.' },
             },
         ],
     };

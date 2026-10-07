@@ -65,34 +65,22 @@ export default function BlogArticle() {
             {
                 '@type': 'Question',
                 name: 'Koliko košta pranje okućnice po kvadratnom metru u Zagrebu?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Cijena pranja okućnice u Zagrebu kreće se od 4 € po m² (cijena na 10. 9. 2026.: od 4 € po m²) ovisno o veličini površine, stupnju zaprljanosti i količini korova u fugama. Manja dvorišta i terase do 50 m² kreću od 200 € (na 10. 9. 2026.: od 200 €).',
-                },
+                acceptedAnswer: { '@type': 'Answer', text: 'Cijena pranja okućnice kreće se od 4 € po m² (cijena na 10. 9. 2026.: od 4 € po m²) ovisno o veličini površine, stupnju zaprljanosti i količini korova u fugama. Manja dvorišta i terase do 50 m² kreću od 200 € (na 10. 9. 2026.: od 200 €).' },
             },
             {
                 '@type': 'Question',
                 name: 'Uključuje li pranje tlakavaca i ponovno fugiranje pijeskom?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Osnovna cijena pranja ne uključuje kvarcni pijesak i fugiranje jer to ne žele svi klijenti. Međutim, toplo ga preporučujemo, bez novog pijeska, korov se vraća brže. Usluga fugiranja naplaćuje se dodatno, okvirno 1,50 do 2,50 € po m² (cijena na 10. 9. 2026.: 1,50 do 2,50 € po m²).',
-                },
+                acceptedAnswer: { '@type': 'Answer', text: 'Osnovna cijena pranja ne uključuje kvarcni pijesak i fugiranje jer to ne žele svi klijenti. Međutim, toplo ga preporučujemo, bez novog pijeska, korov se vraća brže. Usluga fugiranja naplaćuje se dodatno, okvirno 1,50 do 2,50 € po m² (cijena na 10. 9. 2026.: 1,50 do 2,50 € po m²).' },
             },
             {
                 '@type': 'Question',
                 name: 'Mogu li mrlje od motornog ulja s betonskog prilaza potpuno nestati?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Svježe mrlje od ulja uklanjamo u gotovo 100% slučajeva uz specijalizirane odmašćivače i vruću vodu. Stare, duboko upijene mrlje na poroznom betonu mogu se značajno izblijediti, ali 100% garancija ovisi o starosti mrlje i tipu betona.',
-                },
+                acceptedAnswer: { '@type': 'Answer', text: 'Svježe mrlje od ulja uklanjamo u gotovo 100% slučajeva uz specijalizirane odmašćivače i vruću vodu. Stare, duboko upijene mrlje mogu se značajno izblijediti, ali 100% garancija ovisi o starosti mrlje i tipu betona.' },
             },
             {
                 '@type': 'Question',
                 name: 'Trebam li biti kod kuće dok perete dvorište?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Nije nužno. Dovoljno je da nam osigurate pristup dvorištu i priključku za vodu. Javit ćemo vam se kad završimo i fotografirati rezultat.',
-                },
+                acceptedAnswer: { '@type': 'Answer', text: 'Nije nužno. Dovoljno je da nam osigurate pristup dvorištu i priključku za vodu. Javit ćemo vam se kad završimo i fotografirati rezultat.' },
             },
         ],
     };

@@ -67,42 +67,27 @@ export default function BlogArticle() {
             {
                 '@type': 'Question',
                 name: 'Koliko košta kemijsko čišćenje garniture u Zagrebu?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Kompletna garnitura (trosjed, dvosjed i fotelja) kreće se od 80 €. Pojedinačno: trosjed od 40 €, dvosjed od 30 €, fotelja od 20 €. Cijene na 10. 9. 2026.: od 80 €, od 40 €, od 30 € i od 20 €. Točna cijena ovisi o veličini, materijalu i zaprljanosti, a potvrđujemo je besplatnom procjenom prije početka.',
-                },
+                acceptedAnswer: { '@type': 'Answer', text: 'Kompletna garnitura (trosjed, dvosjed i fotelja) od 80 €. Pojedinačno: trosjed od 40 €, dvosjed od 30 €, fotelja od 20 €. Cijene na 10. 9. 2026.: od 80 €, od 40 €, od 30 € i od 20 €. Točnu cijenu potvrđujemo besplatnom procjenom.' },
             },
             {
                 '@type': 'Question',
                 name: 'Koliko često treba dubinski čistiti garnituru?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Preporuka je svakih 12 do 18 mjeseci za prosječno kućanstvo. Ako imate malu djecu ili kućne ljubimce, svakih 6 do 12 mjeseci. Madrace je dobro dubinski očistiti barem jednom godišnje zbog grinja i znoja.',
-                },
+                acceptedAnswer: { '@type': 'Answer', text: 'Svakih 12 do 18 mjeseci za prosječno kućanstvo, svakih 6 do 12 mjeseci ako imate djecu ili kućne ljubimce. Madrace barem jednom godišnje.' },
             },
             {
                 '@type': 'Question',
-                name: 'Koliko dugo se suši namještaj nakon kemijskog čišćenja?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Nakon ekstrakcijskog čišćenja namještaj je prohodan za 4 do 8 sati, ovisno o tkanini i prozračivanju prostorije. Madraci se obično suše preko noći. Ne ostavljamo natopljen namještaj, stroj izvlači najveći dio vlage odmah.',
-                },
+                name: 'Koliko dugo se suši namještaj?',
+                acceptedAnswer: { '@type': 'Answer', text: '4 do 8 sati, ovisno o tkanini i prozračivanju. Madraci preko noći. Stroj izvlači najveći dio vlage odmah, ništa ne ostaje natopljeno.' },
             },
             {
                 '@type': 'Question',
-                name: 'Mogu li se ukloniti mrlje od kave, vina ili kućnih ljubimaca?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Svježe mrlje od kave, vina i hrane uklanjamo u velikoj većini slučajeva. Stare mrlje koje su ušle duboko u vlakna mogu se značajno izblijediti, ali ne garantiramo potpuno uklanjanje. Na procjeni ćemo vam iskreno reći što je realno.',
-                },
+                name: 'Mogu li se ukloniti mrlje od kave, vina ili ljubimaca?',
+                acceptedAnswer: { '@type': 'Answer', text: 'Svježe mrlje u velikoj većini slučajeva da. Stare, duboko upijene mrlje značajno blijede, ali potpuno uklanjanje ne garantiramo. Na procjeni dobivate iskren odgovor prije nego što platite išta.' },
             },
             {
                 '@type': 'Question',
-                name: 'Dolazite li na adresu i što trebam pripremiti?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Da, čistimo kod vas doma, u Zagrebu i okolici. Trebamo samo pristup utičnici i prostor oko namještaja. Sve ostalo, strojeve, kemiju i zaštitu poda, donosimo mi.',
-                },
+                name: 'Dolazite li na adresu?',
+                acceptedAnswer: { '@type': 'Answer', text: 'Da, čistimo kod vas doma, u Zagrebu i okolici. Trebamo samo utičnicu i prostor oko namještaja, sve ostalo donosimo mi.' },
             },
         ],
     };

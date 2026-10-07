@@ -17,84 +17,9 @@ export const metadata: Metadata = {
     },
 };
 
-
-const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-        {
-            '@type': 'ListItem',
-            position: 1,
-            name: 'Početna',
-            item: 'https://slaufismrk.com/',
-        },
-        {
-            '@type': 'ListItem',
-            position: 2,
-            name: 'Pranje terasa',
-            item: 'https://slaufismrk.com/usluge/pranje-terasa',
-        }
-    ],
-};
-
 export default function PranjeTerasaPage() {
-    const faqSchema = {
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        mainEntity: [
-            {
-                '@type': 'Question',
-                name: 'Koliko košta čišćenje terasa u Zagrebu?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Cijena čišćenja terasa u Zagrebu kreće se od 4 €/m² (cijena na 10. 9. 2026.: od 4 €/m²). Za terasu do 50 m² to je okvirno od 200 €, a za terasu od 100 m² iznosi od 400 € (na 10. 9. 2026.: od 200 € i od 400 €). Točna cijena ovisi o materijalu i zaprljanosti.',
-                },
-            },
-            {
-                '@type': 'Question',
-                name: 'Možete li oprati terasu bez oštećenja fuga i pločica?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Da. Koristimo profesionalnu opremu i prilagođen tlak kako bismo očistili površinu bez nepotrebnog oštećenja fuga ili završnog sloja pločica.',
-                },
-            },
-            {
-                '@type': 'Question',
-                name: 'Čistite li i balkone i manje gradske terase?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Da, čistimo i manje gradske terase, balkone i lođe ako postoji siguran pristup i mogućnost izvođenja radova.',
-                },
-            },
-            {
-                '@type': 'Question',
-                name: 'Što ako je terasa od drva ili WPC-a?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Drvene terase i WPC podloge čistimo posebnim pristupom s niskim tlakom i specijalnim sredstvima za drvo. Za njih pogledajte našu zasebnu uslugu čišćenja drvenih površina.',
-                },
-            },
-            {
-                '@type': 'Question',
-                name: 'Koliko često treba čistiti vanjsku terasu?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Najčešće jednom godišnje, a na sjenovitim i vlažnijim lokacijama i češće, ovisno o rastu algi i količini prljavštine.',
-                },
-            },
-        ],
-    };
-
     return (
         <>
-        <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-        />
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-            />
         <ServicePage
             title="Pranje terasa u Zagrebu"
             quoteService="terrace"
