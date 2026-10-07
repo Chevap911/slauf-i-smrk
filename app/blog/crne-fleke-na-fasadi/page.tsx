@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     alternates: { canonical: '/blog/crne-fleke-na-fasadi' },
     openGraph: {
         title: 'Crne fleke na fasadi: kako smo ih skinuli na kući na Jarunu',
-        description: 'Stvarni posao iz Zagreba: što su crne fleke na fasadi, zašto se vraćaju i kako ih trajno uklanjamo.',
+        description: 'Stvarni posao iz Zagreba: što su crne fleke na fasadi, zašto se vraćaju i kako ih uklanjamo.',
         url: 'https://slaufismrk.com/blog/crne-fleke-na-fasadi',
         type: 'article',
         images: [OG_IMAGE],
@@ -150,6 +150,14 @@ export default function BlogArticle() {
                             Pošaljite nam 2-3 slike fasade na WhatsApp i javimo okvirnu cijenu. Za veće objekte dolazimo na
                             besplatnu procjenu.
                         </p>
+
+                        <h2>Česta pitanja o crnim flekama na fasadi</h2>
+                        {faqSchema.mainEntity.map((q) => (
+                            <div key={q.name}>
+                                <h3>{q.name}</h3>
+                                <p>{q.acceptedAnswer.text}</p>
+                            </div>
+                        ))}
 
                         <div className={styles.ctaBox}>
                             <h3>Crne fleke na fasadi?</h3>

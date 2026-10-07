@@ -174,21 +174,7 @@ export default function ServicePage({
             '@type': 'Place',
             name: area,
         })),
-        provider: {
-            '@type': 'LocalBusiness',
-            name: 'Šlauf i Šmrk',
-            url: baseUrl,
-            telephone: '+385958442806',
-            address: {
-                '@type': 'PostalAddress',
-                streetAddress: 'Primoštenska ulica 11',
-                addressLocality: 'Zagreb',
-                postalCode: '10000',
-                addressRegion: 'Zagreb',
-                addressCountry: 'HR',
-            },
-            areaServed: ['Zagreb', 'Zagrebačka županija'],
-        },
+        provider: { '@id': 'https://slaufismrk.com/#business' },
     } : null;
 
     return (

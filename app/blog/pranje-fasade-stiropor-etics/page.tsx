@@ -64,50 +64,27 @@ export default function BlogArticle() {
             {
                 '@type': 'Question',
                 name: 'Može li se stiropor fasada prati visokotlačnim peračem?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Ne. Visoki tlak iznad 50 bara može probiti završni sloj žbuke debljine svega 1,5 do 3 mm. Jednom kad vlaga uđe u stiropor, slijedi skuplja sanacija. Za ETICS fasade jedina sigurna metoda je softwash, tj. nisko-tlačno kemijsko čišćenje.',
-                },
+                acceptedAnswer: { '@type': 'Answer', text: 'Ne. Visoki tlak iznad 50 bara može probiti završni sloj žbuke debljine svega 1,5 do 3 mm. Jednom kad vlaga uđe u stiropor, slijedi skuplja sanacija. Za ETICS fasade jedina sigurna metoda je softwash.' },
             },
             {
                 '@type': 'Question',
-                name: 'Koliko košta pranje stiropor fasade u Zagrebu?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Pranje ETICS fasade u Zagrebu kreće se od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²). Za obiteljsku kuću od 200 m² fasade to je od 1.000 € (na 10. 9. 2026.: od 1.000 €). Točna cijena ovisi o stupnju zaraženosti algama ili gljivicama i dostupnosti površine.',
-                },
+                name: 'Koliko košta pranje stiropor fasade?',
+                acceptedAnswer: { '@type': 'Answer', text: 'Pranje ETICS fasade kreće se od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²). Za obiteljsku kuću od 200 m² fasade to je od 1.000 € (na 10. 9. 2026.: od 1.000 €). Točna cijena ovisi o stupnju zaraženosti i dostupnosti površine.' },
             },
             {
                 '@type': 'Question',
-                name: 'Kako prepoznati je li moja fasada ETICS (stiropor)?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Kucnite šakom lagano po fasadi. Ako čujete šuplji zvuk, fasada je ETICS. Ako zvuči punim i teškim zvukom, radi se o klasičnoj žbuci ili kamenu. Kuće građene od 1995. nadalje u velikoj su većini ETICS sustav.',
-                },
+                name: 'Kako prepoznati je li moja fasada ETICS?',
+                acceptedAnswer: { '@type': 'Answer', text: 'Kucnite šakom lagano po fasadi. Šuplje, mekše zvuk znači ETICS. Puni tvrdi zvuk znači klasična žbuka. Kuće građene od 1995. nadalje su u velikoj većini ETICS sustav.' },
             },
             {
                 '@type': 'Question',
-                name: 'Koliko dugo traje čišćenje ETICS fasade softwash metodom?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Obiteljska kuća od 200 m² fasade obično se odradi za 4 do 6 sati. Uključuje nanošenje biocidnog sredstva, čekanje 15 do 30 minuta i ispiranje niskim tlakom.',
-                },
-            },
-            {
-                '@type': 'Question',
-                name: 'Koliko dugo ostaje ETICS fasada čista nakon softwash tretmana?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Na fasadama koje nisu u trajnoj sjeni ili uz drveće, rezultat traje 3 do 5 godina. Fasade na sjevernoj strani ili uz guste grmove mogu trebati tretman svakih 2 do 3 godine.',
-                },
+                name: 'Koliko dugo ostaje čisto?',
+                acceptedAnswer: { '@type': 'Answer', text: 'Na fasadama koje nisu u trajnoj sjeni, softwash tretman drži 3 do 5 godina. Sjever ili sjenovite lokacije mogu trebati tretman svakih 2 do 3 godine.' },
             },
             {
                 '@type': 'Question',
                 name: 'Je li opasno čistiti ETICS fasadu samome?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Rent-a-car visokotlačni perači rade 80 do 150 bara, što je previše za ETICS. Greška se možda neće odmah vidjeti, ali vlaga koja uđe u stiropor počne raditi štetu kroz zimu. Sanacija probijene ETICS fasade na kući od 150 m2 može koštati od 15.000 €.',
-                },
+                acceptedAnswer: { '@type': 'Answer', text: 'Rent-a-car perači rade 80 do 150 bara, što je previše za ETICS. Šteta možda neće biti vidljiva odmah, ali vlaga koja uđe u stiropor radi kroz zimu. Sanacija probijene ETICS fasade na kući od 150 m² može koštati od 15.000 €.' },
             },
         ],
     };

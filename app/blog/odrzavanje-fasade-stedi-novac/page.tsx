@@ -175,6 +175,14 @@ export default function BlogArticle() {
                             koštalo. Bolje provjeriti sad nego sljedeće zime.
                         </p>
 
+                        <h2>Česta pitanja o održavanju fasade</h2>
+                        {faqSchema.mainEntity.map((q) => (
+                            <div key={q.name}>
+                                <h3>{q.name}</h3>
+                                <p>{q.acceptedAnswer.text}</p>
+                            </div>
+                        ))}
+
                         <div className={styles.ctaBox}>
                             <h3>Fasada vam pokazuje prve znakove?</h3>
                             <p>Pošaljite slike na WhatsApp i javimo okvirnu cijenu. Za veće objekte dolazimo na besplatnu procjenu.</p>

@@ -35,28 +35,22 @@ export default function AreaPage({ city, slug, intro, neighborhoods }: AreaPageP
         ],
     };
 
-    const businessSchema = {
-        '@context': 'https://schema.org',
-        // "CleaningService" nije schema.org tip (isti fix kao u layout.tsx).
-        // "provider" nije validno svojstvo LocalBusinessa (Semrush error), maknut;
-        // "address" je obavezan za LocalBusiness rich results.
-        '@type': 'HomeAndConstructionBusiness',
-        name: `Šlauf i Šmrk, pranje pod tlakom ${city}`,
-        url: `https://slaufismrk.com/podrucje/${slug}`,
-        telephone: '+385958442806',
-        address: {
-            '@type': 'PostalAddress',
-            streetAddress: 'Primoštenska ulica 11',
-            addressLocality: 'Zagreb',
-            postalCode: '10000',
-            addressRegion: 'Zagreb',
-            addressCountry: 'HR',
-        },
-        areaServed: { '@type': 'City', name: city },
-    };
-
     const cityLoc = CITY_LOCATIVE[city] ?? city;
     const cityGen = CITY_GENITIVE[city] ?? city;
+
+    // Tvrtka je jedna (HomeAndConstructionBusiness u layout.tsx, @id #business).
+    // Stranica područja opisuje uslugu u tom gradu i referencira tvrtku, inače
+    // Google vidi sedam tvrtki na istoj adresi s različitim imenima.
+    const serviceSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        '@id': `https://slaufismrk.com/podrucje/${slug}#service`,
+        name: `Pranje pod tlakom u ${cityLoc}`,
+        serviceType: 'Pranje pod tlakom',
+        url: `https://slaufismrk.com/podrucje/${slug}`,
+        provider: { '@id': 'https://slaufismrk.com/#business' },
+        areaServed: { '@type': 'City', name: city },
+    };
 
     const faq = [
         {
@@ -94,7 +88,7 @@ export default function AreaPage({ city, slug, intro, neighborhoods }: AreaPageP
     return (
         <div className={styles.page}>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
             <section className={styles.hero}>

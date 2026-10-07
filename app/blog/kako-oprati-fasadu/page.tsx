@@ -54,42 +54,22 @@ export default function BlogArticle() {
             {
                 '@type': 'Question',
                 name: 'Mogu li sam oprati fasadu kućnim peračem?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Na betonu, kamenu ili opeci uz pažljiv rad to je izvedivo. Na stiropor (ETICS) fasadi nije preporučljivo. Kućni perač ima previsok tlak za tanki završni sloj žbuke i lako ga probije, čime otvara put vlazi u izolaciju. U tom slučaju popravak košta višestruko više od čišćenja.',
-                },
+                acceptedAnswer: { '@type': 'Answer', text: 'Na betonu, kamenu ili opeci uz oprez da. Na stiropor fasadi nije preporučljivo jer kućni perač probije tanki završni sloj i otvori put vlazi u izolaciju.' },
             },
             {
                 '@type': 'Question',
                 name: 'Koji tlak je dobar za pranje fasade?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Ne postoji jedan tlak za sve. Stiropor i tanke žbuke peru se softwash metodom (nizak tlak, sličan vrtnoj cijevi, uz biocidno sredstvo). Kamen, beton i opeka podnose viši tlak. Tlak se uvijek bira prema materijalu, ne obrnuto.',
-                },
+                acceptedAnswer: { '@type': 'Answer', text: 'Stiropor i tanke žbuke peru se softwash metodom (nizak tlak uz biocidno sredstvo). Kamen, beton i opeka podnose viši tlak. Tlak se bira prema materijalu.' },
             },
             {
                 '@type': 'Question',
                 name: 'Koje sredstvo se koristi za pranje fasade?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Za alge, gljivice i mahovinu koristi se biocidno sredstvo koje se nanese, ostavi 15 do 30 minuta da uništi organizme do korijena, pa ispere. Obična voda skida samo površinsku prljavštinu, ali ne uništava spore u porama, pa se naslage brzo vrate.',
-                },
-            },
-            {
-                '@type': 'Question',
-                name: 'Koliko košta pranje fasade u Zagrebu?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Cijena se kreće od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²). Za obiteljsku kuću od 200 m² to je okvirno od 1.000 € (na 10. 9. 2026.: od 1.000 €), ovisno o stupnju zaprljanosti, tipu fasade i visini objekta. Za točnu cijenu dolazimo na besplatnu procjenu.',
-                },
+                acceptedAnswer: { '@type': 'Answer', text: 'Biocidno sredstvo koje se nanese, ostavi 15 do 30 minuta i ispere. Ono uništava alge i gljivice do korijena, što obična voda ne može.' },
             },
             {
                 '@type': 'Question',
                 name: 'U koje doba godine je najbolje oprati fasadu?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Od proljeća do jeseni, kad su temperature iznad 5 stupnjeva i nema opasnosti od smrzavanja. Biocidnim sredstvima treba suho vrijeme da odrade posao, pa se izbjegavaju dani s kišom.',
-                },
+                acceptedAnswer: { '@type': 'Answer', text: 'Od proljeća do jeseni, uz temperature iznad 5 stupnjeva i suho vrijeme da sredstvo odradi posao.' },
             },
         ],
     };

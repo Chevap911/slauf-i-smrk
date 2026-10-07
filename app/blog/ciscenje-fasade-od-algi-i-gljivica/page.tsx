@@ -64,50 +64,32 @@ export default function BlogArticle() {
             {
                 '@type': 'Question',
                 name: 'Koliko košta čišćenje fasade od algi u Zagrebu?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Cijena čišćenja fasade od algi u Zagrebu kreće se od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²), ovisno o stupnju zaraženosti, tipu fasade i visini objekta. Za obiteljsku kuću od 200 m² to je okvirno od 1.000 € (na 10. 9. 2026.: od 1.000 €). Za točnu procjenu dolazimo na lokaciju besplatno.',
-                },
+                acceptedAnswer: { '@type': 'Answer', text: 'Cijena se kreće od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²). Za obiteljsku kuću od 200 m² to je od 1.000 € (na 10. 9. 2026.: od 1.000 €). Točna cijena ovisi o stupnju zaraženosti i tipu fasade. Za procjenu pošaljite slike fasade na WhatsApp ili dogovorite besplatan izlazak.' },
             },
             {
                 '@type': 'Question',
                 name: 'Koliko dugo traje zaštita fasade od algi nakon čišćenja?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Softwash tretman s biocidnim sredstvima daje zaštitu 3 do 5 godina na dobro tretiranim fasadama. Fasade u trajnoj sjeni ili uz drveće mogu trebati ponovni tretman za 2 do 3 godine.',
-                },
+                acceptedAnswer: { '@type': 'Answer', text: 'S kompletnim softwash tretmanom i zaštitnim premazom, zaštita traje 3 do 5 godina na prosječno izloženim fasadama.' },
             },
             {
                 '@type': 'Question',
                 name: 'Je li opasno imati alge i gljivice na fasadi?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Da. Alge i gljivice zadržavaju vlagu uz fasadu. S vremenom vlaga prodire u sloj žbuke ili stiropora i uzrokuje ljuštenje boje, pukotine i propadanje materijala. Osim oštećenja, gljivične spore mogu utjecati na kvalitetu zraka unutar prostorija u blizini zahvaćenih zidova.',
-                },
+                acceptedAnswer: { '@type': 'Answer', text: 'Da. Zadržavaju vlagu uz zid i polako razaraju sloj žbuke ili stiropora. Gljivične spore mogu utjecati i na kvalitetu zraka u prostorijama uz zahvaćeni zid.' },
             },
             {
                 '@type': 'Question',
                 name: 'Mogu li sami ukloniti alge s fasade?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Na betonskim ili kamenim površinama, uz pravi tlak i sredstvo, to je izvedivo. Za stiropor (ETICS) fasade nije preporučljivo jer visoki tlak oštećuje završni sloj i izolaciju. Pogrešna primjena kemije može izblijediti boju ili ubrzati ponovnu pojavu algi. Za trajne rezultate bez rizika bolje je angažirati stručnjaka.',
-                },
+                acceptedAnswer: { '@type': 'Answer', text: 'Na kamenu ili betonu, uz pravi tlak i biocidno sredstvo, da. Na stiropor fasadama nije preporučljivo bez odgovarajuće opreme jer visoki tlak oštećuje završni sloj.' },
             },
             {
                 '@type': 'Question',
                 name: 'Zašto se alge uvijek vraćaju na isti dio fasade?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Alge preferiraju sjenovite, vlažne površine gdje nema direktnog sunca. Sjeverozapadne strane i uglovi uz drveće su najčešće zahvaćeni. Ako se uklone samo vizualno, bez dubokog tretmana biocidom, micelij ostaje u porama fasade i alge se vraćaju za godinu-dvije.',
-                },
+                acceptedAnswer: { '@type': 'Answer', text: 'Sjenovite i vlažne strane (najčešće sjever) pogoduju rastu algi. Bez dubokog tretmana biocidom, micelij ostaje u porama i kolonija se obnovi za godinu-dvije.' },
             },
             {
                 '@type': 'Question',
                 name: 'Koja je razlika između algi, gljivica, mahovine i lišajeva na fasadi?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Alge su zelene ili sivo-zelene naslage, javljaju se prve i lakše se čiste. Gljivice su tamnije, crne ili smeđe mrlje, dublje prodiru u podlogu. Mahovina je vidljivo debela i zelena, raste na vlažnim mjestima. Lišajevi su kombinacija gljivice i alge, jako se drže podloge i najtvrđi su za uklanjanje.',
-                },
+                acceptedAnswer: { '@type': 'Answer', text: 'Alge su zelene, javljaju se prve i lakše se čiste. Gljivice su tamne, prodiru dublje. Mahovina je debela zelena naslaga u vlažnim šavovima. Lišajevi su najtvrđi za uklanjanje jer jako prianjaju uz podlogu.' },
             },
         ],
     };

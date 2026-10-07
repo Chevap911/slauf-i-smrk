@@ -24,98 +24,8 @@ const serviceOfferSchema = {
     name: 'Pranje poslovnih objekata u Zagrebu',
     serviceType: 'Vanjsko čišćenje poslovnih objekata',
     description: 'Profesionalno vanjsko čišćenje poslovnih objekata u Zagrebu: fasade, parkirišta, skladišta, hale i uredske zgrade. Redoviti ugovori za klijente koji trebaju stalan uredan izgled.',
-    provider: {
-        '@type': 'LocalBusiness',
-        name: 'Šlauf i Šmrk',
-        url: 'https://slaufismrk.com',
-        telephone: '+385958442806',
-        address: {
-            '@type': 'PostalAddress',
-            streetAddress: 'Primoštenska ulica 11',
-            addressLocality: 'Zagreb',
-            postalCode: '10000',
-            addressRegion: 'Zagreb',
-            addressCountry: 'HR',
-        },
-        areaServed: ['Zagreb', 'Zagrebačka županija', 'Velika Gorica', 'Samobor', 'Zaprešić'],
-    },
+    provider: { '@id': 'https://slaufismrk.com/#business' },
     areaServed: ['Zagreb', 'Zagrebačka županija'],
-};
-
-
-
-const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-        {
-            '@type': 'Question',
-            name: "Radite li za tvrtke s više poslovnih lokacija?",
-            acceptedAnswer: {
-                '@type': 'Answer',
-                text: "Da. Možemo pokriti više lokacija jednim ugovorom. Dogovaramo jedinstvene uvjete, raspored i fakturiranje za sve objekte.",
-            },
-        },
-        {
-            '@type': 'Question',
-            name: "Možete li raditi izvan radnog vremena ili vikendom?",
-            acceptedAnswer: {
-                '@type': 'Answer',
-                text: "Da. Planiramo dolazak prema vašem rasporedu, rano ujutro, navečer ili vikendom. Nema potrebe za angažiranjem vašeg osoblja.",
-            },
-        },
-        {
-            '@type': 'Question',
-            name: "Izdajete li račun za tvrtke?",
-            acceptedAnswer: {
-                '@type': 'Answer',
-                text: "Da, svim poslovnim klijentima izdajemo račun koji možete koristiti kao poslovni trošak. Obrt smo izvan sustava PDV-a, pa na računu nema PDV-a. Uvjete plaćanja dogovaramo individualno.",
-            },
-        },
-        {
-            '@type': 'Question',
-            name: "Koliko košta čišćenje poslovnog objekta?",
-            acceptedAnswer: {
-                '@type': 'Answer',
-                text: "Cijena ovisi o tipu i veličini objekta, površinama koje treba čistiti i učestalosti. Za konkretnu ponudu dolazimo na procjenu ili je možete zatražiti putem WhatsAppa.",
-            },
-        },
-        {
-            '@type': 'Question',
-            name: "Koliko često preporučujete čišćenje?",
-            acceptedAnswer: {
-                '@type': 'Answer',
-                text: "Za većinu poslovnih objekata preporučujemo 2 do 4 puta godišnje, ovisno o lokaciji, prometu i vrsti djelatnosti. Logistika i industrija obično trebaju češće čišćenje od uredskih parkova.",
-            },
-        },
-        {
-            '@type': 'Question',
-            name: "Čistite li i unutarnje površine?",
-            acceptedAnswer: {
-                '@type': 'Answer',
-                text: "Naša specijalizacija su vanjske površine, fasade, parkirišta, rampe i eksterijeri. Za unutarnja čišćenja hala i podova javite nam se s detaljima pa ćemo vidjeti što možemo ponuditi.",
-            },
-        }
-    ],
-};
-
-const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-        {
-            '@type': 'ListItem',
-            position: 1,
-            name: 'Početna',
-            item: 'https://slaufismrk.com/',
-        },
-        {
-            '@type': 'ListItem',
-            position: 2,
-            name: 'Čišćenje poslovnih objekata',
-            item: 'https://slaufismrk.com/usluge/poslovni-objekti',
-        }
-    ],
 };
 
 export default function PoslovniObjektiPage() {
@@ -124,14 +34,6 @@ export default function PoslovniObjektiPage() {
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceOfferSchema) }}
-            />
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-            />
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
             />
             <ServicePage
                 title="Pranje poslovnih objekata u Zagrebu"
@@ -210,7 +112,7 @@ export default function PoslovniObjektiPage() {
                         <h2>Račun za tvrtke i poslovni trošak</h2>
                         <p>
                             Svim poslovnim klijentima izdajemo <strong>račun za tvrtke</strong> koji možete koristiti kao poslovni
-                            trošak. Obrt smo izvan sustava PDV-a, pa na računu nema PDV-a. Za redovite ugovore dogovaramo
+                            trošak. Za redovite ugovore dogovaramo
                             uvjete plaćanja prema potrebama vaše firme.
                         </p>
 
@@ -311,7 +213,7 @@ export default function PoslovniObjektiPage() {
                     },
                     {
                         question: 'Izdajete li račun za tvrtke?',
-                        answer: 'Da, svim poslovnim klijentima izdajemo račun koji možete koristiti kao poslovni trošak. Obrt smo izvan sustava PDV-a, pa na računu nema PDV-a. Uvjete plaćanja dogovaramo individualno.',
+                        answer: 'Da, svim poslovnim klijentima izdajemo račun koji možete koristiti kao poslovni trošak. Uvjete plaćanja dogovaramo individualno.',
                     },
                     {
                         question: 'Koliko košta čišćenje poslovnog objekta?',

@@ -18,6 +18,13 @@ export const metadata: Metadata = {
 
 const articles = [
     {
+        title: 'Pranje vrućom vodom pod visokim tlakom: ulje i žvakaće s betona',
+        excerpt: 'Stroj od 500 bara grije vodu do 130 °C. Test na kamenom podu punom ulja i žvakaćih: fotografije prije i poslije, kako radimo i što ova metoda može, a što ne.',
+        slug: '/blog/pranje-vrucom-vodom-ulje-zvakace',
+        date: '2026-10-05',
+        category: 'Naš posao',
+    },
+    {
         title: 'Čišćenje drvene terase: pranje ili brušenje i koliko košta',
         excerpt: 'Posivjela drvena terasa najčešće ne treba brušenje. Zašto drvo posivi, kako ga peremo niskim tlakom, kada ipak treba brusiti i što napraviti nakon čišćenja.',
         slug: '/blog/ciscenje-drvene-terase',
@@ -110,7 +117,7 @@ const articles = [
     },
     {
         title: 'Čišćenje fasade od algi i gljivica, uzroci, metode i cijena',
-        excerpt: 'Zelene ili crne mrlje na fasadi? Vodič za trajno uklanjanje algi, gljivica i mahovine, razlika između softwash i visokotlačnog pranja, cijena i što ne raditi sami.',
+        excerpt: 'Zelene ili crne mrlje na fasadi? Vodič za uklanjanje algi, gljivica i mahovine, razlika između softwash i visokotlačnog pranja, cijena i što ne raditi sami.',
         slug: '/blog/ciscenje-fasade-od-algi-i-gljivica',
         date: '2026-05-25',
         category: 'Savjeti',

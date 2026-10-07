@@ -20,6 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ];
 
     const blog: { slug: string; date: string }[] = [
+        { slug: 'pranje-vrucom-vodom-ulje-zvakace', date: '2026-10-05' },
         { slug: 'ciscenje-drvene-terase', date: '2026-09-27' },
         { slug: 'obnova-kamene-terase-bez-zamjene-ploca', date: '2026-09-27' },
         { slug: 'salitra-i-kamenac-na-kamenoj-fasadi', date: '2026-09-27' },

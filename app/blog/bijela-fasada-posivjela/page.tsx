@@ -138,6 +138,14 @@ export default function BlogArticle() {
                             <Link href="/usluge/pranje-okucnice">pranje okućnice</Link> u istom dolasku.
                         </p>
 
+                        <h2>Česta pitanja o posivjeloj fasadi</h2>
+                        {faqSchema.mainEntity.map((q) => (
+                            <div key={q.name}>
+                                <h3>{q.name}</h3>
+                                <p>{q.acceptedAnswer.text}</p>
+                            </div>
+                        ))}
+
                         <div className={styles.ctaBox}>
                             <h3>Fasada vam je posivjela?</h3>
                             <p>Pošaljite slike na WhatsApp i recimo vam treba li pranje ili bojanje. Dolazimo na besplatnu procjenu.</p>

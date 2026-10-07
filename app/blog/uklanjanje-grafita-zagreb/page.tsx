@@ -177,6 +177,14 @@ export default function BlogArticle() {
                             koštalo.
                         </p>
 
+                        <h2>Česta pitanja o uklanjanju grafita</h2>
+                        {faqSchema.mainEntity.map((q) => (
+                            <div key={q.name}>
+                                <h3>{q.name}</h3>
+                                <p>{q.acceptedAnswer.text}</p>
+                            </div>
+                        ))}
+
                         <div className={styles.ctaBox}>
                             <h3>Grafit na fasadi ili izlogu?</h3>
                             <p>Pošaljite slike na WhatsApp i javimo okvirnu cijenu. Za veće plohe i zgrade dolazimo na besplatnu procjenu.</p>

@@ -395,6 +395,14 @@ export default function BlogArticle() {
                             voda ulazi, pa vlasnik zna što treba popraviti da drugi put ne plaća isti posao.
                         </p>
 
+                        <h2>Česta pitanja o salitri i kamencu</h2>
+                        {faqSchema.mainEntity.map((q) => (
+                            <div key={q.name}>
+                                <h3>{q.name}</h3>
+                                <p>{q.acceptedAnswer.text}</p>
+                            </div>
+                        ))}
+
                         <div className={styles.ctaBox}>
                             <h3>Bijeli tragovi na kamenoj fasadi?</h3>
                             <p>

@@ -42,31 +42,7 @@ const aboutSchema = {
     '@type': 'AboutPage',
     name: 'O nama, Šlauf i Šmrk',
     url: 'https://slaufismrk.com/o-nama',
-    mainEntity: {
-        '@type': 'LocalBusiness',
-        name: 'Šlauf i Šmrk',
-        url: 'https://slaufismrk.com',
-        telephone: '+385958442806',
-        email: 'slauf.i.smrk@gmail.com',
-        address: {
-            '@type': 'PostalAddress',
-            streetAddress: 'Primoštenska ulica 11',
-            addressLocality: 'Zagreb',
-            postalCode: '10000',
-            addressRegion: 'Zagreb',
-            addressCountry: 'HR',
-        },
-        areaServed: ['Zagreb', 'Velika Gorica', 'Samobor', 'Zaprešić', 'Sesvete', 'Dugo Selo'],
-        employee: [
-            { '@type': 'Person', name: 'Ivan', jobTitle: 'Suosnivač i izvođač' },
-            { '@type': 'Person', name: 'Marko', jobTitle: 'Suosnivač i izvođač' },
-        ],
-        aggregateRating: {
-            '@type': 'AggregateRating',
-            ratingValue: '5.0',
-            reviewCount: '40',
-        },
-    },
+    mainEntity: { '@id': 'https://slaufismrk.com/#business' },
 };
 
 const values = [

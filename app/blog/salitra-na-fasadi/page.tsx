@@ -150,6 +150,14 @@ export default function BlogArticle() {
                             stranici <Link href="/usluge/pranje-fasade">pranje fasade u Zagrebu</Link>.
                         </p>
 
+                        <h2>Česta pitanja o salitri na fasadi</h2>
+                        {faqSchema.mainEntity.map((q) => (
+                            <div key={q.name}>
+                                <h3>{q.name}</h3>
+                                <p>{q.acceptedAnswer.text}</p>
+                            </div>
+                        ))}
+
                         <div className={styles.ctaBox}>
                             <h3>Bijele naslage na fasadi?</h3>
                             <p>Pošaljite slike na WhatsApp i recimo vam je li salitra ili alge i kako to riješiti. Dolazimo na besplatnu procjenu.</p>
