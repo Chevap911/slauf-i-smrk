@@ -8,14 +8,14 @@
  * Oba moraju proći prije deploya. Razlog za ovaj: Davidov živi sajt je prošao
  * audit i četiri kruga ručne revizije, pa i dalje imao 11 rule-of-three lista.
  *
- *   npm run slop                          # localhost na portu iz package.json dev
+ *   npm run slop                          # SVE stranice iz sitemapa, localhost na portu iz package.json dev
  *   npm run slop -- https://x.vercel.app  # deployani preview
  *   npm run slop -- out/index.html        # lokalni HTML
  *
  * Exit 1 ako bilo koja stranica padne ispod 5/5.
  */
 import { execFileSync } from "node:child_process";
-import { writeFileSync, existsSync, mkdtempSync } from "node:fs";
+import { writeFileSync, existsSync, mkdtempSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { tmpdir } from "node:os";
 import { homedir } from "node:os";
@@ -29,7 +29,27 @@ if (!existsSync(SCORER)) {
 }
 
 let targets = process.argv.slice(2);
-if (targets.length === 0) targets = ["http://localhost:3107/"];
+if (targets.length === 0) {
+  // Derive the port from this repo's own dev script instead of hardcoding the
+  // template's. Every client repo has a different fixed port (hitech is 3102),
+  // and a hardcoded default silently scored the wrong site, or nothing.
+  let port = "3105";
+  try {
+    const pkg = JSON.parse(readFileSync(new URL("../package.json", import.meta.url), "utf8"));
+    const m = (pkg.scripts?.dev || "").match(/-p\s+(\d+)/);
+    if (m) port = m[1];
+  } catch { /* fall through to the default */ }
+  // Every page in the sitemap, not just the homepage. Until 2026-10-05 the
+  // default scored only "/", so a blog post carrying a banned claim passed the
+  // gate without ever being read.
+  // Šlauf (2026-10-06): SITE_BASE pušta gate na produkcijski build (next start).
+  const base = (process.env.SITE_BASE || `http://localhost:${port}`).replace(/\/$/, "");
+  try {
+    const sm = await (await fetch(`${base}/sitemap.xml`)).text();
+    targets = [...sm.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => base + new URL(m[1]).pathname);
+  } catch { /* fall through */ }
+  if (targets.length === 0) targets = [`${base}/`];
+}
 
 const tmp = mkdtempSync(join(tmpdir(), "slop-"));
 const results = [];

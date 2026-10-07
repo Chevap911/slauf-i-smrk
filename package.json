@@ -3,12 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3107",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "audit": "node tools/audit-copy.mjs",
     "slop": "node tools/slop-check.mjs",
-    "gate": "npm run lint && npm run slop",
+    "site-check": "node tools/site-check.mjs",
+    "gate": "npm run lint && npm run audit && npm run slop && npm run site-check",
+    "deploy": "node tools/deploy.mjs",
     "cjenik": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON tools/cjenik-csv.mjs"
   },
   "dependencies": {

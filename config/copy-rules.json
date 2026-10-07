@@ -1,0 +1,57 @@
+{
+  "_why": "Šlaufova pravila za tekst kao podaci (2026-10-06). Provjeravaju ih tools/audit-copy.mjs (izvorni kod, datoteka:redak) i tools/site-check.mjs (svaka renderana stranica, uključujući meta tagove i JSON-LD). Izvor pravila: web-repo/CLAUDE.md (tvrda pravila 5-8), Šlauf i Šmrk/overview.md i Markove odluke u Marko/Odluke i brojke.md. Novo pravilo ide ovdje s razlogom i datumom, ne samo u CLAUDE.md.",
+  "americanEnglish": false,
+  "extraPages": [
+    "/politika-privatnosti"
+  ],
+  "reviewFiles": [
+    "components/Testimonials/Testimonials.tsx",
+    "components/HomeSections/ReviewsBlock.tsx"
+  ],
+  "bannedClaims": [
+    {
+      "pattern": "—",
+      "why": "Em dash je zabranjen u svemu što pišemo (About Me/writing-rules.md, pravilo 9)"
+    },
+    {
+      "pattern": "\\b0\\s?95[\\s/-]*844|\\b095\\s?8442806|\\+?385\\s?95\\s?444",
+      "why": "Jedan zapis broja: na ekranu uvijek +385 95 844 2806 (pravilo 7, Marko 2026-09-28). Landing za grobove je pet mjeseci zvao +385 95 444 2806"
+    },
+    {
+      "pattern": "\\bPDV\\b|\\bR1\\b",
+      "why": "Bez spominjanja PDV-a i R1 računa na webu (Markova odluka 2026-06-01)"
+    },
+    {
+      "pattern": "\\b(Deutsch|Reinigung|Grabpflege|Grabreinigung|Grabstein)\\b",
+      "why": "Web je hrvatski i engleski, njemački ne (Marko 2026-09-28)"
+    },
+    {
+      "pattern": "15\\s?%\\s?popust",
+      "why": "Popust od 15 % uklonjen je sa svih stranica (odluka 2026-05-15)"
+    },
+    {
+      "pattern": "(#1|broj 1)\\s+(u|na|za|izbor|servis|ekipa)\\b|\\bnajbolj[a-z]* (u|za|na) (Zagreb|Hrvatsk)|\\bnajbolje ocijenjen",
+      "why": "Bez nedokazivih superlativa: navedi stvarnu ocjenu na Googleu (pravilo 5)"
+    },
+    {
+      "pattern": "\\b(?!40\\b)[1-9]\\d{1,2}\\+?\\s*(Google\\s+)?recenzij",
+      "why": "Stvarni broj recenzija na Googleu je 40 uz ocjenu 5,0 (pravilo 5). Kad se broj na profilu promijeni, promijeni ga ovdje i u tekstu"
+    },
+    {
+      "pattern": "\\bzauvijek\\b|\\btrajno (uklan|[čc]ist)|nikad se (ne[ ć]e )?vrati|ne[ ć]e se (vi[šs]e )?vratiti",
+      "why": "Bez obećanja trajnosti: alge, mahovina i mrlje se vraćaju, samo sporije"
+    },
+    {
+      "pattern": "povrat novca|vra[ćc]amo (vam )?novac",
+      "why": "Povrat novca nije u ponudi; jamstvo glasi da ne odlazimo dok niste zadovoljni (commit f515e63)"
+    },
+    {
+      "pattern": "\\bbukvalno\\b",
+      "why": "Nije standardni hrvatski (Blog/BLOG_SKILL_slauf_i_smrk.md)"
+    },
+    {
+      "pattern": "50\\s?[–-]\\s?100\\s?m²?\\s?od 400",
+      "why": "Krivo: terase od oko 50 m² rade se za 200 € (Marko 2026-09-27, overview.md)"
+    }
+  ]
+}
