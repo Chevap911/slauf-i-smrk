@@ -1,51 +1,167 @@
+/* Galerija (2026-10-10): parovi prije i poslije, kartica s formom, mreža s potpisima.
+   Bez ulaznih animacija na scroll: fotke su vidljive iz SSR-a, kao na naslovnici. */
+
 .section {
-    padding: var(--section-padding);
+    padding: 4.5rem 0;
     background-color: var(--surface);
 }
 
 .header {
+    max-width: 720px;
+    margin: 0 auto 2.5rem;
     text-align: center;
-    margin-bottom: 4rem;
 }
 
 .title {
     font-family: var(--font-heading);
-    font-size: 2.5rem;
+    font-size: clamp(1.75rem, 3.2vw, 2.5rem);
     font-weight: 800;
     color: var(--secondary);
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
 }
 
 .subtitle {
-    font-size: 1.125rem;
-    color: var(--foreground);
-    opacity: 0.8;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #4b5563;
 }
 
-.projectsSection {
-    margin-top: 0;
+.caption {
+    margin-top: 0.6rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--secondary);
 }
+
+/* ── Prije i poslije ──────────────────────────────────────────────────────── */
+
+.pairsSection {
+    padding: 1.5rem 0 4.5rem;
+}
+
+.groupTitle {
+    max-width: 640px;
+    margin: 0 auto 1rem;
+    font-size: 1.25rem;
+    color: var(--secondary);
+}
+
+.pairs {
+    display: grid;
+    gap: 1.75rem;
+    max-width: 640px;
+    margin: 0 auto 3rem;
+}
+
+.pairs:last-child {
+    margin-bottom: 0;
+}
+
+.pair {
+    margin: 0;
+}
+
+.pairImgs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.shot {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: none;
+    background: #e9edf2;
+    overflow: hidden;
+    cursor: zoom-in;
+}
+
+.shotImg {
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.tag {
+    position: absolute;
+    top: 0.6rem;
+    left: 0.6rem;
+    z-index: 1;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #fff;
+    background: rgba(0, 32, 64, 0.8);
+}
+
+.tagAfter {
+    color: var(--secondary);
+    background: var(--primary);
+}
+
+/* ── Kartica s formom ─────────────────────────────────────────────────────── */
+
+.formSection {
+    padding: 0 0 4.5rem;
+}
+
+.formWrap {
+    max-width: calc(480px + 3rem);
+}
+
+/* ── Mreža fotografija ────────────────────────────────────────────────────── */
 
 .projectGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.75rem 1.5rem;
+}
+
+.projectItem {
+    margin: 0;
 }
 
 .projectImageWrapper {
     position: relative;
-    border-radius: 1rem;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
     padding: 0;
     border: none;
-    background: none;
-    width: 100%;
-    cursor: pointer;
-    display: block;
+    border-radius: 1rem;
+    overflow: hidden;
+    background: #e9edf2;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    cursor: zoom-in;
 }
 
-/* Lightbox */
+.projectImg {
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.shot:focus-visible,
+.projectImageWrapper:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+
+@media (hover: hover) {
+    .shot:hover .shotImg,
+    .projectImageWrapper:hover .projectImg {
+        transform: scale(1.04);
+    }
+}
+
+/* ── Lightbox ─────────────────────────────────────────────────────────────── */
+
 .lightbox {
     position: fixed;
     inset: 0;
@@ -64,19 +180,39 @@
     to { opacity: 1; }
 }
 
-.lightboxImg {
+.lightboxFigure {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     max-width: 100%;
-    max-height: 90vh;
+    cursor: default;
+}
+
+.lightboxImg {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: calc(90vh - 3rem);
     object-fit: contain;
     border-radius: 0.5rem;
-    cursor: default;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.lightboxCaption {
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
 }
 
 .lightboxClose {
     position: absolute;
     top: 1rem;
     right: 1rem;
+    z-index: 1;
     width: 48px;
     height: 48px;
     border-radius: 50%;
@@ -94,25 +230,62 @@
     background: rgba(255, 255, 255, 0.3);
 }
 
-.projectImg {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    aspect-ratio: 4/3;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+.lightboxClose:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 2px;
 }
 
-.projectImageWrapper:hover .projectImg {
-    transform: scale(1.1);
+@media (min-width: 600px) {
+    .projectGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
-@media (max-width: 768px) {
-    .title {
-        font-size: 2rem;
+@media (min-width: 900px) {
+    .section {
+        padding: 5.5rem 0;
+    }
+
+    .groupTitle {
+        max-width: none;
+    }
+
+    .pairs {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.5rem;
+        max-width: none;
+    }
+
+    /* Uspravni par lijevo preko dva reda, dva položena desno jedan ispod drugog.
+       Omjer stupaca 1 : 1,4 drži oba stupca na približno istoj visini. */
+    .pairsGrob {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+        align-items: start;
+    }
+
+    .pairTall {
+        grid-row: span 2;
     }
 
     .projectGrid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 3.25rem 0;
+    }
+
+    .pairsSection {
+        padding-bottom: 3.25rem;
+    }
+
+    .formSection {
+        padding-bottom: 3.25rem;
+    }
+
+    .header {
+        margin-bottom: 1.5rem;
     }
 }

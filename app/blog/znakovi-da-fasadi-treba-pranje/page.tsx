@@ -58,7 +58,7 @@ export default function BlogArticle() {
         author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         datePublished: '2026-04-13',
-        dateModified: '2026-04-13',
+        dateModified: '2026-10-10',
         image: 'https://slaufismrk.com/blog/fasada-poslije-pranja.png',
         mainEntityOfPage: {
             '@type': 'WebPage',
@@ -145,8 +145,9 @@ export default function BlogArticle() {
                             samo ružni, oni aktivno uništavaju materijal.
                         </p>
                         <p>
-                            Evo pet konkretnih znakova da je vaša fasada počela vikati za pomoć.
-                            Svaki tjedan odgađanja košta vas više.
+                            Evo pet konkretnih znakova da vašoj kući treba{' '}
+                            <Link href="/usluge/pranje-fasade">pranje fasade</Link>. Svaki tjedan
+                            odgađanja košta vas više.
                         </p>
 
                         {/* Znak #1 */}
@@ -170,14 +171,15 @@ export default function BlogArticle() {
                             izolacije.
                         </p>
 
-                        {/* Znak #2 */}
                         <ArticleQuote
                             location="blog-znakovi"
                             service="facade"
-                            title="Prepoznali ste znak? Saznajte cijenu pranja"
+                            variant="diy"
+                            title="Prepoznali ste znak? Pošaljite fotku fasade"
                             whatsappText="Pozdrav, zanima me pranje fasade. Šaljem slike za procjenu."
                         />
 
+                        {/* Znak #2 */}
                         <h2>Znak #2: Bijeli praškasti sloj na fasadi (efloreszencija)</h2>
                         <p>
                             Primjećujete bijeli, praškasti premaz koji &quot;izlazi&quot; iz zida?

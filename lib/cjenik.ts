@@ -34,6 +34,9 @@ export type Stavka = {
     /** Cijena na dan 10. 9. 2026. Ne mijenja se kad se mijenja `cijena`. */
     sidrena: Iznos;
     napomena?: string;
+    /** Kad napomena sadrži cijenu ("do 50 m²: od 200 €"), njena cijena na 10. 9. 2026. Ide samo na
+     *  stranicu /cjenik, ne u CSV, pa dodavanje ne traži novi CSV. */
+    napomenaSidrena?: string;
 };
 
 /** Usluga koja se nudi, ali bez istaknute cijene: cijena se daje u ponudi. Nema broja, pa nema ni sidrene, i ne ide u CSV. */
@@ -58,8 +61,8 @@ export const CJENIK: Kategorija[] = [
         naziv: 'Vanjske površine (cijena po m²)',
         stavke: [
             { naziv: 'Pranje fasade (žbuka, ETICS i stiropor)', jedinica: 'm2', ...isto(5, 7), napomena: 'konačna cijena ovisi o zaprljanosti, visini objekta i pristupu' },
-            { naziv: 'Pranje okućnice i dvorišta', jedinica: 'm2', ...isto(4, 6), napomena: 'površine do 50 m²: od 200 €' },
-            { naziv: 'Pranje terase', jedinica: 'm2', ...isto(4, 6), napomena: 'površine do 50 m²: od 200 €' },
+            { naziv: 'Pranje okućnice i dvorišta', jedinica: 'm2', ...isto(4, 6), napomena: 'površine do 50 m²: od 200 €', napomenaSidrena: 'od 200 €' },
+            { naziv: 'Pranje terase', jedinica: 'm2', ...isto(4, 6), napomena: 'površine do 50 m²: od 200 €', napomenaSidrena: 'od 200 €' },
             { naziv: 'Pranje tlakavaca', jedinica: 'm2', ...isto(4, 6) },
             { naziv: 'Pranje prilaza', jedinica: 'm2', ...isto(4, 6) },
             { naziv: 'Čišćenje kamenih površina', jedinica: 'm2', ...isto(5, 7) },

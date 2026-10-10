@@ -93,7 +93,13 @@ export default function CjenikPage() {
                                                 <tr key={s.naziv}>
                                                     <td>
                                                         {s.naziv}
-                                                        {s.napomena && <span className={styles.note}>{s.napomena}</span>}
+                                                        {s.napomena && (
+                                                            <span className={styles.note}>
+                                                                {s.napomena}
+                                                                {/* Cijena u napomeni također treba sidrenu na istom mjestu (NN 101/2026) */}
+                                                                {s.napomenaSidrena && ` (cijena na ${SIDRENI_DATUM}: ${s.napomenaSidrena})`}
+                                                            </span>
+                                                        )}
                                                     </td>
                                                     <td className={styles.price}>{formatIznos(s.cijena, s.jedinica)}</td>
                                                     <td className={styles.anchor}>

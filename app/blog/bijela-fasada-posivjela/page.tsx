@@ -37,7 +37,7 @@ export default function BlogArticle() {
         author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         datePublished: '2026-06-01',
-        dateModified: '2026-06-01',
+        dateModified: '2026-10-10',
         image: 'https://slaufismrk.com/prije-poslje/fasada-poslje.png',
         url: 'https://slaufismrk.com/blog/bijela-fasada-posivjela',
     };
@@ -95,7 +95,8 @@ export default function BlogArticle() {
                         <p>
                             Kuća na Maksimiru, izvorno bijela fasada koja je s godinama postala prljavo siva. Vlasnik je već
                             tražio ponude za bojanje kad nas je zvao za drugo mišljenje. Pogledali smo fasadu i rekli mu ono
-                            što nije očekivao: ne treba ti bojanje, treba ti pranje.
+                            što nije očekivao: ne treba ti bojanje, treba ti{' '}
+                            <Link href="/usluge/pranje-fasade">pranje fasade</Link>.
                         </p>
 
                         <h2>Zašto bijela fasada posivi</h2>
@@ -109,7 +110,8 @@ export default function BlogArticle() {
                         <ArticleQuote
                             location="blog-bijela-fasada"
                             service="facade"
-                            title="Koliko bi pranje vaše fasade koštalo?"
+                            variant="diy"
+                            title="Fasada vam je posivjela? Pošaljite fotku"
                             whatsappText="Pozdrav, fasada mi je posivjela. Šaljem slike za procjenu."
                         />
 

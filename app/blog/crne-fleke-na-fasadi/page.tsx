@@ -37,7 +37,7 @@ export default function BlogArticle() {
         author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         datePublished: '2026-06-01',
-        dateModified: '2026-06-01',
+        dateModified: '2026-10-10',
         image: 'https://slaufismrk.com/prije-poslje/pranje-zida-terase-zagreb-poslje.jpeg',
         url: 'https://slaufismrk.com/blog/crne-fleke-na-fasadi',
     };
@@ -95,7 +95,8 @@ export default function BlogArticle() {
                         <p>
                             Prošli tjedan zvao nas je vlasnik kuće na Jarunu. Sjeverni zid fasade bio mu je pun crnih fleka,
                             a susjedi su počeli pitati kad je zadnji put bojao kuću. Boja je bila u redu, problem su bile fleke.
-                            Otišli smo na procjenu i odmah vidjeli o čemu se radi.
+                            Otišli smo na procjenu za <Link href="/usluge/pranje-fasade">pranje fasade</Link> i odmah
+                            vidjeli o čemu se radi.
                         </p>
 
                         <h2>Crne fleke nisu prljavština</h2>
@@ -113,7 +114,8 @@ export default function BlogArticle() {
                         <ArticleQuote
                             location="blog-crne-fleke"
                             service="facade"
-                            title="Crne fleke na fasadi? Saznajte cijenu pranja"
+                            variant="diy"
+                            title="Crne fleke na fasadi? Pošaljite fotku"
                             whatsappText="Pozdrav, imam crne fleke na fasadi. Šaljem slike za procjenu."
                         />
 

@@ -37,7 +37,7 @@ export default function BlogArticle() {
         author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         datePublished: '2026-06-16',
-        dateModified: '2026-06-16',
+        dateModified: '2026-10-10',
         image: 'https://slaufismrk.com/prije-poslje/pranje-zida-terase-zagreb-poslje.jpeg',
         url: 'https://slaufismrk.com/blog/uklanjanje-grafita-zagreb',
     };
@@ -100,8 +100,9 @@ export default function BlogArticle() {
                         </p>
                         <p>
                             Razumijemo zašto se odgađa. Ljudi pretpostave da je skidanje grafita skupo, da će ostati mrlja ili
-                            da će se ionako brzo vratiti. Nešto od toga je točno, ali ne sve. Evo kako mi na to gledamo i zašto
-                            ima smisla reagirati ranije nego kasnije.
+                            da će se ionako brzo vratiti. Nešto od toga je točno, ali ne sve. Evo kako mi na to gledamo kad
+                            skidamo grafite sa zgrada i <Link href="/usluge/poslovni-objekti">poslovnih objekata</Link> i
+                            zašto ima smisla reagirati ranije nego kasnije.
                         </p>
 
                         <h2>Grafit nije samo ružan, on poziva nove</h2>
@@ -119,7 +120,8 @@ export default function BlogArticle() {
                         <ArticleQuote
                             location="blog-grafiti"
                             service=""
-                            title="Grafit na zidu? Saznajte cijenu uklanjanja"
+                            variant="diy"
+                            title="Grafit na zidu? Pošaljite fotku"
                             whatsappText="Pozdrav, trebam ukloniti grafit. Šaljem slike i lokaciju."
                         />
 

@@ -37,7 +37,7 @@ export default function BlogArticle() {
         author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         datePublished: '2026-06-01',
-        dateModified: '2026-06-01',
+        dateModified: '2026-10-10',
         image: 'https://slaufismrk.com/prije-poslje/pranje-zida-terase-zagreb-poslje.jpeg',
         url: 'https://slaufismrk.com/blog/salitra-na-fasadi',
     };
@@ -95,7 +95,8 @@ export default function BlogArticle() {
                         <p>
                             Na kući u Španskom vlasnik je mislio da mu fasada plijesni. Kad smo došli, vidjeli smo da to nije
                             plijesan nego salitra, bijele praškaste naslage koje su izbile na soklu i uz donji rub zida.
-                            Tip problema koji se rješava drugačije od algi i gljivica, pa je dobro znati razliku.
+                            Tip problema koji se rješava drugačije od algi i gljivica i od običnog{' '}
+                            <Link href="/usluge/pranje-fasade">pranja fasade</Link>, pa je dobro znati razliku.
                         </p>
 
                         <h2>Što je zapravo salitra</h2>
@@ -120,7 +121,8 @@ export default function BlogArticle() {
                         <ArticleQuote
                             location="blog-salitra"
                             service="facade"
-                            title="Salitra na fasadi? Saznajte cijenu čišćenja"
+                            variant="diy"
+                            title="Salitra ili plijesan? Pošaljite fotku"
                             whatsappText="Pozdrav, imam salitru na fasadi. Šaljem slike za procjenu."
                         />
 

@@ -53,7 +53,7 @@ export default function BlogArticle() {
         author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         datePublished: '2026-05-22',
-        dateModified: '2026-05-22',
+        dateModified: '2026-10-10',
         image: 'https://slaufismrk.com/prije-poslje/fasada-poslje.png',
     };
 
@@ -127,7 +127,8 @@ export default function BlogArticle() {
                         <p>
                             Stiropor fasada s zelenim algama i kameni zid s mahovinom izgledaju slično kao problem,
                             ali traže potpuno drugačiji pristup. Pogrešan odabir metode znači ili oštećenu izolaciju
-                            ili neriješen problem koji se vraća za godinu dana. Evo kako razlučiti što je pravo za vaš dom.
+                            ili neriješen problem koji se vraća za godinu dana. Evo kako razlučiti što je pravo za vaš dom,
+                            bilo da perete sami ili naručite <Link href="/usluge/pranje-fasade">pranje fasade</Link>.
                         </p>
 
                         <h2>Što je visokotlačno pranje fasade?</h2>
@@ -150,7 +151,8 @@ export default function BlogArticle() {
                         <ArticleQuote
                             location="blog-softwash"
                             service="facade"
-                            title="Ne znate koja metoda treba vašoj fasadi? Pošaljite slike"
+                            variant="diy"
+                            title="Koja metoda treba vašoj fasadi? Pošaljite fotku"
                             whatsappText="Pozdrav, zanima me pranje fasade. Šaljem slike za procjenu."
                         />
 

@@ -53,7 +53,7 @@ export default function BlogArticle() {
         author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         datePublished: '2026-05-25',
-        dateModified: '2026-05-25',
+        dateModified: '2026-10-10',
         image: 'https://slaufismrk.com/prije-poslje/fasada-poslje.png',
     };
 
@@ -126,7 +126,8 @@ export default function BlogArticle() {
                             Zelene naslage na fasadi nisu samo ružne. Alge, gljivice i mahovina zadržavaju vlagu
                             uz zid i polako razaraju završni sloj fasade, posebno na stiropor objektima. Zanemarite
                             ih dovoljno dugo i umjesto pranja plaćate sanaciju od 15.000 €.
-                            Evo što se zapravo događa i kako se to riješiti trajno.
+                            Evo što se zapravo događa i kako to rješavamo kad dođemo na{' '}
+                            <Link href="/usluge/pranje-fasade">pranje fasade</Link>.
                         </p>
 
                         <h2>Zašto se alge i gljivice pojavljuju na fasadi?</h2>
@@ -149,7 +150,8 @@ export default function BlogArticle() {
                         <ArticleQuote
                             location="blog-alge"
                             service="facade"
-                            title="Alge na fasadi? Saznajte cijenu za svoju kuću"
+                            variant="diy"
+                            title="Alge na fasadi? Pošaljite fotku"
                             whatsappText="Pozdrav, imam alge na fasadi. Šaljem slike za procjenu."
                         />
 

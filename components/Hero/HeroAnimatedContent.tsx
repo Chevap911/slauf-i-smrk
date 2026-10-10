@@ -11,10 +11,12 @@ const trustPoints = [
 
 // Ulaz ide kroz CSS (.enter* u Hero.module.css), ne kroz framer-motion: server
 // ga renderira vidljivog pa H1, LCP element na mobitelu, ne čeka JavaScript.
+// .hideMobile skriva eyebrow, dvije trust pilule i žuti gumb do 768px: forma je
+// na mobitelu odmah ispod pa gumb do nje samo gura formu niže (audit 10. 10. 2026.).
 export default function HeroAnimatedContent() {
     return (
         <div className={styles.content}>
-            <span className={`${styles.eyebrow} ${styles.enter}`}>Profesionalno visokotlačno čišćenje za Zagreb i okolicu</span>
+            <span className={`${styles.eyebrow} ${styles.enter} ${styles.hideMobile}`}>Profesionalno visokotlačno čišćenje za Zagreb i okolicu</span>
 
             <div className={`${styles.textGroup} ${styles.enterLcp}`}>
                 <h1 className={styles.title}>
@@ -27,8 +29,8 @@ export default function HeroAnimatedContent() {
             </div>
 
             <div className={`${styles.trustList} ${styles.enter} ${styles.enterTrust}`}>
-                {trustPoints.map((point) => (
-                    <div key={point} className={styles.trustItem}>
+                {trustPoints.map((point, i) => (
+                    <div key={point} className={i === 0 ? styles.trustItem : `${styles.trustItem} ${styles.hideMobile}`}>
                         <CheckCircle2 size={15} />
                         <span>{point}</span>
                     </div>
@@ -36,7 +38,7 @@ export default function HeroAnimatedContent() {
             </div>
 
             <div className={`${styles.actions} ${styles.enter} ${styles.enterActions}`}>
-                <a href="#procjena" className="btn btn-primary">
+                <a href="#procjena" className={`btn btn-primary ${styles.hideMobile}`}>
                     Zatražite besplatnu procjenu
                     <ArrowRight size={18} style={{ marginLeft: '8px' }} />
                 </a>

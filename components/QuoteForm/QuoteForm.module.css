@@ -28,7 +28,8 @@
     gap: 0.35rem;
 }
 
-.field span {
+/* Samo oznaka polja, ne i tekst unutar gumba za brzi izbor */
+.field > span {
     font-size: 0.82rem;
     font-weight: 600;
     color: var(--secondary);
@@ -54,14 +55,84 @@
     box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.25);
 }
 
+/* Brzi izbor veličine: isti rub i zaobljenje kao polja, visina dodira najmanje 44 px */
+.picks {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.45rem;
+}
+
+.pick {
+    min-height: 44px;
+    padding: 0.45rem 0.35rem;
+    border-radius: 0.7rem;
+    border: 1px solid rgba(0, 51, 102, 0.18);
+    background: #fff;
+    color: var(--secondary);
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 700;
+    line-height: 1.25;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.pick:hover {
+    border-color: rgba(0, 51, 102, 0.45);
+}
+
+.pick:focus-visible {
+    outline: 2px solid var(--secondary);
+    outline-offset: 2px;
+}
+
+/* Odabrano: žuta podloga i deblji navy rub, ne samo boja */
+.pick[aria-pressed='true'] {
+    background: rgba(255, 215, 0, 0.22);
+    border-color: var(--secondary);
+    box-shadow: inset 0 0 0 1px var(--secondary);
+}
+
+.pickHint {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: #57718a;
+}
+
+.later {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    min-height: 44px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--secondary);
+    cursor: pointer;
+}
+
+.later input {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    accent-color: var(--secondary);
+    cursor: pointer;
+}
+
+/* Žuto s navy tekstom: kontrast 9:1. Do 10. 10. 2026. gumb je bio tirkizni s navy tekstom (2,6:1)
+   i gubio se pored zelenog WhatsApp gumba ispod. */
 .submit {
     margin-top: 0.35rem;
     width: 100%;
     padding: 1rem;
     border: none;
     border-radius: 999px;
-    background: var(--accent);
+    background: var(--primary);
     color: var(--secondary);
+    box-shadow: 0 4px 14px rgba(255, 215, 0, 0.4);
     font-family: var(--font-heading);
     font-weight: 800;
     font-size: 0.95rem;
@@ -74,6 +145,11 @@
 .submit:hover:not(:disabled) {
     transform: translateY(-2px);
     box-shadow: 0 8px 22px rgba(255, 215, 0, 0.45);
+}
+
+.submit:focus-visible {
+    outline: 3px solid var(--secondary);
+    outline-offset: 2px;
 }
 
 .submit:disabled {
@@ -112,9 +188,23 @@
     line-height: 1.1;
 }
 
+/* Sidrena cijena uz okvirni iznos; boja izričito jer hero kartica nasljeđuje bijeli tekst */
+.anchor {
+    color: var(--secondary);
+}
+
+.estimateRate {
+    display: block;
+    margin-top: 0.3rem;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    line-height: 1.25;
+    color: var(--secondary);
+}
+
 .estimateNote {
     font-size: 0.74rem;
-    color: #8aa0b6;
+    color: #57718a;
 }
 
 .error {
@@ -127,7 +217,7 @@
     display: flex;
     align-items: center;
     text-align: center;
-    color: #8aa0b6;
+    color: #57718a;
     font-size: 0.78rem;
     text-transform: uppercase;
     letter-spacing: 0.06em;
@@ -199,4 +289,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* Članci bloga stiliziraju sve linkove u .content (navy, podcrtano, isti specificitet kao
+   .whatsapp). Gumbi u formi to ne smiju naslijediti, zato a.klasa unutar forme. */
+.wrap a.whatsapp,
+.success a.whatsapp {
+    color: #fff;
+    text-decoration: none;
+}
+
+.wrap a.callLine {
+    color: var(--secondary);
+    text-decoration: none;
+}
+
+.wrap a.callLine:hover {
+    text-decoration: underline;
 }

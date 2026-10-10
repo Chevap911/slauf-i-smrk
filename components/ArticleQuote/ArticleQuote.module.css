@@ -118,3 +118,14 @@
         scroll-margin-top: calc(var(--nav-h) + 1rem);
     }
 }
+
+/* .content a u člancima bloga inače boji i podcrtava ove gumbe */
+.card a.whatsapp {
+    color: #fff;
+    text-decoration: none;
+}
+
+.card a.call {
+    color: var(--secondary);
+    text-decoration: none;
+}

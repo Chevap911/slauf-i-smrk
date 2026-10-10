@@ -7,7 +7,7 @@ import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Koliko košta pranje terase u Zagrebu 2026 | Šlauf i Šmrk',
-    description: 'Tražite pranje terase cijena ili koliko košta pranje terase Zagreb? Konkretne cifre za betonske, keramičke i drvene terase, bez skrivenih troškova.',
+    description: 'Pranje terase u Zagrebu: 4–6 €/m² (na 10. 9. 2026.: 4–6 €/m²), terasa do 50 m² od 200 € (na 10. 9. 2026.: od 200 €). Što ulazi u cijenu i od čega ovisi.',
     alternates: { canonical: '/blog/koliko-kosta-pranje-terase-zagreb' },
     openGraph: {
         title: 'Koliko košta pranje terase u Zagrebu? Čišćenje terase cijena 2026',
@@ -53,7 +53,7 @@ export default function BlogArticle() {
         author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         datePublished: '2026-05-15',
-        dateModified: '2026-05-15',
+        dateModified: '2026-10-10',
         image: 'https://slaufismrk.com/prije-poslje/terasa-leggiero-poslje-1.jpeg',
     };
 
@@ -81,14 +81,12 @@ export default function BlogArticle() {
                     </header>
 
                     <div className={styles.content}>
+                        {/* Odgovor na naslov odmah ispod zaglavlja: na mobitelu je tablica bila 2 do 3 ekrana niže */}
                         <p>
-                            Ako tražite <strong>&quot;pranje terase cijena&quot;</strong> ili <strong>&quot;koliko košta pranje terase Zagreb&quot;</strong>,
-                            ovdje imate konkretne cifre, bez zaokruživanja prema gore i bez skrivenih stavki u ponudi.
-                        </p>
-                        <p>
-                            Terasa je površina koja skuplja sve: prljavštinu od grila, zelenilo od kiše, mrlje od cvijetnjaka, masnoće od stolova.
-                            I godinama izgleda &quot;dovoljno dobro&quot;, sve dok jednog jutra ne primijetite da je postala siva.
-                            Onda je pitanje samo jedno: koliko to košta oprati profesionalno?
+                            Betonska, keramička ili kamena terasa kod nas se pere za <strong>4 do 6 € po m²</strong> (cijena na
+                            10. 9. 2026.: 4 do 6 € po m²), a terasa do 50 m² je od 200 € (cijena na 10. 9. 2026.: od 200 €).
+                            Drvene terase imaju zasebnu cijenu (niže u tekstu), a postupak i opremu opisali smo na stranici{' '}
+                            <Link href="/usluge/pranje-terasa">pranje terasa u Zagrebu</Link>.
                         </p>
 
                         <h2>Okvirne cijene pranja terase u Zagrebu (2026.)</h2>
@@ -106,11 +104,6 @@ export default function BlogArticle() {
                                 <strong>od 800 €<span className="sidrena">Cijena na 10. 9. 2026.: od 800 €</span></strong>
                             </div>
                         </div>
-                        <p>
-                            Cijene se odnose na betonske, keramičke i kamene terase. Drvene terase imaju zasebnu kalkulaciju (detalji niže).
-                            Sve informacije o samoj usluzi, opremi i procesu nalazite na stranici{' '}
-                            <Link href="/usluge/pranje-terasa">pranje terasa u Zagrebu</Link>.
-                        </p>
 
                         <ArticleQuote
                             location="blog-terasa-cijena"
@@ -118,6 +111,12 @@ export default function BlogArticle() {
                             title="Koliko bi pranje vaše terase koštalo?"
                             whatsappText="Pozdrav, zanima me pranje terase. Šaljem slike za procjenu."
                         />
+
+                        <p>
+                            Terasa je površina koja skuplja sve: prljavštinu od grila, zelenilo od kiše, mrlje od cvijetnjaka, masnoće od stolova.
+                            I godinama izgleda &quot;dovoljno dobro&quot;, sve dok jednog jutra ne primijetite da je postala siva.
+                            Koliko će koštati baš vaša, ovisi o pet stvari.
+                        </p>
 
                         <h2>Od čega ovisi konačna cijena?</h2>
 
@@ -131,7 +130,7 @@ export default function BlogArticle() {
                         <h3>2. Stanje površine</h3>
                         <p>
                             Terasa s tankim slojem prašine i terasa s trima sezonama zelenih naslaga, mrljama od grila i algama u fugama
-                           , to nisu isti posao. Tvrdokorne organske naslage zahtijevaju biorazgradivi tretman kemijom prije pranja.
+                            nisu isti posao. Tvrdokorne organske naslage zahtijevaju biorazgradivi tretman kemijom prije pranja.
                             Kod jako zaprljanih terasa taj korak dodaje 20-30% vremena.
                         </p>
 
@@ -196,7 +195,7 @@ export default function BlogArticle() {
                         </p>
                         <p>
                             Praktičan prijevod: terasu od 60 m² peremo za 2 sata. S kućnim aparatom i standardnom mlaznicom
-                           , pola dana, mokre cipele i pruge po cijeloj ploči.
+                            treba pola dana, a ostaju mokre cipele i pruge po cijeloj ploči.
                         </p>
 
                         <h2>Isplati li se kombinirati terasu i fasadu u jednom dolasku?</h2>

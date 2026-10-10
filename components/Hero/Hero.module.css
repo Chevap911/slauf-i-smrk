@@ -1,7 +1,7 @@
 /* Markova odluka (2026-07-08): umjesto prije/poslije splita, jedna akcijska
    fotka (Ivan s leđa pere terasu noću, brendirana majica). Fotka je usidrena
    desno i mekano se fadea ulijevo u navy iza H1 teksta. Prije/poslije dokaz
-   su WashReveal sekcije odmah ispod heroa, pa se fotke ne ponavljaju.
+   je statična sekcija ProofPairs odmah ispod heroa, pa se fotke ne ponavljaju.
    Hero se podvlači pod prozirnu nav traku (margin-top: -nav-h). */
 .hero {
     position: relative;
@@ -192,7 +192,7 @@
     line-height: 1.65;
 }
 
-/* Trust chips — horizontal, compact */
+/* Trust chips: horizontal, compact */
 .trustList {
     display: flex;
     flex-wrap: wrap;
@@ -251,7 +251,7 @@
     box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
 }
 
-/* Form column — floats right, visible without scrolling */
+/* Form column: floats right, visible without scrolling */
 .formCol {
     position: relative;
     display: flex;
@@ -302,7 +302,7 @@
     padding: 1.5rem 1.75rem 1.75rem;
 }
 
-/* Mascot moved off the photo entirely — small trust chip pinned to the
+/* Mascot moved off the photo entirely: small trust chip pinned to the
    TOP corner of the form card (fixed header height, never collides with
    form fields below, unlike the bottom edge which grows with form content). */
 /* Tamni stakleni chip umjesto bijelog oblačića: maskota viri iznad ruba,
@@ -391,6 +391,25 @@
 
     .trustList {
         gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Na 390x844 forma je počinjala na 900 px, ispod prvog ekrana (audit 10. 10. 2026.).
+       Bez eyebrowa, dviju trust pilula i žutog gumba prvi ekran je H1, opis, ocjena,
+       WhatsApp i vrh forme. .content ispred klase jer globalni .btn ima istu
+       specifičnost i display: inline-flex. Izmjereno na buildu: <form> na 659 px samo
+       sa skrivanjem, 643 px uz kraći gornji padding i razmak do forme ispod. */
+    .content .hideMobile {
+        display: none;
+    }
+
+    .hero {
+        padding-top: calc(1.25rem + var(--nav-h));
+    }
+
+    /* maskota viri ~30 px iznad kartice; do WhatsApp gumba ostaje ~15 px */
+    .formCol {
+        margin-top: 1rem;
     }
 }
 

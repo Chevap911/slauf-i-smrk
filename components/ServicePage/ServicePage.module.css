@@ -77,6 +77,21 @@
     margin-bottom: 1.5rem;
 }
 
+/* Sezonska obavijest ispod cijene (npr. Svi sveti na stranici za grobove) */
+.heroNotice {
+    max-width: 540px;
+    margin-bottom: 1.5rem;
+    padding-left: 0.85rem;
+    border-left: 3px solid var(--primary);
+    color: #fff;
+    font-size: 0.92rem;
+    line-height: 1.55;
+}
+
+.heroPrice + .heroNotice {
+    margin-top: -0.6rem;
+}
+
 .heroHighlights {
     display: flex;
     flex-wrap: wrap;
@@ -255,6 +270,62 @@
 .heroAsideCard li {
     margin-bottom: 0.55rem;
     line-height: 1.5;
+}
+
+/* Cijene i savjeti: linkovi na članke odmah ispod heroja, bez slika */
+.guides {
+    padding: 1.5rem 0 0;
+}
+
+.guidesBox {
+    padding: 1.1rem 1.3rem;
+    border-radius: 1.25rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+}
+
+.guidesLabel {
+    margin-bottom: 0.5rem;
+    color: var(--secondary);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.guidesList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+    gap: 0.2rem 1.5rem;
+}
+
+.guideLink {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.45rem 0;
+    color: var(--secondary);
+    font-weight: 600;
+    font-size: 0.95rem;
+    line-height: 1.45;
+    text-decoration: underline;
+    text-decoration-color: rgba(0, 51, 102, 0.25);
+    text-underline-offset: 3px;
+}
+
+.guideLink svg {
+    flex-shrink: 0;
+    margin-top: 0.2em;
+    color: var(--accent);
+}
+
+.guideLink:hover {
+    color: var(--accent);
+    text-decoration-color: currentColor;
 }
 
 /* ================================ */
@@ -462,6 +533,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 1.5rem;
+    margin-top: 2rem;
 }
 
 .featureCard {
@@ -514,6 +586,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
+    margin-top: 2rem;
 }
 
 .problemCard {
@@ -564,7 +637,7 @@
 
 .faqList {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 2rem auto 0;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -602,7 +675,7 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.75rem;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
 }
 
 .areaTag {
@@ -619,76 +692,6 @@
 .areaTag:hover {
     background: var(--secondary);
     color: #fff;
-}
-
-/* ================================ */
-/*    BOLD CTA BANNER               */
-/* ================================ */
-.boldCta {
-    padding: 3rem 0;
-}
-
-.boldCtaInner {
-    background: var(--primary);
-    border: 3px solid var(--secondary);
-    border-radius: 1.5rem;
-    padding: 3rem 2rem;
-    text-align: center;
-    position: relative;
-}
-
-.boldCtaInner::before,
-.boldCtaInner::after {
-    content: '';
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background: var(--secondary);
-}
-
-.boldCtaInner::before {
-    top: 16px;
-    left: 16px;
-}
-
-.boldCtaInner::after {
-    top: 16px;
-    right: 16px;
-}
-
-.boldCtaInner h2 {
-    font-size: 2.2rem;
-    color: var(--secondary);
-    font-family: var(--font-heading);
-    margin-bottom: 0.5rem;
-}
-
-.boldCtaInner p {
-    color: var(--secondary);
-    opacity: 0.8;
-    margin-bottom: 1.5rem;
-    font-size: 1rem;
-}
-
-.boldCtaPhone {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    background: var(--secondary);
-    color: #fff;
-    padding: 1.1rem 2.5rem;
-    border-radius: 999px;
-    font-size: 1.3rem;
-    font-weight: 800;
-    font-family: var(--font-heading);
-    transition: var(--transition-base);
-    letter-spacing: 0.02em;
-}
-
-.boldCtaPhone:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
 }
 
 /* ================================ */
@@ -873,19 +876,6 @@
 
     .ctaBox {
         padding: 2rem 1.5rem;
-    }
-
-    .boldCtaInner {
-        padding: 2rem 1.5rem;
-    }
-
-    .boldCtaInner h2 {
-        font-size: 1.6rem;
-    }
-
-    .boldCtaPhone {
-        font-size: 1.1rem;
-        padding: 0.9rem 2rem;
     }
 
     .sectionTitle {

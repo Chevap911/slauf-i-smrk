@@ -6,5 +6,7 @@ declare global {
     interface Window {
         dataLayer?: Record<string, unknown>[];
         gtag?: (...args: unknown[]) => void;
+        // Iz inline loadera u app/layout.tsx: doda Clarity tag jednom, samo uz pristanak
+        slaufLoadClarity?: () => void;
     }
 }

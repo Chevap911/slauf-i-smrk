@@ -53,7 +53,7 @@ export default function BlogArticle() {
         author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         datePublished: '2026-05-26',
-        dateModified: '2026-05-26',
+        dateModified: '2026-10-10',
         image: 'https://slaufismrk.com/prije-poslje/fasada-poslje.png',
     };
 
@@ -120,7 +120,8 @@ export default function BlogArticle() {
                         <p>
                             Stiropor fasada izgleda čvrsto, ali završni sloj koji vidite debeo je svega 1,5 do 3 mm.
                             Rent-a-car visokotlačni perač radi 80 do 150 bara. To su loše vijesti za vašu izolaciju.
-                            Evo što smijete raditi, što ne i koliko košta ispravno čišćenje.
+                            Evo što smijete raditi, što ne i koliko košta ispravno{' '}
+                            <Link href="/usluge/pranje-fasade">pranje fasade</Link> od stiropora.
                         </p>
 
                         <h2>Što je ETICS sustav i zašto je osjetljiv?</h2>
@@ -142,7 +143,8 @@ export default function BlogArticle() {
                         <ArticleQuote
                             location="blog-etics"
                             service="facade"
-                            title="Koliko bi pranje vaše ETICS fasade koštalo?"
+                            variant="diy"
+                            title="Je li vaša fasada od stiropora? Pošaljite fotku"
                             whatsappText="Pozdrav, zanima me pranje fasade od stiropora. Šaljem slike za procjenu."
                         />
 

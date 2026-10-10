@@ -48,6 +48,8 @@ export default function CookieBanner() {
             // blokiran storage
         }
         updateConsent(value === 'granted');
+        // Clarity snima sesije pa se učita tek nakon pristanka (loader u app/layout.tsx)
+        if (value === 'granted') window.slaufLoadClarity?.();
         setShowBanner(false);
     };
 

@@ -75,7 +75,7 @@ const articleSchema = {
     author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
     publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
     datePublished: '2026-09-27',
-    dateModified: '2026-09-27',
+    dateModified: '2026-10-10',
     image: `https://slaufismrk.com${IMG}/kamena-terasa-poslije-ciscenja-sljeme.jpg`,
     url: `https://slaufismrk.com${SLUG}`,
 };
@@ -128,7 +128,8 @@ export default function BlogArticle() {
                         <p>
                             Kuća iz 80-ih, podno Sljemena. Terasa od svijetlog kamena koja je nekad bila gotovo bijela,
                             a s godinama je potamnila u sivo. Vlasnica je donijela odluku: mijenjamo ploče. Prije nego
-                            što je zvala kamenoresca, javila se nama.
+                            što je zvala kamenoresca, javila se nama da pogledamo može li pomoći{' '}
+                            <Link href="/usluge/ciscenje-kamenih-povrsina">čišćenje kamenih površina</Link>.
                         </p>
 
                         <figure className={styles.figure}>
@@ -157,8 +158,9 @@ export default function BlogArticle() {
 
                         <ArticleQuote
                             location="blog-kamena-terasa"
-                            service="terrace"
-                            title="Stara terasa? Saznajte cijenu prije nego mijenjate ploče"
+                            service="stone"
+                            variant="diy"
+                            title="Kamen potamnio? Pošaljite fotku prije nego mijenjate ploče"
                             whatsappText="Pozdrav, imam staru kamenu terasu. Šaljem slike za procjenu."
                         />
 

@@ -37,7 +37,7 @@ export default function BlogArticle() {
         author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         datePublished: '2026-06-01',
-        dateModified: '2026-06-01',
+        dateModified: '2026-10-10',
         image: 'https://slaufismrk.com/prije-poslje/ciscenje-poda-terase-zagreb-poslje.jpeg',
         url: 'https://slaufismrk.com/blog/korov-izmedju-tlakavaca',
     };
@@ -94,8 +94,9 @@ export default function BlogArticle() {
                     <div className={styles.content}>
                         <p>
                             Dvorište u Velikoj Gorici, betonske kocke položene prije osam godina. Vlasnica nam je rekla da
-                            svako proljeće čupa korov iz fuga, a do ljeta je sve opet zeleno. Kad smo došli, fuge su bile
-                            pune trave, mahovine i zemlje, a na sjevernoj strani uz ogradu kocke su bile potpuno sive.
+                            svako proljeće čupa korov iz fuga, a do ljeta je sve opet zeleno. Kad smo došli na{' '}
+                            <Link href="/usluge/pranje-tlakavaca">pranje tlakavaca</Link>, fuge su bile pune trave,
+                            mahovine i zemlje, a na sjevernoj strani uz ogradu kocke su bile potpuno sive.
                         </p>
 
                         <h2>Zašto čupanje korova ne pomaže</h2>
@@ -108,7 +109,8 @@ export default function BlogArticle() {
                         <ArticleQuote
                             location="blog-korov"
                             service="pavers"
-                            title="Korov između kocki? Saznajte cijenu pranja"
+                            variant="diy"
+                            title="Imate korov između kocki? Pošaljite fotku"
                             whatsappText="Pozdrav, zanima me pranje tlakavaca i korov u fugama. Šaljem slike za procjenu."
                         />
 

@@ -9,13 +9,18 @@ import styles from './zagreb.module.css';
 import QuoteCard from '@/components/QuoteCard/QuoteCard';
 import { OG_IMAGE } from '@/lib/seo';
 
+// "Pranje fasade zagreb" cilja /usluge/pranje-fasade; do 10. 10. 2026. se za njega
+// borilo pet stranica pa nijedna nije išla gore. Ova cilja "pranje pod pritiskom" i kvartove.
+const TITLE = 'Pranje pod pritiskom Zagreb, svi kvartovi | Šlauf i Šmrk';
+const DESCRIPTION = 'Pranje pod pritiskom u svim kvartovima Zagreba: fasade, okućnice, terase i tlakavci. Besplatna procjena, 5,0 na Googleu uz 40 recenzija.';
+
 export const metadata: Metadata = {
-    title: 'Pranje fasade i okućnice Zagreb | Šlauf i Šmrk',
-    description: 'Visokotlačno pranje fasada, okućnica, kamenih i drvenih površina u Zagrebu. Besplatna procjena, pokrivamo sve kvartove.',
+    title: TITLE,
+    description: DESCRIPTION,
     alternates: { canonical: '/podrucje/zagreb' },
     openGraph: {
-        title: 'Pranje fasade i okućnice Zagreb | Šlauf i Šmrk',
-        description: 'Visokotlačno pranje fasada, okućnica i kamenih površina u Zagrebu, detailing auta.',
+        title: TITLE,
+        description: DESCRIPTION,
         url: 'https://slaufismrk.com/podrucje/zagreb',
         images: [OG_IMAGE],
     },
@@ -93,7 +98,7 @@ export default function ZagrebPage() {
                         <div className={styles.breadcrumb}>
                             <Link href="/">Početna</Link> › <span>Zagreb</span>
                         </div>
-                        <h1>Pranje fasade i okućnice <span>u Zagrebu</span></h1>
+                        <h1>Pranje pod pritiskom <span>u Zagrebu</span>, u svim kvartovima</h1>
                         <p className={styles.heroIntro}>
                             Profesionalne usluge pranja fasade, okućnice i vanjskih površina u svim dijelovima
                             Zagreba i okolice. Od fasada u Španskom do dvorišta u Maksimiru, tu smo za vas.

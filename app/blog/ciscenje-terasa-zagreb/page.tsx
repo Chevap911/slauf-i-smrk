@@ -53,7 +53,7 @@ export default function BlogArticle() {
         author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         datePublished: '2026-05-18',
-        dateModified: '2026-05-18',
+        dateModified: '2026-10-10',
         image: 'https://slaufismrk.com/prije-poslje/terasa-leggiero-poslje-1.jpeg',
     };
 
@@ -147,7 +147,8 @@ export default function BlogArticle() {
                         <ArticleQuote
                             location="blog-ciscenje-terasa"
                             service="terrace"
-                            title="Koliko bi pranje vaše terase koštalo?"
+                            variant="diy"
+                            title="Alge ili mahovina na terasi? Pošaljite fotku"
                             whatsappText="Pozdrav, zanima me pranje terase. Šaljem slike za procjenu."
                         />
 

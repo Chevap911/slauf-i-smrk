@@ -62,7 +62,7 @@ const articleSchema = {
     author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
     publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
     datePublished: '2026-02-26',
-    dateModified: '2026-09-27',
+    dateModified: '2026-10-10',
     image: 'https://slaufismrk.com/prije-poslje/fasada-poslje.png',
 };
 
@@ -92,15 +92,15 @@ export default function BlogArticle() {
                     <header className={styles.header}>
                         <span className={styles.category}>Cijene</span>
                         <h1>Koliko košta pranje fasade? Cijena po m² (2026.)</h1>
-                        <p className={styles.meta}>Ažurirano 27. rujna 2026. • Šlauf i Šmrk</p>
+                        <p className={styles.meta}>Ažurirano 10. listopada 2026. • Šlauf i Šmrk</p>
                     </header>
 
                     <div className={styles.content}>
                         <p>
                             Kratki odgovor: pranje fasade kod nas je <strong>5–7 €/m²</strong> (cijena na 10. 9. 2026.:
                             5–7 €/m²). Obiteljska kuća s 200 m² fasade dođe okvirno 1.000 do 1.400 € (na 10. 9. 2026.: 1.000 do
-                            1.400 €). Ispod su primjeri,
-                            način kako sami izračunate kvadraturu i sve što pomiče cijenu gore ili dolje.
+                            1.400 €). Kako radimo, piše na stranici{' '}
+                            <Link href="/usluge/pranje-fasade">pranje fasade u Zagrebu</Link>.
                         </p>
 
                         <h2>Cijene pranja fasade u Zagrebu (2026.)</h2>
@@ -122,10 +122,6 @@ export default function BlogArticle() {
                                 <strong>5–7 €/m²<span className="sidrena">Cijena na 10. 9. 2026.: 5–7 €/m²</span></strong>
                             </div>
                         </div>
-                        <p>
-                            Iznosi u tablici računati su s donjim dijelom raspona. Zgrade i fasade veće od 500 m²
-                            radimo po ponudi. Sve naše cijene su i u <Link href="/cjenik">cjeniku</Link>.
-                        </p>
 
                         <ArticleQuote
                             location="blog-fasada-cijena"
@@ -133,6 +129,12 @@ export default function BlogArticle() {
                             title="Koliko bi pranje vaše fasade koštalo?"
                             whatsappText="Pozdrav, zanima me pranje fasade. Šaljem slike za procjenu."
                         />
+
+                        <p>
+                            Iznosi u tablici računati su s donjim dijelom raspona. Zgrade i fasade veće od 500 m²
+                            radimo po ponudi. Sve naše cijene su i u <Link href="/cjenik">cjeniku</Link>. Ispod su
+                            izračun kvadrature i sve što pomiče cijenu gore ili dolje.
+                        </p>
 
                         <h2>Kako izračunati kvadraturu fasade</h2>
                         <p>

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Phone, ArrowRight, ChevronRight } from 'lucide-react';
 import BeforeAfterSlider from '@/components/BeforeAfterSlider/BeforeAfterSlider';
 import QuoteCard from '@/components/QuoteCard/QuoteCard';
+import { SERVICE_GUIDES } from './serviceGuides';
 import styles from './ServicePage.module.css';
 
 // Područja koja imaju svoju stranicu -> interni link
@@ -87,6 +88,8 @@ export interface ServicePageProps {
     quoteService?: string;
     /** Naslov kartice s formom, npr. "Koliko bi pranje vaše fasade koštalo?" */
     quoteTitle?: string;
+    /** Kratka sezonska obavijest ispod cijene u heroju (npr. Svi sveti na stranici za grobove). */
+    notice?: React.ReactNode;
 }
 
 export default function ServicePage({
@@ -110,6 +113,7 @@ export default function ServicePage({
     resultsShowcase,
     quoteService = '',
     quoteTitle,
+    notice,
 }: ServicePageProps) {
     const baseUrl = 'https://slaufismrk.com';
     const serviceUrl = canonicalPath ? `${baseUrl}${canonicalPath}` : undefined;
@@ -122,6 +126,7 @@ export default function ServicePage({
         [heroImage, resultsShowcase?.afterSrc, resultsShowcase?.combinedSrc].filter(Boolean),
     )) as string[];
     const hasResultsPair = Boolean(resultsShowcase?.beforeSrc && resultsShowcase?.afterSrc);
+    const guides = canonicalPath ? SERVICE_GUIDES[canonicalPath] ?? [] : [];
 
     const faqSchema = {
         '@context': 'https://schema.org',
@@ -228,6 +233,8 @@ export default function ServicePage({
                                 </div>
                             )}
 
+                            {notice && <div className={styles.heroNotice}>{notice}</div>}
+
                             <div className={styles.heroHighlights}>
                                 {heroPills.map((highlight) => (
                                     <span key={highlight} className={styles.heroHighlightTag}>
@@ -298,7 +305,7 @@ export default function ServicePage({
                                 </>
                             ) : (
                                 <div className={styles.heroImagePlaceholder}>
-                                    <strong>Profesionalni pristup</strong>
+                                    <strong>Pregled površine</strong>
                                     <p>
                                         Na svakoj lokaciji prvo provjeravamo materijal, stupanj
                                         zaprljanosti i pristup vodi prije nego krenemo s pranjem.
@@ -312,12 +319,34 @@ export default function ServicePage({
                                 <li>Jasnu procjenu prije početka radova</li>
                                 <li>Prilagođen tlak za tip površine</li>
                                 <li>Brz dolazak po Zagrebu i okolici</li>
-                                <li>Garanciju zadovoljstva, vraćamo se ako nešto nije kako treba</li>
+                                <li>Garanciju zadovoljstva: ne odlazimo dok niste zadovoljni</li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </section>
+
+            {/* Cijene i savjeti s bloga odmah ispod heroja: na mobitelu ljudi pregledaju
+                37 % stranice (Clarity), pa linkovi na dnu ostaju nevidljivi */}
+            {guides.length > 0 && (
+                <aside className={styles.guides} aria-labelledby="cijene-i-savjeti">
+                    <div className="container">
+                        <div className={styles.guidesBox}>
+                            <p id="cijene-i-savjeti" className={styles.guidesLabel}>Cijene i savjeti</p>
+                            <ul className={styles.guidesList}>
+                                {guides.map((guide) => (
+                                    <li key={guide.href}>
+                                        <Link href={guide.href} className={styles.guideLink}>
+                                            <ArrowRight size={16} aria-hidden="true" />
+                                            {guide.title}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                </aside>
+            )}
 
             {resultsShowcase && (
                 <section className={styles.results}>
@@ -372,7 +401,6 @@ export default function ServicePage({
                 <section className={styles.process}>
                     <div className="container">
                         <h2 className={styles.sectionTitle}>Kako radimo?</h2>
-                        <p className={styles.sectionSubtitle}>Jednostavan postupak od poziva do blistavog rezultata</p>
                         <div className={styles.processGrid}>
                             {processSteps.map((step, i) => (
                                 <div key={i} className={styles.processStep}>
@@ -414,7 +442,6 @@ export default function ServicePage({
             <section className={styles.features}>
                 <div className="container">
                     <h2 className={styles.sectionTitle}>Što uključuje ova usluga?</h2>
-                    <p className={styles.sectionSubtitle}>Profesionalni pristup svakom projektu</p>
 
                     <div className={styles.featuresGrid}>
                         {features.map((feature, i) => (
@@ -432,7 +459,6 @@ export default function ServicePage({
                 <section className={styles.problems}>
                     <div className="container">
                         <h2 className={styles.sectionTitle}>Prepoznajete li ove probleme?</h2>
-                        <p className={styles.sectionSubtitle}>Situacije s kojima se naši klijenti najčešće susreću</p>
                         <div className={styles.problemsGrid}>
                             {commonProblems.map((problem, i) => (
                                 <div key={i} className={styles.problemCard}>
@@ -450,7 +476,6 @@ export default function ServicePage({
                 <section className={styles.faq}>
                     <div className="container">
                         <h2 className={styles.sectionTitle}>Česta pitanja</h2>
-                        <p className={styles.sectionSubtitle}>Odgovori na najčešće upite naših klijenata</p>
 
                         <div className={styles.faqList}>
                             {faq.map((item, i) => (
@@ -468,7 +493,6 @@ export default function ServicePage({
                 <section className={styles.areas}>
                     <div className="container">
                         <h2 className={styles.sectionTitle}>Pokrivamo ova područja</h2>
-                        <p className={styles.sectionSubtitle}>Brz dolazak u svaki dio Zagreba i okolice</p>
                         <div className={styles.areaTags}>
                             {serviceAreas.map((area, i) => {
                                 const slug = AREA_SLUGS[area];
@@ -483,30 +507,13 @@ export default function ServicePage({
                 </section>
             )}
 
-            <section className={styles.boldCta}>
-                <div className="container">
-                    <div className={styles.boldCtaInner}>
-                        <h2>Trebate pomoć?</h2>
-                        <p>Nazovite nas za besplatnu procjenu, odgovaramo u roku od sat vremena</p>
-                        <a 
-                            href="tel:+385958442806" 
-                            className={styles.boldCtaPhone}
-                            onClick={() => {
-                                window.dataLayer?.push({ event: 'call_click', cta_location: 'service_page_footer_cta' });
-                            }}
-                        >
-                            <Phone size={24} />
-                            +385 95 844 2806
-                        </a>
-                    </div>
-                </div>
-            </section>
-
+            {/* Žuti blok "Trebate pomoć?" s brojem maknut 10. 10. 2026.: stajao je odmah
+                iznad ovoga, dva CTA bloka zaredom. Poziv je ovdje i u traci na dnu ekrana. */}
             <section className={styles.ctaSection}>
                 <div className="container">
                     <div className={styles.ctaBox}>
-                        <h2>Spremni za blistavo čist prostor?</h2>
-                        <p>Javite nam se danas i dobijte besplatnu procjenu za vašu nekretninu. Naš tim će vam se javiti u najkraćem roku.</p>
+                        <h2>Pošaljite fotku, javimo okvirnu cijenu</h2>
+                        <p>Točnu cijenu potvrđujemo nakon besplatne procjene, prije početka rada.</p>
                         <div className={styles.ctaActions}>
                             <a href="#procjena" className={styles.ctaBtn}>
                                 Zatražite ponudu <ArrowRight size={18} />

@@ -70,7 +70,7 @@ const articleSchema = {
     author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
     publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
     datePublished: '2026-09-27',
-    dateModified: '2026-09-27',
+    dateModified: '2026-10-10',
     url: `https://slaufismrk.com${SLUG}`,
 };
 
@@ -107,7 +107,9 @@ export default function BlogArticle() {
                         <p>
                             Posivjela drvena terasa izgleda kao da je treba brusiti. Najčešće ne treba. Sivilo je tanki
                             površinski sloj, a ispod njega je drvo iste boje kao kad je terasa postavljena. Kad se taj
-                            sloj opere, drvo se vrati bez skidanja ijednog milimetra materijala.
+                            sloj opere, drvo se vrati bez skidanja ijednog milimetra materijala. Tako radimo{' '}
+                            <Link href="/usluge/ciscenje-drvenih-povrsina">čišćenje drvenih površina</Link> u Zagrebu i
+                            okolici.
                         </p>
 
                         <h2>Koliko košta čišćenje drvene terase</h2>
@@ -128,8 +130,9 @@ export default function BlogArticle() {
 
                         <ArticleQuote
                             location="blog-drvena-terasa"
-                            service="terrace"
-                            title="Koliko bi čišćenje vaše drvene terase koštalo?"
+                            service="wood"
+                            variant="diy"
+                            title="Pranje ili brušenje? Pošaljite fotku terase"
                             whatsappText="Pozdrav, zanima me čišćenje drvene terase. Šaljem slike za procjenu."
                         />
 

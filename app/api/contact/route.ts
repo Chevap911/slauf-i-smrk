@@ -83,7 +83,7 @@ export async function POST(req: Request) {
         let inquiryId = leadId ?? null;
         let dbOk = false;
 
-        // DB spremanje NIJE fatalno — ako padne (RLS/schema/env), svejedno šaljemo email da lead ne propadne
+        // DB spremanje NIJE fatalno: ako padne (RLS/schema/env), svejedno šaljemo email da lead ne propadne
         try {
             if (inquiryId) {
                 const { data, error: updateError } = await supabase

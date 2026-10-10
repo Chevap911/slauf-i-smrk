@@ -32,7 +32,7 @@ export default function Hero() {
                                 <span className={styles.formEyebrow}>Besplatna procjena</span>
                                 <h2 className={styles.formTitle}>Saznajte cijenu pranja odmah</h2>
                                 <p className={styles.formSubtitle}>
-                                    Ispunite kratki obrazac i odmah vidite okvirnu cijenu. Bez obveze.
+                                    Upišite mobitel i veličinu, okvirnu cijenu vidite čim pošaljete. Bez obveze.
                                 </p>
                             </div>
                             <div className={styles.formBody}>

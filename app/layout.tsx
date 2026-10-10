@@ -24,18 +24,21 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+// Zadano za naslovnu i svaku stranicu bez vlastitog metadata; isto kao app/page.tsx
+const DEFAULT_TITLE = "Visokotlačno pranje Zagreb: fasade i okućnice | Šlauf i Šmrk";
+const DEFAULT_DESCRIPTION =
+  "Visokotlačno pranje fasada, okućnica, terasa i tlakavaca u Zagrebu i okolici. Besplatna procjena, 5,0 na Googleu uz 40 recenzija.";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://slaufismrk.com"),
-  title: "Pranje fasada i okućnica Zagreb | Šlauf i Šmrk",
-  description:
-    "Profesionalno pranje fasada, okućnica, terasa i prilaza u Zagrebu i okolici. Besplatna procjena, siguran pristup površinama i rezultati prije i poslije.",
+  title: DEFAULT_TITLE,
+  description: DEFAULT_DESCRIPTION,
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Pranje fasada i okućnica Zagreb | Šlauf i Šmrk",
-    description:
-      "Profesionalno pranje fasada, okućnica, terasa i prilaza u Zagrebu i okolici. Besplatna procjena i stvarni rezultati prije i poslije.",
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
     url: "https://slaufismrk.com",
     siteName: "Šlauf i Šmrk",
     locale: "hr_HR",
@@ -51,8 +54,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pranje fasada i okućnica Zagreb | Šlauf i Šmrk",
-    description: "Profesionalno pranje fasada, okućnica, terasa i prilaza u Zagrebu i okolici.",
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
     images: ["/prije-poslje/fasada-poslje.png"],
   },
 };
@@ -288,7 +291,11 @@ export default function RootLayout({
             tek na prvi dodir, scroll ili tipku, najkasnije 4 s nakon učitavanja.
             dataLayer eventi (call_click, lead_form_submit...) čekaju u redu i GTM
             ih obradi kad se učita. Posjet s oglasa ili kampanje (gclid, fbclid, utm_...)
-            dobiva tagove odmah nakon učitavanja, da se izvor posjeta ne izgubi. */}
+            dobiva tagove odmah nakon učitavanja, da se izvor posjeta ne izgubi.
+            Clarity snima sesije (klikovi, scroll, pokreti miša) pa za posjetitelje iz EU
+            traži pristanak; do 10. 10. 2026. učitavao se i bez njega. Sad ide samo uz
+            cookie_consent 'granted', a CookieBanner ga pokrene preko slaufLoadClarity
+            čim netko klikne "Prihvaćam sve". GTM ostaje isti jer poštuje Consent Mode. */}
         {/* eslint-disable-next-line @next/next/next-script-for-ga -- GoogleTagManager iz @next/third-parties bi ga učitao odmah */}
         <script
           dangerouslySetInnerHTML={{
@@ -301,6 +308,18 @@ export default function RootLayout({
     s.src = src;
     d.head.appendChild(s);
   }
+  // Jednom po stranici, koliko god puta se pozove (loader i banner). Poziva se samo uz pristanak.
+  var clarityAdded = false, clarityWanted = false;
+  w.slaufLoadClarity = function () {
+    // Prihvat u prvim sekundama samo se zapamti; Clarity ide s GTM-om u load(), ne prije LCP-a
+    if (!done) { clarityWanted = true; return; }
+    if (clarityAdded) return;
+    clarityAdded = true;
+    w.clarity = w.clarity || function () { (w.clarity.q = w.clarity.q || []).push(arguments); };
+    // Clarity za posjetitelje iz EGP-a bez signala pristanka radi bez kolačića
+    w.clarity('consentv2', { ad_Storage: 'granted', analytics_Storage: 'granted' });
+    add('https://www.clarity.ms/tag/whlsqtxcm4');
+  };
   function load() {
     if (done) return;
     done = true;
@@ -308,8 +327,9 @@ export default function RootLayout({
     w.dataLayer = w.dataLayer || [];
     w.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
     add('https://www.googletagmanager.com/gtm.js?id=GTM-MG836SL3');
-    w.clarity = w.clarity || function () { (w.clarity.q = w.clarity.q || []).push(arguments); };
-    add('https://www.clarity.ms/tag/whlsqtxcm4');
+    var c = null;
+    try { c = localStorage.getItem('cookie_consent'); } catch (e) {}
+    if (clarityWanted || c === 'granted') w.slaufLoadClarity();
   }
   function poke() {
     wanted = true;

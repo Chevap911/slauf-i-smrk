@@ -18,6 +18,11 @@ export const metadata: Metadata = {
     },
 };
 
+// Obavijest u heroju vrijedi do Svih svetih. Uvjet se računa pri generiranju stranice, a
+// revalidate je osvježava jednom dnevno, pa obavijest nestane 1. 11. i bez novog deploya.
+export const revalidate = 86400;
+const PRIJE_SVIH_SVETIH = Date.now() < Date.parse('2026-11-01T00:00:00+01:00');
+
 export default function GrobnaMjestaPage() {
     return (
         <>
@@ -30,6 +35,9 @@ export default function GrobnaMjestaPage() {
             description="Grobna mjesta vaših najmilijih zaslužuju dostojanstven izgled. Profesionalno čistimo i održavamo kamene nadgrobne spomenike, ploče, obrube i okolne površine na svim zagrebačkim grobljima. Ne trebate biti prisutni, šaljemo fotografije prije i poslije. Idealno za iseljenike i obitelji izvan Zagreba. Uz čišćenje nudimo poliranje kamena i impregnaciju."
             priceHint="od 250 €"
             priceAnchor="od 250 €"
+            notice={PRIJE_SVIH_SVETIH
+                ? 'Najviše ljudi grob sređuje uoči Svih svetih, 1. studenoga. Pošaljite sliku groba i recite na kojem je groblju, javimo cijenu i prvi slobodan termin.'
+                : undefined}
             heroImage="/grob/grob-poslije-ciscenja-bijeli-kulir.jpg"
             heroImageAlt="Očišćen grob s tamnim granitnim okvirom i bijelim kulirom umjesto zemlje i korova"
             processSteps={[

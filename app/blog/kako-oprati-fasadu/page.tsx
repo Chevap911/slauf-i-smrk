@@ -42,7 +42,7 @@ export default function BlogArticle() {
         author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         datePublished: '2026-06-01',
-        dateModified: '2026-06-01',
+        dateModified: '2026-10-10',
         image: 'https://slaufismrk.com/prije-poslje/fasada-poslje.png',
         url: 'https://slaufismrk.com/blog/kako-oprati-fasadu',
     };
@@ -94,10 +94,11 @@ export default function BlogArticle() {
 
                     <div className={styles.content}>
                         <p>
-                            Pitanje „kako oprati fasadu“ obično dolazi s kućnim peračem u ruci i najboljom namjerom.
+                            Fasadu se često krene prati kućnim peračem, s najboljom namjerom.
                             Problem je što fasada nije pločnik. Pogrešan tlak na pogrešnom materijalu napravi štetu
                             koju ne vidite odmah, a platite je za godinu dana. Evo kako se fasada pere ispravno,
-                            koje greške koštaju i kada se isplati nazvati nekoga tko to radi svaki dan.
+                            koje greške koštaju i kada se isplati naručiti{' '}
+                            <Link href="/usluge/pranje-fasade">pranje fasade</Link> od nekoga tko to radi svaki dan.
                         </p>
 
                         <h2>Prvo odredite koji tip fasade imate</h2>
@@ -118,7 +119,8 @@ export default function BlogArticle() {
                         <ArticleQuote
                             location="blog-kako-oprati"
                             service="facade"
-                            title="Radije da je operemo mi? Saznajte cijenu"
+                            variant="diy"
+                            title="Možete li ovo sami? Pošaljite fotku fasade"
                             whatsappText="Pozdrav, zanima me pranje fasade. Šaljem slike za procjenu."
                         />
 

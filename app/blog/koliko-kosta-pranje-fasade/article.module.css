@@ -192,3 +192,15 @@
         padding: 1.5rem;
     }
 }
+/* Linkovi u tekstu članka (do 10. 10. 2026. izgledali su kao običan tekst) */
+.content p a,
+.content li a {
+    color: var(--secondary);
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.content p a:hover,
+.content li a:hover {
+    opacity: 0.75;
+}

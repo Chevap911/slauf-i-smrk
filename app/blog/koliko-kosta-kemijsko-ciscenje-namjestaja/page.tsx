@@ -56,7 +56,7 @@ export default function BlogArticle() {
         author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         datePublished: '2026-07-06',
-        dateModified: '2026-07-06',
+        dateModified: '2026-10-10',
         image: 'https://slaufismrk.com/projekti/projekt-3.jpeg',
     };
 
@@ -120,17 +120,15 @@ export default function BlogArticle() {
                     </header>
 
                     <div className={styles.content}>
+                        {/* Odgovor na naslov odmah ispod zaglavlja: na mobitelu je tablica bila 2 do 3 ekrana niže */}
                         <p>
-                            Ako tražite <strong>&quot;kemijsko čišćenje garniture&quot;</strong>, <strong>&quot;dubinsko čišćenje trosjeda&quot;</strong> ili
-                            cijenu čišćenja madraca u Zagrebu, ovdje imate konkretan cjenik i objašnjenje što za taj novac dobivate.
-                        </p>
-                        <p>
-                            Garnitura na kojoj se godinama sjedi, jede i gleda televizija upije znoj, prašinu i mrlje koje usisavač ne
-                            dira. Presvlake koje se ne skidaju ne možete strpati u perilicu. Tu nastupa dubinsko ekstrakcijsko čišćenje.
-                        </p>
-                        <p>
-                            Odgovor na pitanje cijene nije &quot;ovisi&quot; bez objašnjenja. Evo konkretnih brojki, što na njih utječe i
-                            što je realno očekivati od mrlja.
+                            Kemijsko čišćenje kompletne garniture (3+2+1) kod nas je od 80 € (cijena na 10. 9. 2026.: od 80 €), a
+                            samog trosjeda od 40 € (cijena na 10. 9. 2026.: od 40 €). Čistimo kod vas doma, u Zagrebu i okolici, a
+                            postupak smo opisali na stranici{' '}
+                            <Link href="/usluge/kemijsko-ciscenje-namjestaja" className={styles.inlineLink}>
+                                kemijsko čišćenje namještaja
+                            </Link>
+                            .
                         </p>
 
                         <h2>Cjenik kemijskog čišćenja u Zagrebu (2026.)</h2>
@@ -164,17 +162,18 @@ export default function BlogArticle() {
                                 <strong>od 5 € po m²<span className="sidrena">Cijena na 10. 9. 2026.: od 5 € po m²</span></strong>
                             </div>
                         </div>
+
+                        <ArticleQuote
+                            location="blog-kemijsko-cijena"
+                            service="chemical"
+                            title="Koliko bi čišćenje vašeg namještaja koštalo?"
+                            whatsappText="Pozdrav, zanima me kemijsko čišćenje namještaja. Šaljem slike."
+                        />
+
                         <p>
                             Cijene su početne i vrijede za standardne veličine i uobičajenu zaprljanost. Kutne garniture, sjedeće
                             garniture od osjetljivih tkanina i jače zaprljani komadi idu po procjeni. Procjena je besplatna i cijena
                             koju dogovorimo je fiksna, na fakturi nema iznenađenja.
-                        </p>
-                        <p>
-                            Detalje o samoj usluzi imate na stranici{' '}
-                            <Link href="/usluge/kemijsko-ciscenje-namjestaja" className={styles.inlineLink}>
-                                kemijsko čišćenje namještaja
-                            </Link>
-                            .
                         </p>
 
                         <div className={styles.beforeAfter}>
@@ -191,12 +190,11 @@ export default function BlogArticle() {
                             </div>
                         </div>
 
-                        <ArticleQuote
-                            location="blog-kemijsko-cijena"
-                            title="Pošaljite sliku namještaja, javimo cijenu"
-                            whatsappText="Pozdrav, zanima me kemijsko čišćenje namještaja. Šaljem slike."
-                            whatsappLabel="Pošaljite slike na WhatsApp"
-                        />
+                        <p>
+                            Garnitura na kojoj se godinama sjedi, jede i gleda televizija upije znoj, prašinu i mrlje koje usisavač ne
+                            dira. Presvlake koje se ne skidaju ne možete strpati u perilicu. Tu nastupa dubinsko ekstrakcijsko čišćenje.
+                            Ispod je što utječe na cijenu i što je realno očekivati od mrlja.
+                        </p>
 
                         <h2>Od čega ovisi konačna cijena?</h2>
 

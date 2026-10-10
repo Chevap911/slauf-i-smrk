@@ -54,7 +54,7 @@ export default function BlogArticle() {
         author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         datePublished: '2026-08-21',
-        dateModified: '2026-08-21',
+        dateModified: '2026-10-10',
         image: 'https://slaufismrk.com/blog/salitra-kamena-fasada/bijeli-curci-kamenca-niz-fasadnu-plocu.jpg',
         url: 'https://slaufismrk.com/blog/salitra-i-kamenac-na-kamenoj-fasadi',
     };
@@ -129,7 +129,8 @@ export default function BlogArticle() {
                             Zvali su nas na vilu u Zagrebu s fasadom od velikih kamenih blokova. Lijepa fasada, skupa
                             fasada, a cijela je bila išarana bijelim tragovima. Nisu to bile alge ni prljavština nego
                             salitra i kamenac koji su probijali kroz fuge i cijedili se niz ploče. Vlasnik je mislio da
-                            se to opere šlaufom. Ne opere se.
+                            se to opere šlaufom. Ne opere se. Za to treba{' '}
+                            <Link href="/usluge/ciscenje-kamenih-povrsina">čišćenje kamena</Link> kiselim sredstvom i četkom.
                         </p>
 
                         <figure className={styles.figure}>
@@ -166,8 +167,10 @@ export default function BlogArticle() {
 
                         <ArticleQuote
                             location="blog-kamena-fasada"
-                            service="facade"
-                            title="Bijeli tragovi na kamenoj fasadi? Pošaljite slike"
+                            // Bez izračuna po m²: cijenu skidanja kamenca dajemo tek nakon izlaska na lokaciju (FAQ ispod)
+                            service=""
+                            variant="diy"
+                            title="Bijeli tragovi na kamenoj fasadi? Pošaljite fotku"
                             whatsappText="Pozdrav, imam bijele tragove na kamenoj fasadi. Šaljem slike za procjenu."
                         />
 

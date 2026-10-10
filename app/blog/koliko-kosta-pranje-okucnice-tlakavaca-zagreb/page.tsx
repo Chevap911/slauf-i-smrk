@@ -8,7 +8,7 @@ import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Koliko košta pranje okućnice i tlakavaca 2026 | Šlauf',
-    description: 'Tražite čišćenje okućnice cijena ili pranje tlakavaca cijena? Donosimo realne cijene za Zagreb, faktore koji utječu na ponudu i što dobivate u usluzi 2026.',
+    description: 'Pranje okućnice i tlakavaca u Zagrebu: 4–6 €/m² (na 10. 9. 2026.: 4–6 €/m²), dvorište do 50 m² od 200 € (na 10. 9. 2026.: od 200 €). Od čega ovisi konačna cijena.',
     alternates: { canonical: '/blog/koliko-kosta-pranje-okucnice-tlakavaca-zagreb' },
     openGraph: {
         title: 'Koliko košta pranje okućnice i tlakavaca? Cijene 2026.',
@@ -54,7 +54,7 @@ export default function BlogArticle() {
         author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         datePublished: '2026-04-17',
-        dateModified: '2026-04-21',
+        dateModified: '2026-10-10',
         image: 'https://slaufismrk.com/blog/pranje-okucnice/terasa-leggiero-poslije.jpeg',
     };
 
@@ -113,17 +113,15 @@ export default function BlogArticle() {
                     </header>
 
                     <div className={styles.content}>
+                        {/* Odgovor na naslov odmah ispod zaglavlja: na mobitelu je tablica bila 2 do 3 ekrana niže */}
                         <p>
-                            Ako tražite <strong>&quot;čišćenje okućnice cijena&quot;</strong>, <strong>&quot;pranje tlakavaca cijena&quot;</strong> ili želite znati
-                            koliko košta profesionalno čišćenje dvorišta u Zagrebu, ovdje imate pregled stvarnih raspona cijena i usluga.
-                        </p>
-                        <p>
-                            Dvorište koje je godinama skupljalo mahovinu, korov između betonskih kocki i mrlje od auta, poznata slika.
-                            U jednom trenutku to više ne možete ignorirati, i počnete tražiti: koliko to zapravo košta profesionalno oprati?
-                        </p>
-                        <p>
-                            Odgovor nije &quot;ovisi&quot; bez objašnjenja. U ovom vodiču dajemo konkretne cijene, razlažemo što na njih
-                            utječe i govorimo vam iskreno što možete očekivati, bez skrivenih troškova.
+                            Pranje okućnice, tlakavaca i prilaza u Zagrebu kod nas je <strong>4 do 6 € po m²</strong> (cijena na
+                            10. 9. 2026.: 4 do 6 € po m²). Dvorište do 50 m² je od 200 € (cijena na 10. 9. 2026.: od 200 €).
+                            Postupak i opremu opisali smo na stranici{' '}
+                            <Link href="/usluge/pranje-okucnice" className={styles.inlineLink}>
+                                pranje okućnice
+                            </Link>
+                            .
                         </p>
 
                         <h2>Okvirne cijene pranja okućnice u Zagrebu (2026.)</h2>
@@ -141,6 +139,14 @@ export default function BlogArticle() {
                                 <strong>4 – 6 € po m²<span className="sidrena">Cijena na 10. 9. 2026.: 4 – 6 € po m²</span></strong>
                             </div>
                         </div>
+
+                        <ArticleQuote
+                            location="blog-okucnica-cijena"
+                            service="yard"
+                            title="Koliko bi pranje vaše okućnice koštalo?"
+                            whatsappText="Pozdrav, zanima me pranje okućnice. Šaljem slike za procjenu."
+                        />
+
                         <p>
                             Veće površine imaju nižu cijenu po kvadratu jer se oprema jednom doveze i postavi, a rad se amortizira na više
                             kvadrata. Za manja dvorišta ima smisla paušalna cijena.
@@ -177,7 +183,7 @@ export default function BlogArticle() {
                             <div className={styles.beforeAfterItem}>
                                 <Image
                                     src="/blog/pranje-okucnice/terasa-leggiero-poslije.jpeg"
-                                    alt="Terasa Leggiero Family Mall poslije čišćenja, čiste i blistave betonske kocke Zagreb"
+                                    alt="Terasa Leggiero Family Mall poslije čišćenja, očišćene betonske kocke, Zagreb"
                                     title="Terasa poslije profesionalnog pranja tlakavaca"
                                     width={700}
                                     height={467}
@@ -187,12 +193,11 @@ export default function BlogArticle() {
                             </div>
                         </div>
 
-                        <ArticleQuote
-                            location="blog-okucnica-cijena"
-                            service="yard"
-                            title="Koliko bi pranje vaše okućnice koštalo?"
-                            whatsappText="Pozdrav, zanima me pranje okućnice. Šaljem slike za procjenu."
-                        />
+                        <p>
+                            Dvorište koje je godinama skupljalo mahovinu, korov između betonskih kocki i mrlje od auta, poznata slika.
+                            Cijena za takvo dvorište nije &quot;ovisi&quot; bez objašnjenja: ispod razlažemo što je pomiče i što
+                            možete očekivati, bez skrivenih troškova.
+                        </p>
 
                         <h2>Od čega ovisi konačna cijena?</h2>
 
@@ -267,7 +272,7 @@ export default function BlogArticle() {
                         <p>
                             Osim privatnih dvorišta, redovito čistimo terase restorana, kafića i tržnih centara. Na fotografijama iznad
                             prikazujemo primjer terase Leggiero kafića u Family Mallu, godinama su se nakupljale masne mrlje i mahovina,
-                            a nakon jedne intervencije terasa je blistala kao nova.
+                            a nakon jednog pranja kocke su opet bile svijetle.
                         </p>
                         <p>
                             Za zasebne objekte ili kombinirane radove često radimo zajedno{' '}
@@ -280,9 +285,9 @@ export default function BlogArticle() {
                             Uz pranje tlakavaca, nudimo i{' '}
                             <Link href="/usluge/ciscenje-kamenih-povrsina" className={styles.inlineLink}>
                                 čišćenje kamenih površina
-                            </Link>{' '}
-                           , prirodni kamen, granitne ploče i mramor zahtijevaju drugačiji pristup i niži tlak kako se površina ne bi
-                            oštetila.
+                            </Link>
+                            . Prirodni kamen, granitne ploče i mramor traže drugačiji pristup i niži tlak da se površina ne
+                            ošteti.
                         </p>
 
                         <h2>Često postavljana pitanja</h2>

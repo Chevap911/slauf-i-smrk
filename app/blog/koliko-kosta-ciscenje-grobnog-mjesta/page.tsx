@@ -53,7 +53,7 @@ export default function BlogArticle() {
         author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         datePublished: '2026-07-08',
-        dateModified: '2026-09-28',
+        dateModified: '2026-10-10',
     };
 
     const faqSchema = {
@@ -116,39 +116,21 @@ export default function BlogArticle() {
                     </header>
 
                     <div className={styles.content}>
+                        {/* Svi sveti (1. 11.) su vrh potražnje: rok i cijena prvi, priča ispod forme */}
                         <p>
-                            Jednog dana smo pakirali opremu ispred zgrade, spremali se na posao. Susjeda nas je
-                            zaustavila. Rekla je da već mjesecima pokušava organizirati čišćenje grobnog mjesta,
-                            ali da jednostavno ne može. Prestara je da sama kleči i riblje kamen, a nema koga
-                            zamoliti. Pitala nas je radimo li i grobna mjesta.
+                            <strong>Najviše ljudi grob sređuje uoči Svih svetih, 1. studenoga.</strong> Ako želite da bude čist
+                            do tada, pošaljite sliku groba i recite na kojem je groblju, javimo cijenu i prvi slobodan termin.
                         </p>
                         <p>
-                            Rekli smo da da. I tako je počelo.
-                        </p>
-                        <p>
-                            Ta situacija nije rijetka. Ljudi koji žive izvan Zagreba, iseljenici u Njemačkoj ili
-                            Irskoj, starije osobe koje fizički više ne mogu, obitelji koje nemaju vremena jer
-                            trče između posla i djece. Svi bi htjeli da grob njihovih najbližih izgleda uredno.
-                            Većina ne zna da postoji usluga koja to rješava za njih, s fotografijama prije i poslije
-                            kao dokazom.
-                        </p>
-                        <p>
-                            U ovom tekstu donosimo konkretne cijene čišćenja grobnih mjesta u Zagrebu, što sve
-                            usluga uključuje i kako funkcionira rezervacija.
-                        </p>
-                        <p>
-                            Najviše ljudi grob sređuje uoči Svih svetih, 1. studenoga. Ako želite da bude čist do tada,
-                            pošaljite sliku groba na WhatsApp i recite na kojem je groblju, pa vam javimo cijenu i slobodan
-                            termin. Nakon čišćenja dobivate fotografije, pa grob ne morate ni obilaziti.
+                            Čišćenje jednostrukog groba je od 250 € (cijena na 10. 9. 2026.: od 250 €), a poliranje kamena od
+                            150 € (cijena na 10. 9. 2026.: od 150 €). Dvostruki grob, grobnica i impregnacija idu po dogovoru.
+                            Postupak i groblja na kojima radimo opisali smo na stranici{' '}
+                            <Link href="/usluge/odrzavanje-grobnih-mjesta" className={styles.inlineLink}>
+                                održavanje grobnih mjesta
+                            </Link>.
                         </p>
 
                         <h2>Cijene čišćenja grobnih mjesta u Zagrebu</h2>
-                        <p>
-                            Sve cijene su za kompletno čišćenje: spomenik, ploča, obrubi, posude za cvijeće i
-                            okolna površina oko groba. Predujam za rezervaciju je 30%, ostatak se plaća tek
-                            nakon što dobijete fotografije rezultata.
-                        </p>
-
                         <div className={styles.priceTable}>
                             <div className={styles.priceRow}>
                                 <span>Jednostruki grob (čišćenje)</span>
@@ -172,6 +154,19 @@ export default function BlogArticle() {
                             </div>
                         </div>
 
+                        <ArticleQuote
+                            location="blog-grob-cijena"
+                            service="grave"
+                            title="Koliko bi čišćenje vašeg groba koštalo?"
+                            whatsappText="Pozdrav, zanima me čišćenje groba. Šaljem sliku i groblje."
+                            whatsappLabel="Pošaljite sliku groba na WhatsApp"
+                        />
+
+                        <p>
+                            Sve cijene su za kompletno čišćenje: spomenik, ploča, obrubi, posude za cvijeće i
+                            okolna površina oko groba. Predujam za rezervaciju je 30%, ostatak se plaća tek
+                            nakon što dobijete fotografije rezultata.
+                        </p>
                         <p>
                             Konačna cijena ovisi o veličini spomenika, vrsti kamena i tome koliko je zaprljano.
                             Granit s mahovinom koja je ušla u pore traži više vremena od glatkog mramora s
@@ -179,12 +174,23 @@ export default function BlogArticle() {
                             prije nego potvrdite rezervaciju.
                         </p>
 
-                        <ArticleQuote
-                            location="blog-grob-cijena"
-                            title="Pošaljite sliku groba, javimo cijenu"
-                            whatsappText="Pozdrav, zanima me čišćenje groba. Šaljem sliku i groblje."
-                            whatsappLabel="Pošaljite sliku groba na WhatsApp"
-                        />
+                        <h2>Kako smo počeli čistiti grobna mjesta</h2>
+                        <p>
+                            Jednog dana smo pakirali opremu ispred zgrade, spremali se na posao. Susjeda nas je
+                            zaustavila. Rekla je da već mjesecima pokušava organizirati čišćenje grobnog mjesta,
+                            ali da jednostavno ne može. Prestara je da sama kleči i riblje kamen, a nema koga
+                            zamoliti. Pitala nas je radimo li i grobna mjesta.
+                        </p>
+                        <p>
+                            Rekli smo da da. I tako je počelo.
+                        </p>
+                        <p>
+                            Ta situacija nije rijetka. Ljudi koji žive izvan Zagreba, iseljenici u Njemačkoj ili
+                            Irskoj, starije osobe koje fizički više ne mogu, obitelji koje nemaju vremena jer
+                            trče između posla i djece. Svi bi htjeli da grob njihovih najbližih izgleda uredno.
+                            Većina ne zna da postoji usluga koja to rješava za njih, s fotografijama prije i poslije
+                            kao dokazom.
+                        </p>
 
                         <h2>Što utječe na cijenu?</h2>
 

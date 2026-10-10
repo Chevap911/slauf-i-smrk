@@ -6,11 +6,11 @@ import { Home, TreeDeciduous, Sofa } from 'lucide-react';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
-    title: 'Pranje fasade Zagreb | Čišćenje algi i cijena | Šlauf i Šmrk',
+    title: 'Pranje fasade Zagreb | Alge, mahovina, ETICS | Šlauf i Šmrk',
     description: 'Pranje i čišćenje fasade u Zagrebu: alge, mahovina i tamni tragovi, uz prilagođen tlak za žbuku i ETICS. Cijena od 5 €/m² (na 10. 9. 2026.: od 5 €/m²).',
     alternates: { canonical: '/usluge/pranje-fasade' },
     openGraph: {
-        title: 'Pranje fasade Zagreb | Čišćenje algi i cijena | Šlauf i Šmrk',
+        title: 'Pranje fasade Zagreb | Alge, mahovina, ETICS | Šlauf i Šmrk',
         description: 'Profesionalno pranje i čišćenje fasade u Zagrebu i okolici. Uklanjamo alge, mahovinu i tamne naslage za kuće, zgrade i poslovne objekte.',
         url: 'https://slaufismrk.com/usluge/pranje-fasade',
         images: [OG_IMAGE],

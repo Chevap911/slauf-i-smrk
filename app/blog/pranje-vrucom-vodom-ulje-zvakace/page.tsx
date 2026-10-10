@@ -77,7 +77,7 @@ const articleSchema = {
     author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
     publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
     datePublished: '2026-10-05',
-    dateModified: '2026-10-05',
+    dateModified: '2026-10-10',
     image: `https://slaufismrk.com${IMG}/pranje-vrucom-vodom-rotacijski-cistac.jpg`,
     url: `https://slaufismrk.com${SLUG}`,
 };
@@ -113,9 +113,10 @@ export default function BlogArticle() {
 
                     <div className={styles.content}>
                         <p>
-                            Masna mrlja na betonu teško ide s hladnom vodom, koliko god jak bio mlaz. Voda klizi preko
-                            masnoće, razmaže je i ostavi istu tamnu sjenu. Isto je sa žvakaćim gumama koje su se godinama
-                            gazile u kamene ploče. Zato smo uveli <strong>pranje vrućom vodom pod visokim tlakom</strong>:
+                            Masna mrlja na betonu, u garaži ili na{' '}
+                            <Link href="/usluge/pranje-prilaza">prilazu kući</Link>, teško ide s hladnom vodom, koliko
+                            god jak bio mlaz. Voda klizi preko masnoće, razmaže je i ostavi istu tamnu sjenu. Isto je sa
+                            žvakaćim gumama koje su se godinama gazile u kamene ploče. Zato smo uveli <strong>pranje vrućom vodom pod visokim tlakom</strong>:
                             stroj radi do 500 bara i grije vodu do 130 °C. Prvi veći test napravili smo na kamenom podu
                             punom ulja, prljavštine i žvakaćih. Ovdje su fotografije prije i poslije, kako smo radili i što
                             ova metoda može, a što ne.
@@ -145,6 +146,15 @@ export default function BlogArticle() {
                             se lakše odvoji od ploče. U garaži je to mrlja ispod auta, na terasi kafića masnoća ispod
                             stolova, a na ulazu u trgovinu žvakaće koje svi gaze.
                         </p>
+
+                        <ArticleQuote
+                            location="blog-vruca-voda"
+                            // Bez izračuna po m²: cijena pranja vrućom vodom ovisi o mrljama, javlja se po slikama (FAQ ispod)
+                            service=""
+                            variant="diy"
+                            title="Ulje ili žvakaće na podu? Pošaljite fotku"
+                            whatsappText="Pozdrav, imam mrlje od ulja i žvakaće na podu. Šaljem slike za procjenu."
+                        />
 
                         <h2>Stroj od 500 bara i 130 °C</h2>
                         <p>
@@ -187,12 +197,6 @@ export default function BlogArticle() {
                                 <figcaption>Isti pod nakon pranja vrućom vodom.</figcaption>
                             </figure>
                         </div>
-
-                        <ArticleQuote
-                            location="blog-vruca-voda"
-                            title="Ulje ili žvakaće na podu? Pošaljite sliku za procjenu"
-                            whatsappText="Pozdrav, imam mrlje od ulja i žvakaće na podu. Šaljem slike za procjenu."
-                        />
 
                         <h2>Što pranje vrućom vodom skida, a što ne</h2>
                         <p>

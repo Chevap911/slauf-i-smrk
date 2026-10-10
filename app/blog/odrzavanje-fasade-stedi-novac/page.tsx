@@ -37,7 +37,7 @@ export default function BlogArticle() {
         author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         datePublished: '2026-06-16',
-        dateModified: '2026-06-16',
+        dateModified: '2026-10-10',
         image: 'https://slaufismrk.com/prije-poslje/pranje-zida-terase-zagreb-poslje.jpeg',
         url: 'https://slaufismrk.com/blog/odrzavanje-fasade-stedi-novac',
     };
@@ -96,7 +96,8 @@ export default function BlogArticle() {
                             Fasada rijetko propadne odjednom. Krene s jednom zelenkastom sjenom u kutu koju nitko ne primijeti.
                             Sljedeće godine je mrlja veća i tamnija. Treće godine boja na tom dijelu počne otpadati, a vlasnik
                             tek tada nazove, kad problem više nije pranje nego popravak. Vidimo taj scenarij stalno, i gotovo
-                            uvijek se mogao izbjeći s pranjem koje košta djelić sanacije.
+                            uvijek se mogao izbjeći s <Link href="/usluge/pranje-fasade">pranjem fasade</Link> koje košta
+                            djelić sanacije.
                         </p>
                         <p>
                             Logika odgađanja je razumljiva. Mrlja u kutu ne smeta dovoljno da se nešto poduzme, a svaka godina
@@ -120,7 +121,8 @@ export default function BlogArticle() {
                         <ArticleQuote
                             location="blog-odrzavanje"
                             service="facade"
-                            title="Koliko bi pranje vaše fasade koštalo?"
+                            variant="diy"
+                            title="U kojoj je fazi vaša fasada? Pošaljite fotku"
                             whatsappText="Pozdrav, zanima me pranje fasade. Šaljem slike za procjenu."
                         />
 
