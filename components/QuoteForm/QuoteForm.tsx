@@ -376,6 +376,8 @@ export default function QuoteForm({ idPrefix = 'qf', hideHeading = false, initia
                 <button type="submit" className={styles.submit} disabled={submitting}>
                     {submitting ? 'Šaljem...' : perM2 ? 'Pošalji i vidi cijenu' : 'Pošalji upit'}
                 </button>
+                {/* Marko 10. 10. 2026.: istina je, pa stoji uz gumb, gdje se ljudi odlučuju */}
+                <p className={styles.reply}>Odgovaramo u roku od sat vremena.</p>
             </form>
 
             <div className={styles.divider}><span>imate slike?</span></div>

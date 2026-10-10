@@ -213,6 +213,13 @@
     margin: 0;
 }
 
+.reply {
+    margin: 0.1rem 0 0;
+    color: #57718a;
+    font-size: 0.82rem;
+    text-align: center;
+}
+
 .divider {
     display: flex;
     align-items: center;
