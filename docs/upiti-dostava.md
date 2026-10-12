@@ -9,11 +9,13 @@ Vrijedi od 12. 10. 2026. za Šlauf i Šmrk i za svaki web koji koristi istu krat
 - Resend SDK ne baca iznimku kad API odbije mail, nego vraća `{ error }`. Kod je hvatao samo iznimke, pa bi log pisao "sent" i kad mail nije otišao.
 - Landing forme su kao e-mail kupca slale izmišljenu adresu (`lp-upit@slaufismrk.com`). Server je na nju slao potvrdu, a takvi mailovi odbijaju i kvare ugled domene u Resendu.
 
+**Riješeno 12. 10. 2026. promjenom pošiljatelja:** mail o upitu s `info@slaufismrk.com` nije se vidio u inboxu, s `upiti@slaufismrk.com` stiže (test u 11:29 i 11:40). Najvjerojatniji uzrok: `info@slaufismrk.com` je u slauf.i.smrk Gmailu postavljen kao "Pošalji poštu kao" (Postavke → Računi i uvoz), pa Gmail mailove s te adrese tretira kao vlastite poslane i stavlja ih u **Poslano**, ne u Pristiglu poštu. Zato: mail o upitu nikad ne šalji s adrese koja je u primateljevom Gmailu postavljena kao vlastita.
+
 ## Pravila
 
 1. **Upit se prvo sprema u bazu.** Mail je drugi, nikad jedino mjesto gdje upit postoji.
 2. **Svako slanje provjerava rezultat.** `resend.emails.send` se zove samo u `lib/upiti/obavijest.ts`, koji čita `{ error }` i zapisuje razlog. Upit bez maila se u Vercel logu traži s `UPIT_BEZ_OBAVIJESTI`.
-3. **Mail o upitu ide s posebne adrese** (`upiti@slaufismrk.com`), odvojeno od potvrda kupcima (`info@`), s HTML-om i tekstualnom verzijom.
+3. **Mail o upitu ide s posebne adrese** (`upiti@slaufismrk.com`), nikad s adrese koju primatelj u Gmailu ima kao "Pošalji poštu kao" (s `info@` se mail nije vidio), s HTML-om i tekstualnom verzijom.
 4. **Rezervni pošiljatelj:** ako Resend odbije domenu, isti mail ide s Resendove adrese `onboarding@resend.dev` na adresu vlasnika Resend računa.
 5. **Ishod maila stoji uz upit u bazi** (`details._meta.obavijest.mail`).
 6. **Jutarnji kontrolni mail.** Dnevni cron (`/api/keepalive`) šalje mail istim putem kao mail o upitu, samo uz `CRON_SECRET`. Ako jedno jutro ne stigne, mailovi o upitima ne stižu. Uz `SUPABASE_SERVICE_ROLE_KEY` mail navodi i upite iz zadnja 24 sata, a broj samo uz upit čiji mail nije prošao.
@@ -35,10 +37,11 @@ Vrijedi od 12. 10. 2026. za Šlauf i Šmrk i za svaki web koji koristi istu krat
 
 Web je svoje napravio, mail je zapeo u Gmail računu. Provjeri redom:
 1. Gmail pretraga: `in:anywhere "NOVI UPIT"` (uključuje Spam i Otpad).
-2. Postavke → **Filtri i blokirane adrese**: filtar ili blokada za `slaufismrk.com`, `upiti@`, `info@` ili "NOVI UPIT".
-3. Postavke → **Prosljeđivanje i POP/IMAP**: prosljeđivanje ili POP s "izbriši Gmailovu kopiju". Postavi "zadrži Gmailovu kopiju u pristigloj pošti".
-4. Postavke → **Računi i uvoz**: koji drugi programi ili uređaji povlače poštu s ovog računa.
-5. U Resendu klikni mail i pogledaj događaj "Delivered" (odgovor Gmailovog servera).
+2. Mapa **Poslano**: ako je adresa pošiljatelja u ovom Gmailu postavljena kao "Pošalji poštu kao", mail završi tamo.
+3. Postavke → **Filtri i blokirane adrese**: filtar ili blokada za `slaufismrk.com`, `upiti@`, `info@` ili "NOVI UPIT".
+4. Postavke → **Prosljeđivanje i POP/IMAP**: prosljeđivanje ili POP s "izbriši Gmailovu kopiju". Postavi "zadrži Gmailovu kopiju u pristigloj pošti".
+5. Postavke → **Računi i uvoz**: adrese pod "Pošalji poštu kao" i programi koji povlače poštu s ovog računa.
+6. U Resendu klikni mail i pogledaj događaj "Delivered" (odgovor Gmailovog servera).
 
 ## Prenošenje na drugi web
 
