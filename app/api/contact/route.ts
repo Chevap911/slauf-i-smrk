@@ -5,6 +5,25 @@ import { AdminNotificationEmail, ClientInquiryEmail, HotLeadEmail } from '@/comp
 
 const resend = new Resend(process.env.RESEND_API_KEY!);
 
+type Poruka = Parameters<typeof resend.emails.send>[0];
+
+// Resend SDK ne baca grešku kad API odbije mail, nego vraća { data, error }. Do 12. 10. 2026.
+// kod je hvatao samo iznimke, pa je u logu pisalo "sent" i za mail koji nikad nije otišao.
+async function posalji(oznaka: string, poruka: Poruka): Promise<boolean> {
+    try {
+        const { data, error } = await resend.emails.send(poruka);
+        if (error) {
+            console.error(`${oznaka}: Resend je odbio mail`, JSON.stringify(error));
+            return false;
+        }
+        console.log(`${oznaka}: poslano, Resend id ${data?.id}`);
+        return true;
+    } catch (e) {
+        console.error(`${oznaka}: iznimka pri slanju`, e);
+        return false;
+    }
+}
+
 const serviceNames: Record<string, string> = {
     facade: 'Pranje fasade',
     yard: 'Pranje okućnice',
@@ -34,23 +53,19 @@ export async function POST(req: Request) {
         // Poziva se s frontenda nakon isteka timera.
         if (mode === 'hotlead_email') {
             const step = body.step as 1 | 2;
-            try {
-                await resend.emails.send({
-                    from: 'Šlauf i Šmrk <info@slaufismrk.com>',
-                    to: 'slauf.i.smrk@gmail.com',
-                    subject: `🔥 HOT LEAD (Korak ${step}): ${formData.name}, ${formData.phone ? `${formData.phone}, ` : ''}${step === 1 ? (formData.city || 'Nepoznat grad') : serviceNameReadable}`,
-                    react: HotLeadEmail({
-                        step,
-                        name: formData.name,
-                        email: formData.email,
-                        phone: formData.phone,
-                        city: formData.city,
-                        serviceName: step === 2 ? serviceNameReadable : undefined,
-                    }) as React.ReactElement,
-                });
-            } catch (emailError) {
-                console.error(`Hot lead email (step ${step}) failed:`, emailError);
-            }
+            await posalji(`Hot lead mail (korak ${step})`, {
+                from: 'Šlauf i Šmrk <info@slaufismrk.com>',
+                to: 'slauf.i.smrk@gmail.com',
+                subject: `🔥 HOT LEAD (Korak ${step}): ${formData.name}, ${formData.phone ? `${formData.phone}, ` : ''}${step === 1 ? (formData.city || 'Nepoznat grad') : serviceNameReadable}`,
+                react: HotLeadEmail({
+                    step,
+                    name: formData.name,
+                    email: formData.email,
+                    phone: formData.phone,
+                    city: formData.city,
+                    serviceName: step === 2 ? serviceNameReadable : undefined,
+                }) as React.ReactElement,
+            });
             return NextResponse.json({ success: true });
         }
 
@@ -117,16 +132,42 @@ export async function POST(req: Request) {
         let adminOk = false;
         if (isFinal) {
             // 1. Email administratoru
-            try {
-                await resend.emails.send({
+            const adminPoruka: Poruka = {
+                from: 'Šlauf i Šmrk <info@slaufismrk.com>',
+                to: 'slauf.i.smrk@gmail.com',
+                // Broj u naslovu: vidi se već u obavijesti na mobitelu, bez otvaranja maila (brzina odgovora)
+                subject: `NOVI UPIT: ${serviceNameReadable}, ${formData.phone || 'bez broja'}${formData.name && formData.name !== 'Brzi upit (web)' ? `, ${formData.name}` : ''}`,
+                react: AdminNotificationEmail({
+                    name: formData.name || 'N/A',
+                    email: formData.email || 'N/A',
+                    phone: formData.phone || 'N/A',
+                    city: formData.city || '',
+                    address: formData.address || '',
+                    serviceName: serviceNameReadable,
+                    estimatedPriceMin: estimatedPrice?.min ?? 0,
+                    estimatedPriceMax: estimatedPrice?.max ?? 0,
+                    message: formData.message || '',
+                    details: formData,
+                }) as React.ReactElement,
+            };
+            adminOk = await posalji('Admin mail', adminPoruka);
+            if (!adminOk) {
+                // Rezerva ako Resend odbije domenu slaufismrk.com (DNS ili verifikacija). Resendova
+                // testna adresa smije slati samo na e-mail vlasnika Resend računa; ako to nije ova
+                // adresa, i rezerva padne, ali upit je i dalje spremljen u bazi (tablica inquiries).
+                adminOk = await posalji('Admin mail (rezerva)', { ...adminPoruka, from: 'Šlauf i Šmrk <onboarding@resend.dev>' });
+            }
+
+            // 2. Email klijentu (potvrda)
+            if (formData.email && formData.email.includes('@')) {
+                await posalji('Potvrda klijentu', {
                     from: 'Šlauf i Šmrk <info@slaufismrk.com>',
-                    to: 'slauf.i.smrk@gmail.com',
-                    // Broj u naslovu: vidi se već u obavijesti na mobitelu, bez otvaranja maila (brzina odgovora)
-                    subject: `NOVI UPIT: ${serviceNameReadable}, ${formData.phone || 'bez broja'}${formData.name && formData.name !== 'Brzi upit (web)' ? `, ${formData.name}` : ''}`,
-                    react: AdminNotificationEmail({
-                        name: formData.name || 'N/A',
-                        email: formData.email || 'N/A',
-                        phone: formData.phone || 'N/A',
+                    to: formData.email,
+                    subject: 'Vaš upit je zaprimljen - Šlauf i Šmrk',
+                    react: ClientInquiryEmail({
+                        name: formData.name || 'Klijent',
+                        email: formData.email,
+                        phone: formData.phone || '',
                         city: formData.city || '',
                         address: formData.address || '',
                         serviceName: serviceNameReadable,
@@ -136,36 +177,6 @@ export async function POST(req: Request) {
                         details: formData,
                     }) as React.ReactElement,
                 });
-                console.log('Admin notification email sent');
-                adminOk = true;
-            } catch (adminEmailError) {
-                console.error('Failed to send admin notification email:', adminEmailError);
-            }
-
-            // 2. Email klijentu (potvrda)
-            if (formData.email && formData.email.includes('@')) {
-                try {
-                    await resend.emails.send({
-                        from: 'Šlauf i Šmrk <info@slaufismrk.com>',
-                        to: formData.email,
-                        subject: 'Vaš upit je zaprimljen - Šlauf i Šmrk',
-                        react: ClientInquiryEmail({
-                            name: formData.name || 'Klijent',
-                            email: formData.email,
-                            phone: formData.phone || '',
-                            city: formData.city || '',
-                            address: formData.address || '',
-                            serviceName: serviceNameReadable,
-                            estimatedPriceMin: estimatedPrice?.min ?? 0,
-                            estimatedPriceMax: estimatedPrice?.max ?? 0,
-                            message: formData.message || '',
-                            details: formData,
-                        }) as React.ReactElement,
-                    });
-                    console.log('Client confirmation email sent');
-                } catch (clientEmailError) {
-                    console.error('Failed to send client confirmation email:', clientEmailError);
-                }
             }
         }
 
