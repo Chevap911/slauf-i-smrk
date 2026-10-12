@@ -111,7 +111,7 @@ export default function LeadForm() {
             mode: 'final',
             formData: {
                 name: form.name || 'N/A',
-                email: 'lp-upit@slaufismrk.com',
+                email: '', // Landing ne pita za e-mail; server šalje potvrdu samo na pravu adresu
                 phone: form.phone,
                 city: form.city || 'N/A',
                 service: 'terrace',

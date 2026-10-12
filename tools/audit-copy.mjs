@@ -175,6 +175,26 @@ for (const f of walkAll(join(ROOT, "public"))) {
     struct.push({ level: "FAIL", label: "Fotka u public/ nosi GPS lokaciju", detail: `${relative(ROOT, f)}. Očisti metapodatke prije deploya.` });
 }
 
+// ── Obavijest o upitu (docs/upiti-dostava.md) ───────────────────────────────
+// 12. 10. 2026.: Resend SDK ne baca grešku kad odbije mail, nego vraća { error }, a mail o
+// upitu je bio jedini kanal. Slanje ide samo kroz lib/upiti/obavijest.ts, koji provjerava
+// rezultat i šalje i na Telegram. Forma ne smije podmetati izmišljenu adresu kao e-mail kupca.
+const OBAVIJEST = "lib/upiti/obavijest.ts";
+for (const [f, src] of stripped) {
+  const rel = relative(ROOT, f);
+  src.split("\n").forEach((ln, i) => {
+    if (rel !== OBAVIJEST && /\.emails\.send\s*\(/.test(ln)) {
+      results.push({ level: "FAIL", label: `Mail se šalje mimo ${OBAVIJEST} (rezultat se ne provjerava, nema Telegrama)`, file: rel, line: i + 1, hit: "emails.send(", text: ln.trim().slice(0, 110) });
+    }
+    if (/\bemail:\s*['"`][^'"`]*@slaufismrk\.com['"`]/.test(ln)) {
+      results.push({ level: "FAIL", label: "Izmišljena adresa kao e-mail kupca (potvrda bi odbijala na našoj domeni)", file: rel, line: i + 1, hit: "@slaufismrk.com", text: ln.trim().slice(0, 110) });
+    }
+  });
+}
+if (!existsSync(join(ROOT, OBAVIJEST))) {
+  struct.push({ level: "FAIL", label: "Nema modula za obavijest o upitu", detail: `${OBAVIJEST} mora postojati (mail + Telegram, provjera rezultata).` });
+}
+
 // ── Izvještaj ───────────────────────────────────────────────────────────────
 const fails = [...results.filter((r) => r.level === "FAIL"), ...struct.filter((s) => s.level === "FAIL")];
 const warns = [...results.filter((r) => r.level === "WARN"), ...struct.filter((s) => s.level === "WARN")];

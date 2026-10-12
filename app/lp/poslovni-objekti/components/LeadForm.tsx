@@ -88,7 +88,7 @@ export default function LeadForm() {
             mode: 'final',
             formData: {
                 name: form.contactName || form.companyName || 'N/A',
-                email: 'lp-b2b@slaufismrk.com',
+                email: '', // Landing ne pita za e-mail; server šalje potvrdu samo na pravu adresu
                 phone: form.phone,
                 city: form.city || 'N/A',
                 service: 'b2b_commercial',

@@ -1,28 +1,10 @@
 import { NextResponse } from 'next/server';
 import { supabase } from '@/utils/supabase/client';
-import { Resend } from 'resend';
 import { AdminNotificationEmail, ClientInquiryEmail, HotLeadEmail } from '@/components/emails/InquiryEmail';
+import { javiSvima, posaljiMail, primatelji, type Poruka } from '@/lib/upiti/obavijest';
 
-const resend = new Resend(process.env.RESEND_API_KEY!);
-
-type Poruka = Parameters<typeof resend.emails.send>[0];
-
-// Resend SDK ne baca grešku kad API odbije mail, nego vraća { data, error }. Do 12. 10. 2026.
-// kod je hvatao samo iznimke, pa je u logu pisalo "sent" i za mail koji nikad nije otišao.
-async function posalji(oznaka: string, poruka: Poruka): Promise<boolean> {
-    try {
-        const { data, error } = await resend.emails.send(poruka);
-        if (error) {
-            console.error(`${oznaka}: Resend je odbio mail`, JSON.stringify(error));
-            return false;
-        }
-        console.log(`${oznaka}: poslano, Resend id ${data?.id}`);
-        return true;
-    } catch (e) {
-        console.error(`${oznaka}: iznimka pri slanju`, e);
-        return false;
-    }
-}
+// Slanje i provjera rezultata su u lib/upiti/obavijest.ts (mail + Telegram, vidi docs/upiti-dostava.md)
+const OD = 'Šlauf i Šmrk <info@slaufismrk.com>';
 
 const serviceNames: Record<string, string> = {
     facade: 'Pranje fasade',
@@ -53,10 +35,11 @@ export async function POST(req: Request) {
         // Poziva se s frontenda nakon isteka timera.
         if (mode === 'hotlead_email') {
             const step = body.step as 1 | 2;
-            await posalji(`Hot lead mail (korak ${step})`, {
-                from: 'Šlauf i Šmrk <info@slaufismrk.com>',
-                to: 'slauf.i.smrk@gmail.com',
-                subject: `🔥 HOT LEAD (Korak ${step}): ${formData.name}, ${formData.phone ? `${formData.phone}, ` : ''}${step === 1 ? (formData.city || 'Nepoznat grad') : serviceNameReadable}`,
+            const naslov = `🔥 HOT LEAD (Korak ${step}): ${formData.name}, ${formData.phone ? `${formData.phone}, ` : ''}${step === 1 ? (formData.city || 'Nepoznat grad') : serviceNameReadable}`;
+            await javiSvima(`Hot lead (korak ${step})`, {
+                from: OD,
+                to: primatelji(),
+                subject: naslov,
                 react: HotLeadEmail({
                     step,
                     name: formData.name,
@@ -65,7 +48,7 @@ export async function POST(req: Request) {
                     city: formData.city,
                     serviceName: step === 2 ? serviceNameReadable : undefined,
                 }) as React.ReactElement,
-            });
+            }, naslov);
             return NextResponse.json({ success: true });
         }
 
@@ -128,15 +111,15 @@ export async function POST(req: Request) {
             return NextResponse.json({ success: true, leadId: inquiryId });
         }
 
-        // ─── Final submit: šalji email administratoru i klijentu ─────────────
-        let adminOk = false;
+        // ─── Final submit: obavijest nama (mail + Telegram) i potvrda klijentu ──
+        let obavijestOk = false;
         if (isFinal) {
-            // 1. Email administratoru
+            const naslov = `NOVI UPIT: ${serviceNameReadable}, ${formData.phone || 'bez broja'}${formData.name && formData.name !== 'Brzi upit (web)' && formData.name !== 'N/A' ? `, ${formData.name}` : ''}`;
             const adminPoruka: Poruka = {
-                from: 'Šlauf i Šmrk <info@slaufismrk.com>',
-                to: 'slauf.i.smrk@gmail.com',
+                from: OD,
+                to: primatelji(),
                 // Broj u naslovu: vidi se već u obavijesti na mobitelu, bez otvaranja maila (brzina odgovora)
-                subject: `NOVI UPIT: ${serviceNameReadable}, ${formData.phone || 'bez broja'}${formData.name && formData.name !== 'Brzi upit (web)' ? `, ${formData.name}` : ''}`,
+                subject: naslov,
                 react: AdminNotificationEmail({
                     name: formData.name || 'N/A',
                     email: formData.email || 'N/A',
@@ -150,23 +133,49 @@ export async function POST(req: Request) {
                     details: formData,
                 }) as React.ReactElement,
             };
-            adminOk = await posalji('Admin mail', adminPoruka);
-            if (!adminOk) {
+            // Telegram: sve što treba za poziv, bez otvaranja maila
+            const tekst = [
+                naslov,
+                formData.surfaceSize ? `Veličina: ${formData.surfaceSize} m²` : null,
+                minPrice ? `Prikazana cijena: ${minPrice === maxPrice ? `od ${minPrice}` : `${minPrice} - ${maxPrice}`} €` : null,
+                formData.city && formData.city !== 'N/A' ? `Mjesto: ${formData.city}` : null,
+                formData.message ? `Poruka: ${formData.message}` : null,
+                formData.landing_page ? `Stranica: ${formData.landing_page}` : null,
+                dbOk ? null : 'PAŽNJA: upit NIJE spremljen u bazu, zapiši broj odmah.',
+            ].filter(Boolean).join('\n');
+
+            const ishod = await javiSvima('Novi upit', adminPoruka, tekst);
+            if (!ishod.mail) {
                 // Rezerva ako Resend odbije domenu slaufismrk.com (DNS ili verifikacija). Resendova
-                // testna adresa smije slati samo na e-mail vlasnika Resend računa; ako to nije ova
-                // adresa, i rezerva padne, ali upit je i dalje spremljen u bazi (tablica inquiries).
-                adminOk = await posalji('Admin mail (rezerva)', { ...adminPoruka, from: 'Šlauf i Šmrk <onboarding@resend.dev>' });
+                // testna adresa smije slati samo na e-mail vlasnika Resend računa (slauf.i.smrk).
+                ishod.mail = await posaljiMail('Novi upit (rezervni pošiljatelj)', {
+                    ...adminPoruka,
+                    from: 'Šlauf i Šmrk <onboarding@resend.dev>',
+                    to: 'slauf.i.smrk@gmail.com',
+                });
+            }
+            obavijestOk = ishod.mail || ishod.telegram === true;
+
+            // Ishod obavijesti uz upit u bazi, da se vidi koji upit možda nitko nije vidio
+            if (dbOk && inquiryId) {
+                const { error: metaError } = await supabase
+                    .from('inquiries')
+                    .update({ details: { ...inquiryPayload.details, _meta: { ...inquiryPayload.details._meta, obavijest: ishod } } })
+                    .eq('id', inquiryId);
+                if (metaError) console.error('Ishod obavijesti nije zapisan u bazu:', metaError.message);
             }
 
-            // 2. Email klijentu (potvrda)
-            if (formData.email && formData.email.includes('@')) {
-                await posalji('Potvrda klijentu', {
-                    from: 'Šlauf i Šmrk <info@slaufismrk.com>',
-                    to: formData.email,
+            // Potvrda klijentu, samo na pravu adresu. Landing forme su do 12. 10. 2026. slale
+            // lp-upit@slaufismrk.com kao "email kupca", pa bi potvrda odbijala na našoj domeni.
+            const email = typeof formData.email === 'string' ? formData.email.trim() : '';
+            if (/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email) && !email.toLowerCase().endsWith('@slaufismrk.com')) {
+                await posaljiMail('Potvrda klijentu', {
+                    from: OD,
+                    to: email,
                     subject: 'Vaš upit je zaprimljen - Šlauf i Šmrk',
                     react: ClientInquiryEmail({
                         name: formData.name || 'Klijent',
-                        email: formData.email,
+                        email,
                         phone: formData.phone || '',
                         city: formData.city || '',
                         address: formData.address || '',
@@ -180,8 +189,9 @@ export async function POST(req: Request) {
             }
         }
 
-        // Vrati grešku samo ako baš ništa nije uspjelo (ni DB ni email)
-        if (isFinal && !dbOk && !adminOk) {
+        // Greška samo ako upit nije nigdje: ni u bazi ni u jednoj obavijesti. Tada forma kaže
+        // korisniku da nazove ili pošalje WhatsApp, umjesto da lažno javi "zaprimljeno".
+        if (isFinal && !dbOk && !obavijestOk) {
             return NextResponse.json({ error: 'Submission failed' }, { status: 500 });
         }
 
