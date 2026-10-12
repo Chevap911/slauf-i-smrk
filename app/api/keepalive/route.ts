@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 import { supabase } from '@/utils/supabase/client';
-import { javiSvima, primatelji } from '@/lib/upiti/obavijest';
+import { posaljiMail, primatelji } from '@/lib/upiti/obavijest';
 
 export const dynamic = 'force-dynamic';
 
@@ -9,18 +9,21 @@ export const dynamic = 'force-dynamic';
 // nekoliko mjesečno. Kad je pauziran, upiti s weba ne ulaze u bazu ni u CRM.
 // Vercel cron (vercel.json) zove ovo svaki dan.
 //
-// Od 12. 10. 2026. isti poziv šalje i jutarnju kontrolnu poruku kroz oba kanala obavijesti
-// (mail i Telegram). Ako jedno jutro ne stigne, kanal je pukao: popravi ga prije nego propadne
-// pravi upit. Uz SUPABASE_SERVICE_ROLE_KEY poruka ponavlja i upite iz zadnja 24 sata, pa se
-// vidi i upit čija obavijest nije prošla.
+// Od 12. 10. 2026. isti poziv šalje i jutarnji kontrolni mail istim putem kao mail o upitu.
+// Ako jedno jutro ne stigne, mailovi o upitima ne stižu: popravi to prije nego propadne pravi
+// upit. Uz SUPABASE_SERVICE_ROLE_KEY mail ponavlja i upite iz zadnja 24 sata.
 
-type Upit = { created_at: string; service: string | null; phone: string | null; details: { _meta?: { obavijest?: { mail?: boolean; telegram?: boolean | null } } } | null };
+type Upit = { created_at: string; service: string | null; phone: string | null; details: { _meta?: { obavijest?: { mail?: boolean } } } | null };
 
-// Samo Vercel cron smije slati kontrolnu poruku, inače bi je svatko mogao okidati
+// Samo Vercel cron smije slati kontrolni mail (Vercel šalje CRON_SECRET kao Bearer). Bez tajne
+// nema maila: user-agent se može lažirati, a petlja bi potrošila Resend kvotu za prave upite.
 function odCrona(req: Request) {
     const tajna = process.env.CRON_SECRET;
-    if (tajna) return req.headers.get('authorization') === `Bearer ${tajna}`;
-    return (req.headers.get('user-agent') ?? '').startsWith('vercel-cron/');
+    if (!tajna) {
+        console.error('CRON_SECRET nije postavljen na Vercelu: jutarnji kontrolni mail se ne šalje');
+        return false;
+    }
+    return req.headers.get('authorization') === `Bearer ${tajna}`;
 }
 
 async function upitiZadnjih24h(): Promise<Upit[] | null> {
@@ -53,30 +56,30 @@ export async function GET(req: Request) {
     const upiti = await upitiZadnjih24h();
     const redovi = upiti?.map((u) => {
         const o = u.details?._meta?.obavijest;
-        const bez = o && !o.mail && o.telegram !== true ? ' (OBAVIJEST NIJE PROŠLA)' : '';
-        return `${sat(u.created_at)} ${u.service ?? 'upit'}, ${u.phone ?? 'bez broja'}${bez}`;
+        // Broj samo uz upit čiji mail nije prošao; za ostale je već u mailu o upitu
+        return o && !o.mail
+            ? `${sat(u.created_at)} ${u.service ?? 'upit'}, ${u.phone ?? 'bez broja'} (MAIL O UPITU NIJE PROŠAO, nazovi)`
+            : `${sat(u.created_at)} ${u.service ?? 'upit'}`;
     });
     const tekst = [
-        'Jutarnja provjera obavijesti, Šlauf i Šmrk: ova poruka je stigla, kanal radi.',
-        'Ako je jedno jutro ne dobiješ, obavijesti o upitima ne stižu.',
+        bazaOk ? null : 'PAŽNJA: baza upita ne odgovara. Upiti se možda ne spremaju.',
+        'Jutarnja provjera, Šlauf i Šmrk: ovaj mail je stigao, znači da i mailovi o upitima s weba stižu.',
+        'Ako ga jedno jutro ne dobiješ, mailovi o upitima ne stižu. Upiti su i dalje u bazi.',
         upiti === null
             ? 'Popis upita: Supabase, tablica inquiries.'
             : redovi && redovi.length
               ? `Upiti u zadnja 24 h (${redovi.length}):\n${redovi.join('\n')}`
               : 'Upita u zadnja 24 h nije bilo.',
-        bazaOk ? null : 'PAŽNJA: baza upita ne odgovara. Upiti se možda ne spremaju.',
     ].filter(Boolean).join('\n\n');
 
-    const ishod = await javiSvima(
-        'Jutarnja provjera',
-        {
-            from: 'Šlauf i Šmrk <info@slaufismrk.com>',
-            to: primatelji(),
-            subject: `Provjera obavijesti: radi${upiti ? `, ${upiti.length} upita u 24 h` : ''}`,
-            text: tekst,
-        },
-        tekst,
-    );
+    const mailOk = await posaljiMail('Jutarnja provjera', {
+        from: 'Web upit Šlauf i Šmrk <upiti@slaufismrk.com>',
+        to: primatelji(),
+        subject: bazaOk
+            ? `Provjera upita s weba: radi${upiti ? `, ${upiti.length} upita u 24 h` : ''}`
+            : 'PAŽNJA: baza upita s weba ne radi',
+        text: tekst,
+    });
 
-    return NextResponse.json({ ok: bazaOk, provjera: ishod, upita: upiti?.length ?? null, at: new Date().toISOString() });
+    return NextResponse.json({ ok: bazaOk, mail: mailOk, at: new Date().toISOString() });
 }

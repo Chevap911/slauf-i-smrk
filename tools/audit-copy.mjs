@@ -18,6 +18,7 @@
  */
 import { readFileSync, readdirSync, statSync, existsSync } from "node:fs";
 import { join, relative, extname } from "node:path";
+import { execSync } from "node:child_process";
 
 const ROOT = process.cwd();
 const SCAN_DIRS = ["config", "components", "app", "lib"];
@@ -176,15 +177,15 @@ for (const f of walkAll(join(ROOT, "public"))) {
 }
 
 // ── Obavijest o upitu (docs/upiti-dostava.md) ───────────────────────────────
-// 12. 10. 2026.: Resend SDK ne baca grešku kad odbije mail, nego vraća { error }, a mail o
-// upitu je bio jedini kanal. Slanje ide samo kroz lib/upiti/obavijest.ts, koji provjerava
-// rezultat i šalje i na Telegram. Forma ne smije podmetati izmišljenu adresu kao e-mail kupca.
+// 12. 10. 2026.: Resend SDK ne baca grešku kad odbije mail, nego vraća { error }. Slanje ide
+// samo kroz lib/upiti/obavijest.ts, koji provjerava rezultat. Forma ne smije podmetati
+// izmišljenu adresu kao e-mail kupca.
 const OBAVIJEST = "lib/upiti/obavijest.ts";
 for (const [f, src] of stripped) {
   const rel = relative(ROOT, f);
   src.split("\n").forEach((ln, i) => {
     if (rel !== OBAVIJEST && /\.emails\.send\s*\(/.test(ln)) {
-      results.push({ level: "FAIL", label: `Mail se šalje mimo ${OBAVIJEST} (rezultat se ne provjerava, nema Telegrama)`, file: rel, line: i + 1, hit: "emails.send(", text: ln.trim().slice(0, 110) });
+      results.push({ level: "FAIL", label: `Mail se šalje mimo ${OBAVIJEST} (rezultat se ne provjerava)`, file: rel, line: i + 1, hit: "emails.send(", text: ln.trim().slice(0, 110) });
     }
     if (/\bemail:\s*['"`][^'"`]*@slaufismrk\.com['"`]/.test(ln)) {
       results.push({ level: "FAIL", label: "Izmišljena adresa kao e-mail kupca (potvrda bi odbijala na našoj domeni)", file: rel, line: i + 1, hit: "@slaufismrk.com", text: ln.trim().slice(0, 110) });
@@ -192,7 +193,32 @@ for (const [f, src] of stripped) {
   });
 }
 if (!existsSync(join(ROOT, OBAVIJEST))) {
-  struct.push({ level: "FAIL", label: "Nema modula za obavijest o upitu", detail: `${OBAVIJEST} mora postojati (mail + Telegram, provjera rezultata).` });
+  struct.push({ level: "FAIL", label: "Nema modula za obavijest o upitu", detail: `${OBAVIJEST} mora postojati (slanje maila s provjerom rezultata).` });
+}
+
+// ── Tajne u repou (repo je javan) ───────────────────────────────────────────
+// 12. 10. 2026.: pravi Resend ključ je od 9. 6. stajao u test-resend.js na javnom GitHubu.
+// Ključevi idu samo u Vercel (Settings → Environment Variables). Gleda sve praćene datoteke.
+const TAJNE = [
+  { re: /\bre_[A-Za-z0-9_]{20,}/, sto: "Resend API ključ" },
+  { re: /eyJhbGciOi[A-Za-z0-9_-]{20,}\.[A-Za-z0-9_-]{20,}/, sto: "JWT (Supabase ključ)" },
+  { re: /\b(sk|rk)_live_[A-Za-z0-9]{10,}/, sto: "Stripe ključ" },
+  { re: /\b[0-9]{8,10}:[A-Za-z0-9_-]{35}\b/, sto: "Telegram bot token" },
+  { re: /\bAKIA[0-9A-Z]{16}\b/, sto: "AWS ključ" },
+];
+let pracene = [];
+try {
+  pracene = execSync("git ls-files -z", { cwd: ROOT, encoding: "utf8", maxBuffer: 64 * 1024 * 1024 }).split("\0").filter(Boolean);
+} catch { /* nije git repo */ }
+for (const rel of pracene) {
+  if (/\.(png|jpe?g|webp|gif|ico|pdf|mp4|mov|zip|woff2?|ttf|svg)$/i.test(rel) || rel === "package-lock.json") continue;
+  const p = join(ROOT, rel);
+  if (!existsSync(p) || statSync(p).size > 2 * 1024 * 1024) continue;
+  readFileSync(p, "utf8").split("\n").forEach((ln, i) => {
+    for (const t of TAJNE) {
+      if (t.re.test(ln)) results.push({ level: "FAIL", label: `Tajna u repou: ${t.sto}. Makni je, opozovi ključ i stavi novi samo u Vercel`, file: rel, line: i + 1, hit: t.sto, text: "(vrijednost skrivena)" });
+    }
+  });
 }
 
 // ── Izvještaj ───────────────────────────────────────────────────────────────
