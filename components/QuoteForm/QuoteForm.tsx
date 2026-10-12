@@ -318,7 +318,7 @@ export default function QuoteForm({ idPrefix = 'qf', hideHeading = false, initia
                         autoComplete="tel"
                         value={contact}
                         onChange={(e) => setContact(e.target.value)}
-                        placeholder="npr. 095 123 4567"
+                        placeholder="Vaš broj mobitela"
                         required
                     />
                 </label>

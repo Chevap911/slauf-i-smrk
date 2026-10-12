@@ -240,7 +240,7 @@ export default function LeadForm() {
                         type="tel"
                         inputMode="tel"
                         className={styles.input}
-                        placeholder="npr. 091 234 5678"
+                        placeholder="Vaš broj mobitela"
                         autoComplete="tel"
                         required
                         value={form.phone}

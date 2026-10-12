@@ -196,6 +196,21 @@ if (!existsSync(join(ROOT, OBAVIJEST))) {
   struct.push({ level: "FAIL", label: "Nema modula za obavijest o upitu", detail: `${OBAVIJEST} mora postojati (slanje maila s provjerom rezultata).` });
 }
 
+// ── Jedan broj na webu (CLAUDE.md pravilo 7, Marko 2026-10-12) ──────────────
+// Na webu smije stajati samo +385 95 844 2806 (tel:+385958442806, wa.me/385958442806). Bilo koji
+// drugi hrvatski mobilni ili fiksni broj u kodu stranica pada, i kao primjer u polju forme.
+const KANONSKI = /\+385 95 844 2806|\+?385958442806/g;
+const DRUGI_BROJ = /(?:\+385|00385|\b385|\b0)[\s/-]?(?:\(0\)\s?)?(?:9[1-9]|1|[2-5][0-9])[\s/.-]?\d{3}[\s/.-]?\d{3,4}\b/;
+for (const [f, src] of stripped) {
+  const rel = relative(ROOT, f);
+  if (rel.startsWith("components/emails/")) continue; // mail nama nosi broj kupca, ne ide na web
+  src.split("\n").forEach((ln, i) => {
+    const bez = ln.replace(KANONSKI, "");
+    const m = bez.match(DRUGI_BROJ);
+    if (m) results.push({ level: "FAIL", label: "Drugi broj telefona na webu (jedini dopušten je +385 95 844 2806)", file: rel, line: i + 1, hit: m[0], text: ln.trim().slice(0, 110) });
+  });
+}
+
 // ── Tajne u repou (repo je javan) ───────────────────────────────────────────
 // 12. 10. 2026.: pravi Resend ključ je od 9. 6. stajao u test-resend.js na javnom GitHubu.
 // Ključevi idu samo u Vercel (Settings → Environment Variables). Gleda sve praćene datoteke.
