@@ -18,6 +18,13 @@ export const metadata: Metadata = {
 
 const articles = [
     {
+        title: 'Čišćenje nadgrobnog spomenika prije Svih svetih: vodič',
+        excerpt: 'Vosak od lampiona, mahovina i tamne pruge na kamenu. Što možete očistiti sami, čime se spomenik oštećuje i kada je pametnije zvati nas da grob bude gotov do 1. studenoga.',
+        slug: '/blog/ciscenje-nadgrobnog-spomenika-svi-sveti',
+        date: '2026-10-18',
+        category: 'Vodič',
+    },
+    {
         title: 'Pranje vrućom vodom pod visokim tlakom: ulje i žvakaće s betona',
         excerpt: 'Stroj od 500 bara grije vodu do 130 °C. Test na kamenom podu punom ulja i žvakaćih: fotografije prije i poslije, kako radimo i što ova metoda može, a što ne.',
         slug: '/blog/pranje-vrucom-vodom-ulje-zvakace',
