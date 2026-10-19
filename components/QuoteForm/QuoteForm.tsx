@@ -17,6 +17,7 @@ export const QUOTE_SERVICES = [
     { id: 'pool', label: 'Pranje bazena' },
     { id: 'chemical', label: 'Kemijsko čišćenje namještaja' },
     { id: 'car', label: 'Detailing automobila' },
+    { id: 'b2b_commercial', label: 'Poslovni i javni prostori' },
     { id: '', label: 'Ostalo / nisam siguran' },
 ] as const;
 

@@ -20,6 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         'pranje-bazena',
         'odrzavanje-grobnih-mjesta',
         'poslovni-objekti',
+        'komercijalno-ciscenje',
     ];
 
     const blog: { slug: string; date: string }[] = [

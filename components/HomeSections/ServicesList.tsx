@@ -35,6 +35,11 @@ const USLUGE = [
         href: '/usluge/poslovni-objekti',
     },
     {
+        naziv: 'Kolodvori, trgovi i garaže',
+        opis: 'Strojno pranje velikih javnih podova vrućom vodom, noću. Referenca: kolodvor Samobor.',
+        href: '/usluge/komercijalno-ciscenje',
+    },
+    {
         naziv: 'Pranje auta uz dolazak',
         opis: 'Auto peremo izvana i iznutra dok smo na vašoj lokaciji, bez putnog troška.',
         href: '/usluge/detailing-automobila',

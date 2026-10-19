@@ -69,4 +69,8 @@ export const SERVICE_GUIDES: Record<string, ServiceGuide[]> = {
         'uklanjanje-grafita-zagreb',
         'pranje-vrucom-vodom-ulje-zvakace',
     ),
+    '/usluge/komercijalno-ciscenje': guides(
+        'pranje-vrucom-vodom-ulje-zvakace',
+        'uklanjanje-grafita-zagreb',
+    ),
 };

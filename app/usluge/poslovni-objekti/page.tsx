@@ -143,6 +143,11 @@ export default function PoslovniObjektiPage() {
                             upit i mi se javljamo. Za veće objekte dolazimo na besplatnu procjenu.
                         </p>
                         <p>
+                            Perete kolodvor, trg, garažu ili tržnicu? To je posebna stranica:{' '}
+                            <Link href="/usluge/komercijalno-ciscenje">komercijalno čišćenje velikih i javnih prostora</Link>,
+                            s referencom s autobusnog kolodvora u Samoboru.
+                        </p>
+                        <p>
                             Ako vas zanima landing page s detaljima za B2B klijente koji traže konkretnu ponudu, pogledajte{' '}
                             <Link href="/lp/poslovni-objekti">ponudu za poslovne objekte</Link>.
                         </p>
