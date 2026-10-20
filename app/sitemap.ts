@@ -24,6 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ];
 
     const blog: { slug: string; date: string }[] = [
+        { slug: 'koliko-kosta-ciscenje-kamenih-povrsina-zagreb', date: '2026-10-20' },
         { slug: 'ciscenje-nadgrobnog-spomenika-svi-sveti', date: '2026-10-18' },
         { slug: 'pranje-vrucom-vodom-ulje-zvakace', date: '2026-10-10' },
         { slug: 'ciscenje-drvene-terase', date: '2026-10-10' },

@@ -18,6 +18,7 @@ const GUIDES = {
     'pranje-vrucom-vodom-ulje-zvakace': 'Ulje i žvakaće s betona: pranje vrućom vodom',
     'koliko-kosta-pranje-terase-zagreb': 'Koliko košta pranje terase u Zagrebu',
     'ciscenje-terasa-zagreb': 'Alge, mahovina i crne naslage na terasi',
+    'koliko-kosta-ciscenje-kamenih-povrsina-zagreb': 'Koliko košta čišćenje kamena u Zagrebu',
     'obnova-kamene-terase-bez-zamjene-ploca': 'Kamena terasa iz 80-ih: čišćenje umjesto zamjene ploča',
     'salitra-i-kamenac-na-kamenoj-fasadi': 'Salitra i kamenac na kamenoj fasadi',
     'ciscenje-drvene-terase': 'Drvena terasa: pranje ili brušenje i koliko košta',
@@ -59,6 +60,7 @@ export const SERVICE_GUIDES: Record<string, ServiceGuide[]> = {
         'koliko-kosta-pranje-okucnice-tlakavaca-zagreb',
     ),
     '/usluge/ciscenje-kamenih-povrsina': guides(
+        'koliko-kosta-ciscenje-kamenih-povrsina-zagreb',
         'obnova-kamene-terase-bez-zamjene-ploca',
         'salitra-i-kamenac-na-kamenoj-fasadi',
     ),

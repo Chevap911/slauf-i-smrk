@@ -18,6 +18,13 @@ export const metadata: Metadata = {
 
 const articles = [
     {
+        title: 'Koliko košta čišćenje kamena u Zagrebu? Terase, staze i stepenice',
+        excerpt: 'Čišćenje kamenih površina je 5 do 7 € po m². Primjeri računice za 20, 40 i 80 m², od čega ovisi cijena i što pranje kamena ne može popraviti.',
+        slug: '/blog/koliko-kosta-ciscenje-kamenih-povrsina-zagreb',
+        date: '2026-10-20',
+        category: 'Cijene',
+    },
+    {
         title: 'Čišćenje nadgrobnog spomenika prije Svih svetih: vodič',
         excerpt: 'Vosak od lampiona, mahovina i tamne pruge na kamenu. Što možete očistiti sami, čime se spomenik oštećuje i kada je pametnije zvati nas da grob bude gotov do 1. studenoga.',
         slug: '/blog/ciscenje-nadgrobnog-spomenika-svi-sveti',
