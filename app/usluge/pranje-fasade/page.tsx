@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Droplets, ShieldCheck, Clock, Leaf, AlertTriangle, Bug, Paintbrush, ThermometerSun } from 'lucide-react';
 import ServicePage from '@/components/ServicePage/ServicePage';
-import { Home, TreeDeciduous, Sofa } from 'lucide-react';
+import { Home, TreeDeciduous, Building2, Bus } from 'lucide-react';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -155,6 +155,9 @@ export default function PranjeFasadePage() {
                             rada. Kod većih objekata najprije pregledamo
                             površinu, procijenimo pristup, stupanj zaprljanosti i potrebnu metodu čišćenja. Nakon toga
                             dajemo jasnu ponudu i dogovaramo termin koji što manje ometa korištenje objekta.
+                            Više o radu za tvrtke na stranicama <Link href="/usluge/poslovni-objekti">poslovni objekti</Link>{' '}
+                            i <Link href="/usluge/komercijalno-ciscenje">veliki javni prostori</Link>, gdje je referenca
+                            autobusni kolodvor u Samoboru.
                         </p>
                         <ul>
                             <li>fasade poslovnih prostora i lokala</li>
@@ -349,7 +352,8 @@ export default function PranjeFasadePage() {
                 relatedServices={[
                     { title: 'Pranje okućnice', href: '/usluge/pranje-okucnice', icon: <Home size={18} /> },
                     { title: 'Kamene površine', href: '/usluge/ciscenje-kamenih-povrsina', icon: <TreeDeciduous size={18} /> },
-                    { title: 'Kemijsko čišćenje', href: '/usluge/kemijsko-ciscenje-namjestaja', icon: <Sofa size={18} /> },
+                    { title: 'Poslovni objekti', href: '/usluge/poslovni-objekti', icon: <Building2 size={18} /> },
+                    { title: 'Javni prostori', href: '/usluge/komercijalno-ciscenje', icon: <Bus size={18} /> },
                 ]}
             />
         </>

@@ -53,7 +53,6 @@ const NAJTRAZENIJE = [
     { label: 'Pranje prilaza Zagreb', href: '/usluge/pranje-prilaza' },
     { label: 'Pranje fasade cijena', href: '/blog/koliko-kosta-pranje-fasade' },
     { label: 'Čišćenje okućnice cijena', href: '/blog/koliko-kosta-pranje-okucnice-tlakavaca-zagreb' },
-    { label: 'Kemijsko čišćenje cijena', href: '/blog/koliko-kosta-kemijsko-ciscenje-namjestaja' },
 ];
 
 export default function ServicesList() {
