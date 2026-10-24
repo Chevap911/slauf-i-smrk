@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Droplets, ShieldCheck, Clock, Leaf, AlertTriangle, Bug, Paintbrush, ThermometerSun } from 'lucide-react';
 import ServicePage from '@/components/ServicePage/ServicePage';
-import { Home, TreeDeciduous, Building2, Bus } from 'lucide-react';
+import { Home, TreeDeciduous, Sofa, Building2, Bus } from 'lucide-react';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -354,6 +354,7 @@ export default function PranjeFasadePage() {
                     { title: 'Kamene površine', href: '/usluge/ciscenje-kamenih-povrsina', icon: <TreeDeciduous size={18} /> },
                     { title: 'Poslovni objekti', href: '/usluge/poslovni-objekti', icon: <Building2 size={18} /> },
                     { title: 'Javni prostori', href: '/usluge/komercijalno-ciscenje', icon: <Bus size={18} /> },
+                    { title: 'Kemijsko čišćenje', href: '/usluge/kemijsko-ciscenje-namjestaja', icon: <Sofa size={18} /> },
                 ]}
             />
         </>

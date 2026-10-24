@@ -84,6 +84,7 @@ export default function Footer() {
                             <li><Link href="/usluge/pranje-prilaza">Pranje prilaza</Link></li>
                             <li><Link href="/usluge/ciscenje-kamenih-povrsina">Kamene površine</Link></li>
                             <li><Link href="/usluge/ciscenje-drvenih-povrsina">Drvene površine</Link></li>
+                            <li><Link href="/usluge/kemijsko-ciscenje-namjestaja">Kemijsko čišćenje</Link></li>
                             <li><Link href="/usluge/poslovni-objekti">Poslovni objekti</Link></li>
                             <li><Link href="/usluge/komercijalno-ciscenje">Javni prostori</Link></li>
                         </ul>
