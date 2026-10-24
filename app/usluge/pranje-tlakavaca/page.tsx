@@ -39,7 +39,7 @@ export default function PranjeTlakavacaPage() {
                 combinedSrc: '/seo-results/pranje-tlakavaca/prije-poslije.jpg',
                 combinedAlt: 'Prije i poslije rezultat čišćenja tlakavaca i betonskih kocki',
                 title: 'Tlakavci prije i poslije čišćenja',
-                description: 'Na ovoj usluzi imaš gotovu prije i poslije kompoziciju koja jasno pokazuje koliko se behaton i fuge vizualno osvježe nakon zahvata.',
+                description: 'Behaton i fuge prije i poslije pranja, na jednoj fotografiji s našeg posla.',
             }}
             processSteps={[
                 {

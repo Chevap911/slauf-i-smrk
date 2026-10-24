@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Droplets, ShieldCheck, Clock, Leaf, AlertTriangle, Bug, Paintbrush, ThermometerSun, Building2, CheckCircle2 } from 'lucide-react';
+import { Droplets, ShieldCheck, Clock, Leaf, AlertTriangle, Bug, Paintbrush, ThermometerSun } from 'lucide-react';
 import ServicePage from '@/components/ServicePage/ServicePage';
 import { Home, TreeDeciduous, Sofa } from 'lucide-react';
 import { OG_IMAGE } from '@/lib/seo';
@@ -17,38 +17,17 @@ export const metadata: Metadata = {
     },
 };
 
-const serviceOfferSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    '@id': 'https://slaufismrk.com/usluge/pranje-fasade#service-offer',
-    name: 'Pranje fasade u Zagrebu',
-    serviceType: 'Pranje i čišćenje fasade',
-    description: 'Profesionalno pranje i čišćenje fasada za kuće, zgrade i poslovne objekte u Zagrebu i okolici. Uklanjanje algi, mahovine, gljivica i tamnih tragova uz prilagođen tlak.',
-    provider: { '@id': 'https://slaufismrk.com/#business' },
-    areaServed: ['Zagreb', 'Zagrebačka županija'],
-    offers: {
-        '@type': 'AggregateOffer',
-        priceCurrency: 'EUR',
-        lowPrice: '5',
-        highPrice: '7',
-        unitText: 'm2',
-    },
-};
 
 export default function PranjeFasadePage() {
     return (
         <>
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceOfferSchema) }}
-            />
             <ServicePage
                 title="Pranje fasade u Zagrebu"
                 quoteService="facade"
                 quoteTitle="Koliko bi pranje vaše fasade koštalo?"
                 titleHighlight="fasade"
                 canonicalPath="/usluge/pranje-fasade"
-                description="Profesionalno pranje i čišćenje fasada za kuće, zgrade i poslovne objekte u Zagrebu i okolici. Uklanjamo alge, mahovinu, gljivice, crne tragove i nakupljenu prljavštinu uz prilagođen tlak za žbukane, ETICS i druge fasadne površine. Za okvirnu cijenu možete poslati slike fasade na WhatsApp, za veće objekte dolazimo na lokaciju i dajemo jasnu procjenu bez obaveza."
+                description="Peremo fasade kuća, zgrada i poslovnih objekata u Zagrebu i okolici: alge, mahovina, gljivice, crni tragovi i sivilo. Tlak i sredstvo biramo prema vrsti fasade (žbuka, ETICS, kamen), a cijenu potvrđujemo prije početka rada."
                 priceHint="od 5 €/m²"
                 priceAnchor="od 5 €/m²"
                 heroImage="/seo-results/pranje-fasade/poslije.png"
@@ -58,14 +37,33 @@ export default function PranjeFasadePage() {
                     'Siguran tlak za žbukane i ETICS fasade',
                     'Kuće, zgrade i poslovni objekti',
                 ]}
-                resultsShowcase={{
-                    beforeSrc: '/seo-results/pranje-fasade/prije.jpeg',
-                    afterSrc: '/seo-results/pranje-fasade/poslije.png',
-                    beforeAlt: 'Fasada kuće prije čišćenja s vidljivim algama i tamnim naslagama u Zagrebu',
-                    afterAlt: 'Fasada kuće poslije profesionalnog pranja i čišćenja u Zagrebu',
-                    title: 'Fasada prije i poslije pranja',
-                    description: 'Projekt: pranje fasade obiteljske kuće u Zagrebu. Problem: alge, sivi sloj prljavštine i tamni tragovi. Metoda: prilagođen tlak i sredstvo za fasadu. Rezultat: vidljivo svjetlija i čišća fasada nakon jednog tretmana.',
-                }}
+                offers={{ priceCurrency: 'EUR', lowPrice: '5', highPrice: '7', unitText: 'm2' }}
+                proofTitle="Fasade koje smo oprali"
+                proofItems={[
+                    {
+                        prije: '/seo-results/pranje-fasade/prije.jpeg',
+                        poslije: '/seo-results/pranje-fasade/poslije.png',
+                        prijeAlt: 'Fasada obiteljske kuće prije pranja, alge i sivilo na žbuci, Zagreb',
+                        poslijeAlt: 'Očišćena bijela fasada obiteljske kuće nakon pranja, Zagreb',
+                        opis: 'Bijela fasada obiteljske kuće, Zagreb: alge i sivilo sa žbuke',
+                    },
+                    {
+                        prije: '/prije-poslje/fasada-narancasta-prije.jpeg',
+                        poslije: '/prije-poslje/fasada-narancasta-poslje.jpeg',
+                        prijeAlt: 'Zabat obiteljske kuće s narančastom fasadom prije pranja, sivkasta i izblijedjela žbuka',
+                        poslijeAlt: 'Isti zabat nakon pranja fasade, ujednačena narančasta boja žbuke',
+                        opis: 'Narančasta fasada obiteljske kuće, Zagreb, srpanj 2026.',
+                    },
+                ]}
+                offerItems={[
+                    'Cijena po m² fasade, potvrđena prije početka rada',
+                    'Zaštita prozora, vrata i biljaka oko kuće',
+                    'Tlak i sredstvo prema vrsti fasade, ispiranje na kraju',
+                    'Obiteljska kuća najčešće u jednom danu',
+                    'Fotografije prije i poslije nakon posla',
+                    'Od vas trebamo pristup vodi i struji',
+                    'Ne odlazimo dok niste zadovoljni',
+                ]}
                 processSteps={[
                     {
                         title: 'Procjena',
@@ -97,8 +95,8 @@ export default function PranjeFasadePage() {
                             Redovito čišćenje fasade može pomoći u <strong>očuvanju fasadne boje i površinskog sloja</strong> jer
                             se alge, mahovina i prljavština uklanjaju prije nego što se dublje vežu za podlogu. Time se može
                             odgoditi potreba za bojanjem ili većom obnovom, ovisno o stanju fasade i uvjetima na lokaciji.
-                            Naši klijenti u Zagrebu primjećuju kako čista fasada podiže ukupni dojam nekretnine, posebno
-                            kod prodaje, iznajmljivanja ili poslovnih prostora.
+                            Koje znakove gledati, pročitajte u članku <Link href="/blog/znakovi-da-fasadi-treba-pranje">5 znakova
+                            da fasadi treba pranje</Link>.
                         </p>
 
                         <h2>Koji tipovi fasade se mogu prati?</h2>
@@ -107,7 +105,7 @@ export default function PranjeFasadePage() {
                         </p>
                         <ul>
                             <li><strong>Žbukana fasada</strong>, najčešći tip u Zagrebu. Zahtijeva pažljivo podešavanje tlaka da se ne ošteti sloj žbuke.</li>
-                            <li><strong>Stiropor (ETICS) fasada</strong>, termoizolacijski sustav zahtijeva posebnu pažnju i prilagođen tlak. Ne tretiramo ga na isti način kao beton ili kamen.</li>
+                            <li><strong>Stiropor (ETICS) fasada</strong>, termoizolacijski sustav zahtijeva posebnu pažnju i prilagođen tlak. Ne tretiramo ga na isti način kao beton ili kamen. Razliku između pranja tlakom i niskotlačnog tretmana objašnjavamo u članku <Link href="/blog/softwash-ili-visokotlacno-pranje-fasade">visokotlačno pranje ili softwash</Link>.</li>
                             <li><strong>Kamena fasada</strong>, prirodni kamen, travertin, obložni kamen. Za dublje čišćenje kamena pogledajte našu uslugu <Link href="/usluge/ciscenje-kamenih-povrsina">čišćenja kamenih površina</Link>, a ako iz fuga izlaze bijeli curci, pročitajte kako smo rješavali <Link href="/blog/salitra-i-kamenac-na-kamenoj-fasadi">salitru i kamenac na kamenoj fasadi</Link>.</li>
                             <li><strong>Drvena fasada</strong>, oblaganje drvenim daskama zahtijeva niži tlak i specijalna sredstva. Više na stranici <Link href="/usluge/ciscenje-drvenih-povrsina">čišćenja drvenih površina</Link>.</li>
                         </ul>
@@ -146,18 +144,15 @@ export default function PranjeFasadePage() {
                             na lokaciji</strong> bez obaveza. Detaljan pregled faktora koji utječu na cijenu pogledajte u
                             vodiču <Link href="/blog/koliko-kosta-pranje-fasade">koliko košta pranje fasade u Zagrebu</Link>.
                         </p>
-
-                        <h2>Radimo fasade svih veličina, od kuća do poslovnih objekata</h2>
                         <p>
-                            Radimo fasade obiteljskih kuća, manjih zgrada, poslovnih prostora i većih objekata, ovisno o
-                            pristupu i sigurnim uvjetima rada. Za veće komercijalne objekte dolazimo na procjenu i
-                            dogovaramo izvedbu prema opsegu posla.
+                            <Link href="#procjena">Pošaljite upit za svoju fasadu</Link>
                         </p>
 
                         <h2>Pranje fasada za poslovne objekte, zgrade i veće površine</h2>
                         <p>
                             Osim obiteljskih kuća, čistimo fasade poslovnih prostora, lokala, stambenih zgrada,
-                            ugostiteljskih objekata i većih privatnih nekretnina. Kod većih objekata najprije pregledamo
+                            ugostiteljskih objekata i većih privatnih nekretnina, ovisno o pristupu i sigurnim uvjetima
+                            rada. Kod većih objekata najprije pregledamo
                             površinu, procijenimo pristup, stupanj zaprljanosti i potrebnu metodu čišćenja. Nakon toga
                             dajemo jasnu ponudu i dogovaramo termin koji što manje ometa korištenje objekta.
                         </p>
@@ -167,16 +162,15 @@ export default function PranjeFasadePage() {
                             <li>kuće, vile i veće privatne nekretnine</li>
                             <li>objekti s algama, mahovinom i tamnim tragovima</li>
                             <li>kombinacija fasade, <Link href="/usluge/pranje-okucnice">okućnice</Link>, <Link href="/usluge/pranje-terasa">terasa</Link> i prilaza</li>
-                            <li>mogućnost rada za veće klijente izvan Zagrebačke županije</li>
+                            <li>veći objekti i izvan Zagrebačke županije, po dogovoru</li>
                         </ul>
 
                         <h2>Paket: pranje fasade, okućnice i prilaza</h2>
                         <p>
                             Ako želite kompletno osvježiti izgled nekretnine, fasadu možemo kombinirati s{' '}
                             <Link href="/usluge/pranje-okucnice">pranjem tlakavaca, okućnice</Link>, prilaza, terasa,
-                            stepenica i kamenih površina. Ovo je najčešći izbor kod kuća, vila, poslovnih prostora i
-                            objekata koji žele jak prije/poslije rezultat u jednom terminu, bez dodatnih termina i
-                            organizacije. Za kombinirane usluge nudimo paketne cijene.
+                            stepenica i kamenih površina. Tako se sve opere u jednom terminu, bez dogovaranja više
+                            dolazaka. Za kombinirane usluge nudimo paketne cijene.
                         </p>
                         <p>
                             <Link href="#procjena">Zatražite paketnu procjenu</Link>
@@ -191,7 +185,7 @@ export default function PranjeFasadePage() {
                             <li><strong>Orijentacija objekta</strong>, sjevernije strane brže akumuliraju mahovinu i alge jer dobivaju manje sunca.</li>
                             <li><strong>Blizina drveća</strong>, objekti u sjeni drveća trebaju češće čišćenje.</li>
                             <li><strong>Lokacija</strong>, objekti uz prometnice izloženiji su čaði i prašini.</li>
-                            <li><strong>Boja fasade</strong>, svijetle fasade brže pokazuju prljavštinu.</li>
+                            <li><strong>Boja fasade</strong>, svijetle fasade brže pokazuju prljavštinu. Primjer: <Link href="/blog/bijela-fasada-posivjela">bijela fasada koja je posivjela</Link>.</li>
                         </ul>
 
                         <h2>Je li fasadu bolje oprati ili bojati?</h2>
@@ -215,13 +209,17 @@ export default function PranjeFasadePage() {
                             <li>postoje pukotine ili oštećenja završnog sloja</li>
                             <li>želite potpuno promijeniti boju objekta</li>
                         </ul>
+                        <p>
+                            Kako redovito pranje utječe na trošak bojanja, opisali smo u članku{' '}
+                            <Link href="/blog/odrzavanje-fasade-stedi-novac">održavanje fasade i trošak obnove</Link>.
+                            Bijele naslage na fasadi često su salitra, koja traži drugačiji pristup od algi:{' '}
+                            <Link href="/blog/salitra-na-fasadi">salitra na fasadi</Link>.
+                        </p>
 
                         <h2>Ekološki pristup čišćenju</h2>
                         <p>
                             Koristimo <strong>isključivo biorazgradiva sredstva za čišćenje</strong> koja su sigurna za
                             vrt, djecu i kućne ljubimce. Naša sredstva ne oštećuju biljke niti zagađuju tlo.
-                            Visokotlačno pranje s ekološkim sredstvima jednako je učinkovito kao agresivna kemija,
-                            ali bez štetnog utjecaja na okoliš.
                         </p>
 
                         <h2>Pranje fasade u Zagrebu i okolici</h2>
@@ -243,7 +241,7 @@ export default function PranjeFasadePage() {
                             <li><strong>Stvarne prije/poslije fotografije</strong>, pokazujemo rezultate naših izvedbi, ne stock fotografije</li>
                             <li><strong>Procjena prije početka</strong>, nema rada napamet ni nejasne cijene</li>
                             <li><strong>Prilagođen tlak za tip fasade</strong>, ne tretiramo ETICS kao beton</li>
-                            <li><strong>Brz odgovor na upite</strong>, odgovaramo u najkraćem roku</li>
+                            <li><strong>Brz odgovor na upite</strong>, odgovaramo u roku od sat vremena</li>
                             <li><strong>Mogućnost paketne usluge</strong>, fasada, okućnica, prilaz i terasa u jednom terminu</li>
                             <li><strong>Zagreb i okolica</strong>, za veće objekte moguć dogovor i izvan županije</li>
                         </ul>
@@ -340,7 +338,7 @@ export default function PranjeFasadePage() {
                     },
                     {
                         question: 'Radite li izvan Zagreba?',
-                        answer: 'Da, za veće objekte i komercijalne poslove izlazimo i izvan Zagrebačke županije, ovisno o veličini i isplativosti posla.',
+                        answer: 'Da, za veće objekte i komercijalne poslove izlazimo i izvan Zagrebačke županije, ovisno o veličini posla.',
                     },
                 ]}
                 serviceAreas={[

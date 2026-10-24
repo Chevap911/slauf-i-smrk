@@ -34,7 +34,7 @@ export default function DrvenePovrsinePage() {
                 combinedSrc: '/seo-results/ciscenje-drvenih-povrsina/prije-poslije.jpeg',
                 combinedAlt: 'Prije i poslije rezultat čišćenja drvenih terasa ili drvenih površina',
                 title: 'Drvene površine prije i poslije',
-                description: 'Drvo jako dobro pokazuje razliku u tonu i svježini nakon čišćenja, pa ovdje koristimo gotovu prije i poslije kompoziciju.',
+                description: 'Ista drvena površina prije i poslije čišćenja: nestaje sivilo i vraća se ton drva.',
             }}
             processSteps={[
                 {

@@ -38,6 +38,80 @@
     align-items: stretch;
 }
 
+/* Potvrđeni radovi: mirna mreža parova prije i poslije, bez klizača (isti stil kao ProofPairs na naslovnici) */
+.proofTitle {
+    margin-bottom: 1.25rem;
+    color: var(--secondary);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.proofGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+}
+
+.proofItem {
+    margin: 0;
+}
+
+.proofPair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.proofShot {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    background: #e9edf2;
+}
+
+.proofImg {
+    object-fit: cover;
+}
+
+.proofTag {
+    position: absolute;
+    top: 0.6rem;
+    left: 0.6rem;
+    z-index: 1;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #fff;
+    background: rgba(0, 31, 63, 0.82);
+}
+
+.proofTagAfter {
+    color: var(--secondary);
+    background: var(--primary);
+}
+
+.proofCaption {
+    margin-top: 0.6rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--secondary);
+}
+
+.proofMore {
+    grid-column: 1 / -1;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    justify-self: start;
+    color: var(--secondary);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
 .heroProof .heroAsideCard {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -159,7 +233,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.6rem;
-    background: #25D366;
+    background: #0f7a3f; /* kontrast s bijelim 5,4:1, kao u QuoteFormu */
     color: #fff;
     padding: 1rem 1.5rem;
     border-radius: 999px;
@@ -174,7 +248,7 @@
 .whatsappBtn:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-    background: #20ba5a;
+    background: #0c6633;
 }
 
 .heroVisual {
@@ -844,6 +918,10 @@
 
     .heroImage {
         min-height: 320px;
+    }
+
+    .proofGrid {
+        grid-template-columns: 1fr;
     }
 
     .heroText h1 {

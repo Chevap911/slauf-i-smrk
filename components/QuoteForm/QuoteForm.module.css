@@ -251,7 +251,8 @@
     width: 100%;
     padding: 0.85rem;
     border-radius: 999px;
-    background: #25d366;
+    /* Tamnija WhatsApp zelena: bijeli tekst na #25d366 ima kontrast 1,98:1, ovdje 5,4:1 (WCAG AA) */
+    background: #0f7a3f;
     color: #fff;
     font-weight: 700;
     font-size: 0.92rem;
@@ -260,7 +261,7 @@
 }
 
 .whatsapp:hover {
-    background: #1fb957;
+    background: #0c6633;
     transform: translateY(-2px);
 }
 

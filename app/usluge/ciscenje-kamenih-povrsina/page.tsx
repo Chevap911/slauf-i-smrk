@@ -36,7 +36,7 @@ export default function KamenePovsinePage() {
                 beforeAlt: 'Kamena površina prije čišćenja s vidljivim naslagama i tamnim slojem',
                 afterAlt: 'Kamena površina poslije čišćenja s vraćenom bojom i teksturom',
                 title: 'Kamene površine prije i poslije',
-                description: 'Kod kamena je važno pokazati rezultat bez prejakog tlaka, zato ovaj primjer lijepo prikazuje čišćenje uz očuvanje strukture površine.',
+                description: 'Kamen čistimo bez prejakog tlaka, da površina zadrži svoju strukturu. Fotografije su s našeg posla.',
             }}
             processSteps={[
                 {

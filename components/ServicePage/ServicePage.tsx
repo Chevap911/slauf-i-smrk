@@ -64,6 +64,15 @@ export interface ServiceResultsShowcase {
     description?: string;
 }
 
+/** Par prije i poslije s našeg posla. Samo fotke koje web već predstavlja kao naše poslove. */
+export interface ServiceProofItem {
+    prije: string;
+    poslije: string;
+    prijeAlt: string;
+    poslijeAlt: string;
+    opis: string;
+}
+
 export interface ServicePageProps {
     title: string;
     titleHighlight?: string;
@@ -90,6 +99,13 @@ export interface ServicePageProps {
     quoteTitle?: string;
     /** Kratka sezonska obavijest ispod cijene u heroju (npr. Svi sveti na stranici za grobove). */
     notice?: React.ReactNode;
+    /** Potvrđeni radovi ispod forme. Kad postoje, zamjenjuju jednu fotku ispod heroja. */
+    proofItems?: ServiceProofItem[];
+    proofTitle?: string;
+    /** Kartica uz fotke: što je uključeno u uslugu. Bez nje ide opći popis. */
+    offerItems?: string[];
+    /** AggregateOffer za Service schemu, da stranica ima jedan Service čvor. */
+    offers?: Record<string, string>;
 }
 
 export default function ServicePage({
@@ -114,6 +130,10 @@ export default function ServicePage({
     quoteService = '',
     quoteTitle,
     notice,
+    proofItems,
+    proofTitle,
+    offerItems,
+    offers,
 }: ServicePageProps) {
     const baseUrl = 'https://slaufismrk.com';
     const serviceUrl = canonicalPath ? `${baseUrl}${canonicalPath}` : undefined;
@@ -123,7 +143,7 @@ export default function ServicePage({
     const beforeHighlight = titleParts[0] ?? title;
     const afterHighlight = titleHighlight ? titleParts.slice(1).join(titleHighlight) : '';
     const serviceImages = Array.from(new Set(
-        [heroImage, resultsShowcase?.afterSrc, resultsShowcase?.combinedSrc].filter(Boolean),
+        [heroImage, resultsShowcase?.afterSrc, resultsShowcase?.combinedSrc, ...(proofItems ?? []).map((item) => item.poslije)].filter(Boolean),
     )) as string[];
     const hasResultsPair = Boolean(resultsShowcase?.beforeSrc && resultsShowcase?.afterSrc);
     const guides = canonicalPath ? SERVICE_GUIDES[canonicalPath] ?? [] : [];
@@ -180,6 +200,7 @@ export default function ServicePage({
             name: area,
         })),
         provider: { '@id': 'https://slaufismrk.com/#business' },
+        offers: offers ? { '@type': 'AggregateOffer', ...offers } : undefined,
     } : null;
 
     return (
@@ -287,39 +308,67 @@ export default function ServicePage({
 
             <section className={styles.heroProof}>
                 <div className="container">
+                    {proofItems?.length ? (
+                        <h2 className={styles.proofTitle}>{proofTitle ?? 'Naši radovi'}</h2>
+                    ) : null}
                     <div className={styles.heroProofGrid}>
-                        <div className={styles.heroImage}>
-                            {heroImage ? (
-                                <>
-                                    <Image
-                                        src={heroImage}
-                                        alt={heroImageAlt ?? title}
-                                        fill
-                                        className={styles.heroImg}
-                                        sizes="(max-width: 992px) 100vw, 42vw"
-                                    />
-                                    <div className={styles.heroImageBadge}>
-                                        <span>Stvarni projekt</span>
-                                        <strong>Rezultat nakon čišćenja</strong>
+                        {proofItems?.length ? (
+                            <div className={styles.proofGrid}>
+                                {proofItems.map((item) => (
+                                    <figure key={item.opis} className={styles.proofItem}>
+                                        <div className={styles.proofPair}>
+                                            <div className={styles.proofShot}>
+                                                <span className={styles.proofTag}>Prije</span>
+                                                <Image src={item.prije} alt={item.prijeAlt} fill sizes="(max-width: 768px) 46vw, 190px" className={styles.proofImg} />
+                                            </div>
+                                            <div className={styles.proofShot}>
+                                                <span className={`${styles.proofTag} ${styles.proofTagAfter}`}>Poslije</span>
+                                                <Image src={item.poslije} alt={item.poslijeAlt} fill sizes="(max-width: 768px) 46vw, 190px" className={styles.proofImg} />
+                                            </div>
+                                        </div>
+                                        <figcaption className={styles.proofCaption}>{item.opis}</figcaption>
+                                    </figure>
+                                ))}
+                                <Link href="/galerija" className={styles.proofMore}>
+                                    Više fotografija u galeriji <ArrowRight size={16} aria-hidden="true" />
+                                </Link>
+                            </div>
+                        ) : (
+                            <div className={styles.heroImage}>
+                                {heroImage ? (
+                                    <>
+                                        <Image
+                                            src={heroImage}
+                                            alt={heroImageAlt ?? title}
+                                            fill
+                                            className={styles.heroImg}
+                                            sizes="(max-width: 992px) 100vw, 42vw"
+                                        />
+                                        <div className={styles.heroImageBadge}>
+                                            <span>Stvarni projekt</span>
+                                            <strong>Rezultat nakon čišćenja</strong>
+                                        </div>
+                                    </>
+                                ) : (
+                                    <div className={styles.heroImagePlaceholder}>
+                                        <strong>Pregled površine</strong>
+                                        <p>
+                                            Na svakoj lokaciji prvo provjeravamo materijal, stupanj
+                                            zaprljanosti i pristup vodi prije nego krenemo s pranjem.
+                                        </p>
                                     </div>
-                                </>
-                            ) : (
-                                <div className={styles.heroImagePlaceholder}>
-                                    <strong>Pregled površine</strong>
-                                    <p>
-                                        Na svakoj lokaciji prvo provjeravamo materijal, stupanj
-                                        zaprljanosti i pristup vodi prije nego krenemo s pranjem.
-                                    </p>
-                                </div>
-                            )}
-                        </div>
+                                )}
+                            </div>
+                        )}
                         <div className={styles.heroAsideCard}>
-                            <span className={styles.heroAsideLabel}>Što dobivate</span>
+                            <span className={styles.heroAsideLabel}>{offerItems?.length ? 'Što je uključeno' : 'Što dobivate'}</span>
                             <ul>
-                                <li>Jasnu procjenu prije početka radova</li>
-                                <li>Prilagođen tlak za tip površine</li>
-                                <li>Brz dolazak po Zagrebu i okolici</li>
-                                <li>Garanciju zadovoljstva: ne odlazimo dok niste zadovoljni</li>
+                                {(offerItems?.length ? offerItems : [
+                                    'Jasnu procjenu prije početka radova',
+                                    'Prilagođen tlak za tip površine',
+                                    'Brz dolazak po Zagrebu i okolici',
+                                    'Garanciju zadovoljstva: ne odlazimo dok niste zadovoljni',
+                                ]).map((item) => <li key={item}>{item}</li>)}
                             </ul>
                         </div>
                     </div>
@@ -359,7 +408,7 @@ export default function ServicePage({
                                 {resultsShowcase.title ?? 'Prije i poslije čišćenja'}
                             </h2>
                             <p className={styles.sectionSubtitle}>
-                                {resultsShowcase.description ?? `Na ovoj usluzi pokazujemo stvarni prije i poslije rezultat za ${title.toLowerCase()}.`}
+                                {resultsShowcase.description ?? 'Fotografije s našeg posla, snimljene prije i poslije čišćenja.'}
                             </p>
                         </div>
 
@@ -373,9 +422,6 @@ export default function ServicePage({
                                         afterAlt={resultsShowcase.afterAlt}
                                         label="Povucite klizač lijevo-desno"
                                     />
-                                    <p className={styles.resultsNote}>
-                                        Ovo je stvarni projekt iz naše izvedbe, prikazan u formatu prije i poslije.
-                                    </p>
                                 </>
                             ) : resultsShowcase.combinedSrc ? (
                                 <div className={styles.resultsCombined}>
@@ -387,9 +433,6 @@ export default function ServicePage({
                                         className={styles.resultsCombinedImage}
                                         sizes="(max-width: 992px) 100vw, 900px"
                                     />
-                                    <p className={styles.resultsNote}>
-                                        Prikaz stvarnog prije i poslije rezultata na jednom kadru.
-                                    </p>
                                 </div>
                             ) : null}
                         </div>
