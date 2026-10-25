@@ -120,7 +120,7 @@ export default function BlogArticle() {
                             service="grave"
                             variant="diy"
                             title="Grob treba više od četke? Pošaljite fotku"
-                            whatsappText="Pozdrav, zanima me čišćenje groba prije Svih svetih. Šaljem sliku i groblje."
+                            whatsappText="Pozdrav, zanima me čišćenje groba. Šaljem sliku i groblje."
                             whatsappLabel="Pošaljite sliku groba na WhatsApp"
                         />
 
@@ -199,12 +199,11 @@ export default function BlogArticle() {
                             </figure>
                         </div>
 
-                        <h2>Stignete li do Svih svetih?</h2>
+                        <h2>Kako ide čišćenje kod nas</h2>
                         <p>
-                            Grobove čistimo grupno po groblju, pa termin ovisi o tome koliko je prijava za vaše groblje.
-                            Inače od prijave do termina prođe 1 do 3 tjedna. Što prije pošaljete fotografiju i lokaciju
-                            groba, veća je šansa da bude gotov do 1. studenoga. Točan termin potvrđujemo kad vidimo stanje
-                            groba i unaprijed ga ne obećavamo.
+                            Za Sve svete ove godine više ne primamo termine, pa grob prije 1. studenoga očistite sami
+                            prema uputama iznad. Za kasnije grobove čistimo grupno po groblju i termin ovisi o tome koliko
+                            je prijava za vaše groblje. Točan termin potvrđujemo kad vidimo stanje groba.
                         </p>
                         <ol>
                             <li>Pošaljite 2 do 3 fotografije groba na WhatsApp i recite na kojem je groblju.</li>

@@ -6,7 +6,7 @@ import { Home, TreeDeciduous, Waves } from 'lucide-react';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
-    title: 'Čišćenje drvene terase bez brušenja, Zagreb',
+    title: 'Čišćenje drvene terase Zagreb, bez brušenja | Šlauf i Šmrk',
     description: 'Posivjela drvena terasa ne treba uvijek brušenje. Čistimo niskim tlakom i mekanom četkom, drvo ostaje cijelo. 6–8 €/m² (na 10. 9. 2026.: 6–8 €/m²).',
     alternates: { canonical: '/usluge/ciscenje-drvenih-povrsina' },
     openGraph: {
@@ -34,7 +34,7 @@ export default function DrvenePovrsinePage() {
                 combinedSrc: '/seo-results/ciscenje-drvenih-povrsina/prije-poslije.jpeg',
                 combinedAlt: 'Prije i poslije rezultat čišćenja drvenih terasa ili drvenih površina',
                 title: 'Drvene površine prije i poslije',
-                description: 'Drvo jako dobro pokazuje razliku u tonu i svježini nakon čišćenja, pa ovdje koristimo gotovu prije i poslije kompoziciju.',
+                description: 'Posivjelo drvo nakon čišćenja vraća svoj prirodni ton, bez brušenja.',
             }}
             processSteps={[
                 {

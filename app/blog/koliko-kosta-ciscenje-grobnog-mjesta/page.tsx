@@ -116,10 +116,9 @@ export default function BlogArticle() {
                     </header>
 
                     <div className={styles.content}>
-                        {/* Svi sveti (1. 11.) su vrh potražnje: rok i cijena prvi, priča ispod forme */}
                         <p>
-                            <strong>Najviše ljudi grob sređuje uoči Svih svetih, 1. studenoga.</strong> Ako želite da bude čist
-                            do tada, pošaljite sliku groba i recite na kojem je groblju, javimo cijenu i prvi slobodan termin.
+                            <strong>Grobove čistimo grupno po groblju.</strong> Pošaljite sliku groba i recite na kojem je
+                            groblju, javimo cijenu i upišemo vas na listu za to groblje.
                         </p>
                         <p>
                             Čišćenje jednostrukog groba je od 250 € (cijena na 10. 9. 2026.: od 250 €), a poliranje kamena od

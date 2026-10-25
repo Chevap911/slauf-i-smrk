@@ -36,7 +36,7 @@ export default function KemijskoCiscenjePage() {
                 beforeAlt: 'Garnitura prije kemijskog čišćenja s vidljivom zaprljanošću',
                 afterAlt: 'Garnitura poslije kemijskog čišćenja s osvježenom i čistom tkaninom',
                 title: 'Garnitura prije i poslije dubinskog čišćenja',
-                description: 'Kod namještaja prije i poslije fotografije brzo grade povjerenje jer ljudi odmah vide koliko se tkanina osvježi nakon tretmana.',
+                description: 'Ista garnitura prije i nakon dubinskog čišćenja: tkanina vrati boju, mrlje i tamni tragovi nestanu.',
             }}
             processSteps={[
                 {
