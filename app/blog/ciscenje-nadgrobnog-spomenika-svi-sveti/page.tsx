@@ -10,7 +10,7 @@ const SLUG = 'ciscenje-nadgrobnog-spomenika-svi-sveti';
 
 export const metadata: Metadata = {
     title: 'Čišćenje nadgrobnog spomenika za Sve svete | Šlauf i Šmrk',
-    description: 'Što prije Svih svetih očistiti sami, čime se oštećuje kamen i kada zvati nas. Čišćenje groba u Zagrebu od 250 € (na 10. 9. 2026.: od 250 €).',
+    description: 'Što prije Svih svetih očistiti sami, čime se oštećuje kamen i kada zvati nas. Čišćenje groba u Zagrebu od 250 € (cijena na 10. 9. 2026.: od 250 €).',
     alternates: { canonical: `/blog/${SLUG}` },
     openGraph: {
         title: 'Čišćenje nadgrobnog spomenika prije Svih svetih',
@@ -47,7 +47,7 @@ const FAQ = [
     },
     {
         q: 'Koliko košta čišćenje nadgrobnog spomenika?',
-        a: 'Jednostruki grob od 250 €, poliranje kamena od 150 € (cijene na 10. 9. 2026.: od 250 € i od 150 €). Dvostruki grob i grobnica idu po dogovoru, cijenu dajemo nakon fotografije groba.',
+        a: 'Jednostruki grob od 250 € (cijena na 10. 9. 2026.: od 250 €), poliranje kamena od 150 € (cijena na 10. 9. 2026.: od 150 €). Dvostruki grob i grobnica idu po dogovoru, cijenu dajemo nakon fotografije groba.',
     },
 ];
 
@@ -60,7 +60,7 @@ export default function BlogArticle() {
         author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         datePublished: '2026-10-18',
-        dateModified: '2026-10-18',
+        dateModified: '2026-11-01',
     };
 
     const faqSchema = {

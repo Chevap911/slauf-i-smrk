@@ -57,6 +57,7 @@
     display: flex;
     align-items: center;
     gap: 0.6rem;
+    min-height: 44px;
     text-decoration: none;
 }
 
@@ -215,14 +216,17 @@
         border: none;
         cursor: pointer;
         padding: 0.25rem;
+        /* dodirna meta najmanje 44x44 (design gate, mobitel) */
+        min-width: 44px;
+        min-height: 44px;
     }
 
     .mobilePhoneBtn {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 42px;
-        height: 42px;
+        width: 44px;
+        height: 44px;
         border-radius: 50%;
         background-color: var(--primary);
         color: var(--secondary);

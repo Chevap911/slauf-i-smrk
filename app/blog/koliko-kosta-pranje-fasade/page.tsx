@@ -6,9 +6,9 @@ import ArticleQuote from '@/components/ArticleQuote/ArticleQuote';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
-    title: 'Koliko košta pranje fasade? Cijena po m² 2026 | Šlauf i Šmrk',
+    title: 'Pranje fasade: cijena po m² i izračun za kuću (2026.)',
     description:
-        'Pranje fasade u Zagrebu je 5–7 €/m² (na 10. 9. 2026.: 5–7 €/m²). Primjeri za kuće od 100 do 300 m², kako izračunati kvadraturu i što ulazi u cijenu.',
+        'Pranje fasade u Zagrebu je od 5 €/m² (cijena na 10. 9. 2026.: 5–7 €/m²). Primjeri za kuće od 100 do 300 m², kako izračunati kvadraturu i što ulazi u cijenu.',
     alternates: { canonical: '/blog/koliko-kosta-pranje-fasade' },
     openGraph: {
         title: 'Koliko košta pranje fasade? Cijena po m² i primjeri za 2026.',
@@ -23,11 +23,11 @@ export const metadata: Metadata = {
 const faq = [
     {
         q: 'Koliko košta pranje fasade po m²?',
-        a: 'Kod nas je pranje fasade 5–7 €/m² (cijena na 10. 9. 2026.: 5–7 €/m²). Donji dio raspona je za blago zaprljanu fasadu do koje se lako dođe, gornji za fasadu s gustim algama i mahovinom ili otežanim pristupom.',
+        a: 'Kod nas je pranje fasade od 5 €/m² (cijena na 10. 9. 2026.: 5–7 €/m²). Početna cijena vrijedi za blago zaprljanu fasadu s lakim pristupom. Guste alge, mahovina ili otežan pristup povećavaju cijenu; ponudu potvrđujemo prije rada.',
     },
     {
         q: 'Koliko košta pranje fasade obiteljske kuće od 200 m²?',
-        a: 'Okvirno 1.000 do 1.400 € (na 10. 9. 2026.: 1.000 do 1.400 €), ovisno o zaprljanosti, tipu fasade i visini. Točnu cijenu potvrđujemo nakon besplatne procjene, prije početka rada.',
+        a: 'Okvirno od 1.000 € (cijena na 10. 9. 2026.: 1.000–1.400 €), ovisno o zaprljanosti, tipu fasade i visini. Točnu cijenu potvrđujemo nakon besplatne procjene, prije početka rada.',
     },
     {
         q: 'Je li pranje fasade jeftinije od bojanja?',
@@ -62,7 +62,7 @@ const articleSchema = {
     author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
     publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
     datePublished: '2026-02-26',
-    dateModified: '2026-10-10',
+    dateModified: '2026-11-01',
     image: 'https://slaufismrk.com/prije-poslje/fasada-poslje.png',
 };
 
@@ -92,14 +92,12 @@ export default function BlogArticle() {
                     <header className={styles.header}>
                         <span className={styles.category}>Cijene</span>
                         <h1>Koliko košta pranje fasade? Cijena po m² (2026.)</h1>
-                        <p className={styles.meta}>Ažurirano 10. listopada 2026. • Šlauf i Šmrk</p>
+                        <p className={styles.meta}>Ažurirano 1. studenoga 2026. • Šlauf i Šmrk</p>
                     </header>
 
                     <div className={styles.content}>
                         <p>
-                            Kratki odgovor: pranje fasade kod nas je <strong>5–7 €/m²</strong> (cijena na 10. 9. 2026.:
-                            5–7 €/m²). Obiteljska kuća s 200 m² fasade dođe okvirno 1.000 do 1.400 € (na 10. 9. 2026.: 1.000 do
-                            1.400 €). Kako radimo, piše na stranici{' '}
+                            Kratki odgovor: pranje fasade kod nas je <strong>od 5 €/m²</strong> (cijena na 10. 9. 2026.: 5–7 €/m²). Obiteljska kuća s 200 m² fasade dođe okvirno od 1.000 € (cijena na 10. 9. 2026.: 1.000–1.400 €). Kako radimo, piše na stranici{' '}
                             <Link href="/usluge/pranje-fasade">pranje fasade u Zagrebu</Link>.
                         </p>
 
@@ -107,19 +105,19 @@ export default function BlogArticle() {
                         <div className={styles.priceTable}>
                             <div className={styles.priceRow}>
                                 <span>Kuća sa 100 m² fasade</span>
-                                <strong>od 500 €<span className="sidrena">Cijena na 10. 9. 2026.: od 500 €</span></strong>
+                                <strong>od 500 €<span className="sidrena">Cijena na 10. 9. 2026.: 500–700 €</span></strong>
                             </div>
                             <div className={styles.priceRow}>
                                 <span>Kuća s 200 m² fasade</span>
-                                <strong>od 1.000 €<span className="sidrena">Cijena na 10. 9. 2026.: od 1.000 €</span></strong>
+                                <strong>od 1.000 €<span className="sidrena">Cijena na 10. 9. 2026.: 1.000–1.400 €</span></strong>
                             </div>
                             <div className={styles.priceRow}>
                                 <span>Kuća s 300 m² fasade</span>
-                                <strong>od 1.500 €<span className="sidrena">Cijena na 10. 9. 2026.: od 1.500 €</span></strong>
+                                <strong>od 1.500 €<span className="sidrena">Cijena na 10. 9. 2026.: 1.500–2.100 €</span></strong>
                             </div>
                             <div className={styles.priceRow}>
                                 <span>Cijena po m²</span>
-                                <strong>5–7 €/m²<span className="sidrena">Cijena na 10. 9. 2026.: 5–7 €/m²</span></strong>
+                                <strong>od 5 €/m²<span className="sidrena">Cijena na 10. 9. 2026.: 5–7 €/m²</span></strong>
                             </div>
                         </div>
 
@@ -131,7 +129,7 @@ export default function BlogArticle() {
                         />
 
                         <p>
-                            Iznosi u tablici računati su s donjim dijelom raspona. Zgrade i fasade veće od 500 m²
+                            Iznosi u tablici računati su s početnom cijenom po m². Zgrade i fasade veće od 500 m²
                             radimo po ponudi. Sve naše cijene su i u <Link href="/cjenik">cjeniku</Link>. Ispod su
                             izračun kvadrature i sve što pomiče cijenu gore ili dolje.
                         </p>
@@ -155,7 +153,7 @@ export default function BlogArticle() {
                         <ul>
                             <li>
                                 <strong>Zaprljanost:</strong> fasada s gustim algama i mahovinom traži sredstvo koje ubija
-                                korijen i više prolaza, pa ide prema gornjem dijelu raspona.
+                                korijen i više prolaza, što povećava konačnu cijenu.
                             </li>
                             <li>
                                 <strong>Tip fasade:</strong> žbuka, kamen i ETICS fasada od stiropora ne peru se isto.

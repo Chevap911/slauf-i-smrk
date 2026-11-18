@@ -81,8 +81,7 @@ export default function Navigation() {
                                 <Link href="/usluge/detailing-automobila">Detailing auta</Link>
                                 <Link href="/usluge/pranje-bazena">Pranje bazena</Link>
                                 <Link href="/usluge/odrzavanje-grobnih-mjesta">Grobna mjesta</Link>
-                                <Link href="/usluge/poslovni-objekti">Poslovni objekti</Link>
-                                <Link href="/usluge/komercijalno-ciscenje">Javni prostori</Link>
+                                <Link href="/usluge/poslovni-objekti">Tvrtke i ustanove</Link>
                             </div>
                         </div>
                         <Link href="/galerija" className={`${styles.link} ${isActive('/galerija') ? styles.linkActive : ''}`}>Galerija</Link>
@@ -140,8 +139,7 @@ export default function Navigation() {
                                 <Link href="/usluge/detailing-automobila" onClick={closeMenu}>Detailing auta</Link>
                                 <Link href="/usluge/pranje-bazena" onClick={closeMenu}>Pranje bazena</Link>
                                 <Link href="/usluge/odrzavanje-grobnih-mjesta" onClick={closeMenu}>Grobna mjesta</Link>
-                                <Link href="/usluge/poslovni-objekti" onClick={closeMenu}>Poslovni objekti</Link>
-                                <Link href="/usluge/komercijalno-ciscenje" onClick={closeMenu}>Javni prostori</Link>
+                                <Link href="/usluge/poslovni-objekti" onClick={closeMenu}>Tvrtke i ustanove</Link>
                             </div>
                         </div>
                         <Link href="/galerija" className={styles.mobileLink} onClick={closeMenu}>Galerija</Link>

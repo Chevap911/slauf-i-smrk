@@ -2,7 +2,24 @@
    fotka (Ivan s leđa pere terasu noću, brendirana majica). Fotka je usidrena
    desno i mekano se fadea ulijevo u navy iza H1 teksta. Prije/poslije dokaz
    je statična sekcija ProofPairs odmah ispod heroa, pa se fotke ne ponavljaju.
-   Hero se podvlači pod prozirnu nav traku (margin-top: -nav-h). */
+   Hero se podvlači pod prozirnu nav traku (margin-top: -nav-h).
+
+   16. 11. 2026. (lokalno, čeka Markov pregled): Marko traži da glavna fotka
+   budu on i Ivan uz stroj. Ta je fotka uspravna i ljudi stoje lijevo, pa bi
+   ih kadar "fotka desno iza forme" sakrio iza kartice. Zato timska varijanta
+   (.bgTeam, .contentTeam) ima drugačiju kompoziciju: fotka je uz lijevi rub,
+   naslov stoji gore preko krošnje, ocjena i WhatsApp dolje, a između se vide
+   Ivan i Marko i prikolica "500 bar". Forma ostaje desno, vidljiva bez
+   skrolanja. Stara varijanta (.bgPhoto) je netaknuta, prekidač je u Hero.tsx.
+
+   18. 11. 2026. (Marko: "slika mora biti višlje gore ... i mora se blendat
+   bolje u sami web"): .bgTeam je sad unutar .wrappera. Desktop: fotka počinje
+   na vrhu teksta, glave su odmah ispod opisa, rubovi se maskom tope u navy
+   (lijevo, desno, gore i dolje), bez tvrdog ruba. Tablet (769 do 992px):
+   fotka je prozor u toku stranice između opisa i forme, izrezan na lica
+   (scale + transform-origin), da se vide cijeli, ne pola glave. Mobitel (do
+   768px, Marko isti dan: "tekst mora biti preko slike"): H1 i opis stoje
+   preko malo prozirne fotke, lica odmah ispod opisa. */
 .hero {
     position: relative;
     overflow: hidden;
@@ -36,6 +53,50 @@
     object-position: center 24%;
     animation: heroKenBurns 22s ease-in-out infinite alternate;
     will-change: transform;
+}
+
+/* Timska fotka (3:4), 18. 11. 2026. (Marko: "slika mora biti višlje gore i mora
+   se blendat bolje u sami web"). Živi u .wrapperu, ne u .bg: na desktopu je
+   apsolutna iza lijevog stupca, visina vezana uz visinu wrappera pa glave padnu
+   odmah ispod opisa (na 1440x900 glave ~380 px, opis završava na 353 px).
+   Svi rubovi se gase u navy (lijevo, desno prije forme, gore u krošnji iza H1,
+   dolje prije ruba heroa), pa nema tvrdog ruba ni odrezanih nogu.
+   Tamnjenje je ::after na samoj fotki, hero nema overlay u timskoj varijanti. */
+.bgTeam {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: -2.5rem;
+    height: 124%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    pointer-events: none;
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 20%, #000 72%, transparent 100%),
+        linear-gradient(to bottom, transparent 0, #000 30%, #000 64%, transparent 82%);
+    -webkit-mask-composite: source-in;
+    mask-image: linear-gradient(to right, transparent 0, #000 20%, #000 72%, transparent 100%),
+        linear-gradient(to bottom, transparent 0, #000 30%, #000 64%, transparent 82%);
+    mask-composite: intersect;
+}
+
+/* navy ton preko fotke: jači gore iza naslova, čist na licima */
+.bgTeam::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 51, 102, 0.75) 0%,
+        rgba(0, 51, 102, 0.45) 22%,
+        rgba(0, 51, 102, 0.06) 33%,
+        rgba(0, 51, 102, 0.06) 60%,
+        rgba(0, 51, 102, 0.4) 78%
+    );
+}
+
+.bgTeamImg {
+    object-fit: cover;
+    object-position: center top;
 }
 
 /* Jedva primjetan "živi" zoom, fotke ne stoje mrtve. Transform-only (GPU). */
@@ -129,6 +190,7 @@
 }
 
 .content {
+    position: relative;
     z-index: 2;
 }
 
@@ -227,6 +289,21 @@
     flex-wrap: wrap;
 }
 
+/* Timska varijanta: opis stoji preko nadstrešnice pa dobiva sjenu radi čitljivosti */
+.contentTeam .description {
+    color: rgba(255, 255, 255, 0.94);
+    text-shadow: 0 1px 10px rgba(0, 30, 70, 0.9);
+    margin-bottom: 0;
+}
+
+/* Timska varijanta: ocjena i WhatsApp u jednom redu na dnu stupca */
+.bottomRow {
+    display: flex;
+    gap: 0.9rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
 .whatsappBtn {
     display: inline-flex;
     align-items: center;
@@ -254,6 +331,7 @@
 /* Form column: floats right, visible without scrolling */
 .formCol {
     position: relative;
+    z-index: 3;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -355,6 +433,38 @@
         -webkit-mask-image: none;
     }
 
+    /* Tablet (mobitel do 768px to mijenja niže): fotka je prozor između opisa i forme.
+       Kadar je uvećan (k = 1500/720) tako da Ivan i Marko (x 40 do 760 px
+       izvornika) popune širinu, a gornji rub prozora je y 560 px izvornika:
+       glave su na 20 do 53 % visine prozora, ispod gornjeg fadea. Omjer
+       prozora je fiksan pa transform-origin vrijedi na svakoj širini. */
+    .bgTeam {
+        position: relative;
+        top: auto;
+        left: auto;
+        height: auto;
+        width: min(100%, 560px);
+        aspect-ratio: 1.6;
+        margin: -0.5rem auto -2.75rem;
+        -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 16%, #000 68%, transparent 100%),
+            linear-gradient(to right, transparent 0, #000 12%, #000 88%, transparent 100%);
+        mask-image: linear-gradient(to bottom, transparent 0, #000 16%, #000 68%, transparent 100%),
+            linear-gradient(to right, transparent 0, #000 12%, #000 88%, transparent 100%);
+    }
+
+    .bgTeam::after {
+        display: none;
+    }
+
+    /* 18. 11. 2026., fotka u uniformama (1086x1448, isti omjer 3:4): Ivan i
+       Marko su na x 25 do 545 izvornika, glave na y 470 do 590. Vrh prozora je
+       y 413 (k/(k-1) = 1,923), pa su glave na ~18 do 54 % visine prozora. */
+    .bgTeamImg {
+        object-position: 0 0;
+        transform: scale(2.0833);
+        transform-origin: 4.43% 116.9%;
+    }
+
     .bgOverlay {
         background: linear-gradient(
             180deg,
@@ -389,6 +499,16 @@
         justify-content: center;
     }
 
+    .bottomRow {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    .bottomRow .trustItem {
+        align-self: flex-start;
+    }
+
     .trustList {
         gap: 0.5rem;
         margin-bottom: 1rem;
@@ -410,6 +530,96 @@
     /* maskota viri ~30 px iznad kartice; do WhatsApp gumba ostaje ~15 px */
     .formCol {
         margin-top: 1rem;
+    }
+
+    /* Timska varijanta na mobitelu: ocjenu nosi chip na formi, WhatsApp je u
+       formi, pa red ispod opisa ustupa mjesto prozoru s fotkom. */
+    .contentTeam .bottomRow {
+        display: none;
+    }
+
+    /* 18. 11. 2026. (Marko: "tekst mora biti preko slike i slika mora biti
+       malo transparentna"): fotka je u istoj ćeliji grida kao tekst, poravnata
+       na dno, H1 i opis stoje preko nje. Kadar: širina je izvornik x 40 do 760
+       (k = 1500/720), visina 800 px izvornika. Omjer 0,9 je fiksan pa
+       transform-origin vrijedi na svakoj širini. */
+    .contentTeam {
+        grid-row: 1;
+        grid-column: 1;
+    }
+
+    .contentTeam .title,
+    .contentTeam .description {
+        text-shadow: 0 1px 12px rgba(0, 31, 61, 0.65);
+    }
+
+    .bgTeam {
+        grid-row: 1;
+        grid-column: 1;
+        align-self: end;
+        width: calc(100% + 2rem);
+        aspect-ratio: 0.9;
+        margin: 0 -1rem;
+        opacity: 0.72;
+        -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 5%, #000 68%, transparent 92%);
+        -webkit-mask-composite: source-over;
+        mask-image: linear-gradient(to bottom, transparent 0, #000 5%, #000 68%, transparent 92%);
+        mask-composite: add;
+    }
+
+    /* lagani navy iza teksta, slabiji nego prije da se lica vide */
+    .bgTeam::after {
+        display: block;
+        z-index: 1;
+        background: linear-gradient(180deg, rgba(0, 51, 102, 0.32) 0%, rgba(0, 51, 102, 0.22) 45%, rgba(0, 51, 102, 0) 62%);
+    }
+
+    /* 18. 11. 2026. (Marko: "da nam glave dođu do vrha teksta do H1"):
+       vrh prozora je y 570 izvornika (malo iznad kose), pa krošnja ne ulazi u
+       kadar, a glave su u visini H1. origin y = k/(k-1) x 570/1500 / 1,111 */
+    /* fotka u uniformama: vrh prozora je y 440 od 1448 (malo iznad Ivanove
+       glave na 470), origin y = 1,923 x 0,304 x 1,333 / 1,111 */
+    .bgTeamImg {
+        transform-origin: 4.43% 70.13%;
+    }
+
+    /* Marko 18. 11. 2026.: "imamo veliki razmak ... prazan prostor", pa
+       "stisnut sve da nam uđe forma u taj prvi kadar". Visinu prvog reda
+       određuje tekst, ne fotka: fotka ostaje na vrhu ćelije (glave u visini
+       H1), a negativni donji margin je izbacuje iz računa visine reda, pa
+       ostatak fotke leži ispod kartice forme. Forma tako kreće odmah ispod
+       opisa na svakoj širini; chip s maskotom viri u razmak iznad kartice. */
+    .contentTeam {
+        padding-bottom: 0.75rem;
+    }
+
+    .bgTeam {
+        align-self: start;
+        margin-bottom: -200vw;
+    }
+
+    .formCol {
+        grid-row: 2;
+        z-index: 2;
+        margin-top: 0;
+    }
+
+    /* kartica bez podnaslova: cijena se ionako vidi odmah ispod polja */
+    .formSubtitle {
+        display: none;
+    }
+
+    .formTitle {
+        margin-bottom: 0;
+    }
+
+    /* .formCard ispred jer blok do 576px niže ima iste klase */
+    .formCard .formHeader {
+        padding: 1rem 1.25rem 0.9rem;
+    }
+
+    .formCard .formBody {
+        padding: 1rem 1.25rem 1.5rem;
     }
 }
 

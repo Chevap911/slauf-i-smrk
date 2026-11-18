@@ -36,6 +36,7 @@ const track = (event: 'whatsapp_click' | 'call_click', location: string) => {
 };
 
 function podnaslov(variant: 'price' | 'diy', service: QuoteServiceId | undefined): string {
+    if (service === 'grave') return 'Grobna mjesta trenutačno ne čistimo. Prijavite interes pa ćemo vam javiti kad ponovno krenemo.';
     if (variant === 'diy') {
         return 'Ostavite mobitel ili pošaljite fotku na WhatsApp. Iskreno vam kažemo možete li sami ili treba stroj.';
     }
@@ -43,7 +44,7 @@ function podnaslov(variant: 'price' | 'diy', service: QuoteServiceId | undefined
         return 'Pošaljite sliku i recite nam gdje je. Javljamo okvirnu cijenu, a točnu potvrđujemo prije početka.';
     }
     return isPerM2Service(service)
-        ? 'Upišite mobitel i veličinu. Okvirnu cijenu vidite čim pošaljete, a točnu potvrđujemo nakon besplatne procjene.'
+        ? 'Upišite površinu i odmah pogledajte okvirnu cijenu. Točnu ponudu potvrđujemo nakon pregleda fotografija ili površine.'
         : 'Ostavite mobitel i javimo vam se s cijenom. Brže ide ako pošaljete sliku na WhatsApp.';
 }
 

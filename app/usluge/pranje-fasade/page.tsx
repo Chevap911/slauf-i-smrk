@@ -1,58 +1,40 @@
+import { serviceSeoPrice } from '@/lib/seo';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Droplets, ShieldCheck, Clock, Leaf, AlertTriangle, Bug, Paintbrush, ThermometerSun, Building2, CheckCircle2 } from 'lucide-react';
+import { Droplets, ShieldCheck, Clock, Leaf, AlertTriangle, Bug, Paintbrush, ThermometerSun } from 'lucide-react';
 import ServicePage from '@/components/ServicePage/ServicePage';
 import { Home, TreeDeciduous, Sofa } from 'lucide-react';
 import { OG_IMAGE } from '@/lib/seo';
 
+const seoPrice = serviceSeoPrice('facade');
+
 export const metadata: Metadata = {
     title: 'Pranje fasade Zagreb | Alge, mahovina, ETICS | Šlauf i Šmrk',
-    description: 'Pranje i čišćenje fasade u Zagrebu: alge, mahovina i tamni tragovi, uz prilagođen tlak za žbuku i ETICS. Cijena od 5 €/m² (na 10. 9. 2026.: od 5 €/m²).',
+    description: `Pranje fasade i uklanjanje algi s ETICS žbuke u Zagrebu. ${seoPrice.rate}. Besplatna procjena.`,
     alternates: { canonical: '/usluge/pranje-fasade' },
     openGraph: {
         title: 'Pranje fasade Zagreb | Alge, mahovina, ETICS | Šlauf i Šmrk',
-        description: 'Profesionalno pranje i čišćenje fasade u Zagrebu i okolici. Uklanjamo alge, mahovinu i tamne naslage za kuće, zgrade i poslovne objekte.',
+        description: `Pranje fasade i uklanjanje algi s ETICS žbuke u Zagrebu. ${seoPrice.rate}. Besplatna procjena.`,
         url: 'https://slaufismrk.com/usluge/pranje-fasade',
         images: [OG_IMAGE],
-    },
-};
-
-const serviceOfferSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    '@id': 'https://slaufismrk.com/usluge/pranje-fasade#service-offer',
-    name: 'Pranje fasade u Zagrebu',
-    serviceType: 'Pranje i čišćenje fasade',
-    description: 'Profesionalno pranje i čišćenje fasada za kuće, zgrade i poslovne objekte u Zagrebu i okolici. Uklanjanje algi, mahovine, gljivica i tamnih tragova uz prilagođen tlak.',
-    provider: { '@id': 'https://slaufismrk.com/#business' },
-    areaServed: ['Zagreb', 'Zagrebačka županija'],
-    offers: {
-        '@type': 'AggregateOffer',
-        priceCurrency: 'EUR',
-        lowPrice: '5',
-        highPrice: '7',
-        unitText: 'm2',
     },
 };
 
 export default function PranjeFasadePage() {
     return (
         <>
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceOfferSchema) }}
-            />
             <ServicePage
                 title="Pranje fasade u Zagrebu"
                 quoteService="facade"
                 quoteTitle="Koliko bi pranje vaše fasade koštalo?"
                 titleHighlight="fasade"
                 canonicalPath="/usluge/pranje-fasade"
-                description="Profesionalno pranje i čišćenje fasada za kuće, zgrade i poslovne objekte u Zagrebu i okolici. Uklanjamo alge, mahovinu, gljivice, crne tragove i nakupljenu prljavštinu uz prilagođen tlak za žbukane, ETICS i druge fasadne površine. Za okvirnu cijenu možete poslati slike fasade na WhatsApp, za veće objekte dolazimo na lokaciju i dajemo jasnu procjenu bez obaveza."
+                description="Pranje i čišćenje fasada za kuće, zgrade i poslovne objekte u Zagrebu i okolici. Uklanjamo alge, mahovinu, gljivice, crne tragove i nakupljenu prljavštinu uz prilagođen tlak za žbukane, ETICS i druge fasadne površine. Za okvirnu cijenu možete poslati slike fasade na WhatsApp, za veće objekte dolazimo na lokaciju i dajemo jasnu procjenu bez obaveza."
                 priceHint="od 5 €/m²"
-                priceAnchor="od 5 €/m²"
+                priceAnchor="5–7 €/m²"
+
                 heroImage="/seo-results/pranje-fasade/poslije.png"
-                heroImageAlt="Fasada kuće nakon profesionalnog čišćenja i uklanjanja algi u Zagrebu"
+                heroImageAlt="Fasada kuće nakon pranja i uklanjanja algi u Zagrebu"
                 heroHighlights={[
                     'Čišćenje algi, mahovine i tamnih tragova',
                     'Siguran tlak za žbukane i ETICS fasade',
@@ -62,7 +44,7 @@ export default function PranjeFasadePage() {
                     beforeSrc: '/seo-results/pranje-fasade/prije.jpeg',
                     afterSrc: '/seo-results/pranje-fasade/poslije.png',
                     beforeAlt: 'Fasada kuće prije čišćenja s vidljivim algama i tamnim naslagama u Zagrebu',
-                    afterAlt: 'Fasada kuće poslije profesionalnog pranja i čišćenja u Zagrebu',
+                    afterAlt: 'Fasada kuće poslije pranja u Zagrebu',
                     title: 'Fasada prije i poslije pranja',
                     description: 'Projekt: pranje fasade obiteljske kuće u Zagrebu. Problem: alge, sivi sloj prljavštine i tamni tragovi. Metoda: prilagođen tlak i sredstvo za fasadu. Rezultat: vidljivo svjetlija i čišća fasada nakon jednog tretmana.',
                 }}
@@ -77,7 +59,7 @@ export default function PranjeFasadePage() {
                     },
                     {
                         title: 'Čišćenje',
-                        description: 'Profesionalnim peračem i ekološkim sredstvima uklanjamo alge, mahovinu, gljivice i tamne tragove. Svaki dio fasade pažljivo obrađujemo.',
+                        description: 'Visokotlačnim peračem i ekološkim sredstvima uklanjamo alge, mahovinu, gljivice i tamne tragove. Svaki dio fasade pažljivo obrađujemo.',
                     },
                     {
                         title: 'Završna kontrola',
@@ -127,9 +109,9 @@ export default function PranjeFasadePage() {
                             </thead>
                             <tbody>
                                 {[
-                                    { size: '100 m²', price: 'od 500 €', anchor: 'od 500 €', note: 'manji objekti i dijelovi fasade' },
-                                    { size: '200 m²', price: 'od 1.000 €', anchor: 'od 1.000 €', note: 'obiteljske kuće' },
-                                    { size: '300 m²', price: 'od 1.500 €', anchor: 'od 1.500 €', note: 'veće kuće i objekti' },
+                                    { size: '100 m²', price: 'od 500 €', anchor: '500–700 €', note: 'manji objekti i dijelovi fasade' },
+                                    { size: '200 m²', price: 'od 1.000 €', anchor: '1.000–1.400 €', note: 'obiteljske kuće' },
+                                    { size: '300 m²', price: 'od 1.500 €', anchor: '1.500–2.100 €', note: 'veće kuće i objekti' },
                                     { size: '500 m²+', price: 'po procjeni', anchor: '', note: 'zgrade i poslovni objekti' },
                                 ].map((row, i) => (
                                     <tr key={i} style={{ borderBottom: '1px solid #eee' }}>
@@ -184,7 +166,7 @@ export default function PranjeFasadePage() {
 
                         <h2>Koliko često trebam prati fasadu?</h2>
                         <p>
-                            Preporučujemo profesionalno pranje fasade <strong>svake 2–3 godine</strong>. Učestalost ovisi o
+                            Preporučujemo pranje fasade <strong>svake 2–3 godine</strong>. Učestalost ovisi o
                             nekoliko faktora:
                         </p>
                         <ul>
@@ -296,11 +278,11 @@ export default function PranjeFasadePage() {
                 faq={[
                     {
                         question: 'Koliko košta visokotlačno pranje fasade?',
-                        answer: 'Cijena ovisi o površini i stupnju zaprljanosti. Okvirni raspon je od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²). Za fasadu od 200 m² to je okvirno od 1.000 € (na 10. 9. 2026.: od 1.000 €). Za točnu cijenu dolazimo na procjenu lokacije.',
+                        answer: 'Cijena ovisi o površini i stupnju zaprljanosti. Početna cijena je od 5 €/m² (cijena na 10. 9. 2026.: 5–7 €/m²). Za fasadu od 200 m² to je okvirno od 1.000 € (cijena na 10. 9. 2026.: 1.000–1.400 €). Za točnu cijenu dolazimo na procjenu lokacije.',
                     },
                     {
                         question: 'Hoće li visokotlačno pranje oštetiti moju fasadu?',
-                        answer: 'Ne, koristimo profesionalnu opremu s prilagodljivim tlakom. ETICS fasade tretiramo nižim tlakom od žbukanih ili kamenih. Svaki tip fasade procjenjujemo individualno.',
+                        answer: 'Ne, koristimo opremu s prilagodljivim tlakom. ETICS fasade tretiramo nižim tlakom od žbukanih ili kamenih. Svaki tip fasade procjenjujemo individualno.',
                     },
                     {
                         question: 'Koliko često trebam prati fasadu?',

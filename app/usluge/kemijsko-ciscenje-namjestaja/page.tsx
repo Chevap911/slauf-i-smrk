@@ -1,3 +1,4 @@
+import { serviceSeoPrice } from '@/lib/seo';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Droplets, ShieldCheck, Clock, Leaf, AlertTriangle, Bug, Sparkles, Shirt } from 'lucide-react';
@@ -5,13 +6,15 @@ import ServicePage from '@/components/ServicePage/ServicePage';
 import { Car, Home, TreeDeciduous } from 'lucide-react';
 import { OG_IMAGE } from '@/lib/seo';
 
+const seoPrice = serviceSeoPrice('chemical', 'trosjed');
+
 export const metadata: Metadata = {
-    title: 'Kemijsko čišćenje tepiha i garnitura Zagreb | Šlauf i Šmrk',
-    description: 'Profesionalno kemijsko čišćenje tepiha, garnitura, madraca i autosjedala u Zagrebu. Dubinsko čišćenje na vašoj adresi. Besplatna procjena.',
+    title: `Kemijsko čišćenje garnitura i trosjeda Zagreb`,
+    description: `Kemijsko čišćenje garnitura, trosjeda i madraca u Zagrebu. Trosjed ${seoPrice.rate}. Pošaljite fotografije.`,
     alternates: { canonical: '/usluge/kemijsko-ciscenje-namjestaja' },
     openGraph: {
-        title: 'Kemijsko čišćenje tepiha i garnitura Zagreb | Šlauf i Šmrk',
-        description: 'Profesionalno kemijsko čišćenje tepiha, garnitura, madraca i autosjedala u Zagrebu.',
+        title: `Kemijsko čišćenje garnitura i trosjeda Zagreb`,
+        description: `Kemijsko čišćenje garnitura, trosjeda i madraca u Zagrebu. Trosjed ${seoPrice.rate}. Pošaljite fotografije.`,
         url: 'https://slaufismrk.com/usluge/kemijsko-ciscenje-namjestaja',
         images: [OG_IMAGE],
     },
@@ -25,9 +28,10 @@ export default function KemijskoCiscenjePage() {
             quoteTitle="Koliko bi čišćenje vašeg namještaja koštalo?"
             titleHighlight="namještaja"
             canonicalPath="/usluge/kemijsko-ciscenje-namjestaja"
-            description="Profesionalno dubinsko čišćenje tepiha, garnitura, madraca, stolica i autosjedala na vašoj adresi. Koristimo profesionalne injektirno-ekstrakcijske strojeve koji dubinski uklanjaju prljavštinu, grinje, alergene i mrlje. Vaš namještaj bit će čist, svjež i bez neugodnih mirisa."
+            description="Dubinsko čišćenje tepiha, garnitura, madraca, stolica i autosjedala na vašoj adresi. Koristimo injektirno-ekstrakcijske strojeve koji dubinski uklanjaju prljavštinu, grinje, alergene i mrlje. Vaš namještaj bit će čist, svjež i bez neugodnih mirisa."
             priceHint="tepih od 5 €/m² · garnitura od 80 €"
             priceAnchor="tepih od 5 €/m² · garnitura od 80 €"
+
             heroImage="/seo-results/kemijsko-ciscenje-namjestaja/poslije.jpeg"
             heroImageAlt="Garnitura nakon dubinskog kemijskog čišćenja"
             resultsShowcase={{
@@ -60,7 +64,7 @@ export default function KemijskoCiscenjePage() {
                 <>
                     <h2>Što je kemijsko čišćenje namještaja?</h2>
                     <p>
-                        Kemijsko čišćenje (ili dubinsko čišćenje) je profesionalni postupak čišćenja mekih površina pomoću
+                        Kemijsko čišćenje (ili dubinsko čišćenje) je postupak čišćenja mekih površina pomoću
                         <strong> injektirno-ekstrakcijskog stroja</strong>. Stroj pod pritiskom utiskuje otopinu
                         sredstva za čišćenje duboko u vlakna tkanine, a zatim snažnom ekstrakcijom izvlači svu prljavštinu,
                         grinje, bakterije i alergene. Rezultat je namještaj koji izgleda i miriše kao nov.
@@ -138,7 +142,7 @@ export default function KemijskoCiscenjePage() {
                 },
                 {
                     title: 'Hipoalergena sredstva',
-                    description: 'Koristimo profesionalna sredstva bez mirisa i agresivnih kemikalija, sigurna za djecu i ljubimce.',
+                    description: 'Koristimo sredstva bez mirisa i agresivnih kemikalija, sigurna za djecu i ljubimce.',
                     icon: <Leaf size={24} />,
                 },
             ]}

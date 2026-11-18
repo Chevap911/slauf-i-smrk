@@ -60,7 +60,7 @@ export default function CookieBanner() {
     if (!showBanner) return null;
 
     return (
-        <div className={styles.banner}>
+        <div className={styles.banner} data-cookie-banner>
             <div className={styles.content}>
                 {/* Do 4. 10. 2026. naslov i tri rečenice; na mobitelu je banner pokrivao ~40 % ekrana */}
                 <p className={styles.description}>

@@ -8,11 +8,11 @@ import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Koliko košta čišćenje grobnog mjesta 2026 | Šlauf i Šmrk',
-    description: 'Čišćenje grobnih mjesta u Zagrebu: jednostruki grob od 250 € (na 10. 9. 2026.: od 250 €), dvostruki po dogovoru. Mirogoj i sva groblja.',
+    description: 'Čišćenje grobnih mjesta u Zagrebu: jednostruki grob od 250 € (cijena na 10. 9. 2026.: od 250 €), dvostruki po dogovoru. Mirogoj i sva groblja.',
     alternates: { canonical: '/blog/koliko-kosta-ciscenje-grobnog-mjesta' },
     openGraph: {
         title: 'Koliko košta čišćenje grobnog mjesta? Cijene 2026.',
-        description: 'Realne cijene čišćenja nadgrobnih spomenika u Zagrebu. Jednostruki grob od 250 € (na 10. 9. 2026.: od 250 €), dvostruki po dogovoru.',
+        description: 'Realne cijene čišćenja nadgrobnih spomenika u Zagrebu. Jednostruki grob od 250 € (cijena na 10. 9. 2026.: od 250 €), dvostruki po dogovoru.',
         url: 'https://slaufismrk.com/blog/koliko-kosta-ciscenje-grobnog-mjesta',
         type: 'article',
         images: [OG_IMAGE],
@@ -49,11 +49,11 @@ export default function BlogArticle() {
         '@context': 'https://schema.org',
         '@type': 'Article',
         headline: 'Koliko košta čišćenje grobnog mjesta? Cijene održavanja spomenika u Zagrebu 2026.',
-        description: 'Cijene profesionalnog čišćenja grobnih mjesta u Zagrebu: od 250 € za jednostruki grob (na 10. 9. 2026.: od 250 €). Poliranje, impregnacija i sva zagrebačka groblja.',
+        description: 'Cijene profesionalnog čišćenja grobnih mjesta u Zagrebu: od 250 € (cijena na 10. 9. 2026.: od 250 €) za jednostruki grob. Poliranje, impregnacija i sva zagrebačka groblja.',
         author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         datePublished: '2026-07-08',
-        dateModified: '2026-10-10',
+        dateModified: '2026-11-01',
     };
 
     const faqSchema = {
@@ -63,7 +63,7 @@ export default function BlogArticle() {
             {
                 '@type': 'Question',
                 name: 'Koliko košta čišćenje grobnog mjesta u Zagrebu?',
-                acceptedAnswer: { '@type': 'Answer', text: 'Jednostruki grob od 250 €, poliranje kamena od 150 € (cijene na 10. 9. 2026.: od 250 € i od 150 €). Dvostruki grob, grobnica i impregnacija idu po dogovoru. Točnu cijenu za vaš slučaj dajemo nakon što pošaljete fotografiju groba.' },
+                acceptedAnswer: { '@type': 'Answer', text: 'Jednostruki grob od 250 € (cijena na 10. 9. 2026.: od 250 €), poliranje kamena od 150 € (cijena na 10. 9. 2026.: od 150 €). Dvostruki grob, grobnica i impregnacija idu po dogovoru. Točnu cijenu za vaš slučaj dajemo nakon što pošaljete fotografiju groba.' },
             },
             {
                 '@type': 'Question',
@@ -317,8 +317,7 @@ export default function BlogArticle() {
                             <div className={styles.faqItem}>
                                 <h3>Koliko košta čišćenje grobnog mjesta u Zagrebu?</h3>
                                 <p>
-                                    Jednostruki grob od 250 €, poliranje kamena od 150 € (cijene na 10. 9. 2026.:
-                                    od 250 € i od 150 €). Dvostruki grob, grobnica i impregnacija idu po dogovoru. Točnu cijenu za vaš slučaj dajemo
+                                    Jednostruki grob od 250 € (cijena na 10. 9. 2026.: od 250 €), poliranje kamena od 150 € (cijena na 10. 9. 2026.: od 150 €). Dvostruki grob, grobnica i impregnacija idu po dogovoru. Točnu cijenu za vaš slučaj dajemo
                                     nakon što pošaljete fotografiju groba.
                                 </p>
                             </div>

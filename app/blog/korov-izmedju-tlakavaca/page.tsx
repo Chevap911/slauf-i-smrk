@@ -37,7 +37,7 @@ export default function BlogArticle() {
         author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         datePublished: '2026-06-01',
-        dateModified: '2026-10-10',
+        dateModified: '2026-11-01',
         image: 'https://slaufismrk.com/prije-poslje/ciscenje-poda-terase-zagreb-poslje.jpeg',
         url: 'https://slaufismrk.com/blog/korov-izmedju-tlakavaca',
     };
@@ -67,7 +67,7 @@ export default function BlogArticle() {
                 name: 'Koliko košta pranje tlakavaca i dvorišta u Zagrebu?',
                 acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'Pranje tlakavaca i okućnice kreće od 4 €/m² (cijena na 10. 9. 2026.: od 4 €/m²). Fugiranje kvarcnim pijeskom je dodatna stavka, okvirno 1,50 do 2,50 €/m² (cijena na 10. 9. 2026.: 1,50 do 2,50 €/m²). Točnu cijenu dajemo nakon procjene.',
+                    text: 'Pranje tlakavaca i okućnice kreće od 4 €/m² (cijena na 10. 9. 2026.: 4–6 €/m²). Fugiranje kvarcnim pijeskom je dodatna stavka, okvirno od 1,50 €/m² (cijena na 10. 9. 2026.: 1,50–2,50 €/m²). Točnu cijenu dajemo nakon procjene.',
                 },
             },
         ],
@@ -135,8 +135,8 @@ export default function BlogArticle() {
 
                         <h2>Koliko to košta</h2>
                         <p>
-                            Pranje tlakavaca i okućnice kreće od 4 €/m² (cijena na 10. 9. 2026.: od 4 €/m²). Fugiranje kvarcnim pijeskom je dodatna stavka,
-                            okvirno 1,50 do 2,50 €/m² (cijena na 10. 9. 2026.: 1,50 do 2,50 €/m²). Detaljan pregled imate u vodiču{' '}
+                            Pranje tlakavaca i okućnice kreće od 4 €/m² (cijena na 10. 9. 2026.: 4–6 €/m²). Fugiranje kvarcnim pijeskom je dodatna stavka,
+                            okvirno od 1,50 €/m² (cijena na 10. 9. 2026.: 1,50–2,50 €/m²). Detaljan pregled imate u vodiču{' '}
                             <Link href="/blog/koliko-kosta-pranje-okucnice-tlakavaca-zagreb">koliko košta pranje okućnice i tlakavaca</Link>,
                             a uslugu na stranici <Link href="/usluge/pranje-tlakavaca">pranje tlakavaca</Link> i{' '}
                             <Link href="/usluge/pranje-okucnice">pranje okućnice</Link>.

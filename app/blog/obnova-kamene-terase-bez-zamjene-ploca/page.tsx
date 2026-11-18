@@ -44,7 +44,7 @@ const faq = [
     },
     {
         q: 'Koliko košta čišćenje kamene terase?',
-        a: 'Čišćenje kamenih površina kod nas je 5–7 €/m² (cijena na 10. 9. 2026.: 5–7 €/m²). Gdje ste unutar raspona ovisi o zaprljanosti, pristupu i veličini površine, a točnu cijenu potvrđujemo nakon besplatne procjene.',
+        a: 'Čišćenje kamenih površina kod nas je od 5 €/m² (cijena na 10. 9. 2026.: 5–7 €/m²). Konačna cijena ovisi o zaprljanosti, pristupu i veličini površine, a točnu cijenu potvrđujemo nakon besplatne procjene.',
     },
     {
         q: 'Hoće li pranje pod tlakom oštetiti kamen?',
@@ -75,7 +75,7 @@ const articleSchema = {
     author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
     publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
     datePublished: '2026-09-27',
-    dateModified: '2026-10-10',
+    dateModified: '2026-11-01',
     image: `https://slaufismrk.com${IMG}/kamena-terasa-poslije-ciscenja-sljeme.jpg`,
     url: `https://slaufismrk.com${SLUG}`,
 };
@@ -223,8 +223,7 @@ export default function BlogArticle() {
                         <h2>Mijenjati ili prati: računica</h2>
                         <p>
                             Zamjena znači skidanje starih ploča, novi kamen, ljepilo, fugiranje, majstore i nekoliko dana
-                            bez terase. Pranje je jedan dolazak. Čišćenje kamenih površina kod nas je 5–7 €/m² (cijena na
-                            10. 9. 2026.: 5–7 €/m²), a točnu cijenu za vašu terasu potvrđujemo nakon besplatne procjene.
+                            bez terase. Pranje je jedan dolazak. Čišćenje kamenih površina kod nas je od 5 €/m² (cijena na 10. 9. 2026.: 5–7 €/m²), a točnu cijenu za vašu terasu potvrđujemo nakon besplatne procjene.
                             Sve cijene su u <Link href="/cjenik">cjeniku</Link>.
                         </p>
 

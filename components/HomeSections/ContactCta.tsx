@@ -16,7 +16,7 @@ export default function ContactCta() {
                         Zatražite besplatnu procjenu <span className={styles.yellow}>pranja</span> u Zagrebu
                     </h2>
                     <p className={styles.lead}>
-                        Upišite mobitel i površinu, okvirnu cijenu vidite čim pošaljete. Bez obveze.
+                        Upišite površinu i odmah pogledajte početnu cijenu. Za točnu ponudu pošaljite fotografije.
                     </p>
                     <ul className={styles.contactList}>
                         <li>

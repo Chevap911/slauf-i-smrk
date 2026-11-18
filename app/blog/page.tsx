@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 const articles = [
     {
         title: 'Koliko košta čišćenje kamena u Zagrebu? Terase, staze i stepenice',
-        excerpt: 'Čišćenje kamenih površina je 5 do 7 € po m². Primjeri računice za 20, 40 i 80 m², od čega ovisi cijena i što pranje kamena ne može popraviti.',
+        excerpt: 'Čišćenje kamenih površina je od 5 € po m² (cijena na 10. 9. 2026.: 5–7 €/m²). Primjeri računice za 20, 40 i 80 m², od čega ovisi cijena i što pranje kamena ne može popraviti.',
         slug: '/blog/koliko-kosta-ciscenje-kamenih-povrsina-zagreb',
         date: '2026-10-20',
         category: 'Cijene',
@@ -61,14 +61,14 @@ const articles = [
     },
     {
         title: 'Koliko košta čišćenje grobnog mjesta? Cijene održavanja spomenika Zagreb 2026',
-        excerpt: 'Jednostruki grob od 250 € (na 10. 9. 2026.: od 250 €), dvostruki po dogovoru. Konkretne cijene čišćenja nadgrobnih spomenika u Zagrebu, kako funkcionira rezervacija i zašto koristimo niski tlak.',
+        excerpt: 'Jednostruki grob od 250 € (cijena na 10. 9. 2026.: od 250 €), dvostruki po dogovoru. Konkretne cijene čišćenja nadgrobnih spomenika u Zagrebu, kako funkcionira rezervacija i zašto koristimo niski tlak.',
         slug: '/blog/koliko-kosta-ciscenje-grobnog-mjesta',
         date: '2026-07-08',
         category: 'Cijene',
     },
     {
         title: 'Koliko košta kemijsko čišćenje namještaja? Cijene garniture, trosjeda i madraca',
-        excerpt: 'Garnitura od 80 €, trosjed od 40 €, madrac od 30 €, tepih od 5 €/m² (na 10. 9. 2026.: od 80 €, od 40 €, od 30 € i od 5 €/m²). Realne cijene dubinskog čišćenja namještaja u Zagrebu, koliko traje sušenje i što je realno s mrljama.',
+        excerpt: 'Garnitura od 80 € (cijena na 10. 9. 2026.: od 80 €), trosjed od 40 € (cijena na 10. 9. 2026.: od 40 €), madrac od 30 € (cijena na 10. 9. 2026.: od 30 €), tepih od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²). Realne cijene dubinskog čišćenja namještaja u Zagrebu, koliko traje sušenje i što je realno s mrljama.',
         slug: '/blog/koliko-kosta-kemijsko-ciscenje-namjestaja',
         date: '2026-07-06',
         category: 'Cijene',

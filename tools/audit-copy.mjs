@@ -168,8 +168,22 @@ function walkAll(dir, acc = []) {
   }
   return acc;
 }
+// 17. 11. 2026. (Marko: "Da, dopusti video"): jedina iznimka je očišćeni .mp4 u public/video/,
+// do 5 MB i bez ijednog traga lokacije. .mov, .heic i ostalo s mobitela i dalje pada.
+// Lokacija u mp4 stoji kao ključ (©xyz, "location", Appleov ISO6709) ili kao sama koordinata
+// "+45.8015+015.7105/", pa se traži i ključ i oblik koordinate.
+const VIDEO_LOCATION = ["©xyz", "location", "ISO6709", "GPSLatitude", "GPS"];
+const ISO6709 = /[+-]\d{2}\.\d{2,}[+-]\d{3}\.\d{2,}/;
+function cleanWebVideo(f, ext) {
+  if (ext !== ".mp4" || !relative(ROOT, f).startsWith(join("public", "video") + "/")) return false;
+  if (statSync(f).size > 5 * 1024 * 1024) return false;
+  const buf = readFileSync(f);
+  if (VIDEO_LOCATION.some((m) => buf.includes(Buffer.from(m, "utf8")))) return false;
+  return !ISO6709.test(buf.toString("latin1"));
+}
 for (const f of walkAll(join(ROOT, "public"))) {
   const ext = extname(f).toLowerCase();
+  if (RAW_MEDIA.has(ext) && cleanWebVideo(f, ext)) continue;
   if (RAW_MEDIA.has(ext))
     struct.push({ level: "FAIL", label: "Sirovi medij u public/ (javno dostupan)", detail: `${relative(ROOT, f)}. Premjesti ga izvan public/.` });
   else if (IMAGE.has(ext) && hasLocation(readFileSync(f), ext))
@@ -208,6 +222,34 @@ for (const [f, src] of stripped) {
     const bez = ln.replace(KANONSKI, "");
     const m = bez.match(DRUGI_BROJ);
     if (m) results.push({ level: "FAIL", label: "Drugi broj telefona na webu (jedini dopušten je +385 95 844 2806)", file: rel, line: i + 1, hit: m[0], text: ln.trim().slice(0, 110) });
+  });
+}
+
+// ── Sidrena cijena uz svaku cijenu (CLAUDE.md pravilo 6, NN 101/2026, obveza od 17. 11. 2026.) ─
+// Svaki iznos u eurima na webu mora imati cijenu na 10. 9. 2026. u istom ili susjednom retku
+// (±2): tekst "10. 9. 2026.", prop priceAnchor, polje anchor ili SIDRENI_DATUM. Admin, API i
+// mailovi nama nisu web. Cijene koje nisu naša ponuda (sanacija fasade, aparat u trgovini)
+// stoje u TUDJE_CIJENE s razlogom. Provjera gleda susjedstvo, ne broji iznose: uz novu cijenu
+// u retku koji već ima sidrenu za drugi iznos, sidrena se dodaje ručno.
+const IZNOS = /\d[\d.,]*\s*(?:[–-]\s*\d[\d.,]*\s*)?€/;
+const SIDRENA = /10\. 9\. 2026|SIDRENI_DATUM|priceAnchor|\banchor:|sidren/i;
+const BEZ_SIDRENE = [/^app\/admin\//, /^app\/api\//, /^components\/emails\//, /^lib\/cjenik\.ts$/, /^lib\/quote\.ts$/];
+const TUDJE_CIJENE = [
+  { re: /15\.000/, zasto: "cijena sanacije ETICS fasade, nije naša usluga" },
+  { re: /aparat za \d+ €/, zasto: "cijena aparata u trgovini" },
+];
+const sCijenama = [...stripped.entries()];
+if (existsSync(join(ROOT, "public/llms.txt"))) sCijenama.push([join(ROOT, "public/llms.txt"), readFileSync(join(ROOT, "public/llms.txt"), "utf8")]);
+for (const [f, src] of sCijenama) {
+  const rel = relative(ROOT, f);
+  if (BEZ_SIDRENE.some((r) => r.test(rel))) continue;
+  const L = src.split("\n");
+  L.forEach((ln, i) => {
+    if (/^\s*import\s/.test(ln) || !IZNOS.test(ln)) return;
+    if (TUDJE_CIJENE.some((t) => t.re.test(ln))) return;
+    const okolo = L.slice(Math.max(0, i - 2), i + 3).join("\n");
+    if (SIDRENA.test(okolo)) return;
+    results.push({ level: "FAIL", label: "Cijena bez cijene na 10. 9. 2026. (obveza od 17. 11. 2026., kazna 1.000 do 20.000 €)", file: rel, line: i + 1, hit: ln.match(IZNOS)[0], text: ln.trim().slice(0, 110) });
   });
 }
 

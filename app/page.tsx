@@ -1,3 +1,4 @@
+import { HOME_TITLE, HOME_DESCRIPTION } from '@/lib/seo';
 import type { Metadata } from 'next';
 import Hero from '@/components/Hero/Hero';
 import ContactCta from '@/components/HomeSections/ContactCta';
@@ -9,9 +10,8 @@ import { OG_IMAGE } from '@/lib/seo';
 
 // Title cilja "visokotlačno pranje" (GSC 6 mj.: 385 prikaza, 0 klikova, nijedna stranica
 // ga nije imala u titleu). "Pranje fasade zagreb" ostaje stranici /usluge/pranje-fasade.
-const TITLE = 'Visokotlačno pranje Zagreb: fasade i okućnice | Šlauf i Šmrk';
-const DESCRIPTION =
-  'Visokotlačno pranje fasada, okućnica, terasa i tlakavaca u Zagrebu i okolici. Besplatna procjena, 5,0 na Googleu uz 40 recenzija.';
+const TITLE = HOME_TITLE;
+const DESCRIPTION = HOME_DESCRIPTION;
 
 export const metadata: Metadata = {
   title: TITLE,

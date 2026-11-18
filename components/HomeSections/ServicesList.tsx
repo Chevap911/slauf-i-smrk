@@ -26,18 +26,13 @@ const USLUGE = [
     },
     {
         naziv: 'Održavanje grobnih mjesta',
-        opis: 'Čišćenje nadgrobnih ploča, uklanjanje mahovine i algi te impregnacija.',
+        opis: 'Trenutno ne primamo nove grobove. Ostavite kontakt i javimo se kad opet krenemo.',
         href: '/usluge/odrzavanje-grobnih-mjesta',
     },
     {
-        naziv: 'Pranje poslovnih objekata',
-        opis: 'Fasade, parkirališta, skladišta i hale, i izvan radnog vremena.',
+        naziv: 'Pranje vanjskih površina vrućom vodom',
+        opis: 'Za tvrtke i ustanove: podovi, fasade, zidovi i stepeništa, noću. Referenca: kolodvor Samobor.',
         href: '/usluge/poslovni-objekti',
-    },
-    {
-        naziv: 'Kolodvori, trgovi i garaže',
-        opis: 'Strojno pranje velikih javnih podova vrućom vodom, noću. Referenca: kolodvor Samobor.',
-        href: '/usluge/komercijalno-ciscenje',
     },
     {
         naziv: 'Pranje auta uz dolazak',

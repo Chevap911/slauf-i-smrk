@@ -1,3 +1,4 @@
+import { serviceSeoPrice } from '@/lib/seo';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Droplets, ShieldCheck, Clock, Leaf, AlertTriangle, Bug, Paintbrush, Sun } from 'lucide-react';
@@ -5,13 +6,15 @@ import ServicePage from '@/components/ServicePage/ServicePage';
 import { Home, TreeDeciduous, Waves } from 'lucide-react';
 import { OG_IMAGE } from '@/lib/seo';
 
+const seoPrice = serviceSeoPrice('wood');
+
 export const metadata: Metadata = {
     title: 'Čišćenje drvene terase Zagreb, bez brušenja | Šlauf i Šmrk',
-    description: 'Posivjela drvena terasa ne treba uvijek brušenje. Čistimo niskim tlakom i mekanom četkom, drvo ostaje cijelo. 6–8 €/m² (na 10. 9. 2026.: 6–8 €/m²).',
+    description: `Čišćenje drvenih terasa i ograda u Zagrebu. ${seoPrice.rate}. Uklanjanje sivila i algi prije uljenja.`,
     alternates: { canonical: '/usluge/ciscenje-drvenih-povrsina' },
     openGraph: {
-        title: 'Čišćenje drvenih površina Zagreb | Šlauf i Šmrk',
-        description: 'Profesionalno čišćenje drvenih terasa, ograda, pergola i vrtnog namještaja u Zagrebu.',
+        title: 'Čišćenje drvene terase Zagreb, bez brušenja | Šlauf i Šmrk',
+        description: `Čišćenje drvenih terasa i ograda u Zagrebu. ${seoPrice.rate}. Uklanjanje sivila i algi prije uljenja.`,
         url: 'https://slaufismrk.com/usluge/ciscenje-drvenih-povrsina',
         images: [OG_IMAGE],
     },
@@ -25,9 +28,10 @@ export default function DrvenePovrsinePage() {
             quoteTitle="Koliko bi čišćenje vaše drvene terase koštalo?"
             titleHighlight="drvenih površina"
             canonicalPath="/usluge/ciscenje-drvenih-povrsina"
-            description="Drvo s vremenom gubi boju i sivi pod utjecajem sunca, kiše i vlage. Profesionalnim čišćenjem uklanjamo sivilo, alge i nakupljenu prljavštinu s terasa, ograda, pergola i vrtnog namještaja. Vraćamo drvu izvornu toplinu i ljepotu."
-            priceHint="6–8 €/m²"
+            description="Drvo s vremenom gubi boju i sivi pod utjecajem sunca, kiše i vlage. Čišćenjem uklanjamo sivilo, alge i nakupljenu prljavštinu s terasa, ograda, pergola i vrtnog namještaja. Vraćamo drvu izvornu toplinu i ljepotu."
+            priceHint="od 6 €/m²"
             priceAnchor="6–8 €/m²"
+
             heroImage="/seo-results/ciscenje-drvenih-povrsina/prije-poslije.jpeg"
             heroImageAlt="Prije i poslije rezultat čišćenja drvenih površina"
             resultsShowcase={{
@@ -81,7 +85,7 @@ export default function DrvenePovrsinePage() {
                     <h2>Čišćenje vs. brušenje drva</h2>
                     <p>
                         Mnogi ljudi misle da je jedini način obnove posivjelog drva <strong>brušenje</strong>.
-                        Međutim, profesionalno čišćenje niskim tlakom može postići jednak rezultat bez uklanjanja
+                        Međutim, čišćenje niskim tlakom može postići jednak rezultat bez uklanjanja
                         sloja materijala. Prednosti čišćenja pred brušenjem:
                     </p>
                     <ul>
@@ -159,7 +163,7 @@ export default function DrvenePovrsinePage() {
                 },
                 {
                     question: 'Koliko košta čišćenje drvene terase?',
-                    answer: 'Cijena za čišćenje drvenih površina najčešće se kreće od 6 do 8 €/m² (cijena na 10. 9. 2026.: od 6 do 8 €/m²), ovisno o vrsti drva, stanju i zaprljanosti. Besplatna procjena na licu mjesta.',
+                    answer: 'Cijena za čišćenje drvenih površina najčešće se kreće od 6 €/m² (cijena na 10. 9. 2026.: 6–8 €/m²), ovisno o vrsti drva, stanju i zaprljanosti. Besplatna procjena na licu mjesta.',
                 },
                 {
                     question: 'Trebam li nauljivati drvo nakon čišćenja?',

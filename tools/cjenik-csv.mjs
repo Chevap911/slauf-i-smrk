@@ -1,98 +1,59 @@
 #!/usr/bin/env node
-// Objava cjenika u CSV-u po Odluci o objavi cjenika proizvoda i usluga (NN 101/2026).
+// Strojno čitljiv cjenik po Pravilniku o načinu objave cjenika (NN 132/2026-1584).
 //
 //   npm run cjenik
 //
 // Pokreni nakon svake promjene cijene u lib/cjenik.ts, pa deploy najkasnije do
-// 8:00 na dan kad nova cijena vrijedi. Skripta nikad ne briše stare datoteke:
-// prethodni cjenici moraju ostati javno dostupni najmanje 30 dana.
+// 11:00 na dan kad nova cijena vrijedi. Ako se ništa nije promijenilo, ne radi
+// ništa. Ako jest: nova datoteka s brojem pohrane +1 i vremenom GGGGMMDD_SSMM,
+// prethodna ide u arhivu u manifestu. Arhivske datoteke se nikad ne brišu
+// (moraju ostati dostupne najmanje 15 dana). /cjenik.csv uvijek vodi na važeću.
 //
-// Naziv datoteke prati obrazac iz pojašnjenja Ministarstva gospodarstva:
-// oblik objekta_adresa_oznaka objekta_broj pohrane_datum_vrijeme slanja.
-// Razmaci i dvotočka su zamijenjeni crticom da URL i datoteka rade svugdje.
-
-import { mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
-import { join, dirname } from 'node:path';
-import { fileURLToPath } from 'node:url';
-import { CJENIK } from '../lib/cjenik.ts';
-
-const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
-const DIR = join(ROOT, 'public', 'cjenik');
-const PREFIKS = 'servis_Primostenska-11-Zagreb_U-01';
-const SIDRENI_DATUM_CSV = '10.09.2026';
-
-const broj = (n) => n.toFixed(2).replace('.', ',');
-const jedinica = (j) => ({ m2: 'm2', usluga: 'usluga', komad: 'komad' })[j];
-const tekst = (iznos, j) => {
-    const po = j === 'm2' ? ' EUR/m2' : ' EUR';
-    if (iznos.max === undefined) return `od ${broj(iznos.min)}${po}`;
-    if (iznos.max === iznos.min) return `${broj(iznos.min)}${po}`;
-    return `${broj(iznos.min)}-${broj(iznos.max)}${po}`;
-};
-const polje = (v) => {
-    const s = String(v ?? '');
-    return /[";\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
-};
-
-const ZAGLAVLJE = [
-    'naziv_usluge',
-    'kategorija',
-    'jedinica_mjere',
-    'maloprodajna_cijena',
-    'cijena_od_eur',
-    'cijena_do_eur',
-    'posebni_oblik_prodaje',
-    'naziv_posebnog_oblika_prodaje',
-    'sidrena_cijena',
-    'sidrena_cijena_od_eur',
-    'sidrena_cijena_do_eur',
-    'datum_sidrene_cijene',
-    'napomena',
-];
-
-const redovi = CJENIK.flatMap((k) =>
-    k.stavke.map((s) => [
-        s.naziv,
-        k.naziv,
-        jedinica(s.jedinica),
-        tekst(s.cijena, s.jedinica),
-        broj(s.cijena.min),
-        s.cijena.max === undefined ? '' : broj(s.cijena.max),
-        'NE',
-        '',
-        tekst(s.sidrena, s.jedinica),
-        broj(s.sidrena.min),
-        s.sidrena.max === undefined ? '' : broj(s.sidrena.max),
-        SIDRENI_DATUM_CSV,
-        s.napomena ?? '',
-    ]),
-);
-
-const sadrzaj = [ZAGLAVLJE, ...redovi].map((r) => r.map(polje).join(';')).join('\r\n') + '\r\n';
+// Bez matičnog broja nastaje nacrt s nazivom MATICNI-BROJ-NEDOSTAJE_..., gate
+// (cjenik-check) tada pada, a prvo pravo pokretanje nacrt briše.
+import { readFileSync, writeFileSync, mkdirSync, existsSync, unlinkSync, readdirSync } from 'node:fs';
+import { join } from 'node:path';
+import { DIR, MANIFEST, ID_NEDOSTAJE, buildCsv, filePrefix, stamp, lokalno, loadManifest, redovi } from './cjenik-lib.mjs';
 
 mkdirSync(DIR, { recursive: true });
-const postojece = readdirSync(DIR).filter((f) => f.startsWith(PREFIKS) && f.endsWith('.csv')).sort();
+const csv = buildCsv();
+const prefix = filePrefix();
 
-// Isti sadržaj kao zadnja objava = nema promjene cijene, nema nove datoteke.
-const zadnja = postojece.at(-1);
-if (zadnja && readFileSync(join(DIR, zadnja), 'utf8').replace(/^﻿/, '') === sadrzaj && !process.argv.includes('--force')) {
-    console.log(`Nema promjene cijena, zadnji cjenik ostaje: public/cjenik/${zadnja}`);
-    process.exit(0);
+// Prvo pokretanje: CSV-ovi po rujanskim odlukama (NN 101/2026) postaju arhiva.
+// Nazivi su im "servis_..._NNN_DD.MM.GGGG_SS-MM.csv".
+function pocetniManifest() {
+    const arhiva = readdirSync(DIR)
+        .map((datoteka) => ({ datoteka, m: datoteka.match(/_(\d{3})_(\d{2})\.(\d{2})\.(\d{4})_(\d{2})-(\d{2})\.csv$/) }))
+        .filter((x) => x.m)
+        .map(({ datoteka, m }) => ({ datoteka, broj: Number(m[1]), objavljen: `${m[4]}-${m[3]}-${m[2]}T${m[5]}:${m[6]}` }))
+        .sort((a, b) => b.broj - a.broj);
+    return { vazeci: null, arhiva };
 }
 
-const sada = new Intl.DateTimeFormat('hr-HR', {
-    timeZone: 'Europe/Zagreb',
-    day: '2-digit',
-    month: '2-digit',
-    year: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
-    hourCycle: 'h23',
-}).formatToParts(new Date());
-const d = Object.fromEntries(sada.map((p) => [p.type, p.value]));
-const brojPohrane = String(postojece.length + 1).padStart(3, '0');
-const naziv = `${PREFIKS}_${brojPohrane}_${d.day}.${d.month}.${d.year}_${d.hour}-${d.minute}.csv`;
+const m = loadManifest() ?? pocetniManifest();
 
-// BOM da Excel ispravno prikaže č, ć, š, ž kad inspektor otvori datoteku.
-writeFileSync(join(DIR, naziv), '﻿' + sadrzaj);
-console.log(`Novi cjenik: public/cjenik/${naziv} (${redovi.length} usluga)`);
+if (m.vazeci && !process.argv.includes('--force')) {
+    const cur = join(DIR, m.vazeci.datoteka);
+    if (existsSync(cur) && readFileSync(cur, 'utf8') === csv && m.vazeci.datoteka.startsWith(prefix + '_')) {
+        console.log(`  cjenik nepromijenjen: public/cjenik/${m.vazeci.datoteka}`);
+        process.exit(0);
+    }
+}
+
+// Nacrt bez matičnog broja nikad nije smio biti objavljen: briše se, ne arhivira.
+if (m.vazeci?.datoteka.startsWith(ID_NEDOSTAJE)) {
+    const f = join(DIR, m.vazeci.datoteka);
+    if (existsSync(f)) unlinkSync(f);
+    m.vazeci = null;
+}
+
+const sada = new Date();
+const broj = Math.max(m.vazeci?.broj ?? 0, ...m.arhiva.map((a) => a.broj)) + 1;
+const datoteka = `${prefix}_${String(broj).padStart(3, '0')}_${stamp(sada)}.csv`;
+writeFileSync(join(DIR, datoteka), csv);
+
+if (m.vazeci) m.arhiva.unshift({ ...m.vazeci, zamijenjen: lokalno(sada) });
+m.vazeci = { datoteka, broj, objavljen: lokalno(sada) };
+writeFileSync(MANIFEST, JSON.stringify(m, null, 2) + '\n');
+console.log(`  novi cjenik: public/cjenik/${datoteka} (${redovi().length} redaka)`);
+if (datoteka.startsWith(ID_NEDOSTAJE)) console.log('  NACRT: upiši TRGOVAC.maticniBroj u lib/cjenik.ts i pokreni ponovno, gate do tada pada.');

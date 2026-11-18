@@ -10,7 +10,7 @@
  *
  *   1. Radno stablo mora biti čisto: ništa izmijenjeno, staged ni nepraćeno.
  *   2. Grana ne smije biti iza origina.
- *   3. `npm run audit` mora proći. Renderirani gate (slop, site-check) treba server,
+ *   3. `npm run audit` i `npm run cjenik-check` moraju proći. Renderirani gate (slop, site-check) treba server,
  *      pa `npm run gate` ide PRIJE ovoga.
  *   4. git push. Na mainu Vercel deploya produkciju, na drugoj grani samo pregled.
  */
@@ -37,6 +37,7 @@ if (behind > 0) stop(`${branch} je ${behind} commit(a) iza ${upstream}. Netko je
 // 3. Izvorni gate
 console.log("\n  Audit izvornog koda…");
 try { run("npm run --silent audit"); } catch { stop("npm run audit pada. Popravi, commitaj i ponovi."); }
+try { run("npm run --silent cjenik-check"); } catch { stop("cjenik (NN 132/2026-1584) pada. Popravi, npm run cjenik, commitaj i ponovi."); }
 
 // 4. Push, Vercel deploya iz GitHuba
 const sha = sh("git rev-parse --short HEAD");

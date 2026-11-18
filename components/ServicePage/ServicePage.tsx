@@ -1,6 +1,11 @@
 'use client';
 
+import JsonLd from '@/components/JsonLd/JsonLd';
+
 import Image from 'next/image';
+import CompletedJobsFeed from '@/components/CompletedJobsFeed/CompletedJobsFeed';
+import { priceItem } from '@/lib/quote';
+import { jobsFor } from '@/data/completedJobs';
 import Link from 'next/link';
 import { Phone, ArrowRight, ChevronRight } from 'lucide-react';
 import BeforeAfterSlider from '@/components/BeforeAfterSlider/BeforeAfterSlider';
@@ -115,6 +120,8 @@ export default function ServicePage({
     quoteTitle,
     notice,
 }: ServicePageProps) {
+    const serviceSlug = canonicalPath?.split('/').pop();
+    const hasJobs = !!serviceSlug && jobsFor({ serviceSlug }).length > 0;
     const baseUrl = 'https://slaufismrk.com';
     const serviceUrl = canonicalPath ? `${baseUrl}${canonicalPath}` : undefined;
     const fallbackHeroHighlights = features.slice(0, 3).map((feature) => feature.title);
@@ -166,6 +173,7 @@ export default function ServicePage({
         ],
     } : null;
 
+    const offerItem = priceItem(quoteService, quoteService === 'chemical' ? 'trosjed' : undefined);
     const serviceSchema = serviceUrl ? {
         '@context': 'https://schema.org',
         '@type': 'Service',
@@ -180,25 +188,26 @@ export default function ServicePage({
             name: area,
         })),
         provider: { '@id': 'https://slaufismrk.com/#business' },
+        ...(offerItem ? { offers: {
+            '@type': 'Offer', url: serviceUrl, priceCurrency: 'EUR',
+            priceSpecification: {
+                '@type': 'UnitPriceSpecification', priceCurrency: 'EUR',
+                minPrice: offerItem.cijena.min,
+                unitText: offerItem.jedinica === 'm2' ? 'm²' : 'usluga',
+                ...(offerItem.jedinica === 'm2' ? { unitCode: 'MTK' } : {}),
+                description: `${offerItem.naziv}. Početna cijena; konačna ponuda nakon procjene.`,
+            },
+        }} : {}),
     } : null;
 
     return (
         <div className={styles.servicePage}>
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-            />
+            <JsonLd data={faqSchema} />
             {breadcrumbSchema && (
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-                />
+                <JsonLd data={breadcrumbSchema} />
             )}
             {serviceSchema && (
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-                />
+                <JsonLd data={serviceSchema} />
             )}
 
             <section className={styles.hero}>
@@ -247,7 +256,7 @@ export default function ServicePage({
                                 <a href="#procjena" className={styles.heroCta}>
                                     Zatražite besplatnu procjenu
                                 </a>
-                                <a 
+                                <a
                                     href={`https://wa.me/385958442806?text=${encodeURIComponent(`Bok! Zanima me procjena za uslugu ${title}...`)}`}
                                     className={styles.whatsappBtn}
                                     target="_blank"
@@ -261,8 +270,8 @@ export default function ServicePage({
                                     </svg>
                                     WhatsApp
                                 </a>
-                                <a 
-                                    href="tel:+385958442806" 
+                                <a
+                                    href="tel:+385958442806"
                                     className={styles.heroCtaSecondary}
                                     onClick={() => {
                                         window.dataLayer?.push({ event: 'call_click', cta_location: 'service_page_hero' });
@@ -285,7 +294,9 @@ export default function ServicePage({
                 </div>
             </section>
 
-            <section className={styles.heroProof}>
+            <CompletedJobsFeed serviceSlug={serviceSlug} />
+
+            {!hasJobs && <section className={styles.heroProof}>
                 <div className="container">
                     <div className={styles.heroProofGrid}>
                         <div className={styles.heroImage}>
@@ -324,7 +335,7 @@ export default function ServicePage({
                         </div>
                     </div>
                 </div>
-            </section>
+            </section>}
 
             {/* Cijene i savjeti s bloga odmah ispod heroja: na mobitelu ljudi pregledaju
                 37 % stranice (Clarity), pa linkovi na dnu ostaju nevidljivi */}
@@ -348,7 +359,7 @@ export default function ServicePage({
                 </aside>
             )}
 
-            {resultsShowcase && (
+            {resultsShowcase && !hasJobs && (
                 <section className={styles.results}>
                     <div className="container">
                         <div className={styles.resultsIntro}>
@@ -518,7 +529,7 @@ export default function ServicePage({
                             <a href="#procjena" className={styles.ctaBtn}>
                                 Zatražite ponudu <ArrowRight size={18} />
                             </a>
-                            <a 
+                            <a
                                 href={`https://wa.me/385958442806?text=${encodeURIComponent(`Pozdrav, zanima me usluga: ${title}. Šaljem slike za procjenu.`)}`}
                                 className={styles.whatsappBtn}
                                 target="_blank"
@@ -532,8 +543,8 @@ export default function ServicePage({
                                 </svg>
                                 WhatsApp
                             </a>
-                            <a 
-                                href="tel:+385958442806" 
+                            <a
+                                href="tel:+385958442806"
                                 className={styles.ctaCallBtn}
                                 onClick={() => {
                                     window.dataLayer?.push({ event: 'call_click', cta_location: 'service_page_footer' });

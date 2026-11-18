@@ -42,7 +42,7 @@ export default function BlogArticle() {
         author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         datePublished: '2026-06-01',
-        dateModified: '2026-10-10',
+        dateModified: '2026-11-01',
         image: 'https://slaufismrk.com/prije-poslje/fasada-poslje.png',
         url: 'https://slaufismrk.com/blog/kako-oprati-fasadu',
     };
@@ -190,7 +190,7 @@ export default function BlogArticle() {
                         <p>
                             Računica je jednostavna. Najam perača, sredstvo i dan posla nisu besplatni, a rizik
                             od oštećenja stiropora pretvara uštedu u veliki trošak. Profesionalno pranje fasade
-                            u Zagrebu kreće od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²), s pravim tlakom, biocidnim tretmanom i fotografijama prije i poslije.
+                            u Zagrebu kreće od 5 €/m² (cijena na 10. 9. 2026.: 5–7 €/m²), s pravim tlakom, biocidnim tretmanom i fotografijama prije i poslije.
                         </p>
 
                         <h2>Koliko košta pranje fasade u Zagrebu</h2>
@@ -201,11 +201,11 @@ export default function BlogArticle() {
                             </div>
                             <div className={styles.priceRow}>
                                 <span>100 – 200 m² (obiteljska kuća)</span>
-                                <strong>500 – 1.400 €<span className="sidrena">Cijena na 10. 9. 2026.: 500 – 1.400 €</span></strong>
+                                <strong>od 500 €<span className="sidrena">Cijena na 10. 9. 2026.: 500–1.400 €</span></strong>
                             </div>
                             <div className={styles.priceRow}>
                                 <span>200 – 300 m²</span>
-                                <strong>od 1.500 €<span className="sidrena">Cijena na 10. 9. 2026.: od 1.500 €</span></strong>
+                                <strong>od 1.500 €<span className="sidrena">Cijena na 10. 9. 2026.: 1.000–2.100 €</span></strong>
                             </div>
                             <div className={styles.priceRow}>
                                 <span>300 m²+ / poslovni objekti</span>

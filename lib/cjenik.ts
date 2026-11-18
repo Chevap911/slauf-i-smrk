@@ -1,23 +1,39 @@
 /**
- * Cjenik usluga, jedini izvor za /cjenik stranicu i CSV datoteku u public/cjenik/.
+ * Cjenik usluga, jedini izvor za /cjenik stranicu, kalkulator i CSV datoteku u public/cjenik/.
  *
- * Od 1. 10. 2026. vrijede dvije Vladine odluke (NN 101/2026):
- * - Odluka o isticanju dodatne cijene: uz svaku istaknutu cijenu (web, letci,
- *   oglasi) stoji i cijena koja je vrijedila 10. 9. 2026. ("sidrena"), i onda
- *   kad je jednaka trenutnoj. Na istom mjestu, ne na posebnom cjeniku.
- * - Odluka o objavi cjenika: cjenik se objavljuje na webu kao .csv. Nova
- *   datoteka ide najkasnije do 8:00 na dan promjene cijene, a prethodne ostaju
- *   javno dostupne najmanje 30 dana.
+ * Od 17. 11. 2026. vrijede dva pravilnika (NN 132/2026, zamijenili su NN 101/2026 i 110/2026):
+ * - Pravilnik o isticanju bazne cijene (NN 132/2026-1583): uz svaku istaknutu cijenu
+ *   (web, letci, oglasi) stoji i cijena koja je vrijedila 10. 9. 2026. ("sidrena",
+ *   u pravilniku "bazna"), i onda kad je jednaka trenutnoj. Na istom mjestu.
+ * - Pravilnik o načinu objave cjenika (NN 132/2026-1584): cjenik je na webu kao .csv
+ *   (UTF-8, separator ";"), uvijek na istom URL-u (/cjenik.csv). Izmijenjen cjenik ide
+ *   najkasnije do 11:00 na dan promjene cijene, prethodni ostaje dostupan najmanje
+ *   15 dana (kod nas se stare datoteke ne brišu). Naziv datoteke traži TRGOVAC ispod.
+ *
+ * Javne cijene su početne, "od X" bez gornje granice (Marko, 1. 11. 2026.).
+ * Sidrena je raspon koji je stajao na webu 10. 9. 2026. (Marko, 17. 11. 2026.: "Da, vrati sidrene").
  *
  * Kad se cijena promijeni: mijenja se samo `cijena`, `sidrena` ostaje ista
- * zauvijek (to je stanje na 10. 9. 2026.). Zatim `npm run cjenik` napravi novu
- * CSV datoteku, a istu promjenu treba napraviti i u tekstovima na webu
- * (grep "cijena na 10. 9. 2026." pokazuje sva mjesta).
+ * zauvijek. Zatim `npm run cjenik` napravi novu CSV datoteku, a istu promjenu
+ * treba napraviti i u tekstovima na webu (grep "10. 9. 2026." pokazuje sva mjesta).
  *
- * Datoteka namjerno nema importe, čita je i `tools/cjenik-csv.mjs` kroz Node.
+ * Datoteka namjerno nema importe, čitaju je `tools/cjenik-csv.mjs` i `tools/cjenik-check.mjs` kroz Node.
  */
-
 export const SIDRENI_DATUM = '10. 9. 2026.';
+
+/**
+ * Podaci za naziv CSV datoteke (NN 132/2026-1584, čl. 6 st. 3): matični broj obrta
+ * (fizička osoba, ne OIB), vrsta prodajnog mjesta, adresa i oznaka prodajnog mjesta.
+ * Bez razmaka, jer idu u naziv datoteke. Prazan matični broj = `npm run cjenik` radi
+ * nacrt, a `npm run gate` pada.
+ */
+export const TRGOVAC = {
+    /** Matični broj obrta Šlauf i Šmrk iz obrtnice (8 znamenki). */
+    maticniBroj: '99112752',
+    prodajnoMjesto: 'servis',
+    adresa: 'Primostenska-11-Zagreb',
+    oznaka: 'U-01',
+};
 
 export type Jedinica = 'm2' | 'usluga' | 'komad';
 
@@ -33,6 +49,7 @@ export type Stavka = {
     cijena: Iznos;
     /** Cijena na dan 10. 9. 2026. Ne mijenja se kad se mijenja `cijena`. */
     sidrena: Iznos;
+    minimum?: { cijena: number; sidrena: number };
     napomena?: string;
     /** Kad napomena sadrži cijenu ("do 50 m²: od 200 €"), njena cijena na 10. 9. 2026. Ide samo na
      *  stranicu /cjenik, ne u CSV, pa dodavanje ne traži novi CSV. */
@@ -52,7 +69,7 @@ export type Kategorija = {
 };
 
 const isto = (min: number, max?: number): Pick<Stavka, 'cijena' | 'sidrena'> => ({
-    cijena: { min, max },
+    cijena: { min },
     sidrena: { min, max },
 });
 
@@ -61,8 +78,8 @@ export const CJENIK: Kategorija[] = [
         naziv: 'Vanjske površine (cijena po m²)',
         stavke: [
             { naziv: 'Pranje fasade (žbuka, ETICS i stiropor)', jedinica: 'm2', ...isto(5, 7), napomena: 'konačna cijena ovisi o zaprljanosti, visini objekta i pristupu' },
-            { naziv: 'Pranje okućnice i dvorišta', jedinica: 'm2', ...isto(4, 6), napomena: 'površine do 50 m²: od 200 €', napomenaSidrena: 'od 200 €' },
-            { naziv: 'Pranje terase', jedinica: 'm2', ...isto(4, 6), napomena: 'površine do 50 m²: od 200 €', napomenaSidrena: 'od 200 €' },
+            { naziv: 'Pranje okućnice i dvorišta', jedinica: 'm2', ...isto(4, 6), minimum: { cijena: 200, sidrena: 200 }, napomena: 'površine do 50 m²: od 200 €', napomenaSidrena: 'od 200 €' },
+            { naziv: 'Pranje terase', jedinica: 'm2', ...isto(4, 6), minimum: { cijena: 200, sidrena: 200 }, napomena: 'površine do 50 m²: od 200 €', napomenaSidrena: 'od 200 €' },
             { naziv: 'Pranje tlakavaca', jedinica: 'm2', ...isto(4, 6) },
             { naziv: 'Pranje prilaza', jedinica: 'm2', ...isto(4, 6) },
             { naziv: 'Čišćenje kamenih površina', jedinica: 'm2', ...isto(5, 7) },
@@ -127,3 +144,7 @@ export function formatIznos(iznos: Iznos, jedinica: Jedinica): string {
     if (iznos.max === iznos.min) return `${broj(iznos.min)}${po}`;
     return `${broj(iznos.min)}–${broj(iznos.max)}${po}`;
 }
+
+/** "Cijena na 10. 9. 2026.: 5–7 €/m²" uz svaku istaknutu cijenu stavke. */
+export const sidrenaTekst = (s: Pick<Stavka, 'sidrena' | 'jedinica'>): string =>
+    `Cijena na ${SIDRENI_DATUM}: ${formatIznos(s.sidrena, s.jedinica)}`;

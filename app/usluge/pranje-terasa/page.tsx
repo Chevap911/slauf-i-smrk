@@ -7,11 +7,11 @@ import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Čišćenje terasa Zagreb | Pranje terasa i pločica 2026.',
-    description: 'Profesionalno čišćenje terasa u Zagrebu. Uklanjamo alge, mahovinu i crne naslage s keramičkih, kamenih i betonskih terasa. Besplatna procjena na lokaciji.',
+    description: 'Čišćenje terasa u Zagrebu. Uklanjamo alge, mahovinu i crne naslage s keramičkih, kamenih i betonskih terasa. Besplatna procjena na lokaciji.',
     alternates: { canonical: '/usluge/pranje-terasa' },
     openGraph: {
-        title: 'Čišćenje terasa Zagreb | Profesionalno pranje terasa i pločica 2026.',
-        description: 'Profesionalno čišćenje vanjskih terasa, balkona, keramike i kamena u Zagrebu. Uklanjamo alge, mahovinu i crne naslage.',
+        title: 'Čišćenje terasa Zagreb | Pranje terasa i pločica 2026.',
+        description: 'Čišćenje vanjskih terasa, balkona, keramike i kamena u Zagrebu. Uklanjamo alge, mahovinu i crne naslage.',
         url: 'https://slaufismrk.com/usluge/pranje-terasa',
         images: [OG_IMAGE],
     },
@@ -26,11 +26,12 @@ export default function PranjeTerasaPage() {
             quoteTitle="Koliko bi pranje vaše terase koštalo?"
             titleHighlight="terasa"
             canonicalPath="/usluge/pranje-terasa"
-            description="Profesionalno pranje terasa vraća čistoću i sigurnost vanjskom prostoru. Uklanjamo alge, mahovinu, crne naslage, klizavi biofilm i tvrdokornu prljavštinu s keramičkih, kamenih i betonskih terasa u Zagrebu i okolici."
+            description="Pranje terasa vraća čistoću i sigurnost vanjskom prostoru. Uklanjamo alge, mahovinu, crne naslage, klizavi biofilm i tvrdokornu prljavštinu s keramičkih, kamenih i betonskih terasa u Zagrebu i okolici."
             priceHint="od 4 €/m²"
-            priceAnchor="od 4 €/m²"
+            priceAnchor="4–6 €/m²"
+
             heroImage="/seo-results/pranje-terasa/poslije-2.jpeg"
-            heroImageAlt="Vanjska terasa nakon profesionalnog pranja i uklanjanja naslaga"
+            heroImageAlt="Vanjska terasa nakon pranja i uklanjanja naslaga"
             heroHighlights={[
                 'Čišćenje kamenih, keramičkih i betonskih terasa',
                 'Uklanjanje klizavih algi i tamnih naslaga',
@@ -55,7 +56,7 @@ export default function PranjeTerasaPage() {
                 },
                 {
                     title: 'Ravnomjerno pranje',
-                    description: 'Profesionalnom opremom čistimo cijelu površinu tako da terasa izgleda ujednačeno, bez slučajnih tragova i prejakih prijelaza.',
+                    description: 'Čistimo cijelu površinu tako da terasa izgleda ujednačeno, bez slučajnih tragova i prejakih prijelaza.',
                 },
                 {
                     title: 'Završna kontrola',
@@ -72,7 +73,7 @@ export default function PranjeTerasaPage() {
                         proklizavanja.
                     </p>
                     <p>
-                        Profesionalno čišćenje terasa posebno je važno prije sezone korištenja u proljeće i ljeto,
+                        Čišćenje terasa posebno je važno prije sezone korištenja u proljeće i ljeto,
                         ali i nakon jeseni kada vlaga i lišće ubrzaju propadanje fuga i površinskih premaza.
                     </p>
 
@@ -100,8 +101,8 @@ export default function PranjeTerasaPage() {
                         <tbody>
                             {[
                                 { size: 'Do 50 m²', price: 'od 200 €', anchor: 'od 200 €' },
-                                { size: '100 m²', price: 'od 400 €', anchor: 'od 400 €' },
-                                { size: '200 m²', price: 'od 800 €', anchor: 'od 800 €' },
+                                { size: '100 m²', price: 'od 400 €', anchor: '400–600 €' },
+                                { size: '200 m²', price: 'od 800 €', anchor: '800–1.200 €' },
                                 { size: 'Veće od 200 m²', price: 'po procjeni', anchor: '' },
                             ].map((row, i) => (
                                 <tr key={i} style={{ borderBottom: '1px solid #eee' }}>
@@ -171,11 +172,11 @@ export default function PranjeTerasaPage() {
             faq={[
                 {
                     question: 'Koliko košta pranje terase u Zagrebu?',
-                    answer: 'Okvirna cijena za pranje terasa kreće se od 4 €/m² (cijena na 10. 9. 2026.: od 4 €/m²). Točna ponuda ovisi o materijalu, kvadraturi i zaprljanosti.',
+                    answer: 'Okvirna cijena za pranje terasa kreće se od 4 €/m² (cijena na 10. 9. 2026.: 4–6 €/m²). Točna ponuda ovisi o materijalu, kvadraturi i zaprljanosti.',
                 },
                 {
                     question: 'Možete li oprati terasu bez oštećenja fuga i pločica?',
-                    answer: 'Da. Koristimo profesionalnu opremu i prilagođen tlak kako bismo očistili površinu bez nepotrebnog oštećenja fuga ili završnog sloja.',
+                    answer: 'Da. Koristimo prilagođen tlak kako bismo očistili površinu bez nepotrebnog oštećenja fuga ili završnog sloja.',
                 },
                 {
                     question: 'Čistite li i balkone i manje gradske terase?',

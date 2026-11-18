@@ -1,3 +1,4 @@
+import { contactFields } from '@/lib/contact';
 import { NextResponse } from 'next/server';
 import { supabase } from '@/utils/supabase/client';
 import { AdminNotificationEmail } from '@/components/emails/InquiryEmail';
@@ -62,14 +63,18 @@ export async function POST(req: Request) {
     // Skriveno polje koje popune samo botovi: tiho prihvati, ništa ne spremaj ni ne šalji
     if (tekstPolja(formData.honeypot)) return NextResponse.json({ success: true });
 
-    const phone = tekstPolja(formData.phone);
-    if (phone.replace(/\D/g, '').length < 6) {
-        return NextResponse.json({ error: 'Neispravan broj mobitela' }, { status: 400 });
-    }
+    const phoneInput = tekstPolja(formData.phone);
+    const emailInput = tekstPolja(formData.email);
+    const contact = contactFields(phoneInput || emailInput);
+    if (!contact) return NextResponse.json({ error: 'Upišite ispravan mobitel ili e-mail' }, { status: 400 });
+    const phone = contact.phone;
+    const email = contact.email || (contactFields(emailInput)?.email ?? '');
+    formData.phone = phone;
+    formData.email = email;
 
     const serviceNameReadable = serviceNames[tekstPolja(formData.service)] || 'Ostalo / nije odabrano';
     const minPrice = iznos(body.estimatedPrice?.min);
-    const maxPrice = iznos(body.estimatedPrice?.max) ?? minPrice;
+    const maxPrice = iznos(body.estimatedPrice?.max);
     const name = tekstPolja(formData.name);
     const city = tekstPolja(formData.city);
     const message = tekstPolja(formData.message);
@@ -106,11 +111,12 @@ export async function POST(req: Request) {
     }
 
     // 2. Mail nama, s HTML-om i tekstualnom verzijom
-    const naslov = `NOVI UPIT: ${serviceNameReadable}, ${phone}${name && name !== 'Brzi upit (web)' && name !== 'N/A' ? `, ${name}` : ''}`;
+    const naslov = `NOVI UPIT: ${serviceNameReadable}, ${phone || email}${name && name !== 'Brzi upit (web)' && name !== 'N/A' ? `, ${name}` : ''}`;
     const tekst = [
         naslov,
+        email ? `E-mail: ${email}` : null,
         formData.surfaceSize ? `Veličina: ${formData.surfaceSize} m²` : null,
-        minPrice ? `Prikazana cijena: ${minPrice === maxPrice ? `od ${minPrice}` : `${minPrice} - ${maxPrice}`} €` : null,
+        minPrice ? `Prikazana cijena: ${maxPrice === null || minPrice === maxPrice ? `od ${minPrice}` : `${minPrice} - ${maxPrice}`} €` : null,
         city && city !== 'N/A' ? `Mjesto: ${city}` : null,
         message ? `Poruka: ${message}` : null,
         formData.landing_page ? `Stranica: ${formData.landing_page}` : null,
@@ -127,13 +133,13 @@ export async function POST(req: Request) {
     try {
         adminPoruka.react = AdminNotificationEmail({
             name: name || 'N/A',
-            email: tekstPolja(formData.email) || 'N/A',
+            email,
             phone,
             city,
             address: tekstPolja(formData.address),
             serviceName: serviceNameReadable,
             estimatedPriceMin: minPrice ?? 0,
-            estimatedPriceMax: maxPrice ?? 0,
+            estimatedPriceMax: maxPrice,
             message,
             details: formData,
         }) as React.ReactElement;
@@ -163,7 +169,7 @@ export async function POST(req: Request) {
         if (metaError) console.error('Ishod maila nije zapisan u bazu:', metaError.message);
     }
 
-    // Potvrda kupcu mailom više se ne šalje: nijedna forma ne pita za e-mail, a javna ruta koja
+    // Potvrda kupcu mailom ne šalje se: javna ruta koja
     // šalje brendirani mail na bilo koju upisanu adresu bila bi relej za spam s naše domene.
 
     // Greška samo ako upit nije nigdje: ni u bazi ni u mailu. Tada forma kaže korisniku da

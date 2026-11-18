@@ -1,8 +1,10 @@
+
+import JsonLd from '@/components/JsonLd/JsonLd';
+import { HOME_TITLE, HOME_DESCRIPTION, OG_IMAGE } from '@/lib/seo';
 import type { Metadata, Viewport } from "next";
 import { Inter, Outfit } from "next/font/google";
 import Navigation from "@/components/Navigation/Navigation";
 import Footer from "@/components/Footer/Footer";
-import StickyCtaBanner from "@/components/StickyCtaBanner/StickyCtaBanner";
 import CookieBanner from "@/components/CookieBanner/CookieBanner";
 import QuoteFab from "@/components/QuoteFab/QuoteFab";
 import "./globals.css";
@@ -25,9 +27,8 @@ export const viewport: Viewport = {
 };
 
 // Zadano za naslovnu i svaku stranicu bez vlastitog metadata; isto kao app/page.tsx
-const DEFAULT_TITLE = "Visokotlačno pranje Zagreb: fasade i okućnice | Šlauf i Šmrk";
-const DEFAULT_DESCRIPTION =
-  "Visokotlačno pranje fasada, okućnica, terasa i tlakavaca u Zagrebu i okolici. Besplatna procjena, 5,0 na Googleu uz 40 recenzija.";
+const DEFAULT_TITLE = HOME_TITLE;
+const DEFAULT_DESCRIPTION = HOME_DESCRIPTION;
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://slaufismrk.com"),
@@ -43,20 +44,13 @@ export const metadata: Metadata = {
     siteName: "Šlauf i Šmrk",
     locale: "hr_HR",
     type: "website",
-    images: [
-      {
-        url: "/prije-poslje/fasada-poslje.png",
-        width: 1200,
-        height: 630,
-        alt: "Očišćena fasada obiteljske kuće u Zagrebu nakon profesionalnog pranja",
-      },
-    ],
+    images: [OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
     title: DEFAULT_TITLE,
     description: DEFAULT_DESCRIPTION,
-    images: ["/prije-poslje/fasada-poslje.png"],
+    images: [OG_IMAGE.url],
   },
 };
 
@@ -69,11 +63,18 @@ const localBusinessSchema = {
   "@id": "https://slaufismrk.com/#business",
   name: "Šlauf i Šmrk",
   description:
-    "Profesionalno pranje fasada, okućnica, terasa, prilaza, kamenih i drvenih površina u Zagrebu i okolici.",
+    "Pranje fasada, okućnica, terasa, prilaza, kamenih i drvenih površina u Zagrebu i okolici. Za tvrtke i ustanove pranje vanjskih površina vrućom vodom.",
   url: "https://slaufismrk.com",
   image: [
     "https://slaufismrk.com/prije-poslje/fasada-poslje.png",
     "https://slaufismrk.com/prije-poslje/terasa-leggiero-poslje-1.jpeg",
+    "https://slaufismrk.com/projekti/samobor/kolodvor-samobor-opran-pod.webp",
+    "https://slaufismrk.com/hero-foto/ivan-i-marko-uz-stroj-500-bar.jpg",
+  ],
+  // Isti profili kao u podnožju (components/Footer/Footer.tsx).
+  sameAs: [
+    "https://www.facebook.com/slaufismrk",
+    "https://www.instagram.com/slaufismrk",
   ],
   telephone: "+385958442806",
   email: "slauf.i.smrk@gmail.com",
@@ -199,6 +200,14 @@ const localBusinessSchema = {
           url: "https://slaufismrk.com/usluge/odrzavanje-grobnih-mjesta",
         },
       },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Pranje vanjskih površina vrućom vodom",
+          url: "https://slaufismrk.com/usluge/poslovni-objekti",
+        },
+      },
     ],
   },
 };
@@ -266,14 +275,8 @@ export default function RootLayout({
           }}
         />
         
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-        />
+        <JsonLd data={localBusinessSchema} />
+        <JsonLd data={organizationSchema} />
       </head>
       <body>
         {/* Google Tag Manager (noscript) */}
@@ -300,6 +303,7 @@ export default function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             __html: `(function (w, d) {
+  if (!['slaufismrk.com', 'www.slaufismrk.com'].includes(w.location.hostname)) return;
   var done = false, ready = false, wanted = false;
   var events = ['pointerdown', 'touchstart', 'keydown', 'scroll', 'mousemove'];
   function add(src) {
@@ -353,7 +357,6 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <QuoteFab />
-        <StickyCtaBanner />
         <CookieBanner />
       </body>
     </html>

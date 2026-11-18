@@ -1,4 +1,5 @@
 'use client';
+import { computeEstimate } from '@/lib/quote';
 
 import { CheckCircle2, MessageCircle, Phone } from 'lucide-react';
 import { useState, useEffect, useMemo } from 'react';
@@ -42,29 +43,10 @@ export default function LeadForm() {
         });
     }, []);
 
-    // Price calculation
-    const priceRange = useMemo<{ min: number; max: number } | null>(() => {
-        if (form.unknownArea || !form.area || isNaN(Number(form.area)) || Number(form.area) <= 0) {
-            return null;
-        }
-
-        const area = Number(form.area);
-        // Stope iz cjenika (lib/cjenik.ts). Do 27. 9. 2026. ovdje je stajalo 4–6 €/m²,
-        // ispod cjenika, pa je posjetitelj s oglasa vidio nižu cijenu od ponude.
-        let minRate = 5;
-        let maxRate = 7;
-
-        switch (form.facadeType) {
-            case 'Drvena':
-                minRate = 6; maxRate = 8; break;
-            default:
-                minRate = 5; maxRate = 7; break;
-        }
-
-        return {
-            min: area * minRate,
-            max: area * maxRate,
-        };
+    const priceRange = useMemo<{ min: number } | null>(() => {
+        if (form.unknownArea) return null;
+        const estimate = computeEstimate(form.facadeType === 'Drvena' ? 'wood' : 'facade', form.area);
+        return estimate ? { min: estimate.cijena.min } : null;
     }, [form.area, form.facadeType, form.unknownArea]);
 
     const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -142,7 +124,7 @@ export default function LeadForm() {
             } else {
                 setStatus('error');
             }
-        } catch (error) {
+        } catch {
             setStatus('error');
         }
     };
@@ -240,9 +222,9 @@ export default function LeadForm() {
 
                 {priceRange && (
                     <div className={styles.priceEstimate}>
-                        <div className={styles.priceValue}>{priceRange.min === priceRange.max ? `Okvirna cijena: od ${priceRange.min} €` : `Okvirni raspon: ${priceRange.min} – ${priceRange.max} €`}</div>
+                        <div className={styles.priceValue}>Početna cijena: od {priceRange.min.toLocaleString('hr-HR')} €</div>
                         <div className={styles.priceNote}>Konačna cijena ovisi o stanju fasade, visini objekta i pristupu.</div>
-                        <div className={styles.priceNote}>Cijene po m² i cijene na 10. 9. 2026. su u <a href="/cjenik">cjeniku</a>.</div>
+                        <div className={styles.priceNote}>Početne cijene po m² su u <a href="/cjenik">cjeniku</a>.</div>
                     </div>
                 )}
 

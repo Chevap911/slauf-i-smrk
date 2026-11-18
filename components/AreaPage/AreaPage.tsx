@@ -1,9 +1,13 @@
+
+import type { ReactNode } from 'react';
+import JsonLd from '@/components/JsonLd/JsonLd';
+import CompletedJobsFeed from '@/components/CompletedJobsFeed/CompletedJobsFeed';
 import Link from 'next/link';
 import {
     ShieldCheck, Home, Car, TreeDeciduous, HeartHandshake, Droplets,
-    Sofa, ArrowRight, Phone, Waves
+    Sofa, ArrowRight, Phone, Waves, Building2
 } from 'lucide-react';
-import { GUIDES, ALL_AREAS, CITY_LOCATIVE, CITY_GENITIVE } from './areaLinks';
+import { GUIDES, ALL_AREAS, CITY_LOCATIVE, CITY_GENITIVE, CITY_ACCUSATIVE } from './areaLinks';
 import styles from './AreaPage.module.css';
 import QuoteCard from '@/components/QuoteCard/QuoteCard';
 
@@ -12,20 +16,26 @@ export type AreaPageProps = {
     slug: string;
     intro: string;
     neighborhoods: string[];
+    // Lokalni dio koji vrijedi samo za taj grad: stvaran posao, fotografije, video.
+    // Bez izmišljenih poslova. Ako posla iz grada nema, tekst to kaže i vodi na najbliži.
+    localSection?: ReactNode;
+    // Pitanja koja vrijede samo za taj grad. Idu na stranicu i u FAQPage schemu.
+    extraFaq?: { question: string; answer: string }[];
 };
 
 const services = [
-    { title: 'Pranje Fasade', href: '/usluge/pranje-fasade', icon: <ShieldCheck size={24} />, desc: 'Uklanjamo alge, mahovinu i prljavštinu s fasade vaše kuće.' },
-    { title: 'Pranje Okućnice', href: '/usluge/pranje-okucnice', icon: <Home size={24} />, desc: 'Betonske kocke, kamene ploče, prilazi, vraćamo izvornu ljepotu.' },
-    { title: 'Pranje Terase', href: '/usluge/pranje-terasa', icon: <Droplets size={24} />, desc: 'Skidamo sivilo, alge i naslage s terasa i ploča.' },
-    { title: 'Pranje Tlakavaca', href: '/usluge/pranje-tlakavaca', icon: <TreeDeciduous size={24} />, desc: 'Dvorišta, prilazi i staze, čisto i bez korova u fugama.' },
-    { title: 'Kemijsko Čišćenje', href: '/usluge/kemijsko-ciscenje-namjestaja', icon: <Sofa size={24} />, desc: 'Garniture, madraci i tepisi, dubinsko čišćenje na vašoj adresi.' },
-    { title: 'Detailing Auta', href: '/usluge/detailing-automobila', icon: <Car size={24} />, desc: 'Vanjsko i unutarnje čišćenje uz dolazak na vašu adresu.' },
-    { title: 'Pranje Bazena', href: '/usluge/pranje-bazena', icon: <Waves size={24} />, desc: 'Pripremamo bazen za sezonu kupanja.' },
-    { title: 'Grobna Mjesta', href: '/usluge/odrzavanje-grobnih-mjesta', icon: <HeartHandshake size={24} />, desc: 'Čišćenje i impregnacija nadgrobnih spomenika.' },
+    { title: 'Pranje fasade', href: '/usluge/pranje-fasade', icon: <ShieldCheck size={24} />, desc: 'Skidamo alge, mahovinu i crne tragove s fasade kuće.', link: 'Pranje fasade: cijena i postupak' },
+    { title: 'Pranje okućnice', href: '/usluge/pranje-okucnice', icon: <Home size={24} />, desc: 'Betonske kocke, kamene ploče i prilazi bez nagažene prljavštine.', link: 'Pranje okućnice: cijena i postupak' },
+    { title: 'Pranje terase', href: '/usluge/pranje-terasa', icon: <Droplets size={24} />, desc: 'Skidamo sivilo, alge i naslage s terasa i ploča.', link: 'Pranje terase: cijena i postupak' },
+    { title: 'Pranje tlakavaca', href: '/usluge/pranje-tlakavaca', icon: <TreeDeciduous size={24} />, desc: 'Dvorišta, prilazi i staze bez mahovine i korova u fugama.', link: 'Pranje tlakavaca: cijena i postupak' },
+    { title: 'Pranje vrućom vodom za tvrtke', href: '/usluge/poslovni-objekti', icon: <Building2 size={24} />, desc: 'Podovi, fasade, zidovi i stepeništa za tvrtke i ustanove, noću.', link: 'Pranje vrućom vodom za tvrtke i ustanove' },
+    { title: 'Kemijsko čišćenje', href: '/usluge/kemijsko-ciscenje-namjestaja', icon: <Sofa size={24} />, desc: 'Garniture, madraci i tepisi, dubinsko čišćenje na vašoj adresi.', link: 'Kemijsko čišćenje namještaja: cijena' },
+    { title: 'Detailing auta', href: '/usluge/detailing-automobila', icon: <Car size={24} />, desc: 'Vanjsko i unutarnje čišćenje uz dolazak na vašu adresu.', link: 'Detailing auta uz dolazak' },
+    { title: 'Pranje bazena', href: '/usluge/pranje-bazena', icon: <Waves size={24} />, desc: 'Pripremamo bazen za sezonu kupanja.', link: 'Pranje bazena prije sezone' },
+    { title: 'Grobna mjesta', href: '/usluge/odrzavanje-grobnih-mjesta', icon: <HeartHandshake size={24} />, desc: 'Trenutačno samo prijave na listu interesa.', link: 'Lista interesa za čišćenje groba' },
 ];
 
-export default function AreaPage({ city, slug, intro, neighborhoods }: AreaPageProps) {
+export default function AreaPage({ city, slug, intro, neighborhoods, localSection, extraFaq = [] }: AreaPageProps) {
     const breadcrumbSchema = {
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
@@ -37,6 +47,7 @@ export default function AreaPage({ city, slug, intro, neighborhoods }: AreaPageP
 
     const cityLoc = CITY_LOCATIVE[city] ?? city;
     const cityGen = CITY_GENITIVE[city] ?? city;
+    const cityAcc = CITY_ACCUSATIVE[city] ?? city;
 
     // Tvrtka je jedna (HomeAndConstructionBusiness u layout.tsx, @id #business).
     // Stranica područja opisuje uslugu u tom gradu i referencira tvrtku, inače
@@ -53,16 +64,17 @@ export default function AreaPage({ city, slug, intro, neighborhoods }: AreaPageP
     };
 
     const faq = [
+        ...extraFaq,
         {
             question: `Koliko košta pranje fasade u ${cityLoc}?`,
-            answer: `Cijena pranja fasade u ${cityLoc} kreće se od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²), ovisno o veličini, materijalu i stupnju zaprljanosti. Za točnu cijenu šaljemo procjenu na temelju slika ili dolazimo na lokaciju.`,
+            answer: `Cijena pranja fasade u ${cityLoc} kreće se od 5 €/m² (cijena na 10. 9. 2026.: 5–7 €/m²), ovisno o veličini, materijalu i stupnju zaprljanosti. Za točnu cijenu šaljemo procjenu na temelju slika ili dolazimo na lokaciju.`,
         },
         {
             question: `Koliko košta čišćenje okućnice u ${cityLoc}?`,
-            answer: `Cijena čišćenja okućnice u ${cityLoc} kreće se od 4 €/m² (cijena na 10. 9. 2026.: od 4 €/m²), ovisno o kvadraturi i materijalu. Za veće površine i pakete dajemo procjenu prije početka rada.`,
+            answer: `Cijena čišćenja okućnice u ${cityLoc} kreće se od 4 €/m² (cijena na 10. 9. 2026.: 4–6 €/m²), ovisno o kvadraturi i materijalu. Za veće površine dajemo procjenu prije početka rada.`,
         },
         {
-            question: `Koliko brzo dolazite u ${cityLoc}?`,
+            question: `Koliko brzo dolazite u ${cityAcc}?`,
             answer: `Odgovaramo u roku od sat vremena, a termin dogovaramo prema vašoj dostupnosti. Za brzu okvirnu cijenu pošaljite slike fasade ili okućnice na WhatsApp.`,
         },
         {
@@ -71,7 +83,7 @@ export default function AreaPage({ city, slug, intro, neighborhoods }: AreaPageP
         },
         {
             question: 'Mogu li kombinirati pranje fasade i okućnice u istom terminu?',
-            answer: 'Da, najčešći izbor je kombinacija fasade, okućnice, terase i prilaza u jednom terminu uz paketnu cijenu.',
+            answer: 'Da. Fasadu, okućnicu, terasu i prilaz najčešće peremo u istom dolasku, pa stroj i crijeva razvlačimo samo jednom.',
         },
     ];
 
@@ -87,9 +99,9 @@ export default function AreaPage({ city, slug, intro, neighborhoods }: AreaPageP
 
     return (
         <div className={styles.page}>
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+            <JsonLd data={breadcrumbSchema} />
+            <JsonLd data={serviceSchema} />
+            <JsonLd data={faqSchema} />
 
             <section className={styles.hero}>
                 <div className="container">
@@ -112,17 +124,26 @@ export default function AreaPage({ city, slug, intro, neighborhoods }: AreaPageP
                 </div>
                 </div>
             </section>
+            <CompletedJobsFeed areaSlug={slug} />
+
+            {localSection && (
+                <section className={styles.local}>
+                    <div className="container">
+                        <div className={styles.localBody}>{localSection}</div>
+                    </div>
+                </section>
+            )}
 
             <section className={styles.services}>
                 <div className="container">
-                    <h2>Naše usluge u {cityLoc}</h2>
+                    <h2>Što peremo u {cityLoc}</h2>
                     <div className={styles.grid}>
                         {services.map((s, i) => (
                             <Link key={i} href={s.href} className={styles.card}>
                                 <div className={styles.cardIcon}>{s.icon}</div>
                                 <h3>{s.title}</h3>
                                 <p>{s.desc}</p>
-                                <span className={styles.cardLink}>Saznajte više <ArrowRight size={14} /></span>
+                                <span className={styles.cardLink}>{s.link} <ArrowRight size={14} /></span>
                             </Link>
                         ))}
                     </div>
@@ -143,7 +164,7 @@ export default function AreaPage({ city, slug, intro, neighborhoods }: AreaPageP
 
             <section className={styles.faq}>
                 <div className="container">
-                    <h2>Česta pitanja, {city}</h2>
+                    <h2>Česta pitanja o pranju u {cityLoc}</h2>
                     <div className={styles.faqList}>
                         {faq.map((item, i) => (
                             <div key={i} className={styles.faqItem}>
@@ -170,7 +191,7 @@ export default function AreaPage({ city, slug, intro, neighborhoods }: AreaPageP
                             <h2>Ostala područja</h2>
                             <ul className={styles.linkList}>
                                 {ALL_AREAS.filter((a) => a.slug !== slug).map((a) => (
-                                    <li key={a.slug}><Link href={`/podrucje/${a.slug}`}>Čišćenje {a.city}</Link></li>
+                                    <li key={a.slug}><Link href={`/podrucje/${a.slug}`}>Pranje fasade i okućnice {a.city}</Link></li>
                                 ))}
                             </ul>
                         </div>
@@ -181,7 +202,7 @@ export default function AreaPage({ city, slug, intro, neighborhoods }: AreaPageP
             <section className={styles.cta}>
                 <div className="container">
                     <div className={styles.ctaBox}>
-                        <h2>Trebate čišćenje u {cityLoc}?</h2>
+                        <h2>Trebate pranje fasade ili okućnice u {cityLoc}?</h2>
                         <p>Pošaljite 2-3 slike površine na WhatsApp za okvirnu cijenu, ili nazovite za besplatnu procjenu na licu mjesta.</p>
                         <div className={styles.ctaButtons}>
                             <a href="tel:+385958442806" className={styles.ctaBtn}>

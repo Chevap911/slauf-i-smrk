@@ -3,6 +3,7 @@ import styles from './PolitikaPrivatnosti.module.css';
 
 export const metadata: Metadata = {
     title: 'Politika privatnosti | Šlauf i Šmrk',
+    alternates: { canonical: '/politika-privatnosti' },
     description: 'Pravila privatnosti i uvjeti obrade osobnih podataka obrta Šlauf i Šmrk.',
     robots: {
         index: false,

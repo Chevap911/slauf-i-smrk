@@ -1,7 +1,7 @@
 /* Hero */
 .hero {
     padding: 4rem 0 3rem;
-    background: linear-gradient(135deg, var(--secondary) 0%, #1a4d80 100%);
+    background: var(--secondary);
     color: #fff;
     position: relative;
 }
@@ -262,7 +262,7 @@
     max-width: 700px;
     margin: 0 auto;
     padding: 3rem;
-    background: linear-gradient(135deg, var(--secondary) 0%, #1a4d80 100%);
+    background: var(--secondary);
     border-radius: 1.5rem;
     color: #fff;
     text-align: center;
@@ -365,4 +365,54 @@
         line-height: 1.06;
         letter-spacing: -0.025em;
     }
+}
+
+/* Lokalni dio: stvaran posao iz tog grada */
+.local {
+    padding: var(--section-padding);
+}
+
+.localBody {
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+.localBody h2 {
+    font-size: 2rem;
+    color: var(--secondary);
+    margin-bottom: 1rem;
+}
+
+.localBody p {
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    color: var(--text, inherit);
+}
+
+.localBody a {
+    color: var(--secondary);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.localBody figure {
+    margin: 1.5rem auto;
+    max-width: 360px;
+}
+
+.localBody video {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    display: block;
+    background: #0b1b2b;
+}
+
+.localBody figcaption {
+    margin-top: 0.6rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-align: center;
+    opacity: 0.8;
 }

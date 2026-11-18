@@ -11,7 +11,7 @@ const IMG = '/blog/kamena-terasa-sljeme';
 
 export const metadata: Metadata = {
     title: 'Koliko košta čišćenje kamena u Zagrebu 2026 | Šlauf i Šmrk',
-    description: 'Čišćenje kamene terase, staze i stepenica: 5 do 7 €/m² (na 10. 9. 2026.: 5 do 7 €/m²). Što ulazi u cijenu, od čega ovisi i što pranje ne može.',
+    description: 'Čišćenje kamene terase, staze i stepenica: od 5 €/m² (cijena na 10. 9. 2026.: 5–7 €/m²). Što ulazi u cijenu, od čega ovisi i što pranje ne može.',
     alternates: { canonical: `/blog/${SLUG}` },
     openGraph: {
         title: 'Koliko košta čišćenje kamena u Zagrebu? Cijene 2026.',
@@ -36,7 +36,7 @@ const breadcrumbSchema = {
 const FAQ = [
     {
         q: 'Koliko košta čišćenje kamene terase od 50 m²?',
-        a: 'Od 250 do 350 € (cijena na 10. 9. 2026.: 250 do 350 €), po 5 do 7 € po m². Točnu cijenu potvrđujemo nakon fotografije terase, jer ovisi o vrsti kamena i debljini naslage.',
+        a: 'Od 250 € (cijena na 10. 9. 2026.: 250–350 €), uz početnu cijenu od 5 € po m² (cijena na 10. 9. 2026.: 5–7 €/m²). Točnu cijenu potvrđujemo nakon fotografije terase, jer ovisi o vrsti kamena i debljini naslage.',
     },
     {
         q: 'Mogu li kamen oprati kućnim peračem?',
@@ -66,7 +66,7 @@ export default function BlogArticle() {
         author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         datePublished: '2026-10-20',
-        dateModified: '2026-10-20',
+        dateModified: '2026-11-01',
     };
 
     const faqSchema = {
@@ -95,8 +95,7 @@ export default function BlogArticle() {
 
                     <div className={styles.content}>
                         <p>
-                            Čišćenje kamenih površina kod nas košta <strong>5 do 7 € po m²</strong> (cijena na 10. 9. 2026.:
-                            5 do 7 € po m²). Kamena terasa od 40 m² je tako 200 do 280 €. Konačnu cijenu potvrđujemo nakon
+                            Čišćenje kamenih površina kod nas košta <strong>od 5 € po m²</strong> (cijena na 10. 9. 2026.: 5–7 €/m²). Kamena terasa od 40 m² je tako od 200 € (cijena na 10. 9. 2026.: 200–280 €). Konačnu cijenu potvrđujemo nakon
                             besplatne procjene po fotografiji, jer ovisi o vrsti kamena i debljini naslage.
                         </p>
 
@@ -104,15 +103,15 @@ export default function BlogArticle() {
                         <div className={styles.priceTable}>
                             <div className={styles.priceRow}>
                                 <span>20 m² (staza uz kuću, stepenice)</span>
-                                <strong>100 do 140 €<span className="sidrena">Cijena na 10. 9. 2026.: 100 do 140 €</span></strong>
+                                <strong>od 100 €<span className="sidrena">Cijena na 10. 9. 2026.: 100–140 €</span></strong>
                             </div>
                             <div className={styles.priceRow}>
                                 <span>40 m² (manja terasa)</span>
-                                <strong>200 do 280 €<span className="sidrena">Cijena na 10. 9. 2026.: 200 do 280 €</span></strong>
+                                <strong>od 200 €<span className="sidrena">Cijena na 10. 9. 2026.: 200–280 €</span></strong>
                             </div>
                             <div className={styles.priceRow}>
                                 <span>80 m² (terasa s okolišem)</span>
-                                <strong>400 do 560 €<span className="sidrena">Cijena na 10. 9. 2026.: 400 do 560 €</span></strong>
+                                <strong>od 400 €<span className="sidrena">Cijena na 10. 9. 2026.: 400–560 €</span></strong>
                             </div>
                         </div>
                         <p>
@@ -130,7 +129,7 @@ export default function BlogArticle() {
 
                         <h2>Zašto je kamen skuplji od betona</h2>
                         <p>
-                            Beton i tlakavci kod nas su 4 do 6 € po m², kamen 5 do 7 €. Razlika je u načinu rada. Kamen je
+                            Beton i tlakavci kod nas su od 4 € po m² (cijena na 10. 9. 2026.: 4–6 €/m²), kamen od 5 € (cijena na 10. 9. 2026.: 5–7 €/m²). Razlika je u načinu rada. Kamen je
                             porozan i osjetljiv, pa ga ne smijemo prati jakim tlakom. Radimo nižim tlakom, sredstvo mora duže
                             djelovati, a posao traje dulje nego na betonu iste površine.
                         </p>
@@ -155,7 +154,7 @@ export default function BlogArticle() {
                         </p>
                         <p>
                             <strong>Fuge.</strong> Ako su zarasle u korov, izbijamo ih prije pranja. Fugiranje kvarcnim
-                            pijeskom je dodatna stavka, 1,50 do 2,50 € po m² (cijena na 10. 9. 2026.: 1,50 do 2,50 € po m²).
+                            pijeskom je dodatna stavka, od 1,50 € po m² (cijena na 10. 9. 2026.: 1,50–2,50 €/m²).
                         </p>
 
                         <div style={pair}>

@@ -1,58 +1,40 @@
+import { serviceSeoPrice } from '@/lib/seo';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Droplets, ShieldCheck, Clock, Leaf, AlertTriangle, Bug, Ruler, Footprints, Building2, CheckCircle2 } from 'lucide-react';
+import { Droplets, ShieldCheck, Clock, Leaf, AlertTriangle, Bug, Ruler, Footprints } from 'lucide-react';
 import ServicePage from '@/components/ServicePage/ServicePage';
 import { TreeDeciduous } from 'lucide-react';
 import { OG_IMAGE } from '@/lib/seo';
 
+const seoPrice = serviceSeoPrice('yard');
+
 export const metadata: Metadata = {
-    title: 'Pranje okućnice Zagreb | Čišćenje dvorišta i prilaza',
-    description: 'Pranje okućnice, dvorišta i prilaza u Zagrebu. Uklanjamo mahovinu, alge, ulje, hrđu i prljavštinu. Cijena od 4 €/m² (na 10. 9. 2026.: od 4 €/m²).',
+    title: 'Čišćenje dvorišta Zagreb | Pranje okućnice | Šlauf i Šmrk',
+    description: `Pranje okućnice i čišćenje dvorišta u Zagrebu. ${seoPrice.rate}. Fugiranje se naplaćuje zasebno.`,
     alternates: { canonical: '/usluge/pranje-okucnice' },
     openGraph: {
-        title: 'Pranje okućnice Zagreb | Čišćenje dvorišta i prilaza',
-        description: 'Profesionalno pranje okućnica, dvorišta, prilaza i vanjskih površina u Zagrebu za privatne i poslovne objekte.',
+        title: 'Čišćenje dvorišta Zagreb | Pranje okućnice | Šlauf i Šmrk',
+        description: `Pranje okućnice i čišćenje dvorišta u Zagrebu. ${seoPrice.rate}. Fugiranje se naplaćuje zasebno.`,
         url: 'https://slaufismrk.com/usluge/pranje-okucnice',
         images: [OG_IMAGE],
-    },
-};
-
-const serviceOfferSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    '@id': 'https://slaufismrk.com/usluge/pranje-okucnice#service',
-    name: 'Pranje okućnice i vanjskih površina u Zagrebu',
-    serviceType: 'Pranje okućnice, dvorišta, prilaza i vanjskih površina',
-    description: 'Profesionalno pranje okućnica, dvorišta, prilaza, tlakavaca, terasa, parkirnih površina i vanjskih površina u Zagrebu i okolici.',
-    provider: { '@id': 'https://slaufismrk.com/#business' },
-    areaServed: ['Zagreb', 'Zagrebačka županija'],
-    offers: {
-        '@type': 'AggregateOffer',
-        priceCurrency: 'EUR',
-        lowPrice: '4',
-        highPrice: '6',
-        unitText: 'm2',
     },
 };
 
 export default function PranjeOkucnicePage() {
     return (
         <>
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceOfferSchema) }}
-            />
             <ServicePage
                 title="Pranje okućnice i prilaza u Zagrebu"
                 quoteService="yard"
                 quoteTitle="Koliko bi pranje vaše okućnice koštalo?"
                 titleHighlight="okućnice"
                 canonicalPath="/usluge/pranje-okucnice"
-                description="Profesionalno pranje okućnica, dvorišta, prilaza, terasa i većih vanjskih površina u Zagrebu i okolici. Uklanjamo mahovinu, alge, korov iz fuga, uljne mrlje, hrđu i nakupljenu prljavštinu s tlakavaca, betona, kamena i asfalta. Za okvirnu cijenu pošaljite slike na WhatsApp, za veće površine dolazimo na lokaciju i dajemo jasnu procjenu bez obaveza."
+                description="Pranje okućnica, dvorišta, prilaza, terasa i većih vanjskih površina u Zagrebu i okolici. Uklanjamo mahovinu, alge, korov iz fuga, uljne mrlje, hrđu i nakupljenu prljavštinu s tlakavaca, betona, kamena i asfalta. Za okvirnu cijenu pošaljite slike na WhatsApp, za veće površine dolazimo na lokaciju i dajemo jasnu procjenu bez obaveza."
                 priceHint="od 4 €/m²"
-                priceAnchor="od 4 €/m²"
+                priceAnchor="4–6 €/m²"
+
                 heroImage="/seo-results/pranje-terasa/poslije.jpeg"
-                heroImageAlt="Okućnica i terasa nakon profesionalnog čišćenja u Zagrebu"
+                heroImageAlt="Okućnica i terasa nakon pranja u Zagrebu"
                 heroHighlights={[
                     'Okućnice, dvorišta, prilazi i parkirne površine',
                     'Uklanjanje mahovine, ulja i korova iz fuga',
@@ -62,7 +44,7 @@ export default function PranjeOkucnicePage() {
                     beforeSrc: '/seo-results/pranje-terasa/prije.jpeg',
                     afterSrc: '/seo-results/pranje-terasa/poslije.jpeg',
                     beforeAlt: 'Terasa i okućnica prije čišćenja s tamnim naslagama i prljavštinom',
-                    afterAlt: 'Terasa i okućnica poslije profesionalnog pranja u Zagrebu',
+                    afterAlt: 'Terasa i okućnica poslije pranja u Zagrebu',
                     title: 'Okućnica prije i poslije čišćenja',
                     description: 'Projekt: čišćenje terase i vanjskog prostora u Zagrebu. Problem: tamne naslage, mahovina i neujednačena boja površine. Metoda: predtretman, visokotlačno pranje i rotirajuća četka. Rezultat: vidljivo čišća, svjetlija i urednija površina nakon jednog tretmana.',
                 }}
@@ -77,7 +59,7 @@ export default function PranjeOkucnicePage() {
                     },
                     {
                         title: 'Visokotlačno pranje',
-                        description: 'S profesionalnim peračem i rotirajućom četkom ravnomjerno čistimo cijelu površinu bez oštećenja podloge.',
+                        description: 'Visokotlačnim peračem i rotirajućom četkom ravnomjerno čistimo cijelu površinu bez oštećenja podloge.',
                     },
                     {
                         title: 'Ispiranje i završetak',
@@ -147,10 +129,10 @@ export default function PranjeOkucnicePage() {
                             <tbody>
                                 {[
                                     { size: 'Do 50 m²', price: 'od 200 €', anchor: 'od 200 €', note: 'manja terasa, ulaz ili dio dvorišta' },
-                                    { size: '100 m²', price: 'od 400 €', anchor: 'od 400 €', note: 'standardna okućnica ili prilaz' },
-                                    { size: '200 m²', price: 'od 800 €', anchor: 'od 800 €', note: 'veće dvorište, prilaz i staze' },
+                                    { size: '100 m²', price: 'od 400 €', anchor: '400–600 €', note: 'standardna okućnica ili prilaz' },
+                                    { size: '200 m²', price: 'od 800 €', anchor: '800–1.200 €', note: 'veće dvorište, prilaz i staze' },
                                     { size: 'Veće od 200 m²', price: 'po procjeni', anchor: '', note: 'veće okućnice, zgrade i poslovni objekti' },
-                                    { size: 'Parkirne površine', price: 'po procjeni', note: 'ovisi o ulju, gumama i zaprljanosti' },
+                                    { size: 'Parkirne površine', price: 'po procjeni', anchor: '', note: 'ovisi o ulju, gumama i zaprljanosti' },
                                 ].map((row, i) => (
                                     <tr key={i} style={{ borderBottom: '1px solid #eee' }}>
                                         <td style={{ padding: '10px 14px', fontWeight: 600 }}>{row.size}</td>
@@ -208,9 +190,9 @@ export default function PranjeOkucnicePage() {
                             <li>sezonsko čišćenje prije proljeća ili turističke sezone</li>
                         </ul>
 
-                        <h2>Kada je vrijeme za profesionalno pranje okućnice?</h2>
+                        <h2>Kada je vrijeme za pranje okućnice?</h2>
                         <p>
-                            Profesionalno čišćenje ima smisla kada se prljavština više ne može ukloniti
+                            Strojno pranje ima smisla kada se prljavština više ne može ukloniti
                             običnim pranjem, kada su fuge pune mahovine ili kada je površina postala skliska.
                             Posebno je korisno prije prodaje nekretnine, prije dolaska gostiju, prije sezone
                             rada kafića ili nakon zime.
@@ -258,7 +240,7 @@ export default function PranjeOkucnicePage() {
                         <ul>
                             <li><strong>Stvarne prije/poslije fotografije</strong>, pokazujemo rezultate naših izvedbi</li>
                             <li><strong>Procjena prije početka</strong>, nema rada napamet ni nejasne cijene</li>
-                            <li><strong>Rotirajuća četka i profesionalna oprema</strong>, ravnomjerno čišćenje bez pruga</li>
+                            <li><strong>Rotirajuća četka</strong>, ravnomjerno čišćenje bez pruga</li>
                             <li><strong>Brz odgovor na upite</strong>, odgovaramo u najkraćem roku</li>
                             <li><strong>Paketna usluga</strong>, okućnica, fasada, terasa i prilaz u jednom terminu</li>
                             <li><strong>Zagreb i okolica</strong>, za veće objekte moguć dogovor i izvan županije</li>
@@ -273,7 +255,7 @@ export default function PranjeOkucnicePage() {
                     },
                     {
                         title: 'Rotirajuća četka',
-                        description: 'Koristimo profesionalnu rotirajuću četku koja ravnomjerno čisti veliku površinu bez ostavljanja pruga.',
+                        description: 'Koristimo rotirajuću četku koja ravnomjerno čisti veliku površinu bez ostavljanja pruga.',
                         icon: <ShieldCheck size={24} />,
                     },
                     {
@@ -312,7 +294,7 @@ export default function PranjeOkucnicePage() {
                 faq={[
                     {
                         question: 'Koliko košta čišćenje okućnice u Zagrebu?',
-                        answer: 'Cijena ovisi o kvadraturi i materijalu. Okvirni raspon je od 4 €/m² (cijena na 10. 9. 2026.: od 4 €/m²). Za okućnicu od 100 m² to je okvirno od 400 € (na 10. 9. 2026.: od 400 €). Točna cijena ovisi o stanju površine, nudimo procjenu na lokaciji.',
+                        answer: 'Cijena ovisi o kvadraturi i materijalu. Početna cijena je od 4 €/m² (cijena na 10. 9. 2026.: 4–6 €/m²). Za okućnicu od 100 m² to je okvirno od 400 € (cijena na 10. 9. 2026.: 400–600 €). Točna cijena ovisi o stanju površine, nudimo procjenu na lokaciji.',
                     },
                     {
                         question: 'Hoće li visokotlačno pranje oštetiti betonske kocke?',
@@ -320,7 +302,7 @@ export default function PranjeOkucnicePage() {
                     },
                     {
                         question: 'Koliko često trebam čistiti okućnicu?',
-                        answer: 'Preporučujemo profesionalno čišćenje jednom godišnje, idealno u proljeće nakon zime. Okućnice u sjeni i poslovni ulazi trebaju češće čišćenje.',
+                        answer: 'Preporučujemo pranje jednom godišnje, idealno u proljeće nakon zime. Okućnice u sjeni i poslovni ulazi trebaju češće čišćenje.',
                     },
                     {
                         question: 'Možete li ukloniti mrlje od ulja?',
@@ -328,7 +310,7 @@ export default function PranjeOkucnicePage() {
                     },
                     {
                         question: 'Trebam li osigurati vodu za čišćenje?',
-                        answer: 'Da, najčešće se spajamo na vaš priključak za vodu i trebamo pristup struji. Profesionalnu opremu i sredstva donosimo mi.',
+                        answer: 'Da, najčešće se spajamo na vaš priključak za vodu i trebamo pristup struji. Opremu i sredstva donosimo mi.',
                     },
                     {
                         question: 'Čistite li i stepenice i rubnjake?',

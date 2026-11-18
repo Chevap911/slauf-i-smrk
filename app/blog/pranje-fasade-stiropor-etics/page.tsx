@@ -53,7 +53,7 @@ export default function BlogArticle() {
         author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         datePublished: '2026-05-26',
-        dateModified: '2026-10-10',
+        dateModified: '2026-11-01',
         image: 'https://slaufismrk.com/prije-poslje/fasada-poslje.png',
     };
 
@@ -69,7 +69,7 @@ export default function BlogArticle() {
             {
                 '@type': 'Question',
                 name: 'Koliko košta pranje stiropor fasade?',
-                acceptedAnswer: { '@type': 'Answer', text: 'Pranje ETICS fasade kreće se od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²). Za obiteljsku kuću od 200 m² fasade to je od 1.000 € (na 10. 9. 2026.: od 1.000 €). Točna cijena ovisi o stupnju zaraženosti i dostupnosti površine.' },
+                acceptedAnswer: { '@type': 'Answer', text: 'Pranje ETICS fasade kreće se od 5 €/m² (cijena na 10. 9. 2026.: 5–7 €/m²). Za obiteljsku kuću od 200 m² fasade to je od 1.000 € (cijena na 10. 9. 2026.: 1.000–1.400 €). Točna cijena ovisi o stupnju zaraženosti i dostupnosti površine.' },
             },
             {
                 '@type': 'Question',
@@ -234,15 +234,15 @@ export default function BlogArticle() {
                         <div className={styles.priceTable}>
                             <div className={styles.priceRow}>
                                 <span>ETICS fasada (softwash)</span>
-                                <strong>od 5 €/m²<span className="sidrena">Cijena na 10. 9. 2026.: od 5 €/m²</span></strong>
+                                <strong>od 5 €/m²<span className="sidrena">Cijena na 10. 9. 2026.: 5–7 €/m²</span></strong>
                             </div>
                             <div className={styles.priceRow}>
                                 <span>Obiteljska kuća 150 m² fasade</span>
-                                <strong>od 750 €<span className="sidrena">Cijena na 10. 9. 2026.: od 750 €</span></strong>
+                                <strong>od 750 €<span className="sidrena">Cijena na 10. 9. 2026.: 750–1.050 €</span></strong>
                             </div>
                             <div className={styles.priceRow}>
                                 <span>Obiteljska kuća 250 m² fasade</span>
-                                <strong>od 1.250 €<span className="sidrena">Cijena na 10. 9. 2026.: od 1.250 €</span></strong>
+                                <strong>od 1.250 €<span className="sidrena">Cijena na 10. 9. 2026.: 1.250–1.750 €</span></strong>
                             </div>
                             <div className={styles.priceRow}>
                                 <span>Besplatna procjena na licu mjesta</span>
@@ -265,7 +265,7 @@ export default function BlogArticle() {
                         <p>
                             Sanacija ETICS fasade na obiteljskoj kući od 150 m² iznosi 15.000 do 40.000 €,
                             ovisno o tome koliko slojeva treba skinuti i jesu li u igri i termička oštećenja
-                            stiropore ispod. Softwash tretman koji košta od 750 € (cijena na 10. 9. 2026.: od 750 €) postaje iznimno isplativa
+                            stiropore ispod. Softwash tretman koji košta od 750 € (cijena na 10. 9. 2026.: 750–1.050 €) postaje iznimno isplativa
                             prevencija.
                         </p>
 
@@ -280,8 +280,8 @@ export default function BlogArticle() {
 
                         <h3>Koliko košta pranje stiropor fasade?</h3>
                         <p>
-                            Pranje ETICS fasade kreće se od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²). Za obiteljsku kuću od 200 m² fasade
-                            to je od 1.000 € (na 10. 9. 2026.: od 1.000 €). Točna cijena ovisi o stupnju zaraženosti i dostupnosti površine.
+                            Pranje ETICS fasade kreće se od 5 €/m² (cijena na 10. 9. 2026.: 5–7 €/m²). Za obiteljsku kuću od 200 m² fasade
+                            to je od 1.000 € (cijena na 10. 9. 2026.: 1.000–1.400 €). Točna cijena ovisi o stupnju zaraženosti i dostupnosti površine.
                         </p>
 
                         <h3>Kako prepoznati je li moja fasada ETICS?</h3>

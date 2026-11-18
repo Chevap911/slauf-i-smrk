@@ -1,8 +1,11 @@
+
+import JsonLd from '@/components/JsonLd/JsonLd';
+import CompletedJobsFeed from '@/components/CompletedJobsFeed/CompletedJobsFeed';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import {
-    ShieldCheck, Home, Car, TreeDeciduous, HeartHandshake, Droplets,
-    Sofa, ArrowRight, Phone, Waves
+    ShieldCheck, Home, Car, TreeDeciduous, HeartHandshake,
+    Sofa, ArrowRight, Phone, Waves, Building2, Landmark
 } from 'lucide-react';
 import { GUIDES, ALL_AREAS } from '@/components/AreaPage/areaLinks';
 import styles from './zagreb.module.css';
@@ -38,14 +41,14 @@ const breadcrumbSchema = {
 const faq = [
     {
         question: 'Koliko košta pranje fasade u Zagrebu?',
-        answer: 'Cijena pranja fasade u Zagrebu kreće se od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²), ovisno o veličini, materijalu i stupnju zaprljanosti. Za točnu cijenu šaljemo procjenu na temelju slika ili dolazimo na lokaciju.',
+        answer: 'Cijena pranja fasade u Zagrebu kreće se od 5 €/m² (cijena na 10. 9. 2026.: 5–7 €/m²), ovisno o veličini, materijalu i stupnju zaprljanosti. Za točnu cijenu šaljemo procjenu na temelju slika ili dolazimo na lokaciju.',
     },
     {
         question: 'Koliko košta čišćenje okućnice u Zagrebu?',
-        answer: 'Cijena čišćenja okućnice u Zagrebu kreće se od 4 €/m² (cijena na 10. 9. 2026.: od 4 €/m²), ovisno o kvadraturi i materijalu. Za veće površine i pakete dajemo procjenu prije početka rada.',
+        answer: 'Cijena čišćenja okućnice u Zagrebu kreće se od 4 €/m² (cijena na 10. 9. 2026.: 4–6 €/m²), ovisno o kvadraturi i materijalu. Za veće površine dajemo procjenu prije početka rada.',
     },
     {
-        question: 'Koliko brzo dolazite u Zagrebu?',
+        question: 'Koliko brzo dolazite u Zagreb?',
         answer: 'Odgovaramo u roku od sat vremena, a termin dogovaramo prema vašoj dostupnosti. Za brzu okvirnu cijenu pošaljite slike fasade ili okućnice na WhatsApp.',
     },
     {
@@ -54,7 +57,7 @@ const faq = [
     },
     {
         question: 'Mogu li kombinirati pranje fasade i okućnice u istom terminu?',
-        answer: 'Da, najčešći izbor je kombinacija fasade, okućnice, terase i prilaza u jednom terminu uz paketnu cijenu.',
+        answer: 'Da. Fasadu, okućnicu, terasu i prilaz najčešće peremo u istom dolasku, pa stroj i crijeva razvlačimo samo jednom.',
     },
 ];
 
@@ -69,14 +72,15 @@ const faqSchema = {
 };
 
 const services = [
-    { title: 'Pranje Fasade', href: '/usluge/pranje-fasade', icon: <ShieldCheck size={24} />, desc: 'Uklanjamo alge, mahovinu i prljavštinu s fasade vaše kuće.' },
-    { title: 'Pranje Okućnice', href: '/usluge/pranje-okucnice', icon: <Home size={24} />, desc: 'Betonske kocke, kamene ploče, prilazi, vraćamo izvornu ljepotu.' },
-    { title: 'Kemijsko Čišćenje', href: '/usluge/kemijsko-ciscenje-namjestaja', icon: <Sofa size={24} />, desc: 'Tepisi, garniture, madraci, dubinsko čišćenje na vašoj adresi.' },
-    { title: 'Kamene Površine', href: '/usluge/ciscenje-kamenih-povrsina', icon: <TreeDeciduous size={24} />, desc: 'Klupice, stolovi, kipovi, staze, kamen će ponovno sjajiti.' },
-    { title: 'Drvene Površine', href: '/usluge/ciscenje-drvenih-povrsina', icon: <Droplets size={24} />, desc: 'Terase, ograde i vrtni namještaj, uklanjamo sivilo drva.' },
-    { title: 'Detailing Auta', href: '/usluge/detailing-automobila', icon: <Car size={24} />, desc: 'Kompletna njega vozila: čišćenje, poliranje i zaštita laka.' },
-    { title: 'Pranje Bazena', href: '/usluge/pranje-bazena', icon: <Waves size={24} />, desc: 'Pripremite vaš bazen za sezonu kupanja.' },
-    { title: 'Grobna Mjesta', href: '/usluge/odrzavanje-grobnih-mjesta', icon: <HeartHandshake size={24} />, desc: 'Dostojanstvena njega nadgrobnih spomenika.' },
+    { title: 'Pranje fasade', href: '/usluge/pranje-fasade', icon: <ShieldCheck size={24} />, desc: 'Skidamo alge, mahovinu i crne tragove s fasade kuće.', link: 'Pranje fasade: cijena i postupak' },
+    { title: 'Pranje okućnice', href: '/usluge/pranje-okucnice', icon: <Home size={24} />, desc: 'Betonske kocke, kamene ploče i prilazi bez nagažene prljavštine.', link: 'Pranje okućnice: cijena i postupak' },
+    { title: 'Pranje vrućom vodom za tvrtke', href: '/usluge/poslovni-objekti', icon: <Building2 size={24} />, desc: 'Podovi, fasade, zidovi i stepeništa za tvrtke i ustanove, noću.', link: 'Pranje vrućom vodom za tvrtke i ustanove' },
+    { title: 'Kemijsko čišćenje', href: '/usluge/kemijsko-ciscenje-namjestaja', icon: <Sofa size={24} />, desc: 'Garniture, madraci i tepisi, dubinsko čišćenje na vašoj adresi.', link: 'Kemijsko čišćenje namještaja: cijena' },
+    { title: 'Kamene površine', href: '/usluge/ciscenje-kamenih-povrsina', icon: <Landmark size={24} />, desc: 'Kamene klupe, stolovi, staze i zidovi bez tamnih naslaga.', link: 'Čišćenje kamenih površina' },
+    { title: 'Drvene površine', href: '/usluge/ciscenje-drvenih-povrsina', icon: <TreeDeciduous size={24} />, desc: 'Terase, ograde i vrtni namještaj bez sivila.', link: 'Čišćenje drvenih površina' },
+    { title: 'Detailing auta', href: '/usluge/detailing-automobila', icon: <Car size={24} />, desc: 'Vanjsko i unutarnje čišćenje uz dolazak na vašu adresu.', link: 'Detailing auta uz dolazak' },
+    { title: 'Pranje bazena', href: '/usluge/pranje-bazena', icon: <Waves size={24} />, desc: 'Pripremamo bazen za sezonu kupanja.', link: 'Pranje bazena prije sezone' },
+    { title: 'Grobna mjesta', href: '/usluge/odrzavanje-grobnih-mjesta', icon: <HeartHandshake size={24} />, desc: 'Trenutačno samo prijave na listu interesa.', link: 'Lista interesa za čišćenje groba' },
 ];
 
 const kvartovi = [
@@ -88,8 +92,8 @@ const kvartovi = [
 export default function ZagrebPage() {
     return (
         <div className={styles.page}>
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+            <JsonLd data={breadcrumbSchema} />
+            <JsonLd data={faqSchema} />
 
             <section className={styles.hero}>
                 <div className="container">
@@ -100,8 +104,8 @@ export default function ZagrebPage() {
                         </div>
                         <h1>Pranje pod pritiskom <span>u Zagrebu</span>, u svim kvartovima</h1>
                         <p className={styles.heroIntro}>
-                            Profesionalne usluge pranja fasade, okućnice i vanjskih površina u svim dijelovima
-                            Zagreba i okolice. Od fasada u Španskom do dvorišta u Maksimiru, tu smo za vas.
+                            Peremo fasade, okućnice, terase i tlakavce u svim kvartovima Zagreba, od Španskog do
+                            Dubrave. Pošaljite dvije do tri slike površine i javimo okvirnu cijenu.
                         </p>
                         <a href="tel:+385958442806" className={styles.heroCta}>
                             <Phone size={18} /> Nazovite +385 95 844 2806
@@ -115,17 +119,18 @@ export default function ZagrebPage() {
                 </div>
                 </div>
             </section>
+            <CompletedJobsFeed areaSlug="zagreb" />
 
             <section className={styles.services}>
                 <div className="container">
-                    <h2>Naše usluge u Zagrebu</h2>
+                    <h2>Što peremo u Zagrebu</h2>
                     <div className={styles.grid}>
                         {services.map((s, i) => (
                             <Link key={i} href={s.href} className={styles.card}>
                                 <div className={styles.cardIcon}>{s.icon}</div>
                                 <h3>{s.title}</h3>
                                 <p>{s.desc}</p>
-                                <span className={styles.cardLink}>Saznajte više <ArrowRight size={14} /></span>
+                                <span className={styles.cardLink}>{s.link} <ArrowRight size={14} /></span>
                             </Link>
                         ))}
                     </div>
@@ -135,7 +140,7 @@ export default function ZagrebPage() {
             <section className={styles.areas}>
                 <div className="container">
                     <h2>Kvartovi i područja koja pokrivamo</h2>
-                    <p className={styles.areasSubtitle}>Brza i pouzdana usluga u cijelom Zagrebu i bližoj okolici</p>
+                    <p className={styles.areasSubtitle}>Dolazimo u sve kvartove Zagreba i u bližu okolicu</p>
                     <div className={styles.tags}>
                         {kvartovi.map((k, i) => (
                             <span key={i} className={styles.tag}>{k}</span>
@@ -146,7 +151,7 @@ export default function ZagrebPage() {
 
             <section className={styles.faq}>
                 <div className="container">
-                    <h2>Česta pitanja, Zagreb</h2>
+                    <h2>Česta pitanja o pranju u Zagrebu</h2>
                     <div className={styles.faqList}>
                         {faq.map((item, i) => (
                             <div key={i} className={styles.faqItem}>
@@ -173,7 +178,7 @@ export default function ZagrebPage() {
                             <h2>Ostala područja</h2>
                             <ul className={styles.linkList}>
                                 {ALL_AREAS.filter((a) => a.slug !== 'zagreb').map((a) => (
-                                    <li key={a.slug}><Link href={`/podrucje/${a.slug}`}>Čišćenje {a.city}</Link></li>
+                                    <li key={a.slug}><Link href={`/podrucje/${a.slug}`}>Pranje fasade i okućnice {a.city}</Link></li>
                                 ))}
                             </ul>
                         </div>
@@ -184,7 +189,7 @@ export default function ZagrebPage() {
             <section className={styles.cta}>
                 <div className="container">
                     <div className={styles.ctaBox}>
-                        <h2>Trebate čišćenje u Zagrebu?</h2>
+                        <h2>Trebate pranje fasade ili okućnice u Zagrebu?</h2>
                         <p>Nazovite nas ili ispunite kontakt formu za besplatnu procjenu. Odgovaramo u roku od sat vremena.</p>
                         <div className={styles.ctaButtons}>
                             <a href="tel:+385958442806" className={styles.ctaBtn}>

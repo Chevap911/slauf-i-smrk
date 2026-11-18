@@ -193,6 +193,9 @@ for (const page of pages) {
     const ogUrl = metaContent(html, "property", "og:url");
     const ogImage = metaContent(html, "property", "og:image");
     const canonical = canonicalOf(html);
+    const expectedCanonical = `https://slaufismrk.com${path}`;
+    if (!canonical || !sameUrl(canonical, expectedCanonical))
+      fail(path, "Missing or incorrect canonical", `${canonical || "missing"}  expected ${expectedCanonical}`);
     if (!ogTitle) fail(path, "Missing og:title", "");
     else if (path !== "/" && ogTitle === homeOgTitle) fail(path, "Share card inherits the homepage", `og:title "${ogTitle}". Build metadata with pageMeta() from lib/seo.ts.`);
     if (!ogUrl) fail(path, "Missing og:url", "");
@@ -224,6 +227,17 @@ for (const page of pages) {
     if (Object.keys(n).length === 1 && n["@id"] && businessId && n["@id"] !== businessId)
       warn(path, "Schema reference to an unknown @id", n["@id"]);
   });
+
+  // A service page owns one canonical Service node. Duplicated offers can contradict visible prices.
+  if (path.startsWith('/usluge/')) {
+    const services = [];
+    walk(ld, (n) => { if (types(n).includes('Service') && n['@id']) services.push(n); });
+    if (services.length !== 1) fail(path, 'Expected one Service schema', String(services.length));
+    for (const service of services) walk(service.offers || {}, (n) => {
+      if (n.maxPrice !== undefined || n.highPrice !== undefined)
+        fail(path, 'Upper price bound contradicts starting prices', JSON.stringify(n));
+    });
+  }
 
   // 6. Breadcrumbs must lead somewhere real.
   const crumbs = [];

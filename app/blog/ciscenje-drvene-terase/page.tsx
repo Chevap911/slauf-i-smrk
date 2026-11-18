@@ -10,7 +10,7 @@ const SLUG = '/blog/ciscenje-drvene-terase';
 export const metadata: Metadata = {
     title: 'Čišćenje drvene terase: pranje ili brušenje? | Šlauf i Šmrk',
     description:
-        'Posivjela drvena terasa najčešće ne treba brušenje. Kada je dovoljno pranje i koliko košta: 6–8 €/m² (na 10. 9. 2026.: 6–8 €/m²).',
+        'Posivjela drvena terasa najčešće ne treba brušenje. Kada je dovoljno pranje i koliko košta: od 6 €/m² (cijena na 10. 9. 2026.: 6–8 €/m²).',
     keywords: [
         'čišćenje drvene terase',
         'održavanje drvene terase',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 const faq = [
     {
         q: 'Koliko košta čišćenje drvene terase?',
-        a: 'Čišćenje drvenih površina kod nas je 6–8 €/m² (cijena na 10. 9. 2026.: 6–8 €/m²). Cijena ovisi o vrsti drva, stanju i zaprljanosti, a točnu potvrđujemo nakon besplatne procjene.',
+        a: 'Čišćenje drvenih površina kod nas je od 6 €/m² (cijena na 10. 9. 2026.: 6–8 €/m²). Cijena ovisi o vrsti drva, stanju i zaprljanosti, a točnu potvrđujemo nakon besplatne procjene.',
     },
     {
         q: 'Hoće li pranje pod tlakom oštetiti drvenu terasu?',
@@ -70,7 +70,7 @@ const articleSchema = {
     author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
     publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
     datePublished: '2026-09-27',
-    dateModified: '2026-10-10',
+    dateModified: '2026-11-01',
     url: `https://slaufismrk.com${SLUG}`,
 };
 
@@ -116,7 +116,7 @@ export default function BlogArticle() {
                         <div className={styles.priceTable}>
                             <div className={styles.priceRow}>
                                 <span>Čišćenje drvene terase, ograde ili pergole</span>
-                                <strong>6–8 €/m²<span className="sidrena">Cijena na 10. 9. 2026.: 6–8 €/m²</span></strong>
+                                <strong>od 6 €/m²<span className="sidrena">Cijena na 10. 9. 2026.: 6–8 €/m²</span></strong>
                             </div>
                             <div className={styles.priceRow}>
                                 <span>Procjena na lokaciji</span>
@@ -124,7 +124,7 @@ export default function BlogArticle() {
                             </div>
                         </div>
                         <p>
-                            Gdje ste unutar raspona ovisi o vrsti drva, stanju i koliko je terasa zarasla. Sve naše cijene
+                            Konačna cijena ovisi o vrsti drva, stanju i koliko je terasa zarasla. Sve naše cijene
                             su u <Link href="/cjenik">cjeniku</Link>.
                         </p>
 

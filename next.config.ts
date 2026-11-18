@@ -1,5 +1,13 @@
 import path from "node:path";
+import { existsSync, readFileSync } from "node:fs";
 import type { NextConfig } from "next";
+
+// Važeći strojno čitljiv cjenik (NN 132/2026-1584, čl. 6 st. 2: izmijenjena datoteka
+// na istom URL-u). Manifest piše `npm run cjenik`.
+const cjenikManifest = path.resolve(__dirname, "public/cjenik/manifest.json");
+const vazeciCjenik: { datoteka: string } | null = existsSync(cjenikManifest)
+  ? JSON.parse(readFileSync(cjenikManifest, "utf8")).vazeci
+  : null;
 
 const nextConfig: NextConfig = {
   typescript: {
@@ -19,8 +27,28 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: path.resolve(__dirname),
   },
+  async headers() {
+    return [
+      {
+        source: "/cjenik/:file*.csv",
+        headers: [
+          { key: "Content-Type", value: "text/csv; charset=utf-8" },
+          { key: "Cache-Control", value: "public, max-age=0, must-revalidate" },
+        ],
+      },
+    ];
+  },
   async redirects() {
     return [
+      ...(vazeciCjenik
+        ? [{ source: "/cjenik.csv", destination: `/cjenik/${vazeciCjenik.datoteka}`, permanent: false }]
+        : []),
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.slaufismrk.com' }],
+        destination: 'https://slaufismrk.com/:path*',
+        permanent: true,
+      },
       {
         source: '/home',
         destination: '/',
@@ -28,12 +56,18 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/gallery',
-        destination: '/',
+        destination: '/galerija',
         permanent: true,
       },
       {
         source: '/shop',
         destination: '/',
+        permanent: true,
+      },
+      // 16.11.2026.: dvije B2B stranice spojene u jednu.
+      {
+        source: '/usluge/komercijalno-ciscenje',
+        destination: '/usluge/poslovni-objekti',
         permanent: true,
       },
       {

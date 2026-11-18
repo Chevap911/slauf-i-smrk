@@ -1,3 +1,4 @@
+import { serviceSeoPrice } from '@/lib/seo';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Droplets, ShieldCheck, Clock, Leaf, AlertTriangle, Bug, Ruler } from 'lucide-react';
@@ -5,13 +6,15 @@ import ServicePage from '@/components/ServicePage/ServicePage';
 import { Home, CarFront, Waves } from 'lucide-react';
 import { OG_IMAGE } from '@/lib/seo';
 
+const seoPrice = serviceSeoPrice('pavers');
+
 export const metadata: Metadata = {
-    title: 'Pranje tlakavaca Zagreb, behaton i betonske kocke',
-    description: 'Pranje tlakavaca u Zagrebu. Čistimo behaton i betonske kocke, uklanjamo mahovinu, korov i mrlje od ulja. Cijena od 4 €/m² (na 10. 9. 2026.: od 4 €/m²).',
+    title: 'Pranje tlakavaca Zagreb, behaton i kocke | Šlauf i Šmrk',
+    description: `Pranje tlakavaca, betonskih kocki i opločnika u Zagrebu. ${seoPrice.rate}. Fugiranje uz doplatu.`,
     alternates: { canonical: '/usluge/pranje-tlakavaca' },
     openGraph: {
-        title: 'Pranje tlakavaca Zagreb | Čišćenje behatona i betonskih kocki',
-        description: 'Profesionalno čišćenje tlakavaca, behatona i betonskih kocki u Zagrebu.',
+        title: 'Pranje tlakavaca Zagreb, behaton i kocke | Šlauf i Šmrk',
+        description: `Pranje tlakavaca, betonskih kocki i opločnika u Zagrebu. ${seoPrice.rate}. Fugiranje uz doplatu.`,
         url: 'https://slaufismrk.com/usluge/pranje-tlakavaca',
         images: [OG_IMAGE],
     },
@@ -25,11 +28,12 @@ export default function PranjeTlakavacaPage() {
             quoteTitle="Koliko bi pranje vaših tlakavaca koštalo?"
             titleHighlight="tlakavaca"
             canonicalPath="/usluge/pranje-tlakavaca"
-            description="Profesionalno pranje tlakavaca uklanja mahovinu, korov iz fuga, crne naslage i mrlje od ulja s betonskih kocki i behatona. Vraćamo ujednačenu boju i čist izgled dvorištu, terasi i prilazu u Zagrebu i okolici."
+            description="Pranje tlakavaca uklanja mahovinu, korov iz fuga, crne naslage i mrlje od ulja s betonskih kocki i behatona. Vraćamo ujednačenu boju i čist izgled dvorištu, terasi i prilazu u Zagrebu i okolici."
             priceHint="od 4 €/m²"
-            priceAnchor="od 4 €/m²"
-            heroImage="/seo-results/pranje-tlakavaca/prije-poslije.jpg"
-            heroImageAlt="Prikaz prije i poslije čišćenja tlakavaca"
+            priceAnchor="4–6 €/m²"
+
+            heroImage="/projekti/tlakavci/tlakavci-staza-poslije-pranja.webp"
+            heroImageAlt="Staza od tlakavaca nakon pranja, bez mahovine i korova u fugama"
             heroHighlights={[
                 'Čišćenje behatona i betonskih kocki',
                 'Uklanjanje korova, mahovine i crnih fuga',
@@ -52,7 +56,7 @@ export default function PranjeTlakavacaPage() {
                 },
                 {
                     title: 'Rotirajuće i visokotlačno čišćenje',
-                    description: 'Profesionalnom opremom čistimo cijelu površinu tako da tlakavci dobiju ravnomjeran, uredan izgled bez slučajnih tragova.',
+                    description: 'Čistimo cijelu površinu tako da tlakavci dobiju ravnomjeran, uredan izgled bez slučajnih tragova.',
                 },
                 {
                     title: 'Savjet za fuge',
@@ -70,7 +74,7 @@ export default function PranjeTlakavacaPage() {
                     <p>
                         Najčešći problem kod behatona nije samo površinska prljavština, nego i to što se
                         <strong> fuge ispune organskim materijalom</strong>, pa korov i alge izbijaju iznutra.
-                        Upravo zato profesionalno pranje tlakavaca daje puno bolji rezultat od običnog kućnog perača.
+                        Upravo zato strojno pranje tlakavaca daje puno bolji rezultat od običnog kućnog perača.
                     </p>
 
                     <h2>Što sve uključuje čišćenje tlakavaca?</h2>
@@ -87,7 +91,7 @@ export default function PranjeTlakavacaPage() {
                         Okvirna cijena za Zagreb najčešće se kreće ovako:
                     </p>
                     <ul>
-                        <li><strong>Cijena po m²</strong>: od 4 €/m² (cijena na 10. 9. 2026.: od 4 €/m²)</li>
+                        <li><strong>Cijena po m²</strong>: od 4 €/m² (cijena na 10. 9. 2026.: 4–6 €/m²)</li>
                         <li><strong>Konačna cijena</strong>: ovisi o kvadraturi, stanju fuga, korovu i eventualnim mrljama od ulja.</li>
                     </ul>
                     <p>
@@ -111,7 +115,7 @@ export default function PranjeTlakavacaPage() {
                 },
                 {
                     title: 'Ravnomjeran rezultat',
-                    description: 'Profesionalna oprema daje ujednačeniji rezultat od klasičnog kućnog perača pod pritiskom.',
+                    description: 'Naša oprema daje ujednačeniji rezultat od klasičnog kućnog perača pod pritiskom.',
                     icon: <ShieldCheck size={24} />,
                 },
                 {
@@ -150,7 +154,7 @@ export default function PranjeTlakavacaPage() {
             faq={[
                 {
                     question: 'Koliko košta pranje tlakavaca u Zagrebu?',
-                    answer: 'Okvirna cijena za pranje tlakavaca kreće se od 4 €/m² (cijena na 10. 9. 2026.: od 4 €/m²), a konačna ponuda ovisi o kvadraturi, stanju fuga i prisutnosti korova ili mrlja.',
+                    answer: 'Okvirna cijena za pranje tlakavaca kreće se od 4 €/m² (cijena na 10. 9. 2026.: 4–6 €/m²), a konačna ponuda ovisi o kvadraturi, stanju fuga i prisutnosti korova ili mrlja.',
                 },
                 {
                     question: 'Uključuje li pranje tlakavaca i ponovno fugiranje pijeskom?',

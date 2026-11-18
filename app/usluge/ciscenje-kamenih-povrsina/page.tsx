@@ -1,3 +1,4 @@
+import { serviceSeoPrice } from '@/lib/seo';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Droplets, ShieldCheck, Clock, Leaf, AlertTriangle, Bug, Landmark, Snowflake } from 'lucide-react';
@@ -5,13 +6,15 @@ import ServicePage from '@/components/ServicePage/ServicePage';
 import { Home, HeartHandshake, TreeDeciduous } from 'lucide-react';
 import { OG_IMAGE } from '@/lib/seo';
 
+const seoPrice = serviceSeoPrice('stone');
+
 export const metadata: Metadata = {
-    title: 'Čišćenje i impregnacija kamena, Zagreb',
-    description: 'Čistimo kamene terase, stepenice, staze i zidove, a po želji ih impregniramo. Od 5 €/m² (na 10. 9. 2026.: od 5 €/m²), procjena besplatna.',
+    title: `Čišćenje i impregnacija kamena Zagreb | Šlauf i Šmrk`,
+    description: `Čišćenje kamena u Zagrebu: ${seoPrice.rate}. Terase, zidovi i stepenice. Impregnacija uz posebnu ponudu.`,
     alternates: { canonical: '/usluge/ciscenje-kamenih-povrsina' },
     openGraph: {
-        title: 'Čišćenje kamenih površina Zagreb | Šlauf i Šmrk',
-        description: 'Profesionalno čišćenje kamenih površina: klupice, stolovi, staze, zidovi, kipovi.',
+        title: `Čišćenje i impregnacija kamena Zagreb | Šlauf i Šmrk`,
+        description: `Čišćenje kamena u Zagrebu: ${seoPrice.rate}. Terase, zidovi i stepenice. Impregnacija uz posebnu ponudu.`,
         url: 'https://slaufismrk.com/usluge/ciscenje-kamenih-povrsina',
         images: [OG_IMAGE],
     },
@@ -25,11 +28,12 @@ export default function KamenePovsinePage() {
             quoteTitle="Koliko bi čišćenje vašeg kamena koštalo?"
             titleHighlight="kamenih površina"
             canonicalPath="/usluge/ciscenje-kamenih-povrsina"
-            description="Kamen je izdržljiv, ali s vremenom gubi ljepotu pod nanosima mahovine, lišajeva i prljavštine. Profesionalnim čišćenjem vraćamo izvorni sjaj kamenim stazama, klupicama, zidovima, kipovima i fasadnim oblogama. Prilagođavamo pristup svakom tipu kamena."
+            description="Kamen je izdržljiv, ali s vremenom gubi ljepotu pod nanosima mahovine, lišajeva i prljavštine. Čišćenjem vraćamo izvorni sjaj kamenim stazama, klupicama, zidovima, kipovima i fasadnim oblogama. Prilagođavamo pristup svakom tipu kamena."
             priceHint="od 5 €/m²"
-            priceAnchor="od 5 €/m²"
+            priceAnchor="5–7 €/m²"
+
             heroImage="/seo-results/ciscenje-kamenih-povrsina/poslije.png"
-            heroImageAlt="Kamena površina nakon profesionalnog čišćenja"
+            heroImageAlt="Kamena površina nakon čišćenja"
             resultsShowcase={{
                 beforeSrc: '/seo-results/ciscenje-kamenih-povrsina/prije.png',
                 afterSrc: '/seo-results/ciscenje-kamenih-povrsina/poslije.png',
@@ -87,11 +91,11 @@ export default function KamenePovsinePage() {
 
                     <h2>Koliko košta čišćenje kamena?</h2>
                     <ul>
-                        <li><strong>Cijena po m²</strong>: od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²)</li>
+                        <li><strong>Cijena po m²</strong>: od 5 €/m² (cijena na 10. 9. 2026.: 5–7 €/m²)</li>
                         <li><strong>Konačna cijena</strong>: ovisi o vrsti kamena, pristupu, detaljima i stupnju zaprljanosti.</li>
                     </ul>
 
-                    <h2>Zašto profesionalno čišćenje, a ne sam?</h2>
+                    <h2>Zašto zvati nas, a ne čistiti sami?</h2>
                     <p>
                         Pokušaj samostalnog čišćenja kamena često rezultira <strong>oštećenjima</strong>. Previsok
                         tlak može izbiti materijal iz površine, a neodgovarajuća sredstva mogu promijeniti boju kamena
@@ -99,7 +103,7 @@ export default function KamenePovsinePage() {
                         uklanjanje mahovine, on može trajno oštetiti kamen i okolne biljke.
                     </p>
                     <p>
-                        Mi koristimo profesionalnu opremu s preciznom regulacijom tlaka i <strong>pH-neutralna
+                        Mi koristimo opremu s preciznom regulacijom tlaka i <strong>pH-neutralna
                             sredstva</strong> prilagođena svakom tipu kamena.
                     </p>
                     <p>
@@ -182,7 +186,7 @@ export default function KamenePovsinePage() {
                 },
                 {
                     question: 'Koliko košta čišćenje kamene ograde?',
-                    answer: 'Cijena za kamene površine najčešće se kreće od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²), ovisno o vrsti kamena, veličini i zaprljanosti. Besplatna procjena.',
+                    answer: 'Cijena za kamene površine najčešće se kreće od 5 €/m² (cijena na 10. 9. 2026.: 5–7 €/m²), ovisno o vrsti kamena, veličini i zaprljanosti. Besplatna procjena.',
                 },
             ]}
             serviceAreas={[

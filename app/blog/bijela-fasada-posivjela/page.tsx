@@ -37,7 +37,7 @@ export default function BlogArticle() {
         author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         datePublished: '2026-06-01',
-        dateModified: '2026-10-10',
+        dateModified: '2026-11-01',
         image: 'https://slaufismrk.com/prije-poslje/fasada-poslje.png',
         url: 'https://slaufismrk.com/blog/bijela-fasada-posivjela',
     };
@@ -67,7 +67,7 @@ export default function BlogArticle() {
                 name: 'Koliko košta vraćanje bijele fasade u Zagrebu?',
                 acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'Pranje fasade kreće od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²). Za kuću od 200 m² to je okvirno od 1.000 € (na 10. 9. 2026.: od 1.000 €), dok bojanje iste kuće obično iznosi nekoliko tisuća eura. Dolazimo na besplatnu procjenu.',
+                    text: 'Pranje fasade kreće od 5 €/m² (cijena na 10. 9. 2026.: 5–7 €/m²). Za kuću od 200 m² to je okvirno od 1.000 € (cijena na 10. 9. 2026.: 1.000–1.400 €), dok bojanje iste kuće obično iznosi nekoliko tisuća eura. Dolazimo na besplatnu procjenu.',
                 },
             },
         ],
@@ -133,7 +133,7 @@ export default function BlogArticle() {
 
                         <h2>Koliko to košta</h2>
                         <p>
-                            Pranje fasade kreće od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²). Za kuću od 200 m² to je okvirno od 1.000 € (na 10. 9. 2026.: od 1.000 €). Pregled cijena imate u
+                            Pranje fasade kreće od 5 €/m² (cijena na 10. 9. 2026.: 5–7 €/m²). Za kuću od 200 m² to je okvirno od 1.000 € (cijena na 10. 9. 2026.: 1.000–1.400 €). Pregled cijena imate u
                             vodiču <Link href="/blog/koliko-kosta-pranje-fasade">koliko košta pranje fasade</Link>, a usluga je
                             opisana na stranici <Link href="/usluge/pranje-fasade">pranje fasade u Zagrebu</Link>. Ako se uz
                             fasadu nakupila i prljavština po dvorištu, isplati se kombinirati i{' '}

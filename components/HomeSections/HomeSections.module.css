@@ -88,7 +88,7 @@
 }
 
 .shotImg {
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .tag {
@@ -389,7 +389,7 @@
     }
 
     .pairs {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 1.5rem;
     }
 
@@ -433,3 +433,6 @@
         padding: 1.25rem;
     }
 }
+
+.singleShot { aspect-ratio: 16 / 9; border-radius: 14px; overflow: hidden; }
+.jobTitle { font: 600 1.15rem/1.3 var(--font-heading); margin: .8rem 0 .2rem; color: var(--secondary); }

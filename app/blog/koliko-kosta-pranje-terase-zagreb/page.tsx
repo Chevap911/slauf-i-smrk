@@ -7,7 +7,7 @@ import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Koliko košta pranje terase u Zagrebu 2026 | Šlauf i Šmrk',
-    description: 'Pranje terase u Zagrebu: 4–6 €/m² (na 10. 9. 2026.: 4–6 €/m²), terasa do 50 m² od 200 € (na 10. 9. 2026.: od 200 €). Što ulazi u cijenu i od čega ovisi.',
+    description: 'Pranje terase u Zagrebu: od 4 €/m² (cijena na 10. 9. 2026.: 4–6 €/m²), terasa do 50 m² od 200 € (cijena na 10. 9. 2026.: od 200 €). Što ulazi u cijenu.',
     alternates: { canonical: '/blog/koliko-kosta-pranje-terase-zagreb' },
     openGraph: {
         title: 'Koliko košta pranje terase u Zagrebu? Čišćenje terase cijena 2026',
@@ -49,11 +49,11 @@ export default function BlogArticle() {
         '@context': 'https://schema.org',
         '@type': 'Article',
         headline: 'Koliko košta pranje terase u Zagrebu? Čišćenje terase cijena 2026.',
-        description: 'Detaljan vodič o cijenama pranja terase u Zagrebu: raspon cijena po materijalu, faktori, što je uključeno i kad se isplati kombinirati s fasadom.',
+        description: 'Detaljan vodič o cijenama pranja terase u Zagrebu: početne cijene po materijalu, faktori, što je uključeno i kad se isplati kombinirati s fasadom.',
         author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         datePublished: '2026-05-15',
-        dateModified: '2026-10-10',
+        dateModified: '2026-11-01',
         image: 'https://slaufismrk.com/prije-poslje/terasa-leggiero-poslje-1.jpeg',
     };
 
@@ -83,8 +83,7 @@ export default function BlogArticle() {
                     <div className={styles.content}>
                         {/* Odgovor na naslov odmah ispod zaglavlja: na mobitelu je tablica bila 2 do 3 ekrana niže */}
                         <p>
-                            Betonska, keramička ili kamena terasa kod nas se pere za <strong>4 do 6 € po m²</strong> (cijena na
-                            10. 9. 2026.: 4 do 6 € po m²), a terasa do 50 m² je od 200 € (cijena na 10. 9. 2026.: od 200 €).
+                            Pranje betonske ili keramičke terase kreće <strong>od 4 € po m²</strong> (cijena na 10. 9. 2026.: 4–6 €/m²), uz najmanje 200 € (cijena na 10. 9. 2026.: od 200 €) po poslu. Čišćenje kamena kreće od 5 € po m² (cijena na 10. 9. 2026.: 5–7 €/m²).
                             Drvene terase imaju zasebnu cijenu (niže u tekstu), a postupak i opremu opisali smo na stranici{' '}
                             <Link href="/usluge/pranje-terasa">pranje terasa u Zagrebu</Link>.
                         </p>
@@ -97,11 +96,11 @@ export default function BlogArticle() {
                             </div>
                             <div className={styles.priceRow}>
                                 <span>100 m²</span>
-                                <strong>od 400 €<span className="sidrena">Cijena na 10. 9. 2026.: od 400 €</span></strong>
+                                <strong>od 400 €<span className="sidrena">Cijena na 10. 9. 2026.: 400–600 €</span></strong>
                             </div>
                             <div className={styles.priceRow}>
                                 <span>200 m²</span>
-                                <strong>od 800 €<span className="sidrena">Cijena na 10. 9. 2026.: od 800 €</span></strong>
+                                <strong>od 800 €<span className="sidrena">Cijena na 10. 9. 2026.: 800–1.200 €</span></strong>
                             </div>
                         </div>
 
@@ -138,7 +137,7 @@ export default function BlogArticle() {
                         <p>
                             Ako su fuge između ploča zarasle u korov ili zelene naslage, moramo izbiti sve to prije pranja.
                             Nuspojava: izbijemo i stari pijesak. Bez novog kvarcnog pijeska fuge ostaju prazne i korov se vraća za sezonu.
-                            Fugiranje je dodatna stavka (1,50 do 2,50 €/m², cijena na 10. 9. 2026.: 1,50 do 2,50 €/m²) i preporučujemo ga uz svaki veći zahvat.
+                            Fugiranje je dodatna stavka (od 1,50 €/m², cijena na 10. 9. 2026.: 1,50–2,50 €/m²) i preporučujemo ga uz svaki veći zahvat.
                         </p>
 
                         <h3>4. Pristupačnost i kat</h3>
@@ -170,7 +169,7 @@ export default function BlogArticle() {
                             <Link href="/blog/obnova-kamene-terase-bez-zamjene-ploca">kamena terasa, čišćenje umjesto zamjene ploča</Link>.
                         </p>
                         <p>
-                            Cijena drvenih terasa: <strong>6–8 €/m²</strong> (cijena na 10. 9. 2026.: 6–8 €/m²). Nešto skuplje od betona, ali zahvat traje dulje
+                            Cijena drvenih terasa: <strong>od 6 €/m²</strong> (cijena na 10. 9. 2026.: 6–8 €/m²). Nešto skuplje od betona, ali zahvat traje dulje
                             i zahtijeva drugačiju opremu i kemiju.
                         </p>
 

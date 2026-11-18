@@ -7,11 +7,11 @@ import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Pranje bazena Zagreb, čišćenje i priprema bazena',
-    description: 'Profesionalno čišćenje bazena, okolnog kamena i terasa u Zagrebu. Priprema bazena za sezonu. Uklanjamo alge i naslage. Besplatna procjena.',
+    description: 'Čišćenje bazena, okolnog kamena i terasa u Zagrebu. Priprema bazena za sezonu. Uklanjamo alge i naslage. Besplatna procjena.',
     alternates: { canonical: '/usluge/pranje-bazena' },
     openGraph: {
         title: 'Pranje bazena Zagreb | Šlauf i Šmrk',
-        description: 'Profesionalno čišćenje bazena, okolnog kamena i terasa u Zagrebu. Priprema za sezonu.',
+        description: 'Čišćenje bazena, okolnog kamena i terasa u Zagrebu. Priprema za sezonu.',
         url: 'https://slaufismrk.com/usluge/pranje-bazena',
         images: [OG_IMAGE],
     },
@@ -25,9 +25,10 @@ export default function PranjeBasenapPage() {
             quoteTitle="Koliko bi pranje vašeg bazena koštalo?"
             titleHighlight="bazena"
             canonicalPath="/usluge/pranje-bazena"
-            description="Pripremite bazen za sezonu kupanja ili ga očistite nakon ljeta. Profesionalno čistimo stijenke bazena, obodni kamen, terasu oko bazena i sve prateće površine. Uklanjamo alge, naslage i nakupljenu prljavštinu za kristalno čistu vodu i siguran prostor za kupanje."
+            description="Pripremite bazen za sezonu kupanja ili ga očistite nakon ljeta. Čistimo stijenke bazena, obodni kamen, terasu oko bazena i sve prateće površine. Uklanjamo alge, naslage i nakupljenu prljavštinu za kristalno čistu vodu i siguran prostor za kupanje."
             priceHint="od 600 €"
             priceAnchor="od 600 €"
+
             processSteps={[
                 {
                     title: 'Ispuštanje vode',
@@ -50,7 +51,7 @@ export default function PranjeBasenapPage() {
                 <>
                     <h2>Kada čistiti bazen?</h2>
                     <p>
-                        Postoje dva ključna trenutka za profesionalno čišćenje bazena:
+                        Postoje dva ključna trenutka za čišćenje bazena:
                     </p>
                     <ul>
                         <li><strong>U proljeće</strong>, priprema bazena za sezonu kupanja. Nakon zime se na stijenkama nakupe alge, lišće i kalcifikacije koje treba ukloniti prije punjenja.</li>
@@ -147,7 +148,7 @@ export default function PranjeBasenapPage() {
                 },
                 {
                     question: 'Koliko često trebam čistiti bazen?',
-                    answer: 'Preporučujemo profesionalno čišćenje dva puta godišnje, u proljeće (priprema) i jesen (winterizacija).',
+                    answer: 'Preporučujemo čišćenje dva puta godišnje, u proljeće (priprema) i jesen (winterizacija).',
                 },
                 {
                     question: 'Čistite li i jacuzzije?',

@@ -37,7 +37,7 @@ export default function BlogArticle() {
         author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         datePublished: '2026-06-16',
-        dateModified: '2026-10-10',
+        dateModified: '2026-11-01',
         image: 'https://slaufismrk.com/prije-poslje/pranje-zida-terase-zagreb-poslje.jpeg',
         url: 'https://slaufismrk.com/blog/odrzavanje-fasade-stedi-novac',
     };
@@ -67,7 +67,7 @@ export default function BlogArticle() {
                 name: 'Je li pranje fasade jeftinije od bojanja?',
                 acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'Znatno. Pranje fasade kreće od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²), dok obnova s ličenjem ide nekoliko puta više po kvadratu i traži skele i materijal. Redovito pranje produžava vijek fasade i odgađa skupu obnovu.',
+                    text: 'Znatno. Pranje fasade kreće od 5 €/m² (cijena na 10. 9. 2026.: 5–7 €/m²), dok obnova s ličenjem ide nekoliko puta više po kvadratu i traži skele i materijal. Redovito pranje produžava vijek fasade i odgađa skupu obnovu.',
                 },
             },
         ],
@@ -128,7 +128,7 @@ export default function BlogArticle() {
 
                         <h2>Brojke koje to čine očitim</h2>
                         <p>
-                            Uzmimo kuću s oko 200 m² fasade. Pranje kreće od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²), dakle red veličine od oko 1.000 € (na 10. 9. 2026.: oko 1.000 €) da se
+                            Uzmimo kuću s oko 200 m² fasade. Pranje kreće od 5 €/m² (cijena na 10. 9. 2026.: 5–7 €/m²), dakle red veličine od oko 1.000 € (cijena na 10. 9. 2026.: 1.000–1.400 €) da se
                             fasada vrati u red i zaštiti. Obnova s saniranjem žbuke, skelama, materijalom i ličenjem ide
                             višestruko više po kvadratu. Razlika između ta dva scenarija je razlika između toga jeste li reagirali
                             na vrijeme ili ste čekali da problem dozrije.

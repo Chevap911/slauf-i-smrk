@@ -31,7 +31,7 @@ interface InquiryEmailProps {
     address?: string;
     serviceName: string;
     estimatedPriceMin: number;
-    estimatedPriceMax: number;
+    estimatedPriceMax: number | null;
     message?: string;
     details?: Record<string, unknown>;
 }
@@ -81,7 +81,7 @@ const formatDetails = (details?: Record<string, unknown>) => {
             'mattress-double': 'Madrac bračni',
             'car-seats': 'Autosjedala',
         };
-        lines.push({ label: 'Vrsta čišćenja', value: typeMap[String(details.chemicalType)] || String(details.chemicalType) });
+        lines.push({ label: 'Vrsta čišćenja', value: typeMap[String(details.chemicalType)] || String(details.furniture || details.chemicalType || 'nije navedeno') });
         if (details.chemicalQuantity) {
             lines.push({ label: 'Količina / kvadratura', value: String(details.chemicalQuantity) });
         }
@@ -209,15 +209,15 @@ export const ClientInquiryEmail = ({
                         <Section style={priceBox}>
                             <Text style={priceBoxTitle}>Informativna procjena cijene:</Text>
                             <Text style={priceAmount}>
-                                {estimatedPriceMin === estimatedPriceMax
-                                    ? `${estimatedPriceMin} €`
+                                {estimatedPriceMax === null || estimatedPriceMin === estimatedPriceMax
+                                    ? `od ${estimatedPriceMin} €`
                                     : `${estimatedPriceMin} - ${estimatedPriceMax} €`}
                             </Text>
                             <Text style={priceDisclaimer}>
                                 *Ovo je okvirna informativna cijena izračunata na temelju unesenih parametara. Konačna cijena može varirati nakon uvida u stanje uživo.
                             </Text>
                             <Text style={priceDisclaimer}>
-                                Cijene po kojima računamo i cijene na 10. 9. 2026. su u cjeniku: https://slaufismrk.com/cjenik
+                                Početne cijene po kojima računamo i cijene na 10. 9. 2026. su u cjeniku: https://slaufismrk.com/cjenik
                             </Text>
 
                             <Hr style={{ borderColor: '#eaeaea', margin: '20px 0' }} />
@@ -262,7 +262,7 @@ export const AdminNotificationEmail = ({
     return (
         <Html>
             <Head />
-            <Preview>NOVI UPIT: {serviceName}, {phone}</Preview>
+            <Preview>NOVI UPIT: {serviceName}, {phone || email}</Preview>
             <Body style={main}>
                 <Container style={container}>
                     <Section style={{ ...header, backgroundColor: '#dc2626' }}>
@@ -278,14 +278,14 @@ export const AdminNotificationEmail = ({
                             </Section>
                         )}
                         <Text style={paragraph}><strong>Ime:</strong> {name}</Text>
-                        <Text style={paragraph}><strong>Telefon:</strong> <Link href={`tel:${phone}`}>{phone}</Link></Text>
-                        <Text style={paragraph}><strong>Email:</strong> <Link href={`mailto:${email}`}>{email}</Link></Text>
+                        {phone && <Text style={paragraph}><strong>Telefon:</strong> <Link href={`tel:${phone}`}>{phone}</Link></Text>}
+                        {email && email !== 'N/A' && <Text style={paragraph}><strong>Email:</strong> <Link href={`mailto:${email}`}>{email}</Link></Text>}
                         <Text style={paragraph}><strong>Lokacija:</strong> {city || 'Nije navedeno'} {address && `(${address})`}</Text>
 
                         <Section style={priceBox}>
                             <Text style={paragraph}><strong>Tražena usluga:</strong> {serviceName}</Text>
                             {estimatedPriceMin > 0 && (
-                                <Text style={paragraph}><strong>Procjena sustava:</strong> {estimatedPriceMin} - {estimatedPriceMax} €</Text>
+                                <Text style={paragraph}><strong>Procjena sustava:</strong> {estimatedPriceMax === null || estimatedPriceMax === estimatedPriceMin ? `od ${estimatedPriceMin} €` : `${estimatedPriceMin} - ${estimatedPriceMax} €`}</Text>
                             )}
 
                             <Hr style={{ borderColor: '#eaeaea', margin: '20px 0' }} />
@@ -339,8 +339,8 @@ export const HotLeadEmail = ({ step, name, email, phone, city, serviceName }: Ho
 
                         <Section style={{ ...priceBox, borderColor: stepColor }}>
                             <Text style={paragraph}><strong>Ime:</strong> {name}</Text>
-                            <Text style={paragraph}><strong>Telefon:</strong> <Link href={`tel:${phone}`}>{phone}</Link></Text>
-                            <Text style={paragraph}><strong>Email:</strong> <Link href={`mailto:${email}`}>{email}</Link></Text>
+                            {phone && <Text style={paragraph}><strong>Telefon:</strong> <Link href={`tel:${phone}`}>{phone}</Link></Text>}
+                            {email && email !== 'N/A' && <Text style={paragraph}><strong>Email:</strong> <Link href={`mailto:${email}`}>{email}</Link></Text>}
                             <Text style={paragraph}><strong>Grad:</strong> {city || 'Nije navedeno'}</Text>
                             {step === 2 && serviceName && (
                                 <Text style={paragraph}><strong>Tražena usluga:</strong> {serviceName}</Text>

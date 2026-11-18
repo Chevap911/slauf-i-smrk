@@ -159,7 +159,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.6rem;
-    background: #25D366;
+    background: #126b3a;
     color: #fff;
     padding: 1rem 1.5rem;
     border-radius: 999px;
@@ -174,7 +174,7 @@
 .whatsappBtn:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-    background: #20ba5a;
+    background: #0e552e;
 }
 
 .heroVisual {

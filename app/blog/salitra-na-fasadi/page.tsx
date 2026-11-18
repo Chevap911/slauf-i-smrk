@@ -37,7 +37,7 @@ export default function BlogArticle() {
         author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         datePublished: '2026-06-01',
-        dateModified: '2026-10-10',
+        dateModified: '2026-11-01',
         image: 'https://slaufismrk.com/prije-poslje/pranje-zida-terase-zagreb-poslje.jpeg',
         url: 'https://slaufismrk.com/blog/salitra-na-fasadi',
     };
@@ -67,7 +67,7 @@ export default function BlogArticle() {
                 name: 'Koliko košta čišćenje fasade od salitre u Zagrebu?',
                 acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'Čišćenje fasade kreće od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²). Salitra zahtijeva pažljiviji rad i procjenu uzroka vlage, pa cijenu dajemo nakon izlaska na lokaciju.',
+                    text: 'Čišćenje fasade kreće od 5 €/m² (cijena na 10. 9. 2026.: 5–7 €/m²). Salitra zahtijeva pažljiviji rad i procjenu uzroka vlage, pa cijenu dajemo nakon izlaska na lokaciju.',
                 },
             },
         ],
@@ -146,7 +146,7 @@ export default function BlogArticle() {
 
                         <h2>Koliko to košta</h2>
                         <p>
-                            Čišćenje fasade kreće od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²). Salitra traži pažljiviji pristup i procjenu uzroka vlage, pa
+                            Čišćenje fasade kreće od 5 €/m² (cijena na 10. 9. 2026.: 5–7 €/m²). Salitra traži pažljiviji pristup i procjenu uzroka vlage, pa
                             cijenu dajemo nakon izlaska na lokaciju. Više o cijenama imate u vodiču{' '}
                             <Link href="/blog/koliko-kosta-pranje-fasade">koliko košta pranje fasade</Link>, a uslugu na
                             stranici <Link href="/usluge/pranje-fasade">pranje fasade u Zagrebu</Link>.

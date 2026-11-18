@@ -36,3 +36,14 @@ export const CITY_GENITIVE: Record<string, string> = {
     'Sveta Nedelja': 'Svete Nedelje',
     'Dugo Selo': 'Dugog Sela',
 };
+
+// "dolazite u {grad}" traži akuzativ (kamo), ne lokativ (gdje).
+export const CITY_ACCUSATIVE: Record<string, string> = {
+    'Zagreb': 'Zagreb',
+    'Sesvete': 'Sesvete',
+    'Velika Gorica': 'Veliku Goricu',
+    'Samobor': 'Samobor',
+    'Zaprešić': 'Zaprešić',
+    'Sveta Nedelja': 'Svetu Nedelju',
+    'Dugo Selo': 'Dugo Selo',
+};

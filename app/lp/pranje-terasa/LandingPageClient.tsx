@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import Image from 'next/image';
 import { Phone, CheckCircle2, MessageCircle, ArrowRight, Zap, Target, ThumbsUp, MapPin, Package, Star } from 'lucide-react';
 import styles from '../LandingPage.module.css';
@@ -137,7 +136,7 @@ export default function LandingPageClient() {
                             <div className={styles.stepNumber}>2</div>
                             <div className={styles.stepContent}>
                                 <h3>Dobivate cijenu</h3>
-                                <p>Javljamo okvirni raspon. Za veće objekte dolazimo na procjenu.</p>
+                                <p>Javljamo početnu procjenu. Za veće objekte dolazimo na procjenu.</p>
                             </div>
                         </div>
                         <div className={styles.step}>
@@ -205,11 +204,11 @@ export default function LandingPageClient() {
                             </tr>
                             <tr>
                                 <td>100 m²</td>
-                                <td>od 400 €<span className="sidrena">Cijena na 10. 9. 2026.: od 400 €</span></td>
+                                <td>od 400 €<span className="sidrena">Cijena na 10. 9. 2026.: 400–600 €</span></td>
                             </tr>
                             <tr>
                                 <td>200 m²</td>
-                                <td>od 800 €<span className="sidrena">Cijena na 10. 9. 2026.: od 800 €</span></td>
+                                <td>od 800 €<span className="sidrena">Cijena na 10. 9. 2026.: 800–1.200 €</span></td>
                             </tr>
                             <tr>
                                 <td>Veće od 200 m²</td>

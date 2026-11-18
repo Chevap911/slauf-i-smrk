@@ -2,7 +2,11 @@
   "_why": "Šlaufova pravila za tekst kao podaci (2026-10-06). Provjeravaju ih tools/audit-copy.mjs (izvorni kod, datoteka:redak) i tools/site-check.mjs (svaka renderana stranica, uključujući meta tagove i JSON-LD). Izvor pravila: web-repo/CLAUDE.md (tvrda pravila 5-8), Šlauf i Šmrk/overview.md i Markove odluke u Marko/Odluke i brojke.md. Novo pravilo ide ovdje s razlogom i datumom, ne samo u CLAUDE.md.",
   "americanEnglish": false,
   "extraPages": [
-    "/politika-privatnosti"
+    "/politika-privatnosti",
+    "/lp/pranje-fasade",
+    "/lp/pranje-okucnice",
+    "/lp/pranje-terasa",
+    "/lp/odrzavanje-grobnih-mjesta"
   ],
   "reviewFiles": [
     "components/Testimonials/Testimonials.tsx",

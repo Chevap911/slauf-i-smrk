@@ -28,6 +28,7 @@ export default function DetailingAutoPage() {
             description="Dok smo već kod vas zbog fasade, okućnice ili neke druge usluge, peremo i auto. Iznutra i izvana, uključujući kemijsko čišćenje sjedala. Bez dodatnog putnog troška jer smo već tu."
             priceHint="od 60 € (vanjsko) · od 80 € (interijer) · od 130 € (komplet)"
             priceAnchor="od 60 € (vanjsko) · od 80 € (interijer) · od 130 € (komplet)"
+
             processSteps={[
                 {
                     title: 'Dogovor uz ostalu uslugu',
@@ -70,8 +71,8 @@ export default function DetailingAutoPage() {
                     <h2>Cijene (uz dolazak za drugu uslugu)</h2>
                     <ul>
                         <li><strong>Vanjsko pranje</strong>: od 60 € (cijena na 10. 9. 2026.: od 60 €)</li>
-                        <li><strong>Interijer (basic)</strong>: od 80 € (usisavanje i brisanje unutrašnjosti; cijena na 10. 9. 2026.: od 80 €)</li>
-                        <li><strong>Kemijsko čišćenje sjedala</strong>: od 60 € (uz ostale unutarnje površine; cijena na 10. 9. 2026.: od 60 €)</li>
+                        <li><strong>Interijer (basic)</strong>: od 80 € (cijena na 10. 9. 2026.: od 80 €), usisavanje i brisanje unutrašnjosti</li>
+                        <li><strong>Kemijsko čišćenje sjedala</strong>: od 60 € (cijena na 10. 9. 2026.: od 60 €), uz ostale unutarnje površine</li>
                         <li><strong>Komplet (unutra i vani)</strong>: od 130 € (cijena na 10. 9. 2026.: od 130 €)</li>
                         <li><strong>SUV / kombi</strong>: +20 do 30% na sve pakete</li>
                     </ul>

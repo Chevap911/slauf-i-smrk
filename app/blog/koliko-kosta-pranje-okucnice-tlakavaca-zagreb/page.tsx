@@ -8,7 +8,7 @@ import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Koliko košta pranje okućnice i tlakavaca 2026 | Šlauf',
-    description: 'Pranje okućnice i tlakavaca u Zagrebu: 4–6 €/m² (na 10. 9. 2026.: 4–6 €/m²), dvorište do 50 m² od 200 € (na 10. 9. 2026.: od 200 €). Od čega ovisi konačna cijena.',
+    description: 'Pranje okućnice i tlakavaca u Zagrebu: od 4 €/m² (cijena na 10. 9. 2026.: 4–6 €/m²), dvorište do 50 m² od 200 € (cijena na 10. 9. 2026.: od 200 €).',
     alternates: { canonical: '/blog/koliko-kosta-pranje-okucnice-tlakavaca-zagreb' },
     openGraph: {
         title: 'Koliko košta pranje okućnice i tlakavaca? Cijene 2026.',
@@ -54,7 +54,7 @@ export default function BlogArticle() {
         author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         datePublished: '2026-04-17',
-        dateModified: '2026-10-10',
+        dateModified: '2026-11-01',
         image: 'https://slaufismrk.com/blog/pranje-okucnice/terasa-leggiero-poslije.jpeg',
     };
 
@@ -65,12 +65,12 @@ export default function BlogArticle() {
             {
                 '@type': 'Question',
                 name: 'Koliko košta pranje okućnice po kvadratnom metru u Zagrebu?',
-                acceptedAnswer: { '@type': 'Answer', text: 'Cijena pranja okućnice kreće se od 4 € po m² (cijena na 10. 9. 2026.: od 4 € po m²) ovisno o veličini površine, stupnju zaprljanosti i količini korova u fugama. Manja dvorišta i terase do 50 m² kreću od 200 € (na 10. 9. 2026.: od 200 €).' },
+                acceptedAnswer: { '@type': 'Answer', text: 'Cijena pranja okućnice kreće se od 4 € po m² (cijena na 10. 9. 2026.: 4–6 €/m²) ovisno o veličini površine, stupnju zaprljanosti i količini korova u fugama. Manja dvorišta i terase do 50 m² kreću od 200 € (cijena na 10. 9. 2026.: od 200 €).' },
             },
             {
                 '@type': 'Question',
                 name: 'Uključuje li pranje tlakavaca i ponovno fugiranje pijeskom?',
-                acceptedAnswer: { '@type': 'Answer', text: 'Osnovna cijena pranja ne uključuje kvarcni pijesak i fugiranje jer to ne žele svi klijenti. Međutim, toplo ga preporučujemo, bez novog pijeska, korov se vraća brže. Usluga fugiranja naplaćuje se dodatno, okvirno 1,50 do 2,50 € po m² (cijena na 10. 9. 2026.: 1,50 do 2,50 € po m²).' },
+                acceptedAnswer: { '@type': 'Answer', text: 'Osnovna cijena pranja ne uključuje kvarcni pijesak i fugiranje jer to ne žele svi klijenti. Međutim, toplo ga preporučujemo, bez novog pijeska, korov se vraća brže. Usluga fugiranja naplaćuje se dodatno, okvirno od 1,50 € po m² (cijena na 10. 9. 2026.: 1,50–2,50 €/m²).' },
             },
             {
                 '@type': 'Question',
@@ -115,8 +115,7 @@ export default function BlogArticle() {
                     <div className={styles.content}>
                         {/* Odgovor na naslov odmah ispod zaglavlja: na mobitelu je tablica bila 2 do 3 ekrana niže */}
                         <p>
-                            Pranje okućnice, tlakavaca i prilaza u Zagrebu kod nas je <strong>4 do 6 € po m²</strong> (cijena na
-                            10. 9. 2026.: 4 do 6 € po m²). Dvorište do 50 m² je od 200 € (cijena na 10. 9. 2026.: od 200 €).
+                            Pranje okućnice, tlakavaca i prilaza u Zagrebu kod nas je <strong>od 4 € po m²</strong> (cijena na 10. 9. 2026.: 4–6 €/m²). Dvorište do 50 m² je od 200 € (cijena na 10. 9. 2026.: od 200 €).
                             Postupak i opremu opisali smo na stranici{' '}
                             <Link href="/usluge/pranje-okucnice" className={styles.inlineLink}>
                                 pranje okućnice
@@ -132,11 +131,11 @@ export default function BlogArticle() {
                             </div>
                             <div className={styles.priceRow}>
                                 <span>Srednja dvorišta (50 – 100 m²)</span>
-                                <strong>4 – 6 € po m²<span className="sidrena">Cijena na 10. 9. 2026.: 4 – 6 € po m²</span></strong>
+                                <strong>od 4 € po m²<span className="sidrena">Cijena na 10. 9. 2026.: 4–6 €/m²</span></strong>
                             </div>
                             <div className={styles.priceRow}>
                                 <span>Veće površine (preko 100 m²)</span>
-                                <strong>4 – 6 € po m²<span className="sidrena">Cijena na 10. 9. 2026.: 4 – 6 € po m²</span></strong>
+                                <strong>od 4 € po m²<span className="sidrena">Cijena na 10. 9. 2026.: 4–6 €/m²</span></strong>
                             </div>
                         </div>
 
@@ -222,7 +221,7 @@ export default function BlogArticle() {
                         <h3>3. Potreba za ponovnim fugiranjem</h3>
                         <p>
                             Kad visokotlačnim peračem izbijemo korov i mahovinu, izbijemo i stari pijesak. Bez novog kvarcnog pijeska, fuge
-                            ostaju prazne i korov se vraća dvostruko brže. Fugiranje se naplaćuje dodatno, okvirno 1,50 do 2,50 € po m² (cijena na 10. 9. 2026.: 1,50 do 2,50 € po m²)
+                            ostaju prazne i korov se vraća dvostruko brže. Fugiranje se naplaćuje dodatno, okvirno od 1,50 € po m² (cijena na 10. 9. 2026.: 1,50–2,50 €/m²)
                             ovisno o širini fuga.
                         </p>
 
@@ -296,9 +295,9 @@ export default function BlogArticle() {
                             <div className={styles.faqItem}>
                                 <h3>Koliko košta pranje okućnice po kvadratnom metru u Zagrebu?</h3>
                                 <p>
-                                    Cijena pranja okućnice kreće se od 4 € po m² (cijena na 10. 9. 2026.: od 4 € po m²) ovisno o veličini površine, stupnju
+                                    Cijena pranja okućnice kreće se od 4 € po m² (cijena na 10. 9. 2026.: 4–6 €/m²) ovisno o veličini površine, stupnju
                                     zaprljanosti i količini korova u fugama. Manja dvorišta i terase do 50 m² kreću
-                                    od 200 € (na 10. 9. 2026.: od 200 €).
+                                    od 200 € (cijena na 10. 9. 2026.: od 200 €).
                                 </p>
                             </div>
                             <div className={styles.faqItem}>
@@ -306,7 +305,7 @@ export default function BlogArticle() {
                                 <p>
                                     Osnovna cijena pranja ne uključuje kvarcni pijesak i fugiranje jer to ne žele svi klijenti.
                                     Međutim, toplo ga preporučujemo, bez novog pijeska, korov se vraća brže. Usluga fugiranja
-                                    naplaćuje se dodatno, okvirno 1,50 do 2,50 € po m² (cijena na 10. 9. 2026.: 1,50 do 2,50 € po m²).
+                                    naplaćuje se dodatno, okvirno od 1,50 € po m² (cijena na 10. 9. 2026.: 1,50–2,50 €/m²).
                                 </p>
                             </div>
                             <div className={styles.faqItem}>

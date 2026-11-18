@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     alternates: { canonical: '/usluge/pranje-prilaza' },
     openGraph: {
         title: 'Pranje prilaza Zagreb | Čišćenje betonskih i kamenih prilaza',
-        description: 'Profesionalno čišćenje garažnih, dvorišnih i parkirnih prilaza u Zagrebu.',
+        description: 'Čišćenje garažnih, dvorišnih i parkirnih prilaza u Zagrebu.',
         url: 'https://slaufismrk.com/usluge/pranje-prilaza',
         images: [OG_IMAGE],
     },
@@ -27,9 +27,10 @@ export default function PranjePrilazaPage() {
             canonicalPath="/usluge/pranje-prilaza"
             description="Pranje prilaza vraća uredan i siguran izgled ulazu u dvorište, kuću ili garažu. Uklanjamo uljne mrlje, tragove guma, hrđu, mahovinu i duboku prljavštinu s betonskih, kamenih i opločenih prilaza u Zagrebu i okolici."
             priceHint="od 4 €/m²"
-            priceAnchor="od 4 €/m²"
+            priceAnchor="4–6 €/m²"
+
             heroImage="/seo-results/pranje-prilaza/poslije.png"
-            heroImageAlt="Betonski prilaz nakon profesionalnog čišćenja u Zagrebu"
+            heroImageAlt="Betonski prilaz nakon pranja u Zagrebu"
             heroHighlights={[
                 'Čišćenje garažnih, kućnih i parkirnih prilaza',
                 'Uklanjanje ulja, guma, hrđe i algi',
@@ -41,7 +42,7 @@ export default function PranjePrilazaPage() {
                 beforeAlt: 'Prilaz prije čišćenja s tamnim naslagama i vidljivom zaprljanošću',
                 afterAlt: 'Prilaz poslije čišćenja s ujednačenom i čistom površinom',
                 title: 'Prilaz prije i poslije čišćenja',
-                description: 'Kod prilaza se odmah vidi koliko profesionalno pranje poboljša prvi dojam ulaza u kuću ili garažu.',
+                description: 'Kod prilaza se odmah vidi koliko pranje poboljša prvi dojam ulaza u kuću ili garažu.',
             }}
             processSteps={[
                 {
@@ -53,7 +54,7 @@ export default function PranjePrilazaPage() {
                     description: 'Masne mrlje, tragove guma i hrđu tretiramo ciljano prije glavnog čišćenja kako bi rezultat bio ravnomjerniji.',
                 },
                 {
-                    title: 'Profesionalno pranje',
+                    title: 'Pranje površine',
                     description: 'Ravnomjerno čistimo cijeli prilaz, uključujući rubove, spojeve uz zid, garažu i odvodne dijelove.',
                 },
                 {
@@ -71,7 +72,7 @@ export default function PranjePrilazaPage() {
                     </p>
                     <p>
                         Ako se prilaz ne održava, ulazni dio kuće vrlo brzo izgleda zapušteno, a mokra površina može
-                        postati klizava i neugodna za hodanje. Profesionalno pranje prilaza posebno dolazi do izražaja
+                        postati klizava i neugodna za hodanje. Pranje prilaza posebno dolazi do izražaja
                         kod betona, betonskih kocki i parkirnih mjesta uz garažu.
                     </p>
 
@@ -89,7 +90,7 @@ export default function PranjePrilazaPage() {
                         Okvirno:
                     </p>
                     <ul>
-                        <li><strong>Cijena po m²</strong>: od 4 €/m² (cijena na 10. 9. 2026.: od 4 €/m²)</li>
+                        <li><strong>Cijena po m²</strong>: od 4 €/m² (cijena na 10. 9. 2026.: 4–6 €/m²)</li>
                         <li><strong>Konačna cijena</strong>: ovisi o materijalu, veličini prilaza te prisutnosti ulja, hrđe i tragova guma.</li>
                     </ul>
                     <p>
@@ -101,7 +102,7 @@ export default function PranjePrilazaPage() {
                     <p>
                         Najzahtjevnije su <strong>stare mrlje od motornog ulja</strong>, tragovi hrđe i duboko upijena
                         prljavština na poroznom betonu. Ne možemo pošteno obećati da će svaka stara mrlja nestati 100 %,
-                        ali profesionalnim tretmanom se najčešće vidi velika razlika u odnosu na početno stanje.
+                        ali se nakon tretmana najčešće vidi velika razlika u odnosu na početno stanje.
                     </p>
                 </>
             }
@@ -123,7 +124,7 @@ export default function PranjePrilazaPage() {
                 },
                 {
                     title: 'Sigurna i učinkovita sredstva',
-                    description: 'Koristimo biorazgradiva sredstva i profesionalnu opremu koja daje bolji rezultat od kućnih perača.',
+                    description: 'Koristimo biorazgradiva sredstva i opremu koja daje bolji rezultat od kućnih perača.',
                     icon: <Leaf size={24} />,
                 },
             ]}
@@ -152,7 +153,7 @@ export default function PranjePrilazaPage() {
             faq={[
                 {
                     question: 'Koliko košta pranje prilaza u Zagrebu?',
-                    answer: 'Okvirna cijena za pranje prilaza kreće se od 4 €/m² (cijena na 10. 9. 2026.: od 4 €/m²), a točna ponuda ovisi o materijalu, veličini i stupnju zaprljanosti.',
+                    answer: 'Okvirna cijena za pranje prilaza kreće se od 4 €/m² (cijena na 10. 9. 2026.: 4–6 €/m²), a točna ponuda ovisi o materijalu, veličini i stupnju zaprljanosti.',
                 },
                 {
                     question: 'Možete li ukloniti tragove motornog ulja s betonskog prilaza?',

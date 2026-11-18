@@ -54,7 +54,7 @@ export default function BlogArticle() {
         author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         datePublished: '2026-08-21',
-        dateModified: '2026-10-10',
+        dateModified: '2026-11-01',
         image: 'https://slaufismrk.com/blog/salitra-kamena-fasada/bijeli-curci-kamenca-niz-fasadnu-plocu.jpg',
         url: 'https://slaufismrk.com/blog/salitra-i-kamenac-na-kamenoj-fasadi',
     };
@@ -100,7 +100,7 @@ export default function BlogArticle() {
                 name: 'Koliko košta čišćenje salitre i kamenca s kamene fasade u Zagrebu?',
                 acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'Pranje fasade kreće od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²). Skidanje tvrdih naslaga kamenca i salitre je ručni rad po kvadratu i cijenu dajemo tek nakon izlaska na lokaciju, kad vidimo koliko je naslaga tvrda i koliko je ploča osjetljiva.',
+                    text: 'Pranje fasade kreće od 5 €/m² (cijena na 10. 9. 2026.: 5–7 €/m²). Skidanje tvrdih naslaga kamenca i salitre je ručni rad po kvadratu i cijenu dajemo tek nakon izlaska na lokaciju, kad vidimo koliko je naslaga tvrda i koliko je ploča osjetljiva.',
                 },
             },
         ],
@@ -385,7 +385,7 @@ export default function BlogArticle() {
 
                         <h2>Koliko to košta</h2>
                         <p>
-                            Pranje fasade kod nas kreće od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²). Skidanje kamenca i salitre s kamene obloge je ručni
+                            Pranje fasade kod nas kreće od 5 €/m² (cijena na 10. 9. 2026.: 5–7 €/m²). Skidanje kamenca i salitre s kamene obloge je ručni
                             rad, pa cijenu dajemo tek nakon izlaska na lokaciju kad vidimo koliko je naslaga tvrda i
                             koliko ploča podnosi. Više o cijenama piše u vodiču{' '}
                             <Link href="/blog/koliko-kosta-pranje-fasade">koliko košta pranje fasade</Link>, a usluge su

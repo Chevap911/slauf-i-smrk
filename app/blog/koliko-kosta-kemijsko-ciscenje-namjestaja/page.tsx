@@ -9,7 +9,7 @@ import { OG_IMAGE } from '@/lib/seo';
 export const metadata: Metadata = {
     title: 'Koliko košta kemijsko čišćenje namještaja | Šlauf i Šmrk',
     description:
-        'Kemijsko čišćenje garniture od 80 € (na 10. 9. 2026.: od 80 €), trosjeda, madraca i tepiha. Realne cijene dubinskog čišćenja u Zagrebu.',
+        'Kemijsko čišćenje garniture od 80 € (cijena na 10. 9. 2026.: od 80 €), trosjeda, madraca i tepiha. Realne cijene dubinskog čišćenja u Zagrebu.',
     alternates: { canonical: '/blog/koliko-kosta-kemijsko-ciscenje-namjestaja' },
     openGraph: {
         title: 'Koliko košta kemijsko čišćenje namještaja? Cijene 2026.',
@@ -56,7 +56,7 @@ export default function BlogArticle() {
         author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         datePublished: '2026-07-06',
-        dateModified: '2026-10-10',
+        dateModified: '2026-11-01',
         image: 'https://slaufismrk.com/projekti/projekt-3.jpeg',
     };
 
@@ -67,7 +67,7 @@ export default function BlogArticle() {
             {
                 '@type': 'Question',
                 name: 'Koliko košta kemijsko čišćenje garniture u Zagrebu?',
-                acceptedAnswer: { '@type': 'Answer', text: 'Kompletna garnitura (trosjed, dvosjed i fotelja) od 80 €. Pojedinačno: trosjed od 40 €, dvosjed od 30 €, fotelja od 20 €. Cijene na 10. 9. 2026.: od 80 €, od 40 €, od 30 € i od 20 €. Točnu cijenu potvrđujemo besplatnom procjenom.' },
+                acceptedAnswer: { '@type': 'Answer', text: 'Kompletna garnitura (trosjed, dvosjed i fotelja) od 80 € (cijena na 10. 9. 2026.: od 80 €). Pojedinačno: trosjed od 40 € (cijena na 10. 9. 2026.: od 40 €), dvosjed od 30 € (cijena na 10. 9. 2026.: od 30 €), fotelja od 20 € (cijena na 10. 9. 2026.: od 20 €). Točnu cijenu potvrđujemo besplatnom procjenom.' },
             },
             {
                 '@type': 'Question',
@@ -159,7 +159,7 @@ export default function BlogArticle() {
                             </div>
                             <div className={styles.priceRow}>
                                 <span>Tepih</span>
-                                <strong>od 5 € po m²<span className="sidrena">Cijena na 10. 9. 2026.: od 5 € po m²</span></strong>
+                                <strong>od 5 € po m²<span className="sidrena">Cijena na 10. 9. 2026.: od 5 €/m²</span></strong>
                             </div>
                         </div>
 
@@ -255,8 +255,8 @@ export default function BlogArticle() {
                             <div className={styles.faqItem}>
                                 <h3>Koliko košta kemijsko čišćenje garniture u Zagrebu?</h3>
                                 <p>
-                                    Kompletna garnitura (trosjed, dvosjed i fotelja) od 80 €. Pojedinačno: trosjed od 40 €, dvosjed od
-                                    30 €, fotelja od 20 €. Cijene na 10. 9. 2026.: od 80 €, od 40 €, od 30 € i od 20 €. Točnu cijenu potvrđujemo besplatnom procjenom.
+                                    Kompletna garnitura (trosjed, dvosjed i fotelja) od 80 € (cijena na 10. 9. 2026.: od 80 €). Pojedinačno: trosjed od 40 € (cijena na 10. 9. 2026.: od 40 €), dvosjed od
+                                    30 € (cijena na 10. 9. 2026.: od 30 €), fotelja od 20 € (cijena na 10. 9. 2026.: od 20 €). Točnu cijenu potvrđujemo besplatnom procjenom.
                                 </p>
                             </div>
                             <div className={styles.faqItem}>

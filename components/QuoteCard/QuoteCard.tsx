@@ -27,7 +27,7 @@ export default function QuoteCard({ title, location, service = '', whatsappText 
                 <p className={styles.title}>{title}</p>
                 <p className={styles.subtitle}>
                     {PER_M2.has(service)
-                        ? 'Upišite mobitel i veličinu, okvirnu cijenu vidite čim pošaljete. Bez obveze.'
+                        ? 'Odaberite uslugu i površinu. Početnu cijenu vidite odmah, bez ostavljanja kontakta.'
                         : 'Ostavite mobitel i javimo vam se s cijenom. Brže ide ako pošaljete sliku na WhatsApp.'}
                 </p>
                 <p className={styles.trust}>

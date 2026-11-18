@@ -1,250 +1,163 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
-import { Droplets, ShieldCheck, Clock, AlertTriangle, Bug, Landmark, Heart } from 'lucide-react';
+import { ClipboardList, Camera, EyeOff, Wallet, Sprout, Droplets, Layers, Landmark, Home, TreeDeciduous } from 'lucide-react';
 import ServicePage from '@/components/ServicePage/ServicePage';
-import { Home, TreeDeciduous, Waves } from 'lucide-react';
 import { OG_IMAGE } from '@/lib/seo';
 
+// 16.11.2026.: stranica je lista interesa (odluka 25.10.2026., grobovi se trenutno ne rade).
+// Bez cijena, predujma, rezervacije i termina. Opisuje jedan stvarni posao: grob očišćen i
+// prekriven bijelim kulirom. Imena na spomeniku na fotografijama ostaju zamućena.
 export const metadata: Metadata = {
-    title: 'Održavanje grobnih mjesta Zagreb, čišćenje spomenika',
-    description: 'Profesionalno čišćenje i održavanje grobnih mjesta u Zagrebu. Uklanjamo mahovinu i naslage s kamenih spomenika. Mirogoj, Miroševac, Markovo Polje.',
+    title: 'Čišćenje grobnih mjesta Zagreb, lista interesa',
+    description: 'Grobna mjesta trenutačno ne čistimo. Pogledajte grob koji smo očistili i prekrili bijelim kulirom i ostavite kontakt. Javimo se kad opet krenemo.',
     alternates: { canonical: '/usluge/odrzavanje-grobnih-mjesta' },
     openGraph: {
-        title: 'Održavanje grobnih mjesta Zagreb | Šlauf i Šmrk',
-        description: 'Profesionalno čišćenje i održavanje grobnih mjesta u Zagrebu. Mirogoj, Miroševac, Markovo Polje.',
+        title: 'Čišćenje grobnih mjesta Zagreb, lista interesa | Šlauf i Šmrk',
+        description: 'Nove grobove zasad ne primamo. Ostavite kontakt i naziv groblja, bez predujma i bez rezervacije.',
         url: 'https://slaufismrk.com/usluge/odrzavanje-grobnih-mjesta',
         images: [OG_IMAGE],
     },
 };
 
-export default function GrobnaMjestaPage() {
+export default function OdrzavanjeGrobnihMjestaPage() {
     return (
-        <>
-            <ServicePage
+        <ServicePage
             title="Održavanje grobnih mjesta u Zagrebu"
-            quoteService="grave"
-            quoteTitle="Koliko bi čišćenje groba koštalo?"
             titleHighlight="grobnih mjesta"
+            quoteService="grave"
+            quoteTitle="Prijavite interes za čišćenje groba"
             canonicalPath="/usluge/odrzavanje-grobnih-mjesta"
-            description="Grobna mjesta vaših najmilijih zaslužuju dostojanstven izgled. Profesionalno čistimo i održavamo kamene nadgrobne spomenike, ploče, obrube i okolne površine na svim zagrebačkim grobljima. Ne trebate biti prisutni, šaljemo fotografije prije i poslije. Idealno za iseljenike i obitelji izvan Zagreba. Uz čišćenje nudimo poliranje kamena i impregnaciju."
-            priceHint="od 250 €"
-            priceAnchor="od 250 €"
+            description="Ispod je grob koji smo očistili i prekrili bijelim kulirom. Nove grobove zasad ne primamo. Ostavite kontakt i naziv groblja, javimo se kad opet krenemo."
             heroImage="/grob/grob-poslije-ciscenja-bijeli-kulir.jpg"
             heroImageAlt="Očišćen grob s tamnim granitnim okvirom i bijelim kulirom umjesto zemlje i korova"
+            notice="Grobna mjesta trenutačno ne čistimo. Primamo prijave na listu interesa, bez rezervacije termina."
+            heroHighlights={['Lista interesa', 'Bez predujma', 'Bez rezervacije termina']}
             processSteps={[
                 {
-                    title: 'Prijavite grobno mjesto',
-                    description: 'Javite nam se s grobljem, poljem, redom i brojem groba (ako ne znate sve, nije problem, pomoći ćemo). WhatsApp, poziv ili forma, što vam je najbrže.',
+                    title: 'Pošaljite prijavu',
+                    description: 'U formu upišite ime, broj mobitela i naziv groblja. Fotografiju groba možete poslati na WhatsApp.',
                 },
                 {
-                    title: 'Potvrda i predujam 30%',
-                    description: 'Šaljemo pisanu potvrdu i upute za uplatu predujma (30%). Ostatak plaćate tek nakon što vidite fotografije rezultata.',
+                    title: 'Upisujemo vas na listu',
+                    description: 'Prijava vas ni na što ne obvezuje. Ne plaćate ništa i ne rezervirate termin.',
                 },
                 {
-                    title: 'Detaljno čišćenje',
-                    description: 'Čistimo spomenik, ploču, obrube, posude za cvijeće i sve kamene elemente.',
+                    title: 'Javimo se kad opet krenemo',
+                    description: 'Zovemo redom kojim su prijave stigle. Datum danas ne znamo, pa ga ne obećavamo.',
                 },
                 {
-                    title: 'Fotografija rezultata',
-                    description: 'Šaljemo vam fotografije prije i poslije čišćenja kao potvrdu obavljenog posla.',
+                    title: 'Tek tada cijena i termin',
+                    description: 'Cijenu dobivate nakon što vidimo fotografiju groba, prije bilo kakvog dogovora.',
                 },
             ]}
             detailedContent={
                 <>
-                    <h2>Kako dolazite na listu za svoje groblje</h2>
+                    <h2>Zašto trenutačno ne čistimo grobna mjesta</h2>
                     <p>
-                        Grobove čistimo grupno po groblju. Pošaljite sliku groba na WhatsApp i recite na kojem je
-                        groblju, javimo cijenu i upišemo vas na listu za to groblje. Kad se skupi termin, javljamo se
-                        unaprijed. Nakon čišćenja dobivate fotografije, pa grob ne morate ni obilaziti.
-                    </p>
-                    <h2>Prije i poslije: grob koji smo radili</h2>
-                    <p>
-                        Okvir je bio siv i prljav, baza od teraca požutjela, a umjesto cvijeća rasli su korov i trava.
-                        Očistili smo spomenik, okvir i bazu, a zemlju zamijenili bijelim kulirom, pa grob ostaje uredan
-                        bez plijevljenja. Kulir nudimo uz čišćenje, cijena je po dogovoru.
-                    </p>
-                    {[
-                        ['grob-prije-ciscenja-korov-i-prljav-okvir', 'Grob prije čišćenja, korov i trava umjesto cvijeća, prljav okvir', 'grob-poslije-ciscenja-bijeli-kulir', 'Isti grob nakon čišćenja, bijeli kulir i očišćen granitni okvir', 844, 1500],
-                        ['grob-bocna-strana-prije-ciscenja', 'Bočna strana groba prije čišćenja, požutjela baza od teraca', 'grob-bocna-strana-poslije-ciscenja', 'Bočna strana groba nakon čišćenja, svijetla baza i bijeli kulir', 1600, 901],
-                        ['spomenik-straznja-strana-prije-ciscenja', 'Stražnja strana spomenika prije čišćenja, zeleni i tamni tragovi curenja', 'spomenik-straznja-strana-poslije-ciscenja', 'Stražnja strana spomenika nakon čišćenja, jednolična svijetla površina', 1600, 901],
-                    ].map(([prije, prijeAlt, poslije, poslijeAlt, w, h]) => (
-                        <div key={prije as string} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', margin: '1.25rem 0' }}>
-                            <figure style={{ margin: 0 }}>
-                                <Image src={`/grob/${prije}.jpg`} alt={prijeAlt as string} width={w as number} height={h as number} style={{ width: '100%', height: 'auto', borderRadius: '0.75rem' }} sizes="(max-width: 768px) 50vw, 400px" />
-                                <figcaption style={{ fontSize: '0.85rem', color: '#666', marginTop: '0.35rem' }}>Prije</figcaption>
-                            </figure>
-                            <figure style={{ margin: 0 }}>
-                                <Image src={`/grob/${poslije}.jpg`} alt={poslijeAlt as string} width={w as number} height={h as number} style={{ width: '100%', height: 'auto', borderRadius: '0.75rem' }} sizes="(max-width: 768px) 50vw, 400px" />
-                                <figcaption style={{ fontSize: '0.85rem', color: '#666', marginTop: '0.35rem' }}>Poslije</figcaption>
-                            </figure>
-                        </div>
-                    ))}
-                    <h2>Zašto profesionalno čišćenje grobnog mjesta?</h2>
-                    <p>
-                        Mnogi ljudi žele održavati grobna mjesta svojih najmilijih, ali <strong>nemaju vremena,
-                            fizičke mogućnosti ili žive daleko</strong>. Starije osobe teško kleče i čiste, a iseljenici
-                        ne mogu redovito posjećivati groblja.
-                    </p>
-                    <p>
-                        Profesionalnim čišćenjem osiguravate da grobno mjesto izgleda dostojanstveno
-                        cijelo vrijeme. Čistimo s posebnom <strong>pažnjom i poštovanjem</strong>, koristeći nježan
-                        pristup prilagođen osjetljivom okruženju.
+                        Ivan je na terenu sam, a strojno pranje fasada, okućnica i površina za tvrtke popunilo je
+                        raspored. Radije kažemo da grobove zasad ne radimo nego da uzmemo predujam pa kasnimo.
+                        Zato je ova stranica lista interesa, a ne narudžba.
                     </p>
 
-                    <h2>Što čistimo?</h2>
-                    <ul>
-                        <li><strong>Nadgrobni spomenik</strong> od mramora, granita ili vapnenca. Uklanjamo zelenilo, mahovinu i kalcifikacije.</li>
-                        <li><strong>Nadgrobna ploča</strong> bez oštećivanja natpisa i fotografija.</li>
-                        <li><strong>Obrubi i rubne ploče</strong> kameni ili betonski obrubi koji zelene i tamne.</li>
-                        <li><strong>Posude za cvijeće</strong> kamene i betonske žardinjere.</li>
-                        <li><strong>Okolna površina</strong> oko groba od korova, lišća i prljavštine.</li>
-                    </ul>
+                    <h2>Što smo napravili na grobu s fotografija</h2>
                     <p>
-                        Za opće informacije o čišćenju kamena pogledajte našu stranicu <Link href="/usluge/ciscenje-kamenih-povrsina">čišćenje
-                            kamenih površina</Link>.
-                    </p>
-
-                    <h2>Na kojim grobljima radimo?</h2>
-                    <p>
-                        Pokrivamo <strong>sva veća groblja u Zagrebu i okolici</strong>:
+                        Grobno mjesto bilo je prekriveno korovom, a bočna baza i stražnja strana spomenika imale su
+                        tamne i zelene naslage. Posao je išao ovim redom:
                     </p>
                     <ul>
-                        <li><strong>Mirogoj</strong></li>
-                        <li><strong>Miroševac</strong></li>
-                        <li><strong>Markovo Polje</strong></li>
-                        <li><strong>Krematorij</strong> (Spomenici za urne-kazete i okolni prostori)</li>
-                        <li><strong>Brestje</strong></li>
-                        <li>Ostala groblja u <Link href="/podrucje/zagreb">Zagrebu</Link> i okolici po dogovoru</li>
+                        <li><strong>Korov:</strong> uklonili smo ga s cijelog grobnog mjesta, zajedno s korijenom.</li>
+                        <li><strong>Kamen:</strong> oprali smo okvir, bočnu bazu i stražnju stranu spomenika.</li>
+                        <li><strong>Kulir:</strong> umjesto zemlje stavili smo bijeli kulir, sitni ukrasni kamen kroz koji korov teže raste.</li>
                     </ul>
-
-                    <h2>Cijene</h2>
                     <p>
-                        Detaljan pregled cijena s primjerima i faktorima koji utječu na konačnu ponudu
-                        pogledajte u našem vodiču{' '}
-                        <Link href="/blog/koliko-kosta-ciscenje-grobnog-mjesta">koliko košta čišćenje grobnog mjesta</Link>.
-                    </p>
-                    <ul>
-                        <li><strong>Jednokratno čišćenje (jednostruki grob)</strong>: od 250 € (cijena na 10. 9. 2026.: od 250 €)</li>
-                        <li><strong>Jednokratno čišćenje (dvostruki grob / grobnica)</strong>: po dogovoru, ovisno o veličini</li>
-                        <li><strong>Poliranje kamena</strong> (vraćamo sjaj mramoru i granitu): od 150 € (cijena na 10. 9. 2026.: od 150 €)</li>
-                        <li><strong>Impregnacija</strong> (zaštitni premaz, grob ostaje čist 2–3 godine): po dogovoru</li>
-                        <li><strong>Kulir</strong> (bijeli ukrasni kamen umjesto zemlje i korova): po dogovoru</li>
-                        <li><strong>Predujam za rezervaciju</strong>: 30% (ostatak plaćate tek nakon fotografija rezultata)</li>
-                    </ul>
-
-                    <h2>Kako funkcionira rezervacija?</h2>
-                    <p>
-                        Čišćenje grobnih mjesta organiziramo po <strong>grupnim terminima po groblju</strong>. Odlazimo kada
-                        se na pojedinom groblju skupi minimalno 10 prijavljenih grobnih mjesta. Razlog je jednostavan:
-                        dolazak na groblje s opremom ima smisla samo kada imamo dovoljno posla na jednom mjestu.
-                    </p>
-                    <p>
-                        To znači da <strong>vi ne birate točan datum</strong>, ali znate da ćete biti obaviješteni čim
-                        termin za vaše groblje bude zakazan. Standardni rok izlaska: 1 do 3 tjedna nakon uplate predujma.
-                    </p>
-                    <p>
-                        Za rezervaciju mjesta na listi potrebno je platiti <strong>30% predujma</strong>.
-                        Ostatak se plaća po završetku radova, uz dostavu fotografija prije i poslije.
+                        Sve tri usporedbe prije i poslije u odrađenim poslovima na vrhu stranice prikazuju taj isti grob.
+                        Imena na spomeniku smo zamutili.
                     </p>
 
-                    <h2>Usluga bez vaše prisutnosti</h2>
+                    <h2>Kako radi lista interesa za čišćenje groba</h2>
                     <p>
-                        Ne trebate biti na groblju dok radimo. Jednostavno nam dostavite <strong>lokaciju grobnog
-                            mjesta</strong> (groblje, polje, red, broj) i mi ćemo obaviti posao. Nakon čišćenja
-                        šaljemo vam <strong>fotografije prije i poslije</strong> kao potvrdu.
+                        Ostavite ime, broj mobitela i naziv groblja (Mirogoj, Miroševac, Markovo Polje ili neko drugo
+                        u Zagrebu i okolici). Kad opet krenemo, javimo se redom kojim su prijave stigle. Do tada ne
+                        tražimo predujam i ne rezerviramo termin.
                     </p>
+
+                    <h2>Trebate oprati kamen koji nije na groblju?</h2>
                     <p>
-                        Ova usluga posebno je dragocjena za <strong>iseljenike i osobe koje žive izvan Zagreba</strong>,
-                        a žele da grobno mjesto njihovih najmilijih uvijek izgleda dostojanstveno.
+                        Kamene klupe, stolove, staze i ploče i dalje peremo. Pogledajte{' '}
+                        <Link href="/usluge/ciscenje-kamenih-povrsina">čišćenje kamenih površina</Link>.
                     </p>
                 </>
             }
             features={[
                 {
-                    title: 'Pažljivo čišćenje',
-                    description: 'S posebnim poštovanjem čistimo svaki element grobnog mjesta: spomenik, ploču, obrube i posude.',
-                    icon: <Droplets size={24} />,
+                    icon: <ClipboardList size={24} />,
+                    title: 'Prijava bez obveze',
+                    description: 'Upis na listu ne znači narudžbu. Kad vas nazovemo, slobodno kažete da više ne trebate.',
                 },
                 {
-                    title: 'Prilagođen pristup',
-                    description: 'Koristimo niski tlak i pH-neutralna sredstva prilagođena mramoru, granitu i vapnencu.',
-                    icon: <ShieldCheck size={24} />,
+                    icon: <Wallet size={24} />,
+                    title: 'Bez predujma',
+                    description: 'Dok ne radimo, ne uzimamo novac. Cijenu čujete tek kad opet krenemo.',
                 },
                 {
-                    title: 'Fotografije rezultata',
-                    description: 'Šaljemo vam fotografije prije i poslije čišćenja. Ne trebate biti prisutni.',
-                    icon: <Clock size={24} />,
+                    icon: <Camera size={24} />,
+                    title: 'Stvaran posao',
+                    description: 'Fotografije na stranici su s groba koji smo sami očistili i prekrili kulirom.',
                 },
                 {
-                    title: 'Redovito održavanje',
-                    description: 'Nudimo godišnji program održavanja (4x godišnje) po posebnoj cijeni za stalan dostojanstven izgled.',
-                    icon: <Heart size={24} />,
+                    icon: <EyeOff size={24} />,
+                    title: 'Imena su zamućena',
+                    description: 'Fotografije groba ne objavljujemo s čitljivim imenima na spomeniku.',
                 },
             ]}
             commonProblems={[
                 {
-                    title: 'Zelene naslage na mramoru',
-                    description: 'Mahovine i alge koje se posebno brzo razvijaju na sjenovitim dijelovima groblja. Narušavaju dostojanstven izgled.',
-                    icon: <Bug size={24} />,
+                    icon: <Sprout size={32} />,
+                    title: 'Korov preko grobnog mjesta',
+                    description: 'Na grobu s fotografija korov je prekrio cijelu površinu unutar okvira.',
                 },
                 {
-                    title: 'Potamneli natpisi',
-                    description: 'Natpisi i ugravirani elementi potamnjuju i postaju teško čitljivi pod nanosima prljavštine.',
-                    icon: <AlertTriangle size={24} />,
+                    icon: <Droplets size={32} />,
+                    title: 'Tamne i zelene naslage',
+                    description: 'Bočna baza i stražnja strana spomenika potamnjele su od vlage i algi.',
                 },
                 {
-                    title: 'Oštećenja od drveća',
-                    description: 'Smola, listovi i ptičji izmet od okolnog drveća ostavljaju mrlje koje se suše i postaju sve teže za ukloniti.',
-                    icon: <Landmark size={24} />,
-                },
-                {
-                    title: 'Nemogućnost osobnog čišćenja',
-                    description: 'Starije osobe, iseljenici i zaposleni koji nemaju fizičku mogućnost ili vrijeme za redovito čišćenje.',
-                    icon: <Heart size={24} />,
+                    icon: <Layers size={32} />,
+                    title: 'Zemlja unutar okvira',
+                    description: 'Gola zemlja se nakon kiše pretvori u blato. Zato je na nju došao bijeli kulir.',
                 },
             ]}
             faq={[
                 {
-                    question: 'Koliko košta čišćenje grobnog mjesta?',
-                    answer: 'Jednokratno čišćenje jednostrukog groba kreće od 250 €, poliranje kamena od 150 € (cijene na 10. 9. 2026.: od 250 € i od 150 €). Dvostruki grob ili grobnica, impregnacija i kulir idu po dogovoru, cijenu javljamo nakon slike groba. Konačna cijena ovisi o veličini, vrsti kamena i zaprljanosti. Predujam za rezervaciju je 30%, ostatak plaćate tek nakon fotografija rezultata.',
+                    question: 'Čistite li trenutačno grobna mjesta?',
+                    answer: 'Ne. Nove grobove zasad ne primamo. Možete se upisati na listu interesa i javimo se kad opet krenemo.',
                 },
                 {
-                    question: 'Kako se rezervira termin?',
-                    answer: 'Javite nam se s lokacijom grobnog mjesta (groblje, polje, red, broj). Ubacujemo vas na listu za to groblje i kontaktiramo vas čim termin bude zakazan. Termin se zakazuje kada se skupi minimalno 10 grobnih mjesta na istom groblju.',
+                    question: 'Plaćam li nešto kod prijave na listu?',
+                    answer: 'Ne. Ne tražimo predujam i ne rezerviramo termin. Prijava vas ni na što ne obvezuje.',
                 },
                 {
-                    question: 'Mogu li sam odabrati datum čišćenja?',
-                    answer: 'Datume ne možete slobodno birati jer čišćenje organiziramo grupno po groblju. Odlazimo kada imamo 10+ prijavljenih. Standardni rok: 1 do 3 tjedna. Za posebne datume (godišnjice, blagdani) dogovorite se unaprijed.',
+                    question: 'Kada ćete opet čistiti grobove?',
+                    answer: 'Datum danas ne znamo, pa ga ne obećavamo. Kad krenemo, zovemo redom kojim su prijave stigle.',
                 },
                 {
-                    question: 'Trebam li biti prisutan na groblju?',
-                    answer: 'Ne, ne trebate. Samo nam dostavite lokaciju grobnog mjesta. Nakon čišćenja šaljemo vam fotografije kao potvrdu obavljenog posla.',
+                    question: 'Koliko će koštati čišćenje groba?',
+                    answer: 'Cijenu dobivate nakon što vidimo fotografiju groba, prije bilo kakvog dogovora. Ovisi o veličini groba i o tome treba li novi kulir.',
                 },
                 {
-                    question: 'Zašto plaćam 30% unaprijed?',
-                    answer: 'Predujam (30%) osigurava vaše mjesto na listi i potvrđuje rezervaciju. Izlazimo na teren kada skupimo 10+ rezervacija, tako možemo držati cijene pristupačnima. Ostatak plaćate tek nakon što dobijete fotografije rezultata.',
+                    question: 'Što je kulir?',
+                    answer: 'Sitni ukrasni kamen kojim se prekrije zemlja unutar okvira groba. Na grobu s fotografija stavili smo bijeli kulir umjesto zemlje i korova.',
                 },
                 {
-                    question: 'Mogu li dodati poliranje ili impregnaciju?',
-                    answer: 'Da. Poliranje vraća sjaj mramoru i granitu (od 150 €, cijena na 10. 9. 2026.: od 150 €). Impregnacija štiti kamen 2–3 godine od mahovine, vode i prljavštine, cijena je po dogovoru. To su dodatne usluge uz čišćenje.',
+                    question: 'Za koja se groblja mogu prijaviti?',
+                    answer: 'Za groblja u Zagrebu i okolici, na primjer Mirogoj, Miroševac i Markovo Polje. Naziv groblja upišite u prijavu.',
                 },
-                {
-                    question: 'Hoće li čišćenje oštetiti natpise ili fotografije na spomeniku?',
-                    answer: 'Ne, koristimo niski tlak i pažljiv pristup prilagođen vrsti kamena. Natpise i fotografije tretiramo izuzetno nježno, ručno.',
-                },
-            ]}
-            serviceAreas={[
-                'Mirogoj', 'Miroševac', 'Markovo Polje', 'Brestje', 'Krematorij',
-                'Špansko', 'Jarun', 'Trešnjevka', 'Maksimir', 'Dubrava', 'Sesvete',
-                'Velika Gorica', 'Samobor',
             ]}
             relatedServices={[
-                { title: 'Kamene površine', href: '/usluge/ciscenje-kamenih-povrsina', icon: <TreeDeciduous size={18} /> },
-                { title: 'Pranje okućnice', href: '/usluge/pranje-okucnice', icon: <Home size={18} /> },
-                { title: 'Pranje bazena', href: '/usluge/pranje-bazena', icon: <Waves size={18} /> },
+                { title: 'Kamene površine', href: '/usluge/ciscenje-kamenih-povrsina', icon: <Landmark size={24} /> },
+                { title: 'Pranje okućnice', href: '/usluge/pranje-okucnice', icon: <Home size={24} /> },
+                { title: 'Drvene površine', href: '/usluge/ciscenje-drvenih-povrsina', icon: <TreeDeciduous size={24} /> },
             ]}
         />
-        </>
     );
 }

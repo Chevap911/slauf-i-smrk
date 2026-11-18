@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import Image from 'next/image';
 import { Phone, CheckCircle2, MessageCircle, ArrowRight, Zap, Target, ThumbsUp, MapPin, Package, Star } from 'lucide-react';
 import styles from '../LandingPage.module.css';
@@ -131,7 +130,7 @@ export default function LandingPageClient() {
                             <div className={styles.stepNumber}>2</div>
                             <div className={styles.stepContent}>
                                 <h3>Dobivate cijenu</h3>
-                                <p>Javljamo okvirni raspon. Za veće objekte dolazimo na procjenu.</p>
+                                <p>Javljamo početnu procjenu. Za veće objekte dolazimo na procjenu.</p>
                             </div>
                         </div>
                         <div className={styles.step}>
@@ -195,15 +194,15 @@ export default function LandingPageClient() {
                         <tbody>
                             <tr>
                                 <td>100 m²</td>
-                                <td>od 500 €<span className="sidrena">Cijena na 10. 9. 2026.: od 500 €</span></td>
+                                <td>od 500 €<span className="sidrena">Cijena na 10. 9. 2026.: 500–700 €</span></td>
                             </tr>
                             <tr>
                                 <td>200 m²</td>
-                                <td>od 1.000 €<span className="sidrena">Cijena na 10. 9. 2026.: od 1.000 €</span></td>
+                                <td>od 1.000 €<span className="sidrena">Cijena na 10. 9. 2026.: 1.000–1.400 €</span></td>
                             </tr>
                             <tr>
                                 <td>300 m²</td>
-                                <td>od 1.500 €<span className="sidrena">Cijena na 10. 9. 2026.: od 1.500 €</span></td>
+                                <td>od 1.500 €<span className="sidrena">Cijena na 10. 9. 2026.: 1.500–2.100 €</span></td>
                             </tr>
                             <tr>
                                 <td>500 m²+</td>

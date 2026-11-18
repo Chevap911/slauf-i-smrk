@@ -1,67 +1,20 @@
-/* Do 4. 10. 2026. ovdje je bio plutajući gumb "Besplatna procjena" (pulsiranje i shimmer)
-   ispod nav trake na mobitelu. Maknut jer je odvlačio pažnju; ostaje samo modal s formom. */
-
-/* Modal */
-.overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 1100;
-    background: rgba(8, 20, 35, 0.55);
-    backdrop-filter: blur(3px);
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    padding: 0;
-    animation: overlayIn 0.18s ease;
-}
-
-@keyframes overlayIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.modal {
-    position: relative;
-    width: 100%;
-    max-width: 480px;
-    background: #fff;
-    border-radius: 1.25rem 1.25rem 0 0;
-    padding: 1.6rem 1.3rem 2rem;
-    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.3);
-    max-height: 92vh;
-    overflow-y: auto;
-    animation: modalIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-@keyframes modalIn {
-    from { transform: translateY(100%); }
-    to { transform: translateY(0); }
-}
-
-.close {
-    position: absolute;
-    top: 0.85rem;
-    right: 0.85rem;
-    width: 38px;
-    height: 38px;
-    border: none;
-    border-radius: 50%;
-    background: rgba(0, 51, 102, 0.07);
-    color: var(--secondary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-
-.close:hover { background: rgba(0, 51, 102, 0.14); }
-
-/* center modal on larger screens (if ever shown) */
-@media (min-width: 560px) {
-    .overlay { align-items: center; padding: 1.5rem; }
-    .modal { border-radius: 1.25rem; animation: modalInCenter 0.22s ease; }
-    @keyframes modalInCenter {
-        from { opacity: 0; transform: scale(0.96); }
-        to { opacity: 1; transform: scale(1); }
-    }
-}
+/* Postojeći navy/žuti identitet. Jedan CTA, bez pulsiranja. */
+.fab { position: fixed; bottom: max(20px,env(safe-area-inset-bottom)); right: 20px; z-index: 900; display: flex; align-items: center; gap: .65rem; padding: 0; border: 0; background: transparent; color: var(--secondary); cursor: pointer; }
+.fabIcon { display: grid; place-items: center; width: 60px; height: 60px; border-radius: 50%; background: var(--primary); box-shadow: 0 5px 24px #00336633; border: 2px solid var(--secondary); }
+.fabLabel { background: #fff; color: var(--secondary); padding: .5rem .8rem; border-radius: 99px; font: 600 .85rem var(--font-body); box-shadow: 0 3px 12px #00336620; }
+.fab:focus-visible { outline: 3px solid var(--secondary); outline-offset: 5px; border-radius: 99px; }
+/* Cookie odluka ima prednost; kalkulator ostaje dostupan u hero formi. */
+:global(body:has([data-cookie-banner])) .fab { visibility: hidden; }
+:global(html[data-consent] body:has([data-cookie-banner])) .fab { visibility: visible; }
+.modal { position: fixed; inset: 0; margin: auto; width: min(620px,calc(100% - 32px)); max-width: none; max-height: calc(100dvh - 48px); padding: 0; border: 0; border-radius: 1.25rem; background: #fff; color: var(--secondary); box-shadow: 0 24px 80px #00182c55; overscroll-behavior: contain; }
+.modal::backdrop { background: #071c32b3; }
+.modal[open] { animation: enter .16s ease-out; }
+.inner { padding: 1.5rem; }
+.header { position: sticky; top: 0; z-index: 2; padding: .5rem 0; background: #fff; display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 1.15rem; }
+.header h2 { font: 700 1.75rem/1.15 var(--font-heading); letter-spacing: -.025em; margin: .2rem 0 0; }
+.eyebrow { font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; font-weight: 700; }
+.close { flex-shrink: 0; width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%; border: 1px solid #bac7d5; background: #f2f6fa; color: var(--secondary); cursor: pointer; }
+.close:focus-visible { outline: 3px solid var(--secondary); outline-offset: 2px; }
+@keyframes enter { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@media(max-width:559px) { .modal { width: 100%; margin: auto 0 0; max-height: calc(100dvh - 24px); border-radius: 1.25rem 1.25rem 0 0; } .inner { padding: 1.15rem 1rem calc(1rem + env(safe-area-inset-bottom)); } .fabLabel { font-size: .8rem; } }
+@media(prefers-reduced-motion:reduce) { .modal[open] { animation:none; } }

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { readdirSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { ArrowRight, Phone } from 'lucide-react';
 import styles from './cjenik.module.css';
@@ -11,11 +11,11 @@ import ArticleQuote from '@/components/ArticleQuote/ArticleQuote';
 export const metadata: Metadata = {
     title: 'Cjenik pranja fasade i okućnice, Zagreb | Šlauf i Šmrk',
     description:
-        'Cijene pranja fasade, okućnice, terasa, grobnih mjesta i kemijskog čišćenja u Zagrebu, uz cijene na dan 10. 9. 2026. i cjenik u CSV formatu.',
+        'Početne cijene pranja fasade, okućnice, terasa i kemijskog čišćenja u Zagrebu, po m² i po komadu, uz cijene na dan 10. 9. 2026. i cjenik u CSV formatu.',
     alternates: { canonical: '/cjenik' },
     openGraph: {
         title: 'Cjenik pranja fasade i okućnice u Zagrebu',
-        description: 'Sve cijene na jednom mjestu, po m² i po usluzi, uz cijene na dan 10. 9. 2026.',
+        description: 'Početne cijene po m² i po usluzi, uz cijene na dan 10. 9. 2026. Konačna ponuda nakon besplatne procjene.',
         url: 'https://slaufismrk.com/cjenik',
         type: 'website',
         images: [OG_IMAGE],
@@ -32,23 +32,27 @@ const breadcrumbSchema = {
 };
 
 type Objava = { datoteka: string; objavljeno: string };
+type Zapis = { datoteka: string; broj: number; objavljen: string };
 
-// CSV-ove piše `npm run cjenik`. Zadnji je važeći, stariji ostaju kao arhiva
-// (Odluka o objavi cjenika traži da budu dostupni najmanje 30 dana).
-function objave(): Objava[] {
-    return readdirSync(join(process.cwd(), 'public', 'cjenik'))
-        .filter((f) => f.endsWith('.csv'))
-        .sort()
-        .reverse()
-        .map((datoteka) => {
-            const m = datoteka.match(/_(\d{2})\.(\d{2})\.(\d{4})_(\d{2})-(\d{2})\.csv$/);
-            const objavljeno = m ? `${Number(m[1])}. ${Number(m[2])}. ${m[3]}. u ${m[4]}:${m[5]}` : '';
-            return { datoteka, objavljeno };
-        });
+// "2026-11-18T09:30" iz manifesta u "18. 11. 2026. u 09:30".
+const datum = (iso: string) => {
+    const m = iso.match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/);
+    return m ? `${Number(m[3])}. ${Number(m[2])}. ${m[1]}. u ${m[4]}:${m[5]}` : '';
+};
+
+// CSV-ove i public/cjenik/manifest.json piše `npm run cjenik` (NN 132/2026-1584).
+// Važeći je i na stalnom URL-u /cjenik.csv (next.config.ts), prethodni ostaju kao
+// arhiva: pravilnik traži najmanje 15 dana, mi ih ne brišemo.
+function objave(): { vazeci: Objava | null; arhiva: Objava[] } {
+    const f = join(process.cwd(), 'public', 'cjenik', 'manifest.json');
+    if (!existsSync(f)) return { vazeci: null, arhiva: [] };
+    const m = JSON.parse(readFileSync(f, 'utf8')) as { vazeci: Zapis | null; arhiva: Zapis[] };
+    const u = (z: Zapis): Objava => ({ datoteka: z.datoteka, objavljeno: datum(z.objavljen) });
+    return { vazeci: m.vazeci ? u(m.vazeci) : null, arhiva: m.arhiva.map(u) };
 }
 
 export default function CjenikPage() {
-    const [vazeci, ...arhiva] = objave();
+    const { vazeci, arhiva } = objave();
 
     return (
         <div className={styles.page}>
@@ -70,9 +74,10 @@ export default function CjenikPage() {
                             Vanjske površine naplaćujemo po kvadratu, ostale usluge imaju početnu cijenu ili idu po dogovoru. Točan iznos za
                             vaš objekt dobijete nakon besplatne procjene na lokaciji, prije nego krenemo s radom.
                         </p>
+                        <p>Sve navedene cijene su početne. Konačan iznos ovisi o zaprljanosti, materijalu, pristupu i opsegu posla. Ponudu potvrđujemo prije početka rada.</p>
                         <p>
-                            Uz svaku cijenu piše i cijena koja je vrijedila {SIDRENI_DATUM} Tako od 1. listopada 2026.
-                            propisuje Odluka o isticanju dodatne cijene (NN 101/2026). Usluge po dogovoru nemaju
+                            Uz svaku cijenu piše i cijena koja je vrijedila {SIDRENI_DATUM} Tako od 17. studenoga 2026.
+                            propisuje Pravilnik o isticanju bazne cijene (NN 132/2026). Usluge po dogovoru nemaju
                             istaknutu cijenu, iznos dobijete u ponudi.
                         </p>
 
@@ -96,7 +101,7 @@ export default function CjenikPage() {
                                                         {s.napomena && (
                                                             <span className={styles.note}>
                                                                 {s.napomena}
-                                                                {/* Cijena u napomeni također treba sidrenu na istom mjestu (NN 101/2026) */}
+                                                                {/* Cijena u napomeni također treba sidrenu na istom mjestu (NN 132/2026-1583) */}
                                                                 {s.napomenaSidrena && ` (cijena na ${SIDRENI_DATUM}: ${s.napomenaSidrena})`}
                                                             </span>
                                                         )}
@@ -134,7 +139,7 @@ export default function CjenikPage() {
                         <h2>Kako nastaje konačna cijena</h2>
                         <ul>
                             <li>
-                                Fasade, okućnice, terase i prilazi naplaćuju se po m². Gdje ste unutar raspona, određuju
+                                Fasade, okućnice, terase i prilazi naplaćuju se po m². Na konačan iznos utječu
                                 zaprljanost, visina objekta i pristup vodi i struji.
                             </li>
                             <li>Kad u istom dolasku radimo i drugu uslugu, na tu dodatnu uslugu dajemo 10% popusta.</li>
@@ -155,8 +160,9 @@ export default function CjenikPage() {
 
                         <h2>Cjenik u CSV formatu</h2>
                         <p>
-                            Isti cjenik objavljujemo i kao CSV datoteku za strojno čitanje, kako traži Odluka o objavi
-                            cjenika proizvoda i usluga (NN 101/2026).
+                            Isti cjenik objavljujemo i kao CSV datoteku za strojno čitanje, kako traži Pravilnik o načinu
+                            objave cjenika (NN 132/2026). Važeći je uvijek na adresi{' '}
+                            <a href="/cjenik.csv">slaufismrk.com/cjenik.csv</a>. Starije objave čuvamo kao arhivu, ne kao važeću ponudu.
                         </p>
                         {vazeci && (
                             <ul className={styles.files}>

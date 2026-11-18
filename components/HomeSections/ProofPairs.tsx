@@ -1,34 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import QuoteLink from '@/components/QuoteLink/QuoteLink';
+import { featuredJobs } from '@/data/completedJobs';
 import styles from './HomeSections.module.css';
 
-// Stvarne fotke s naših poslova, sve uspravne (3:4), da parovi stoje u istoj mreži
-const PAROVI = [
-    {
-        prije: '/prije-poslje/fasada-prije.jpeg',
-        poslije: '/prije-poslje/fasada-poslje.png',
-        prijeAlt: 'Fasada obiteljske kuće prije pranja, alge i sivilo na žbuci, Zagreb',
-        poslijeAlt: 'Očišćena bijela fasada obiteljske kuće nakon visokotlačnog pranja, Zagreb',
-        opis: 'Fasada obiteljske kuće, Zagreb',
-    },
-    {
-        prije: '/prije-poslje/terasa-leggiero-prije-1.jpeg',
-        poslije: '/prije-poslje/terasa-leggiero-poslje-1.jpeg',
-        prijeAlt: 'Terasa kafića prije čišćenja, mahovina i sive naslage na pločicama, Zagreb',
-        poslijeAlt: 'Očišćena terasa kafića nakon visokotlačnog pranja pločica, Zagreb',
-        opis: 'Terasa kafića uz Family Mall, Zagreb',
-    },
-    {
-        prije: '/prije-poslje/ciscenje-poda-terase-zagreb-prije.jpeg',
-        poslije: '/prije-poslje/ciscenje-poda-terase-zagreb-poslje.jpeg',
-        prijeAlt: 'Pod terase prije čišćenja, prljave i sive pločice, Zagreb',
-        poslijeAlt: 'Pod terase poslije čišćenja, čiste pločice, Zagreb',
-        opis: 'Pod terase, Zagreb',
-    },
-];
-
-const SIZES = '(max-width: 900px) 46vw, 200px';
+const PAIR_SIZES = '(max-width: 899px) 46vw, 280px';
 
 export default function ProofPairs() {
     return (
@@ -36,33 +12,36 @@ export default function ProofPairs() {
             <div className="container">
                 <div className={styles.head}>
                     <span className={styles.eyebrow}>Stvarni poslovi</span>
-                    <h2 className={styles.title}>Prije i poslije pranja u Zagrebu</h2>
-                    <p className={styles.lead}>Fotografije s naših poslova, snimljene prije i poslije pranja.</p>
+                    <h2 className={styles.title}>Naši radovi u Zagrebu i okolici</h2>
+                    <p className={styles.lead}>Od ogradnog zida do poda kolodvora. Fotografije prije, tijekom i nakon pranja.</p>
                 </div>
-
                 <div className={styles.pairs}>
-                    {PAROVI.map((par) => (
-                        <figure key={par.opis} className={styles.pair}>
-                            <div className={styles.pairImgs}>
-                                <div className={styles.shot}>
+                    {featuredJobs().map(job => {
+                        const photo = job.photos[0];
+                        return <figure key={job.id} className={styles.pair}>
+                            {photo.singleImage ? <div className={`${styles.shot} ${styles.singleShot}`}>
+                                <span className={styles.tag}>S terena</span>
+                                <Image src={photo.singleImage} alt={photo.singleAlt!} fill sizes="(max-width: 899px) 92vw, 560px" className={styles.shotImg}/>
+                            </div> : <div className={styles.pairImgs}>
+                                <div className={styles.shot} style={{aspectRatio:photo.aspectRatio || '3 / 4'}}>
                                     <span className={styles.tag}>Prije</span>
-                                    <Image src={par.prije} alt={par.prijeAlt} fill sizes={SIZES} className={styles.shotImg} />
+                                    <Image src={photo.beforeImage!} alt={photo.beforeAlt!} fill sizes={PAIR_SIZES} className={styles.shotImg}/>
                                 </div>
-                                <div className={styles.shot}>
+                                <div className={styles.shot} style={{aspectRatio:photo.aspectRatio || '3 / 4'}}>
                                     <span className={`${styles.tag} ${styles.tagAfter}`}>Poslije</span>
-                                    <Image src={par.poslije} alt={par.poslijeAlt} fill sizes={SIZES} className={styles.shotImg} />
+                                    <Image src={photo.afterImage!} alt={photo.afterAlt!} fill sizes={PAIR_SIZES} className={styles.shotImg}/>
                                 </div>
-                            </div>
-                            <figcaption className={styles.caption}>{par.opis}</figcaption>
-                        </figure>
-                    ))}
+                            </div>}
+                            <figcaption className={styles.caption}>
+                                <h3 className={styles.jobTitle}>{job.title}</h3>
+                                <Link href={`/galerija#posao-${job.id}`} className={styles.textLink}>Fotografije i opis posla →</Link>
+                            </figcaption>
+                        </figure>;
+                    })}
                 </div>
-
                 <div className={styles.cta}>
                     <QuoteLink className="btn btn-primary">Zatražite besplatnu procjenu</QuoteLink>
-                    <Link href="/galerija" className={styles.textLink}>
-                        Više fotografija u galeriji
-                    </Link>
+                    <Link href="/galerija" className={styles.textLink}>Svi radovi u galeriji</Link>
                 </div>
             </div>
         </section>

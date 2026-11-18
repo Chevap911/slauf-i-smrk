@@ -37,7 +37,7 @@ export default function BlogArticle() {
         author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         datePublished: '2026-06-01',
-        dateModified: '2026-10-10',
+        dateModified: '2026-11-01',
         image: 'https://slaufismrk.com/prije-poslje/pranje-zida-terase-zagreb-poslje.jpeg',
         url: 'https://slaufismrk.com/blog/crne-fleke-na-fasadi',
     };
@@ -67,7 +67,7 @@ export default function BlogArticle() {
                 name: 'Koliko košta uklanjanje crnih fleka s fasade u Zagrebu?',
                 acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'Cijena pranja fasade kreće se od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²). Za kuću od 200 m² to je okvirno od 1.000 € (na 10. 9. 2026.: od 1.000 €), ovisno o stupnju zaraženosti i visini objekta. Dolazimo na besplatnu procjenu.',
+                    text: 'Cijena pranja fasade kreće se od 5 €/m² (cijena na 10. 9. 2026.: 5–7 €/m²). Za kuću od 200 m² to je okvirno od 1.000 € (cijena na 10. 9. 2026.: 1.000–1.400 €), ovisno o stupnju zaraženosti i visini objekta. Dolazimo na besplatnu procjenu.',
                 },
             },
         ],
@@ -140,7 +140,7 @@ export default function BlogArticle() {
 
                         <h2>Koliko to košta</h2>
                         <p>
-                            Pranje fasade kod nas kreće od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²). Za kuću od 200 m² to je okvirno od 1.000 € (na 10. 9. 2026.: od 1.000 €), ovisno o
+                            Pranje fasade kod nas kreće od 5 €/m² (cijena na 10. 9. 2026.: 5–7 €/m²). Za kuću od 200 m² to je okvirno od 1.000 € (cijena na 10. 9. 2026.: 1.000–1.400 €), ovisno o
                             stupnju zaraženosti i visini objekta. Detaljan pregled cijena imate u vodiču{' '}
                             <Link href="/blog/koliko-kosta-pranje-fasade">koliko košta pranje fasade</Link>, a cijelu uslugu na
                             stranici <Link href="/usluge/pranje-fasade">pranje fasade u Zagrebu</Link>.

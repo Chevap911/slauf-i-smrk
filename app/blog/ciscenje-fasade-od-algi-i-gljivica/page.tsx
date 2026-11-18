@@ -7,7 +7,7 @@ import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Čišćenje fasade od algi i gljivica: metode i cijena',
-    description: 'Zelene ili crne mrlje na fasadi? Vodič za čišćenje fasade od algi, gljivica i mahovine u Zagrebu. Cijena od 5 €/m² (na 10. 9. 2026.: od 5 €/m²).',
+    description: 'Zelene ili crne mrlje na fasadi? Vodič za čišćenje fasade od algi, gljivica i mahovine u Zagrebu. Cijena od 5 €/m² (cijena na 10. 9. 2026.: 5–7 €/m²).',
     alternates: { canonical: '/blog/ciscenje-fasade-od-algi-i-gljivica' },
     openGraph: {
         title: 'Čišćenje fasade od algi i gljivica: uzroci, metode i cijena',
@@ -53,7 +53,7 @@ export default function BlogArticle() {
         author: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         publisher: { '@type': 'Organization', name: 'Šlauf i Šmrk' },
         datePublished: '2026-05-25',
-        dateModified: '2026-10-10',
+        dateModified: '2026-11-01',
         image: 'https://slaufismrk.com/prije-poslje/fasada-poslje.png',
     };
 
@@ -64,7 +64,7 @@ export default function BlogArticle() {
             {
                 '@type': 'Question',
                 name: 'Koliko košta čišćenje fasade od algi u Zagrebu?',
-                acceptedAnswer: { '@type': 'Answer', text: 'Cijena se kreće od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²). Za obiteljsku kuću od 200 m² to je od 1.000 € (na 10. 9. 2026.: od 1.000 €). Točna cijena ovisi o stupnju zaraženosti i tipu fasade. Za procjenu pošaljite slike fasade na WhatsApp ili dogovorite besplatan izlazak.' },
+                acceptedAnswer: { '@type': 'Answer', text: 'Cijena se kreće od 5 €/m² (cijena na 10. 9. 2026.: 5–7 €/m²). Za obiteljsku kuću od 200 m² to je od 1.000 € (cijena na 10. 9. 2026.: 1.000–1.400 €). Točna cijena ovisi o stupnju zaraženosti i tipu fasade. Za procjenu pošaljite slike fasade na WhatsApp ili dogovorite besplatan izlazak.' },
             },
             {
                 '@type': 'Question',
@@ -289,11 +289,11 @@ export default function BlogArticle() {
                             </div>
                             <div className={styles.priceRow}>
                                 <span>100 – 200 m² (obiteljska kuća)</span>
-                                <strong>500 – 1.400 €<span className="sidrena">Cijena na 10. 9. 2026.: 500 – 1.400 €</span></strong>
+                                <strong>od 500 €<span className="sidrena">Cijena na 10. 9. 2026.: 500–1.400 €</span></strong>
                             </div>
                             <div className={styles.priceRow}>
                                 <span>200 – 300 m²</span>
-                                <strong>od 1.500 €<span className="sidrena">Cijena na 10. 9. 2026.: od 1.500 €</span></strong>
+                                <strong>od 1.500 €<span className="sidrena">Cijena na 10. 9. 2026.: 1.000–2.100 €</span></strong>
                             </div>
                             <div className={styles.priceRow}>
                                 <span>300 m²+ / poslovni objekti</span>
@@ -328,7 +328,7 @@ export default function BlogArticle() {
                         <p>
                             Da, za 50 do 70% u slučajevima gdje fasada nije konstruktivno oštećena.
                             Bojanje obiteljske kuće od 200 m² u Zagrebu iznosi 3.000 do 8.000 eura,
-                            ovisno o pripremi i materijalu. Čišćenje iste kuće iznosi 1.000 do 1.400 eura (cijena na 10. 9. 2026.: 1.000 do 1.400 eura).
+                            ovisno o pripremi i materijalu. Čišćenje iste kuće iznosi od 1.000 eura.
                         </p>
                         <p>
                             Čišćenje ima smisla kad fasada nema pukotina, boja se ne ljušti
@@ -370,8 +370,8 @@ export default function BlogArticle() {
 
                         <h3>Koliko košta čišćenje fasade od algi u Zagrebu?</h3>
                         <p>
-                            Cijena se kreće od 5 €/m² (cijena na 10. 9. 2026.: od 5 €/m²). Za obiteljsku kuću od 200 m² to je
-                            od 1.000 € (na 10. 9. 2026.: od 1.000 €). Točna cijena ovisi o stupnju zaraženosti i tipu fasade.
+                            Cijena se kreće od 5 €/m² (cijena na 10. 9. 2026.: 5–7 €/m²). Za obiteljsku kuću od 200 m² to je
+                            od 1.000 € (cijena na 10. 9. 2026.: 1.000–1.400 €). Točna cijena ovisi o stupnju zaraženosti i tipu fasade.
                             Za procjenu pošaljite slike fasade na WhatsApp ili dogovorite besplatan izlazak.
                         </p>
 

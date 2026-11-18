@@ -24,7 +24,7 @@ const GOOGLE = 'https://www.google.com/maps/search/?api=1&query=%C5%A0lauf+i+%C5
 
 function Zvjezdice() {
     return (
-        <span className={styles.stars} aria-label="5 od 5 zvjezdica">
+        <span className={styles.stars} role="img" aria-label="5 od 5 zvjezdica">
             {[0, 1, 2, 3, 4].map((i) => (
                 <Star key={i} size={18} fill="currentColor" aria-hidden="true" />
             ))}

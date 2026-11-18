@@ -10,9 +10,11 @@
     "audit": "node tools/audit-copy.mjs",
     "slop": "node tools/slop-check.mjs",
     "site-check": "node tools/site-check.mjs",
-    "gate": "npm run lint && npm run audit && npm run slop && npm run site-check",
+    "gate": "npm run lint && npm run cjenik-check && npm run audit && npm run slop && npm run site-check",
     "deploy": "node tools/deploy.mjs",
-    "cjenik": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON tools/cjenik-csv.mjs"
+    "cjenik": "node --experimental-strip-types --disable-warning=MODULE_TYPELESS_PACKAGE_JSON tools/cjenik-csv.mjs",
+    "cjenik-check": "node --experimental-strip-types --disable-warning=MODULE_TYPELESS_PACKAGE_JSON tools/cjenik-check.mjs",
+    "test": "node --test tests/*.test.cjs"
   },
   "dependencies": {
     "@react-email/components": "^1.0.8",

@@ -1,6 +1,8 @@
+
+import JsonLd from '@/components/JsonLd/JsonLd';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import Gallery from '@/components/Gallery/Gallery';
+import CompletedJobsFeed from '@/components/CompletedJobsFeed/CompletedJobsFeed';
 import { OG_IMAGE } from '@/lib/seo';
 import QuoteLink from '@/components/QuoteLink/QuoteLink';
 import QuoteCard from '@/components/QuoteCard/QuoteCard';
@@ -32,10 +34,7 @@ const breadcrumbSchema = {
 export default function GalerijaPage() {
     return (
         <div>
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-            />
+            <JsonLd data={breadcrumbSchema} />
 
             <section style={{ paddingTop: 'calc(var(--nav-h) + 1.5rem)', paddingBottom: '1rem', textAlign: 'center' }}>
                 <div className="container">
@@ -47,22 +46,15 @@ export default function GalerijaPage() {
                     </h1>
                     <p style={{ maxWidth: '640px', margin: '0 auto', opacity: 0.85 }}>
                         Fotografije s poslova Ivana i Marka u Zagrebu i okolici: fasade, terase, okućnice
-                        i grobna mjesta. Kliknite na fotografiju za veći prikaz.
+                        i grobna mjesta. Uz svaki posao su fotografije i opis čišćenja.
                     </p>
                 </div>
             </section>
 
-            {/* Forma odmah nakon parova: tko je vidio rezultat, pita za cijenu. Donji gumb sad
-                skrolira do nje (QuoteLink traži id="procjena"), umjesto da otvara modal. */}
-            <Gallery
-                forma={
-                    <QuoteCard
-                        title="Želite ovakav rezultat? Pošaljite upit"
-                        location="galerija"
-                        service=""
-                    />
-                }
-            />
+            <CompletedJobsFeed />
+            <div className="container" style={{ maxWidth: '640px', margin: '2rem auto' }}>
+                <QuoteCard title="Koliko bi koštalo vaše čišćenje?" location="galerija" service="facade" />
+            </div>
 
             <div style={{ textAlign: 'center', padding: '0 1rem 4rem', background: 'var(--surface)' }}>
                 <QuoteLink className="btn btn-primary">
