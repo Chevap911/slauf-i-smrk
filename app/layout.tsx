@@ -90,7 +90,7 @@ const localBusinessSchema = {
   ],
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Primoštenska ulica 11",
+    streetAddress: "Domitrovićeva ulica 6",
     addressLocality: "Zagreb",
     postalCode: "10000",
     addressRegion: "Zagreb",
@@ -98,8 +98,8 @@ const localBusinessSchema = {
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: 45.815,
-    longitude: 15.9819,
+    latitude: 45.8186,
+    longitude: 15.8879,
   },
   priceRange: "€€",
   aggregateRating: {

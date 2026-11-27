@@ -31,7 +31,7 @@ export const TRGOVAC = {
     /** Matični broj obrta Šlauf i Šmrk iz obrtnice (8 znamenki). */
     maticniBroj: '99112752',
     prodajnoMjesto: 'servis',
-    adresa: 'Primostenska-11-Zagreb',
+    adresa: 'Domitroviceva-6-Zagreb',
     oznaka: 'U-01',
 };
 

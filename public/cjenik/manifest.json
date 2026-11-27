@@ -1,10 +1,16 @@
 {
   "vazeci": {
-    "datoteka": "99112752_servis_Primostenska-11-Zagreb_U-01_usluge_005_20261118_0910.csv",
-    "broj": 5,
-    "objavljen": "2026-11-18T09:10"
+    "datoteka": "99112752_servis_Domitroviceva-6-Zagreb_U-01_usluge_006_20261127_0947.csv",
+    "broj": 6,
+    "objavljen": "2026-11-27T09:47"
   },
   "arhiva": [
+    {
+      "datoteka": "99112752_servis_Primostenska-11-Zagreb_U-01_usluge_005_20261118_0910.csv",
+      "broj": 5,
+      "objavljen": "2026-11-18T09:10",
+      "zamijenjen": "2026-11-27T09:47"
+    },
     {
       "datoteka": "servis_Primostenska-11-Zagreb_U-01_004_01.11.2026_17-27.csv",
       "broj": 4,

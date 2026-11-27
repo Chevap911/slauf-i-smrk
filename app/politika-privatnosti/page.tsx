@@ -26,7 +26,7 @@ export default function PolitikaPrivatnosti() {
                 <p>Voditelj obrade vaših osobnih podataka je:</p>
                 <ul>
                     <li><strong>Naziv:</strong> Šlauf i Šmrk, obrt za čišćenje, vl. Ivan Karlović</li>
-                    <li><strong>Adresa:</strong> Primoštenska ulica 11, 10000 Zagreb, Hrvatska</li>
+                    <li><strong>Adresa:</strong> Domitrovićeva ulica 6, 10000 Zagreb, Hrvatska</li>
                     <li><strong>OIB:</strong> 17217483925</li>
                     <li><strong>MBS:</strong> 99112752</li>
                     <li><strong>Email:</strong> <a href="mailto:slauf.i.smrk@gmail.com">slauf.i.smrk@gmail.com</a></li>
